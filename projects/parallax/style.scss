@@ -194,7 +194,7 @@ header{
   }
 }
 
-@media (max-width: 768px){
+@media all and (max-width: 768px){
   .wrapper{
     -webkit-background-size: cover;
     background-size: cover;
