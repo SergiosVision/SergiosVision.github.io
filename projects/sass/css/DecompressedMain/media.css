@@ -1,0 +1,326 @@
+@media all and (min-width: 980px) and (max-width: 1227px){
+    
+    .services .container{
+        margin: 0;
+    }
+    
+    .about .container{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .team .team-main .person{
+        flex-grow: 1;
+        margin: 20px 59px;
+    }
+}
+
+@media all and (min-width: 769px) and (max-width: 979px){
+    header .navbar{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .services{
+        padding-top: 80px;
+    }
+    
+    .services .container{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .services .grid-services .item p{
+        padding: 15px;
+    }
+    
+    .about{
+        padding-top: 80px;
+    }
+    
+    .about .container{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .about .about-main{
+        display: block;
+        flex-direction: column;
+    }
+    
+    .about .about-main .present{
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .about .about-main .info{
+        width: 80%;
+        margin: 30px auto 0 auto;
+    }
+    
+    .team{
+        padding-top: 80px;
+    }
+    
+    .team .team-main .person{
+        flex-grow: 1;
+        margin: 20px 59px;
+    }
+    
+    .team .container{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .portfolio{
+        padding-top: 80px;
+    }
+    
+    .prices{
+        padding-top: 80px;
+    }
+    
+    .prices .prices-main-container{
+        flex-basis: 45%;
+    }
+    
+    .contact{
+        padding-top: 80px;
+        height: auto;
+    }
+    
+    .contact .contact-main{
+        margin-top: 50px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact .contact-info{
+        width: 80%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .contact .contact-info p{
+        text-align: left;
+        padding: 0 40px;
+    }
+    
+    .contact .contact-info .contact-info-footer{
+        justify-content: space-around;
+    }
+    
+    .contact .contact-form{
+        width: 80%;
+        padding-bottom: 15px;
+        box-sizing: border-box;
+    }
+}
+
+@media all and (max-width: 768px){
+    header .navbar{
+        align-items: center;
+        flex-direction: row-reverse;
+        background-color: #555;
+    }
+    
+    header .navbar .navi{
+        display: none;
+    }
+    
+    header .navbar .open-mob-menu{
+        display: block;
+    }
+    
+    main .jumbotron .container{
+        margin: 0;
+    }
+    
+    .services{
+        padding-top: 80px;
+    }
+    
+    .services .container{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .services .grid-services .item{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px!important;
+    }
+    
+    .services .grid-services .item:nth-child(n){
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    
+    .services .grid-services .item p{
+        padding: 15px;
+        width: 60%;
+        margin: 0 auto;
+    }
+    
+    .portfolio{
+        padding-top: 80px;
+    }
+    
+    .portfolio .iso-main .item-port{
+        width: 100%;
+        margin-bottom: 20px!important;
+    }
+
+    
+    .about{
+        padding-top: 80px;
+    }
+    
+    .about .container{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .about .about-main{
+        display: block;
+        flex-direction: column;
+    }
+    
+    .about .about-main .present{
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .about .about-main .info{
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        margin: 30px auto 0 auto;
+    }
+    
+    .team{
+        padding-top: 80px;
+    }
+    
+    .team .team-main .person{
+        flex-grow: 1;
+        margin: 20px 59px;
+    }
+    
+    .team .container{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .prices{
+        padding-top: 80px;
+    }
+    
+    .prices .prices-main-container{
+        flex-basis: 65%;
+    }
+    
+    .contact{
+        padding-top: 80px;
+        height: auto;
+    }
+    
+    .contact .contact-main{
+        margin-top: 50px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact .contact-info{
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .contact .contact-info p{
+        text-align: center;
+        padding: 0 40px;
+        width: 70%;
+        margin: 18px auto;
+    }
+    
+    .contact .contact-info .contact-info-footer{
+        flex-direction: column;
+        
+    }
+    
+    .contact .contact-form{
+        width: 100%;
+    }
+    
+    .contact .contact-form .main-btn{
+        width: 100%;
+    }
+    
+    footer .footer-social ul{
+        width: 100%;
+    }
+    
+    footer .container{
+        margin: 0;
+    }
+}
+
+@media all and (max-width: 490px){
+    
+    main .jumbotron .container .jumbo-main{
+        margin: 0 auto;
+    }
+    
+    main .jumbotron .container .jumbo-main .jumbo-btns{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    main .jumbotron .container .jumbo-main .jumbo-btns a{
+        margin-top: 40px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .services .grid-services .item p{
+        padding: 15px 0;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .portfolio .container-fluid{
+        padding: 0 15px;
+    }    
+    
+    .team .team-main .person{
+        margin: 20px 0px;
+    }
+    
+    .prices .prices-main-container{
+        flex-basis: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .contact .contact-info h2{
+        font-size: 20px;
+    }
+    
+    .contact .contact-info p{
+        padding: 0;
+        width: 100%;
+        margin: 18px auto;
+        box-sizing: border-box;
+    }
+    
+    .main-title h1{
+        font-size: 30px;
+    }
+    
+    .main-title h4{
+        font-size: 14px;
+        font-family: 'Saira', sans-serif;
+    }
+    
+}

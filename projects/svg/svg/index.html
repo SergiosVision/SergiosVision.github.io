@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SVG in the Wild</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+    <script>
+        /*! grunt-grunticon Stylesheet Loader - v2.1.6 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
+
+        !function(){function e(e,t){function n(){!o&&t&&(o=!0,t.call(e))}var o;e.addEventListener&&e.addEventListener("load",n),e.attachEvent&&e.attachEvent("onload",n),"isApplicationInstalled"in navigator&&"onloadcssdefined"in e&&e.onloadcssdefined(n)}!function(e){"use strict";var t=function(t,n,o){function r(e){if(c.body)return e();setTimeout(function(){r(e)})}function a(){d.addEventListener&&d.removeEventListener("load",a),d.media=o||"all"}var i,c=e.document,d=c.createElement("link");if(n)i=n;else{var l=(c.body||c.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var s=c.styleSheets;d.rel="stylesheet",d.href=t,d.media="only x",r(function(){i.parentNode.insertBefore(d,n?i:i.nextSibling)});var u=function(e){for(var t=d.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){u(e)})};return d.addEventListener&&d.addEventListener("load",a),d.onloadcssdefined=u,u(a),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(t){var n=function(o,r){"use strict";if(o&&3===o.length){var a=t.navigator,i=t.document,c=t.Image,d=!(!i.createElementNS||!i.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!i.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||t.opera&&-1===a.userAgent.indexOf("Chrome")||-1!==a.userAgent.indexOf("Series40")),l=new c;l.onerror=function(){n.method="png",n.href=o[2],loadCSS(o[2])},l.onload=function(){var t=1===l.width&&1===l.height,a=o[t&&d?0:t?1:2];n.method=t&&d?"svg":t?"datapng":"png",n.href=a,e(loadCSS(a),r)},l.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",i.documentElement.className+=" grunticon"}};n.loadCSS=loadCSS,n.onloadCSS=e,t.grunticon=n}(this),function(e,t){"use strict";var n,o=t.document,r=function(e){if(o.attachEvent?"complete"===o.readyState:"loading"!==o.readyState)e();else{var t=!1;o.addEventListener("readystatechange",function(){t||(t=!0,e())},!1)}},a=function(e){return t.document.querySelector('link[href$="'+e+'"]')},i=function(e,t){if(n&&!t)return n;n={};var o,r,a,i,c,d;if(!(o=e.sheet))return n;r=o.cssRules?o.cssRules:o.rules;for(var l=0;l<r.length;l++)a=r[l].cssText,i="grunticon:"+r[l].selectorText,(c=a.split(");")[0].match(/US\-ASCII\,([^"']+)/))&&c[1]&&(d=decodeURIComponent(c[1]),n[i]=d);return n},c=function(e,t){var n,r,a,i,c;t?n=e:(t=e,n=o),i="data-grunticon-embed";for(var d in t){c=d.slice("grunticon:".length);try{r=n.querySelectorAll(c)}catch(e){continue}a=[];for(var l=0;l<r.length;l++)null!==r[l].getAttribute(i)&&a.push(r[l]);if(a.length)for(l=0;l<a.length;l++)a[l].innerHTML=t[d],a[l].style.backgroundImage="none",a[l].removeAttribute(i)}return a},d=function(t,n){"svg"===e.method&&r(function(){var o=i(a(e.href));"function"==typeof n?(c(t,o),n()):c(o),"function"==typeof t&&t()})};e.embedIcons=c,e.getCSS=a,e.getIcons=i,e.ready=r,e.svgLoadedCallback=d,e.embedSVG=d}(grunticon,this)}();
+
+        grunticon(["icons/socialmedia/SVG/icons.data.svg.css", "icons/socialmedia/SVG/icons.data.png.css", "icons/socialmedia/SVG/icons.fallback.css"], grunticon.svgLoadedCallback);
+    </script>
+    <noscript><link href="icons/socialmedia/SVG/icons.fallback.css" rel="stylesheet"></noscript>
+</head>
+
+<body>
+
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+    <header id="site-header" class="masthead">
+        <div class="site-branding">
+            <figure class="header-bg">
+                <img class="inject-me" src="icons/misc/header-bg.svg" alt="Vectors and Paths: An SVG Example">
+            </figure>
+        </div><!-- .site-branding -->
+        <nav id="site-navigation" class="main-nav" role="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <!-- <img class="menu-icon" src="icons/menu/home.png" alt="Link to home page"> -->
+                        <svg class="menu-icon">
+                            <use xlink:href="icons/menu/menu-sprite.svg#icon-home"></use>
+                        </svg>
+                        <div>
+                            Home
+                            <span class="menu-desc">where the heart is</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <!-- <img class="menu-icon" src="icons/menu/learn.png" alt="Link to Knowledge"> -->
+                        <svg class="menu-icon">
+                            <use xlink:href="icons/menu/menu-sprite.svg#icon-learn"></use>
+                        </svg>
+                        <div>
+                            Knowledge
+                            <span class="menu-desc">is power</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <!-- <img class="menu-icon" src="icons/menu/thoughts.png" alt="Link to Thoughts"> -->
+                        <svg class="menu-icon">
+                            <use xlink:href="icons/menu/menu-sprite.svg#icon-thoughts"></use>
+                        </svg>
+                        <div>
+                            Thoughts
+                            <span class="menu-desc">absorb us</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <!-- <img class="menu-icon" src="icons/menu/discourse.png" alt="Link to Discourse"> -->
+                        <svg class="menu-icon">
+                            <use xlink:href="icons/menu/menu-sprite.svg#icon-discourse"></use>
+                        </svg>
+                        <div>
+                            Discourse
+                            <span class="menu-desc">makes shared ideas</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav><!-- #site-navigation -->
+    </header><!-- #site-header .masthead -->
+
+    <main id="content" class="main-content centered">
+        <article class="story">
+            <h2 class="story-title">Where the River Runs</h2>
+            <div class="story-meta">
+			    <span class="byline">by <span class="author vcard"><a class="url fn n" href="https://lynda.com/mor10/">Morten Rand-Hendriksen</a></span>, </span>
+                <span class="posted-on">Published <time class="entry-date published" datetime="2016-06-04T16:51:16+00:00">June 4, 2016</time>, </span>
+                <span class="tagged">Tags: <a class="tag" href="#">thoughts</a>, <a class="tag" href="#">rivers</a></span>
+            </div><!-- .story-meta -->
+            <div class="excerpt">
+                <p>From our house in Lillehammer, we could see Mjøsa, the largest lake in Norway. in the summer it would be a calm sheet of blue speckled with the white sails of boats. In the winter, the lake froze, as if someone had covered the water in a blanket. Flying over the ice, we'd see speed skaters and dare devils in their cars. During the Olympic Games, the lake was used as a parking lot, all traces of it lost as warmer weather melted the blanket and revealed, once again, the cool waters of the past, brought by the river from ancient glaciers.</p>
+            </div><!-- .excerpt -->
+        </article><!-- .story -->
+    </main><!-- #main .main-content .centered -->
+
+    <footer id="colophon" class="footer-area centered">
+        <nav class="social-nav" role="navigation">
+            <ul>
+                <li><a class="icon-linkedin" href="https://linkedin.com"><span class="screen-reader-text">LinkedIn</span></a></li>
+                <li><a class="icon-twitter" href="https://twitter.com"><span class="screen-reader-text">Twitter</span></a></li>
+                <li><a class="icon-facebook" href="https://facebook.com"><span class="screen-reader-text">Facebook</span></a></li>
+                <li><a class="icon-instagram" href="https://instagram.com"><span class="screen-reader-text">Instagram</span></a></li>
+                <li><a class="icon-youtube" href="https://youtube.com"><span class="screen-reader-text">YouTube</span></a></li>
+            </ul>
+        </nav><!-- .social-nav -->
+    </footer><!-- #colophon .footer-area .centered -->
+
+    <script type="text/javascript" src="JS/svg-injector.min.js"></script>
+    <script>
+        // Elements to inject
+        var mySVGsToInject = document.querySelectorAll('img.inject-me');
+
+        // Do the injection
+        SVGInjector(mySVGsToInject);
+    </script>
+
+    <script src="JS/svg4everybody.min.js"></script>
+    <script>svg4everybody(); // run it now or whenever you are ready</script>
+
+</body>
+
+</html>

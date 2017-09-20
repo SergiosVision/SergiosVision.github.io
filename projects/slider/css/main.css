@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carousel{
+    margin: 50px auto 0 auto;
+    width: 1000px;
+    height: 440px;
+    overflow: hidden;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.inner{
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: left 0.25s ease-out;
+}
+
+.inner img{
+    height: auto;
+}
+
+.dotsContainer{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 5px;
+}
+
+.dot{
+    margin: 5.5px;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0.25;
+    transition: opacity 0.25;
+}
+
+.next, .prev{
+    cursor: pointer;
+}
+
+.dot:hover{opacity: 0.65;}
+.dot.active{opacity: 1;}
+.next::after, .prev::after{
+    opacity: 0;
+    content: "\f061";
+    font-family: "FontAwesome";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background-color: rgba(100, 96, 96, 0.8);
+    color: #fff;
+    width: 30px;
+    text-align: center;
+    padding-top: 14px;
+    height: 48px;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+    font-size: 18px;
+    border-radius: 3px 0 0 3px;
+    transition: .5s ease;
+}
+
+.prev::after{
+    content: "\f060";
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.next:hover::after, .prev:hover::after{
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+}
+
+.carousel:hover .prev:after, .carousel:hover .next:after{opacity: 1;}

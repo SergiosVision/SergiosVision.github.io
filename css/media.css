@@ -1,0 +1,142 @@
+@media all and (min-width: 993px){
+    
+    .nav-wrapper.container{
+        width: 90%;
+    }
+    
+    .services .container{
+        width: 90%;
+    }
+    
+    .about .container{
+        width: 90%;
+    }
+    
+    .team .container{
+        width: 90%;
+    }
+    
+    .portfolio .container{
+        width: 90%;
+    }
+    
+    .testimonials .container{
+        width: 90%;
+    }
+    
+    .contact .container{
+        width: 90%;
+    }
+    
+    #hamburger{
+        display: none;
+    }
+}
+
+@media all and (max-width: 992px){
+    .jumbotron .welcome{
+        margin-top: 100px;
+    }
+    
+    .jumbotron{
+        height: 600px;
+    }
+    
+    .contact .contact-info{
+        text-align: center;
+    }
+    
+    .contact .contact-info p{
+        padding: 0 65px;
+    }
+    
+    .contact .contact-mail {
+        text-align: center;
+    }
+    
+    .contact .form button,
+    .prices form button{
+        width: 100%;
+    }
+    
+    footer .footer-copyright{
+        width: 100%;
+    }
+    
+    footer .footer-copyright .footer-powered p,
+    footer .footer-copyright .footer-copy-info p{
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 600px){
+    .prices .container{
+        width: 85%;
+    }
+    
+    #hamburger{
+        margin-top: 8px;
+    }
+    
+}
+
+@media all and (max-width: 420px){
+    .jumbotron .welcome{
+        margin-top: 80px;
+    }
+    
+    .jumbotron .welcome h1{
+        font-size: 3.2rem;
+    }
+    
+    .about .about-info h4,
+    .about .about-info h3{
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 23px;
+        text-align: center;
+    }
+    
+    .about .about-info h4{
+        font-size: 18px;
+    }
+    
+    .about .about-info p{
+        padding: 0;
+        text-align: center;
+    }
+    
+    .contact .container{
+        width: 85%;
+    }
+    
+    .contact .contact-info{
+        text-align: center;
+    }
+    
+    .contact .contact-info p{
+        padding: 0;
+    }
+    
+    .contact .contact-mail {
+        text-align: center;
+    }
+    
+    .main-title-title{
+        font-size: 18px!important;
+    }
+    
+    .contact .form button,
+    .prices form button{
+        width: 100%;
+    }
+    
+    footer .container{
+        width: 85%;
+    }
+    
+    footer .footer-copyright .footer-powered p,
+    footer .footer-copyright .footer-copy-info p{
+        text-align: center;
+    }
+}

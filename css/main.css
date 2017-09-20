@@ -1,0 +1,710 @@
+/* Included Fonts */
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Lato:400,400i,700,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,500,700');
+
+/* Font Reminder */
+
+/* font-family: 'Fjalla One', sans-serif;
+/* font-family: 'Lato', sans-serif;
+/* font-family: 'Oswald', sans-serif;
+
+/* Font Reminder End */
+
+/* Included Fonts End */
+
+/* Main */
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    position: relative;
+}
+
+h2 {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.navbar-fixed {
+    z-index: 99999;
+}
+
+.modal-overlay {
+    z-index: 99999 !important;
+}
+
+.modal.open {
+    z-index: 999999 !important;
+}
+
+#materialbox-overlay,
+.materialboxed.active,
+.materialbox-caption {
+    z-index: 999999 !important;
+}
+
+.fixed {
+    overflow: hidden;
+}
+
+.main-title {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.main-title h2 {
+    display: block;
+    font-size: 45px;
+    color: #ef5350;
+    margin: 0;
+    padding: 0 0 20px 0;
+    text-transform: uppercase;
+}
+
+.main-title h4 {
+    display: block;
+    font-size: 25px;
+    color: #555;
+    margin: 0;
+    padding-bottom: 30px;
+}
+
+.main-title .divider {
+    background-color: #555;
+    width: 30%;
+    margin: 0 auto;
+}
+
+/* Main End */
+
+/* Navigation */
+
+.brand-logo {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+nav {
+    user-select: none;
+}
+
+.section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+#hamburger {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 12px;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#hamburger.is-active {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transition-delay: 0.6s;
+    -o-transition-delay: 0.6s;
+    transition-delay: 0.6s;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#hamburger.is-active .line:nth-child(2) {
+    width: 0px;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#hamburger.is-active .line:nth-child(1),
+#hamburger.is-active .line:nth-child(3) {
+    -webkit-transition-delay: 0.3s;
+    -o-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#hamburger.is-active .line:nth-child(1) {
+    -webkit-transform: translateY(13px) translateX(1px);
+    -ms-transform: translateY(13px) translateX(1px);
+    -o-transform: translateY(13px) translateX(1px);
+    transform: translateY(13px) translateX(1px);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#hamburger.is-active .line:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(88deg);
+    -ms-transform: translateY(-8px) rotate(88deg);
+    -o-transform: translateY(-8px) rotate(88deg);
+    transform: translateY(-8px) rotate(88deg);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#hamburger .line {
+    width: 40px;
+    height: 5px;
+    background-color: #fff;
+    display: block;
+    margin: 6px auto;
+    transition: all .3 ease-in-out;
+}
+
+/* ScrollSpy Scam */
+
+.table-of-contents li {
+    padding: 0;
+}
+
+.table-of-contents a {
+    color: #fff;
+    font-weight: 500;
+    padding: 0 15px;
+    height: 4.3rem;
+    line-height: 4.3rem;
+}
+
+.table-of-contents a.active {
+    border: none;
+    padding: 0 15px !important;
+    font-weight: 500;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.table-of-contents a:hover {
+    border: none;
+    padding: 0 15px !important;
+    color: #fff;
+}
+
+/* ScrollSpy Scam End */
+
+/* Mob Menu */
+
+.overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.overlay.overlay-show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.mob-menu {
+    border-top: 2px solid #848484;
+    background-color: #424242;
+    height: auto;
+    transition: .5s ease;
+    position: fixed;
+    width: 100%;
+    visibility: hidden;
+    transform: translateY(-450px);
+    z-index: 9999;
+}
+
+.mob-menu.mob-menu-open {
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.mob-menu ul {
+    margin: 0;
+}
+
+.mob-menu li {
+    border-bottom: 1px solid #848484;
+}
+
+.mob-menu a {
+    display: block;
+    padding: 10px 15px;
+    transition: .4s ease;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.mob-menu a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.mob-menu a i {
+    margin-right: 10px;
+}
+
+/* Mob Menu End */
+
+/* Navigation End */
+
+/* Jumbotron */
+
+.jumbotron {
+    background: linear-gradient(to top, rgba(44, 44, 44, 0.5), rgba(157, 68, 68, 0.5)), url(../img/jumbotron.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 800px;
+}
+
+.jumbotron .welcome {
+    margin-top: 200px;
+}
+
+.jumbotron .welcome h5,
+.jumbotron .welcome h1 {
+    color: #fff;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.jumbotron .welcome h5 {
+    letter-spacing: 3px;
+}
+
+.jumbotron .welcome .divider {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.jumbotron .welcome .btn-section {
+    margin-top: 40px;
+}
+
+.jumbotron .welcome .btn-section a {
+    margin-bottom: 10px;
+}
+
+.btn-section .pink.darken-1:hover {
+    background-color: #f06292 !important;
+}
+
+/* Jumbotron End */
+
+/* Services */
+
+.services .services-content {
+    margin-bottom: 30px;
+}
+
+.services .services-content i {
+    font-size: 40px;
+    line-height: 80px;
+    border-radius: 50%;
+    border: 2px solid #f48fb1;
+    height: 80px;
+    width: 80px;
+    color: #fff;
+    user-select: none;
+}
+
+.services .services-content h2 {
+    font-size: 25px;
+    margin: 0;
+    padding: 20px 0 15px 0;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.services .services-content .divider {
+    background-color: #626262;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.services .services-content p {
+    line-height: 25px;
+    margin: 0;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Services End */
+
+/* About */
+
+.about .about-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about .about-info h3 {
+    font-size: 30px;
+    margin: 0;
+    padding: 20px 20px 17px 20px;
+}
+
+.about .about-info h4 {
+    font-size: 20px;
+    margin: 0;
+    padding: 20px 20px 17px 20px;
+}
+
+.about .about-info p {
+    font-size: 16px;
+    line-height: 30px;
+    padding: 0 20px;
+}
+
+/* About End */
+
+/* Team */
+
+.team .key-person {
+    padding: 10px;
+    border-radius: 8px;
+    border: 3px solid rgba(239, 83, 80, 0.15);
+    margin-bottom: 30px;
+}
+
+.team .key-person-img {
+    padding-bottom: 5px;
+}
+
+.team .key-person img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    background-color: rgba(141, 141, 141, 0.3);
+    padding-top: 5px;
+    border-radius: 8px;
+}
+
+.team .info-key-person {
+    padding: 5px;
+}
+
+.team .info-key-person h3 {
+    font-size: 25px;
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.team .info-key-person h5 {
+    font-size: 16px;
+    margin: 0;
+    padding: 10px 0 15px 0;
+}
+
+.team .info-key-person .divider {
+    background-color: #8b8b8b;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.team .info-key-person h6 {
+    margin: 0;
+    padding: 20px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Team End */
+
+/* Portfolio */
+
+.portfolio {
+    background: url(../img/background.png);
+    background-position: center center;
+}
+
+.portfolio .main-title h2,
+.portfolio .main-title h4 {
+    color: #fff;
+}
+
+.portfolio .main-title .divider {
+    background-color: #fff;
+}
+
+.portfolio ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.portfolio ul li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.portfolio ul li:last-child {
+    margin-right: 0;
+}
+
+.portfolio ul .pink.darken-1:hover {
+    background-color: #f06292 !important;
+}
+
+.portfolio ul .pink.darken-1.active {
+    background-color: #f06292 !important;
+}
+
+.portfolio .portfolio-content img {
+    width: 100%;
+    height: auto;
+}
+
+.portfolio .portfolio-content .portfolio-box {
+    margin-bottom: 30px;
+}
+
+/* Portfolio End */
+
+/* Prices */
+
+.prices .pricing-card {
+    border: 1px solid #000;
+    margin-bottom: 30px;
+    border: 3px solid rgba(239, 83, 80, 0.15);
+    border-radius: 8px;
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.prices .pricing-card-header {
+    padding: 20px 10px 10px 10px;
+    border-bottom: 2px solid rgba(231, 205, 210, 0.42);
+    color: #626262;
+}
+
+.prices .pricing-card-header i {
+    font-size: 45px;
+    line-height: 80px;
+    border-radius: 50%;
+    border: 2px solid #f48fb1;
+    height: 80px;
+    width: 80px;
+    color: #fff;
+}
+
+.prices .pricing-card-header h3 {
+    font-size: 20px;
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.prices .pricing-card-body {
+    padding: 10px;
+    color: #626262;
+}
+
+.prices .pricing-card-body ul {
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+.prices .pricing-card-body ul li {
+    padding: 12px 0;
+}
+
+.prices .pricing-card-footer {
+    border-top: 2px solid rgba(231, 205, 210, 0.42);
+    padding: 10px 10px 20px 10px;
+    font-family: 'Oswald', sans-serif;
+    color: #626262;
+}
+
+.prices .pricing-card-footer h3 {
+    font-size: 32px;
+}
+
+.prices .modal-footer,
+.testimonials .card-action {
+    border-color: rgba(0, 0, 0, 0.20) !important;
+}
+
+/* Prices End */
+
+/* Contact */
+
+.contact {
+    background: linear-gradient(to bottom, rgba(44, 44, 44, 0.5), rgba(157, 68, 68, 0.31)), url(../img/contact-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.contact .main-title h2,
+.contact .main-title h4 {
+    color: #fff;
+}
+
+.contact .main-title .divider {
+    background-color: #fff;
+}
+
+.contact .contact-info h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: 'Fjalla One', sans-serif;
+    color: #fff;
+}
+
+.contact .contact-info p {
+    font-size: 18px;
+    padding: 0 60px 0 0;
+    color: #fff;
+}
+
+.contact .contact-mail {
+    margin-bottom: 20px;
+}
+
+.contact .contact-mail h4 {
+    font-size: 22px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.contact .contact-mail h4::before {
+    content: "\f003";
+    font-family: "FontAwesome";
+    font-size: 30px;
+    margin-right: 8px;
+}
+
+.contact .contact-mail.vk h4::before {
+    content: "\f189";
+    font-family: "FontAwesome";
+    font-size: 30px;
+    margin-right: 8px;
+}
+
+.contact .contact-mail a {
+    color: #fff;
+    transition: .3s ease;
+}
+
+.contact .contact-mail a:hover {
+    opacity: .6;
+}
+
+.contact .input-field label {
+    color: #fff;
+}
+
+.prices .input-field label {
+    color: #555;
+}
+
+.contact .input-field input[type=text]:focus + label,
+.contact .input-field input[type=email]:focus + label,
+.contact .input-field input[type=tel]:focus + label,
+.contact .input-field textarea.materialize-textarea:focus + label {
+    color: #fff;
+}
+
+.prices .input-field input[type=text]:focus + label,
+.prices .input-field input[type=email]:focus + label,
+.prices .input-field input[type=tel]:focus + label,
+.prices .input-field textarea.materialize-textarea:focus + label {
+    color: #d81b60;
+}
+
+.contact .input-field input,
+.contact .input-field textarea.materialize-textarea {
+    color: #fff;
+}
+
+.prices .input-field input,
+.prices .input-field textarea.materialize-textarea {
+    color: #555;
+}
+
+.contact .input-field input[type=text]:focus,
+.contact .input-field input[type=email]:focus,
+.contact .input-field input[type=tel]:focus,
+.contact .input-field textarea.materialize-textarea:focus {
+    border-bottom: 1px solid #fff;
+    box-shadow: 0 1px 0 0 #fff;
+}
+
+.prices .input-field input[type=text]:focus,
+.prices .input-field input[type=email]:focus,
+.prices .input-field input[type=tel]:focus,
+.prices .input-field textarea.materialize-textarea:focus {
+    border-bottom: 1px solid #d81b60;
+    box-shadow: 0 1px 0 0 #d81b60;
+}
+
+/* Contact End */
+
+/* Footer */
+
+footer .footer-social-links ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .footer-social-links a {
+    font-size: 28px;
+    width: 56px;
+    height: 56px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: .4s ease;
+}
+
+footer .footer-social-links a:hover {
+    border-color: #d81b60;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+footer .footer-copyright {
+    border-top: 1px solid #5d5d5d;
+}
+
+footer .footer-copyright .footer-powered p {
+    text-align: right;
+}
+
+footer .footer-copyright .footer-copy-info a {
+    color: #fff;
+    transition: .3s ease;
+}
+
+footer .footer-copyright .footer-copy-info strong {
+    font-weight: bold;
+}
+
+footer .footer-copyright .footer-copy-info a:hover {
+    opacity: .6;
+}
+
+/* Footer End */

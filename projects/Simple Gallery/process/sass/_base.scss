@@ -1,0 +1,112 @@
+body{
+    @include mainback ('../img/background.png', center);
+    font-family: $mainFont;
+}
+
+
+.show{
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #292929;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s ease;
+    z-index: 10;
+    
+    .showImg{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        max-width: 85%;
+        max-height: 85%;
+        animation: fadeTop .3s linear;
+        cursor: url(../img/001-delete-searching.png), auto;
+        border-radius: 3px;
+    }
+    
+    p{
+        color: $mainWhite;
+        text-align: center;
+        font-size: 22px;
+        position: absolute;
+        bottom: 20px;
+        z-index: 10;
+        left: 50%;
+        transform: translate(-50%);
+        margin: 0;
+    }
+}
+
+
+.fixed{
+    overflow: hidden;
+}
+
+.preloader{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 10px solid $mainWhite;
+    border-top-color: $preloadBalack;
+    border-bottom-color: $preloadBlue;
+    width: 60px;
+    height: 60px;
+    border-radius: 30%;
+    animation: spin .2s linear infinite;
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeTop{
+    from{
+        opacity: 0;
+        transform: scale(.2);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.bars{
+    display: inline-block;
+    cursor: pointer;
+    
+    .bar1, .bar2, .bar3{
+        width: 35px;
+        height: 5px;
+        background-color: $mainWhite;
+        margin: 6px 0;
+        transition: .4s ease;
+    }
+}
+.change .bar1{
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+.change .bar2{
+    opacity: 0;
+}
+.change .bar3{
+    transform: rotate(45deg) translate(-8px, -8px);
+}

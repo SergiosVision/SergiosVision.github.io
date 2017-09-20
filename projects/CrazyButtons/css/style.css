@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(222, 196, 138, 0.71);
+}
+
+.crazyBtn{
+    position: absolute;
+    top: 30px;
+    left: 40%;
+    width: 20%;
+    transition: .3s ease all;
+    padding: 15px 10px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 10px;
+    outline: none;
+    border: 2px inset transparent;
+}
+
+.crazyBtn:hover{
+    border-color: #fff;
+}
+
+.crazyBtn.btnRed{
+    background-color: #e04343;
+}
+
+.crazyBtn.btnGreen{
+    background-color: #32e878;
+}
+
+.crazyBtn.btnYellow{
+    background-color: #d8971d;
+}
+
+.crazyBtn.btnBlue{
+    background-color: #2294d0;
+}

@@ -1,0 +1,35 @@
+.container{
+    padding: 15px;
+    width: 90%;
+    margin: 0 auto;
+    h1{
+        text-align: center;
+        color: $mainWhite;
+    }
+    .grid{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 100px;
+        .item{
+            @include imgGrid(3, 2%);
+            transition: all .4s ease;
+            overflow: hidden;
+            border-radius: 3px;
+            &:hover{
+                opacity: .6;
+            }
+            img{
+                max-width: 100%;
+                height: auto;
+                cursor: url(../img/002-add-searching.png), auto;
+                border-radius: 3px;
+                transition: .1s ease;
+                user-select: none;
+                
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

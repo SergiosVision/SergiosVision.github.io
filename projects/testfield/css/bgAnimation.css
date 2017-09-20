@@ -1,0 +1,30 @@
+.overlay{
+    background: linear-gradient(70deg, rgba(0, 0, 0, 0.7), rgba(58, 185, 227, 0.79));
+    background-size: 400% 400%;
+    -webkit-animation: bgAnim 45s ease infinite;
+    -moz-animation: bgAnim 45s ease infinite;
+    -o-animation: bgAnim 45s ease infinite;
+    animation: bgAnim 45s ease infinite;
+}
+
+
+@-webkit-keyframes bgAnim {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes bgAnim {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes bgAnim {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes bgAnim {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}

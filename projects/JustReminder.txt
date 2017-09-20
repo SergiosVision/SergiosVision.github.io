@@ -1,0 +1,19 @@
+http://www.cyberforum.ru/javascript-jquery/thread616309.html  Ajax Download File
+
+https://codepen.io/jboeijenga/pen/VYbBzK  Auto hide sticky header
+
+https://codepen.io/mattsince87/pen/uoDtH google
+
+https://codepen.io/KrisOlszewski/pen/Dnktj  ripple 
+
+
+https://ruseller.com/lessons.php?rub=32&id=2118 content switcher
+
+
+$.ajax({
+    url: 'download.php',
+    type: 'POST',
+    success: function() {
+        window.location = 'download.php';
+    }
+});
