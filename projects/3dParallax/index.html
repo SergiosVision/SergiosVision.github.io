@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parallax 3D</title>
+    <link rel="stylesheet" href="css/main.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+
+            </nav>
+        </header>
+        <main>
+            <div class="banner">
+                <div id="parallaxWrapper" class="parallaxWrapper">
+                    <div class="parallaxBg" data-bind="attr: { style:'-webkit-transform:perspective(1000px) rotateY(' + relativeMouse.x() + 'deg) rotateX(' + relativeMouse.y() + 'deg);transform:perspective(1000px) rotateY(' + relativeMouse.x() + 'deg) rotateX(' + relativeMouse.y() + 'deg)' }"">
+                        <div class="parallax1"></div>
+                        <div class="parallax2"></div>
+                        <div class="parallax3"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+<script src="js/vendor/jquery-3.2.1.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
