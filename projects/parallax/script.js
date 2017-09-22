@@ -24,6 +24,6 @@ window.addEventListener('load', function () {
         
     }, false);
     getPrintBtn.addEventListener('click', function () {
-            window.print();
+        window.print();
     }, false);
 }, false);
