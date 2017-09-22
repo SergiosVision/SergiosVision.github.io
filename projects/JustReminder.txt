@@ -9,6 +9,8 @@ https://codepen.io/KrisOlszewski/pen/Dnktj  ripple
 
 https://ruseller.com/lessons.php?rub=32&id=2118 content switcher
 
+https://javascript.ru/forum/misc/1945-pechat-html-dokumenta.html Print instruction
+
 
 $.ajax({
     url: 'download.php',
