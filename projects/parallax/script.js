@@ -5,6 +5,7 @@ window.addEventListener('load', function () {
         layerOne = document.querySelector('.layer-1'),
         layerTwo = document.querySelector('.layer-2'),
         layerThid = document.querySelector('.layer-3'),
+        getPrintBtn = document.querySelector('#print-doc'),
         widthVal = 769;
     
     wrapper.addEventListener('mousemove', function (e) {
@@ -21,5 +22,8 @@ window.addEventListener('load', function () {
             }, false);
         }
         
+    }, false);
+    getPrintBtn.addEventListener('click', function () {
+            window.print();
     }, false);
 }, false);
