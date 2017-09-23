@@ -1,0 +1,15 @@
+extends _layout
+
+mixin thumbnail (imageName, caption)
+    div.imageBlockTwo
+        img(src="/img/#{imageName}.jpg")
+        h4.image-caption= caption
+
+block content
+    main
+        div.container
+            h1 Страница о нас Loop
+            - var x = 8;
+            div.thumbnail--container
+                - for (var i = 1; i <= x; i++)
+                    +thumbnail("background", "lorem ipsum.")

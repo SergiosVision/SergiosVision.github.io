@@ -1,0 +1,44 @@
+@mixin imgGrid ($qty, $margin)
+  width: ((100% - (($qty - 1) * $margin))/$qty)
+  &:nth-child(n)
+    margin-right: $margin
+    margin-bottom: $margin
+  &:nth-child(#{$qty}n)
+    margin-right: 0
+    margin-bottom: 0
+
+main
+  max-width: 100%
+  display: block
+
+  .container
+    max-width: 75%
+    padding: 15px
+    height: auto
+    margin: 0 auto
+    h1
+      text-align: center
+    p
+      margin: 100px 0
+
+.imageBlock
+  width: 50%
+  height: auto
+  margin: 0 auto
+  img
+    max-width: 100%
+    height: auto
+    border-radius: 4px
+
+.thumbnail--container
+  display: flex
+  flex-wrap: wrap
+  .imageBlockTwo
+    img
+      max-width: 100%
+      height: auto
+      border-radius: 4px
+    @include imgGrid(3, 2%)
+    h4
+      margin: 30px 0
+      text-align: center
