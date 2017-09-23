@@ -286,6 +286,7 @@ header .inbody .navbar-brand span.subhead{
 
 #testimonials blockquote .quote:hover{
     background-color: rgba(239,240,196, .9);
+    transition: all .3s ease;
 }
 
 #testimonials #janeh{
@@ -312,6 +313,7 @@ header .inbody .navbar-brand span.subhead{
     font-size: 1.2em;
     line-height: 110%;
     font-weight: 400;
+    transition: all .3s ease;
 }
 
 #testimonials .quote .more, #testimonials .quote .customer{
@@ -328,6 +330,7 @@ header .inbody .navbar-brand span.subhead{
     opacity: 1;
     font-size: .8em;
     line-height: 120%;
+    transition: all .3s ease;
 }
 
 #testimonials .quote:hover .customer{
@@ -335,6 +338,7 @@ header .inbody .navbar-brand span.subhead{
     opacity: 1;
     font-size: .7em;
     text-align: right;
+    transition: all .3s ease;
 }
 
 #testimonials .quote .intro::after{
