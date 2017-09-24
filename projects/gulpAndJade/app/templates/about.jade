@@ -2,7 +2,8 @@ extends _layout
 
 mixin thumbnail (imageName, caption)
     div.imageBlockTwo
-        img(src="/img/#{imageName}.jpg")
+        a(href='/img/#{imageName}.jpg' data-fancybox="" data-caption=caption)
+            img(src="/img/#{imageName}.jpg")
         h4.image-caption= caption
 
 block content
