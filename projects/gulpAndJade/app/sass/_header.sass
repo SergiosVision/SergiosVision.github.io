@@ -1,8 +1,12 @@
 header
   display: flex
   justify-content: space-between
-  align-items: flex-end
+  align-items: center
   padding: 20px
+  @media screen and (max-width: 769px)
+    flex-direction: column
+    nav
+      margin-top: 30px
 
 nav
   a

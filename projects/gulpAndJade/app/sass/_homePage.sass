@@ -12,19 +12,29 @@ main
   display: block
 
   .container
-    max-width: 75%
+    width: 75%
     padding: 15px
     height: auto
     margin: 0 auto
+    @media screen and (max-width: 769px)
+      width: 100%
+      padding: 25px
     h1
       text-align: center
+      @media screen and (max-width: 769px)
+        font-size: 20px
     p
       margin: 100px 0
+      @media screen and (max-width: 769px)
+        margin: 50px 0
+        text-align: center
 
 .imageBlock
   width: 50%
   height: auto
   margin: 0 auto
+  @media screen and (max-width: 769px)
+    width: 100%
   img
     max-width: 100%
     height: auto
@@ -34,6 +44,9 @@ main
   display: flex
   flex-wrap: wrap
   .imageBlockTwo
+    @media screen and (max-width: 769px)
+      @include imgGrid(1, 2%)
+      margin: 0!important
     img
       max-width: 100%
       height: auto

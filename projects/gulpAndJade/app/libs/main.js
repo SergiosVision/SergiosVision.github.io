@@ -4,4 +4,7 @@ $(window).on('load', function () {
 
 function load(){
     $('body').fadeIn();
+    $("[data-fancybox]").fancybox({
+
+    });
 }
