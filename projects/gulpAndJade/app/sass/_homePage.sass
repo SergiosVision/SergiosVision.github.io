@@ -16,16 +16,16 @@ main
     padding: 15px
     height: auto
     margin: 0 auto
-    @media screen and (max-width: 769px)
+    @media (max-width: 769px)
       width: 100%
       padding: 25px
     h1
       text-align: center
-      @media screen and (max-width: 769px)
+      @media (max-width: 769px)
         font-size: 20px
     p
       margin: 100px 0
-      @media screen and (max-width: 769px)
+      @media (max-width: 769px)
         margin: 50px 0
         text-align: center
 
@@ -33,7 +33,7 @@ main
   width: 50%
   height: auto
   margin: 0 auto
-  @media screen and (max-width: 769px)
+  @media (max-width: 769px)
     width: 100%
   img
     max-width: 100%
@@ -44,7 +44,7 @@ main
   display: flex
   flex-wrap: wrap
   .imageBlockTwo
-    @media screen and (max-width: 769px)
+    @media (max-width: 769px)
       @include imgGrid(1, 2%)
       margin: 0!important
     a
@@ -61,3 +61,29 @@ main
         margin-top: 10px
       p
         margin: 10px 0
+
+.print-btn
+  display: block
+  margin: 0 auto
+  padding: 15px 40px
+  cursor: pointer
+  outline: none
+  border: 1px solid #fff
+  border-radius: 3px
+  font-size: 20px
+  color: #fff
+  font-weight: bold
+  text-transform: uppercase
+  background-color: transparent
+  transition: .4s ease
+  &:hover
+    background-color: #fff
+    color: #000
+    
+    
+@media print
+  .print-btn, footer, header, .imageBlock
+    display: none
+  .container
+    h1
+      margin-top: 80px;

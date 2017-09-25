@@ -245,3 +245,13 @@ button{
     color: #555;
   }
 }
+
+
+@media print {
+  header{
+    display: none;
+  }
+  main{
+    display: none;
+  }
+}

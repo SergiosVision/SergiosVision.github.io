@@ -2,7 +2,7 @@ extends _layout
 
 mixin thumbnail (imageName, caption, year, capacity, hp, engine)
     div.imageBlockTwo
-        a(href='/img/#{imageName}.jpg' target="_blank")
+        a(href='/img/#{imageName}.jpg' data-fancybox="" data-caption= caption)
             img(src="/img/#{imageName}.jpg")
         div.info
             h4.image-caption= caption
@@ -24,7 +24,8 @@ block content
                 +thumbnail("Mark-X-2010", "Toyota Mark X (X130)", "Year: 2010", "Engine Capacity: 2.5", "Horse Power: 203", "Engine: 4GR-FSE")
                 +thumbnail("Mark-X-2017", "Toyota Mark X (X130)", "Year: 2017", "Engine Capacity: 2.5", "Horse Power: 203", "Engine: 4GR-FSE")
                 +thumbnail("Crown-2017", "Toyota Crown (S210)", "Year: 2015", "Engine Capacity: 2.0", "Horse Power: 235", "Engine: 8AR-FTS")
-                +thumbnail("background", "lorem ipsum.")
-                +thumbnail("background_dark", "lorem ipsum.")
-                +thumbnail("background_dark", "lorem ipsum.")
-                +thumbnail("background", "lorem ipsum.")
+                +thumbnail("Vellfire", "Toyota Vellfire (H30)", "Year: 2015", "Engine Capacity: 2.5", "Horse Power: 152", "Engine: 2AR-FXE")
+                +thumbnail("RX-450", "Lexus RX450 (AL20)", "Year: 2015", "Engine Capacity: 3.5", "Horse Power: 263", "Engine: 2GR-FXE")
+                +thumbnail("IS-250", "Lexus IS250 (XE30)", "Year: 2013", "Engine Capacity: 2.5", "Horse Power: 208", "Engine: 4GR-FSE")
+                +thumbnail("LX-570", "Lexus LX570 (J200)", "Year: 2015", "Engine Capacity: 5.7", "Horse Power: 367", "Engine: 3UR-FE")
+            button(type="button" id="print" class="print-btn") Print
