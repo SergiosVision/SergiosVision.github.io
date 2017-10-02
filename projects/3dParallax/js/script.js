@@ -10,7 +10,7 @@ function Parallx() {
     });
 
 
-    self.sensitivityMultiplier = ko.observable(0.03);
+    self.sensitivityMultiplier = ko.observable(0.01);
     self.wrapperOffset = $('#parallaxWrapper').offset();
     self.wrapperCenter = {
         x:ko.computed(function() { return self.wrapperOffset.left + ($('#parallaxWrapper').width()/2) }, this),
