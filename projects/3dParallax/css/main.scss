@@ -43,11 +43,12 @@ main{
     height: 225px;
     margin-top: 50px;
     margin-left: 50px;
-    background: url("https://vignette.wikia.nocookie.net/gtawiki/images/c/c0/Dubsta-GTAV-front.png/revision/latest?cb=20160409171730") no-repeat;
+    background: url("https://sergiosvision.github.io/img/people3.jpg") no-repeat;
     position: absolute;
     transform: translateZ(90px);
     transition: all .2s;
     background-position: center center;
+    background-size: cover;
   }
   .parallax2{
     width: 100px;
