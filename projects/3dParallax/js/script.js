@@ -11,10 +11,10 @@ function Parallx() {
 
 
     self.sensitivityMultiplier = ko.observable(0.03);
-    self.wrapperOffset = $('#parallxWrapper').offset();
+    self.wrapperOffset = $('#parallaxWrapper').offset();
     self.wrapperCenter = {
-        x:ko.computed(function() { return self.wrapperOffset.left + ($('#parallxWrapper').width()/2) }, this),
-        y:ko.computed(function() { return self.wrapperOffset.top + ($('#parallxWrapper').height()/2) }, this)
+        x:ko.computed(function() { return self.wrapperOffset.left + ($('#parallaxWrapper').width()/2) }, this),
+        y:ko.computed(function() { return self.wrapperOffset.top + ($('#parallaxWrapper').height()/2) }, this)
     };
     self.mouseX = ko.observable(0);
     self.mouseY = ko.observable(0);
