@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eec75165-9c26-4938-a387-3114b36f3fd1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/3dParallax/css/main.css" afterPath="$PROJECT_DIR$/projects/3dParallax/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/3dParallax/css/main.css.map" afterPath="$PROJECT_DIR$/projects/3dParallax/css/main.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/3dParallax/css/main.scss" afterPath="$PROJECT_DIR$/projects/3dParallax/css/main.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/3dParallax/index.html" afterPath="$PROJECT_DIR$/projects/3dParallax/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/3dParallax/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            <state relative-caret-position="552">
+              <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -29,6 +31,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
               <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projects/3dParallax/css/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -53,6 +65,7 @@
         <option value="$PROJECT_DIR$/projects/3dParallax/js/vendor/knockout.js" />
         <option value="$PROJECT_DIR$/projects/3dParallax/js/script.js" />
         <option value="$PROJECT_DIR$/projects/3dParallax/index.html" />
+        <option value="$PROJECT_DIR$/projects/3dParallax/css/main.scss" />
       </list>
     </option>
   </component>
@@ -107,6 +120,21 @@
               <item name="SergiosVision.github.io" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="projects" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="3dParallax" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SergiosVision.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SergiosVision.github.io" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="projects" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="3dParallax" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="main.scss" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="SergiosVision.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SergiosVision.github.io" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="projects" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="3dParallax" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -151,12 +179,12 @@
       <option name="presentableId" value="Default" />
       <updated>1506932696363</updated>
       <workItem from="1506932697715" duration="672000" />
-      <workItem from="1506936721380" duration="373000" />
+      <workItem from="1506936721380" duration="1008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1045000" />
+    <option name="totallyTimeSpent" value="1680000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1341" extended-state="0" />
@@ -201,6 +229,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/projects/3dParallax/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/projects/3dParallax/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -211,8 +247,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/3dParallax/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        <state relative-caret-position="552">
+          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/3dParallax/css/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
           <folding />
         </state>
       </provider>

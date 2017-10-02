@@ -26,35 +26,33 @@ main {
     width: 1000px; }
   .banner .parallaxBg {
     height: 100%;
-    background-color: #44fd86;
+    background: url("https://sergiosvision.github.io/img/people2.jpg") no-repeat;
     border-radius: 10px;
     padding: 10px;
-    transform-style: preserve-3d; }
+    transform-style: preserve-3d;
+    background-position: center center;
+    background-size: cover; }
   .banner .parallax1 {
     width: 300px;
     height: 225px;
     margin-top: 50px;
     margin-left: 50px;
-    background-color: #00b0ff;
+    background: url("https://vignette.wikia.nocookie.net/gtawiki/images/c/c0/Dubsta-GTAV-front.png/revision/latest?cb=20160409171730") no-repeat;
     position: absolute;
     transform: translateZ(90px);
-    transition: all 0.2; }
+    transition: all .2s;
+    background-position: center center; }
   .banner .parallax2 {
     width: 100px;
     height: 90px;
-    margin-left: 880px;
-    margin-top: 450px;
+    margin-left: 870px;
+    margin-top: 420px;
     float: right;
-    background-color: #2b2b2b;
+    background: url("https://sergiosvision.github.io/img/Person.png") no-repeat;
+    background-position: center center;
+    background-size: cover;
     position: absolute;
     transform: translateZ(20px); }
-  .banner .parallax3 {
-    width: 1000px;
-    height: 694px;
-    float: right;
-    background-color: #0D47A1;
-    position: absolute;
-    transform: translateZ(50px); }
 
 .wrapper {
   display: flex;
