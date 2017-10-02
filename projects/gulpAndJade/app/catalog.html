@@ -8,7 +8,18 @@
     <link rel="stylesheet" href="/css/main.min.css">
     <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
   </head>
-  <body>
+  <body></body>
+  <div id="hidden--block" class="hidden--block">
+    <div class="container">
+      <h3>Дизайн ванных комнат — новый раздел на сайте</h3>
+      <div class="photos">
+        <div class="photo first"><img src="/img/test1.jpg" alt="test1"></div>
+        <div class="photo second"><img src="/img/test2.jpg" alt="test2"></div>
+      </div>
+      <div id="times" class="times"><span class="time-1"></span><span class="time-2"></span></div>
+    </div>
+  </div>
+  <div class="wrapper">
     <header><a href="/" class="t-logo"><img src="../img/logo.png" alt="logo"></a>
       <nav><a href="/catalog.html">Каталог</a><a href="/about.html">О нас</a><a href="/contacts.html">Контакты</a></nav>
     </header>
@@ -49,10 +60,12 @@
       </div>
     </main>
     <footer>Это подвал сайта в отдельном файле</footer>
-    <script src="/libs/vendor/jquery-3.2.1.min.js"></script>
+  </div>
+  <script src="/libs/vendor/jquery-3.2.1.min.js">
     <script src="/libs/vendor/jquery.fancybox.min.js"></script>
     <script src="/js/vendor.min.js"></script>
     <script src="/js/main.min.js"></script>
     <script src="/js/print.js"></script>
-  </body>
+    <script src="/js/showBlock.js"></script>
+  </script>
 </html>

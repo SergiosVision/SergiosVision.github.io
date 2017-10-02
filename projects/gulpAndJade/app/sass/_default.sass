@@ -11,6 +11,11 @@ body
   position: relative
   display: flex
   flex-direction: column
+  transition: .5s ease
+
+.hidden--block:hover body.show
+  transform: translateY(150px)
+
 
 header, footer
   flex-grow: 0
