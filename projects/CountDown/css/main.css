@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One|VT323');
+
+
+/*Reminder*/
+
+/*
+font-family: 'Bowlby One', cursive;
+font-family: 'VT323', monospace;
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    max-width: 100%;
+    background-image: url(../images/pixelNightBg.png);
+}
+
+
+.night{
+    background: url(../images/pixelNightBg.png);
+}
+
+
+/*
+.sunset{
+    background: url(../images/pixelDayBg.gif);
+}
+*/
+
+.day{
+    background: url(../images/pixelDayBg.png);
+/*    background-size: cover;*/
+    
+}
+
+
+.countDown{
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 200px;
+    border: 5px solid #6d6c6c;
+    border-radius: 8px;
+    background: url(../images/CountDownBg.png) no-repeat 100%;
+    background-size: cover;
+}
+
+.countDown h1{
+    display: block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: none;
+    font: normal 65px/normal "VT323", Helvetica, sans-serif;
+    color: rgba(255,255,255,1);
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    text-shadow: 0 1px 0 rgb(204,204,204) , 0 2px 0 rgb(201,201,201) , 0 3px 0 rgb(187,187,187) , 0 4px 0 rgb(185,185,185) , 0 5px 0 rgb(170,170,170) , 0 6px 1px rgba(0,0,0,0.0980392) , 0 0 5px rgba(0,0,0,0.0980392) , 0 1px 3px rgba(0,0,0,0.298039) , 0 3px 5px rgba(0,0,0,0.2) , 0 5px 10px rgba(0,0,0,0.247059) , 0 10px 10px rgba(0,0,0,0.2) , 0 20px 20px rgba(0,0,0,0.14902) ;
+    -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+
+}
+
+.dateWrap{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.dateWrap span, .dateWrap p{
+     -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+     box-sizing: content-box;
+     padding: 10px;
+     overflow: hidden;
+     border: none;
+     font: normal 45px/1 "VT323", Helvetica, sans-serif;
+     color: rgba(255,255,0,1);
+     text-align: center;
+     -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+     text-shadow: 5px 5px 0 rgba(255,0,0,1) ;
+}
