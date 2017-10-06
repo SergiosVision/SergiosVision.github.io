@@ -1,0 +1,54 @@
+extends _layout
+
+mixin contentTitle (h1Tittle)
+    div.content--title
+        h1= h1Tittle
+
+mixin notes(heading, date, heading2, heading3, paragraph1, paragraph2, paragraph3)
+    div.content--notes
+        h1= heading
+        span= date
+        h2= heading2
+        h3= heading3
+        p= paragraph1
+        p= paragraph2
+        p= paragraph3
+
+
+block content
+    main
+        + contentTitle("Account")
+        div.content.content--account
+            div.content--account-profile
+                h1 Your profile
+                fieldset.content--account-email
+                    label(for="email") Email
+                    input(type="text" name="email" value="test@mail.com" id="email" readonly)
+                form.conetnt--change-password
+                    div.form--group
+                        fieldset.change--password-new
+                            input(type="password" name="old-password" id="old-password" required)
+                            label(for="old-password") Old password
+                            div.after
+                        fieldset.change--password-new
+                            input(type="password" name="new-password" id="new-password" required)
+                            label(for="new-password") New password
+                            div.after
+                        fieldset.change--password-new
+                            input(type="password" name="new-password" id="repeat-password" required)
+                            label(for="repeat-password") Repeat password
+                            div.after
+                div.content--account-change
+                    a.blueBtn(href="#") Change password
+                div.content--account-save
+                    a.blueBtn(href="#") Save password
+                    a.cancelBtn(href="#") Cancel
+
+                div.content--account-history
+                    h1 History
+                    p There will be stores the history of downloads
+                div.account-history-themes
+                    div.theme
+                    div.theme
+                    div.theme
+                    div.theme

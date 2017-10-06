@@ -1,0 +1,32 @@
+extends _layout
+
+mixin features (h1, h2, image)
+    div.feature--item
+        div.feture--info
+            h1= h1
+            h2= h2
+        div.feture--image
+            img(src="../images/features/#{image}.png")
+
+
+block content
+    main
+        div.jumbotron-wrapper
+            div.jumbotron
+                .jumbo--images
+                    .big--frame
+                        img(src="../images/jumbo/big-frame.png")
+                    .small--frame
+                        img(src="../images/jumbo/small-frame.png")
+                .jumbo--info
+                    h1 Create beautiful news website and tell stories
+                    .jumbo--info-buttons
+                        a(href="/steps.html").blueBtn + Create a webite
+                        a(href="#").howItWorks How it works
+
+        div.content
+            div.fetures
+                + features("Fast", "We have already selected the best templates and plug-ins for you", "bird")
+                + features("Simple", "Just choose the right ones for you", "wind")
+                + features("Flexible", "A set of templates covers all media options, from a blog to an information portal", "modules")
+                + features("Free", "We don’t have any hidden fees. You create completely your site and just use it", "baloon")

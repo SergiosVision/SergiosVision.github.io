@@ -1,0 +1,11 @@
+extends _layout
+
+mixin contentTitle (h1Tittle)
+    div.content--title
+        h1= h1Tittle
+
+block content
+    main
+        + contentTitle("Account")
+        div.content.content--faq
+

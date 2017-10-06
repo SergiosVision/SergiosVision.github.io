@@ -1,0 +1,59 @@
+header
+  display: flex
+  justify-content: space-between
+  padding: 48px 40px 0
+  a
+    text-decoration: none
+  .brand--logo a
+    text-decoration: none
+    color: #333333
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 30px
+    display: flex
+    align-items: center
+    transition: .4s ease
+    &:hover
+      .logo span
+        transition: .4s ease
+        width: 100% !important
+  .logo
+    width: 20px
+    height: 20px
+    margin: 0 8px
+    transition: .4s ease
+    span
+      height: 4px
+      width: 100%
+      display: block
+      background-color: #3399FF
+      border-radius: 8px
+      transition: .4s ease
+      &:not(:first-child)
+        margin-top: 4px
+.line-2
+  width: 16px!important
+.line-3
+  width: 12px!important
+
+.navigation--wrapper
+  display: flex
+  svg
+    margin-left: 40px
+.navigation
+  list-style: none
+  display: flex
+  li
+    &:not(:first-child)
+      margin-left: 40px
+  a
+    font-size: 16px
+    display: block
+    font-weight: bold
+    color: #333333
+  .create--site
+    color: #3399FF
+    
+.profile
+  svg
+    fill: #3399FF

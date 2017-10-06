@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eec75165-9c26-4938-a387-3114b36f3fd1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/3dParallax/css/main.css" afterPath="$PROJECT_DIR$/projects/3dParallax/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/3dParallax/css/main.css.map" afterPath="$PROJECT_DIR$/projects/3dParallax/css/main.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/3dParallax/css/main.scss" afterPath="$PROJECT_DIR$/projects/3dParallax/css/main.scss" />
-    </list>
+    <list default="true" id="eec75165-9c26-4938-a387-3114b36f3fd1" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -178,12 +174,12 @@
       <option name="presentableId" value="Default" />
       <updated>1506932696363</updated>
       <workItem from="1506932697715" duration="672000" />
-      <workItem from="1506936721380" duration="1368000" />
+      <workItem from="1506936721380" duration="1518000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2040000" />
+    <option name="totallyTimeSpent" value="2190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1341" extended-state="0" />

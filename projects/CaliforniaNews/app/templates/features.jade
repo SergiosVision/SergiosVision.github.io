@@ -1,0 +1,24 @@
+extends _layout
+
+mixin contentTitle (h1Tittle, paragraph)
+    div.content--title
+        h1= h1Tittle
+        p= paragraph
+
+mixin features (h1, h2, image)
+    div.feature--item
+        div.feture--info
+            h1= h1
+            h2= h2
+        div.feture--image
+            img(src="../images/features/#{image}.png")
+
+block content
+    main
+        + contentTitle("Features", "You don't need be a designer. We've developed a wide range of blocks. Contemporary look and high flexibility makes them handy and applicable for any kind of content.")
+        div.content
+            div.fetures
+                + features("Fast", "We have already selected the best templates and plug-ins for you", "bird")
+                + features("Simple", "Just choose the right ones for you", "wind")
+                + features("Flexible", "A set of templates covers all media options, from a blog to an information portal", "modules")
+                + features("Free", "We don’t have any hidden fees. You create completely your site and just use it", "baloon")

@@ -1,0 +1,41 @@
+extends _layout
+
+mixin contentTitle (h1Tittle)
+    div.content--title
+        h1= h1Tittle
+
+
+mixin notes1 (heading, date, heading2, heading3, paragraph1, paragraph2, paragraph3, image)
+    div.content--notes
+        h1= heading
+        span= date
+        h2= heading2
+        h3= heading3
+        p= paragraph1
+        p= paragraph2
+        p= paragraph3
+        div.content--notes-image
+            img(src="../images/blog/#{image}.jpg")
+
+mixin notes2(heading, date, heading2, heading3, paragraph1, paragraph2, paragraph3)
+    div.content--notes
+        h1= heading
+        span= date
+        h2= heading2
+        h3= heading3
+        p= paragraph1
+        p= paragraph2
+        p= paragraph3
+
+
+block content
+    main
+        + contentTitle("Blog")
+        div.content.content--blog
+            + notes1("First note", "April 13, 2017", "Text block", "Text block", "This software is still in development, so we don’t recommend you run it on a production site. Consider setting up a test site just to play with the new version. To test WordPress 4.8, try the WordPress Beta Tester plugin (you’ll want “bleeding edge nightlies”). Or you can download the beta here (zip).", "For more information on what’s new in 4.8, check out the Beta 1 blog post. Since then, we’ve made over 50 changes in Beta 2.", "Do you speak a language other than English? Help us translate WordPress into more than 100 languages!", "blog1")
+            + notes2("Second note", "April 13, 2017", "Text block", "Text block", "This software is still in development, so we don’t recommend you run it on a production site. Consider setting up a test site just to play with the new version. To test WordPress 4.8, try the WordPress Beta Tester plugin (you’ll want “bleeding edge nightlies”). Or you can download the beta here (zip).", "For more information on what’s new in 4.8, check out the Beta 1 blog post. Since then, we’ve made over 50 changes in Beta 2.", "Do you speak a language other than English? Help us translate WordPress into more than 100 languages!")
+            + notes2("Third note", "April 13, 2017", "Text block", "Text block", "This software is still in development, so we don’t recommend you run it on a production site. Consider setting up a test site just to play with the new version. To test WordPress 4.8, try the WordPress Beta Tester plugin (you’ll want “bleeding edge nightlies”). Or you can download the beta here (zip).", "For more information on what’s new in 4.8, check out the Beta 1 blog post. Since then, we’ve made over 50 changes in Beta 2.", "Do you speak a language other than English? Help us translate WordPress into more than 100 languages!")
+            div.content--more
+                svg(width="17" height="4" viewBox="0 0 17 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+                    path(id="path0_fill" fill-rule="evenodd" d="M 4 2C 4 3.10455 3.10449 4 2 4C 0.895508 4 0 3.10455 0 2C 0 0.895447 0.895508 0 2 0C 3.10449 0 4 0.895447 4 2ZM 10 2C 10 3.10455 9.10449 4 8 4C 6.89551 4 6 3.10455 6 2C 6 0.895447 6.89551 0 8 0C 9.10449 0 10 0.895447 10 2ZM 14 4C 15.1045 4 16 3.10455 16 2C 16 0.895447 15.1045 0 14 0C 12.8955 0 12 0.895447 12 2C 12 3.10455 12.8955 4 14 4Z")
+                    span More
