@@ -26,18 +26,15 @@ block content
                     input(type="text" name="email" value="test@mail.com" id="email" readonly)
                 form.conetnt--change-password
                     div.form--group
-                        fieldset.change--password-new
+                        fieldset.form--set.change--password-new
+                            label.label--form(for="old-password") Old password
                             input(type="password" name="old-password" id="old-password" required)
-                            label(for="old-password") Old password
-                            div.after
-                        fieldset.change--password-new
+                        fieldset.form--set.change--password-new
+                            label.label--form(for="new-password") New password
                             input(type="password" name="new-password" id="new-password" required)
-                            label(for="new-password") New password
-                            div.after
-                        fieldset.change--password-new
+                        fieldset.form--set.change--password-new
+                            label.label--form(for="repeat-password") Repeat password
                             input(type="password" name="new-password" id="repeat-password" required)
-                            label(for="repeat-password") Repeat password
-                            div.after
                 div.content--account-change
                     a.blueBtn(href="#") Change password
                 div.content--account-save

@@ -1,11 +1,21 @@
 extends _layout
 
-mixin contentTitle (h1Tittle)
+mixin contentTitle (h1Tittle, paragraph)
     div.content--title
         h1= h1Tittle
+        p= paragraph
+        
+mixin notes(heading, heading2, paragraph, heading3, paragraph2)
+    div.content--notes
+        h1= heading
+        h3= heading2
+        p= paragraph
+        h3= heading3      
+        p= paragraph2        
 
 block content
     main
-        + contentTitle("Account")
+        + contentTitle("Faq", "You don't need be a designer. We've developed a wide range of blocks. Contemporary look and high flexibility makes them handy and applicable for any kind of content.")
         div.content.content--faq
+            + notes("Installation instruction", "Automated installation", "Installation is free, quick, and easy. Install Jetpack from our site in minutes.", "Manual alternatives", "Alternatively, install Jetpack via the plugin directory, or upload the files manually to your server and follow the on-screen instructions. If you need additional help read our detailed instructions.")
 

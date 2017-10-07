@@ -55,6 +55,7 @@
     a
       display: block
       margin-bottom: 32px
+      box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.08);
     .blueBtn
       display: inline-block
       margin-top: 16px
@@ -106,6 +107,7 @@
       font-weight: bold
       margin-bottom: 24px
       color: #4F4F4F
+      margin-left: 19px
       input[type=checkbox]
         display: none
       label
@@ -156,6 +158,7 @@
   height: 24px
   width: 24px
   cursor: pointer
+  position: relative
   opacity: 0
   transition: .4s ease
   svg
@@ -188,63 +191,6 @@
       margin-top: 30px
     .signin--button
       margin-top: 56px
-    .form--group
-      display: flex
-      fieldset
-        position: relative
-        border: none
-        width: 242px
-        &:nth-child(2)
-          margin-left: 24px
-        a, span
-          display: block
-          color: #BDBDBD
-          font-size: 12px
-          position: absolute
-          top: 40px
-        .no--account-wrapper
-          top: 8px
-          display: flex
-          position : absolute
-          top: 40px
-          span, a
-            position: relative
-            top: 0
-          a
-            margin-left: 3px
-            color: #3399ff
-        input
-          font-size: 20px
-          width: 100%
-          border: none
-          margin-top: 10px
-          outline: none
-          color: #4F4F4F
-          font-size: 14px
-          font-weight: normal
-        .after
-          width: 100%
-          height: 2px
-          background: linear-gradient(to right, red 50%, transparent 50%)
-          background-color: rgba(0, 0, 0, 0.3)
-          background-size: 200% 100%
-          background-position: 100% 0
-          transition: all .4s ease
-        input:focus ~ .after
-          background-position: 0 0
-        label
-          position: absolute
-          top: 0
-          font-weight: normal
-          font-size: 14px
-          color: #BDBDBD
-          transform-origin: left
-          transition: all .4s ease
-        input:focus ~ label
-          color: red
-        input:focus ~ label, input:valid ~ label
-          top: -12px
-          font-size: 12px
     .login--social
       display: flex
       justify-content: center
@@ -301,8 +247,10 @@
   .generate--name
     margin: 16px auto 0 auto
     width: 242px
+    input
+        margin-bottom: 0
   .back--forward
-    margin-top: 32px
+    margin-top: 40px
 
 .arrow--line
   width: 100%
@@ -314,71 +262,15 @@
   img
     z-index: 2
 .finish--img
+  width: 770px
+  margin: 0 auto
   z-index: 1
+  box-shadow: 0px 70px 80px rgba(0, 0, 0, 0.3);
   img
     display: block
-    margin: 0 auto
+    width: 100%
+    height: auto
     z-index: 1
-
-.form--group
-  display: flex
-  fieldset
-    position: relative
-    border: none
-    width: 242px
-    &:nth-child(2)
-      margin-left: 24px
-    a, span
-      display: block
-      color: #BDBDBD
-      font-size: 12px
-      position: absolute
-      top: 40px
-    .no--account-wrapper
-      top: 8px
-      display: flex
-      position : absolute
-      top: 40px
-      span, a
-        position: relative
-        top: 0
-      a
-        margin-left: 3px
-        color: #3399ff
-    input
-      font-size: 20px
-      width: 100%
-      border: none
-      margin-top: 10px
-      outline: none
-      color: #4F4F4F
-      font-size: 14px
-      font-weight: normal
-      background-color: transparent
-    .after
-      width: 100%
-      height: 2px
-      background: linear-gradient(to right, red 50%, transparent 50%)
-      background-color: #bdbdbd
-      background-size: 200% 100%
-      background-position: 100% 0
-      transition: all .4s ease
-    input:focus ~ .after
-      background-position: 0 0
-    label
-      position: absolute
-      top: 0
-      font-weight: normal
-      font-size: 14px
-      color: #BDBDBD
-      transform-origin: left
-      transition: all .4s ease
-    input:focus ~ label
-      color: red
-    input:focus ~ label, input:valid ~ label
-      top: -12px
-      font-size: 12px
-
 .content--whatsNext
   width: 900px
   margin: 300px auto 0 auto

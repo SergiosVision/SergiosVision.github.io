@@ -1,18 +1,16 @@
 main
-  margin: 58px auto 0 auto
-  width: 1295px
+  margin: 57px auto 0 auto
+    //  width: 1294px
+  width: 100%
 
   .jumbotron-wrapper
     height: 680px
-    width: 100%
+    width: 1132px
+    margin: 73px 0 0 60px
     background: url(../images/jumbo/Background.png) no-repeat
     background-size: cover
-    padding-top: 73px
-    padding-left: 60px
-    .jumbotron
-      width: 1095px
-      display: flex
-      height: 591px
+    display: flex
+    justify-content: space-between
     .jumbo--images
       width: 572px
       position: relative
@@ -21,15 +19,17 @@ main
         max-width: 100%
         height: auto
       .big--frame
-        width: 572px
+        width: 100%
+        box-shadow: 0px 70px 80px rgba(0, 0, 0, 0.2)
       .small--frame
         width: 179px
         position: absolute
         top: 183px
         right: 89px
+        box-shadow: 0px 70px 80px rgba(0, 0, 0, 0.2);
   .jumbo--info
     width: 480px
-    margin-left: 42px
+    //    margin-left: 42px
     margin-top: 75px
     h1
       font-weight: bold
@@ -49,11 +49,13 @@ main
   font-size: 16px
   padding: 9px 31px
   border-radius: 20px
+  text-align: center
+  box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.1)
 
 .signin--button
   display: block
   margin: 0 auto
-  background-color: #E0E0E0
+  background-color: #3399FF
   border: none
   outline: none
   padding: 9px 61px
@@ -61,6 +63,14 @@ main
   font-size: 16px
   font-weight: bold
   border-radius: 20px
+  cursor: pointer
+  transition: .4s ease
+  &:disabled
+    cursor: default
+    background-color: #E0E0E0
+    transition: .4s ease
+    
+
 
 .backBtn
   display: flex
@@ -119,3 +129,33 @@ main
   color: #BDBDBD
   font-size: 14px
   font-weight: bold
+
+@media (min-width: 980px) and (max-width: 1209px)
+   header
+    flex-direction: column
+    align-items: center
+    .brand--logo
+        margin-bottom: 20px
+   main 
+    .jumbotron-wrapper
+        width: 100%
+        margin: 0
+        margin-top: 73px
+        padding: 0 30px
+    //        flex-direction: column-reverse
+    //        height: auto
+    //        align-items: center
+    .jumbo--info
+        margin-bottom: 75px
+        margin-top: 30px
+        width: 450px
+        margin-left: 20px
+        h1
+            font-size:
+    .jumbo--images
+        width: 450px!important
+    .content
+        width: 90%
+        margin: 163px auto 0 auto
+        padding: 0 20px
+        
