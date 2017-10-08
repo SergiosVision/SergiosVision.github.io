@@ -1,6 +1,6 @@
 .steps--container
   width: 880px
-  margin: 0 auto
+  margin: 0 auto 64px auto
   text-align: center
   h1
     color: #333
@@ -12,27 +12,6 @@
   p
     font-size: 14px
     font-weight: normal
-    margin-bottom: 77px
-
-  ul
-    list-style: none
-    display: flex
-    justify-content: center
-    .circleAndLine
-      display: flex
-      align-items: center
-      svg
-        fill: #BDBDBD
-        margin-top: 1.5px
-    .circle
-      width: 9px
-      height: 9px
-      background-color: #BDBDBD
-      border-radius: 50%
-
-.circle--active
-  background-color: #3399ff!important
-
 
 .content--tehemes
   display: flex
@@ -93,6 +72,7 @@
   .recommended
     width: 200px
     margin: 0 auto
+    text-align: center
     span
       position: relative
       &:before
@@ -238,7 +218,7 @@
   p
     width: 525px
     display: block
-    margin: 0 auto 77px auto
+    margin: 0 auto 0
 
 .content-finish
   width: 100%
@@ -295,3 +275,43 @@
   margin: 300px auto 0 auto
   .what
     padding: 0!important
+
+
+.progress--bar
+  margin-top: 31px
+  ul
+    list-style: none
+    display: flex
+    justify-content: center
+    .bar--active
+      color: #3399FF
+      &::before
+        background-color: #3399FF
+    li
+      position: relative
+      float: left
+      width: 33.33%
+      text-align: center
+      font-size: 14px
+      font-weight: normal
+      color: #BDBDBD
+      &::before
+        content: ''
+        display: block
+        width: 9px
+        height: 9px
+        background-color: #bdbdbd
+        border-radius: 50%
+        text-align: center
+        margin: 0 auto 8px auto
+      &::after
+        content: ''
+        position: absolute
+        width: 100%
+        height: 1px
+        border-bottom: 1px dashed #BDBDBD
+        top: 3px
+        left: -50%
+        z-index: -1
+      &:first-child::after
+        content: none
