@@ -1,8 +1,44 @@
 .content--faq
   width: 900px
   margin: 0 auto 493px auto
-  .content--notes
-    h3
-        font-size: 16px
-        font-weight: normal
-        color: #4F4F4F
+  .accord--item
+    .open--accord-item
+      display: flex
+      justify-content: space-between
+      align-items: center
+      cursor: pointer
+      padding-bottom: 24px
+      margin-bottom: 24px
+      border-bottom: 1px solid #F2F2F2
+      &:hover
+        h1
+          color: #39f
+        span
+          color: #39f
+      h1
+        font-size: 26px
+        transition: .3s ease
+      span
+        display: block
+        transform: rotate(180deg)
+        font-size: 20px
+        transition: .3s ease
+      &.is-active
+        border: none
+        margin-bottom: 0
+        h1
+          color: #39f
+        span
+          transform: rotate(0)
+          color: #39f
+
+    .accord--item-content
+      padding-top: 24px
+      padding-bottom: 24px
+      border-bottom: 1px solid #F2F2F2
+      display: none
+      margin-bottom: 24px
+      h3
+          font-size: 16px
+          font-weight: normal
+          color: #4F4F4F

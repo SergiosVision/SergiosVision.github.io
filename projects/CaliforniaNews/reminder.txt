@@ -1,0 +1,1 @@
+http://htmlbook.ru/css/counter-reset
