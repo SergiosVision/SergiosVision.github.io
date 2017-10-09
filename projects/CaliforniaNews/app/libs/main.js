@@ -8,16 +8,23 @@ $('.form--set input').focus(function () {
 })
 
  $('.form--set input').on('keyup', function () {
-    if ($('.form--set input').val() != '') {
-        $('.signin--button').removeAttr('disabled')
+    if ($(this).val() != '') {
+        $(this).closest('.login--container').find('button').prop("disabled", false);
     } else {
-        $('.signin--button').attr('disabled', 'disable');
+        $(this).closest('.login--container').find('button').prop("disabled", true);
     }
  });
 
-$('.popup--item').on('click', function () {
-    $(this).find('#popup').toggleClass('show-popup');
+// $('.popup--item').on('click', function () {
+//     $(this).find('#popup').toggleClass('show-popup');
+// });
+
+$('.select--theme .blueBtn').on('click', function (e) {
+    e.preventDefault();
+        $(this).closest('.theme--card').find('input').prop( "checked", true );
+    //}
 });
+
 
 $('.content--account-change a').on('click', function (e) {
      e.preventDefault();
@@ -50,7 +57,6 @@ $(getAccordBtn).click(function () {
         $(this).addClass('is-active');
     }
 });
-
 
 // Native JavaScript
 

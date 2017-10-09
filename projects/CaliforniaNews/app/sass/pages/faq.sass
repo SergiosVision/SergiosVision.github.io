@@ -18,19 +18,20 @@
       h1
         font-size: 26px
         transition: .3s ease
-      span
+      svg
         display: block
-        transform: rotate(180deg)
+        transform: rotate(-90deg)
         font-size: 20px
         transition: .3s ease
+        fill: #4f4f4f
       &.is-active
         border: none
         margin-bottom: 0
         h1
           color: #39f
-        span
-          transform: rotate(0)
-          color: #39f
+        svg
+          transform: rotate(90deg)
+          fill: #39f
 
     .accord--item-content
       padding-top: 24px

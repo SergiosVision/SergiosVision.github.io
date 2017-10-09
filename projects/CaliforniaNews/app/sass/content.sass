@@ -155,6 +155,7 @@ main
     .jumbotron-wrapper
         width: 100%
         margin: 0
+        height: 610px
         margin-top: 73px
         padding: 0 30px
     .jumbo--info
@@ -168,6 +169,22 @@ main
         width: 90%
         margin: 163px auto 0 auto
         padding: 0 20px
+
+@media (min-width: 1600px)
+  main
+    .jumbotron-wrapper
+      width: 1600px
+      margin: 0 auto
+      margin-top: 73px
+      justify-content: flex-start
+      .jumbo--images
+        margin-right: 80px
+        width: 796px
+        .small--frame
+          top: 254px
+          right: 123px
+      .jumbo--info
+        margin-top: 80px
 
 .account--form-show
   visibility: visible!important

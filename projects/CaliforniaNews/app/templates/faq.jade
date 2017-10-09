@@ -9,7 +9,8 @@ mixin accordeon (headingH1, heading2, paragraph, heading3, paragraph2)
     div.accord--item
         div.open--accord-item
             h1.accord--heading= headingH1
-            span.accord--arrow &uarr;
+            svg(width="14" height="15" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+                path(id="path0_fill" fill-rule="evenodd" d="M 0.274587 7.67216C -0.0915292 7.30094 -0.0915292 6.69906 0.274587 6.32784L 6.2408 0.278417C 6.60692 -0.0928057 7.20051 -0.0928057 7.56663 0.278417C 7.93274 0.64964 7.93274 1.25151 7.56663 1.62273L 3.20083 6.04942L 14.0625 6.04942C 14.5803 6.04942 15 6.47501 15 7C 15 7.52499 14.5803 7.95058 14.0625 7.95058L 3.20083 7.95058L 7.56663 12.3773C 7.93274 12.7485 7.93274 13.3504 7.56663 13.7216C 7.20051 14.0928 6.60692 14.0928 6.2408 13.7216L 0.274587 7.67216Z")
         div.accord--item-content
             h3= heading2
             p= paragraph
