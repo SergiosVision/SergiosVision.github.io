@@ -1,0 +1,24 @@
+extends _layout
+
+mixin contentTitle (h1Tittle, paragraph)
+    div.content--title.what
+        h1= h1Tittle
+        p= paragraph
+
+mixin notes (heading, date, heading2, heading3, paragraph1, paragraph2, paragraph3)
+    div.content--notes
+        h1= heading
+        span= date
+        h2= heading2
+        h3= heading3
+        p= paragraph1
+        p= paragraph2
+        p= paragraph3
+
+
+block content
+    main
+        + contentTitle("What's next ?", "You don't need be a designer. We've developed a wide range of blocks. Contemporary look and high flexibility makes them handy and applicable for any kind of content. You don't need be a designer. We've developed a wide range of blocks. Contemporary look and high flexibility makes them handy and applicable for any kind of content.")
+        section.content--whatsNext
+            + notes("Third note", "April 13, 2017", "Text block", "Text block", "This software is still in development, so we don’t recommend you run it on a production site. Consider setting up a test site just to play with the new version. To test WordPress 4.8, try the WordPress Beta Tester plugin (you’ll want “bleeding edge nightlies”). Or you can download the beta here (zip).", "For more information on what’s new in 4.8, check out the Beta 1 blog post. Since then, we’ve made over 50 changes in Beta 2.", "Do you speak a language other than English? Help us translate WordPress into more than 100 languages!")
+

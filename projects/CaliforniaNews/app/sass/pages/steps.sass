@@ -22,12 +22,20 @@
   .theme--card
     margin-bottom: 104px
     text-align: center
-    transition: .2s ease
+    transition: .4s ease
     &:hover
       .cover--image
         transform: translateY(-48px)
         margin-bottom: 0
         opacity: 1
+        &::after
+          opacity: 1
+      h2
+        transform: translateY(-28px)
+      .select--theme
+        transform: translateY(-10px)
+      .blueBtn
+        margin-top: 0
       .select--theme
         opacity: 1
         visibility: visible
@@ -37,6 +45,8 @@
       color: #4F4F4F
       font-size: 26px
       margin-bottom: 8px
+      transition: .4s ease
+      z-index: 2
     p
       color: #BDBDBD
     .select--theme
@@ -44,16 +54,28 @@
       flex-direction: column
       opacity: 0
       visibility: hidden
-      transition: .2s ease
+      transition: .4s ease
     .cover--image
       display: block
       margin-bottom: 32px
       box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.08)
       border-radius: 4px
-      transition: .2s ease
+      transition: .4s ease
       opacity: .6
+      position: relative
       img
         border-radius: 4px
+      &::after
+        content: ''
+        width: 160px
+        height: 83px
+        background: linear-gradient(to bottom, #3296FA, #fff)
+        display: block
+        position: absolute
+        left: 40px
+        bottom: -80px
+        opacity: 0
+        transition: .4s ease
     .blueBtn
       display: inline-block
       margin-top: 16px
@@ -230,7 +252,7 @@
   position: relative
   .finsh--info
     width: 100%
-    height: 500px
+    height: 526px
     background-color: #fff
     z-index: 2
     position: absolute
@@ -274,12 +296,6 @@
     width: 100%
     height: auto
     z-index: 1
-.content--whatsNext
-  width: 900px
-  margin: 300px auto 0 auto
-  .what
-    padding: 0!important
-
 
 .progress--bar
   margin-top: 31px
@@ -319,3 +335,6 @@
         z-index: -1
       &:first-child::after
         content: none
+
+footer
+  margin-top: 300px

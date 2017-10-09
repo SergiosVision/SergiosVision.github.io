@@ -1,1 +1,3 @@
 http://htmlbook.ru/css/counter-reset
+http://www.jqueryscript.net/animation/Animated-Bubbles-Background-with-jQuery-Canvas.html
+https://www.cssscript.com/create-amazing-bubbles-background-pure-javascript-bubble-bg/

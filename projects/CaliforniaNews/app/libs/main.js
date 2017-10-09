@@ -5,7 +5,7 @@ $('.form--set input').focus(function () {
 }).blur(function () {
     if ($(this).val() === '')
         $(this).parent().removeClass('focus'); 
-})
+});
 
  $('.form--set input').on('keyup', function () {
     if ($(this).val() != '') {
@@ -43,7 +43,6 @@ $('.content--account-save a').on('click', function (e) {
 
 var getAccordBtn = $('.open--accord-item');
 var getAccordContent = $('.accord--item-content');
-var getAccordIcon = $('.open--accord-item span');
 
 $(getAccordBtn).click(function () {
     if ($(this).hasClass('is-active')){
@@ -57,6 +56,24 @@ $(getAccordBtn).click(function () {
         $(this).addClass('is-active');
     }
 });
+
+
+// Smooth scroll
+$('.howItWorks').on('click', function (e) {
+    if (this.hash !== ''){
+        e.preventDefault();
+
+        var hash = this.hash;
+
+        $('html, body').animate({
+           scrollTop: $(hash).offset().top
+        }, 1000, function () {
+            window.location.hash = hash;
+        });
+    }
+
+});
+
 
 // Native JavaScript
 
