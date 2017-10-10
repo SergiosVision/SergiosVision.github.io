@@ -16,23 +16,74 @@ footer
     &:hover
       transition: .4s ease
       animation: pulse 2s linear infinite
+    &:active
+      transform: scale(.9)
   .popup--help-content
-    position: fixed
-    bottom: 281px
-    right: 40px
     width: 128px
-    height: 158px
-    background-color: #fff
+    height: 110px
+    background-color: #cfcfca
+    padding: 16px 16px 0 32px
+    position: fixed
+    right: 40px
+    bottom: 282px
+    border-radius: 10% 10% 0 10%
+    transition: .4s ease
+    visibility: hidden
+    opacity: 0
     box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.05)
-    &::after
-      content: ''
+    .circle--close
+      cursor: pointer
+      font-family: Futura
       position: absolute
-      width: 43px
-      height: 43px
+      bottom: -48px
+      right: 0
+      width: 56px
+      height: 48px
+      background-color: #cfcfca
+      border-radius: 0 0 50% 50%
+      box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.05)
+      display: flex
+      justify-content: center
+      span
+        font-size: 28px
+        color: #4f4f4f
+        font-family: Futura
+        transition: .4s ease
+      &:hover
+        span
+          color: #3399FF
+    &::before
+      content: ''
+      width: 22px
+      height: 22px
+      background-color: #cfcfca
+      position: absolute
+      right: 56px
+      bottom: -22px
+    .circle
+      position: absolute
+      width: 44px
+      height: 44px
+      bottom: -44px
+      right: 56px
+      border-radius: 50%
       background-color: #fff
-      bottom: -43px
-      right: -1px
-      border-radius: 50% 0 0 50%
+    &.show-popup-content
+      opacity: 1
+      visibility: visible
+    ul
+      display: flex
+      flex-direction: column
+      align-items: flex-end
+      li:not(:last-child)
+        margin-bottom: 8px
+
+      a
+        font-size: 16px
+        font-weight: normal
+        transition: .4s ease
+        &:hover
+          color: #3399FF
 .footer--main
   background-color: #F7FBFF
   padding: 24px 0
@@ -71,6 +122,7 @@ footer
     box-shadow: 0 0 0 0 rgba(51, 153, 255, .6)
   70%
     box-shadow: 0 0 0 15px rgba(51, 153, 255, 0)
+    transform: scale(.9)
   100%
     box-shadow: 0 0 0 0 rgba(51, 153, 255, 0)
 

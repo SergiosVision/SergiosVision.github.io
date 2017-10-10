@@ -17,10 +17,37 @@ $('.form--set input').focus(function () {
     }
  });
 
+
+// Show modal
+
+$('.forgot--password').on('click', function (e) {
+   e.preventDefault();
+   if (!$('body').hasClass('show--modal')){
+       $('body').addClass('show--modal fixed');
+   } else {
+       $('body').removeClass('show--modal fixed');
+   }
+});
+
+$('.overlay, .iremember--account').on('click', function (e) {
+    e.preventDefault();
+    $('body').removeClass('show--modal fixed');
+});
+
 // Disabled PopUp
 // $('.popup--item').on('click', function () {
 //     $(this).find('#popup').toggleClass('show-popup');
 // });
+
+// Popup Help
+
+$('.popup--help-btn').on('click', function () {
+   $('.popup--help-content').addClass('show-popup-content');
+});
+
+$('.circle--close').on('click', function () {
+    $('.popup--help-content').removeClass('show-popup-content');
+});
 
 // Get values variables
 

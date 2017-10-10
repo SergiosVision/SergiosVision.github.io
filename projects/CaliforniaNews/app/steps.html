@@ -10,6 +10,7 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="overlay"></div>
       <header>
         <nav>
           <div class="brand--logo"><a href="/"><span>California</span>
@@ -518,10 +519,12 @@
         </div>
         <div class="popup--help-content">
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li><a href="/contacts.html">Contact Us</a></li>
+            <li><a href="/help.html">Help page</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
           </ul>
+          <div class="circle--close"><span>&times;</span></div>
+          <div class="circle"></div>
         </div>
         <div class="footer--main">
           <ul>
@@ -545,6 +548,15 @@
               </svg></a></div>
         </div>
       </footer>
+      <div class="small--modal-wrapper">
+        <h1>Rest Password</h1>
+        <fieldset class="content--account-reset">
+          <label for="email">Email</label>
+          <input type="text" name="email" value="test@mail.com" id="email" readonly>
+          <div class="iremember--account-wrapper"><a href="#" class="iremember--account">No, I remembered</a></div>
+        </fieldset>
+        <div class="send-link"><a href="#" class="blueBtn">Get link</a></div>
+      </div>
     </div>
     <script src="/js/vendor.min.js"></script>
     <script src="/js/main.min.js"></script>

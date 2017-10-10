@@ -10,9 +10,19 @@ html(lang="en")
         link(rel='stylesheet', href="/css/fonts.css")
     body
         div.wrapper
-                include _header
-                block content
-                include _footer
+            div.overlay
+            include _header
+            block content
+            include _footer
+            div.small--modal-wrapper
+                h1 Rest Password
+                fieldset.content--account-reset
+                    label(for="email") Email
+                    input(type="text" name="email" value="test@mail.com" id="email" readonly)
+                    div.iremember--account-wrapper
+                        a.iremember--account(href="#") No, I remembered
+                div.send-link
+                    a.blueBtn(href="#") Get link
 
         script(src="/js/vendor.min.js")
         script(src="/js/main.min.js")
