@@ -34,11 +34,6 @@ $('.overlay, .iremember--account').on('click', function (e) {
     $('body').removeClass('show--modal fixed');
 });
 
-// Disabled PopUp
-// $('.popup--item').on('click', function () {
-//     $(this).find('#popup').toggleClass('show-popup');
-// });
-
 // Popup Help
 
 $('.popup--help-btn').on('click', function () {
