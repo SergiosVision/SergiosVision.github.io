@@ -1,5 +1,38 @@
 footer
   margin-top: 207px
+  position: relative
+  .popup--help-btn
+    width: 40px
+    height: 41px
+    cursor: pointer
+    position: fixed
+    bottom: 241px
+    right: 40px
+    box-shadow: 0 0 0 0 rgba(51, 153, 255, .6)
+    border-radius: 50%
+    transition: .4s ease
+    svg
+      fill: #3399FF
+    &:hover
+      transition: .4s ease
+      animation: pulse 2s linear infinite
+  .popup--help-content
+    position: fixed
+    bottom: 281px
+    right: 40px
+    width: 128px
+    height: 158px
+    background-color: #fff
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.05)
+    &::after
+      content: ''
+      position: absolute
+      width: 43px
+      height: 43px
+      background-color: #fff
+      bottom: -43px
+      right: -1px
+      border-radius: 50% 0 0 50%
 .footer--main
   background-color: #F7FBFF
   padding: 24px 0
@@ -32,3 +65,14 @@ footer
     &:hover
       svg
         fill: #d52b1e
+
+@keyframes pulse
+  0%
+    box-shadow: 0 0 0 0 rgba(51, 153, 255, .6)
+  70%
+    box-shadow: 0 0 0 15px rgba(51, 153, 255, 0)
+  100%
+    box-shadow: 0 0 0 0 rgba(51, 153, 255, 0)
+
+
+

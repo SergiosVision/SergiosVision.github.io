@@ -1,5 +1,6 @@
 // jQuery Scripts
 
+// Focus forms
 $('.form--set input').focus(function () {
    $(this).parent().addClass('focus'); 
 }).blur(function () {
@@ -7,6 +8,7 @@ $('.form--set input').focus(function () {
         $(this).parent().removeClass('focus'); 
 });
 
+// Activate buttons
  $('.form--set input').on('keyup', function () {
     if ($(this).val() != '') {
         $(this).closest('.login--container').find('button').prop("disabled", false);
@@ -15,17 +17,34 @@ $('.form--set input').focus(function () {
     }
  });
 
+// Disabled PopUp
 // $('.popup--item').on('click', function () {
 //     $(this).find('#popup').toggleClass('show-popup');
 // });
 
+// Get values variables
+
+var themeId = $('.select--theme-radio').data('theme');
+
+// Select Themes
 $('.select--theme .blueBtn').on('click', function (e) {
     e.preventDefault();
-        $(this).closest('.theme--card').find('input').prop( "checked", true );
-    //}
+        $(this).closest('.theme--card').find('input').prop("checked", true);
+        if ($('.theme--card input:checked')){
+            $(this).closest('.theme--card').find('input[name=data-theme]').val(themeId);
+        }
 });
 
+// Select Plugins
+var pluginId = $('.category--btn input').data('plugin');
 
+$('.category--btn').on('click', function () {
+    if ($('.category--btn input:checked')){
+        $(this).closest('.category--item').find('input[name=data-plugin]').val(pluginId);
+    }
+});
+
+// Save and Change passoword controls
 $('.content--account-change a').on('click', function (e) {
      e.preventDefault();
     $('.content--account-change').addClass('account--form-hide');
@@ -40,7 +59,7 @@ $('.content--account-save a').on('click', function (e) {
     $('.conetnt--change-password').removeClass('account--form-show');
 });
 
-
+// Accordeon
 var getAccordBtn = $('.open--accord-item');
 var getAccordContent = $('.accord--item-content');
 
@@ -71,9 +90,7 @@ $('.howItWorks').on('click', function (e) {
             window.location.hash = hash;
         });
     }
-
 });
-
 
 // Native JavaScript
 
