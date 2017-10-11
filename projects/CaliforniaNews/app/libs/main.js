@@ -17,10 +17,15 @@ $('.form--set input').focus(function () {
     }
  });
 
+// Toggle mobile menu
+
+$('.hamburger').on('click', function () {
+    $('#navigation').toggleClass('show--mobile-nav');
+});
 
 // Show modal
 
-$('.forgot--password').on('click', function (e) {
+$('.forgot--password, .cover--image, .read--more, .popup--item').on('click', function (e) {
    e.preventDefault();
    if (!$('body').hasClass('show--modal')){
        $('body').addClass('show--modal fixed');
@@ -34,6 +39,36 @@ $('.overlay, .iremember--account').on('click', function (e) {
     $('body').removeClass('show--modal fixed');
 });
 
+
+// Check all checkboxes
+
+$('.category--title input').on('click', function () {
+    var group = $(this).attr('data-group'),
+        isChecked = !!($(this).prop('checked'));
+    $('input[data-plugin="' + group + '"]').prop('checked', isChecked);
+});
+
+$('.category--btn input').on('click', function () {
+    var group = $(this).attr('data-plugin'),
+        siblings = $(this).attr('data-plugin', group)
+        ,
+        isChecked = true;
+    siblings.each(function(idx, el){
+        if(!$(el).prop('checked')) {
+            isChecked = false;
+            return;
+        }
+    });
+
+    $('.category--title input[data-group="' + group + '"]').prop('checked', isChecked);
+});
+
+// Select Themes
+$('.select--theme .blueBtn').on('click', function (e) {
+    e.preventDefault();
+    $(this).closest('.theme--card').find('input').prop("checked", true);
+});
+
 // Popup Help
 
 $('.popup--help-btn').on('click', function () {
@@ -44,18 +79,6 @@ $('.circle--close').on('click', function () {
     $('.popup--help-content').removeClass('show-popup-content');
 });
 
-// Get values variables
-
-var themeId = $('.select--theme-radio').data('theme');
-
-// Select Themes
-$('.select--theme .blueBtn').on('click', function (e) {
-    e.preventDefault();
-        $(this).closest('.theme--card').find('input').prop("checked", true);
-        if ($('.theme--card input:checked')){
-            $(this).closest('.theme--card').find('input[name=data-theme]').val(themeId);
-        }
-});
 
 // Select Plugins
 var pluginId = $('.category--btn input').data('plugin');
@@ -113,6 +136,16 @@ $('.howItWorks').on('click', function (e) {
         });
     }
 });
+
+// Geta all Values
+
+var getDataTheme = $(this).data('theme');
+$('.theme--card').find('input[name=data-theme]').val(getDataTheme);
+var getDataPlugin = $(this).data('plugin');
+$('.category--list').find('input[name=data-plugin]').val(getDataPlugin);
+
+console.log(getDataTheme);
+console.log(getDataPlugin);
 
 // Native JavaScript
 

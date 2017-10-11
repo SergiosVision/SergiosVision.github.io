@@ -16,7 +16,7 @@
 .content--tehemes
   width: 100%
   margin-top: 64px
-  form
+  .theme--form
     display: flex
     width: 1156px
     justify-content: space-between
@@ -26,6 +26,7 @@
     margin-bottom: 104px
     text-align: center
     transition: .4s ease
+    //height: 415px
     &:hover
       .cover--image
         transform: translateY(-48px)
@@ -61,6 +62,7 @@
     .cover--image
       display: block
       margin-bottom: 32px
+      //margin-bottom: 9px
       box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.08)
       border-radius: 4px
       transition: .4s ease
@@ -122,6 +124,7 @@
     margin-top: 40px
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
     .category--title
       position: relative
       display: flex
@@ -280,7 +283,10 @@
         margin-bottom: 0
   .back--forward
     margin-top: 40px
-
+    .blueBtn
+      border: none
+      cursor: pointer
+      outline: none
 .arrow--line
   width: 100%
   display: flex

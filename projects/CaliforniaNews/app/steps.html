@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
-    <title>California News</title>
+    <title>California Internews</title>
     <link rel="stylesheet" href="/css/main.min.css">
     <link rel="stylesheet" href="/css/fonts.css">
   </head>
@@ -17,7 +17,7 @@
               <div class="logo"><span></span><span class="line-2"></span><span class="line-3"></span></div><span>Internews</span></a></div>
         </nav>
         <div class="navigation--wrapper">
-          <ul class="navigation">
+          <ul id="navigation" class="navigation">
             <li><a href="/steps.html" class="create--site">+ Create a website</a></li>
             <li><a href="/features.html">Features</a></li>
             <li><a href="/blog.html">Blog</a></li>
@@ -27,70 +27,70 @@
             <svg width="20" height="21" viewBox="0 0 20 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <path id="path0_fill" fill-rule="evenodd" d="M 6 6.5C 6 4.56689 7.56689 3 9.5 3C 11.4331 3 13 4.56689 13 6.5C 13 8.43311 11.4331 10 9.5 10C 7.56689 10 6 8.43311 6 6.5ZM 14.3389 10.8403C 15.3716 9.68945 16 8.16821 16 6.5C 16 2.91016 13.0898 0 9.5 0C 5.91016 0 3 2.91016 3 6.5C 3 8.16821 3.62842 9.68945 4.66113 10.8403C 3.79492 11.2092 3.02539 11.7109 2.36816 12.3682C 0.658203 14.0781 0 16.5483 0 19.5C 0 20.3284 0.671387 21 1.5 21C 2.32861 21 3 20.3284 3 19.5C 3 16.929 3.58008 15.3989 4.48975 14.4895C 5.39893 13.5801 6.92871 13 9.5 13C 12.0713 13 13.6011 13.5801 14.5103 14.4895C 15.4199 15.3989 16 16.929 16 19.5C 16 20.3284 16.6714 21 17.5 21C 18.3286 21 19 20.3284 19 19.5C 19 16.5483 18.3418 14.0781 16.6318 12.3682C 15.9746 11.7109 15.2051 11.2092 14.3389 10.8403Z"></path>
             </svg></a>
+          <div class="hamburger"><span></span><span></span><span></span></div>
         </div>
       </header>
       <main>
-        <div id="steps--container-wrappper">
-          <div class="steps--container">
-            <h1>Step<span class="step--count"> 1</span> of 4</h1>
-            <p>You don't need be a designer. We've developed a wide range of blocks. Contemporary look and high flexibility makes them handy and applicable for any kind of content.</p>
-            <div class="progress--bar">
-              <ul>
-                <li class="bar--active">Choose a template</li>
-                <li>Select Plugins</li>
-                <li>Authorization</li>
-                <li>Download Site</li>
-              </ul>
-            </div>
+        <div class="steps--container">
+          <h1>Step<span class="step--count"> 1</span> of 4</h1>
+          <p>You don't need be a designer. We've developed a wide range of blocks. Contemporary look and high flexibility makes them handy and applicable for any kind of content.</p>
+          <div class="progress--bar">
+            <ul>
+              <li class="bar--active">Choose a template</li>
+              <li>Select Plugins</li>
+              <li>Authorization</li>
+              <li>Download Site</li>
+            </ul>
           </div>
+        </div>
+        <form method="POST" id="steps--container-wrappper">
           <section class="content content--tehemes">
-            <form class="theme--form">
+            <div class="theme--form">
               <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover1.jpg"/></a>
                 <h2>Daily Insight</h2>
                 <p>by Yam Chhetri</p>
                 <div class="select--theme"><a href="#" class="blueBtn">Select template</a><a href="#" class="read--more">Read more</a></div>
-                <input type="radio" data-theme="123" checked="checked" name="slect-theme" class="select--theme-radio"/>
+                <input type="radio" hidden="hidden" value="123456547645" data-theme="123" checked="checked" name="fd[theme]" class="select--theme-radio"/>
               </div>
               <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover2.jpg"/></a>
                 <h2>ProfitMag</h2>
                 <p>by Rigorous Themes</p>
                 <div class="select--theme"><a href="#" class="blueBtn">Select template</a><a href="#" class="read--more">Read more</a></div>
-                <input type="radio" data-theme="123" name="slect-theme" class="select--theme-radio"/>
+                <input type="radio" hidden="hidden" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
               </div>
               <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover3.jpg"/></a>
                 <h2>RainbowNews</h2>
                 <p>by 99colorthemes</p>
                 <div class="select--theme"><a href="#" class="blueBtn">Select template</a><a href="#" class="read--more">Read more</a></div>
-                <input type="radio" data-theme="123" name="slect-theme" class="select--theme-radio"/>
+                <input type="radio" hidden="hidden" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
               </div>
               <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover4.jpg"/></a>
                 <h2>Mercia</h2>
                 <p>by MH Themes</p>
                 <div class="select--theme"><a href="#" class="blueBtn">Select template</a><a href="#" class="read--more">Read more</a></div>
-                <input type="radio" data-theme="123" name="slect-theme" class="select--theme-radio"/>
+                <input type="radio" hidden="hidden" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
               </div>
               <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover5.jpg"/></a>
                 <h2>MeisterMag</h2>
                 <p>by wpion</p>
                 <div class="select--theme"><a href="#" class="blueBtn">Select template</a><a href="#" class="read--more">Read more</a></div>
-                <input type="radio" data-theme="123" name="slect-theme" class="select--theme-radio"/>
+                <input type="radio" hidden="hidden" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
               </div>
               <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover6.jpg"/></a>
                 <h2>SuperNews</h2>
                 <p>by Acme Themes</p>
                 <div class="select--theme"><a href="#" class="blueBtn">Select template</a><a href="#" class="read--more">Read more</a></div>
-                <input type="radio" data-theme="123" name="slect-theme" class="select--theme-radio"/>
+                <input type="radio" hidden="hidden" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
               </div>
               <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover7.jpg"/></a>
                 <h2>Metro Magazine</h2>
                 <p>by Rara Theme</p>
                 <div class="select--theme"><a href="#" class="blueBtn">Select template</a><a href="#" class="read--more">Read more</a></div>
-                <input type="radio" data-theme="123" name="slect-theme" class="select--theme-radio"/>
+                <input type="radio" hidden="hidden" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
               </div>
-            </form>
+            </div>
           </section>
           <div class="steps--container">
-            <h1>Step<span class="step--count"> 2</span> of 4</h1>
             <p>Here is a set of the most necessary plug-ins for media sites created on WordPress. Choose the right one for you.</p>
             <div class="progress--bar">
               <ul>
@@ -107,15 +107,15 @@
                 <label for="select"><span id="select">Select recommended</span></label>
               </div>
               <div class="plugins--category">
-                <div class="social">
+                <div class="main--plugins-list social">
                   <div class="category--title">
-                    <input type="checkbox" checked id="social">
+                    <input type="checkbox" data-group="group1" id="social">
                     <label for="social">Social</label>
                   </div>
                   <ul class="category--list">
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="facebook">
+                        <input type="checkbox" value="500000" name="fd[plugins][]" data-plugin="group1" id="facebook">
                         <label for="facebook">Facebook integration</label>
                       </div>
                       <div class="popup--item">
@@ -126,7 +126,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="twitter">
+                        <input type="checkbox" name="fd[plugins][]" value="365" data-plugin="group1" id="twitter">
                         <label for="twitter">Twitter integration</label>
                       </div>
                       <div class="popup--item">
@@ -137,7 +137,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="google">
+                        <input type="checkbox" name="fd[plugins][]" value="800" data-plugin="group1" id="google">
                         <label for="google">Google Plus integration</label>
                       </div>
                       <div class="popup--item">
@@ -148,7 +148,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="linkedin">
+                        <input type="checkbox" name="fd[plugins][]" value="0000" data-plugin="group1" id="linkedin">
                         <label for="linkedin">linkedin integration</label>
                       </div>
                       <div class="popup--item">
@@ -159,7 +159,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="facebook2">
+                        <input type="checkbox" name="fd[plugins][]" value="53fghg" data-plugin="group1" id="facebook2">
                         <label for="facebook2">Facebook integration</label>
                       </div>
                       <div class="popup--item">
@@ -170,7 +170,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="twitter2">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group1" id="twitter2">
                         <label for="twitter2">Twitter integration</label>
                       </div>
                       <div class="popup--item">
@@ -181,15 +181,15 @@
                     </li>
                   </ul>
                 </div>
-                <div class="tools">
+                <div class="main--plugins-list tools">
                   <div class="category--title">
-                    <input type="checkbox" id="tools">
+                    <input type="checkbox" data-group="group2" id="tools">
                     <label for="tools">Tools</label>
                   </div>
                   <ul class="category--list">
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="facebook3">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group2" id="facebook3">
                         <label for="facebook3">Facebook integration</label>
                       </div>
                       <div class="popup--item">
@@ -200,7 +200,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="twitter3">
+                        <input type="checkbox" name="fd[plugins][]" value="33432" data-plugin="group2" id="twitter3">
                         <label for="twitter3">Twitter integration</label>
                       </div>
                       <div class="popup--item">
@@ -211,7 +211,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="google2">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group2" id="google2">
                         <label for="google2">Google Plus integration</label>
                       </div>
                       <div class="popup--item">
@@ -222,7 +222,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="linkedin2">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group2" id="linkedin2">
                         <label for="linkedin2">linkedin integration</label>
                       </div>
                       <div class="popup--item">
@@ -233,7 +233,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="facebook4">
+                        <input type="checkbox" name="fd[plugins][]" value="44743" data-plugin="group2" id="facebook4">
                         <label for="facebook4">Facebook integration</label>
                       </div>
                       <div class="popup--item">
@@ -244,7 +244,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="twitter4">
+                        <input type="checkbox" name="fd[plugins][]" value="4423523527" data-plugin="group2" id="twitter4">
                         <label for="twitter4">Twitter integration</label>
                       </div>
                       <div class="popup--item">
@@ -255,15 +255,15 @@
                     </li>
                   </ul>
                 </div>
-                <div class="other">
+                <div class="main--plugins-list other">
                   <div class="category--title">
-                    <input type="checkbox" id="other">
+                    <input type="checkbox" data-group="group3" id="other">
                     <label for="other">Other</label>
                   </div>
                   <ul class="category--list">
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="facebook5">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group3" id="facebook5">
                         <label for="facebook5">Facebook integration</label>
                       </div>
                       <div class="popup--item">
@@ -274,7 +274,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="twitter5">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group3" id="twitter5">
                         <label for="twitter5">Twitter integration</label>
                       </div>
                       <div class="popup--item">
@@ -285,7 +285,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="google3">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group3" id="google3">
                         <label for="google3">Google Plus integration</label>
                       </div>
                       <div class="popup--item">
@@ -296,7 +296,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="linkedin3">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group3" id="linkedin3">
                         <label for="linkedin3">linkedin integration</label>
                       </div>
                       <div class="popup--item">
@@ -307,7 +307,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="facebook8">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group3" id="facebook8">
                         <label for="facebook8">Facebook integration</label>
                       </div>
                       <div class="popup--item">
@@ -318,7 +318,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="twitter8">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group3" id="twitter8">
                         <label for="twitter8">Twitter integration</label>
                       </div>
                       <div class="popup--item">
@@ -329,15 +329,15 @@
                     </li>
                   </ul>
                 </div>
-                <div class="media">
+                <div class="main--plugins-list media">
                   <div class="category--title">
-                    <input type="checkbox" id="media">
+                    <input type="checkbox" data-group="group4" id="media">
                     <label for="media">Media</label>
                   </div>
                   <ul class="category--list">
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="facebook6">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group4" id="facebook6">
                         <label for="facebook6">Facebook integration</label>
                       </div>
                       <div class="popup--item">
@@ -348,7 +348,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="twitter6">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group4" id="twitter6">
                         <label for="twitter6">Twitter integration</label>
                       </div>
                       <div class="popup--item">
@@ -359,7 +359,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="google4">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group4" id="google4">
                         <label for="google4">Google Plus integration</label>
                       </div>
                       <div class="popup--item">
@@ -370,7 +370,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="linkedin4">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group4" id="linkedin4">
                         <label for="linkedin4">linkedin integration</label>
                       </div>
                       <div class="popup--item">
@@ -381,7 +381,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="facebook7">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group4" id="facebook7">
                         <label for="facebook7">Facebook integration</label>
                       </div>
                       <div class="popup--item">
@@ -392,7 +392,7 @@
                     </li>
                     <li class="category--item">
                       <div class="category--btn">
-                        <input type="checkbox" data-plugin="123456" id="twitter7">
+                        <input type="checkbox" name="fd[plugins][]" value="447" data-plugin="group4" id="twitter7">
                         <label for="twitter7">Twitter integration</label>
                       </div>
                       <div class="popup--item">
@@ -411,7 +411,6 @@
                 <path id="path0_fill" fill-rule="evenodd" d="M 0.292893 8.07107C -0.0976311 7.68054 -0.0976311 7.04738 0.292893 6.65685L 6.65685 0.292893C 7.04738 -0.0976311 7.68054 -0.0976311 8.07107 0.292893C 8.46159 0.683418 8.46159 1.31658 8.07107 1.70711L 3.41421 6.36396L 15 6.36396C 17.7614 6.36396 20 8.60254 20 11.364C 20 11.9162 19.5523 12.364 19 12.364C 18.4477 12.364 18 11.9162 18 11.364C 18 9.70711 16.6569 8.36396 15 8.36396L 3.41421 8.36396L 8.07107 13.0208C 8.46159 13.4113 8.46159 14.0445 8.07107 14.435C 7.68054 14.8256 7.04738 14.8256 6.65685 14.435L 0.292893 8.07107Z"></path>
               </svg></a></div>
           <div class="steps--container step--login">
-            <h1>Step<span class="step--count"> 3</span> of 4</h1>
             <p>Please log in to manage the created sites or be able to connect with us.</p>
             <div class="progress--bar">
               <ul>
@@ -440,76 +439,78 @@
                     </svg></a></li>
               </ul>
               <h2>or sign in with email</h2>
-              <form class="login--form">
+              <div class="login--form">
                 <div class="form--group">
                   <fieldset class="form--set login--form-email">
                     <label for="email" class="label--form">Email</label>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email">
                     <div class="no--account-wrapper"><span>No account ?</span><a href="#" class="no-account">Sign Up with email</a></div>
                   </fieldset>
                   <fieldset class="form--set login--form-password">
                     <label for="password" class="label--form">Password</label>
-                    <input type="password" name="password" id="password" required><a href="#" class="forgot--password">Forgot password ?</a>
+                    <input type="password" name="password" id="password"><a href="#" class="forgot--password">Forgot password ?</a>
                   </fieldset>
                 </div>
-                <button type="submit" disabled class="signin--button">Sign in</button>
-              </form>
+                <button type="button" disabled class="signin--button">Sign in</button>
+              </div>
             </div>
             <div class="login--container">
               <h1>Sign up with email</h1>
-              <form class="login--form">
+              <div class="login--form">
                 <div class="form--group">
                   <fieldset class="form--set login--form-email">
                     <label for="email2" class="label--form">Email</label>
-                    <input type="email" name="email" id="email2" required>
+                    <input type="email" name="email" id="email2">
                     <div class="no--account-wrapper"><span>Already have an account?</span><a href="#" class="no-account">Sign In</a></div>
                   </fieldset>
                   <fieldset class="form--set login--form-password">
                     <label for="password2" class="label--form">Passwords</label>
-                    <input type="password" name="password" id="password2" required>
+                    <input type="password" name="password" id="password2">
                   </fieldset>
                 </div>
-                <button type="submit" disabled class="signin--button">Sign up</button>
-              </form>
-            </div>
-            <div class="steps--container step--finish">
-              <h1><span class="step--count"> Finish</span></h1>
-              <p>Download the archive with your site and a set of plug-ins on your computer. Further instructions will tell you what to do next.</p>
-              <div class="progress--bar">
-                <ul>
-                  <li>Choose a template</li>
-                  <li>Select Plugins</li>
-                  <li>Authorization</li>
-                  <li class="bar--active">Download Site</li>
-                </ul>
+                <button type="button" disabled class="signin--button">Sign up</button>
               </div>
             </div>
-            <section class="content-finish">
-              <div class="finish--img"><img src="../images/them.jpg"></div>
-              <div class="arrow--line">
-                <div class="line--holder"></div><img src="../images/Frame.png">
-                <div class="line--holder"></div>
-              </div>
-              <div class="finsh--info">
-                <div class="finsh--info-content">
-                  <h1>Enter the name of the site</h1>
-                  <form class="generate--name">
-                    <div class="form--group">
-                      <fieldset class="form--set site--name focus">
-                        <label for="siteName" class="label--form">Auto generated name</label>
-                        <input type="text" name="siteName" value="SergiosVision" id="siteName" required>
-                      </fieldset>
-                    </div>
-                    <div class="back--forward"><a href="#" class="blueBtn">Confirm and continue</a><a href="#" class="backBtn">Back
-                        <svg width="21" height="16" viewBox="0 0 21 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                          <path id="path0_fill" fill-rule="evenodd" d="M 0.292893 8.07107C -0.0976311 7.68054 -0.0976311 7.04738 0.292893 6.65685L 6.65685 0.292893C 7.04738 -0.0976311 7.68054 -0.0976311 8.07107 0.292893C 8.46159 0.683418 8.46159 1.31658 8.07107 1.70711L 3.41421 6.36396L 15 6.36396C 17.7614 6.36396 20 8.60254 20 11.364C 20 11.9162 19.5523 12.364 19 12.364C 18.4477 12.364 18 11.9162 18 11.364C 18 9.70711 16.6569 8.36396 15 8.36396L 3.41421 8.36396L 8.07107 13.0208C 8.46159 13.4113 8.46159 14.0445 8.07107 14.435C 7.68054 14.8256 7.04738 14.8256 6.65685 14.435L 0.292893 8.07107Z"></path>
-                        </svg></a></div>
-                  </form>
+          </section>
+          <div class="steps--container step--finish">
+            <h1><span class="step--count"> Finish</span></h1>
+            <p>Download the archive with your site and a set of plug-ins on your computer. Further instructions will tell you what to do next.</p>
+            <div class="progress--bar">
+              <ul>
+                <li>Choose a template</li>
+                <li>Select Plugins</li>
+                <li>Authorization</li>
+                <li class="bar--active">Download Site</li>
+              </ul>
+            </div>
+          </div>
+          <section class="content-finish">
+            <div class="finish--img"><img src="../images/them.jpg"></div>
+            <div class="arrow--line">
+              <div class="line--holder"></div><img src="../images/Frame.png">
+              <div class="line--holder"></div>
+            </div>
+            <div class="finsh--info">
+              <div class="finsh--info-content">
+                <h1>Enter the name of the site</h1>
+                <div class="generate--name">
+                  <div class="form--group">
+                    <fieldset class="form--set site--name focus">
+                      <label for="siteName" class="label--form">Auto generated name</label>
+                      <input type="text" name="siteName" value="SergiosVision" id="siteName" required>
+                    </fieldset>
+                  </div>
+                  <div class="back--forward">
+                    <button type="submit" class="blueBtn">Download site</button><a href="#" class="backBtn">Back to edit
+                      <svg width="21" height="16" viewBox="0 0 21 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path id="path0_fill" fill-rule="evenodd" d="M 0.292893 8.07107C -0.0976311 7.68054 -0.0976311 7.04738 0.292893 6.65685L 6.65685 0.292893C 7.04738 -0.0976311 7.68054 -0.0976311 8.07107 0.292893C 8.46159 0.683418 8.46159 1.31658 8.07107 1.70711L 3.41421 6.36396L 15 6.36396C 17.7614 6.36396 20 8.60254 20 11.364C 20 11.9162 19.5523 12.364 19 12.364C 18.4477 12.364 18 11.9162 18 11.364C 18 9.70711 16.6569 8.36396 15 8.36396L 3.41421 8.36396L 8.07107 13.0208C 8.46159 13.4113 8.46159 14.0445 8.07107 14.435C 7.68054 14.8256 7.04738 14.8256 6.65685 14.435L 0.292893 8.07107Z"></path>
+                      </svg></a>
+                  </div>
                 </div>
               </div>
-            </section>
+            </div>
           </section>
-        </div>
+        </form>
       </main>
       <footer>
         <div class="popup--help-btn">
@@ -517,7 +518,7 @@
             <path id="path0_fill" fill-rule="evenodd" d="M 20 0C 8.9541 0 0 8.95435 0 20C 0 31.0457 8.9541 40 20 40C 31.0459 40 40 31.0457 40 20C 40 8.95435 31.0459 0 20 0ZM 18.4375 18.832L 18.4375 21.952L 21.3813 21.952L 21.3813 20.7999C 23.312 20.1279 24.2773 18.9919 24.2773 17.392C 24.2773 16.9014 24.1758 16.4266 23.9731 15.968C 23.7705 15.5093 23.4824 15.104 23.1094 14.752C 22.7358 14.4 22.2881 14.1227 21.7651 13.9199C 21.2534 13.7067 20.6826 13.6 20.0532 13.6C 19.4346 13.6 18.8584 13.6959 18.3252 13.8879C 17.8027 14.0693 17.3438 14.3307 16.9492 14.672C 16.5654 15.0027 16.2612 15.3973 16.0371 15.856C 15.8237 16.304 15.7173 16.7999 15.7173 17.344L 18.9014 17.344C 18.9014 16.9813 18.9971 16.688 19.1895 16.464C 19.3921 16.24 19.6587 16.1279 19.9893 16.1279C 20.3521 16.1279 20.6401 16.2454 20.8535 16.48C 21.0664 16.7146 21.1733 16.9919 21.1733 17.312C 21.1733 17.5466 21.1201 17.7653 21.0132 17.968C 20.9067 18.16 20.7573 18.3253 20.5654 18.464C 20.3838 18.6027 20.1655 18.7146 19.9092 18.7999C 19.6533 18.8746 19.3813 18.912 19.0933 18.912C 18.9971 18.912 18.896 18.9066 18.7891 18.896C 18.6826 18.8746 18.5654 18.8533 18.4375 18.832ZM 18.2612 23.744C 18.1655 23.968 18.1172 24.208 18.1172 24.464C 18.1172 24.72 18.1655 24.9653 18.2612 25.2C 18.3574 25.424 18.4907 25.6213 18.6611 25.792C 18.832 25.9626 19.0293 26.0959 19.2534 26.192C 19.4878 26.288 19.7334 26.3359 19.9893 26.3359C 20.2451 26.3359 20.4854 26.288 20.7095 26.192C 20.9438 26.0959 21.1465 25.9626 21.3174 25.792C 21.4878 25.6213 21.6211 25.424 21.7173 25.2C 21.8135 24.9653 21.8613 24.72 21.8613 24.464C 21.8613 24.208 21.8135 23.968 21.7173 23.744C 21.6211 23.5093 21.4878 23.3066 21.3174 23.136C 21.1465 22.9653 20.9438 22.832 20.7095 22.736C 20.4854 22.64 20.2451 22.5919 19.9893 22.5919C 19.7334 22.5919 19.4878 22.64 19.2534 22.736C 19.0293 22.832 18.832 22.9653 18.6611 23.136C 18.4907 23.3066 18.3574 23.5093 18.2612 23.744Z"></path>
           </svg>
         </div>
-        <div class="popup--help-content">
+        <figure class="popup--help-content">
           <ul>
             <li><a href="/contacts.html">Contact Us</a></li>
             <li><a href="/help.html">Help page</a></li>
@@ -525,7 +526,7 @@
           </ul>
           <div class="circle--close"><span>&times;</span></div>
           <div class="circle"></div>
-        </div>
+        </figure>
         <div class="footer--main">
           <ul>
             <li><a href="/steps.html">Crate a website</a></li>
