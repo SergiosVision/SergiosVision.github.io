@@ -1,6 +1,15 @@
+@mixin imgGrid ($qty, $margin)
+  width: ((100% - (($qty - 1) * $margin))/$qty)
+  &:nth-child(n)
+    margin-right: $margin
+    margin-bottom: $margin
+  &:nth-child(#{$qty}n)
+    margin-right: 0
+    margin-bottom: 0
+
+
 main
   margin: 57px auto 0 auto
-    //  width: 1294px
   width: 100%
   position: relative
 
@@ -47,6 +56,8 @@ main
   color: #333333
   text-align: center
   margin-bottom: 33px
+.content-features-page
+  margin-top: 64px!important
 
 .blueBtn
   display: inline-block
@@ -202,6 +213,35 @@ main
   font-size: 14px
   font-weight: bold
 
+@media (min-width: 980px) and (max-width: 1288px)
+  main
+    .content
+      width: 100%
+    .content-features, .content-features-page, .content--account
+      width: 90%
+
+    .content--tehemes .theme--form
+      width: 100%
+      padding: 0 60px
+      .theme--card
+        @include imgGrid(4, 4%)
+        width: 240px!important
+    .content--plugins
+      width: 100%
+    .plugins--container
+      padding: 0 60px
+      .plugins--category
+        width: 100%
+        .category--title
+          margin-left: 115px
+        .main--plugins-list
+          @include imgGrid(2, 2%)
+          margin-bottom: 40px!important
+          .category--item
+            margin: 12px auto 0 auto
+            &:first-child
+              margin-top: 0
+
 @media (min-width: 980px) and (max-width: 1209px)
    header
     flex-direction: column
@@ -222,31 +262,19 @@ main
         margin-left: 20px
     .jumbo--images
         width: 450px!important
-    .content
-        width: 100%
-        margin: 163px auto 0 auto
-        padding: 0 60px
-    .content--tehemes
-      padding: 0
-      margin-top: 64px
-      .theme--card
-        width: 240px
-        &:not(:first-child)
-          margin-left: 20px
-      .theme--form
-        width: 100%
-        margin: 0 auto
-        padding: 0 60px
-    .main--plugins-list
-        width: 34.33%
-        justify-content: center
-        margin-bottom: 42px
-        .category--item
-          margin: 0 auto
-    .plugins--container .plugins--category .category--title label
         
 
 @media (min-width: 769px) and (max-width: 979px)
+  .content--title
+    width: 100%
+  .steps--container
+    width: 100%!important
+    margin: 0 auto 64px auto!important
+    padding: 0 100px
+  .step--login
+    margin-top: 58px!important
+  .content--tehemes
+    margin: 0 auto!important
   .hamburger
     display: block
   .content--title
@@ -264,7 +292,6 @@ main
       border: 1px solid #F2F2F2
       z-index: 2
       max-width: 320px
-      width: 0
       height: auto
       visibility: hidden
       opacity: 0
@@ -277,7 +304,6 @@ main
         opacity: 1
         visibility: visible
         transform: scale(1)
-        width: 320px
         transition-delay: 0s
       &.show--mobile-nav li
         opacity: 1
@@ -328,7 +354,49 @@ main
     .content
       width: 100%
       margin: 163px auto 0 auto
-      padding: 0 60px
+      padding: 0 30px
+    .content--tehemes
+      .theme--form
+        width: 100%
+      .theme--card
+        width: 240px
+        height: 500px
+        margin-right: 0!important
+    .content--plugins
+      margin-top: 64px
+    .main--plugins-list
+      width: 50%!important
+      .category--title
+        margin-left: 100px!important
+      .category--list
+        margin-bottom: 40px!important
+        .category--item
+          margin: 12px auto 0 auto
+          &:first-child
+            margin-top: 0
+  .content--login
+    margin-top: 64px!important
+  .content-finish
+    .finish--img
+      width: 100%
+      padding: 60px
+  .content--blog, .content--about, .content--contacts,
+  .content--account, .content--help, .content--faq
+    margin-top: 64px!important
+    width: 100%!important
+    padding: 0 30px
+
+@media (min-width: 769px) and (max-width: 876px)
+  main .content--tehemes .theme--form
+    justify-content: center
+    .theme--card
+      margin-right: 10%!important
+      &:nth-child(2n)
+        margin-right: 0!important
+      &:last-child
+        margin: 0!important
+
+
 
 @media (min-width: 1600px)
   main

@@ -21,10 +21,10 @@ $('.form--set input').focus(function () {
 
 $('.hamburger').on('click', function () {
     $('#navigation').toggleClass('show--mobile-nav');
+    $('.hamburger').toggleClass('open');
 });
 
 // Show modal
-
 $('.forgot--password, .cover--image, .read--more, .popup--item').on('click', function (e) {
    e.preventDefault();
    if (!$('body').hasClass('show--modal')){
@@ -41,7 +41,6 @@ $('.overlay, .iremember--account').on('click', function (e) {
 
 
 // Check all checkboxes
-
 $('.category--title input').on('click', function () {
     var group = $(this).attr('data-group'),
         isChecked = !!($(this).prop('checked'));
@@ -70,7 +69,6 @@ $('.select--theme .blueBtn').on('click', function (e) {
 });
 
 // Popup Help
-
 $('.popup--help-btn').on('click', function () {
    $('.popup--help-content').addClass('show-popup-content');
 });
@@ -139,13 +137,6 @@ $('.howItWorks').on('click', function (e) {
 
 // Geta all Values
 
-var getDataTheme = $(this).data('theme');
-$('.theme--card').find('input[name=data-theme]').val(getDataTheme);
-var getDataPlugin = $(this).data('plugin');
-$('.category--list').find('input[name=data-plugin]').val(getDataPlugin);
-
-console.log(getDataTheme);
-console.log(getDataPlugin);
 
 // Native JavaScript
 
