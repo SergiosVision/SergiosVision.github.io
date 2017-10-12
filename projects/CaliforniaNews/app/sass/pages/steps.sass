@@ -1,3 +1,12 @@
+@mixin imgGrid ($qty, $margin)
+  width: ((100% - (($qty - 1) * $margin))/$qty)
+  &:nth-child(n)
+    margin-right: $margin
+    margin-bottom: $margin
+  &:nth-child(#{$qty}n)
+    margin-right: 0
+    margin-bottom: 0
+
 .steps--container
   width: 880px
   margin: 0 auto 64px auto
@@ -97,6 +106,7 @@
 .content--plugins
   width: 1156px
   margin-top: 64px
+  //display: none
 .plugins--container
   margin-top: 64px
   .recommended
@@ -212,6 +222,7 @@
   margin-top: 58px
 
 .content--login
+  //display: none
   .login--container
     width: 602px
     margin: 0 auto
@@ -261,6 +272,7 @@
   width: 100%
   margin-top: 40px
   position: relative
+  //display: none
   .finsh--info
     width: 100%
     height: 526px
@@ -317,10 +329,10 @@
     list-style: none
     display: flex
     justify-content: center
-    .bar--active
-      color: #3399FF
-      &::before
-        background-color: #3399FF
+    //.bar--active
+    //  color: #3399FF
+    //  &::before
+    //    background-color: #3399FF
     li
       position: relative
       float: left

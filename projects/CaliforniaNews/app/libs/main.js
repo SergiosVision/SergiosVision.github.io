@@ -18,14 +18,13 @@ $('.form--set input').focus(function () {
  });
 
 // Toggle mobile menu
-
 $('.hamburger').on('click', function () {
     $('#navigation').toggleClass('show--mobile-nav');
     $('.hamburger').toggleClass('open');
 });
 
 // Show modal
-$('.forgot--password, .cover--image, .read--more, .popup--item').on('click', function (e) {
+$('.forgot--password, .popup--item').on('click', function (e) {
    e.preventDefault();
    if (!$('body').hasClass('show--modal')){
        $('body').addClass('show--modal fixed');
@@ -34,9 +33,31 @@ $('.forgot--password, .cover--image, .read--more, .popup--item').on('click', fun
    }
 });
 
+var radio_template;
+$('.cover--image, .read--more').on('click', function (e) {
+    e.preventDefault();
+    if (!$('body').hasClass('show--modal-big')){
+        $('body').addClass('show--modal-big fixed');
+        radio_template = $(this).closest('.theme--card').find('input[type=radio]');
+    } else {
+        $('body').removeClass('show--modal-big fixed');
+    }
+});
+
+$('.popup--item').on('click', function (e) {
+    e.preventDefault();
+    if (!$('body').hasClass('show--modal-bigPlugins')){
+        $('body').addClass('show--modal-bigPlugins fixed');
+    } else {
+        $('body').removeClass('show--modal-bigPlugins fixed');
+    }
+});
+
 $('.overlay, .iremember--account').on('click', function (e) {
     e.preventDefault();
     $('body').removeClass('show--modal fixed');
+    $('body').removeClass('show--modal-big fixed');
+    $('body').removeClass('show--modal-bigPlugins fixed');
 });
 
 
@@ -66,6 +87,11 @@ $('.category--btn input').on('click', function () {
 $('.select--theme .blueBtn').on('click', function (e) {
     e.preventDefault();
     $(this).closest('.theme--card').find('input').prop("checked", true);
+});
+
+$('.select--theme-btn').on('click', function (e) {
+    e.preventDefault();
+    radio_template.prop("checked", true);
 });
 
 // Popup Help
@@ -119,7 +145,6 @@ $(getAccordBtn).click(function () {
     }
 });
 
-
 // Smooth scroll
 $('.howItWorks').on('click', function (e) {
     if (this.hash !== ''){
@@ -135,7 +160,10 @@ $('.howItWorks').on('click', function (e) {
     }
 });
 
-// Geta all Values
+// Wizard
+
+
+
 
 
 // Native JavaScript

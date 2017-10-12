@@ -12,7 +12,6 @@ main
   margin: 57px auto 0 auto
   width: 100%
   position: relative
-
   .jumbotron-wrapper
     height: 680px
     width: 1132px
@@ -148,6 +147,26 @@ main
   visibility: visible
   opacity: 1
 
+.show--modal-big .overlay,
+.show--modal-big .big--modal-themes
+  visibility: visible
+  opacity: 1
+
+.show--modal-big .big--modal-themes
+  transform: none
+  visibility: visible
+  opacity: 1
+
+.show--modal-bigPlugins .overlay,
+.show--modal-bigPlugins .big--modal-plugins
+  visibility: visible
+  opacity: 1
+
+.show--modal-bigPlugins .big--modal-plugins
+  transform: none
+  visibility: visible
+  opacity: 1
+
 .small--modal-wrapper
   position: fixed
   left: 0
@@ -172,6 +191,83 @@ main
     margin-top: 32px
     .blueBtn
       width: 100%
+
+.big--modal-themes
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  width: 980px
+  max-height: 1081px
+  overflow: auto
+  background-color: #fff
+  border-radius: 8px
+  padding: 40px
+  margin: auto
+  z-index: 50
+  visibility: hidden
+  opacity: 0
+  transition: .5s ease
+  transform: translateY(-3000px)
+  .modal--author
+    margin-top: 8px
+    span
+      color: #BDBDBD
+      font-size: 16px
+      font-weight: normal
+    span:not(:first-child)
+      margin-left: 16px
+  .modal--info
+    margin-top: 24px
+    p
+      font-size: 14px
+      font-weight: normal
+  .select--theme-btn
+    margin-top: 24px
+  .modal--images
+    display: flex
+    margin-top: 40px
+    img
+      max-width: 100%
+      height: auto
+    .modal--images-desk
+      width: 684px
+    .modal--images-mob
+      width: 202px
+      margin-left: 15px
+
+.big--modal-plugins
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  width: 980px
+  max-height: 1081px
+  overflow: auto
+  background-color: #fff
+  border-radius: 8px
+  margin: auto
+  z-index: 50
+  visibility: hidden
+  opacity: 0
+  transition: .5s ease
+  transform: translateY(-3000px)
+  .modal--plugins-info
+    padding: 40px
+    h1
+      margin-bottom: 8px
+    .modal--plugins-desk
+      margin-top: 24px
+      max-height: 432px
+      height: 432px
+  .modal--plugins-image
+    h2
+      padding: 0 40px 16px 40px
+    img
+      max-width: 100%
+      height: auto
 
 .content
   width: 1022px
@@ -206,12 +302,29 @@ main
 .content--title
   padding: 0 160px
 
-  
+
+.active--step
+  display: block
+
+.active
+    color: #3399FF!important
+    &::before
+      background-color: #3399FF!important
+
+
 .cancelBtn
   display: block
   color: #BDBDBD
   font-size: 14px
   font-weight: bold
+
+.tab-content>.tab-pane
+  visibility: hidden
+  display: none
+
+.tab-content>.active
+  visibility: visible
+  display: block
 
 @media (min-width: 980px) and (max-width: 1288px)
   main
