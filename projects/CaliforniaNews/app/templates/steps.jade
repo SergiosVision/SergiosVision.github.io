@@ -9,7 +9,7 @@ mixin theme-card (imageName, themeName, author, check)
         div.select--theme.wizard
             a.blueBtn.next(href="#") Select template
             a.read--more(href="#") Read more
-        input.select--theme-radio(type="radio" hidden value="123456547645" data-theme="123" checked=(check) name="fd[theme]")
+        input.select--theme-radio(type="radio" value="123456547645" data-theme="123" checked=(check) name="fd[theme]")
 
 mixin backForward ()
     .back--forward.wizard
@@ -44,7 +44,7 @@ block content
                     |  of 4
                 p You don't need be a designer. We've developed a wide range of blocks. Contemporary look and high flexibility makes them handy and applicable for any kind of content.
                 div.progress--bar
-                    ul
+                    ul.prog
                         li.active Choose a template
                             a(href="#step-1" data-toggle="tab")
                         li Select Plugins
@@ -54,7 +54,7 @@ block content
                         li Download Site
                             a(href="#finish" data-toggle="tab")
             form(method="POST")#steps--container-wrappper.tab-content
-                section.content.content--tehemes.tab-pane.active#step-1
+                section.content.content--tehemes.tab-pane#step-1
                     div.theme--form
                         +theme-card('cover1', 'Daily Insight', 'by Yam Chhetri', 'checked')
                         +theme-card('cover2', 'ProfitMag', 'by Rigorous Themes')
@@ -334,7 +334,7 @@ block content
                                     label.label--form(for="password2") Passwords
                                     input(type="password" name="password" id="password2")
                             button.signin--button(type="button" disabled) Sign up
-
+                    + backForward()
 
                 section.content-finish.tab-pane#finish
                     div.finish--img
@@ -351,7 +351,7 @@ block content
                                     fieldset.form--set.site--name.focus
                                         label.label--form(for="siteName") Auto generated name
                                         input(type="text" name="siteName" value="SergiosVision" id="siteName" required)
-                                .back--forward.wizard
+                                .back--forward
                                     button.blueBtn(type="submit") Download site
                                     a.backBtn.previous(href="#") Back to edit
                                         svg(width="21" height="16" viewBox="0 0 21 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")

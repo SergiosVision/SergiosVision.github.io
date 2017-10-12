@@ -83,16 +83,40 @@ $('.category--btn input').on('click', function () {
     $('.category--title input[data-group="' + group + '"]').prop('checked', isChecked);
 });
 
+var length = $('.tab-content .tab-pane').length - 1;
+
+$(document).ready(function() {
+    $('.tab-content .tab-pane').eq(0).addClass("active");
+});
+
+
 // Select Themes
-$('.select--theme .blueBtn').on('click', function (e) {
+$('.select--theme .blueBtn, .wizard .blueBtn').on('click', function (e) {
     e.preventDefault();
     $(this).closest('.theme--card').find('input').prop("checked", true);
+    if ($(this).hasClass('.select--theme .blueBtn')){
+        $('.tab-content .tab-pane').each(function(index) {
+            if($(this).hasClass('active') && index != length) {
+                $(this).removeClass("active").next('.tab-pane').addClass("active");
+                return false;
+            }
+        });
+    } else {
+        $('.tab-content .tab-pane').each(function(index) {
+            if($(this).hasClass('active') && index != length) {
+                $(this).removeClass("active").next('.tab-pane').addClass("active")
+                return false;
+            }
+        });
+    }
 });
+
 
 $('.select--theme-btn').on('click', function (e) {
     e.preventDefault();
     radio_template.prop("checked", true);
 });
+
 
 // Popup Help
 $('.popup--help-btn').on('click', function () {
@@ -160,11 +184,7 @@ $('.howItWorks').on('click', function (e) {
     }
 });
 
-// Wizard
-
-
-
-
-
 // Native JavaScript
+
+
 

@@ -36,7 +36,7 @@
             <h1>Step<span class="step--count"> 1</span> of 4</h1>
             <p>You don't need be a designer. We've developed a wide range of blocks. Contemporary look and high flexibility makes them handy and applicable for any kind of content.</p>
             <div class="progress--bar">
-              <ul>
+              <ul class="prog">
                 <li class="active">Choose a template<a href="#step-1" data-toggle="tab"></a></li>
                 <li>Select Plugins<a href="#step-2" data-toggle="tab"></a></li>
                 <li>Authorization<a href="#step-3" data-toggle="tab"></a></li>
@@ -45,49 +45,49 @@
             </div>
           </div>
           <form method="POST" id="steps--container-wrappper" class="tab-content">
-            <section id="step-1" class="content content--tehemes tab-pane active">
+            <section id="step-1" class="content content--tehemes tab-pane">
               <div class="theme--form">
                 <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover1.jpg"/></a>
                   <h2>Daily Insight</h2>
                   <p>by Yam Chhetri</p>
                   <div class="select--theme wizard"><a href="#" class="blueBtn next">Select template</a><a href="#" class="read--more">Read more</a></div>
-                  <input type="radio" hidden="hidden" value="123456547645" data-theme="123" checked="checked" name="fd[theme]" class="select--theme-radio"/>
+                  <input type="radio" value="123456547645" data-theme="123" checked="checked" name="fd[theme]" class="select--theme-radio"/>
                 </div>
                 <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover2.jpg"/></a>
                   <h2>ProfitMag</h2>
                   <p>by Rigorous Themes</p>
                   <div class="select--theme wizard"><a href="#" class="blueBtn next">Select template</a><a href="#" class="read--more">Read more</a></div>
-                  <input type="radio" hidden="hidden" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
+                  <input type="radio" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
                 </div>
                 <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover3.jpg"/></a>
                   <h2>RainbowNews</h2>
                   <p>by 99colorthemes</p>
                   <div class="select--theme wizard"><a href="#" class="blueBtn next">Select template</a><a href="#" class="read--more">Read more</a></div>
-                  <input type="radio" hidden="hidden" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
+                  <input type="radio" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
                 </div>
                 <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover4.jpg"/></a>
                   <h2>Mercia</h2>
                   <p>by MH Themes</p>
                   <div class="select--theme wizard"><a href="#" class="blueBtn next">Select template</a><a href="#" class="read--more">Read more</a></div>
-                  <input type="radio" hidden="hidden" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
+                  <input type="radio" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
                 </div>
                 <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover5.jpg"/></a>
                   <h2>MeisterMag</h2>
                   <p>by wpion</p>
                   <div class="select--theme wizard"><a href="#" class="blueBtn next">Select template</a><a href="#" class="read--more">Read more</a></div>
-                  <input type="radio" hidden="hidden" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
+                  <input type="radio" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
                 </div>
                 <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover6.jpg"/></a>
                   <h2>SuperNews</h2>
                   <p>by Acme Themes</p>
                   <div class="select--theme wizard"><a href="#" class="blueBtn next">Select template</a><a href="#" class="read--more">Read more</a></div>
-                  <input type="radio" hidden="hidden" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
+                  <input type="radio" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
                 </div>
                 <div class="theme--card"><a href="#" class="cover--image"><img src="/images/site-covers/cover7.jpg"/></a>
                   <h2>Metro Magazine</h2>
                   <p>by Rara Theme</p>
                   <div class="select--theme wizard"><a href="#" class="blueBtn next">Select template</a><a href="#" class="read--more">Read more</a></div>
-                  <input type="radio" hidden="hidden" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
+                  <input type="radio" value="123456547645" data-theme="123" name="fd[theme]" class="select--theme-radio"/>
                 </div>
               </div>
             </section>
@@ -450,6 +450,10 @@
                   <button type="button" disabled class="signin--button">Sign up</button>
                 </div>
               </div>
+              <div class="back--forward wizard"><a href="#" class="blueBtn next">Confirm and continue</a><a href="#" class="backBtn previous">Back
+                  <svg width="21" height="16" viewBox="0 0 21 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path id="path0_fill" fill-rule="evenodd" d="M 0.292893 8.07107C -0.0976311 7.68054 -0.0976311 7.04738 0.292893 6.65685L 6.65685 0.292893C 7.04738 -0.0976311 7.68054 -0.0976311 8.07107 0.292893C 8.46159 0.683418 8.46159 1.31658 8.07107 1.70711L 3.41421 6.36396L 15 6.36396C 17.7614 6.36396 20 8.60254 20 11.364C 20 11.9162 19.5523 12.364 19 12.364C 18.4477 12.364 18 11.9162 18 11.364C 18 9.70711 16.6569 8.36396 15 8.36396L 3.41421 8.36396L 8.07107 13.0208C 8.46159 13.4113 8.46159 14.0445 8.07107 14.435C 7.68054 14.8256 7.04738 14.8256 6.65685 14.435L 0.292893 8.07107Z"></path>
+                  </svg></a></div>
             </section>
             <section id="finish" class="content-finish tab-pane">
               <div class="finish--img"><img src="../images/them.jpg"></div>
@@ -467,7 +471,7 @@
                         <input type="text" name="siteName" value="SergiosVision" id="siteName" required>
                       </fieldset>
                     </div>
-                    <div class="back--forward wizard">
+                    <div class="back--forward">
                       <button type="submit" class="blueBtn">Download site</button><a href="#" class="backBtn previous">Back to edit
                         <svg width="21" height="16" viewBox="0 0 21 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                           <path id="path0_fill" fill-rule="evenodd" d="M 0.292893 8.07107C -0.0976311 7.68054 -0.0976311 7.04738 0.292893 6.65685L 6.65685 0.292893C 7.04738 -0.0976311 7.68054 -0.0976311 8.07107 0.292893C 8.46159 0.683418 8.46159 1.31658 8.07107 1.70711L 3.41421 6.36396L 15 6.36396C 17.7614 6.36396 20 8.60254 20 11.364C 20 11.9162 19.5523 12.364 19 12.364C 18.4477 12.364 18 11.9162 18 11.364C 18 9.70711 16.6569 8.36396 15 8.36396L 3.41421 8.36396L 8.07107 13.0208C 8.46159 13.4113 8.46159 14.0445 8.07107 14.435C 7.68054 14.8256 7.04738 14.8256 6.65685 14.435L 0.292893 8.07107Z"></path>
