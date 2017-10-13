@@ -53,7 +53,7 @@ $('.popup--item').on('click', function (e) {
     }
 });
 
-$('.overlay, .iremember--account').on('click', function (e) {
+$('.overlay, .iremember--account, .select--theme-btn').on('click', function (e) {
     e.preventDefault();
     $('body').removeClass('show--modal fixed');
     $('body').removeClass('show--modal-big fixed');
@@ -70,8 +70,7 @@ $('.category--title input').on('click', function () {
 
 $('.category--btn input').on('click', function () {
     var group = $(this).attr('data-plugin'),
-        siblings = $(this).attr('data-plugin', group)
-        ,
+        siblings = $(this).attr('data-plugin', group),
         isChecked = true;
     siblings.each(function(idx, el){
         if(!$(el).prop('checked')) {
@@ -83,32 +82,59 @@ $('.category--btn input').on('click', function () {
     $('.category--title input[data-group="' + group + '"]').prop('checked', isChecked);
 });
 
-var length = $('.tab-content .tab-pane').length - 1;
-
+// Wizard
 $(document).ready(function() {
-    $('.tab-content .tab-pane').eq(0).addClass("active");
+    // $('.tab-content .tab-pane').eq(0).addClass("active");
 });
 
 
 // Select Themes
-$('.select--theme .blueBtn, .wizard .blueBtn').on('click', function (e) {
+$('.select--theme .blueBtn, .wizard .blueBtn, .select--theme-btn').on('click', function (e) {
     e.preventDefault();
     $(this).closest('.theme--card').find('input').prop("checked", true);
-    if ($(this).hasClass('.select--theme .blueBtn')){
-        $('.tab-content .tab-pane').each(function(index) {
-            if($(this).hasClass('active') && index != length) {
-                $(this).removeClass("active").next('.tab-pane').addClass("active");
-                return false;
+        $('.tab-pane.active').fadeOut(300);
+        setTimeout(function () {
+            var new_tab = $('.tab-pane.active'),
+                new_bar = $('.progress--bar li.active');
+            if ($('.tab-pane.active').next().hasClass('auth')){
+                new_tab = new_tab.next().next();
+                new_bar = new_bar.next().next();
+            } else {
+                new_tab = new_tab.next();
+                new_bar = new_bar.next();
             }
-        });
-    } else {
-        $('.tab-content .tab-pane').each(function(index) {
-            if($(this).hasClass('active') && index != length) {
-                $(this).removeClass("active").next('.tab-pane').addClass("active")
-                return false;
-            }
-        });
-    }
+            $('.progress--bar li.active').removeClass('active');
+            new_bar.addClass('active');
+            $('.tab-pane.active').removeClass('active');
+            new_tab.fadeIn(300);
+            setTimeout(function () {
+                new_tab.addClass('active');
+            }, 300)
+        }, 300);
+});
+
+$('.backBtn').on('click', function (e) {
+    e.preventDefault();
+    $('.tab-pane.active').fadeOut(300);
+    setTimeout(function () {
+        var new_tab = $('.tab-pane.active'),
+            new_bar = $('.progress--bar li.active');
+        if ($('.tab-pane.active').prev().hasClass('auth')){
+            new_tab = new_tab.prev().prev();
+            new_bar = new_bar.prev().prev();
+        } else {
+            new_tab = new_tab.prev();
+            new_bar = new_bar.prev();
+        }
+        $('.progress--bar li.active').removeClass('active');
+        new_bar.addClass('active');
+
+        $('.tab-pane.active').removeClass('active');
+        new_tab.fadeIn(300);
+        setTimeout(function () {
+            new_tab.addClass('active');
+        }, 300)
+    }, 300);
 });
 
 
@@ -156,7 +182,12 @@ $('.content--account-save a').on('click', function (e) {
 var getAccordBtn = $('.open--accord-item');
 var getAccordContent = $('.accord--item-content');
 
+
 $(getAccordBtn).click(function () {
+    if($('body').hasClass('animate')){
+        return false;
+    }
+    $('body').addClass('animate');
     if ($(this).hasClass('is-active')){
         $(this).next(getAccordContent).slideUp(400);
         $(this).removeClass('is-active');
@@ -167,6 +198,9 @@ $(getAccordBtn).click(function () {
         $(this).next(getAccordContent).slideDown(400);
         $(this).addClass('is-active');
     }
+    setTimeout(function () {
+        $('body').removeClass('animate');
+    }, 400);
 });
 
 // Smooth scroll

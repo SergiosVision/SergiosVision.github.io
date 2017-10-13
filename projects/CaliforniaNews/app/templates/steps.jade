@@ -41,7 +41,7 @@ block content
                 h1
                     | Step
                     span.step--count  1
-                    |  of 4
+                    span.step--count-end of 4
                 p You don't need be a designer. We've developed a wide range of blocks. Contemporary look and high flexibility makes them handy and applicable for any kind of content.
                 div.progress--bar
                     ul.prog
@@ -54,7 +54,7 @@ block content
                         li Download Site
                             a(href="#finish" data-toggle="tab")
             form(method="POST")#steps--container-wrappper.tab-content
-                section.content.content--tehemes.tab-pane#step-1
+                section.content.content--tehemes.tab-pane.active#step-1
                     div.theme--form
                         +theme-card('cover1', 'Daily Insight', 'by Yam Chhetri', 'checked')
                         +theme-card('cover2', 'ProfitMag', 'by Rigorous Themes')
@@ -289,7 +289,7 @@ block content
                                             span.popup Read specification
                     + backForward()
 
-                section.content.content--login.tab-pane#step-3
+                section.content.content--login.tab-pane#step-3.auth
                     div.login--container
                         h1 Login with
                         ul.login--social
