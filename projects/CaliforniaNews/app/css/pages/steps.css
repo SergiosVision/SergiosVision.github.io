@@ -12,8 +12,6 @@
   .steps--container p {
     font-size: 14px;
     font-weight: normal; }
-  .steps--container .mobile--steps {
-    display: none; }
 
 .content--tehemes {
   width: 100%;
@@ -435,8 +433,7 @@
           transition-delay: .3s;
   -webkit-transform: translateY(313px);
       -ms-transform: translateY(313px);
-          transform: translateY(313px);
-  opacity: 0; }
+          transform: translateY(313px); }
   .finish--img img {
     display: block;
     width: 100%;

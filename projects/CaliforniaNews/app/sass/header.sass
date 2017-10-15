@@ -1,7 +1,9 @@
 header
-  display: flex
-  justify-content: space-between
   padding: 48px 40px 0
+  nav
+    display: flex
+    justify-content: space-between
+    width: 100%
   a
     text-decoration: none
   .brand--logo a
@@ -10,17 +12,23 @@ header
     text-transform: uppercase
     font-weight: bold
     font-size: 30px
-    display: flex
     transition: .2s ease
     &:hover
       .logo span
         transition: .2s ease
         width: 100% !important
+    .califWrapper
+      display: flex
+    .califo
+      order: 1
+    .inter
+      order: 3
   .logo
     width: 20px
     height: 27px
     margin: 4px 8px 0
     transition: .4s ease
+    order: 2
     span
       height: 4px
       width: 100%

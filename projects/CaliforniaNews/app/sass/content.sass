@@ -124,15 +124,16 @@ main
 
 .overlay
   position: fixed
-  width: 100%
-  height: 100%
   left: 0
   top: 0
+  right: 0
+  bottom: 0
   background-color: rgba(130, 130, 130, .6)
   z-index: 50
   opacity: 0
   visibility: hidden
   transition: .5s ease
+  overflow-y: scroll
 
 .fixed
   overflow: hidden
@@ -146,6 +147,7 @@ main
   transform: none
   visibility: visible
   opacity: 1
+  display: block
 
 .show--modal-big .overlay,
 .show--modal-big .big--modal-themes
@@ -153,9 +155,9 @@ main
   opacity: 1
 
 .show--modal-big .big--modal-themes
-  transform: none
   visibility: visible
   opacity: 1
+  display: block
 
 .show--modal-bigPlugins .overlay,
 .show--modal-bigPlugins .big--modal-plugins
@@ -163,9 +165,9 @@ main
   opacity: 1
 
 .show--modal-bigPlugins .big--modal-plugins
-  transform: none
   visibility: visible
   opacity: 1
+  display: block
 
 .small--modal-wrapper
   position: fixed
@@ -183,7 +185,7 @@ main
   visibility: hidden
   opacity: 0
   transition: .5s ease
-  transform: translateY(-3000px)
+  display: none
   h1
     font-size: 26px
     text-align: center
@@ -193,14 +195,8 @@ main
       width: 100%
 
 .big--modal-themes
-  position: fixed
-  left: 0
-  top: 0
-  right: 0
-  bottom: 0
   width: 980px
   max-height: 1081px
-  overflow: auto
   background-color: #fff
   border-radius: 8px
   padding: 40px
@@ -209,7 +205,9 @@ main
   visibility: hidden
   opacity: 0
   transition: .5s ease
-  transform: translateY(-3000px)
+  display: none
+  margin-top: 224px
+  margin-bottom: 526px
   .modal--author
     margin-top: 8px
     span
@@ -231,6 +229,7 @@ main
     img
       max-width: 100%
       height: auto
+      display: block
     .modal--images-desk
       width: 684px
     .modal--images-mob
@@ -238,14 +237,8 @@ main
       margin-left: 15px
 
 .big--modal-plugins
-  position: fixed
-  left: 0
-  top: 0
-  right: 0
-  bottom: 0
   width: 980px
   max-height: 1081px
-  overflow: auto
   background-color: #fff
   border-radius: 8px
   margin: auto
@@ -253,7 +246,9 @@ main
   visibility: hidden
   opacity: 0
   transition: .5s ease
-  transform: translateY(-3000px)
+  display: none
+  margin-top: 224px
+  margin-bottom: 526px
   .modal--plugins-info
     padding: 40px
     h1
@@ -268,6 +263,8 @@ main
     img
       max-width: 100%
       height: auto
+      display: block
+      border-radius: 0 0 8px 8px
 
 .content
   width: 1022px
@@ -326,13 +323,110 @@ main
   visibility: visible
   display: block
 
+.tab-content>.active .finish--img
+  transform: none
+  opacity: 1
+
+  box-shadow: 0 70px 80px rgba(0,0,0,.3)
+
+.popup--help-wrap
+  position: fixed
+  bottom: 40px
+  right: 40px
+  transition: .3s ease
+  z-index: 6
+  &.help--active
+    bottom: 192px
+  .popup--help-btn
+    width: 40px
+    height: 41px
+    cursor: pointer
+    box-shadow: 0 0 0 0 rgba(51, 153, 255, .6)
+    border-radius: 50%
+    transition: .4s ease
+    z-index: 4
+    svg
+      fill: #3399FF
+    &:hover
+      transition: .4s ease
+      animation: pulse 2s linear infinite
+    &:active
+      transform: scale(.9)
+.popup--help-content
+  width: 128px
+  height: 110px
+  background-color: #fff
+  padding: 16px 16px 0 32px
+  position: absolute
+  right: 0
+  bottom: 42px
+  border-radius: 10% 10% 0 10%
+  transition: .4s ease
+  visibility: hidden
+  opacity: 0
+  z-index: 5
+  .circle--close
+    cursor: pointer
+    font-family: Futura
+    position: absolute
+    bottom: -48px
+    right: 0
+    width: 56px
+    height: 48px
+    background-color: #fff
+    border-radius: 0 0 50% 50%
+    display: flex
+    justify-content: center
+    z-index: 4
+    span
+      font-size: 28px
+      color: #4f4f4f
+      font-family: Futura
+      transition: .4s ease
+    &:hover
+      span
+        color: #3399FF
+  &::before
+    content: ''
+    width: 22px
+    height: 22px
+    background-color: #fff
+    position: absolute
+    right: 56px
+    bottom: -22px
+  .circle
+    position: absolute
+    width: 44px
+    height: 44px
+    bottom: -44px
+    right: 56px
+    border-radius: 50%
+    background-color: #fff
+  &.show-popup-content
+    opacity: 1
+    visibility: visible
+  ul
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    li:not(:last-child)
+      margin-bottom: 8px
+
+    a
+      font-size: 16px
+      font-weight: normal
+      transition: .4s ease
+      &:hover
+        color: #3399FF
+
 @media (min-width: 980px) and (max-width: 1288px)
+  .big--modal-themes, .big--modal-plugins
+    width: 80%
   main
     .content
       width: 100%
     .content-features, .content-features-page, .content--account
       width: 90%
-
     .content--tehemes .theme--form
       width: 100%
       padding: 0 60px
@@ -357,8 +451,9 @@ main
 
 @media (min-width: 980px) and (max-width: 1209px)
    header
-    flex-direction: column
-    align-items: center
+    nav
+      flex-direction: column
+      align-items: center
     .brand--logo
         margin-bottom: 20px
    main 
@@ -378,6 +473,9 @@ main
         
 
 @media (min-width: 769px) and (max-width: 979px)
+  .big--modal-themes, .big--modal-plugins
+    width: 80%
+    margin-bottom: 300px
   .content--title
     width: 100%
   .steps--container
@@ -390,6 +488,7 @@ main
     margin: 0 auto!important
   .hamburger
     display: block
+    margin-top: -2px
   .content--title
     width: 100%
   header
@@ -445,7 +544,7 @@ main
     .jumbotron-wrapper
       width: 100%
       margin: 0
-      height: auto
+      height: auto!important
       margin-top: 73px
       padding: 0 30px
       .jumbo--info
@@ -468,6 +567,8 @@ main
       width: 100%
       margin: 163px auto 0 auto
       padding: 0 30px
+    .back--forward
+      margin: 40px auto 0
     .content--tehemes
       .theme--form
         width: 100%
@@ -487,12 +588,16 @@ main
           margin: 12px auto 0 auto
           &:first-child
             margin-top: 0
+          .popup--item
+            opacity: 1
+            .popup
+              display: none
   .content--login
     margin-top: 64px!important
   .content-finish
     .finish--img
-      width: 100%
-      padding: 60px
+      width: 85%
+      margin: 0 auto
   .content--blog, .content--about, .content--contacts,
   .content--account, .content--help, .content--faq
     margin-top: 64px!important
@@ -510,6 +615,374 @@ main
         margin: 0!important
 
 
+@media (max-width: 768px)
+  .big--modal-themes, .big--modal-plugins
+    width: 80%
+    margin-bottom: 300px
+  .hamburger
+    display: block
+    margin-top: -2px
+  .popup--help-wrap.help--active
+    bottom: 92px
+  header
+    position: relative
+    padding: 24px 24px 0
+    .logo
+      position: absolute
+      left: 0
+      top: 5px
+      margin: 0
+      span:first-child
+        margin: 0
+    .brand--logo
+      z-index: 3
+      .califWrapper
+        display: block !important
+        position: relative
+        width: 96px
+        .califo
+          font-size: 12px
+          float: left
+          margin-left: 30px
+        .inter
+          font-size: 12px
+          flex-direction: column
+          float: left
+          margin-left: 30px
+    .navigation
+      position: absolute
+      flex-direction: column
+      width: 100%
+      height: 100vh
+      left: 0
+      top: 0
+      background-color: #fff
+      padding: 84px 42px 72px 42px
+      border: 1px solid #F2F2F2
+      z-index: 2
+      visibility: hidden
+      opacity: 0
+      border-radius: 100px
+      transition: .3s ease
+      transform: scale(.4)
+      transition-delay: .2s
+      &.show--mobile-nav
+        border-radius: 0
+        opacity: 1
+        visibility: visible
+        transform: scale(1)
+        transition-delay: 0s
+      &.show--mobile-nav li
+        opacity: 1
+        transition-delay: .2s
+      li
+        margin: 0!important
+        margin-bottom: 24px!important
+        text-align: center
+        opacity: 0
+        transition: .2s ease
+        &:first-child
+          margin-bottom: 32px!important
+        &:last-child
+          margin-bottom: 0!important
+        .create--site
+          display: inline-block
+          color: #fff
+          background-color: #3399FF
+          font-weight: bold
+          font-size: 16px
+          padding: 9px 31px
+          border-radius: 20px
+          text-align: center
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1)
+  main
+    width: 100%
+    margin: 0
+    padding-top: 40px
+    padding-bottom: 80px
+    .jumbotron-wrapper
+      width: 100%
+      margin: 0
+      padding: 0 24px
+      flex-direction: column
+      .jumbo--images
+        width: 500px
+        margin: 0 auto
+        .small--frame
+          width: 100px
+          left: 0
+          top: 165px
+      .jumbo--info
+        margin: 74px auto 0 auto
+        text-align: center
+    .content-features
+      margin-top: 163px!important
+      padding: 0 20px
+    .content
+      width: 100%
+      .features
+        width: 100%
+        .features--heading
+          font-size: 26px
+      .feature--item
+        flex-direction: column-reverse!important
+        text-align: center
+        margin-bottom: 0!important
+        .feture--image
+          margin: 0 auto 19px auto
+        .feture--info
+          width: 75%
+    .steps--container
+      width: 100%
+      padding: 0 20px
+      h1
+        font-size: 36px
+      p
+        display: none
+    .content--tehemes
+      padding: 0 20px
+      .theme--form
+        width: 100%
+        justify-content: center
+      .theme--card
+        width: 240px
+        margin-right: 6%!important
+        margin-bottom: 0!important
+        p
+          display: none
+        .select--theme
+          opacity: 1
+          visibility: visible
+          transform: none
+        &:nth-child(2n)
+          margin-right: 0!important
+        &:hover .cover--image
+          transform: none
+          margin-bottom: 32px
+          &:after
+            display: none
+        &:hover .select--theme
+          transform: none
+        &:hover h2
+          transform: none
+        &:hover .blueBtn
+          margin-top: 16px
+        .cover--image
+          opacity: 1
+          &:after
+            display: none
+
+    .content--plugins
+      width: 100%
+      padding: 0 24px
+      .plugins--category
+        width: 100%
+        flex-direction: column
+        align-items: center
+        .main--plugins-list
+          margin: 0
+          width: 400px
+          .category--item
+            width: 100%
+            .popup--item
+              opacity: 1
+              .popup
+                display: none
+
+    .content--login
+      width: 100%
+      padding: 0 24px
+      margin-bottom: 0
+      .login--container
+        border: none
+        padding-bottom: 0
+        width: 100%
+
+    .content-finish
+      width: 100%
+      margin-bottom: 160px
+      .finish--img
+        width: 500px
+      .arrow--line
+        width: 100%
+        .line--holder
+          width: 100%
+        img
+          width: 100%
+      .finsh--info
+        width: 100%
+        height: auto
+
+  footer
+    margin-top: 0!important
+    .footer--main
+      display: none
+
+
+@media (max-width: 567px)
+  .big--modal-themes, .big--modal-plugins
+    padding: 20px
+    h1
+      font-size: 26px
+      text-align: center
+    .modal--author
+       margin: 8px auto 0 auto
+       text-align: center
+       span
+         font-size: 14px
+  .big--modal-plugins
+    padding: 0
+    .modal--plugins-info
+      padding: 20px
+      h2
+        text-align: center
+        font-size: 26px
+    .modal--plugins-image
+      h2
+        padding: 0 0 16px 0
+        text-align: center
+
+  main
+    .steps--container
+      .mobile--steps
+        display: none
+        color: #4F4F4F
+        font-weight: normal
+        font-size: 14px
+        &.active
+          display: block
+          color: #4F4F4F!important
+    .progress--bar
+      display: none
+    .content--tehemes
+      padding: 0 20px
+      .theme--form
+        width: 100%
+        flex-direction: column
+      .theme--card
+        width: 240px
+        margin: 0 auto!important
+        &:nth-child(2n)
+          margin: 0 auto!important
+
+@media (max-width: 540px)
+  main
+    .jumbotron-wrapper
+      .jumbo--images
+        width: 400px
+        .small--frame
+          width: 100px
+          left: 0
+          top: 140px
+    .jumbo--info
+      margin: 74px auto 0 auto
+      text-align: center
+      width: 100%
+      h1
+        font-size: 36px
+      .jumbo--info-buttons
+        display: flex
+        flex-direction: column
+        .blueBtn
+          display: block
+          width: 272px
+          margin: 0 auto 24px auto
+    .content .feature--item .feture--info
+      width: 90%
+    .content--plugins
+      .plugins--category
+        .main--plugins-list
+          margin: 0
+          width: 272px
+    .content--login
+      margin-top: 0!important
+      .login--container
+        padding: 0!important
+        width: 272px
+        h2
+          padding: 0 50px
+        .form--group
+          flex-direction: column
+          .form--set
+            &:last-child
+              margin-left: 0!important
+              margin-top: 20px
+    .content-finish
+      .finish--img
+        width: 272px
+      .arrow--line
+        width: 100%
+        top: 140px
+        .line--holder
+          width: 100%
+        img
+          width: 100%
+      .finsh--info
+        width: 100%
+        height: auto
+        top: 170px
+
+@media (max-width: 440px)
+  header
+    .navigation
+      padding: 84px 24px 0 24px
+  main
+    .jumbotron-wrapper
+      height: auto
+      .jumbo--images
+        width: 272px
+        .small--frame
+          width: 53px
+          left: 0
+          top: 91px
+    .jumbo--info
+      margin: 48px auto 0 auto !important
+      text-align: center
+      width: 100%
+      h1
+        font-size: 26px
+      .jumbo--info-buttons
+        display: flex
+        flex-direction: column
+        .blueBtn
+          display: block
+          width: 272px
+          margin: 0 auto 24px auto
+    .content .feature--item .feture--info
+      width: 100%
+      h1
+        font-size: 26px
+      h2
+        font-size: 16px
+        line-height: 20px
+    .content-features
+      margin-top: 40px!important
+    .features--heading
+      font-size: 26px!important
+
+  footer
+    .footer--bottom
+      padding: 0 24px 24px 24px
+      .footer--bottom-copy p
+        font-size: 12px
+
+@media (max-width: 440px)
+  main
+    .content-finish
+      margin-bottom: 230px
+      .finsh--info
+        padding: 0 24px
+        .finsh--info-content
+          width: 100%
+          margin: 0
+          h1
+            font-size: 26px
+
+      .arrow--line
+        width: 100%
+        top: 140px
+        img
+          width: 50%
 
 @media (min-width: 1600px)
   main
