@@ -249,17 +249,15 @@ main
   display: none
   margin-top: 224px
   margin-bottom: 526px
+  .screen
+    padding: 0 40px 16px 40px
   .modal--plugins-info
     padding: 40px
     h1
       margin-bottom: 8px
     .modal--plugins-desk
       margin-top: 24px
-      max-height: 432px
-      height: 432px
   .modal--plugins-image
-    h2
-      padding: 0 40px 16px 40px
     img
       max-width: 100%
       height: auto
@@ -603,6 +601,12 @@ main
     margin-top: 64px!important
     width: 100%!important
     padding: 0 30px
+  .content--account
+    .account-history-themes
+      .theme
+        margin-right: 4%
+        &:nth-child(3n)
+          margin-right: 0
 
 @media (min-width: 769px) and (max-width: 876px)
   main .content--tehemes .theme--form
@@ -737,25 +741,26 @@ main
       padding: 0 20px
       h1
         font-size: 36px
-      p
+      .step--title
         display: none
     .content--tehemes
       padding: 0 20px
       .theme--form
         width: 100%
         justify-content: center
+        flex-direction: column
+        margin: 0 auto
       .theme--card
         width: 240px
-        margin-right: 6%!important
-        margin-bottom: 0!important
+        margin: 0 auto!important
+        &:nth-child(2n)
+          margin: 0 auto!important
         p
           display: none
         .select--theme
           opacity: 1
           visibility: visible
           transform: none
-        &:nth-child(2n)
-          margin-right: 0!important
         &:hover .cover--image
           transform: none
           margin-bottom: 32px
@@ -780,8 +785,10 @@ main
         flex-direction: column
         align-items: center
         .main--plugins-list
-          margin: 0
+          margin: 0 auto!important
           width: 400px
+          &:nth-child(n)
+            margin: 0
           .category--item
             width: 100%
             .popup--item
@@ -812,6 +819,50 @@ main
       .finsh--info
         width: 100%
         height: auto
+    .content--title
+      width: 100%
+      p
+        display: none
+    .content--blog
+      width: 100%
+      padding: 0 24px
+    .content--about
+      width: 100%
+      padding: 0 24px
+    .content--contacts
+      width: 100%
+      padding: 0 24px
+    .content--help
+      width: 100%
+      padding: 0 24px
+    .content--account
+      width: 100%
+      padding: 0 24px
+      .content--account-profile
+        h1
+          text-align: center
+        .content--account-change
+          transition: .4s ease
+          transform: translateY(-235px)
+        .content--account-history
+          text-align: center
+          transform: translateY(-235px)
+          &.account--form-show
+            transform: none
+        .account-history-themes
+          flex-direction: column
+          align-items: center
+          transform: translateY(-235px)
+          &.account--form-show
+            transform: none
+          .theme
+    .conetnt--change-password
+      .form--group
+        flex-direction: column
+
+    .content--faq
+      width: 100%
+      padding: 0 24px
 
   footer
     margin-top: 0!important
@@ -837,10 +888,9 @@ main
       h2
         text-align: center
         font-size: 26px
-    .modal--plugins-image
-      h2
-        padding: 0 0 16px 0
-        text-align: center
+    .screen
+      padding: 0 0 16px 0
+      text-align: center
 
   main
     .steps--container
@@ -921,6 +971,10 @@ main
         width: 100%
         height: auto
         top: 170px
+    .content--title
+      padding: 0 24px
+      h1
+        font-size: 26px
 
 @media (max-width: 440px)
   header

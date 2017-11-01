@@ -698,16 +698,14 @@ main {
   display: none;
   margin-top: 224px;
   margin-bottom: 526px; }
+  .big--modal-plugins .screen {
+    padding: 0 40px 16px 40px; }
   .big--modal-plugins .modal--plugins-info {
     padding: 40px; }
     .big--modal-plugins .modal--plugins-info h1 {
       margin-bottom: 8px; }
     .big--modal-plugins .modal--plugins-info .modal--plugins-desk {
-      margin-top: 24px;
-      max-height: 432px;
-      height: 432px; }
-  .big--modal-plugins .modal--plugins-image h2 {
-    padding: 0 40px 16px 40px; }
+      margin-top: 24px; }
   .big--modal-plugins .modal--plugins-image img {
     max-width: 100%;
     height: auto;
@@ -1130,7 +1128,11 @@ main {
   .content--account, .content--help, .content--faq {
     margin-top: 64px !important;
     width: 100% !important;
-    padding: 0 30px; } }
+    padding: 0 30px; }
+  .content--account .account-history-themes .theme {
+    margin-right: 4%; }
+    .content--account .account-history-themes .theme:nth-child(3n) {
+      margin-right: 0; } }
 
 @media (min-width: 769px) and (max-width: 876px) {
   main .content--tehemes .theme--form {
@@ -1301,7 +1303,7 @@ main {
       padding: 0 20px; }
       main .steps--container h1 {
         font-size: 36px; }
-      main .steps--container p {
+      main .steps--container .step--title {
         display: none; }
     main .content--tehemes {
       padding: 0 20px; }
@@ -1310,11 +1312,18 @@ main {
         -webkit-box-pack: center;
         -webkit-justify-content: center;
             -ms-flex-pack: center;
-                justify-content: center; }
+                justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        margin: 0 auto; }
       main .content--tehemes .theme--card {
         width: 240px;
-        margin-right: 6% !important;
-        margin-bottom: 0 !important; }
+        margin: 0 auto !important; }
+        main .content--tehemes .theme--card:nth-child(2n) {
+          margin: 0 auto !important; }
         main .content--tehemes .theme--card p {
           display: none; }
         main .content--tehemes .theme--card .select--theme {
@@ -1323,8 +1332,6 @@ main {
           -webkit-transform: none;
               -ms-transform: none;
                   transform: none; }
-        main .content--tehemes .theme--card:nth-child(2n) {
-          margin-right: 0 !important; }
         main .content--tehemes .theme--card:hover .cover--image {
           -webkit-transform: none;
               -ms-transform: none;
@@ -1361,8 +1368,10 @@ main {
             -ms-flex-align: center;
                 align-items: center; }
         main .content--plugins .plugins--category .main--plugins-list {
-          margin: 0;
+          margin: 0 auto !important;
           width: 400px; }
+          main .content--plugins .plugins--category .main--plugins-list:nth-child(n) {
+            margin: 0; }
           main .content--plugins .plugins--category .main--plugins-list .category--item {
             width: 100%; }
             main .content--plugins .plugins--category .main--plugins-list .category--item .popup--item {
@@ -1391,6 +1400,69 @@ main {
       main .content-finish .finsh--info {
         width: 100%;
         height: auto; }
+    main .content--title {
+      width: 100%; }
+      main .content--title p {
+        display: none; }
+    main .content--blog {
+      width: 100%;
+      padding: 0 24px; }
+    main .content--about {
+      width: 100%;
+      padding: 0 24px; }
+    main .content--contacts {
+      width: 100%;
+      padding: 0 24px; }
+    main .content--help {
+      width: 100%;
+      padding: 0 24px; }
+    main .content--account {
+      width: 100%;
+      padding: 0 24px; }
+      main .content--account .content--account-profile h1 {
+        text-align: center; }
+      main .content--account .content--account-profile .content--account-change {
+        -webkit-transition: .4s ease;
+        -o-transition: .4s ease;
+        transition: .4s ease;
+        -webkit-transform: translateY(-235px);
+            -ms-transform: translateY(-235px);
+                transform: translateY(-235px); }
+      main .content--account .content--account-profile .content--account-history {
+        text-align: center;
+        -webkit-transform: translateY(-235px);
+            -ms-transform: translateY(-235px);
+                transform: translateY(-235px); }
+        main .content--account .content--account-profile .content--account-history.account--form-show {
+          -webkit-transform: none;
+              -ms-transform: none;
+                  transform: none; }
+      main .content--account .content--account-profile .account-history-themes {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-transform: translateY(-235px);
+            -ms-transform: translateY(-235px);
+                transform: translateY(-235px); }
+        main .content--account .content--account-profile .account-history-themes.account--form-show {
+          -webkit-transform: none;
+              -ms-transform: none;
+                  transform: none; }
+    main .conetnt--change-password .form--group {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    main .content--faq {
+      width: 100%;
+      padding: 0 24px; }
   footer {
     margin-top: 0 !important; }
     footer .footer--main {
@@ -1414,7 +1486,7 @@ main {
       .big--modal-plugins .modal--plugins-info h2 {
         text-align: center;
         font-size: 26px; }
-    .big--modal-plugins .modal--plugins-image h2 {
+    .big--modal-plugins .screen {
       padding: 0 0 16px 0;
       text-align: center; }
   main .steps--container .mobile--steps {
@@ -1502,7 +1574,11 @@ main {
   main .content-finish .finsh--info {
     width: 100%;
     height: auto;
-    top: 170px; } }
+    top: 170px; }
+  main .content--title {
+    padding: 0 24px; }
+    main .content--title h1 {
+      font-size: 26px; } }
 
 @media (max-width: 440px) {
   header .navigation {
@@ -1679,9 +1755,12 @@ footer {
     margin-bottom: 12px; }
     .steps--container h1 .step--count {
       color: #3399ff; }
-  .steps--container p {
+  .steps--container .step--title {
     font-size: 14px;
-    font-weight: normal; }
+    font-weight: normal;
+    display: none; }
+    .steps--container .step--title.active-title {
+      display: block; }
   .steps--container .mobile--steps {
     display: none; }
 
@@ -2270,13 +2349,17 @@ footer {
       -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
               justify-content: space-between;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
       margin-top: 24px; }
       .content--account .content--account-profile .account-history-themes .theme {
         width: 240px;
         height: 340px;
         border: 1px dashed #E5E5E5;
         -webkit-border-radius: 4px;
-                border-radius: 4px; }
+                border-radius: 4px;
+        margin-bottom: 30px; }
 
 .content--account-reset {
   border: none;

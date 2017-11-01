@@ -96,6 +96,8 @@ $('.category--btn input').on('click', function () {
     $('.category--title input[data-group="' + group + '"]').prop('checked', isChecked);
 });
 
+// Recommended
+
 $('.select-rec').on('click', function () {
     $('#recommended').toggleClass('recom--deactive');
 });
@@ -118,19 +120,24 @@ $('.select--theme .blueBtn, .wizard .blueBtn, .select--theme-btn').on('click', f
             var new_tab = $('.tab-pane.active'),
                 new_bar = $('.progress--bar li.active'),
                 new_mobile = $('.steps--container .mobile--steps.active');
+                new_title = $('.steps--container .step--title.active-title');
             if ($('.tab-pane.active').next().hasClass('auth')){
                 new_tab = new_tab.next().next();
                 new_bar = new_bar.next().next();
                 new_mobile = new_mobile.next().next();
+                new_title = new_title.next().next();
             } else {
                 new_tab = new_tab.next();
                 new_bar = new_bar.next();
                 new_mobile = new_mobile.next();
+                new_title = new_title.next();
             }
             $('.progress--bar li.active').removeClass('active');
             new_bar.addClass('active');
             $('.steps--container .mobile--steps.active').removeClass('active');
             new_mobile.addClass('active');
+            $('.steps--container .step--title.active-title').removeClass('active-title');
+            new_title.addClass('active-title');
             $('.tab-pane.active').removeClass('active');
             new_tab.fadeIn(300);
             $('html, body').animate({scrollTop:0}, 300);
@@ -147,19 +154,24 @@ $('.backBtn').on('click', function (e) {
         var new_tab = $('.tab-pane.active'),
             new_bar = $('.progress--bar li.active'),
             new_mobile = $('.steps--container .mobile--steps.active');
+            new_title = $('.steps--container .step--title.active-title');
         if ($('.tab-pane.active').prev().hasClass('auth')){
             new_tab = new_tab.prev().prev();
             new_bar = new_bar.prev().prev();
             new_mobile = new_mobile.prev().prev();
+            new_title = new_title.prev().prev();
         } else {
             new_tab = new_tab.prev();
             new_bar = new_bar.prev();
             new_mobile = new_mobile.prev();
+            new_title = new_title.prev();
         }
         $('.progress--bar li.active').removeClass('active');
         new_bar.addClass('active');
         $('.steps--container .mobile--steps.active').removeClass('active');
         new_mobile.addClass('active');
+        $('.steps--container .step--title.active-title').removeClass('active-title');
+        new_title.addClass('active-title');
         $('.tab-pane.active').removeClass('active');
         new_tab.fadeIn(300);
         $('html, body').animate({scrollTop:0}, 300);
@@ -201,6 +213,8 @@ $('.content--account-change a').on('click', function (e) {
     $('.content--account-change').addClass('account--form-hide');
     $('.content--account-save').addClass('account--form-show');
     $('.conetnt--change-password').addClass('account--form-show');
+    $('.content--account-history').addClass('account--form-show');
+    $('.account-history-themes').addClass('account--form-show');
 });
 
 $('.content--account-save a').on('click', function (e) {
@@ -208,6 +222,8 @@ $('.content--account-save a').on('click', function (e) {
     $('.content--account-change').removeClass('account--form-hide');
     $('.content--account-save').removeClass('account--form-show');
     $('.conetnt--change-password').removeClass('account--form-show');
+    $('.content--account-history').removeClass('account--form-show');
+    $('.account-history-themes').removeClass('account--form-show');
 });
 
 // Accordeon
@@ -261,11 +277,5 @@ $('.howItWorks').on('click', function (e) {
     }
 });
 
-
-// Swiper
-
-$(document).ready( function(){
-    
-});
 
 // Native JavaScript

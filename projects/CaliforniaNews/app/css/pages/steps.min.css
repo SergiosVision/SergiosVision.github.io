@@ -9,9 +9,12 @@
     margin-bottom: 12px; }
     .steps--container h1 .step--count {
       color: #3399ff; }
-  .steps--container p {
+  .steps--container .step--title {
     font-size: 14px;
-    font-weight: normal; }
+    font-weight: normal;
+    display: none; }
+    .steps--container .step--title.active-title {
+      display: block; }
   .steps--container .mobile--steps {
     display: none; }
 

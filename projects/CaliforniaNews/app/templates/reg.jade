@@ -1,0 +1,37 @@
+extends _layout
+
+mixin contentTitle (h1Tittle)
+    div.content--title
+        h1= h1Tittle
+
+mixin notes(heading, date, heading2, heading3, paragraph1, paragraph2, paragraph3)
+    div.content--notes
+        h1= heading
+        span= date
+        h2= heading2
+        h3= heading3
+        p= paragraph1
+        p= paragraph2
+        p= paragraph3
+
+
+block content
+    main
+        + contentTitle("Account")
+        section.content.content--login
+            div.login--container
+                div.login--form
+                    h1 Sign up with email
+                        div.login--form
+                            div.form--group
+                                fieldset.form--set.login--form-email
+                                    label.label--form(for="email2") Email
+                                    input(type="email" name="email" id="email2")
+                                    div.no--account-wrapper
+                                        span Already have an account?
+                                        a.no-account(href="#") Sign In
+                                fieldset.form--set.login--form-password
+                                    label.label--form(for="password2") Passwords
+                                    input(type="password" name="password" id="password2")
+                            button.signin--button(type="button" disabled) Sign up
+
