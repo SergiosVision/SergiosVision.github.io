@@ -13,7 +13,6 @@ for (var i = 0; i < imgPreview.length; i++){
         
         overlay.classList.add('show');
         getBody.classList.add('fixed');
-        highRes.classList.add('showImg');
         
         highRes.src = lowRes.slice(0, -8) + '.jpg';
         overlay.appendChild(highRes);
@@ -24,6 +23,7 @@ for (var i = 0; i < imgPreview.length; i++){
         overlay.appendChild(preloader);
         
         highRes.addEventListener('load', function preloadSpin (d){
+            highRes.classList.add('showImg');
             preloader.parentNode.removeChild(preloader);
             d.target.removeEventListener('load', preloadSpin, false);
         }, false);
