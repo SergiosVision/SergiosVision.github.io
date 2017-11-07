@@ -1,66 +1,77 @@
-(function(window) {
-    'use strict';
+try {
+    var imageLoader = document.getElementById('filePhoto');
+    var getErrorImage = document.querySelector('.image-error');
+    // imageLoader.addEventListener('change', handleImage, false);
+    imageLoader.addEventListener('change', catchFileNames, false);
 
-    function triggerCallback (e, callback) {
-        if(!callback || typeof callback !== 'function') {
-            return;
-        }
-        var files;
-        if(e.dataTransfer) {
-            files = e.dataTransfer.files;
-        } else if(e.target) {
-            files = e.target.files;
-        }
-        callback.call(null, files);
-    }
-    function makeDroppable (ele, callback) {
-        var input = document.createElement('input');
-        input.setAttribute('type', 'file');
-        input.style.display = 'none';
-        input.addEventListener('change', function(e) {
-            triggerCallback(e, callback);
-        });
-        ele.appendChild(input);
-
-        ele.addEventListener('dragover', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            ele.classList.add('dragover');
-        });
-
-        ele.addEventListener('dragleave', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            ele.classList.remove('dragover');
-        });
-
-        ele.addEventListener('drop', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            ele.classList.remove('dragover');
-            triggerCallback(e, callback);
-        });
-
-        ele.addEventListener('click', function() {
-            input.value = null;
-            input.click();
-        });
-    }
-
-    window.makeDroppable = makeDroppable;
-
-})(this);
-
-(function(window) {
-    'use strict';
-    makeDroppable (window.document.querySelector('.dragAnDrop'), function(files) {
-        var output = document.querySelector('#output');
-        output.innerHTML = '';
-        for(var i=0; i<files.length; i++) {
-            if(files[i].type.indexOf('image/') === 0) {
-                output.innerHTML += '<img width="200" src="' + URL.createObjectURL(files[i]) + '" />';
+    function catchFileNames() {
+        var files = imageLoader.files;
+        var getDragContainer = document.querySelector('.dragAnDropInfo');
+        getDragContainer.innerHTML = '<p>Click or drag the file to replace</p>';
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            var imageType = /^image\//;
+            if (file.type.match(imageType)) {
+                getDragContainer.innerHTML += '<p class="fileName">' + files[i].name + '</p>';
+                getErrorImage.innerHTML = '';
+            } else {
+                getErrorImage.innerHTML += '<p>In this field there should be a picture</p>';
+                document.getElementById('filePhoto').value = '';
             }
-            output.innerHTML += '<p>'+files[i].name+'</p>';
         }
-    });
-})(this);
+    }
+        // function handleImage (e) {
+        //     var reader = new FileReader();
+        //     reader.onload = function (event) {
+        //         $('#uploader img').attr('src',event.target.result);
+        //     }
+        //     reader.readAsDataURL(e.target.files[0]);
+        // }
+
+        var dropbox;
+        dropbox = document.getElementById("dragAnDrop");
+        dropbox.addEventListener("dragenter", dragenter, false);
+        document.addEventListener("dragover", dragover, false);
+        document.addEventListener("dragleave", dragLeave, false);
+        dropbox.addEventListener("drop", drop, false);
+        dropbox.addEventListener('click', function () {
+            imageLoader.value = null;
+            imageLoader.click();
+        });
+
+
+        function dragenter(e) {
+            e.stopPropagation();
+            e.preventDefault();
+        }
+
+        function dragLeave(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            dropbox.classList.remove('dragover');
+        }
+
+        function dragover(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            dropbox.classList.add('dragover');
+        }
+
+        function drop(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            dropbox.classList.remove('dragover');
+            //you can check e's properties
+            //console.log(e);
+            var dt = e.dataTransfer;
+            var files = dt.files;
+
+            //this code line fires your 'handleImage' function (imageLoader change event)
+            imageLoader.files = files;
+        }
+    }
+catch
+    (error)
+    {
+
+    }
