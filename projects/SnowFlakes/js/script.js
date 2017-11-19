@@ -1,5 +1,5 @@
 window.onload = function () {
-    
+
     // Создание канвас блока. Можно удалить эти строки, и поместить его в HTML.
 
     var crtCnavas = document.createElement('canvas');
