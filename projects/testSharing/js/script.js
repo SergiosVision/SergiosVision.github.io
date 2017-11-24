@@ -1,0 +1,20 @@
+(function () {
+    var YndexServices = ['vkontakte','facebook','odnoklassniki','moimir','gplus','twitter','viber','whatsapp','skype','telegram'];
+    var element = document.querySelector('meta[property="og:image"]');
+    var elementSec = document.querySelector('meta[itemprop="image"]');
+    var getYndexDiv = document.querySelector('.ya-share2');
+    var getYndexTitle = document.querySelector('article h1').innerText;
+    var getYndexDesc = document.querySelector('article h3').innerText;
+    var getImgae = document.querySelector('article img').getAttribute('src');
+    var getUrl = window.location.href;
+    // getUrl = getUrl.split('/');
+    // var newArr = [];
+    // var createNewUrl = 'http://' + newArr.concat(getUrl[2] + '/' + getUrl[3] + '/' + getImgae);
+    var createNewUrl = getUrl + getImgae;
+    var content = element && element.setAttribute("content", createNewUrl);
+    var contentSec = elementSec && elementSec.setAttribute("content", createNewUrl);
+    getYndexDiv.setAttribute('data-services',YndexServices);
+    getYndexDiv.setAttribute('data-title',getYndexTitle);
+    getYndexDiv.setAttribute('data-image',createNewUrl);
+    getYndexDiv.setAttribute('data-description',getYndexDesc);
+})();
