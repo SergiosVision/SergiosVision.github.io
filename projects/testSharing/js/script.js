@@ -2,6 +2,8 @@
     // Переменные. Берем мета теги. Также контент на нужной странице
 
     var YndexServices = ['vkontakte','facebook','odnoklassniki','moimir','gplus','twitter','viber','whatsapp','skype','telegram'], // Массив с сервисами от Яндекс.
+        getMetaNameitle = document.querySelector('meta[name="title"]'),
+        getMetaNameDesc = document.querySelector('meta[name="description"]'),
         getMetaUrl = document.querySelector('meta[property="og:url"]'),
         getMetaImage = document.querySelector('meta[property="og:image"]'),
         getMetaImageSec = document.querySelector('meta[itemprop="image"]'),
@@ -38,6 +40,8 @@
     getYndexDiv.setAttribute('data-description:facebook',getYndexDesc);
     getYndexDiv.setAttribute('data-description:gplus',getYndexDesc);
     getYndexDiv.setAttribute('data-description:vkontakte',getYndexDesc);
+    getMetaNameitle.setAttribute('content', getYndexTitle);
+    getMetaNameDesc.setAttribute('content', getYndexDesc);
     getMetaTitle.setAttribute('content', getYndexTitle);
     getMetaDesc.setAttribute('content', getYndexDesc);
     getMetaTwitterTitle.setAttribute('content', getYndexTitle);
