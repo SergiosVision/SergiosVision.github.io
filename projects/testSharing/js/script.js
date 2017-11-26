@@ -31,8 +31,12 @@
     getMetaImageSec.setAttribute('content', createNewUrl);
     getYndexDiv.setAttribute('data-services',YndexServices);
     getYndexDiv.setAttribute('data-title',getYndexTitle);
+    getYndexDiv.setAttribute('data-title:facebook',getYndexTitle);
+    getYndexDiv.setAttribute('data-title:gplus',getYndexTitle);
     getYndexDiv.setAttribute('data-image',createNewUrl);
     getYndexDiv.setAttribute('data-description',getYndexDesc);
+    getYndexDiv.setAttribute('data-description:facebook',getYndexDesc);
+    getYndexDiv.setAttribute('data-description:gplus',getYndexDesc);
     getMetaTitle.setAttribute('content', getYndexTitle);
     getMetaDesc.setAttribute('content', getYndexDesc);
     getMetaTwitterTitle.setAttribute('content', getYndexTitle);
