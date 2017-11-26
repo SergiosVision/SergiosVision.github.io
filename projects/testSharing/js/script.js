@@ -29,8 +29,17 @@
     // Заполняем данные
 
     var createNewUrl = getUrl + getImgae; // Соединяем ссылку для формирования картинки. В некоторых случаях нужно воспользоваться методом выше.
+    getMetaNameitle.setAttribute('content', getYndexTitle);
+    getMetaNameDesc.setAttribute('content', getYndexDesc);
     getMetaImage.setAttribute('content', createNewUrl);
     getMetaImageSec.setAttribute('content', createNewUrl);
+    getMetaTitle.setAttribute('content', getYndexTitle);
+    getMetaDesc.setAttribute('content', getYndexDesc);
+    getMetaTwitterTitle.setAttribute('content', getYndexTitle);
+    getMetaTwitterDesc.setAttribute('content', getYndexDesc);
+    getMetaTitleSec.setAttribute('content', getYndexTitle);
+    getMetaTitleSec.setAttribute('content', getYndexTitle);
+    getMetaDescSec.setAttribute('content', getYndexDesc);
     getYndexDiv.setAttribute('data-services',YndexServices);
     getYndexDiv.setAttribute('data-title',getYndexTitle);
     getYndexDiv.setAttribute('data-title:facebook',getYndexTitle);
@@ -40,13 +49,4 @@
     getYndexDiv.setAttribute('data-description:facebook',getYndexDesc);
     getYndexDiv.setAttribute('data-description:gplus',getYndexDesc);
     getYndexDiv.setAttribute('data-description:vkontakte',getYndexDesc);
-    getMetaNameitle.setAttribute('content', getYndexTitle);
-    getMetaNameDesc.setAttribute('content', getYndexDesc);
-    getMetaTitle.setAttribute('content', getYndexTitle);
-    getMetaDesc.setAttribute('content', getYndexDesc);
-    getMetaTwitterTitle.setAttribute('content', getYndexTitle);
-    getMetaTwitterDesc.setAttribute('content', getYndexDesc);
-    getMetaTitleSec.setAttribute('content', getYndexTitle);
-    getMetaTitleSec.setAttribute('content', getYndexTitle);
-    getMetaDescSec.setAttribute('content', getYndexDesc);
 })();
