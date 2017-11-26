@@ -37,6 +37,7 @@
     getYndexDiv.setAttribute('data-description',getYndexDesc);
     getYndexDiv.setAttribute('data-description:facebook',getYndexDesc);
     getYndexDiv.setAttribute('data-description:gplus',getYndexDesc);
+    getYndexDiv.setAttribute('data-description:vkontakte',getYndexDesc);
     getMetaTitle.setAttribute('content', getYndexTitle);
     getMetaDesc.setAttribute('content', getYndexDesc);
     getMetaTwitterTitle.setAttribute('content', getYndexTitle);
