@@ -77,6 +77,11 @@ ul, li {
     padding: 40px;
 }
 
+#update .demo {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
 #update .reknown {
     display: block;
     font-size: 12px;
@@ -110,5 +115,35 @@ ul, li {
     }
     100%{
         opacity: 1;
+    }
+}
+
+@media (max-width: 840px) {
+    #searcharea {
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+
+@media (max-width: 540px) {
+    #searcharea {
+        width: 100%;
+    }
+
+    #searcharea p {
+        font-size: 14px;
+    }
+
+    #searcharea input {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    #update {
+        width: 100%;
+    }
+
+    #update ul li {
+        padding: 10px;
     }
 }

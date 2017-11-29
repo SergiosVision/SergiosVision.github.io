@@ -32,7 +32,6 @@ function deleteEmptyLinks() {
     setTimeout(function () {
         var getDemo = document.querySelectorAll('span.demo');
         getDemo.forEach(function (data) {
-            console.log(data.innerText);
             if (data.innerText == 'Demo ') {
                 data.parentNode.removeChild(data);
             }
