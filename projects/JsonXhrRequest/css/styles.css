@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul, li {
+    list-style: none;
+}
+
+#searcharea {
+    background: linear-gradient(to top, #62bee6, #269ed3);
+    padding: 30px;
+    width: 800px;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+}
+
+#searcharea label {
+    display: inline-block;
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#searcharea p {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#searcharea input {
+    width: 80%;
+    padding: 10px;
+    transition: .4s ease;
+    color: #555;
+    border: 2px solid #555;
+    font-size: 18px;
+}
+
+#searcharea input:hover,
+#searcharea input:focus{
+    border-color: #2ecea9;
+}
+
+#update {
+    margin: 40px auto 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+#update h2 {
+    margin-bottom: 10px;
+}
+
+#update ul li {
+    margin-bottom: 30px;
+    border: 1px solid #555555;
+    border-left: none;
+    border-right: none;
+    padding: 20px;
+    animation: appAnim 1s linear;
+}
+
+#update img {
+    max-width: 160px;
+    height: auto;
+    border-radius: 50%;
+    user-select: none;
+}
+
+#update p {
+    font-size: 14px;
+    padding: 40px;
+}
+
+#update .reknown {
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    text-align: right;
+}
+
+#update a {
+    display: inline-block;
+    text-decoration: none;
+    color: #3399FF;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: .4s ease-in-out;
+}
+
+#update a:hover {
+    color: #297ACC;
+    transform: scale(.9);
+}
+
+#update a:active {
+    color: #297ACC;
+    transform: scale(.8);
+}
+
+
+@keyframes appAnim {
+    0%{
+        opacity: .3;
+    }
+    100%{
+        opacity: 1;
+    }
+}
