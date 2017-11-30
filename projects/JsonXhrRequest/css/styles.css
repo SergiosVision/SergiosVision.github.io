@@ -6,6 +6,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+body {
+    position: relative;
+}
+
 ul, li {
     list-style: none;
 }
@@ -25,7 +29,7 @@ ul, li {
 }
 
 #searcharea .resetBtn {
-    padding: 10px;
+    padding: 0px 10px;
     background-color: transparent;
     border: 2px solid #fff;
     border-left: none;
@@ -35,6 +39,9 @@ ul, li {
     text-transform: uppercase;
     transition: .4s;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #searcharea .resetBtn:disabled {
@@ -141,6 +148,28 @@ ul, li {
     transform: scale(.8);
 }
 
+.scrollTopBth {
+    padding: 10px 15px;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scrollTopBth.showButton {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scrollTopBth:after {
+    content: '\2191';
+    display: block;
+    margin: auto;
+}
+
 
 @keyframes appAnim {
     0%{
@@ -165,6 +194,12 @@ ul, li {
 
     #searcharea p {
         font-size: 14px;
+    }
+
+    #searcharea .resetBtn {
+        padding: 0px 5px;
+        height: 33px;
+        font-size: 12px;
     }
 
     #searcharea input {

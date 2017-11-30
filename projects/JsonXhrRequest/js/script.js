@@ -1,5 +1,8 @@
 var getSearchField = document.querySelector('#search');
 var getResetBtn = document.querySelector('.resetBtn');
+var getScrollTopBtn = document.querySelector('.scrollTopBth');
+var getBody = document.body;
+var getBodySecond = document.documentElement;
 
 function callDisableButton() {
     if (getSearchField.value == '') {
@@ -58,9 +61,52 @@ getSearchField.addEventListener('keyup', function () {
     callDisableButton();
 });
 
-getResetBtn.addEventListener('click', function () {
-    getSearchField.value = '';
+getSearchField.addEventListener('change', function () {
     callRequest();
     deleteEmptyLinks();
     callDisableButton();
 });
+
+getResetBtn.addEventListener('click', function () {
+    getSearchField.value = '';
+    getSearchField.focus();
+    callRequest();
+    deleteEmptyLinks();
+    callDisableButton();
+});
+
+
+
+// Show Scroll button
+
+window.addEventListener('scroll', function () {
+   if (getBody.scrollTop > 200 || getBodySecond.scrollTop > 200) {
+       getScrollTopBtn.classList.add('showButton');
+   } else {
+       getScrollTopBtn.classList.remove('showButton');
+   }
+});
+
+
+//Smooth scroll vanilla
+
+var clerThisInterval = 0; // Needed to cancel the scrolling when we're at the top of the page
+
+function scrollStep() {
+    // Check if we're at the top already. If so, stop scrolling by clearing the interval
+    if (window.pageYOffset === 0) {
+        clearInterval(clerThisInterval);
+    }
+
+    window.scroll(0, window.pageYOffset - 50);
+}
+
+function scrollToTop() {
+    // Call the function scrollStep() every 16.66 millisecons
+    clerThisInterval = setInterval(scrollStep, 16.66);
+}
+
+// When the DOM is loaded, this click handler is added to our scroll button
+getScrollTopBtn.addEventListener('click',scrollToTop);
+
+
