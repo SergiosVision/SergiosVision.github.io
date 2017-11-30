@@ -102,8 +102,8 @@ function scrollStep() {
 }
 
 function scrollToTop() {
-    // Call the function scrollStep() every 16.66 millisecons
-    clerThisInterval = setInterval(scrollStep, 16.66);
+    // Call the function scrollStep() every 5 millisecons
+    clerThisInterval = setInterval(scrollStep, 5);
 }
 
 // When the DOM is loaded, this click handler is added to our scroll button
