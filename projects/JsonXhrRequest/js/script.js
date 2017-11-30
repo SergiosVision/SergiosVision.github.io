@@ -1,4 +1,16 @@
 var getSearchField = document.querySelector('#search');
+var getResetBtn = document.querySelector('.resetBtn');
+
+function callDisableButton() {
+    if (getSearchField.value == '') {
+        getResetBtn.setAttribute('disabled', true);
+    } else {
+        getResetBtn.removeAttribute('disabled');
+    }
+}
+
+callDisableButton();
+
 function callRequest() {
     var getValueForm = document.querySelector('#search').value;
     var expression = new RegExp(getValueForm, 'i');
@@ -36,11 +48,19 @@ function deleteEmptyLinks() {
                 data.parentNode.removeChild(data);
             }
         })
-    },100);
+    },1000);
 }
 deleteEmptyLinks();
 
 getSearchField.addEventListener('keyup', function () {
     callRequest();
     deleteEmptyLinks();
+    callDisableButton();
+});
+
+getResetBtn.addEventListener('click', function () {
+    getSearchField.value = '';
+    callRequest();
+    deleteEmptyLinks();
+    callDisableButton();
 });

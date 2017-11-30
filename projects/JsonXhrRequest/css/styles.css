@@ -19,6 +19,39 @@ ul, li {
     text-align: center;
 }
 
+#searcharea .inputAndReset {
+    display: flex;
+    align-items: center;
+}
+
+#searcharea .resetBtn {
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-left: none;
+    height: 48px;
+    border-radius: 0 4px 4px 0;
+    color: #fff;
+    text-transform: uppercase;
+    transition: .4s;
+    cursor: pointer;
+}
+
+#searcharea .resetBtn:disabled {
+     background-color: #fff;
+     color: #555;
+     border: none;
+    cursor: default;
+ }
+
+#searcharea .resetBtn:hover:disabled {
+    color: #555;
+}
+
+#searcharea .resetBtn:hover {
+    border-color: #555;
+}
+
 #searcharea label {
     display: inline-block;
     font-size: 25px;
