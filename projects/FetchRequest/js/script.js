@@ -71,13 +71,13 @@ function deleteEmptyLinks() {
 deleteEmptyLinks(); // Deleting Links if they empty
 
 getSearchField.addEventListener('keyup', function () { // Calling this function when change happen in input keyup
-    callRequest(); // Call XHR request
+    callRequest(); // Call Fetch request
     deleteEmptyLinks(); // Deleting Links if they empty
     callDisableButton(); // Call button disable
 });
 
 getSearchField.addEventListener('change', function () { // Calling this function when change happen in input
-    callRequest(); // Call XHR request
+    callRequest(); // Call Fetch request
     deleteEmptyLinks(); // Deleting Links if they empty
     callDisableButton(); // Call button disable
 });
@@ -85,7 +85,7 @@ getSearchField.addEventListener('change', function () { // Calling this function
 getResetBtn.addEventListener('click', function () { // Reset button
     getSearchField.value = '';
     getSearchField.focus();
-    callRequest(); // Call XHR request
+    callRequest(); // Call Fetch request
     deleteEmptyLinks(); // Deleting Links if they empty
     callDisableButton(); // Call button disable
 });
