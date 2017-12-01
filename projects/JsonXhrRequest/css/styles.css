@@ -262,8 +262,7 @@ ul, li {
 
 @media (max-width: 840px) {
     #searcharea {
-        margin: 0 auto;
-        width: 80%;
+        width: 100%;
     }
 }
 
