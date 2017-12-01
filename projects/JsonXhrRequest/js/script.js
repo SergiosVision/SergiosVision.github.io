@@ -104,17 +104,12 @@ function scrollStep() {
 function scrollToTop() {
     // Call the function scrollStep() every 5 millisecons
     clerThisInterval = setInterval(scrollStep, 5);
-    getBody.classList.add('working');
-    if (getBody.classList.contains('working')) {
-        return false;
-    }
+    getScrollTopBtn.setAttribute('disabled', true);
+    setTimeout(function () {
+        getScrollTopBtn.removeAttribute('disabled');
+    }, 2200);
 }
 
 // When the DOM is loaded, this click handler is added to our scroll button
 getScrollTopBtn.addEventListener('click',scrollToTop);
-
-setTimeout(function () {
-    getBody.classList.remove('working');
-}, 1000);
-
 

@@ -17,7 +17,7 @@ ul, li {
 #searcharea {
     background: linear-gradient(to top, #62bee6, #269ed3);
     padding: 30px;
-    width: 800px;
+    width: 100%;
     margin: 0 auto;
     color: #fff;
     text-align: center;
@@ -26,6 +26,8 @@ ul, li {
 #searcharea .inputAndReset {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 #searcharea .resetBtn {
