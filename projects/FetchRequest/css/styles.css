@@ -47,11 +47,11 @@ ul, li {
 }
 
 #searcharea .resetBtn:disabled {
-     background-color: #fff;
-     color: #555;
-     border: none;
+    background-color: #fff;
+    color: #555;
+    border: none;
     cursor: default;
- }
+}
 
 #searcharea .resetBtn:hover:disabled {
     color: #555;
@@ -203,8 +203,20 @@ ul, li {
     animation: errorAnim 2s infinite linear;
 }
 
-.secondErrMsg {
-    margin-top: 20px;
+
+.codeExample {
+    margin: 150px 0;
+    text-align: center;
+}
+
+.codeExample a{
+    display: inline-block;
+    font-size: 40px;
+    color: #555;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-top: 2px;
+    transition: .4s ease;
 }
 
 @keyframes errorAnim {
@@ -227,23 +239,23 @@ ul, li {
 }
 
 -webkit-@keyframes errorAnim {
-    0%{
-        color: #ff5810;
-        animation-timing-function: ease-in-out;
-    }
-    50% {
-        color: #ee4902;
-        animation-timing-function: ease-in-out;
-    }
-    75% {
-        color: #a83402;
-        animation-timing-function: ease-in-out;
-    }
-    100%{
-        color: #ff5810;
-        animation-timing-function: ease-in-out;
-    }
-}
+            0%{
+                color: #ff5810;
+                animation-timing-function: ease-in-out;
+            }
+            50% {
+                color: #ee4902;
+                animation-timing-function: ease-in-out;
+            }
+            75% {
+                color: #a83402;
+                animation-timing-function: ease-in-out;
+            }
+            100%{
+                color: #ff5810;
+                animation-timing-function: ease-in-out;
+            }
+        }
 
 
 @keyframes appAnim {
@@ -256,17 +268,26 @@ ul, li {
 }
 
 -webkit-@keyframes appAnim {
-    0%{
-        opacity: .3;
-    }
-    100%{
-        opacity: 1;
-    }
-}
+            0%{
+                opacity: .3;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
 
 @media (max-width: 840px) {
     #searcharea {
         width: 100%;
+    }
+}
+
+@media (min-width: 541px) {
+    .codeExample a:hover {
+        transition: .4s ease;
+        color: #6f6f6f;
+        border-bottom: 1px solid #6f6f6f;
+        padding-top: 2px;
     }
 }
 
@@ -296,5 +317,11 @@ ul, li {
 
     #update ul li {
         padding: 10px;
+    }
+
+    .codeExample a {
+        font-size: 25px;
+        border-bottom: 1px solid #6f6f6f;
+        padding-top: 2px;
     }
 }
