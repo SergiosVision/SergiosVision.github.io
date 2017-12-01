@@ -45,10 +45,10 @@ function callRequest() {
                 getUpdateContainer.innerHTML = output;
             }
             else {
-                getUpdateContainer.innerHTML = '<h1>Nothing found on your request</h1>';
+                getUpdateContainer.innerHTML = '<h1 class="notFound">Nothing found on your request</h1>';
             }
         } else {
-            getUpdateContainer.innerHTML = '<h1>Connection error. Try again later</h1>';
+            getUpdateContainer.innerHTML = '<h1 class="connectionProblems">Connection error. Try again later</h1>';
         }
     };
     request.send();
