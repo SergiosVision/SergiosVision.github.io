@@ -108,12 +108,13 @@ function scrollToTop() {
     if (getBody.classList.contains('working')) {
         return false;
     }
-    setTimeout(function () {
-        getBody.classList.remove('working');
-    }, 1000)
 }
 
 // When the DOM is loaded, this click handler is added to our scroll button
 getScrollTopBtn.addEventListener('click',scrollToTop);
+
+setTimeout(function () {
+    getBody.classList.remove('working');
+}, 1000);
 
 
