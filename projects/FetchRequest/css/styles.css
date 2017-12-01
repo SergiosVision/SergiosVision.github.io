@@ -197,12 +197,15 @@ ul, li {
     margin-top: 150px;
 }
 
-.connectionProblems {
+.connectionProblems, .secondErrMsg {
     transition: .4s;
     color: #ff5810;
     animation: errorAnim 2s infinite linear;
 }
 
+.secondErrMsg {
+    margin-top: 20px;
+}
 
 .codeExample {
     margin: 150px 0;
@@ -239,23 +242,23 @@ ul, li {
 }
 
 -webkit-@keyframes errorAnim {
-            0%{
-                color: #ff5810;
-                animation-timing-function: ease-in-out;
-            }
-            50% {
-                color: #ee4902;
-                animation-timing-function: ease-in-out;
-            }
-            75% {
-                color: #a83402;
-                animation-timing-function: ease-in-out;
-            }
-            100%{
-                color: #ff5810;
-                animation-timing-function: ease-in-out;
-            }
-        }
+    0%{
+        color: #ff5810;
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        color: #ee4902;
+        animation-timing-function: ease-in-out;
+    }
+    75% {
+        color: #a83402;
+        animation-timing-function: ease-in-out;
+    }
+    100%{
+        color: #ff5810;
+        animation-timing-function: ease-in-out;
+    }
+}
 
 
 @keyframes appAnim {
