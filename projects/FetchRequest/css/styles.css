@@ -88,8 +88,53 @@ ul, li {
     border-color: #2ecea9;
 }
 
+.navigation ul {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    top: 200px;
+    display: flex;
+    transform: translateX(170px);
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.navigation ul li {
+    display: block;
+    background-color: #555555;
+    margin: 0;
+    transition: .6s ease-in-out;
+}
+
+.navigation ul li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: .4s ease;
+    color: #fff;
+    padding: 10px;
+}
+
+
+.navigation ul.addFixed li {
+    background-color: #555555;
+    margin: 0;
+    transform: translateX(170px);
+    transition: .6s ease-in-out;
+}
+
+.navigation ul li:hover {
+    transform: translateX(-170px);
+    color: #fff;
+}
+
+.navigation ul li a:hover {
+    color: #fff;
+}
+
 #update {
-    margin: 40px auto 0 auto;
+    margin: 0 auto;
     width: 80%;
     text-align: center;
 }
@@ -105,6 +150,10 @@ ul, li {
     border-right: none;
     padding: 20px;
     animation: appAnim 1s linear;
+}
+
+.active {
+    color: red!important;
 }
 
 #update img {
@@ -285,12 +334,22 @@ ul, li {
     }
 }
 
+@media (max-width: 768px) {
+    .navigation ul {
+        top: 40px;
+    }
+}
+
 @media (min-width: 541px) {
     .codeExample a:hover {
         transition: .4s ease;
         color: #6f6f6f;
         border-bottom: 1px solid #6f6f6f;
         padding-top: 2px;
+    }
+
+    .navigation ul li a:hover {
+        color: #fff;
     }
 }
 
@@ -306,7 +365,7 @@ ul, li {
     #searcharea .resetBtn {
         padding: 0px 5px;
         height: 33px;
-        font-size: 12px;
+        font-size: 7px;
     }
 
     #searcharea input {

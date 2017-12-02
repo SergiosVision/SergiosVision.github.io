@@ -3,6 +3,7 @@ var getResetBtn = document.querySelector('.resetBtn');
 var getScrollTopBtn = document.querySelector('.scrollTopBth');
 var getUpdateContainer = document.querySelector('#update');
 var codeExample = document.querySelector('.codeExample');
+var getNavigationContainer = document.querySelector('.navigation ul');
 var getBody = document.body;
 var getBodySecond = document.documentElement;
 
@@ -29,11 +30,12 @@ function callRequest() {
         .then(function (data) {
             var items = data;
             var output = '<ul class="searchResults">';
+            var navOutput = '';
             var a = false;
             for(var key in items) {
                 if ((items[key].name.search(expression) != - 1) || (items[key].bio.search(expression) != - 1) || (items[key].reknown.search(expression) != - 1) || (items[key].demo.search(expression) != - 1)) {
                     a = true;
-                    output += '<li class="'+ items[key].name +'">';
+                    output += '<li id="'+ items[key].shortname +'">';
                     output += '<h2>'+ items[key].name +'</h2>';
                     output += '<img src="images/'+ items[key].shortname +'_tn.jpg" alt="'+ items[key].name +'"/>';
                     output += '<p>'+ items[key].bio +'</p>';
@@ -41,10 +43,12 @@ function callRequest() {
                     output += '<span class="reknown">'+ items[key].reknown +'</span>';
                     output += '</li>';
                 }
+                navOutput += '<li><a href="#'+ items[key].shortname +'">' + items[key].name + '</a></li>'
             }
             output += '</ul>';
             if(a) {
                 getUpdateContainer.innerHTML = output;
+                getNavigationContainer.innerHTML = navOutput;
                 codeExample.style.display = 'block';
             }
             else {
@@ -74,16 +78,78 @@ function deleteEmptyLinks() {
 }
 deleteEmptyLinks(); // Deleting Links if they empty
 
+// Scroll Spy
+
+function callScrollSpy() {
+    setTimeout(function () {
+        // var getSections = document.querySelectorAll('.searchResults li');
+        // var sections = {};
+        // var getNavLinks = document.querySelector('.navigation ul li a');
+        // getNavLinks.classList.add('active');
+        //
+        // Array.prototype.forEach.call(getSections, function (e) {
+        //     console.log(sections[e.id] = e.offsetTop);
+        //     sections[e.id] = e.offsetTop; // Get offste Top for each li
+        // });
+        // window.addEventListener('scroll', function () {
+        //     var scrollPosition = getBody.scrollTop || getBodySecond.scrollTop;
+        //
+        //     for (var i in sections) {
+        //         if (sections[i] <= scrollPosition) {
+        //             document.querySelector('.active').setAttribute('class', ' ');
+        //             document.querySelector('.navigation a[href*=' + i + ']').setAttribute('class', 'active');
+        //         }
+        //     }
+        //
+        // });
+        var getSections = document.querySelectorAll('.searchResults li[id]');
+        var getNavLinkOne = document.querySelector('.navigation ul li a');
+        var getNavLinks = document.querySelectorAll('.navigation ul li a');
+        getNavLinkOne.classList.add('active');
+
+        function getClosestSection() {
+            var sectionsLength = getSections.length;
+            for(var index = 0; index < sectionsLength; index++) {
+                if (isBelowScroll(getSections.item(index)))
+                    break;
+            }
+            selectLink(getSections.item(index).id)
+        }
+
+        function isBelowScroll(element) {
+            var position = element.getBoundingClientRect();
+            return position.top > 0;
+        }
+
+        function selectLink(id) {
+            Array.prototype.forEach.call(getNavLinks, function(element){
+                element.classList.remove('active');
+            });
+
+            document.querySelector('.navigation a[href="#'+id+'"]').classList.add('active');
+        }
+
+        window.addEventListener('scroll', function() {
+            getClosestSection();
+        });
+        
+    }, 1000);
+}
+callScrollSpy();
+
+
 getSearchField.addEventListener('keyup', function () { // Calling this function when change happen in input keyup
     callRequest(); // Call Fetch request
     deleteEmptyLinks(); // Deleting Links if they empty
     callDisableButton(); // Call button disable
+    callScrollSpy(); // Call Scroll Spy
 });
 
 getSearchField.addEventListener('change', function () { // Calling this function when change happen in input
     callRequest(); // Call Fetch request
     deleteEmptyLinks(); // Deleting Links if they empty
     callDisableButton(); // Call button disable
+    callScrollSpy(); // Call Scroll Spy
 });
 
 getResetBtn.addEventListener('click', function () { // Reset button
@@ -92,6 +158,7 @@ getResetBtn.addEventListener('click', function () { // Reset button
     callRequest(); // Call Fetch request
     deleteEmptyLinks(); // Deleting Links if they empty
     callDisableButton(); // Call button disable
+    callScrollSpy(); // Call Scroll Spy
 });
 
 // Show Scroll button
