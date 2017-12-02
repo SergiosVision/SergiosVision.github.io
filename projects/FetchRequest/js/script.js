@@ -2,6 +2,7 @@ var getSearchField = document.querySelector('#search');
 var getResetBtn = document.querySelector('.resetBtn');
 var getScrollTopBtn = document.querySelector('.scrollTopBth');
 var getUpdateContainer = document.querySelector('#update');
+var codeExample = document.querySelector('.codeExample');
 var getBody = document.body;
 var getBodySecond = document.documentElement;
 
@@ -30,7 +31,7 @@ function callRequest() {
             var output = '<ul class="searchResults">';
             var a = false;
             for(var key in items) {
-                if ((items[key].name.search(expression) != - 1) || (items[key].bio.search(expression) != - 1) || (items[key].reknown.search(expression) != - 1)) {
+                if ((items[key].name.search(expression) != - 1) || (items[key].bio.search(expression) != - 1) || (items[key].reknown.search(expression) != - 1) || (items[key].demo.search(expression) != - 1)) {
                     a = true;
                     output += '<li class="'+ items[key].name +'">';
                     output += '<h2>'+ items[key].name +'</h2>';
@@ -44,9 +45,12 @@ function callRequest() {
             output += '</ul>';
             if(a) {
                 getUpdateContainer.innerHTML = output;
+                codeExample.style.display = 'block';
             }
             else {
                 getUpdateContainer.innerHTML = '<h1 class="notFound">Nothing found on your request</h1>';
+                codeExample.style.display = 'none';
+
             }
         })
         .catch(function (error) {
