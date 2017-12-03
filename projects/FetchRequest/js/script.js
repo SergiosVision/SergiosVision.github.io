@@ -35,7 +35,7 @@ function callRequest() {
             for(var key in items) {
                 if ((items[key].name.search(expression) != - 1) || (items[key].bio.search(expression) != - 1) || (items[key].reknown.search(expression) != - 1) || (items[key].demo.search(expression) != - 1)) {
                     a = true;
-                    output += '<li id="'+ items[key].shortname +'">';
+                    output += '<li class="blocksAnim" id="'+ items[key].shortname +'">';
                     output += '<h2>'+ items[key].name +'</h2>';
                     output += '<img src="images/'+ items[key].shortname +'_tn.jpg" alt="'+ items[key].name +'"/>';
                     output += '<p>'+ items[key].bio +'</p>';
@@ -50,6 +50,8 @@ function callRequest() {
                 getUpdateContainer.innerHTML = output;
                 getNavigationContainer.innerHTML = navOutput;
                 codeExample.style.display = 'block';
+                document.querySelector('#update li').classList.remove('blocksAnim');
+                document.querySelector('#update li').classList.remove('showBlocks');
             }
             else {
                 getUpdateContainer.innerHTML = '<h1 class="notFound">Nothing found on your request</h1>';
@@ -77,6 +79,26 @@ function deleteEmptyLinks() {
     },1000);
 }
 deleteEmptyLinks(); // Deleting Links if they empty
+
+// Smooth Show Blocks
+
+function setBlocksAnimation() {
+    setTimeout(function () {
+        var getAnimBlocks = document.querySelectorAll('.searchResults li');
+        window.addEventListener('scroll', function () {
+            Array.prototype.forEach.call(getAnimBlocks, function (response) {
+                var position = response.offsetTop;
+                var windowTop = getBody.scrollTop || getBodySecond.scrollTop;
+                console.log(windowTop);
+
+                if (position < windowTop + 300) {
+                    response.classList.add('showBlocks');
+                }
+            })
+        });
+    }, 1000)
+}
+setBlocksAnimation(); // Call  Smooth Show Blocks
 
 // Scroll Spy
 

@@ -74,6 +74,14 @@ ul, li {
     margin-bottom: 10px;
 }
 
+#searcharea .support {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: red;
+    text-transform: uppercase;
+}
+
 #searcharea input {
     width: 80%;
     padding: 10px;
@@ -150,7 +158,6 @@ ul, li {
     border-left: none;
     border-right: none;
     padding: 20px;
-    animation: appAnim 1s linear;
 }
 
 .active {
@@ -321,13 +328,53 @@ ul, li {
 }
 
 -webkit-@keyframes appAnim {
-            0%{
-                opacity: .3;
-            }
-            100%{
-                opacity: 1;
-            }
-        }
+    0%{
+        opacity: .3;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.blocksAnim {
+    visibility: hidden;
+    transition: .4s ease-in-out;
+}
+
+.showBlocks {
+    animation-name: blocksAnim;
+    -webkit-animation-name: blocksAnim;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+    transition: .4s ease-in-out;
+}
+
+
+@keyframes blocksAnim{
+    0%{
+        opacity: 0;
+        transform: translateY(70%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@-webkit-keyframes blocksAnim{
+    0%{
+        opacity: 0;
+        transform: translateY(70%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
 
 @media (max-width: 840px) {
     #searcharea {
