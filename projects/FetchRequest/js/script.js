@@ -222,6 +222,7 @@ getSearchField.addEventListener('keyup', function () { // Calling this function 
     callDisableButton(); // Call button disable
     callScrollSpy(); // Call Scroll Spy
     callSmoothScroll(); // Call Smooth Scroll
+    setBlocksAnimation(); // Call  Smooth Show Blocks
 });
 
 getSearchField.addEventListener('change', function () { // Calling this function when change happen in input
@@ -230,6 +231,7 @@ getSearchField.addEventListener('change', function () { // Calling this function
     callDisableButton(); // Call button disable
     callScrollSpy(); // Call Scroll Spy
     callSmoothScroll(); // Call Smooth Scroll
+    setBlocksAnimation(); // Call  Smooth Show Blocks
 });
 
 getResetBtn.addEventListener('click', function () { // Reset button
@@ -240,6 +242,7 @@ getResetBtn.addEventListener('click', function () { // Reset button
     callDisableButton(); // Call button disable
     callScrollSpy(); // Call Scroll Spy
     callSmoothScroll(); // Call Smooth Scroll
+    setBlocksAnimation(); // Call  Smooth Show Blocks
 });
 
 // Show Scroll button
