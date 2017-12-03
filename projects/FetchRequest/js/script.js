@@ -51,7 +51,6 @@ function callRequest() {
                 getNavigationContainer.innerHTML = navOutput;
                 codeExample.style.display = 'block';
                 document.querySelector('#update li').classList.remove('blocksAnim');
-                document.querySelector('#update li').classList.remove('showBlocks');
             }
             else {
                 getUpdateContainer.innerHTML = '<h1 class="notFound">Nothing found on your request</h1>';
@@ -92,7 +91,11 @@ function setBlocksAnimation() {
                 console.log(windowTop);
 
                 if (position < windowTop + 300) {
-                    response.classList.add('showBlocks');
+                    if (!response.classList.contains('blocksAnim')) {
+                        document.querySelector('#update li').classList.remove('showBlocks');
+                    } else {
+                        response.classList.add('showBlocks');
+                    }
                 }
             })
         });
