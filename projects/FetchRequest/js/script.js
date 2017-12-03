@@ -82,56 +82,61 @@ deleteEmptyLinks(); // Deleting Links if they empty
 
 function callScrollSpy() {
     setTimeout(function () {
-        // var getSections = document.querySelectorAll('.searchResults li');
-        // var sections = {};
-        // var getNavLinks = document.querySelector('.navigation ul li a');
-        // getNavLinks.classList.add('active');
-        //
-        // Array.prototype.forEach.call(getSections, function (e) {
-        //     console.log(sections[e.id] = e.offsetTop);
-        //     sections[e.id] = e.offsetTop; // Get offste Top for each li
-        // });
-        // window.addEventListener('scroll', function () {
-        //     var scrollPosition = getBody.scrollTop || getBodySecond.scrollTop;
-        //
-        //     for (var i in sections) {
-        //         if (sections[i] <= scrollPosition) {
-        //             document.querySelector('.active').setAttribute('class', ' ');
-        //             document.querySelector('.navigation a[href*=' + i + ']').setAttribute('class', 'active');
-        //         }
-        //     }
-        //
-        // });
-        var getSections = document.querySelectorAll('.searchResults li[id]');
-        var getNavLinkOne = document.querySelector('.navigation ul li a');
-        var getNavLinks = document.querySelectorAll('.navigation ul li a');
-        getNavLinkOne.classList.add('active');
+        var getSections = document.querySelectorAll('.searchResults li');
+        var sections = {};
+        var getNavLinks = document.querySelector('.navigation ul li a');
+        getNavLinks.classList.add('active');
 
-        function getClosestSection() {
-            var sectionsLength = getSections.length;
-            for(var index = 0; index < sectionsLength; index++) {
-                if (isBelowScroll(getSections.item(index)))
-                    break;
+        Array.prototype.forEach.call(getSections, function (e) {
+            if (window.innerWidth >= 769) { // Get offste Top for each li
+                console.log(sections[e.id] = e.offsetTop - 100);
+                sections[e.id] = e.offsetTop - 100;
+            } else {
+                console.log(sections[e.id] = e.offsetTop - 30);
+                sections[e.id] = e.offsetTop - 30;
             }
-            selectLink(getSections.item(index).id)
-        }
-
-        function isBelowScroll(element) {
-            var position = element.getBoundingClientRect();
-            return position.top > 0;
-        }
-
-        function selectLink(id) {
-            Array.prototype.forEach.call(getNavLinks, function(element){
-                element.classList.remove('active');
-            });
-
-            document.querySelector('.navigation a[href="#'+id+'"]').classList.add('active');
-        }
-
-        window.addEventListener('scroll', function() {
-            getClosestSection();
         });
+        window.addEventListener('scroll', function () {
+            var scrollPosition = getBody.scrollTop || getBodySecond.scrollTop;
+
+            for (var i in sections) {
+                if (sections[i] <= scrollPosition) {
+                    document.querySelector('.active').setAttribute('class', ' ');
+                    document.querySelector('.navigation a[href*=' + i + ']').setAttribute('class', 'active');
+                }
+            }
+
+        });
+        // var getSections = document.querySelectorAll('.searchResults li[id]');
+        // var getNavLinkOne = document.querySelector('.navigation ul li a');
+        // var getNavLinks = document.querySelectorAll('.navigation ul li a');
+        // getNavLinkOne.classList.add('active');
+        //
+        // function getClosestSection() {
+        //     var sectionsLength = getSections.length;
+        //     for(var index = 0; index < sectionsLength; index++) {
+        //         if (isBelowScroll(getSections.item(index)))
+        //             break;
+        //     }
+        //     selectLink(getSections.item(index).id)
+        // }
+        //
+        // function isBelowScroll(element) {
+        //     var position = element.getBoundingClientRect();
+        //     return position.top > 0;
+        // }
+        //
+        // function selectLink(id) {
+        //     Array.prototype.forEach.call(getNavLinks, function(element){
+        //         element.classList.remove('active');
+        //     });
+        //
+        //     document.querySelector('.navigation a[href="#'+id+'"]').classList.add('active');
+        // }
+        //
+        // window.addEventListener('scroll', function() {
+        //     getClosestSection();
+        // });
         
     }, 1000);
 }
