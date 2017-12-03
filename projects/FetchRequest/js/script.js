@@ -88,7 +88,6 @@ function setBlocksAnimation() {
             Array.prototype.forEach.call(getAnimBlocks, function (response) {
                 var position = response.offsetTop;
                 var windowTop = getBody.scrollTop || getBodySecond.scrollTop;
-                console.log(windowTop);
 
                 if (position < windowTop + 300) {
                     if (!response.classList.contains('blocksAnim')) {
@@ -114,10 +113,10 @@ function callScrollSpy() {
 
         Array.prototype.forEach.call(getSections, function (e) {
             if (window.innerWidth >= 769) { // Get offste Top for each li
-                console.log(sections[e.id] = e.offsetTop - 100);
+                // console.log(sections[e.id] = e.offsetTop - 100);
                 sections[e.id] = e.offsetTop - 100;
             } else {
-                console.log(sections[e.id] = e.offsetTop - 30);
+                // console.log(sections[e.id] = e.offsetTop - 30);
                 sections[e.id] = e.offsetTop - 30;
             }
         });
