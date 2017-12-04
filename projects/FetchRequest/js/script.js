@@ -89,11 +89,21 @@ function setBlocksAnimation() {
                 var position = response.offsetTop;
                 var windowTop = getBody.scrollTop || getBodySecond.scrollTop;
 
-                if (position < windowTop + 300) {
-                    if (!response.classList.contains('blocksAnim')) {
-                        document.querySelector('#update li').classList.remove('showBlocks');
-                    } else {
-                        response.classList.add('showBlocks');
+                if (window.innerWidth >= 1600) {
+                    if (position < windowTop + 600) {
+                        if (!response.classList.contains('blocksAnim')) {
+                            document.querySelector('#update li').classList.remove('showBlocks');
+                        } else {
+                            response.classList.add('showBlocks');
+                        }
+                    }
+                } else {
+                    if (position < windowTop + 300) {
+                        if (!response.classList.contains('blocksAnim')) {
+                            document.querySelector('#update li').classList.remove('showBlocks');
+                        } else {
+                            response.classList.add('showBlocks');
+                        }
                     }
                 }
             })
