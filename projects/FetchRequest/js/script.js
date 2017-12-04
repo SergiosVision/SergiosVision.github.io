@@ -51,16 +51,23 @@ function callRequest() {
                 getNavigationContainer.innerHTML = navOutput;
                 codeExample.style.display = 'block';
                 document.querySelector('#update li').classList.remove('blocksAnim');
+                var getBlocks = document.querySelectorAll('.searchResults li').length;
+                document.querySelector('.spikersValue span').innerHTML = getBlocks;
+                document.querySelector('.spikersValue .dontSee').innerHTML = 'If you dont see blocks, just make scroll'
             }
             else {
                 getUpdateContainer.innerHTML = '<h1 class="notFound">Nothing found on your request</h1>';
                 codeExample.style.display = 'none';
+                document.querySelector('.spikersValue span').innerHTML =  '0';
+                document.querySelector('.spikersValue .dontSee').innerHTML = '';
 
             }
         })
         .catch(function (error) {
             getUpdateContainer.innerHTML = '<h1 class="connectionProblems">Connection error. Try again later</h1>' +
                                            '<h2 class="connectionProblems secondErrMsg">'+ error.message +'</h2>';
+            document.querySelector('.spikersValue span').innerHTML =  '0';
+            document.querySelector('.spikersValue .dontSee').innerHTML = '';
         })
 }
 callRequest();

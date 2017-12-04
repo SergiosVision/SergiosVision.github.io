@@ -108,6 +108,30 @@ ul, li {
     z-index: 100;
 }
 
+.navigation .spikersValue {
+    position: fixed;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 20px;
+}
+
+.navigation .spikersValue .values {
+    display: flex;
+}
+
+.navigation .spikersValue p,.navigation .spikersValue span {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #ff131f;
+}
+
+.navigation .spikersValue .dontSee {
+    display: inline-block;
+    font-size: 12px;
+    color: #ff131f;
+    width: 115px;
+}
+
 .navigation ul li {
     display: block;
     background-color: #555555;
