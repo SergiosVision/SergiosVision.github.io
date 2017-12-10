@@ -23,15 +23,15 @@ socket.on('connect', function(){
 });// Socket
 
 function showMessage(data){
-        var chatDisplay = document.querySelector('.chat-display');
-        var newMessage = document.createElement('p');
-        
-        if (chatUsername.value == data.username){
-            newMessage.className = 'bg-success chat-text';
-        } else{
-           newMessage.className = 'bg-info text-warning chat-text'; 
-        }
-    
-        newMessage.innerHTML = '<strong>' + data.username + '</strong>: ' + data.message;
-        chatDisplay.insertBefore(newMessage, chatDisplay.firstChild);
-    };
+    var chatDisplay = document.querySelector('.chat-display');
+    var newMessage = document.createElement('p');
+
+    if (chatUsername.value == data.username){
+        newMessage.className = 'bg-success chat-text';
+    } else{
+       newMessage.className = 'bg-info text-warning chat-text';
+    }
+
+    newMessage.innerHTML = '<strong>' + data.username + '</strong>: ' + data.message;
+    chatDisplay.insertBefore(newMessage, chatDisplay.firstChild);
+};
