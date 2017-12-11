@@ -64,7 +64,7 @@ const movies = {
         "trailerPath": 'https://www.youtube.com/embed/ijXruSzfGEc',
         "favorite": false
     }
-}
+};
 
 // 1. Define route components.
 const Intro = {
@@ -81,7 +81,7 @@ const Intro = {
         </div>
       </div>
     </div>`
-}
+};
 
 const Movie = {
     template:
@@ -156,7 +156,7 @@ const Movie = {
             movies[this.$route.params.id].favorite = !movies[this.$route.params.id].favorite
         }
     }
-}
+};
 
 const MovieTrailer = {
     template: `
@@ -180,18 +180,18 @@ const MovieTrailer = {
             trailerUrlPath: movies[this.$route.params.id].trailerPath
         }
     }
-}
+};
 
 // 2. Define routes
 const routes = [
     { path: '/', component: Intro },
     { path: '/:id', component: Movie },
     { path: '/:id/trailer', component: MovieTrailer }
-]
+];
 
 const router = new VueRouter({
     routes
-})
+});
 
 const rootApp = new Vue({
     el: '#app',
@@ -201,4 +201,4 @@ const rootApp = new Vue({
             movieChoices: movies
         }
     },
-})
+});
