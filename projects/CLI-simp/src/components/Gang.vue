@@ -6,24 +6,52 @@
                     <h3 v-show="person.show">{{person.speciality}}</h3>
                 </li>
             </ul>
+            <button v-on:click="deletePerson" class="hoverable waves-effect btn-large">Delete member</button>
         </section>
 </template>
 
 <script>
     export default {
+        props: {
+           gang: {
+               type: Array,
+               required: true
+           }
+        },
         data () {
             return {
-                gang: [
-                    {"name":"Sergios Vision", "speciality":"Vue components", show: false},
-                    {"name":"Barot Bellingham", "speciality":"HTML", show: false},
-                    {"name":"Jonathan G. Ferrar II", "speciality":"Canvas", show: false},
-                    {"name":"Hillary Hewitt Goldwynn-Post", "speciality":"Data Grab", show: false},
-                ]
+//
             }
+        },
+        methods: {
+            deletePerson: function () {
+                this.gang.pop();
+            }
+        },
+        //Life-cycle Hooks
+        beforeCreate() {
+            alert('Before has been created');
+        },
+        created() {
+            alert('Created')
+        },
+        beforeMount() {
+            alert('beforeMount')
+        },
+        mounted() {
+            alert('Mounted')
+        },
+        beforeUpdate() {
+            alert('Before Update');
+        },
+        updated() {
+            alert('Updated');
         }
     }
 </script>
 
-<style>
-
+<style scoped>
+    #gang {
+        padding: 30px 0;
+    }
 </style>

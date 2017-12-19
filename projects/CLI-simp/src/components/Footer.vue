@@ -35,11 +35,24 @@
 
 
 <script>
+
+    import { bus } from '../main';
+
     export default {
+        props: {
+            copy: {
+                type: String
+            }
+        },
         data () {
             return {
-                copy: 'SergiosVision'
+//                copy: 'SergiosVision'
             }
+        },
+        created() {
+            bus.on('titleChanged', (data) => {
+                this.title = data;
+            })
         }
     }
 </script>

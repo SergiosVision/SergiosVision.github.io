@@ -3,7 +3,7 @@
         <div class="navbar-fixed">
             <nav class="grey darken-3" role="navigation">
                 <div class="nav-wrapper container">
-                    <a id="logo-container" href="#jumbotron" class="brand-logo">{{title}}</a>
+                    <a id="logo-container" href="#jumbotron" class="brand-logo" v-on:click="changeTitle">{{title}}</a>
                     <ul class="right hide-on-med-and-down main-navi table-of-contents">
                         <li><a href="#jumbotron">Home</a></li>
                         <li><a href="#services">Services</a></li>
@@ -39,10 +39,25 @@
 
 
 <script>
+
+    import { bus } from '../main';
+
     export default {
+        props: {
+          title: {
+              type: String
+          }
+        },
         data () {
             return {
-                title: 'Vue SergiosVision'
+                
+            }
+        },
+        methods: {
+            changeTitle: function () {
+//                this.$emit('changeTitle', 'SergiosVision')
+                this.title = 'Vue Sergios';
+                bus.$emit('titleChanged', 'SergiosVision Data')
             }
         }
     }

@@ -1,11 +1,11 @@
 <template>
   <div>
-      <app-header></app-header>
+      <app-header v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-header>
       <main>
           <app-jumbo></app-jumbo>
-          <app-gang></app-gang>
+          <app-gang v-bind:gang="gang"></app-gang>
       </main>
-      <app-footer></app-footer>
+      <app-footer v-bind:copy="copy"></app-footer>
   </div>
 </template>
 
@@ -26,12 +26,27 @@ export default {
   },
   data () {
     return {
-
+        gang: [
+            {"name":"Sergios Vision", "speciality":"Vue components", show: false},
+            {"name":"Barot Bellingham", "speciality":"HTML", show: false},
+            {"name":"Jonathan G. Ferrar II", "speciality":"Canvas", show: false},
+            {"name":"Hillary Hewitt Goldwynn-Post", "speciality":"Data Grab", show: false},
+        ],
+        title: "Vue Sergios Example",
+        copy: 'SergiosVision'
     }
+  },
+  methods: {
+      updateTitle: function (updatedTitle) {
+          this.title = updatedTitle
+      }
   }
 }
 </script>
 
 <style>
-
+    body {
+        background: url(/src/assets/background.png);
+        background-position: center center;
+    }
 </style>
