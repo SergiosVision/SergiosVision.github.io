@@ -1,0 +1,560 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html, body
+  width: 100%
+  min-width: 320px
+  min-height: 100vh
+  font-family: 'Roboto Condensed', sans-serif
+  color: #1A1A1A
+
+body
+  position: relative
+  background-color: #373435
+  //background: url('/images/background.png') no-repeat #373435
+  width: 100%
+  height: 100%
+  background-size: cover
+  &.fixed
+    overflow: hidden
+  &.t-windowLoading
+    footer, .t-frame, .t-jumboWrapper, .t-allCategories, .t-brands, .t-trend, .t-discounts, .t-bottomInfo
+      opacity: 0
+      pointer-events: none
+  &.t-animeOne
+    .t-astronaut
+      top: 50px
+      left: 10%
+      opacity: 1
+      animation: astronaut 2s linear
+    .t-vectorLeft,
+    .t-vectorSliderBottom,
+    .t-vectorSliderTop,
+    .t-vectorRight
+      animation: figurecontiner 2s linear
+    .t-loadingLogo
+      animation: opacityLogo 2.5s linear
+
+@keyframes figurecontiner
+  0%
+    opacity: 0
+    transform: scale(2)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+
+@keyframes opacityLogo
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+
+
+@keyframes astronaut
+  0%
+    opacity: 0
+    transform: scale(2)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+.background
+  background: url('/images/background.png') repeat
+  background-size: 130% auto
+  position: fixed
+  width: 100%
+  height: 300%
+  top: 0
+  left: 0
+  z-index: -3
+  &.topBackground
+    top: -1000px
+  &.animation
+    transition: 2.5s cubic-bezier(.35,0,.33,1)
+
+.t-loadingLogo
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: url("/images/loadingLogo.png") no-repeat
+  background-size: contain
+  width: 476px
+  height: 226px
+  z-index: 10
+  margin: auto
+  opacity: 0
+  pointer-events: none
+  transition: .3s ease
+
+.wrapper
+  display: flex
+  flex-direction: column
+  position: relative
+  overflow: hidden
+
+header, footer
+  flex: 0 0 auto
+
+main
+  flex: 1 1 auto
+  margin: 0 auto
+  min-height: calc(100vh - 462px)
+
+.t-mainPage
+  width: 980px
+
+.headingTitle
+  font-size: 46px
+  font-weight: bold
+  color: #26BFD1
+  margin: 0
+
+.banDescription
+  color: #1A1A1A
+  font-weight: bold
+  font-size: 26px
+
+.t-btn
+  display: inline-block
+  padding: 11px 24px
+  text-align: center
+  border-radius: 20px
+  font-weight: bold
+  font-size: 16px
+  color: #fff
+  border: none
+  text-decoration: none
+  outline: none
+  background: linear-gradient(254.05deg, #FF4F54 0%, #E5191F 100%)
+  cursor: pointer
+  box-shadow: 0px 8px 16px rgba(150, 0, 4, 0.32)
+
+
+.t-showMoreButton
+  background-color: transparent
+  outline: none
+  border: none
+  border: 1px solid #fff
+  color: #fff
+  padding: 10px 32px
+  border-radius: 20px
+  display: inline-block
+  cursor: pointer
+  font-size: 16px
+  font-weight: bold
+
+.t-sectionTitle
+  font-weight: bold
+  font-size: 26px
+  color: #fff
+  text-align: center
+
+.t-cardsHolder
+  display: flex
+  justify-content: space-between
+  margin-top: 24px
+  flex-wrap: wrap
+
+.t-starHolder
+  list-style: none
+  display: flex
+  li:not(:last-child)
+    margin-right: 8px
+
+.t-star
+  display: inline-block
+  svg
+    transition: .4s ease
+    fill: #E0E0E0
+    &.active
+      fill: #26BFD1
+
+
+.t-frame
+  width: 1440px
+  height: 1200px
+  background-color: #25ACBD
+  mix-blend-mode: overlay
+  position: absolute
+  border-radius: 50%
+  top: 0
+  transform: translateY(-50%)
+  left: 0
+  right: 0
+  transition: 6s ease
+  z-index: -3
+
+.t-moon
+  background: url('/images/moon.png') no-repeat
+  width: 100%
+  height: 640px
+  position: absolute
+  transform: translateY(400px)
+  left: 0
+  bottom: 0
+  background-size: cover
+  z-index: -2
+
+.t-astronaut
+  position: fixed
+  width: 720px
+  height: 720px
+  background: url("/images/prop/astronaut.png") no-repeat
+  background-size: contain
+  z-index: -1
+  top: 0
+  left: 0
+  &.animation
+    transition: 1.5s cubic-bezier(.35,0,.33,1)
+
+.t-vectorLeft
+  position: fixed
+  display: block
+  width: 359px
+  height: 387px
+  left: -150px
+  top: 0
+  background: url("/images/prop/vectorLeft.png") no-repeat
+  background-size: contain
+  z-index: -1
+  transition: .5s cubic-bezier(.35,0,.33,1)
+
+.t-vectorSliderBottom
+  position: fixed
+  display: block
+  width: 82px
+  height: 88px
+  top: 655px
+  left: 20%
+  background: url("/images/prop/sliderVector.png") no-repeat
+  background-size: contain
+  z-index: 10
+  transition: .5s cubic-bezier(.35,0,.33,1)
+
+.t-vectorSliderTop
+  position: fixed
+  display: block
+  width: 123px
+  height: 133px
+  top: 150px
+  right: 20%
+  background: url("/images/prop/vectorLeft.png") no-repeat
+  background-size: contain
+  z-index: -1
+  transition: .5s cubic-bezier(.35,0,.33,1)
+
+.t-vectorRight
+  position: fixed
+  display: block
+  width: 45px
+  height: 43px
+  top: 250px
+  right: 109px
+  background: url("/images/prop/figure.png") no-repeat
+  background-size: contain
+  z-index: -1
+  transition: .5s cubic-bezier(.35,0,.33,1)
+
+//.t-figuresControls
+//  opacity: 1
+//  transition: .4s ease
+
+.t-mainContainerCection
+  width: 1296px
+  margin: 40px auto 0 auto
+
+.t-standartMainContainer
+  padding: 32px
+  margin-top: 32px
+  background-color: #fff
+  border-radius: 24px
+
+.t-moonGradient
+  position: fixed
+  width: 100%
+  height: 640px
+  bottom: 0
+  left: 0
+  right: 0
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000)
+  z-index: -1
+  opacity: 0
+  transition: .8s ease
+
+.t-breadCrumbs
+  display: flex
+  justify-content: center
+  margin-top: 8px
+  margin-bottom: 32px
+  ul
+    list-style: none
+    display: flex
+    li
+      a
+        display: inline-block
+        color: rgba(255, 255, 255, 0.7)
+        font-size: 14px
+        text-decoration: none
+        border-right: 1px solid rgba(255, 255, 255, 0.71)
+        padding: 0 5px
+        line-height: 13px
+      &:last-child
+        a
+          border: none
+
+
+.t-goodsLink
+  text-decoration: none
+  display: inline-block
+.t-goodsCard
+  background-color: #fff
+  border-radius: 24px
+  width: 304px
+  height: 454px
+  padding: 32px 32px 0 32px
+  transition: .4s ease
+  margin-bottom: 16px
+  overflow: hidden
+  .t-goodsCardImage
+    width: 240px
+    height: 240px
+    margin-bottom: 24px
+    transition: .4s ease
+    overflow: hidden
+    position: relative
+    overflow: hidden
+    background-color: #fff
+    border-radius: 50%
+    cursor: pointer
+    .t-imgOverlay
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      height: 100%
+      width: 100%
+      background-color: rgba(38, 191, 209, .5)
+      border-radius: 50%
+      transform: translateX(500px)
+      opacity: 0
+      transition: .4s ease
+      img
+        position: absolute
+        width: 30px
+        height: 30px
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+    img
+      width: 100%
+      height: 100%
+      object-fit: contain
+  .t-goodsCardInfo
+    text-align: center
+    transition: .4s ease
+    .t-goodsCardCategory
+      color: #E0E0E0
+      font-size: 14px
+      display: block
+      margin-bottom: 8px
+    .t-goodsCardDescription
+      font-size: 16px
+      background: linear-gradient(to left, #197599, #194C7A)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      margin-bottom: 8px
+    .t-goodsCardPrice
+      display: inline-block
+      font-size: 26px
+      font-weight: bold
+      margin-bottom: 8px
+      background: linear-gradient(to left, #197599, #194C7A)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+    .t-starHolder
+      display: flex
+      justify-content: center
+      li:not(:last-child)
+        margin-right: 4px
+    .t-addToCart
+      transition: .4s ease
+      opacity: 0
+      transform: translateY(40px)
+  &:hover
+    .t-imgOverlay
+      opacity: 1
+      transform: none
+    .t-addToCart
+      opacity: 1
+      transform: translateY(-18px)
+
+
+.t-catalogHeaderTitle
+  font-size: 26px
+  font-weight: bold
+  color: #fff
+
+.t-redDot
+  display: block
+  width: 4px
+  height: 4px
+  background-color: #ED3237
+  border-radius: 50%
+
+
+.ui-slider-horizontal
+  height: 4px
+  background-color: rgba(255, 255, 255, .30)
+
+.ui-slider-horizontal .ui-slider-range
+  top: 0
+  height: 100%
+
+.ui-slider
+  position: relative
+  .ui-slider-range
+    position: absolute
+    z-index: 1
+    font-size: .7em
+    display: block
+    border: 0
+    background-position: 0 0
+  .ui-slider-handle
+    position: absolute
+    z-index: 2
+    top: -6px
+    width: 4px
+    height: 16px
+    cursor: default
+    touch-action: none
+    background-color: #26BFD1
+
+.ui-slider-range
+  background-color: #26BFD1
+
+.ui-tabs-active
+  border-bottom: 1px solid #26bfd1
+  a
+    color: #26bfd1!important
+
+.t-hideSomething
+  visibility: hidden
+  opacity: 0
+  width: 0
+  height: 0
+
+.t-sortContainer
+  display: flex
+  list-style: none
+  padding: 11px 30px
+  background-color: #1A1A1A
+  .t-sortContainerLinks
+    cursor: pointer
+    color: #fff
+    font-size: 14px
+    text-decoration: none
+    margin-right: 24px
+
+.t-sortArrow
+  position: relative
+  padding-left: 16px
+
+
+
+.t-sortArrowDown, .t-sortArrowUp
+  transition: .4s ease
+  &:before
+    content: ''
+    display: inline-block
+    position: absolute
+    left: 0
+    top: 7px
+    width: 6px
+    height: 2px
+    background-color: rgba(204, 204, 204, .3)
+    transition: .4s ease
+  &:after
+    content: ''
+    display: inline-block
+    position: absolute
+    left: 2px
+    top: 9px
+    width: 2px
+    height: 2px
+    background-color: rgba(204, 204, 204, .3)
+    transition: .4s ease
+  &:hover
+    &:before, &:after
+      background-color: #26BFD1
+
+.t-sortArrowUp
+  &:before
+    top: 8px
+  &:after
+    top: 6px
+
+.owl-item
+  height: 472px
+
+.owl-carousel .owl-stage-outer
+  border-radius: 24px
+
+.t-interesting
+  margin: 40px auto 0 auto
+  width: 944px
+
+.t-mainContainerCection
+  .t-breadCrumbs
+    ul
+      li
+        color: rgba(255, 255, 255, .3)
+        font-weight: normal
+        a
+          border: none
+          padding: 0 5px
+          font-weight: normal
+        &:first-child
+          a
+            padding-left: 0
+        &:last-child
+          a
+            padding-right: 0
+
+.t-dialogCard
+  margin: 0 auto
+  width: 640px
+  background: #fff
+  border-radius: 24px
+  height: 432px
+  padding: 32px
+  .t-dialogCardHeader
+    margin-bottom: 32px
+  .t-dialogCardTitle
+    font-size: 26px
+    font-weight: bold
+    margin-bottom: 16px
+  .t-dialogMidTitle
+    display: inline-block
+    font-size: 16px
+    font-weight: bold
+    margin-bottom: 8px
+  .t-dialogSections
+    display: flex
+    flex-direction: column
+  .t-dialogInputs
+    background-color: transparent
+    border: none
+    outline: none
+    color: #fff
+    border-bottom: 1px solid #E0E0E0
+    padding-bottom: 8px
+    margin-bottom: 16px
+    color: #1A1A1A

@@ -1,0 +1,205 @@
+.t-goodsOrderWrapper
+  .t-aboutGoodsCard
+    width: 100%
+    display: flex
+    background-color: #fff
+    border-radius: 24px
+    .t-aboutGoodsImgContainer
+      width: 512px
+      padding: 75px 105px
+      .t-insideImg
+        width: 302px
+        height: 362px
+        img
+          width: 100%
+    .t-aboutGoodsInfoMain
+      padding: 24px 32px
+      border-left: 1px solid #E0E0E0
+      .t-titleOfGoods
+        color: #1A1A1A
+        font-size: 26px
+        font-weight: bold
+        margin: 0
+        margin-bottom: 8px
+      .t-codeOfGoods
+        display: inline-block
+        font-size: 14px
+        color: #BDBDBD
+      .t-ratingOfGoods
+        margin-top: 8px
+        display: flex
+        align-items: center
+        .t-starHolder
+        .t-reviews
+          display: inline-block
+          color: #1A1A1A
+          font-size: 14px
+          margin-left: 8px
+      .t-aboutGoodsInfoMainBody
+        margin-top: 40px
+        .t-addToCartAndSocial
+          display: flex
+          align-items: center
+          .t-addToCartSocial
+            margin-left: 18px
+            list-style: none
+            display: flex
+            align-items: center
+            svg
+              fill: #E0E0E0
+            li
+              margin-right: 8px
+              a
+                display: inline-block
+        .t-priceWrapperOfGoods
+          margin-bottom: 8px
+          .t-priceOfGoods, .t-oldPriceOfGoods
+            font-size: 26px
+            font-weight: bold
+            color: #1A1A1A
+          .t-oldPriceOfGoods
+            text-decoration: line-through
+            margin-left: 16px
+            color: #E0E0E0
+        .t-inStockGoodsWrapper
+          margin-bottom: 8px
+          .t-inStockGoods
+            display: inline-block
+            color: #BDBDBD
+            font-size: 14px
+        .t-featuresOfGoodsWrapper
+          margin-top: 36px
+          .t-featuresOfGoodsTitle
+            font-size: 16px
+            color: #1A1A1A
+            font-weight: bold
+            margin-bottom: 8px
+          .t-featuresOfGoodsInfo
+            margin-bottom: 8px
+          .t-featuresOfGoodsMore
+            cursor: pointer
+            color: #BDBDBD
+            display: flex
+            align-items: center
+            span:last-child
+              display: inline-block
+              padding-left: 16px
+            .t-moreDots
+              position: relative
+              display: inline-block
+              width: 4px
+              height: 4px
+              background-color: #BDBDBD
+              border-radius: 50%
+              margin-left: 8px
+              &:before
+                content: ''
+                position: absolute
+                display: inline-block
+                width: 4px
+                height: 4px
+                left: -8px
+                top: 0
+                background-color: #BDBDBD
+                border-radius: 50%
+              &:after
+                content: ''
+                position: absolute
+                display: inline-block
+                width: 4px
+                height: 4px
+                left: 8px
+                top: 0
+                background-color: #BDBDBD
+                border-radius: 50%
+
+      .t-aboutGoodsInfoMainFooter
+        margin-top: 40px
+        .t-allFromThisBrandAndCategory
+          list-style: none
+          li
+            margin-bottom: 8px
+            &:last-child
+              margin: 0
+            a
+              display: inline-block
+              text-decoration: none
+              color: #26BFD1
+
+  .t-aboutGoodsTabs
+    margin-top: 8px
+    width: 100%
+    padding: 32px
+    background-color: #FFF
+    border-radius: 24px
+    .t-sectionTitle
+      color: #1A1A1A
+      text-align: left
+      margin-bottom: 8px
+      margin-top: 24px
+      &:first-child
+        margin-top: 0
+    .t-tabsControls
+      list-style: none
+      display: flex
+      border-bottom: 1px solid #E0E0E0
+      li
+        margin-right: 40px
+        &:last-child
+          margin: 0
+        a
+          display: inline-block
+          color: #BDBDBD
+          text-decoration: none
+          font-weight: bold
+          padding-bottom: 24px
+          outline: none
+    .t-tabsContiner
+      padding-top: 32px
+      .t-tabsHeader
+        display: flex
+        align-items: center
+        justify-content: space-between
+        .t-sortContainer
+          background-color: transparent
+          padding: 0
+          .t-sortContainerLinks
+            color: #BDBDBD
+            &:hover
+              color: #4F4F4F
+            .t-sortArrowDown, .t-sortArrowUp
+              &:before
+                background-color: #BDBDBD
+              &:after
+                background-color: #BDBDBD
+              &:hover
+                &:before
+                  background-color: #26BFD1
+                &:after
+                  background-color: #26BFD1
+      .t-tabsBody
+        margin-top: 32px
+        .t-reviewContainer
+          margin-bottom: 24px
+          padding-bottom: 24px
+          border-bottom: 1px solid #E0E0E0
+          &:last-child
+            margin-bottom: 0
+        .t-reviewNameWrapper
+          margin-top: 8px
+          .t-reviewName
+            display: inline-block
+            font-size: 26px
+            font-weight: bold
+        .t-reviewDateWrapper
+          margin-top: 8px
+          .t-reviewDate
+            color: #BDBDBD
+            font-size: 14px
+        .t-reviewTextWrapper
+          margin-top: 8px
+      .t-tabsFooter
+        margin-top: 32px
+        .t-showMoreButton
+          border: 1px solid #F5F5F5
+          color: #4F4F4F

@@ -1,0 +1,111 @@
+.t-catalogWrapper
+  margin: 40px auto 0 auto
+  width: 1272px
+
+  .t-sidesWrappper
+    display: flex
+    justify-content: space-between
+    .t-showMore
+      text-align: center
+      margin-top: 50px
+    .t-catalogLeft
+      width: 944px
+    .t-catalogRight
+      width: 304px
+      .t-catalogRightContainer
+        width: 100%
+        height: auto
+        background-color: #1A1A1A
+        border-radius: 2px
+        padding: 16px
+        margin-bottom: 8px
+        .t-catalogRightContainerHeader
+          display: flex
+          justify-content: space-between
+          margin-bottom: 24px
+        .t-catalogRightContainerBody
+          .t-amount
+            color: #fff
+            display: flex
+            justify-content: space-between
+            margin-bottom: 16px
+            span
+              display: block
+              font-size: 16px
+          .t-inStockSection
+            list-style: none
+            display: block
+            margin-top: 24px
+            li:not(:last-child)
+              margin-bottom: 16px
+            input:checked + label:before
+              background-color: #26BFD1
+            input:checked + label
+              color: #fff
+            .t-radioControl
+              position: relative
+              cursor: pointer
+              color: rgba(255, 255, 255, .30)
+              padding-left: 16px
+              transition: .4s ease
+              &:before
+                content: ''
+                display: inline-block
+                width: 8px
+                height: 8px
+                background-color: rgba(255, 255, 255, .30)
+                border-radius: 50%
+                position: absolute
+                box-sizing: border-box
+                left: 0
+                top: 5px
+                transition: .4s ease
+              &:hover
+                color: #fff
+                &:before
+                  background-color: #26BFD1
+      .t-catalogRightContainerFilter
+        height: auto
+        .t-brandsSection
+          list-style: none
+          input:checked + label:before, input:checked + label:after
+            background-color: #26BFD1
+            mix-blend-mode: normal
+          input:checked + label
+            color: #fff
+          .t-checkControl
+            position: relative
+            cursor: pointer
+            color: rgba(255, 255, 255, .30)
+            padding-left: 16px
+            transition: .4s ease
+            &:before
+              content: ''
+              display: inline-block
+              height: 12px
+              width: 4px
+              background-color: rgba(255, 255, 255, .30)
+              position: absolute
+              box-sizing: border-box
+              left: 0
+              top: 4px
+              transition: .4s ease
+            &:after
+              content: ''
+              display: inline-block
+              height: 4px
+              width: 12px
+              background-color: rgba(255, 255, 255, .30)
+              position: absolute
+              box-sizing: border-box
+              left: -4px
+              top: 8px
+              transition: .4s ease
+              mix-blend-mode: exclusion
+            &:hover
+              color: #fff
+              &:before, &:after
+                background-color: #26BFD1
+                mix-blend-mode: normal
+          li:not(:last-child)
+            margin-bottom: 16px

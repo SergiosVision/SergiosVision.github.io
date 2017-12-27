@@ -1,0 +1,98 @@
+.t-jumboWrapper
+    margin-top: 40px
+    transition: 1s cubic-bezier(.35,0,.33,1)
+    animation: showSections 1s cubic-bezier(.35,0,.33,1)
+    animation-delay: 2s
+    .t-jumboInner
+      position: relative
+      width: 944px
+      margin: 0 auto
+      height: 472px
+      box-shadow: 0px 24px 80px rgba(0, 0, 0, 0.4)
+      border-radius: 24px
+      .slide
+        height: 100%
+      img
+        position: absolute
+      .t-jumboInfo
+        position: absolute
+        width: 100%
+        padding-top: 64px
+        padding-left: 64px
+        .t-jumboInfoHeader
+          display: inline-block
+          margin-bottom: 16px
+          transition: .6s cubic-bezier(.25,.23,.25,1)
+          animation: showSliderHeader 1s cubic-bezier(.25,.23,.25,1)
+          animation-delay: 2.1s
+          &.addOpacity
+            opacity: 0
+        .t-jumboInfoFooter
+          display: inline-block
+        .t-jumboInfoBody
+          width: 344px
+          display: block
+          max-height: calc(250px - 92px)
+          min-height: calc(250px - 92px)
+          word-wrap: break-word
+          text-overflow: ellipsis
+          overflow: hidden
+          background-color: rgba(255, 255, 255, .45)
+          transition: .8s cubic-bezier(.25,.23,.25,1)
+          animation: showSliderHeader 1.2s cubic-bezier(.25,.23,.25,1)
+          animation-delay: 2.3s
+          &.addOpacity
+            opacity: 0
+        .t-jumboInfoFooter
+          margin-top: 32px
+          transition: .6s cubic-bezier(.25,.23,.25,1)
+          animation: showSliderFooter 1s cubic-bezier(.25,.23,.25,1)
+          animation-delay: 2.1s
+          &.addOpacity
+            opacity: 0
+          .t-goodsNames
+            margin-left: 16px
+            color: #1A1A1A
+
+    .owl-dots
+      position: absolute
+      left: 50%
+      transform: translate(-50%)
+      bottom: 24px
+      .owl-dot
+        display: inline-block
+        background-color: #fff
+        width: 8px
+        height: 8px
+        border-radius: 50%
+        margin: 4.2px
+        cursor: pointer
+        transition: .4s ease
+        &:hover
+          background-color: #26BFD1
+        &.active
+          background-color: #26BFD1
+
+@keyframes showSliderHeader
+  from
+    opacity: 0
+    transform: translateX(-100px)
+  to
+    transform: translateY(0)
+    opacity: 1
+
+@keyframes showSliderFooter
+  from
+    opacity: 0
+    transform: translateY(300px)
+  to
+    transform: translateY(0)
+    opacity: 1
+
+@keyframes showSections
+  from
+    opacity: 0
+    transform: translateY(300px)
+  to
+    opacity: 1
+    transform: translateY(0)

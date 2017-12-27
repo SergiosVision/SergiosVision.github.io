@@ -1,0 +1,104 @@
+extends _layout
+block content
+    main.t-mainPage
+        div.t-loadingLogo.animation
+        div.t-figureContainer
+            div.t-vectorLeft.t-figuresControls
+            div.t-vectorSliderBottom.t-figuresControls
+            div.t-vectorSliderTop.t-figuresControls
+            div.t-vectorRight.t-figuresControls
+            div.t-smallFigure.t-figuresControls
+        section.t-jumboWrapper
+            div.t-jumboInner.owl-carousel
+                div.slide
+                    img(src="/images/slider/glass.png")
+                    div.t-jumboInfo
+                        div.t-jumboInfoHeader.addOpacity
+                            h1.headingTitle Смарт-очки
+                        div.t-jumboInfoBody.banDescription.addOpacity
+                            h4 Google Glass
+                            h4 Oculus Rift
+                            h4 Vibe
+                            h4 Microsoft Hololens
+                            h4 Sony VR
+                        div.t-jumboInfoFooter.addOpacity
+                            a(href='#').t-btn Смотреть все
+                            span.t-goodsNames - более 10 наименований
+                div.slide
+                    img(src="https://i.ytimg.com/vi/Fbj2R5l6MG0/maxresdefault.jpg")
+                    div.t-jumboInfo
+                        div.t-jumboInfoHeader
+                            h1.headingTitle Космос
+                        div.t-jumboInfoBody.banDescription
+                            h4 Google Glass
+                            h4 Oculus Rift
+                        div.t-jumboInfoFooter
+                            a(href='#').t-btn Смотреть все
+                            span.t-goodsNames - более 10 наименований
+                div.slide
+                    img(src="/images/slider/glass.png")
+                    div.t-jumboInfo
+                        div.t-jumboInfoHeader
+                            h1.headingTitle DOOMSDAY HEIST 2
+                        div.t-jumboInfoBody.banDescription
+                            p  DOOMSDAY HEIST 2
+                        div.t-jumboInfoFooter
+                            a(href='#').t-btn Смотреть все
+        section.t-allCategories
+            h2.t-sectionTitle  Все категории
+            div.t-allCategoriesSlider
+                div.swiper-wrapper
+                    - for(var k = 0; k < 5; k++)
+                        div.swiper-slide
+                            div.t-slideImg
+                            div.t-slideInfo
+                                span.t-nameOfCategory Игры и игрушки
+                                span.t-value 200 наименований
+
+        section.t-brands
+            h2.t-sectionTitle Бренды
+            ul.t-brandsList
+                li
+                    a(href="#") Apple
+                        img(src="")
+                li
+                    a(href="#") Nokia
+                        img(src="")
+                li
+                    a(href="#") LG
+                        img(src="")
+                li
+                    a(href="#") Apple
+                        img(src="")
+                li
+                    a(href="#") Nokia
+                        img(src="")
+                li
+                    a(href="#") LG
+                        img(src="")
+                li
+                    a(href="#") Apple
+                        img(src="")
+                li
+                    a(href="#") Nokia
+                        img(src="")
+                li
+                    a(href="#") LG
+                        img(src="")
+                li
+                    a(href="#") Apple
+                        img(src="")
+
+        section.t-trend
+            h2.t-sectionTitle В тренде
+            div.t-cardsHolder
+                + tCards()
+
+        section.t-discounts
+            h2.t-sectionTitle Скидки
+            div.t-cardsHolder
+                + tCards()
+
+
+        section.t-bottomInfo
+            + tBottomCardHolder()

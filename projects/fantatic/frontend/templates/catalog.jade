@@ -1,0 +1,92 @@
+extends _layout
+block content
+    main
+        section.t-catalogWrapper
+            h2.t-sectionTitle  Подарки с юмором
+            div.t-breadCrumbs
+                ul
+                    li
+                        a(href="#") Каталог
+                    li
+                        a(href="#") Новый год
+                    li
+                        a(href="#") Подарки с юмором
+            div.t-sidesWrappper
+                div.t-catalogLeft
+                    ul.t-sortContainer
+                        li.t-sortContainerLinks
+                            span.t-sortArrow.t-sortArrowDown По популярности
+                        li.t-sortContainerLinks
+                            span.t-sortArrow.t-sortArrowDown По имени
+                        li.t-sortContainerLinks
+                            span.t-sortArrow.t-sortArrowDown По цене
+                    div.t-cardsHolder
+                        + tCards()
+                        + tCards()
+                        + tCards()
+                        + tCards()
+                    div.t-showMore
+                        button(type="button").t-showMoreButton Показать ещё
+                div.t-catalogRight
+                    div.t-catalogRightContainer.t-catalogRightContainerPrice
+                        div.t-catalogRightContainerHeader
+                            h3.t-catalogHeaderTitle Цены
+                            span.t-redDot
+                        div.t-catalogRightContainerBody
+                            div.t-amount
+                                span.t-amountStart 0 ₽
+                                span.t-amountEnd 500 000 ₽
+                            div#slider-range
+                            ul.t-inStockSection.t-filterMainList
+                                li.t-inStockAll
+                                    input(type="radio" id="inStockAll" name="inStock").t-hideSomething
+                                    label(for="inStockAll").t-radioControl Все товары
+                                li.t-inStock
+                                    input(type="radio" id="inStock" name="inStock" checked=).t-hideSomething
+                                    label(for="inStock").t-radioControl В наличии
+                                li.t-preOrder
+                                    input(type="radio" id="preOrder" name="inStock").t-hideSomething
+                                    label(for="preOrder").t-radioControl Предзаказ
+                    div.t-catalogRightContainer.t-catalogRightContainerFilter
+                        div.t-catalogRightContainerHeader
+                            h3.t-catalogHeaderTitle Бренд
+                            span.t-redDot
+                        div.t-catalogRightContainerBody
+                            div.t-barndAll
+                                ul.t-brandsSection.t-filterMainList
+                                    li
+                                        input(type="checkbox" id="allBrands").t-hideSomething
+                                        label(for="allBrands").t-checkControl Все бренды
+                                    li
+                                        input(type="checkbox" id="apple" checked).t-checkbox.t-hideSomething
+                                        label(for="apple").t-checkControl Apple
+                                    li
+                                        input(type="checkbox" id="samsung" checked).t-checkbox.t-hideSomething
+                                        label(for="samsung").t-checkControl Samsung
+                                    li
+                                        input(type="checkbox" id="sony" checked).t-checkbox.t-hideSomething
+                                        label(for="sony").t-checkControl Sony
+                                    li
+                                        input(type="checkbox" id="lg").t-checkbox.t-hideSomething
+                                        label(for="lg").t-checkControl LG
+                                    li
+                                        input(type="checkbox" id="mi").t-checkbox.t-hideSomething
+                                        label(for="mi").t-checkControl Mi
+                                    li
+                                        input(type="checkbox" id="apple2").t-checkbox.t-hideSomething
+                                        label(for="apple2").t-checkControl Apple
+                                    li
+                                        input(type="checkbox" id="samsung2").t-checkbox.t-hideSomething
+                                        label(for="samsung2").t-checkControl Samsung
+                                    li
+                                        input(type="checkbox" id="sony2").t-checkbox.t-hideSomething
+                                        label(for="sony2").t-checkControl Sony
+                                    li
+                                        input(type="checkbox" id="lg2").t-checkbox.t-hideSomething
+                                        label(for="lg2").t-checkControl LG
+                                    li
+                                        input(type="checkbox" id="mi2" checked).t-checkbox.t-hideSomething
+                                        label(for="mi2").t-checkControl Mi
+
+        section.t-bottomInfo
+            + tBottomCardHolder()
