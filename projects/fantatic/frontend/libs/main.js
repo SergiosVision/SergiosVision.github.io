@@ -157,6 +157,68 @@ $(window).on('load', function () {
 
 // Call Review Dialog
 
-$('.t-addReview').on('click', function () {
-
+$('.t-reviewsDialog').dialog({
+    autoOpen: false,
+    width: 640,
+    modal: true,
+    draggable: false,
+    open: function(event, ui) {
+        $('.ui-dialog-titlebar-close', ui.dialog | ui).hide();
+        $('.ui-widget-overlay').addClass('t-dialogOverlay');
+    },
+    create: function (event, ui) {
+        $(event.target).parent().css('position', 'fixed');
+    },
+    show: {
+        effect: "fade",
+        duration: 400
+    },
+    hide: {
+        effect: "fade",
+        duration: 300
+    }
 });
+$('body').on('click', '.t-addReview', function (e) {
+    e.preventDefault();
+    $(".t-reviewsDialog").dialog("open");
+});
+$('body').on('click', '.t-reviewsDialogClose, .t-dialogOverlay', function (e) {
+    e.preventDefault();
+    $(".t-reviewsDialog").dialog("close");
+    $('.t-reviewsForm').trigger('reset');
+});
+
+
+// Rating Range Script
+
+var defaultRating = 1;
+
+function chooseStar(rating) {
+
+    // Update visual appareance
+    var i;
+    for (i = 1; i <= rating; i++) {
+        document
+            .getElementById('star-' + i)
+            .className = 'star-selected t-star';
+    }
+    for (i = rating + 1; i <= 5; i++) {
+        document
+            .getElementById('star-' + i)
+            .className = 't-star';
+    }
+
+    // Update the form
+
+}
+
+// Bind events
+for (var i = 1; i <= 5; i++) {
+    document
+        .getElementById('star-'+i)
+        .addEventListener('click', function () {
+            chooseStar(i);
+        });
+}
+
+chooseStar(defaultRating);
