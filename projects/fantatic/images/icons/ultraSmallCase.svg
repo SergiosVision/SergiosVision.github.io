@@ -1,0 +1,65 @@
+<svg width="14" height="14" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group 4.1</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1519 -93)">
+<g id="Group 4.1">
+<g id="Rectangle 2.1">
+<use xlink:href="#path0_fill" transform="translate(1519 97)" fill="#E57F5F"/>
+</g>
+<g id="Rectangle 2.3">
+<use xlink:href="#path0_fill" transform="translate(1532 97)" fill="#E57F5F"/>
+</g>
+<g id="Rectangle 2.5">
+<use xlink:href="#path1_fill" transform="translate(1524 93)" fill="#FF8D69"/>
+</g>
+<g id="Subtract">
+<use xlink:href="#path2_fill" transform="translate(1520 96)" fill="#FF8D69"/>
+</g>
+<g id="Rectangle 2.9">
+<use xlink:href="#path3_fill" transform="translate(1521 96)" fill="#FFB39C"/>
+</g>
+<g id="Rectangle 2.6">
+<use xlink:href="#path4_fill" transform="translate(1523 94)" fill="#FF8D69"/>
+</g>
+<g id="Rectangle 2.8">
+<use xlink:href="#path5_fill" transform="translate(1520 106)" fill="#E57F5F"/>
+</g>
+<g id="Rectangle 2.7">
+<use xlink:href="#path4_fill" transform="translate(1528 94)" fill="#FF8D69"/>
+</g>
+<g id="Rectangle 2.11">
+<use xlink:href="#path6_fill" transform="translate(1525 101)" fill="#FFB39C"/>
+</g>
+<g id="Rectangle 2.8">
+<use xlink:href="#path7_fill" transform="translate(1522 103)" fill="#FFB39C"/>
+</g>
+<g id="Rectangle 2.12">
+<use xlink:href="#path7_fill" transform="translate(1522 104)" fill="#E57F5F"/>
+</g>
+<g id="Rectangle 2.13">
+<use xlink:href="#path8_fill" transform="translate(1521 103)" fill="#E57F5F"/>
+</g>
+<g id="Rectangle 2.14">
+<use xlink:href="#path8_fill" transform="translate(1530 103)" fill="#E57F5F"/>
+</g>
+<g id="Rectangle 2.9">
+<use xlink:href="#path9_fill" transform="translate(1521 96)" fill="#FFB39C"/>
+</g>
+<g id="Rectangle 2.10">
+<use xlink:href="#path9_fill" transform="translate(1530 96)" fill="#FFB39C"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 0L 1 0L 1 9L 0 9L 0 0Z"/>
+<path id="path1_fill" d="M 0 0L 4 0L 4 1L 0 1L 0 0Z"/>
+<path id="path2_fill" d="M 0 0L 12 0L 12 11L 0 11L 0 0Z"/>
+<path id="path3_fill" d="M 0 0L 10 0L 10 1L 0 1L 0 0Z"/>
+<path id="path4_fill" d="M 0 0L 1 0L 1 3L 0 3L 0 0Z"/>
+<path id="path5_fill" d="M 0 0L 12 0L 12 1L 0 1L 0 0Z"/>
+<path id="path6_fill" d="M 0 0L 2 0L 2 1L 0 1L 0 0Z"/>
+<path id="path7_fill" d="M 0 0L 8 0L 8 1L 0 1L 0 0Z"/>
+<path id="path8_fill" d="M 0 0L 1 0L 1 1L 0 1L 0 0Z"/>
+<path id="path9_fill" d="M 0 0L 1 0L 1 7L 0 7L 0 0Z"/>
+</defs>
+</svg>

@@ -176,6 +176,10 @@ main
     &.active
       fill: #26BFD1
 
+.t-reviewsDialogRating > li.t-ratingStarControl.t-activeRating svg,
+.t-reviewsDialogRating > li.t-ratingStarControl.t-selectedStar svg
+  fill: #26BFD1
+
 
 .t-frame
   width: 1440px
@@ -322,6 +326,7 @@ main
   transition: .4s ease
   margin-bottom: 16px
   overflow: hidden
+  text-align: center
   .t-goodsCardImage
     width: 240px
     height: 240px
@@ -384,10 +389,11 @@ main
       justify-content: center
       li:not(:last-child)
         margin-right: 4px
-    .t-addToCart
-      transition: .4s ease
-      opacity: 0
-      transform: translateY(40px)
+  .t-addToCart
+    transition: .4s ease
+    opacity: 0
+    margin: 0 auto
+    transform: translateY(40px)
   &:hover
     .t-imgOverlay
       opacity: 1
@@ -604,13 +610,16 @@ main
     transform: rotate(-45deg)
 
 
-.star-selected
-  svg
-    fill: #26bfd1
+.t-input
+  background-color: transparent
+  border: none
+  outline: none
+  color: #fff
+  border-bottom: 1px solid #e0e0e0
+  padding-bottom: 8px
+  margin-bottom: 16px
+  color: #1a1a1a
 
-.t-starHolder .t-star svg:hover,
-.t-starHolder .t-star svg:hover ~ .t-star svg
-  fill: #26bfd1
 
 ::-webkit-input-placeholder
   font-size: 14px

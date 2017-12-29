@@ -191,34 +191,65 @@ $('body').on('click', '.t-reviewsDialogClose, .t-dialogOverlay', function (e) {
 
 // Rating Range Script
 
-var defaultRating = 1;
+$('.t-reviewsDialogRating li').on('mouseover', function () {
+    var star = parseInt($(this).data('value'), 10); // The star currently selected
 
-function chooseStar(rating) {
+    $(this).parent().children('li.t-ratingStarControl').each(function(e){
+        if (e < star) {
+            $(this).addClass('t-activeRating');
+        }
+        else {
+            $(this).removeClass('t-activeRating');
+        }
+    });
+}).on('mouseout', function(){
+    $(this).parent().children('li.t-ratingStarControl').each(function(e){
+        $(this).removeClass('t-activeRating');
+    });
+});
 
-    // Update visual appareance
-    var i;
-    for (i = 1; i <= rating; i++) {
-        document
-            .getElementById('star-' + i)
-            .className = 'star-selected t-star';
+$('.t-reviewsDialogRating li').on('click', function(){
+    var star = parseInt($(this).data('value'), 10); // The star currently selected
+    var stars = $(this).parent().children('li.t-ratingStarControl');
+
+    for (i = 0; i < stars.length; i++) {
+        $(stars[i]).removeClass('t-selectedStar');
     }
-    for (i = rating + 1; i <= 5; i++) {
-        document
-            .getElementById('star-' + i)
-            .className = 't-star';
+
+    for (i = 0; i < star; i++) {
+        $(stars[i]).addClass('t-selectedStar');
     }
+});
 
-    // Update the form
 
-}
+// Open menu, Open Search Bar, Open Cart
 
-// Bind events
-for (var i = 1; i <= 5; i++) {
-    document
-        .getElementById('star-'+i)
-        .addEventListener('click', function () {
-            chooseStar(i);
-        });
-}
+$('.t-catalogWrap').on('click', function (e) {
+    e.preventDefault();
+    $('.t-catalog').toggleClass('activeMenu');
+});
 
-chooseStar(defaultRating);
+$('.t-openSerachBar').on('click', function (e) {
+    e.preventDefault();
+    $('.t-searchBar').addClass('activeSearch');
+    $('.t-openSerachBar svg').addClass('active');
+});
+
+$('.t-inputSerach').on('keyup', function () {
+    if ($(this).val().length >= 1) {
+        $('.t-openSerachBar svg').addClass('t-fillBlack');
+    } else {
+        $('.t-openSerachBar svg').removeClass('t-fillBlack');
+    }
+});
+$(document).on('click', function(e) {
+    if (!$(e.target).closest(".t-openSerachBar").length) {
+        $('.t-searchBar').removeClass('activeSearch');
+        $('.t-openSerachBar svg').removeClass('active');
+        $('.t-openSerachBar svg').removeClass('t-fillBlack');
+        $('.t-input').val('');
+    }
+    if (!$(e.target).closest(".t-catalog").length) {
+        $('.t-catalog').removeClass('activeMenu');
+    }
+});

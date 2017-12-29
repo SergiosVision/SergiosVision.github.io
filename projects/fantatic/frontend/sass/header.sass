@@ -11,10 +11,28 @@ header
   animation-delay: 4s
   &.hideHeader
     opacity: 0
+  .t-catalog
+    position: relative
+    &.activeMenu
+      .t-catalogWrap
+        position: fixed
+        left: 46px
+        top: 40px
+        .t-burger
+          z-index: 1200
+          .line
+            background-color: #4F4F4F
+        .t-catalogWord
+            color: #4F4F4F
+            z-index: 1200
+      .t-menuWrapper
+         opacity: 1
+         pointer-events: all
   .t-catalogWrap
     display: flex
     align-items: center
     cursor: pointer
+    z-index: 1000
     .t-burger
       display: inline-block
       width: 16px
@@ -39,6 +57,7 @@ header
     transform: translateX(-50%)
     left: 50%
   .t-navigation
+    position: relative
     ul
       list-style: none
       display: flex
@@ -49,10 +68,83 @@ header
     a
       text-decoration: none
       color: #fff
-
     svg
       fill: #fff
+      position: relative
+      &.active
+        fill: #E0E0E0
+        z-index: 1
+        cursor: default
+      &.t-fillBlack
+          fill: #4F4F4F!important
+    .t-searchBar
+      position: absolute
+      width: 336px
+      top: -32px
+      right: 20px
+      background-color: #fff
+      border-radius: 24px
+      padding: 32px
+      padding-bottom: 0
+      cursor: default
+      opacity: 0
+      pointer-events: none
+      transition: .4s ease
+      .t-input
+        width: 100%
+        border-color: #E0E0E0
+        margin-bottom: 24px
+        color: #4F4F4F
+      &.activeSearch
+        opacity: 1
+        pointer-events: all
+    .t-smallCart
+      position: fixed
+      top: 8px
+      right: 8px
+      background-color: #fff
+      border-radius: 24px
+      padding: 32px
+      width: 336px
 
+  .t-menuWrapper
+    position: fixed
+    left: 8px
+    top: 8px
+    z-index: 999
+    opacity: 0
+    pointer-events: none
+    transition: .4s ease
+    .t-menuList
+      width: 336px
+      list-style: none
+      background-color: #fff
+      border-radius: 24px
+      padding: 83px 38px 38px 38px
+      li
+        margin-bottom: 16px
+        &:last-child
+          margin-bottom: 0
+        .t-menuListLink
+          display: inline-block
+          color: #4F4F4F
+          font-weight: bold
+          font-size: 16px
+          transition: .4s ease
+          text-decoration: none
+          &:hover
+            color: #ED3237
+          &:before
+            content: url('/images/icons/ultraSmallCase.svg')
+            width: 16px
+            height: 16px
+            background-size: contain
+            margin-right: 10px
+
+
+.t-catalogWrap:hover > .t-menuWrapper
+    opacity: 1!important
+    pointer-events: all!important
 
 @keyframes showHeader
   from
