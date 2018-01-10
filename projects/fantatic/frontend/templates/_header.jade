@@ -1,3 +1,55 @@
+mixin menuImages(image)
+    div.t-catImages
+        img(src="#{image}")
+
+mixin secondUl()
+    ul.t-menuListSecondLevel.t-menuList
+        li
+            a(href='#').t-menuListLinkSecond Камеры
+        li
+            a(href='#').t-menuListLinkSecond Будильники
+        li
+            a(href='#').t-menuListLinkSecond Чувак
+            + menuImages('/images/menuImages/man.png')
+        li
+            a(href='#').t-menuListLinkSecond Чёрный Брат
+            + menuImages('https://sergiosvision.github.io/img/Person.png')
+        li
+            a(href='#').t-menuListLinkSecond Скорпион
+            + menuImages('https://vignette.wikia.nocookie.net/mortalkombat/images/7/75/Mortal_kombat_x_ios_scorpion_render_2_by_wyruzzah-d8p0m11.png/revision/latest?cb=20160512095852&path-prefix=ru')
+        li
+            a(href='#').t-menuListLinkSecond Саб-Зиро
+            + menuImages('https://vignette.wikia.nocookie.net/vsbattles/images/f/fe/Sub_Zero.png/revision/latest?cb=20150925231849')
+        li
+            a(href='#').t-menuListLinkSecond Камеры
+            + menuImages('http://pngimg.com/uploads/photo_camera/photo_camera_PNG7843.png')
+        li
+            a(href='#').t-menuListLinkSecond Квадрокоптеры
+            + menuImages('http://kvadrodog.ru/wp-content/uploads/2015/07/Kvadrokopter-DJI-PHANTOM-2-foto-1.png')
+        li
+            a(href='#').t-menuListLinkSecond Гироскутер
+            + menuImages('http://vilena-s.com/upload/foto/7ee1935a92a504f7310f65001457ff2e.png')
+        li
+            a(href='#').t-menuListLinkSecond Смарт-ключи
+            + menuImages('http://volksmaster.ru/uploads/product_slideshow/image/150/content_11023020.png')
+        li
+            a(href='#').t-menuListLinkSecond Хэнк Хилл
+            + menuImages('https://vignette.wikia.nocookie.net/kingofthehill/images/c/c4/Hank_Hill.png/revision/latest?cb=20140504043948')
+        li
+            a(href='#').t-menuListLinkSecond Гомер Симпсон
+            + menuImages('http://multsimpsons.ru/data/uploads/personaji/gomer.png')
+
+mixin secondUl2()
+    ul.t-menuListSecondLevel.t-menuList
+        li
+            a(href='#').t-menuListLinkSecond Камеры
+        li
+            a(href='#').t-menuListLinkSecond Будильники
+        li
+            a(href='#').t-menuListLinkSecond Квадрокоптеры
+        li
+            a(href='#').t-menuListLinkSecond Гироскутеры
+
 header.hideHeader
     div.t-catalog
         div.t-catalogWrap
@@ -7,7 +59,7 @@ header.hideHeader
                 span.line
             p.t-catalogWord Каталог
         nav.t-menuWrapper
-            ul.t-menuList
+            ul.t-menuList.t-menuListFirst
                 li
                     a(href="/catalog.html").t-menuListLink Акции
                 li
@@ -15,9 +67,11 @@ header.hideHeader
                 li
                     a(href="/catalog.html").t-menuListLink Новый год и Рождество
                 li
-                    a(href="/catalog.html").t-menuListLink Гаджеты и устройства
+                    a(href="/catalog.html").t-menuListLink.t-droppedMenu Гаджеты и устройства
+                    + secondUl()
                 li
-                    a(href="/catalog.html").t-menuListLink Игры и девушки
+                    a(href="/catalog.html").t-menuListLink.t-droppedMenu Игры и игрушки
+                    + secondUl2()
                 li
                     a(href="/catalog.html").t-menuListLink Для взрослых
                 li
@@ -30,7 +84,8 @@ header.hideHeader
                     a(href="/catalog.html").t-menuListLink Сувениры
     div.brand-logo
         a(href="/")
-            img(src="/images/logo.png")
+            img(src="/images/logo.png").t-firstLogo
+            img(src="/images/stickyLogo.svg").t-secondLogo
     div.t-navigation
         ul
             li
@@ -43,12 +98,21 @@ header.hideHeader
 
                 div.t-searchBar
                     input.t-input.t-inputSerach(type="text" placeholder="Поиск по каталогу")
+                    div.t-searchBarBtn
+                        svg(width="13" height="13" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+                            path(id="path0_fill" fill-rule="evenodd" d="M 6.83728 2.05423C 4.56813 2.05423 2.72879 3.89364 2.72879 6.16268C 2.72879 7.29315 3.18543 8.31698 3.92417 9.05983C 3.92693 9.06252 3.92944 9.06505 3.9322 9.06777C 3.93496 9.07049 3.93746 9.07304 3.94022 9.07577C 4.68298 9.81457 5.70684 10.2711 6.83728 10.2711C 9.10642 10.2711 10.9458 8.43171 10.9458 6.16268C 10.9458 3.89364 9.10642 2.05423 6.83728 2.05423ZM 3.26642 11.186C 4.27374 11.9034 5.50623 12.3254 6.83728 12.3254C 10.2409 12.3254 13 9.56623 13 6.16268C 13 2.75912 10.2409 0 6.83728 0C 3.43368 0 0.67455 2.75912 0.67455 6.16268C 0.67455 7.49369 1.09658 8.72615 1.81401 9.73359L 0.300914 11.2466C -0.100305 11.6477 -0.100305 12.2981 0.300914 12.6992C 0.701883 13.1003 1.35236 13.1003 1.75333 12.6992L 3.26642 11.186ZM 6.83728 7.70334C 7.68811 7.70334 8.37796 7.01356 8.37796 6.16267C 8.37796 5.87904 8.6079 5.64912 8.89152 5.64912C 9.17513 5.64912 9.40508 5.87904 9.40508 6.16267C 9.40508 7.58082 8.25533 8.73046 6.83728 8.73046C 5.41922 8.73046 4.26947 7.58082 4.26947 6.16267C 4.26947 5.87904 4.49942 5.64912 4.78303 5.64912C 5.06664 5.64912 5.29659 5.87904 5.29659 6.16267C 5.29659 7.01356 5.98644 7.70334 6.83728 7.70334Z")
                     div.t-searchOutput
-            li
+            li.t-smallCartOpen
                 img(src="/images/icons/cart.svg")
-        div.t-smallCart
-            div.t-smallCartHeader
-                div.t-smallCartTitleWrapper
-                    h4.t-smallCartitle Корзина
-                    div.t-closeBtn
+                div.t-smallCart
+                    div.t-smallCartHeader
+                        div.t-smallCartTitleWrapper
+                            h4.t-smallCartitle Корзина
+                            div.t-closeBtn.t-closeBtnSmallCart
+                        div.t-smallCartInfo
+                            p.t-smallCartTitleInfo Товаров в корзине нет
+                            span.t-smallCartTotalPrice 0
+                            a(href="/catalog.html").t-btn.t-smallCartBtnInfo Добавить из каталога
+                    ul.t-smallCartBody
+
 

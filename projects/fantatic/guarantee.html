@@ -20,12 +20,54 @@
             <p class="t-catalogWord">Каталог</p>
           </div>
           <nav class="t-menuWrapper">
-            <ul class="t-menuList">
+            <ul class="t-menuList t-menuListFirst">
               <li><a href="/catalog.html" class="t-menuListLink">Акции</a></li>
               <li><a href="/catalog.html" class="t-menuListLink">В тренде</a></li>
               <li><a href="/catalog.html" class="t-menuListLink">Новый год и Рождество</a></li>
-              <li><a href="/catalog.html" class="t-menuListLink">Гаджеты и устройства</a></li>
-              <li><a href="/catalog.html" class="t-menuListLink">Игры и девушки</a></li>
+              <li><a href="/catalog.html" class="t-menuListLink t-droppedMenu">Гаджеты и устройства</a>
+                      <ul class="t-menuListSecondLevel t-menuList">
+                        <li><a href="#" class="t-menuListLinkSecond">Камеры</a></li>
+                        <li><a href="#" class="t-menuListLinkSecond">Будильники</a></li>
+                        <li><a href="#" class="t-menuListLinkSecond">Чувак</a>
+                                <div class="t-catImages"><img src="/images/menuImages/man.png"></div>
+                        </li>
+                        <li><a href="#" class="t-menuListLinkSecond">Чёрный Брат</a>
+                                <div class="t-catImages"><img src="https://sergiosvision.github.io/img/Person.png"></div>
+                        </li>
+                        <li><a href="#" class="t-menuListLinkSecond">Скорпион</a>
+                                <div class="t-catImages"><img src="https://vignette.wikia.nocookie.net/mortalkombat/images/7/75/Mortal_kombat_x_ios_scorpion_render_2_by_wyruzzah-d8p0m11.png/revision/latest?cb=20160512095852&amp;path-prefix=ru"></div>
+                        </li>
+                        <li><a href="#" class="t-menuListLinkSecond">Саб-Зиро</a>
+                                <div class="t-catImages"><img src="https://vignette.wikia.nocookie.net/vsbattles/images/f/fe/Sub_Zero.png/revision/latest?cb=20150925231849"></div>
+                        </li>
+                        <li><a href="#" class="t-menuListLinkSecond">Камеры</a>
+                                <div class="t-catImages"><img src="http://pngimg.com/uploads/photo_camera/photo_camera_PNG7843.png"></div>
+                        </li>
+                        <li><a href="#" class="t-menuListLinkSecond">Квадрокоптеры</a>
+                                <div class="t-catImages"><img src="http://kvadrodog.ru/wp-content/uploads/2015/07/Kvadrokopter-DJI-PHANTOM-2-foto-1.png"></div>
+                        </li>
+                        <li><a href="#" class="t-menuListLinkSecond">Гироскутер</a>
+                                <div class="t-catImages"><img src="http://vilena-s.com/upload/foto/7ee1935a92a504f7310f65001457ff2e.png"></div>
+                        </li>
+                        <li><a href="#" class="t-menuListLinkSecond">Смарт-ключи</a>
+                                <div class="t-catImages"><img src="http://volksmaster.ru/uploads/product_slideshow/image/150/content_11023020.png"></div>
+                        </li>
+                        <li><a href="#" class="t-menuListLinkSecond">Хэнк Хилл</a>
+                                <div class="t-catImages"><img src="https://vignette.wikia.nocookie.net/kingofthehill/images/c/c4/Hank_Hill.png/revision/latest?cb=20140504043948"></div>
+                        </li>
+                        <li><a href="#" class="t-menuListLinkSecond">Гомер Симпсон</a>
+                                <div class="t-catImages"><img src="http://multsimpsons.ru/data/uploads/personaji/gomer.png"></div>
+                        </li>
+                      </ul>
+              </li>
+              <li><a href="/catalog.html" class="t-menuListLink t-droppedMenu">Игры и игрушки</a>
+                      <ul class="t-menuListSecondLevel t-menuList">
+                        <li><a href="#" class="t-menuListLinkSecond">Камеры</a></li>
+                        <li><a href="#" class="t-menuListLinkSecond">Будильники</a></li>
+                        <li><a href="#" class="t-menuListLinkSecond">Квадрокоптеры</a></li>
+                        <li><a href="#" class="t-menuListLinkSecond">Гироскутеры</a></li>
+                      </ul>
+              </li>
               <li><a href="/catalog.html" class="t-menuListLink">Для взрослых</a></li>
               <li><a href="/catalog.html" class="t-menuListLink">Вкусные подарки</a></li>
               <li><a href="/catalog.html" class="t-menuListLink">Антибуки</a></li>
@@ -34,7 +76,7 @@
             </ul>
           </nav>
         </div>
-        <div class="brand-logo"><a href="/"><img src="/images/logo.png"></a></div>
+        <div class="brand-logo"><a href="/"><img src="/images/logo.png" class="t-firstLogo"><img src="/images/stickyLogo.svg" class="t-secondLogo"></a></div>
         <div class="t-navigation">
           <ul>
             <li><a href="#">Покупателю</a></li>
@@ -45,19 +87,29 @@
               </svg>
               <div class="t-searchBar">
                 <input type="text" placeholder="Поиск по каталогу" class="t-input t-inputSerach">
+                <div class="t-searchBarBtn">
+                  <svg width="13" height="13" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path id="path0_fill" fill-rule="evenodd" d="M 6.83728 2.05423C 4.56813 2.05423 2.72879 3.89364 2.72879 6.16268C 2.72879 7.29315 3.18543 8.31698 3.92417 9.05983C 3.92693 9.06252 3.92944 9.06505 3.9322 9.06777C 3.93496 9.07049 3.93746 9.07304 3.94022 9.07577C 4.68298 9.81457 5.70684 10.2711 6.83728 10.2711C 9.10642 10.2711 10.9458 8.43171 10.9458 6.16268C 10.9458 3.89364 9.10642 2.05423 6.83728 2.05423ZM 3.26642 11.186C 4.27374 11.9034 5.50623 12.3254 6.83728 12.3254C 10.2409 12.3254 13 9.56623 13 6.16268C 13 2.75912 10.2409 0 6.83728 0C 3.43368 0 0.67455 2.75912 0.67455 6.16268C 0.67455 7.49369 1.09658 8.72615 1.81401 9.73359L 0.300914 11.2466C -0.100305 11.6477 -0.100305 12.2981 0.300914 12.6992C 0.701883 13.1003 1.35236 13.1003 1.75333 12.6992L 3.26642 11.186ZM 6.83728 7.70334C 7.68811 7.70334 8.37796 7.01356 8.37796 6.16267C 8.37796 5.87904 8.6079 5.64912 8.89152 5.64912C 9.17513 5.64912 9.40508 5.87904 9.40508 6.16267C 9.40508 7.58082 8.25533 8.73046 6.83728 8.73046C 5.41922 8.73046 4.26947 7.58082 4.26947 6.16267C 4.26947 5.87904 4.49942 5.64912 4.78303 5.64912C 5.06664 5.64912 5.29659 5.87904 5.29659 6.16267C 5.29659 7.01356 5.98644 7.70334 6.83728 7.70334Z"></path>
+                  </svg>
+                </div>
                 <div class="t-searchOutput"></div>
               </div>
             </li>
-            <li><img src="/images/icons/cart.svg"></li>
-          </ul>
-          <div class="t-smallCart">
-            <div class="t-smallCartHeader">
-              <div class="t-smallCartTitleWrapper">
-                <h4 class="t-smallCartitle">Корзина</h4>
-                <div class="t-closeBtn"></div>
+            <li class="t-smallCartOpen"><img src="/images/icons/cart.svg">
+              <div class="t-smallCart">
+                <div class="t-smallCartHeader">
+                  <div class="t-smallCartTitleWrapper">
+                    <h4 class="t-smallCartitle">Корзина</h4>
+                    <div class="t-closeBtn t-closeBtnSmallCart"></div>
+                  </div>
+                  <div class="t-smallCartInfo">
+                    <p class="t-smallCartTitleInfo">Товаров в корзине нет</p><span class="t-smallCartTotalPrice">0</span><a href="/catalog.html" class="t-btn t-smallCartBtnInfo">Добавить из каталога</a>
+                  </div>
+                </div>
+                <ul class="t-smallCartBody"></ul>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </header>
       <main>
