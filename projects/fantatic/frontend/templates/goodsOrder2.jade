@@ -14,12 +14,16 @@ block content
 
             div.t-aboutGoodsCard.t-GoodsCardMain
                 div.t-aboutGoodsImgContainer
-                    a(href="" data-lightbox="image-1")
-                        div.t-insideImg
-                            img(src="https://sergiosvision.github.io/img/Person.png").t-goodsImgMain
+                    div.t-insideImg
+                        a(href="http://multsimpsons.ru/data/uploads/personaji/gomer.png")
+                            img.t-goodsImgMain(src="http://multsimpsons.ru/data/uploads/personaji/gomer.png")
+                        a(href="/images/goodImage.png").t-hiddenImages
+                            img(src="/images/goodImage.png")
+                        a(href="https://sergiosvision.github.io/img/Person.png").t-hiddenImages
+                            img(src="https://sergiosvision.github.io/img/Person.png")
                 div.t-aboutGoodsInfoMain
                     div.t-aboutGoodsInfoMainHeader
-                        h1.t-titleOfGoods.t-goodsNameMain Nigga from SergiosVision
+                        h1.t-titleOfGoods.t-goodsNameMain Homer Simpson
                         span.t-codeOfGoods Код N55599999
                         div.t-ratingOfGoods
                             ul.t-starHolder
@@ -53,7 +57,8 @@ block content
                         div.t-inStockGoodsWrapper
                             span.t-inStockGoods В наличии
                         div.t-addToCartAndSocial
-                            button.t-btn.t-addToCart Добавить в корзину
+                            button.t-btn.t-addToCart
+                                span Добавить в корзину
                             ul.t-addToCartSocial
                                 li
                                     a(href="#")
@@ -108,7 +113,8 @@ block content
                         p Выберите в меню самый подходящий из 12 видов тренировок на открытом воздухе и в помещении. Например, бег, езду на велосипеде или занятие на кардиотренажере. Теперь установите цель и приступайте. Что бы ни входило в программу вашей тренировки, Apple Watch Series 2 точно измерят ваши движения. Вы сможете вывести на экран до пяти физических показателей. Использовать дисплей, чтобы отмечать интервалы. И ставить тренировку на паузу автоматически.
                 div.t-tabsReviews.t-tabsContiner#reviews
                     div.t-tabsHeader
-                        button.t-btn.t-addReview Оставить отзыв
+                        button.t-btn.t-addReview
+                            span Оставить отзыв
                         ul.t-sortContainer
                             li.t-sortContainerLinks
                                 span.t-sortArrow.t-sortArrowDown По популярности
@@ -196,4 +202,5 @@ block content
                     label(for="rewEmailForm").t-dialogMidTitle Электронная почта
                     input(type="email" id="rewEmailForm").t-dialogInputs
         div.t-reviewsFooter
-            button.t-btn Отправить
+            button.t-btn
+                span Отправить

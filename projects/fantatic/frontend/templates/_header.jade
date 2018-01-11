@@ -10,34 +10,60 @@ mixin secondUl()
             a(href='#').t-menuListLinkSecond Будильники
         li
             a(href='#').t-menuListLinkSecond Чувак
-            + menuImages('/images/menuImages/man.png')
+                + menuImages('/images/menuImages/man.png')
         li
             a(href='#').t-menuListLinkSecond Чёрный Брат
-            + menuImages('https://sergiosvision.github.io/img/Person.png')
+                + menuImages('https://sergiosvision.github.io/img/Person.png')
         li
             a(href='#').t-menuListLinkSecond Скорпион
-            + menuImages('https://vignette.wikia.nocookie.net/mortalkombat/images/7/75/Mortal_kombat_x_ios_scorpion_render_2_by_wyruzzah-d8p0m11.png/revision/latest?cb=20160512095852&path-prefix=ru')
+                + menuImages('https://vignette.wikia.nocookie.net/mortalkombat/images/7/75/Mortal_kombat_x_ios_scorpion_render_2_by_wyruzzah-d8p0m11.png/revision/latest?cb=20160512095852&path-prefix=ru')
         li
             a(href='#').t-menuListLinkSecond Саб-Зиро
-            + menuImages('https://vignette.wikia.nocookie.net/vsbattles/images/f/fe/Sub_Zero.png/revision/latest?cb=20150925231849')
+                + menuImages('https://vignette.wikia.nocookie.net/vsbattles/images/f/fe/Sub_Zero.png/revision/latest?cb=20150925231849')
         li
-            a(href='#').t-menuListLinkSecond Камеры
-            + menuImages('http://pngimg.com/uploads/photo_camera/photo_camera_PNG7843.png')
+            a(href='#').t-menuListLinkSecond.t-droppedMenuSec Камеры
+                + menuImages('http://pngimg.com/uploads/photo_camera/photo_camera_PNG7843.png')
+            ul.t-menuListThirdLevel.t-menuList
+                li
+                    a(href="#").t-menuListLinkThird Canon
+                li
+                    a(href="#").t-menuListLinkThird Nikon
+                li
+                    a(href="#").t-menuListLinkThird Sony
+                li
+                    a(href="#").t-menuListLinkThird Pentax
+                li
+                    a(href="#").t-menuListLinkThird Panasonic
+                li
+                    a(href="#").t-menuListLinkThird Samsung
+                li
+                    a(href="#").t-menuListLinkThird Olympus
+                li
+                    a(href="#").t-menuListLinkThird Fujifilm
         li
-            a(href='#').t-menuListLinkSecond Квадрокоптеры
-            + menuImages('http://kvadrodog.ru/wp-content/uploads/2015/07/Kvadrokopter-DJI-PHANTOM-2-foto-1.png')
+            a(href='#').t-menuListLinkSecond.t-droppedMenuSec Квадрокоптеры
+                + menuImages('http://kvadrodog.ru/wp-content/uploads/2015/07/Kvadrokopter-DJI-PHANTOM-2-foto-1.png')
+            ul.t-menuListThirdLevel.t-menuList
+                li
+                    a(href="#").t-menuListLinkThird Дрон 1
+                li
+                    a(href="#").t-menuListLinkThird Дрон 2
+                li
+                    a(href="#").t-menuListLinkThird Дрон 3
+                li
+                    a(href="#").t-menuListLinkThird Дрон 4
         li
             a(href='#').t-menuListLinkSecond Гироскутер
-            + menuImages('http://vilena-s.com/upload/foto/7ee1935a92a504f7310f65001457ff2e.png')
+                + menuImages('http://vilena-s.com/upload/foto/7ee1935a92a504f7310f65001457ff2e.png')
         li
             a(href='#').t-menuListLinkSecond Смарт-ключи
-            + menuImages('http://volksmaster.ru/uploads/product_slideshow/image/150/content_11023020.png')
+                + menuImages('/images/menuImages/man.png')
         li
             a(href='#').t-menuListLinkSecond Хэнк Хилл
-            + menuImages('https://vignette.wikia.nocookie.net/kingofthehill/images/c/c4/Hank_Hill.png/revision/latest?cb=20140504043948')
+                + menuImages('https://vignette.wikia.nocookie.net/kingofthehill/images/c/c4/Hank_Hill.png/revision/latest?cb=20140504043948')
         li
             a(href='#').t-menuListLinkSecond Гомер Симпсон
-            + menuImages('http://multsimpsons.ru/data/uploads/personaji/gomer.png')
+                + menuImages('http://multsimpsons.ru/data/uploads/personaji/gomer.png')
 
 mixin secondUl2()
     ul.t-menuListSecondLevel.t-menuList
@@ -112,7 +138,8 @@ header.hideHeader
                         div.t-smallCartInfo
                             p.t-smallCartTitleInfo Товаров в корзине нет
                             span.t-smallCartTotalPrice 0
-                            a(href="/catalog.html").t-btn.t-smallCartBtnInfo Добавить из каталога
-                    ul.t-smallCartBody
+                            a(href="/catalog.html").t-btn.t-smallCartBtnInfo
+                                span Добавить из каталога
+                    ul.t-smallCartBody.customScrollBar
 
 

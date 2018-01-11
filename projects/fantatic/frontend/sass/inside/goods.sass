@@ -4,14 +4,22 @@
     display: flex
     background-color: #fff
     border-radius: 24px
+    overflow: hidden
+    max-height: 512px
+    min-height: 512px
     .t-aboutGoodsImgContainer
       width: 512px
-      padding: 75px 105px
+      .t-hiddenImages
+        visibility: hidden
+        opacity: 0
+        pointer-events: none
       .t-insideImg
-        width: 302px
-        height: 362px
+        width: 100%
         img
+          display: block
           width: 100%
+          max-height: 512px
+          object-fit: contain
     .t-aboutGoodsInfoMain
       padding: 24px 32px
       border-left: 1px solid #E0E0E0

@@ -64,11 +64,27 @@ $(document).ready(function(){
         smartSpeed: 700
     });
 
-    // $('.slideContainder').slick({
-    //     centerMode: true,
-    //     centerPadding: '60px',
-    //     slidesToShow: 5,
-    // });
+    var tos = $(".t-insideImg a").tosrus({
+        effect: "fade",
+        wrapper: {
+            classes: "sliderContainer"
+        }
+    });
+
+    // Overlay Control
+
+    tos.bind('opening.tos', function (event) {
+        $('.t-lightBoxOverlay').addClass('activeOverLay');
+    });
+    
+    tos.bind("closing.tos", function(event) {
+        $('.t-lightBoxOverlay').removeClass('activeOverLay');
+    });
+
+    $('.t-lightBoxOverlay').on('click', function () {
+        tos.trigger("close");
+    });
+
     $('.t-allCategoriesSlider').reviewsSlider();
     // Init simple Parallax
 
@@ -204,7 +220,6 @@ $(window).on('scroll', function () {
     }
 });
 
-
 // Rating Range Script
 
 $('.t-reviewsDialogRating li').on('mouseover', function () {
@@ -307,7 +322,8 @@ $(function () {
           $('.t-smallCartBody').addClass('t-smallCartBodyActive');
           $('.t-smallCartTitleInfo').text('Товаров - '+ getCartBodyLe);
           $('.t-smallCartTotalPrice').addClass('activeTotal');
-          $('.t-smallCartBtnInfo').attr('href', '/cart').text('Перейти в корзину');
+          $('.t-smallCartBtnInfo').attr('href', '/cart');
+          $('.t-smallCartBtnInfo span').text('Перейти в корзину');
           $('.t-smallCartOpen').addClass('t-hasGoodsInCart');
       } else {
           $('.t-smallCartOpen').removeClass('t-hasGoodsInCart');
@@ -383,14 +399,18 @@ $(document).on('mousemove', 'nav', function(eventObject){
         var result = inPoly(eventObject.pageX,eventObject.pageY);
         if(result !== true){
             newEl = false;
-            $('nav .hover').removeClass('hover');
+            if (!$('.t-menuListSecondLevel li').hasClass('hoverSec')) {
+                $('nav .hover').removeClass('hover');
+            } else {
+                return false
+            }
         } else{
             if($(eventObject.target).hasClass('t-droppedMenu') && !$(eventObject.target).parent().hasClass('hover')){
                 $('nav .hover_next').removeClass('hover_next');
                 $(eventObject.target).parent().addClass('hover_next');
                 setTimeout(function () {
                     newEl = true;
-                }, 400)
+                }, 200)
             }
         }
     } else{
@@ -398,6 +418,84 @@ $(document).on('mousemove', 'nav', function(eventObject){
             $('nav .hover_next').removeClass('hover_next');
             $(eventObject.target).parent().addClass('hover');
             newEl = false;
+        }
+    }
+});
+
+var newElSec = false;
+$(document).on('mousemove', 'nav', function(eventObject){
+    if($(eventObject.target).parent().hasClass('hover_nextSec') && newElSec){
+        newElSec = false;
+        $('nav .hoverSec').removeClass('hoverSec');
+        $(eventObject.target).parent().addClass('hoverSec');
+    } else{
+        if(newElSec){
+            newElSec = false;
+            $('nav .hover_nextSec').removeClass('hover_nextSec');
+        }
+    }
+
+    var hover = $('nav').find('.hoverSec');
+    if(hover.length > 0){
+        var ul = hover.find('ul:first');
+        var xp = [hover.offset().left]; // Массив X-координат полигона
+        var yp = [hover.offset().top]; // Массив Y-координат полигона
+
+        if( hover.offset().top > ul.offset().top ){
+            xp.push(ul.offset().left);
+            yp.push(ul.offset().top);
+        } else{
+            xp.push(hover.offset().left + hover.outerWidth());
+            yp.push(hover.offset().top);
+        }
+
+        xp.push(ul.offset().left + ul.outerWidth());
+        xp.push(ul.offset().left + ul.outerWidth());
+        yp.push(ul.offset().top);
+        yp.push(ul.offset().top + ul.outerHeight());
+
+        if( (hover.offset().top + hover.outerHeight()) > (ul.offset().top + ul.outerHeight()) ){
+            xp.push(hover.offset().left + hover.outerWidth());
+            yp.push(hover.offset().top + hover.outerHeight());
+        } else{
+            xp.push(ul.offset().left);
+            yp.push(ul.offset().top + ul.outerHeight());
+        }
+
+        xp.push(hover.offset().left);
+        yp.push(hover.offset().top + hover.outerHeight());
+
+        function inPoly(x,y){
+            var npol = xp.length;
+            var j = npol - 1;
+            var c = 0;
+            for (i = 0; i < npol;i++){
+                if ((((yp[i]<=y) && (y<yp[j])) || ((yp[j]<=y) && (y<yp[i]))) &&
+                    (x > (xp[j] - xp[i]) * (y - yp[i]) / (yp[j] - yp[i]) + xp[i])) {
+                    c = !c
+                }
+                j = i;
+            }
+            return c;
+        }
+        var result = inPoly(eventObject.pageX,eventObject.pageY);
+        if(result !== true){
+            newElSec = false;
+            $('nav .hoverSec').removeClass('hoverSec');
+        } else{
+            if($(eventObject.target).hasClass('t-droppedMenuSec') && !$(eventObject.target).parent().hasClass('hoverSec')){
+                $('nav .hover_nextSec').removeClass('hover_nextSec');
+                $(eventObject.target).parent().addClass('hover_nextSec');
+                setTimeout(function () {
+                    newElSec = true;
+                }, 200)
+            }
+        }
+    } else{
+        if($(eventObject.target).hasClass('t-droppedMenuSec')){
+            $('nav .hover_nextSec').removeClass('hover_nextSec');
+            $(eventObject.target).parent().addClass('hoverSec');
+            newElSec = false;
         }
     }
 });

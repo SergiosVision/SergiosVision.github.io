@@ -137,6 +137,56 @@ main
   background: linear-gradient(254.05deg, #FF4F54 0%, #E5191F 100%)
   cursor: pointer
   box-shadow: 0px 8px 16px rgba(150, 0, 4, 0.32)
+  position: relative
+  transition: opacity .4s ease
+  span
+    z-index: 3
+    position: relative
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: -1px
+    right: -1px
+    bottom: 0
+    border-radius: 20px
+    cursor: pointer
+    color: #fff
+    border: none
+    text-decoration: none
+    outline: none
+    background: linear-gradient(232.43deg, #59DED6 0%, #26BFD1 61.42%)
+    box-shadow: 0px 8px 16px rgba(0, 121, 135, 0.32)
+    transition: opacity .4s ease
+    z-index: 2
+    opacity: 0
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: -1px
+    right: -1px
+    bottom: 0
+    border-radius: 20px
+    cursor: pointer
+    color: #fff
+    border: none
+    text-decoration: none
+    outline: none
+    background: linear-gradient(232.43deg, #4FC4BD 0%, #21A8B8 61.42%)
+    transition: opacity .4s ease
+    z-index: 2
+    opacity: 0
+  &:hover
+    box-shadow: none
+    &:after
+      opacity: 1
+  &:active
+    box-shadow: none!important
+    &:after
+      opacity: 0
+    &:before
+      opacity: 1
 
 
 .t-showMoreButton
@@ -626,3 +676,40 @@ main
 ::-webkit-input-placeholder
   font-size: 14px
   color: #E0E0E0
+
+.customScrollBar
+  &::-webkit-scrollbar-track
+    background-color: #F5F5F5
+  &::-webkit-scrollbar
+    width: 2px
+    background-color: #F5F5F5
+  &::-webkit-scrollbar-thumb
+    background-color: #26BFD1
+    border-radius: 10px
+
+
+.t-lightBoxOverlay
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  background-color: rgba(0,0,0,.5)
+  z-index: 10000
+  opacity: 0
+  pointer-events: none
+  &.activeOverLay
+    opacity: 1
+    pointer-events: all
+
+.tos-wrapper.tos-fixed.sliderContainer
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  width: 1296px
+  height: 712px
+  z-index: 100000
+  border-radius: 24px
+  background-color: rgb(255,255,255)!important
+
+

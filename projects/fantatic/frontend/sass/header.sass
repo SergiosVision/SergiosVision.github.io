@@ -179,6 +179,10 @@ header
             border-radius: 10px
             background-color: #E0E0E0
             width: 12px
+            transition: .4s ease
+          &:hover
+            &:before, &:after
+              background-color: #26bfd1
       .t-smallCartInfo
         display: flex
         flex-direction: column
@@ -207,6 +211,7 @@ header
       display: block
       &.t-smallCartBodyActive
         margin-top: 32px
+      .t-smallCartBody
     .t-smallCartItem
       display: flex
       margin-bottom: 24px
@@ -217,8 +222,9 @@ header
         height: 32px
         margin-right: 8px
         img
+          object-fit: contain
           width: 100%
-          height: auto
+          height: 32px
       .t-smallCartItemPriceAndName
         color: #4F4F4F
         .t-smallCartItemName
@@ -285,9 +291,23 @@ header
           border-left: 1px solid #F5F5F5
           border-radius: 0 24px 24px 0
           z-index: 1000
-          overflow: hidden
           li
             margin-bottom: 8px
+            &.hoverSec
+              .t-menuListLinkSecond
+                color: #26BFD1
+              .t-catImages
+                opacity: 1
+              .t-menuListThirdLevel
+                opacity: 1
+                pointer-events: all
+          .t-menuListLinkSecond
+            display: inline-block
+            color: #4F4F4F
+            font-weight: bold
+            font-size: 16px
+            transition: .4s ease
+            text-decoration: none
             .t-catImages
               position: absolute
               right: 0
@@ -302,17 +322,31 @@ header
               width: 100%
               height: auto
             &:hover
+              color: #26BFD1
               .t-catImages
                 opacity: 1
-          .t-menuListLinkSecond
-            display: inline-block
-            color: #4F4F4F
-            font-weight: bold
-            font-size: 16px
-            transition: .4s ease
-            text-decoration: none
-            &:hover
-              color: #26BFD1
+
+        .t-menuListThirdLevel
+          opacity: 0
+          pointer-events: none
+          position: absolute
+          right: -295px
+          top: 0
+          transition: .3s ease
+          border-left: 1px solid #F5F5F5
+          border-radius: 0 24px 24px 0
+          z-index: 999
+          li
+            margin-bottom: 8px
+            .t-menuListLinkThird
+              display: inline-block
+              color: #4F4F4F
+              font-weight: bold
+              font-size: 16px
+              transition: .4s ease
+              text-decoration: none
+              &:hover
+                color: #26BFD1
 
 
 
