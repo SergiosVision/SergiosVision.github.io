@@ -279,6 +279,7 @@ header
           .t-menuListSecondLevel
             opacity: 1
             pointer-events: all
+            z-index: 1000
           .t-menuListLink
             color: #26BFD1
         .t-menuListSecondLevel
@@ -290,7 +291,7 @@ header
           transition: .3s ease
           border-left: 1px solid #F5F5F5
           border-radius: 0 24px 24px 0
-          z-index: 1000
+          z-index: 0
           li
             margin-bottom: 8px
             &.hoverSec
@@ -301,6 +302,7 @@ header
               .t-menuListThirdLevel
                 opacity: 1
                 pointer-events: all
+                z-index: 999
           .t-menuListLinkSecond
             display: inline-block
             color: #4F4F4F
@@ -335,7 +337,7 @@ header
           transition: .3s ease
           border-left: 1px solid #F5F5F5
           border-radius: 0 24px 24px 0
-          z-index: 999
+          z-index: 0
           li
             margin-bottom: 8px
             .t-menuListLinkThird

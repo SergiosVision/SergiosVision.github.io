@@ -64,25 +64,36 @@ $(document).ready(function(){
         smartSpeed: 700
     });
 
-    var tos = $(".t-insideImg a").tosrus({
-        effect: "fade",
-        wrapper: {
-            classes: "sliderContainer"
+    $('.t-insideImg').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        showCloseBtn: false,
+        closeOnBgClick: false,
+        image: {
+            markup: '<div class="mfp-figure">'+
+                        '<button class="t-closeBtn"></button>'+
+                        '<div class="mfp-img"></div>'+
+                        '<div class="mfp-counter"></div>'+
+                    '</div>',
+            tError: '<a href="%url%">Изображение</a> не может быть загружено.'
+        },
+        gallery: {
+            enabled: true,
+            tCounter: '%curr% из %total%',
+            navigateByImgClick: false
+        },
+        callbacks: {
+            open: function() {
+                $('body').append('<div class="t-overlay"></div>');
+            },
+            close: function() {
+                $('.t-overlay').remove();
+            }
         }
     });
-
-    // Overlay Control
-
-    tos.bind('opening.tos', function (event) {
-        $('.t-lightBoxOverlay').addClass('activeOverLay');
-    });
-    
-    tos.bind("closing.tos", function(event) {
-        $('.t-lightBoxOverlay').removeClass('activeOverLay');
-    });
-
-    $('.t-lightBoxOverlay').on('click', function () {
-        tos.trigger("close");
+    $(document).on('click', '.t-closeBtn, .t-overlay', function (e) {
+        e.preventDefault();
+        $.magnificPopup.close();
     });
 
     $('.t-allCategoriesSlider').reviewsSlider();
@@ -292,6 +303,9 @@ $(document).on('click', function(e) {
     if (!$(e.target).closest(".t-catalog").length) {
         $('.t-catalog').removeClass('activeMenu');
         $('.t-menuList li').removeClass('hover');
+        $('.t-menuList li').removeClass('hoverSec');
+        $('.t-menuList li').removeClass('hover_nextSec');
+        $('.t-menuList li').removeClass('hover_next');
     }
     if(!$(e.target).closest('.t-smallCartOpen').length) {
         $('.t-smallCart').removeClass('activeCart');
