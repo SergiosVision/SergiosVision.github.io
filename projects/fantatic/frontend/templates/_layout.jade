@@ -1,11 +1,16 @@
 mixin tCards ()
     - for(var i = 0; i < 3; i++)
             div.t-goodsCard.t-GoodsCardMain
+                div.t-cardFigureHolder
+                    div.t-cardFigureOne
+                    div.t-cardFigureTwo
+                    div.t-cardFigureThird
                 a(href="/goodsOrder.html").t-goodsLink
                     div.t-goodsCardImage
-                        img(src="/images/goodImage.png").t-goodsCardImg.t-goodsImgMain
-                        div.t-imgOverlay
-                            img(src="/images/icons/plus.svg")
+                        div.t-absImgHolder
+                            img(src="/images/goodImage.png").t-goodsCardImg.t-goodsImgMain
+                            div.t-imgOverlay
+                                img(src="/images/icons/plus.svg")
                     div.t-goodsCardInfo
                         span.t-goodsCardCategory Подарки с юмором
                         h3.t-goodsCardDescription.t-goodsNameMain Neca Prometheus Series 1 Deluxe Pressure Suit Engineer
@@ -39,9 +44,10 @@ mixin tCards2 ()
         div.t-goodsCard.t-GoodsCardMain
             a(href="/goodsOrder2.html").t-goodsLink
                 div.t-goodsCardImage
-                    img(src="http://multsimpsons.ru/data/uploads/personaji/gomer.png").t-goodsCardImg.t-goodsImgMain
-                    div.t-imgOverlay
-                        img(src="/images/icons/plus.svg")
+                    div.t-absImgHolder
+                        img(src="http://multsimpsons.ru/data/uploads/personaji/gomer.png").t-goodsCardImg.t-goodsImgMain
+                        div.t-imgOverlay
+                            img(src="/images/icons/plus.svg")
                 div.t-goodsCardInfo
                     span.t-goodsCardCategory Подарки с юмором
                     h3.t-goodsCardDescription.t-goodsNameMain Homer Simpson
@@ -114,7 +120,7 @@ html(lang="ru-RU")
     body.t-windowLoading.fixed.t-animeOne
         div.wrapper
             div.t-astronaut.animation
-            div.t-frame
+            div.t-frame(style="display: none;")
             div.background.topBackground.animation
             include _header
             block content

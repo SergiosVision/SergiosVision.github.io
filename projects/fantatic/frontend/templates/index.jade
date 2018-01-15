@@ -1,3 +1,17 @@
+mixin slideOne ()
+    div.swiper-slide
+        div.t-slideImg
+        div.t-slideInfo
+            span.t-nameOfCategory Игры и игрушки
+            span.t-value 200 наименований
+
+mixin slideTwo ()
+    div.swiper-slide
+        div.t-slideImg
+        div.t-slideInfo
+            span.t-nameOfCategory Гомер Симпсон
+            span.t-value 5000 наименований
+
 extends _layout
 block content
     main.t-mainPage
@@ -50,13 +64,15 @@ block content
         section.t-allCategories
             h2.t-sectionTitle  Все категории
             div.t-allCategoriesSlider
+                div.t-prevBtn.t-allCatSliderBtn
+                    img(src="/images/icons/leftArrow.svg")
+                div.t-nextBtn.t-allCatSliderBtn
+                    img(src="/images/icons/rightArrow.svg")
                 div.swiper-wrapper
-                    - for(var k = 0; k < 5; k++)
-                        div.swiper-slide
-                            div.t-slideImg
-                            div.t-slideInfo
-                                span.t-nameOfCategory Игры и игрушки
-                                span.t-value 200 наименований
+                    - for(var k = 0; k < 2; k++)
+                        + slideOne()
+                    - for(var c = 0; c < 3; c++)
+                        + slideTwo()
 
         section.t-brands
             h2.t-sectionTitle Бренды
