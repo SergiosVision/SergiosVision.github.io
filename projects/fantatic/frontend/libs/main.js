@@ -133,6 +133,7 @@ $(document).ready(function(){
 
 $(window).on('load', function () {
     $('html, body').animate({scrollTop:0}, 10);
+    $('body').removeClass('hideAll');
     setTimeout(function () {
         $('.background').removeClass('topBackground');
     },1900);

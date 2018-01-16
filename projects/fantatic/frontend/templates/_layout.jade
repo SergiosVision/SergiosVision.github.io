@@ -10,7 +10,7 @@ mixin tCards ()
                         div.t-absImgHolder
                             img(src="/images/goodImage.png").t-goodsCardImg.t-goodsImgMain
                             div.t-imgOverlay
-                                img(src="/images/icons/plus.svg")
+                                img(src="/images/icons/plus.svg").t-WidthCard
                     div.t-goodsCardInfo
                         span.t-goodsCardCategory Подарки с юмором
                         h3.t-goodsCardDescription.t-goodsNameMain Neca Prometheus Series 1 Deluxe Pressure Suit Engineer
@@ -42,12 +42,16 @@ mixin tCards ()
 mixin tCards2 ()
     - for(var k = 0; k < 3; k++)
         div.t-goodsCard.t-GoodsCardMain
+            div.t-cardFigureHolder
+                div.t-cardFigureOne
+                div.t-cardFigureTwo
+                div.t-cardFigureThird
             a(href="/goodsOrder2.html").t-goodsLink
                 div.t-goodsCardImage
                     div.t-absImgHolder
                         img(src="http://multsimpsons.ru/data/uploads/personaji/gomer.png").t-goodsCardImg.t-goodsImgMain
                         div.t-imgOverlay
-                            img(src="/images/icons/plus.svg")
+                            img(src="/images/icons/plus.svg").t-WidthCard
                 div.t-goodsCardInfo
                     span.t-goodsCardCategory Подарки с юмором
                     h3.t-goodsCardDescription.t-goodsNameMain Homer Simpson
@@ -117,7 +121,7 @@ html(lang="ru-RU")
         link(rel='stylesheet', href="/css/plugins/owl.carousel.min.css")
         link(rel='stylesheet', href="/css/plugins/owl.theme.default.min.css")
         link(rel='stylesheet', href="/css/plugins/magnific-popup.css")
-    body.t-windowLoading.fixed.t-animeOne
+    body.t-windowLoading.fixed.t-animeOne.hideAll
         div.wrapper
             div.t-astronaut.animation
             div.t-frame(style="display: none;")

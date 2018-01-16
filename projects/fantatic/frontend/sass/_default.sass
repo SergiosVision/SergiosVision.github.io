@@ -17,6 +17,9 @@ body
   min-width: 100%
   height: 100vh
   background-size: cover
+  &.hideAll
+    header, main, footer, .t-astronaut
+      display: none
   &.fixed
     overflow: hidden
   &.t-windowLoading
@@ -64,16 +67,16 @@ body
     transform: scale(1)
 
 .background
-  background: url('/images/background.png') repeat
-  background-size: 130% auto
+  background: url('/images/bg.jpg') repeat
+  background-size: auto auto
   position: fixed
   width: 100%
-  height: 300%
+  height: 500vh
   top: 0
   left: 0
   z-index: -3
   &.topBackground
-    top: -1000px
+    top: -300px
   &.animation
     transition: 2.5s cubic-bezier(.35,0,.33,1)
 
@@ -403,27 +406,6 @@ main
     margin-bottom: 24px
     position: relative
     cursor: pointer
-    .t-imgOverlay
-      position: absolute
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
-      background-color: rgba(38, 191, 209, .5)
-      border-radius: 50%
-      opacity: 0
-      transition: .4s cubic-bezier(0.25, 0.23, 0.21, 0.68)
-      transition-delay: .1s
-      img
-        position: absolute
-        width: 30px
-        height: 30px
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%) rotate(25deg)
-        transition: .4s ease-in-out
-        transition-delay: .1s
-        overflow: hidden
     .t-absImgHolder
       position: absolute
       width: 240px
@@ -496,6 +478,8 @@ main
       transform: translate(-50%, -50%)
       border-radius: 50%
       animation: bounce .4s cubic-bezier(0.25, 0.23, 0.21, 0.68)
+      img
+        border-radius: 50%
     .t-goodsCardInfo
       transform: translateY(-34px)
     .t-cardFigureOne, .t-cardFigureTwo, .t-cardFigureThird
@@ -805,6 +789,17 @@ main
     width: 176px
     height: 176px
 
+@keyframes bounce2
+  from, to
+    animation-timing-function: cubic-bezier(0.25, 0.23, 0.21, 0.68)
+
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(.5)
+  100%
+    transform: scale(.6)
+
 .t-cardFigureOne, .t-cardFigureTwo, .t-cardFigureThird
   position: absolute
   z-index: 100
@@ -836,3 +831,40 @@ main
   bottom: 3px
   right: 70px
 
+
+.t-imgOverlay
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  background-color: rgba(38, 191, 209, .5)
+  border-radius: 50%
+  opacity: 0
+  transition: .4s cubic-bezier(0.25, 0.23, 0.21, 0.68)
+  transition-delay: .1s
+  pointer-events: none
+  .t-WidthCard
+    position: absolute
+    width: 30px
+    height: 30px
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%) rotate(25deg)
+    transition: .4s ease-in-out
+    transition-delay: .1s
+    overflow: hidden
+
+  .t-ScaledCard
+    display: block
+    position: absolute
+    width: 50px!important
+    height: 50px
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    margin: auto
+    transition: .4s ease-in-out
+    transition-delay: .1s
+    transform: rotate(25deg)
