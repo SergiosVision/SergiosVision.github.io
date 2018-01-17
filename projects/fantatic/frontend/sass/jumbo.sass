@@ -1,8 +1,13 @@
 .t-jumboWrapper
     margin-top: 40px
     transition: 1s cubic-bezier(.35,0,.33,1)
-    animation: showSections 1s cubic-bezier(.35,0,.33,1)
-    animation-delay: 2s
+    opacity: 1
+    pointer-events: all
+    &.t-showThis
+      animation: showSections 1s cubic-bezier(.35,0,.33,1)
+    &.t-blockHidden
+      opacity: 0
+      pointer-events: none
     .t-jumboInner
       position: relative
       width: 944px
@@ -24,9 +29,8 @@
           margin-bottom: 16px
           transition: .6s cubic-bezier(.25,.23,.25,1)
           animation: showSliderHeader 1s cubic-bezier(.25,.23,.25,1)
-          animation-delay: 2.1s
-          &.addOpacity
-            opacity: 0
+          &.t-blockHidden
+            display: none
         .t-jumboInfoFooter
           display: inline-block
         .t-jumboInfoBody
@@ -40,16 +44,14 @@
           background-color: rgba(255, 255, 255, .45)
           transition: .8s cubic-bezier(.25,.23,.25,1)
           animation: showSliderHeader 1.2s cubic-bezier(.25,.23,.25,1)
-          animation-delay: 2.3s
-          &.addOpacity
-            opacity: 0
+          &.t-blockHidden
+            display: none
         .t-jumboInfoFooter
           margin-top: 32px
           transition: .6s cubic-bezier(.25,.23,.25,1)
           animation: showSliderFooter 1s cubic-bezier(.25,.23,.25,1)
-          animation-delay: 2.1s
-          &.addOpacity
-            opacity: 0
+          &.t-blockHidden
+            display: none
           .t-goodsNames
             margin-left: 16px
             color: #1A1A1A

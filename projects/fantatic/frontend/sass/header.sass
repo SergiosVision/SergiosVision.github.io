@@ -9,8 +9,9 @@ header
   justify-content: space-between
   transition: 1s cubic-bezier(.35,0,.33,1)
   animation: showHeader 2s cubic-bezier(.35,0,.33,1)
-  animation-delay: 4s
   transition: .4s ease
+  &.t-blockHidden
+    display: none
   &.t-stickyHeader
     position: fixed
     top: 0
@@ -24,7 +25,7 @@ header
     .t-catalogWrap
       top: 16px!important
     .t-menuWrapper
-      top: -20px!important
+      top: -12px!important
     .t-smallCart, .t-searchBar
       top: -12px!important
     .t-openSerachBar
@@ -35,17 +36,6 @@ header
   .t-catalog
     position: relative
     &.activeMenu
-      .t-catalogWrap
-        position: absolute
-        left: 0
-        top: 0
-        .t-burger
-          z-index: 1200
-          .line
-            background-color: #4F4F4F
-        .t-catalogWord
-            color: #4F4F4F
-            z-index: 1200
       .t-menuWrapper
          opacity: 1
          pointer-events: all
@@ -87,6 +77,41 @@ header
         display: block
   .t-navigation
     position: relative
+    .t-smallMenuCard
+      position: absolute
+      top: 24px
+      left: -50%
+      transform: translateX(28%)
+      display: block
+      list-style: none
+      margin: 0
+      padding: 32px
+      border-radius: 24px
+      background-color: #fff
+      box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.24)
+      transition: .2s ease-in-out
+      li
+        cursor: default
+        display: block
+        margin-bottom: 8px
+        &:last-child
+          margin: 0
+        a
+          cursor: pointer
+          display: inline-block
+          color: #4F4F4F
+          font-size: 14px
+    .t-CompanyMenuHeader
+      transform: translateX(-6%)
+      opacity: 0
+      pointer-events: none
+      top: 50px
+    .t-buyerMenuHeader
+      opacity: 0
+      pointer-events: none
+      top: 50px
+
+
     ul
       list-style: none
       display: flex
@@ -94,6 +119,28 @@ header
           margin-right: 40px
       li
         cursor: pointer
+      .t-buyerMenuList
+        cursor: default
+        span
+          padding-bottom: 8px
+        &:hover
+          .t-buyerMenuHeader
+            opacity: 1
+            pointer-events: all
+            top: 24px
+            //animation: showHiddenCards .3s linear
+      .t-CompanyMenuList
+        position: relative
+        cursor: default
+        span
+          padding-bottom: 8px
+        &:hover
+          .t-CompanyMenuHeader
+            opacity: 1
+            pointer-events: all
+            top: 24px
+            //animation: showHiddenCards .3s linear
+
     a
       text-decoration: none
       color: #fff
@@ -106,27 +153,44 @@ header
       &.t-fillBlack
           fill: #4F4F4F!important
     .t-searchBar
-      position: absolute
-      width: 336px
-      top: -32px
-      right: 20px
-      background-color: #fff
-      border-radius: 24px
-      padding: 32px
-      padding-bottom: 0
+      position: fixed
+      top: 0
+      right: 0
+      left: 0
+      bottom: 0
+      background-color: rgba(0,0,0,.9)
       cursor: default
       opacity: 0
       pointer-events: none
       transition: .4s ease
-      .t-searchBarBtn
+      .t-smallCloseBtn.t-smallCloseBtnCtrlSearch
         position: absolute
-        top: 33px
-        right: 20px
-      .t-input
-        width: 96%
-        border-color: #E0E0E0
-        margin-bottom: 24px
-        color: #4F4F4F
+        top: 40px
+        right: 40px
+        &:before, &:after
+          background-color: #fff
+      .t-searchFieldHoler
+        position: relative
+        margin: 144px auto 0 auto
+        width: 63%
+        .t-searchTitle
+          color: #fff
+          font-size: 26px
+          font-weight: bold
+          margin-bottom: 16px
+          text-align: center
+        .t-searchBarBtn
+          position: absolute
+          top: 52px
+          right: 0
+        .t-input
+          width: 100%
+          border-color: rgba(255,255,255,.5)
+          margin-bottom: 24px
+          font-size: 26px
+          color: #fff
+          &::-webkit-input-placeholder
+            font-size: 26px
       &.activeSearch
         opacity: 1
         pointer-events: all
@@ -253,6 +317,14 @@ header
       border-radius: 24px
       display: inline-block
       //padding: 83px 38px 38px 38px
+      .t-catalogLabel
+        span
+          position: absolute
+          left: 38px
+          top: 24px
+          color: #E0E0E0
+          font-size: 26px
+          font-weight: bold
       li
         display: block
         margin: 0 0 16px 38px
@@ -364,3 +436,4 @@ header
   to
     transform: translateY(0)
     opacity: 1
+

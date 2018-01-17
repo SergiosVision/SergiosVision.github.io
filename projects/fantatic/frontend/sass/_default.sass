@@ -17,34 +17,18 @@ body
   min-width: 100%
   height: 100vh
   background-size: cover
-  &.hideAll
-    header, main, footer, .t-astronaut
-      display: none
   &.fixed
     overflow: hidden
   &.t-windowLoading
-    footer, .t-frame, .t-jumboWrapper, .t-allCategories, .t-brands, .t-trend, .t-discounts, .t-bottomInfo
+    footer, .t-frame, .t-trend, .t-discounts, .t-bottomInfo
       opacity: 0
       pointer-events: none
-  &.t-animeOne
-    .t-astronaut
-      top: 50px
-      left: 10%
-      opacity: 1
-      animation: astronaut 2s linear
-    .t-vectorLeft,
-    .t-vectorSliderBottom,
-    .t-vectorSliderTop,
-    .t-vectorRight
-      animation: figurecontiner 2s linear
-    .t-loadingLogo
-      animation: opacityLogo 2.5s linear
 
 @keyframes figurecontiner
-  0%
+  from
     opacity: 0
     transform: scale(2)
-  100%
+  to
     opacity: 1
     transform: scale(1)
 
@@ -59,12 +43,16 @@ body
 
 
 @keyframes astronaut
-  0%
+  from
     opacity: 0
+    top: 50px
+    left: 10%
     transform: scale(2)
-  100%
+  to
     opacity: 1
     transform: scale(1)
+    left: 0
+    top: 0
 
 .background
   background: url('/images/bg.jpg') repeat
@@ -95,6 +83,9 @@ body
   opacity: 0
   pointer-events: none
   transition: .3s ease
+  animation: opacityLogo 2s linear
+  &.t-blockHidden
+    display: none
 
 .wrapper
   display: flex
@@ -270,8 +261,19 @@ main
   z-index: -1
   top: 0
   left: 0
+  animation: astronaut 2s cubic-bezier(.35,0,.33,1)
+  display: block
+  &.t-blockHidden
+    display: none
   &.animation
-    transition: 1.5s cubic-bezier(.35,0,.33,1)
+    transition: 2s cubic-bezier(.35,0,.33,1)
+
+.t-figureContainer
+  &.t-blockHidden
+    .t-vectorLeft,
+    .t-vectorSliderBottom, .t-vectorSliderBottom,
+    .t-vectorSliderTop, .t-vectorRight
+      display: none
 
 .t-vectorLeft
   position: fixed
@@ -284,6 +286,8 @@ main
   background-size: contain
   z-index: -1
   transition: .5s cubic-bezier(.35,0,.33,1)
+  animation: figurecontiner 2s linear
+  display: block
 
 .t-vectorSliderBottom
   position: fixed
@@ -296,6 +300,8 @@ main
   background-size: contain
   z-index: 10
   transition: .5s cubic-bezier(.35,0,.33,1)
+  animation: figurecontiner 2s linear
+  display: block
 
 .t-vectorSliderTop
   position: fixed
@@ -308,6 +314,8 @@ main
   background-size: contain
   z-index: -1
   transition: .5s cubic-bezier(.35,0,.33,1)
+  animation: figurecontiner 2s linear
+  display: block
 
 .t-vectorRight
   position: fixed
@@ -320,6 +328,8 @@ main
   background-size: contain
   z-index: -1
   transition: .5s cubic-bezier(.35,0,.33,1)
+  animation: figurecontiner 2s linear
+  display: block
 
 //.t-figuresControls
 //  opacity: 1
@@ -628,16 +638,16 @@ main
 
 .ui-dialog
   outline: none
-  z-index: 1000
+  z-index: 1001!important
 
 .t-dialogOverlay
-  z-index: 1000
+  z-index: 1000!important
   position: fixed
   left: 0
   top: 0
   bottom: 0
   right: 0
-  background-color: rgba(0, 0, 0, .50)
+  background-color: rgba(0, 0, 0, .9)
   width: 100%
   height: 100vh
 
@@ -704,6 +714,39 @@ main
     transform: rotate(-45deg)
 
 
+.t-smallCloseBtn
+  width: 12px
+  height: 12px
+  position: relative
+  left: auto
+  right: auto
+  top: auto
+  bottom: auto
+  background-color: transparent
+  cursor: pointer
+  &:before, &:after
+    content: ''
+    position: absolute
+    height: 3px
+    display: block
+    margin: auto
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    border-radius: 10px
+    background-color: #E0E0E0
+    width: 12px
+    transition: .4s ease
+  &:before
+    transform: rotate(45deg)
+  &:after
+    transform: rotate(-45deg)
+  &:hover
+    &:before, &:after
+      background-color: #fff
+
+
 .t-input
   background-color: transparent
   border: none
@@ -717,7 +760,7 @@ main
 
 ::-webkit-input-placeholder
   font-size: 14px
-  color: #E0E0E0
+  color: rgba(255,255,255,.5)
 
 .customScrollBar
   &::-webkit-scrollbar-track

@@ -15,27 +15,27 @@ mixin slideTwo ()
 extends _layout
 block content
     main.t-mainPage
-        div.t-loadingLogo.animation
-        div.t-figureContainer
+        div.t-loadingLogo.t-blockHidden
+        div.t-figureContainer.t-blockHidden
             div.t-vectorLeft.t-figuresControls
             div.t-vectorSliderBottom.t-figuresControls
             div.t-vectorSliderTop.t-figuresControls
             div.t-vectorRight.t-figuresControls
             div.t-smallFigure.t-figuresControls
-        section.t-jumboWrapper
+        section.t-jumboWrapper.t-blockHidden
             div.t-jumboInner.owl-carousel
                 div.slide
                     img(src="/images/slider/glass.png")
                     div.t-jumboInfo
-                        div.t-jumboInfoHeader.addOpacity
+                        div.t-jumboInfoHeader.t-blockHidden
                             h1.headingTitle Смарт-очки
-                        div.t-jumboInfoBody.banDescription.addOpacity
+                        div.t-jumboInfoBody.banDescription.t-blockHidden
                             h4 Google Glass
                             h4 Oculus Rift
                             h4 Vibe
                             h4 Microsoft Hololens
                             h4 Sony VR
-                        div.t-jumboInfoFooter.addOpacity
+                        div.t-jumboInfoFooter.t-blockHidden
                             a(href='#').t-btn
                                 span Смотреть все
                             span.t-goodsNames - более 10 наименований
@@ -61,7 +61,7 @@ block content
                         div.t-jumboInfoFooter
                             a(href='#').t-btn
                                 span Смотреть все
-        section.t-allCategories
+        section.t-allCategories.t-blockHidden
             h2.t-sectionTitle  Все категории
             div.t-allCategoriesSlider
                 div.t-prevBtn.t-allCatSliderBtn
@@ -74,7 +74,7 @@ block content
                     - for(var c = 0; c < 3; c++)
                         + slideTwo()
 
-        section.t-brands
+        section.t-brands.t-blockHidden
             h2.t-sectionTitle Бренды
             ul.t-brandsList
                 li
