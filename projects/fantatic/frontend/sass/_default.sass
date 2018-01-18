@@ -335,7 +335,7 @@ main
 //  opacity: 1
 //  transition: .4s ease
 
-.t-mainContainerCection
+.t-mainContainerSection
   width: 1296px
   margin: 40px auto 0 auto
 
@@ -366,17 +366,28 @@ main
     list-style: none
     display: flex
     li
-      a
+      position: relative
+      a, span
         display: inline-block
         color: rgba(255, 255, 255, 0.7)
         font-size: 14px
         text-decoration: none
-        border-right: 1px solid rgba(255, 255, 255, 0.71)
-        padding: 0 5px
-        line-height: 13px
       &:last-child
         a
           border: none
+        &:after
+          display: none
+      &:not(:last-child)
+        margin-right: 16px
+      &:after
+        content: ''
+        position: absolute
+        width: 8px
+        height: 1px
+        background-color: rgba(255, 255, 255, 0.7)
+        top: 9px
+        right: -12px
+
 
 
 .t-goodsLink
@@ -619,22 +630,6 @@ main
   margin: 40px auto 0 auto
   width: 944px
 
-.t-mainContainerCection
-  .t-breadCrumbs
-    ul
-      li
-        color: rgba(255, 255, 255, .3)
-        font-weight: normal
-        a
-          border: none
-          padding: 0 5px
-          font-weight: normal
-        &:first-child
-          a
-            padding-left: 0
-        &:last-child
-          a
-            padding-right: 0
 
 .ui-dialog
   outline: none
@@ -911,3 +906,104 @@ main
     transition: .4s ease-in-out
     transition-delay: .1s
     transform: rotate(25deg)
+
+.t-midTitleMain
+  font-size: 26px
+  font-weight: bold
+  color: #4F4F4F
+
+
+.t-inputsHolderSections
+  display: flex
+  flex-direction: column
+  &.t-orderInputHolder:not(:last-child)
+    margin-bottom: 24px
+.t-inputMainTitle
+  display: inline-block
+  font-size: 16px
+  font-weight: bold
+  margin-bottom: 8px
+  &.t-orderLabelCtrl
+    margin-bottom: 34px
+.t-mainInput
+  background-color: transparent
+  border: none
+  outline: none
+  color: #fff
+  border-bottom: 1px solid #E0E0E0
+  padding-bottom: 8px
+  margin-bottom: 16px
+  &.t-orderFormBlack
+    color: #4F4F4F
+    border-bottom: 1px solid #E0E0E0
+    margin-bottom: 0
+    &::-webkit-input-placeholder
+      color: #E0E0E0
+
+
+.t-checkBoxesCtrl
+  input:checked + label:before, input:checked + label:after
+    background-color: #26BFD1
+  input:checked + label
+    color: #fff
+  .t-checkControl
+    position: relative
+    cursor: pointer
+    color: rgba(255, 255, 255, .30)
+    padding-left: 16px
+    transition: .4s ease
+    &:before
+      content: ''
+      display: inline-block
+      background-color: rgba(255, 255, 255, .30)
+      position: absolute
+      box-sizing: border-box
+      transition: .4s ease
+      height: 12px
+      width: 4px
+      left: 0
+      top: 4px
+      transform: rotate(45deg)
+    &:after
+      content: ''
+      display: inline-block
+      background-color: rgba(255, 255, 255, .30)
+      position: absolute
+      box-sizing: border-box
+      transition: .4s ease
+      height: 4px
+      width: 4px
+      left: -5.2px
+      top: 8.2px
+      transform: rotate(48deg)
+    &:hover
+      color: #fff
+      &:before, &:after
+        background-color: #26BFD1
+  &.t-checkboxHolder
+    margin-bottom: 24px
+    input:checked + label:before, input:checked + label:after
+      background-color: #26BFD1
+    input:checked + label
+      color: #4F4F4F
+    .t-checkControl
+      color: #4F4F4F
+      &:after, &:before
+        background-color: #E0E0E0
+      &:hover
+        &:before, &:after
+          background-color: #26BFD1
+
+.t-secondBtn
+  background-color: transparent
+  outline: none
+  border: none
+  border: 1px solid #F5F5F5
+  color: #4F4F4F
+  padding: 10px 32px
+  border-radius: 20px
+  display: inline-block
+  cursor: pointer
+  font-size: 16px
+  font-weight: bold
+  text-decoration: none

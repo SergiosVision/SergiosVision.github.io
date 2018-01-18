@@ -1,0 +1,60 @@
+extends _layout
+block content
+    main
+        section.t-feedBack.t-mainContainerSection
+            h2.t-sectionTitle  Обратная связь
+            div.t-breadCrumbs
+                ul
+                    li
+                        a(href="/") Главная
+                    li
+                        span Обратная связь
+            div.t-standartMainContainer
+                div.t-smallUserHelp
+                    div.t-smallUserHelpHeader
+                        h3.t-smallUserHelpTitle.t-midTitleMain Подсказка пользователю
+                    div.t-smallUserHelpBody
+                        p Если у вас возникли вопросы по работе интернет-магазина, то вы можете ознакомиться с разделом «Вопросы и ответы» — возможно ответ на ваш вопрос уже существует.
+                        br
+                        br
+                        ul
+                            li
+                                a(href="#") Вопросы и ответы
+                            li
+                                a(href="#") Условия и правила сайта
+                        br
+                        br
+                        p Так же вы можете посетить разделы, описывающие вопросы о доставке, оплате и гарантии, предоставляемой сервисом или производителем.
+                        br
+                        br
+                        ul
+                            li
+                                a(href="#") Доставка
+                            li
+                                a(href="#") Оплата
+                            li
+                                a(href="#") Гарантия
+                            li
+                                a(href="#") Обмен, возврат и ремонт
+            div.t-standartMainContainer.t-feedBackFormCardWrapper
+                div.t-feedBackFormCardHeader
+                    h3.t-feedbackTitle.t-midTitleMain Ваше сообщение
+                div.t-feedBackFormCardBody
+                    form.t-feedBackFormSend
+                        div.t-inputsHolderSections.t-orderInputHolder
+                            label.t-inputMainTitle.t-orderLabelCtrl(for="yourMessageText") Текст сообщения
+                            input.t-mainInput.t-orderFormBlack(type="text" id="yourMessageText" placeholder="")
+                        div.t-inputsHolderSections.t-orderInputHolder
+                            label.t-inputMainTitle.t-orderLabelCtrl(for="yourName") Имя
+                            input.t-mainInput.t-orderFormBlack(type="tel" id="yourName" placeholder="Чтобы мы знали как к вам обращаться")
+                        div.t-inputsHolderSections.t-orderInputHolder
+                            label.t-inputMainTitle.t-orderLabelCtrl(for="yourEmail") Электронная почта
+                            input.t-mainInput.t-orderFormBlack(type="email" id="yourEmail" placeholder="Ваш Email")
+                    div.t-checkboxHolder.t-checkBoxesCtrl
+                        input(type="checkbox" id="agree").t-checkbox.t-hideSomething
+                        label(for="agree").t-checkControl Согласен на обработку данных
+                    button.t-btn.t-feedBackSend
+                        span Отправить
+
+        section.t-bottomInfo
+            + tBottomCardHolder()

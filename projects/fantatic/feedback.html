@@ -140,27 +140,60 @@
         </div>
       </header>
       <main>
-        <section class="t-guarantee t-mainContainerSection">
-          <h2 class="t-sectionTitle"> Подарки с юмором</h2>
+        <section class="t-feedBack t-mainContainerSection">
+          <h2 class="t-sectionTitle"> Обратная связь</h2>
           <div class="t-breadCrumbs">
             <ul>
-              <li><a href="#">Главная</a></li>
-              <li><a href="#">Гарантия</a></li>
+              <li><a href="/">Главная</a></li>
+              <li><span>Обратная связь</span></li>
             </ul>
           </div>
           <div class="t-standartMainContainer">
-            <h3>Условия гарантийного обслуживания</h3>
-            <p>Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.</p><br><br>
-            <h3>Условия гарантийного обслуживания</h3>
-            <p>Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.</p><br>
-            <h3>Условия гарантийного обслуживания</h3>
-            <p>Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.</p><br>
-            <h3>Условия гарантийного обслуживания</h3>
-            <p>Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.</p><br>
-            <h3>Условия гарантийного обслуживания</h3>
-            <p>Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.</p><br>
-            <h3>Условия гарантийного обслуживания</h3>
-            <p>Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.</p><br>
+            <div class="t-smallUserHelp">
+              <div class="t-smallUserHelpHeader">
+                <h3 class="t-smallUserHelpTitle t-midTitleMain">Подсказка пользователю</h3>
+              </div>
+              <div class="t-smallUserHelpBody">
+                <p>Если у вас возникли вопросы по работе интернет-магазина, то вы можете ознакомиться с разделом «Вопросы и ответы» — возможно ответ на ваш вопрос уже существует.</p><br><br>
+                <ul>
+                  <li><a href="#">Вопросы и ответы</a></li>
+                  <li><a href="#">Условия и правила сайта</a></li>
+                </ul><br><br>
+                <p>Так же вы можете посетить разделы, описывающие вопросы о доставке, оплате и гарантии, предоставляемой сервисом или производителем.</p><br><br>
+                <ul>
+                  <li><a href="#">Доставка</a></li>
+                  <li><a href="#">Оплата</a></li>
+                  <li><a href="#">Гарантия</a></li>
+                  <li><a href="#">Обмен, возврат и ремонт</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="t-standartMainContainer t-feedBackFormCardWrapper">
+            <div class="t-feedBackFormCardHeader">
+              <h3 class="t-feedbackTitle t-midTitleMain">Ваше сообщение</h3>
+            </div>
+            <div class="t-feedBackFormCardBody">
+              <form class="t-feedBackFormSend">
+                <div class="t-inputsHolderSections t-orderInputHolder">
+                  <label for="yourMessageText" class="t-inputMainTitle t-orderLabelCtrl">Текст сообщения</label>
+                  <input type="text" id="yourMessageText" placeholder="" class="t-mainInput t-orderFormBlack">
+                </div>
+                <div class="t-inputsHolderSections t-orderInputHolder">
+                  <label for="yourName" class="t-inputMainTitle t-orderLabelCtrl">Имя</label>
+                  <input type="tel" id="yourName" placeholder="Чтобы мы знали как к вам обращаться" class="t-mainInput t-orderFormBlack">
+                </div>
+                <div class="t-inputsHolderSections t-orderInputHolder">
+                  <label for="yourEmail" class="t-inputMainTitle t-orderLabelCtrl">Электронная почта</label>
+                  <input type="email" id="yourEmail" placeholder="Ваш Email" class="t-mainInput t-orderFormBlack">
+                </div>
+              </form>
+              <div class="t-checkboxHolder t-checkBoxesCtrl">
+                <input type="checkbox" id="agree" class="t-checkbox t-hideSomething">
+                <label for="agree" class="t-checkControl">Согласен на обработку данных</label>
+              </div>
+              <button class="t-btn t-feedBackSend"><span>Отправить</span></button>
+            </div>
           </div>
         </section>
         <section class="t-bottomInfo">

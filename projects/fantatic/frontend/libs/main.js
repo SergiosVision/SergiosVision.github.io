@@ -345,7 +345,7 @@ $(function () {
           $('.t-smallCartBody').addClass('t-smallCartBodyActive');
           $('.t-smallCartTitleInfo').text('Товаров - '+ getCartBodyLe);
           $('.t-smallCartTotalPrice').addClass('activeTotal');
-          $('.t-smallCartBtnInfo').attr('href', '/cart');
+          $('.t-smallCartBtnInfo').attr('href', '/cart.html');
           $('.t-smallCartBtnInfo span').text('Перейти в корзину');
           $('.t-smallCartOpen').addClass('t-hasGoodsInCart');
       } else {

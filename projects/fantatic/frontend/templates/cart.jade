@@ -1,0 +1,75 @@
+mixin cartCard()
+    div.t-cartGoodsCard
+        div.t-cardInsideBlock
+            img.t-cartItemImage(src="/images/goodimage.png")
+            span.t-cartItemName Neca Prometheus Series 1 Deluxe Pressure Suit Engineer
+        div.t-cardInsideBlock
+            span.t-bold.t-cartItemPrice 32 500
+                span.t-bold.t-rubSign ₽
+        div.t-cardInsideBlock
+            div.t-quantityItemCtrl
+                button.t-quantityBtn.t-quantityDown
+                input.t-quantityInput(value="10")
+                button.t-quantityBtn.t-quantityUp
+        div.t-cardInsideBlock
+            span.t-bold.t-itemTotalPrice 325 000
+                span.t-bold.t-rubSign ₽
+        div.t-cardInsideBlock
+            span.t-removeFromCartBtn.t-smallCloseBtn
+
+extends _layout
+block content
+    main
+        section.t-mainContainerSection
+            h2.t-sectionTitle  Корзина
+            div.t-breadCrumbs
+                ul
+                    li
+                        a(href="/") Главная
+                    li
+                        span Корзина
+            div.t-standartMainContainer.t-orderCardFormWrapper
+                div.t-orderCardFormHeader
+                    h3.t-orderCardFormTitle.t-midTitleMain Данные для оформления
+                div.t-orderCardFormBody
+                    form.t-orderForm
+                        div.t-inputsHolderSections.t-orderInputHolder
+                            label.t-inputMainTitle.t-orderLabelCtrl(for="yourName") Ваше имя
+                            input.t-mainInput.t-orderFormBlack(type="text" id="yourName" placeholder="Володя")
+                        div.t-inputsHolderSections.t-orderInputHolder
+                            label.t-inputMainTitle.t-orderLabelCtrl(for="contactNumber") Контактный телефон
+                            input.t-mainInput.t-orderFormBlack(type="tel" id="contactNumber" placeholder="Чтобы мы знали как к вам обращаться")
+                        div.t-inputsHolderSections.t-orderInputHolder
+                            label.t-inputMainTitle.t-orderLabelCtrl(for="yourEmail") Электронная почта
+                            input.t-mainInput.t-orderFormBlack(type="email" id="yourEmail" placeholder="Ваш Email")
+                        div.t-inputsHolderSections.t-orderInputHolder
+                            label.t-inputMainTitle.t-orderLabelCtrl(for="deliveryAddress") Адрес доставки
+                            input.t-mainInput.t-orderFormBlack(type="text" id="deliveryAddress" placeholder="В том числе и номер квартиры")
+                        div.t-inputsHolderSections.t-orderInputHolder
+                            label.t-inputMainTitle.t-orderLabelCtrl(for="orderComment") Комментарий к заказу
+                            input.t-mainInput.t-orderFormBlack(type="text" id="orderComment" placeholder="Необязательно")
+                div.t-orderCardFormFooter
+                    div.t-cartInfoMain
+                        p.t-cartCounterMain Товаров -
+                            span.t-cartCounterMainCount 12
+                        span.t-cartTotalPriceMain.t-midTitleMain 357 500 ₽
+                    div.t-cartBtnsMain
+                        div.t-checkboxHolder.t-checkBoxesCtrl
+                            input(type="checkbox" id="agree").t-checkbox.t-hideSomething
+                            label(for="agree").t-checkControl Согласен на обработку данных
+                        div.t-orderBtnsHolder
+                            button.t-btn.t-sendOrder
+                                span Отправить заявку
+                            a.t-secondBtn(href="/catalog.html") Добавить товары из каталога
+
+
+            div.t-standartMainContainer.t-cartGoodsListWrapper
+                div.t-cartGoodsListHeader
+                    h3.t-cartGoodsListTitle.t-midTitleMain Список товаров
+                div.t-cartGoodsListBodyOutput
+                    - for(var y = 0; y < 5; y++)
+                        + cartCard()
+
+
+        section.t-bottomInfo
+            + tBottomCardHolder()

@@ -140,27 +140,128 @@
         </div>
       </header>
       <main>
-        <section class="t-guarantee t-mainContainerSection">
-          <h2 class="t-sectionTitle"> Подарки с юмором</h2>
+        <section class="t-mainContainerSection">
+          <h2 class="t-sectionTitle"> Корзина</h2>
           <div class="t-breadCrumbs">
             <ul>
-              <li><a href="#">Главная</a></li>
-              <li><a href="#">Гарантия</a></li>
+              <li><a href="/">Главная</a></li>
+              <li><span>Корзина</span></li>
             </ul>
           </div>
-          <div class="t-standartMainContainer">
-            <h3>Условия гарантийного обслуживания</h3>
-            <p>Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.</p><br><br>
-            <h3>Условия гарантийного обслуживания</h3>
-            <p>Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.</p><br>
-            <h3>Условия гарантийного обслуживания</h3>
-            <p>Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.</p><br>
-            <h3>Условия гарантийного обслуживания</h3>
-            <p>Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.</p><br>
-            <h3>Условия гарантийного обслуживания</h3>
-            <p>Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.</p><br>
-            <h3>Условия гарантийного обслуживания</h3>
-            <p>Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.</p><br>
+          <div class="t-standartMainContainer t-orderCardFormWrapper">
+            <div class="t-orderCardFormHeader">
+              <h3 class="t-orderCardFormTitle t-midTitleMain">Данные для оформления</h3>
+            </div>
+            <div class="t-orderCardFormBody">
+              <form class="t-orderForm">
+                <div class="t-inputsHolderSections t-orderInputHolder">
+                  <label for="yourName" class="t-inputMainTitle t-orderLabelCtrl">Ваше имя</label>
+                  <input type="text" id="yourName" placeholder="Володя" class="t-mainInput t-orderFormBlack">
+                </div>
+                <div class="t-inputsHolderSections t-orderInputHolder">
+                  <label for="contactNumber" class="t-inputMainTitle t-orderLabelCtrl">Контактный телефон</label>
+                  <input type="tel" id="contactNumber" placeholder="Чтобы мы знали как к вам обращаться" class="t-mainInput t-orderFormBlack">
+                </div>
+                <div class="t-inputsHolderSections t-orderInputHolder">
+                  <label for="yourEmail" class="t-inputMainTitle t-orderLabelCtrl">Электронная почта</label>
+                  <input type="email" id="yourEmail" placeholder="Ваш Email" class="t-mainInput t-orderFormBlack">
+                </div>
+                <div class="t-inputsHolderSections t-orderInputHolder">
+                  <label for="deliveryAddress" class="t-inputMainTitle t-orderLabelCtrl">Адрес доставки</label>
+                  <input type="text" id="deliveryAddress" placeholder="В том числе и номер квартиры" class="t-mainInput t-orderFormBlack">
+                </div>
+                <div class="t-inputsHolderSections t-orderInputHolder">
+                  <label for="orderComment" class="t-inputMainTitle t-orderLabelCtrl">Комментарий к заказу</label>
+                  <input type="text" id="orderComment" placeholder="Необязательно" class="t-mainInput t-orderFormBlack">
+                </div>
+              </form>
+            </div>
+            <div class="t-orderCardFormFooter">
+              <div class="t-cartInfoMain">
+                <p class="t-cartCounterMain">Товаров -<span class="t-cartCounterMainCount">12</span></p><span class="t-cartTotalPriceMain t-midTitleMain">357 500 ₽</span>
+              </div>
+              <div class="t-cartBtnsMain">
+                <div class="t-checkboxHolder t-checkBoxesCtrl">
+                  <input type="checkbox" id="agree" class="t-checkbox t-hideSomething">
+                  <label for="agree" class="t-checkControl">Согласен на обработку данных</label>
+                </div>
+                <div class="t-orderBtnsHolder">
+                  <button class="t-btn t-sendOrder"><span>Отправить заявку</span></button><a href="/catalog.html" class="t-secondBtn">Добавить товары из каталога</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="t-standartMainContainer t-cartGoodsListWrapper">
+            <div class="t-cartGoodsListHeader">
+              <h3 class="t-cartGoodsListTitle t-midTitleMain">Список товаров</h3>
+            </div>
+            <div class="t-cartGoodsListBodyOutput">
+              <div class="t-cartGoodsCard">
+                <div class="t-cardInsideBlock"><img src="/images/goodimage.png" class="t-cartItemImage"/><span class="t-cartItemName">Neca Prometheus Series 1 Deluxe Pressure Suit Engineer</span></div>
+                <div class="t-cardInsideBlock"><span class="t-bold t-cartItemPrice">32 500<span class="t-bold t-rubSign">₽</span></span></div>
+                <div class="t-cardInsideBlock">
+                  <div class="t-quantityItemCtrl">
+                    <button class="t-quantityBtn t-quantityDown"></button>
+                    <input value="10" class="t-quantityInput"/>
+                    <button class="t-quantityBtn t-quantityUp"></button>
+                  </div>
+                </div>
+                <div class="t-cardInsideBlock"><span class="t-bold t-itemTotalPrice">325 000<span class="t-bold t-rubSign">₽</span></span></div>
+                <div class="t-cardInsideBlock"><span class="t-removeFromCartBtn t-smallCloseBtn"></span></div>
+              </div>
+              <div class="t-cartGoodsCard">
+                <div class="t-cardInsideBlock"><img src="/images/goodimage.png" class="t-cartItemImage"/><span class="t-cartItemName">Neca Prometheus Series 1 Deluxe Pressure Suit Engineer</span></div>
+                <div class="t-cardInsideBlock"><span class="t-bold t-cartItemPrice">32 500<span class="t-bold t-rubSign">₽</span></span></div>
+                <div class="t-cardInsideBlock">
+                  <div class="t-quantityItemCtrl">
+                    <button class="t-quantityBtn t-quantityDown"></button>
+                    <input value="10" class="t-quantityInput"/>
+                    <button class="t-quantityBtn t-quantityUp"></button>
+                  </div>
+                </div>
+                <div class="t-cardInsideBlock"><span class="t-bold t-itemTotalPrice">325 000<span class="t-bold t-rubSign">₽</span></span></div>
+                <div class="t-cardInsideBlock"><span class="t-removeFromCartBtn t-smallCloseBtn"></span></div>
+              </div>
+              <div class="t-cartGoodsCard">
+                <div class="t-cardInsideBlock"><img src="/images/goodimage.png" class="t-cartItemImage"/><span class="t-cartItemName">Neca Prometheus Series 1 Deluxe Pressure Suit Engineer</span></div>
+                <div class="t-cardInsideBlock"><span class="t-bold t-cartItemPrice">32 500<span class="t-bold t-rubSign">₽</span></span></div>
+                <div class="t-cardInsideBlock">
+                  <div class="t-quantityItemCtrl">
+                    <button class="t-quantityBtn t-quantityDown"></button>
+                    <input value="10" class="t-quantityInput"/>
+                    <button class="t-quantityBtn t-quantityUp"></button>
+                  </div>
+                </div>
+                <div class="t-cardInsideBlock"><span class="t-bold t-itemTotalPrice">325 000<span class="t-bold t-rubSign">₽</span></span></div>
+                <div class="t-cardInsideBlock"><span class="t-removeFromCartBtn t-smallCloseBtn"></span></div>
+              </div>
+              <div class="t-cartGoodsCard">
+                <div class="t-cardInsideBlock"><img src="/images/goodimage.png" class="t-cartItemImage"/><span class="t-cartItemName">Neca Prometheus Series 1 Deluxe Pressure Suit Engineer</span></div>
+                <div class="t-cardInsideBlock"><span class="t-bold t-cartItemPrice">32 500<span class="t-bold t-rubSign">₽</span></span></div>
+                <div class="t-cardInsideBlock">
+                  <div class="t-quantityItemCtrl">
+                    <button class="t-quantityBtn t-quantityDown"></button>
+                    <input value="10" class="t-quantityInput"/>
+                    <button class="t-quantityBtn t-quantityUp"></button>
+                  </div>
+                </div>
+                <div class="t-cardInsideBlock"><span class="t-bold t-itemTotalPrice">325 000<span class="t-bold t-rubSign">₽</span></span></div>
+                <div class="t-cardInsideBlock"><span class="t-removeFromCartBtn t-smallCloseBtn"></span></div>
+              </div>
+              <div class="t-cartGoodsCard">
+                <div class="t-cardInsideBlock"><img src="/images/goodimage.png" class="t-cartItemImage"/><span class="t-cartItemName">Neca Prometheus Series 1 Deluxe Pressure Suit Engineer</span></div>
+                <div class="t-cardInsideBlock"><span class="t-bold t-cartItemPrice">32 500<span class="t-bold t-rubSign">₽</span></span></div>
+                <div class="t-cardInsideBlock">
+                  <div class="t-quantityItemCtrl">
+                    <button class="t-quantityBtn t-quantityDown"></button>
+                    <input value="10" class="t-quantityInput"/>
+                    <button class="t-quantityBtn t-quantityUp"></button>
+                  </div>
+                </div>
+                <div class="t-cardInsideBlock"><span class="t-bold t-itemTotalPrice">325 000<span class="t-bold t-rubSign">₽</span></span></div>
+                <div class="t-cardInsideBlock"><span class="t-removeFromCartBtn t-smallCloseBtn"></span></div>
+              </div>
+            </div>
           </div>
         </section>
         <section class="t-bottomInfo">

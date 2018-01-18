@@ -68,44 +68,5 @@
         height: auto
         .t-brandsSection
           list-style: none
-          input:checked + label:before, input:checked + label:after
-            background-color: #26BFD1
-            mix-blend-mode: normal
-          input:checked + label
-            color: #fff
-          .t-checkControl
-            position: relative
-            cursor: pointer
-            color: rgba(255, 255, 255, .30)
-            padding-left: 16px
-            transition: .4s ease
-            &:before
-              content: ''
-              display: inline-block
-              height: 12px
-              width: 4px
-              background-color: rgba(255, 255, 255, .30)
-              position: absolute
-              box-sizing: border-box
-              left: 0
-              top: 4px
-              transition: .4s ease
-            &:after
-              content: ''
-              display: inline-block
-              height: 4px
-              width: 12px
-              background-color: rgba(255, 255, 255, .30)
-              position: absolute
-              box-sizing: border-box
-              left: -4px
-              top: 8px
-              transition: .4s ease
-              mix-blend-mode: exclusion
-            &:hover
-              color: #fff
-              &:before, &:after
-                background-color: #26BFD1
-                mix-blend-mode: normal
           li:not(:last-child)
             margin-bottom: 16px
