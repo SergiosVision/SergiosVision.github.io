@@ -1,0 +1,15 @@
+extends _layout
+block content
+    main
+        section.t-questionsAndAnswers.t-mainContainerSection
+            h2.t-sectionTitle  Вопросы и ответы
+            div.t-standartMainContainer
+                div.t-accordHolder
+                    - for(var f = 0; f < 5; f++)
+                        div.t-accordItem
+                            div.t-openAccordItem
+                                h3.t-accordHeading.t-midTitleMain Раскрытый вопрос с ответом
+                                div.t-accordArrow
+                            div.t-accordItemContent Apple Watch Series 2 со встроенным GPS‑модулем позволяют оставить iPhone дома, если вы собрались бегать или ездить на велосипеде. При этом точность измерения вашей тренировки останется прежней. С ними вы можете плавать в бассейне или в море. И продолжать следить за своими показателями. Информация будет четко видна даже под прямыми солнечными лучами. Ведь теперь у вас на руке самый яркий из всех дисплеев Apple.
+
+        section.t-bottomInfo

@@ -2,7 +2,7 @@ header
   z-index: 1000
   position: absolute
   width: 100%
-  height: 184px
+  //height: 184px
   padding: 40px 40px 0 40px
   color: #fff
   display: flex
@@ -35,15 +35,42 @@ header
     pointer-events: none
   .t-catalog
     position: relative
+    display: flex
+    justify-content: space-between
+    width: calc(100% - 109px)
     &.activeMenu
       .t-menuWrapper
          opacity: 1
          pointer-events: all
+    .buyerAndCompanyWrapper
+      display: flex
+      div:first-child
+        margin-right: 40px
+    .t-buyerMenuList
+      span
+        padding-bottom: 8px
+        cursor: default
+        position: relative
+        &:hover
+          .t-buyerMenuHeader
+            opacity: 1
+            pointer-events: all
+            top: 24px
+    .t-CompanyMenuList
+      span
+        cursor: default
+        padding-bottom: 8px
+        position: relative
+        &:hover
+          .t-CompanyMenuHeader
+            opacity: 1
+            pointer-events: all
+            top: 24px
   .t-catalogWrap
     display: flex
     align-items: center
     cursor: pointer
-    z-index: 1000
+    //z-index: 1000
     .t-burger
       display: inline-block
       width: 16px
@@ -77,42 +104,6 @@ header
         display: block
   .t-navigation
     position: relative
-    .t-smallMenuCard
-      position: absolute
-      top: 24px
-      left: -50%
-      transform: translateX(28%)
-      display: block
-      list-style: none
-      margin: 0
-      padding: 32px
-      border-radius: 24px
-      background-color: #fff
-      box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.24)
-      transition: .2s ease-in-out
-      li
-        cursor: default
-        display: block
-        margin-bottom: 8px
-        &:last-child
-          margin: 0
-        a
-          cursor: pointer
-          display: inline-block
-          color: #4F4F4F
-          font-size: 14px
-          transition: .4s ease
-          &:hover
-            color: #26bfd1
-    .t-CompanyMenuHeader
-      transform: translateX(-6%)
-      opacity: 0
-      pointer-events: none
-      top: 50px
-    .t-buyerMenuHeader
-      opacity: 0
-      pointer-events: none
-      top: 50px
 
 
     ul
@@ -122,28 +113,6 @@ header
           margin-right: 40px
       li
         cursor: pointer
-      .t-buyerMenuList
-        cursor: default
-        span
-          padding-bottom: 8px
-        &:hover
-          .t-buyerMenuHeader
-            opacity: 1
-            pointer-events: all
-            top: 24px
-            //animation: showHiddenCards .3s linear
-      .t-CompanyMenuList
-        position: relative
-        cursor: default
-        span
-          padding-bottom: 8px
-        &:hover
-          .t-CompanyMenuHeader
-            opacity: 1
-            pointer-events: all
-            top: 24px
-            //animation: showHiddenCards .3s linear
-
     a
       text-decoration: none
       color: #fff
@@ -440,3 +409,42 @@ header
     transform: translateY(0)
     opacity: 1
 
+
+.t-smallMenuCard
+  position: absolute
+  top: 24px
+  left: -50%
+  transform: translateX(-10%)
+  display: block
+  list-style: none
+  margin: 0
+  padding: 32px
+  border-radius: 24px
+  background-color: #fff
+  box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.24)
+  transition: .2s ease-in-out
+  li
+    cursor: default
+    display: block
+    margin-bottom: 8px
+    &:last-child
+      margin: 0
+    a
+      cursor: pointer
+      display: inline-block
+      color: #4F4F4F
+      font-size: 14px
+      transition: .4s ease
+      text-decoration: none
+      white-space: nowrap
+      &:hover
+        color: #26bfd1
+  &.t-CompanyMenuHeader
+    transform: translateX(-6%)
+    opacity: 0
+    pointer-events: none
+    top: 50px
+  &.t-buyerMenuHeader
+    opacity: 0
+    pointer-events: none
+    top: 50px

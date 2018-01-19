@@ -112,7 +112,7 @@ $(document).ready(function(){
 
         var footerOffset =  $('#footer').offset().top - 400;
         if(footerOffset <= (windowTop + windowHeight)) {
-            $('.t-moon').css('bottom','+' + ((windowTop + windowHeight - footerOffset)/2) + 'px');
+            $('.t-moonMove').css('bottom','+' + ((windowTop + windowHeight - footerOffset)/2) + 'px');
         }
         if(window.location.pathname === '/'){
             var sliderOffset = $('.t-jumboWrapper, .t-standartMainContainer').offset().top - 50;
@@ -190,6 +190,35 @@ $(window).on('load', function () {
     // setInterval(function () {
     //     randomVa();
     // },3000)
+
+
+    // Accordeon
+
+    var getAccordBtn = $('.t-openAccordItem');
+    var getAccordContent = $('.t-accordItemContent');
+
+    $('body').on('click', '.t-openAccordItem', function () {
+        if($('body').hasClass('animate')){
+            return false;
+        }
+        $('body').addClass('animate');
+        if ($(this).hasClass('isActive')){
+            $(this).next(getAccordContent).slideUp(400);
+            $(this).removeClass('isActive');
+        } else {
+            $(getAccordBtn).not(this).next(getAccordContent).slideUp(400);
+            $(getAccordBtn).not(this).removeClass('isActive');
+
+            $(this).next(getAccordContent).slideDown(400);
+            $(this).addClass('isActive');
+        }
+        setTimeout(function () {
+            $('body').removeClass('animate');
+        }, 400);
+    });
+
+
+
 });
 
 // Call Review Dialog
