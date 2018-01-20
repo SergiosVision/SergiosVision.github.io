@@ -55,13 +55,39 @@ $('.t-sortArrowDown').on('click', function (e) {
 
 
 $(document).ready(function(){
+    if(window.innerWidth > 980){
+        $('.t-allCategoriesSlider').reviewsSlider();
+    } else {
+        $('.swiper-slide').each(function (res, i) {
+            $(this).addClass('active');
+        });
+        $('.swiper-wrapper').addClass('owl-carousel');
+    }
+    if(window.innerWidth <= 768){
+        $('.t-cardsHolder').addClass('owl-carousel');
+        $('.t-bottomInfoCardsHolder').addClass('owl-carousel');
+    }
     // Init OWL Carousel
-    $(".owl-carousel").owlCarousel({
+    $(".t-jumboInner.owl-carousel").owlCarousel({
         items:1,
         loop: true,
         autoplay: true,
         autoplayTimeout: 7000,
         smartSpeed: 700
+    });
+    $(".swiper-wrapper.owl-carousel").owlCarousel({
+        items:1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 7000,
+        smartSpeed: 700,
+        center: true,
+        dots: true,
+    });
+    $('.t-cardsHolder.owl-carousel, .t-bottomInfoCardsHolder.owl-carousel').owlCarousel({
+        items:1,
+        center: true,
+        dots: true,
     });
 
     $('.t-insideImg').magnificPopup({
@@ -95,8 +121,6 @@ $(document).ready(function(){
         e.preventDefault();
         $.magnificPopup.close();
     });
-
-    $('.t-allCategoriesSlider').reviewsSlider();
     // Init simple Parallax
 
     $(window).scroll(function(){

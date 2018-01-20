@@ -7,18 +7,138 @@
     left: 40%
     top: 50%
     transform: none
+  header.t-stickyHeader
+    .brand-logo
+      top: auto
+
+@media (max-width: 1032px)
+  .t-allCategories
+  .t-prevBtn
+    left: 125px
+  .t-nextBtn
+    right: 125px
+
 
 @media (max-width: 1000px)
   header .brand-logo
     left: 35%
+  .t-mainPage
+    width: 100%
+  .t-jumboWrapper .t-jumboInner
+    width: 700px
+    height: auto
+  .t-jumboWrapper .t-jumboInner .slide img
+    width: 100%
+    height: 100%
+    object-fit: cover
+  footer .t-footerMain
+    .mainWidth
+      width: auto
+      margin-bottom: 24px
 
 @media (max-width: 980px)
-  header .t-catalog
-    width: auto
+  .t-brands, .t-trend, .t-discounts, .t-bottomInfo
+    width: 100%
+  .t-cardsHolder
+    width: 95%
+    padding: 0 24px
+    margin: 24px auto 0 auto
+  .t-bottomInfo
+    padding: 0 24px
+    .t-bottomInfoCardsHolder
+      flex-wrap: wrap
+  header
+    position: fixed
+    .t-catalog
+      width: auto
   header .t-catalog .buyerAndCompanyWrapper
     display: none
   header .brand-logo
     position: static
     left: 0
-  .t-mainPage
+  .t-allCatSliderBtn
+    display: none
+  .t-allCategories
     width: 100%
+    .t-allCategoriesSlider
+      margin: 24px auto 0 auto
+      width: 280px
+      height: 300px
+      overflow: initial
+      .swiper-wrapper
+        .owl-item
+          height: 280px
+        .owl-dots
+          bottom: -25px
+        .swiper-slide
+          margin: 0
+          &.active
+            border-radius: 0!important
+
+@media (max-width: 768px)
+  header
+    padding: 24px 24px 0 24px
+  .t-catalogWord
+    display: none
+  .t-jumboWrapper .t-jumboInner
+    width: 570px
+    height: auto
+  .t-brands
+    width: 95%
+    padding: 0 24px
+  .t-cardsHolder
+    padding: 0
+    width: 304px!important
+    .t-goodsCard
+      width: 100%
+      border-radius: 0
+      &:before, &:after, .t-cardFigureHolder, .t-addToCart
+        display: none
+    .owl-item
+      width: 304px!important
+      border-radius: 24px
+    .owl-dots
+      bottom: -25px
+    .owl-stage-outer
+      height: 454px
+  .t-bottomInfo
+    .t-bottomInfoCardsHolder
+      margin: 0 auto
+      width: 272px
+      .t-bottomInfoCard
+        width: 100%
+      .owl-stage-outer
+        height: 346px
+
+
+@media (max-width: 640px)
+  .t-jumboWrapper .t-jumboInner
+    width: 440px
+    height: auto
+  .t-allCategories
+    .t-allCategoriesSlider
+      width: 224px
+      height: 300px
+  footer .t-footerMain
+    flex-direction: column
+    .mainWidth
+      margin-right: 0
+
+@media (max-width: 540px)
+  .t-jumboWrapper .t-jumboInner
+    width: 320px
+    height: auto
+    .t-jumboInfo
+      padding: 32px 0 0 32px
+  .t-brands .t-brandsList
+    flex-direction: column
+    flex-wrap: nowrap
+    li
+      margin: 0 0 16px 0!important
+      a
+        width: 100%
+
+@media (max-width: 440px)
+  .t-footerKnowAboutFieldWrap
+    button.t-btn
+      width: 100%
