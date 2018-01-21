@@ -1,14 +1,8 @@
 extends _layout
 block content
-    main
+    main.t-mediaClassCtrl
         section.t-guarantee.t-mainContainerSection
             h2.t-sectionTitle  Подарки с юмором
-            div.t-breadCrumbs
-                ul
-                    li
-                        a(href="#") Главная
-                    li
-                        a(href="#") Гарантия
             div.t-standartMainContainer
                 h3 Условия гарантийного обслуживания
                 p Все условия гарантийного обслуживания, обмена и возврата товара применимы к товарам, приобретенным в розничной сети, интернет-магазине и электронном каталоге.
@@ -20,4 +14,3 @@ block content
                     br
 
         section.t-bottomInfo
-            + tBottomCardHolder()

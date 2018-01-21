@@ -1,3 +1,9 @@
+@media (max-width: 1350px)
+  .t-mainContainerSection
+    width: 90%
+  main.t-mediaClassCtrl
+    width: 100%
+
 @media (max-width: 1200px)
   .t-firstLogo
     display: none
@@ -74,6 +80,16 @@
           margin: 0
           &.active
             border-radius: 0!important
+  .t-goodsOrderWrapper
+    .t-aboutGoodsCard
+      flex-direction: column
+      max-height: initial
+      min-height: initial
+      .t-aboutGoodsImgContainer
+        height: 512px
+        margin: 0 auto
+  .t-interesting
+    width: 100%
 
 @media (max-width: 768px)
   header
@@ -110,6 +126,10 @@
       .owl-stage-outer
         height: 346px
 
+@media (max-width: 700px)
+  .t-feedBack.t-mainContainerSection
+    width: 100%
+    padding: 0 8px
 
 @media (max-width: 640px)
   .t-jumboWrapper .t-jumboInner
@@ -142,3 +162,12 @@
   .t-footerKnowAboutFieldWrap
     button.t-btn
       width: 100%
+  button.t-feedBackSend
+    width: 100%
+  .t-contactsSection.t-mainContainerSection
+    padding: 0 8px
+  .t-questionsAndAnswers.t-mainContainerSection
+    width: 100%
+    padding: 0 8px
+  .t-contactsContainer .t-contactAddressWrapper .t-contactAddress
+    font-size: 2rem
