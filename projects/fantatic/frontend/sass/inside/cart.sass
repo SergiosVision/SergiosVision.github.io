@@ -73,46 +73,45 @@
             border-radius: 50%
             position: absolute
             cursor: pointer
+            background-color: #fff
           .t-quantityUp
             left: 41px
             &:before, &:after
               content: ""
-              display: inline-block
+              display: block
               position: absolute
               height: 2px
               background-color: hsla(0,0%,80%,.3)
               transition: .4s ease
-            &:after
-              left: 10px
-              top: 8px
-              width: 2px
-            &:before
               left: 0
               right: 0
-              top: 10px
+              top: 0
+              bottom: 0
+              margin: auto
+            &:after
+              top: -4px
+              width: 2px
+            &:before
               width: 6px
-              display: block
-              margin: 0 auto
           .t-quantityDown
             right: 41px
             &:before, &:after
               content: ""
-              display: inline-block
+              display: block
               position: absolute
               height: 2px
               background-color: hsla(0,0%,80%,.3)
               transition: .4s ease
-            &:after
-              left: 10px
-              top: 11px
-              width: 2px
-            &:before
               left: 0
               right: 0
-              top: 9px
+              top: 0
+              bottom: 0
+              margin: auto
+            &:after
+              top: 4px
+              width: 2px
+            &:before
               width: 6px
-              display: block
-              margin: 0 auto
 
 
 

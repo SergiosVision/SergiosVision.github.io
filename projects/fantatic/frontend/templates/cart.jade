@@ -1,26 +1,26 @@
 mixin cartCard()
     div.t-cartGoodsCard
-        div.t-cardInsideBlock
+        div.t-cardInsideBlock.t-cardImgAndNameSection
             img.t-cartItemImage(src="/images/goodimage.png")
             span.t-cartItemName Neca Prometheus Series 1 Deluxe Pressure Suit Engineer
-        div.t-cardInsideBlock
+        div.t-cardInsideBlock.t-cartItemPriceOneSection
             span.t-bold.t-cartItemPrice 32 500
                 span.t-bold.t-rubSign ₽
-        div.t-cardInsideBlock
+        div.t-cardInsideBlock.t-cardQuantitySection
             div.t-quantityItemCtrl
                 button.t-quantityBtn.t-quantityDown
                 input.t-quantityInput(value="10")
                 button.t-quantityBtn.t-quantityUp
-        div.t-cardInsideBlock
+        div.t-cardInsideBlock.t-cartItemPriceTotalSection
             span.t-bold.t-itemTotalPrice 325 000
                 span.t-bold.t-rubSign ₽
-        div.t-cardInsideBlock
+        div.t-cardInsideBlock.t-cartCloseSection
             span.t-removeFromCartBtn.t-smallCloseBtn
 
 extends _layout
 block content
-    main
-        section.t-mainContainerSection
+    main.t-mediaClassCtrl
+        section.t-cartSection.t-mainContainerSection
             h2.t-sectionTitle  Корзина
             div.t-breadCrumbs
                 ul
@@ -72,4 +72,3 @@ block content
 
 
         section.t-bottomInfo
-            + tBottomCardHolder()

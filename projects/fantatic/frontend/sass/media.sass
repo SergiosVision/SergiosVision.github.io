@@ -4,6 +4,11 @@
   main.t-mediaClassCtrl
     width: 100%
 
+@media (max-width: 1300px)
+  .t-catalogWrapper
+    width: 100%
+
+
 @media (max-width: 1200px)
   .t-firstLogo
     display: none
@@ -16,6 +21,43 @@
   header.t-stickyHeader
     .brand-logo
       top: auto
+
+@media (max-width: 1439px) and (min-width: 1201px)
+  .t-goodsOrderWrapper .t-aboutGoodsCard .t-aboutGoodsImgContainer .t-insideImg .t-insideImgHolder
+    width: 400px
+    height: 400px
+    margin: auto
+    a
+      display: block
+      height: 100%
+    img
+      height: 400px
+      max-height: 400px
+
+@media (max-width: 1200px) and (min-width: 981px)
+  .t-goodsOrderWrapper .t-aboutGoodsCard .t-aboutGoodsImgContainer .t-insideImg .t-insideImgHolder
+    width: 350px
+    height: 350px
+    margin: auto
+    a
+      display: block
+      height: 100%
+    img
+      height: 350px
+      max-height: 350px
+
+@media (max-width: 1090px)
+  .t-cartGoodsListWrapper .t-cartGoodsListBodyOutput .t-cartGoodsCard
+    .t-cardInsideBlock
+      &:first-child
+        width: 40.6%
+      &:nth-child(2)
+        width: 10.6%
+      &:nth-child(3)
+        width: 10.4%
+      &:nth-child(4)
+        width: 13.3%
+
 
 @media (max-width: 1032px)
   .t-allCategories
@@ -42,7 +84,13 @@
       width: auto
       margin-bottom: 24px
 
+
 @media (max-width: 980px)
+  .t-goodsOrderWrapper .t-aboutGoodsCard .t-aboutGoodsImgContainer
+    width: 512px
+  .t-goodsOrderWrapper .t-aboutGoodsCard .t-aboutGoodsInfoMain
+    width: 100%
+    height: auto
   .t-brands, .t-trend, .t-discounts, .t-bottomInfo
     width: 100%
   .t-cardsHolder
@@ -91,7 +139,84 @@
   .t-interesting
     width: 100%
 
+@media (min-width: 769px)
+  .t-goodsCard
+    &:hover
+      .t-imgOverlay
+        opacity: 1
+        animation: bounce .4s linear
+        img
+          transform: translate(-50%, -50%) rotate(0deg)
+      .t-addToCart
+        opacity: 1
+        transform: translateY(-50px)
+        pointer-events: all
+      &:after, &:before
+        opacity: 1
+      .t-goodsCardImg
+        transform: scale(1.1)
+      .t-absImgHolder
+        width: 176px
+        height: 176px
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        border-radius: 50%
+        animation: bounce .4s cubic-bezier(0.25, 0.23, 0.21, 0.68)
+        img
+          border-radius: 50%
+      .t-goodsCardInfo
+        transform: translateY(-34px)
+      .t-cardFigureOne, .t-cardFigureTwo, .t-cardFigureThird
+        opacity: 1
+      .t-cardFigureOne
+        right: -40px
+        top: 24px
+      .t-cardFigureTwo
+        left: -5px
+        top: 24px
+      .t-cardFigureThird
+        bottom: -23px
+        right: 24px
+
+
+  .t-goodsOrderWrapper .t-aboutGoodsCard .t-aboutGoodsImgContainer
+    &:hover
+      .t-insideImgHolder
+        position: absolute
+        transform: scale(.6)
+        border-radius: 50%
+        overflow: hidden
+        animation: bounce2 .4s cubic-bezier(0.25, 0.23, 0.21, 0.68)
+        img
+          border-radius: 50%
+          transform: scale(1.1)
+          transition: .4s cubic-bezier(0.25, 0.23, 0.21, 0.68)
+      .t-imgOverlay
+        opacity: 1
+        .t-ScaledCard
+          transform: none
+
+  .t-btn
+    &:hover
+      box-shadow: none
+      &:after
+        opacity: 1
+    &:active
+      box-shadow: none!important
+      &:after
+        opacity: 0
+      &:before
+        opacity: 1
+
 @media (max-width: 768px)
+  .t-imgOverlay
+    display: none
+  .t-catalogWrapper
+    .t-cardsHolder
+      width: 100%!important
+      .t-goodsCard
+        border-radius: 24px
   header
     padding: 24px 24px 0 24px
   .t-catalogWord
@@ -125,6 +250,43 @@
         width: 100%
       .owl-stage-outer
         height: 346px
+  .t-cartGoodsListWrapper .t-cartGoodsListBodyOutput .t-cartGoodsCard
+    flex-direction: column
+    position: relative
+    .t-cartCloseSection, .t-itemTotalPrice
+      position: absolute
+      right: 0
+    .t-itemTotalPrice
+      bottom: 35px
+    .t-cartItemPriceOneSection
+      display: none
+    .t-cardQuantitySection
+      margin-top: 24px
+    .t-cardInsideBlock
+      width: auto!important
+      .t-quantityItemCtrl
+        margin-left: 24px
+        .t-quantityDown
+          right: 46px
+        .t-quantityUp
+          left: 46px
+        .t-quantityBtn
+          width: 40px
+          height: 40px
+        .t-quantityInput
+          width: 60px
+          height: 40px
+      .t-cartItemName
+        font-size: 18px
+        margin-top: 8px
+      .t-cartItemImage
+        width: 45px
+        height: 45px
+      &:first-child
+        flex-direction: column
+        align-items: flex-start
+
+
 
 @media (max-width: 700px)
   .t-feedBack.t-mainContainerSection
@@ -132,6 +294,9 @@
     padding: 0 8px
 
 @media (max-width: 640px)
+  .t-mainContainerSection
+    width: 100%
+    padding: 0 8px
   .t-jumboWrapper .t-jumboInner
     width: 440px
     height: auto
@@ -139,10 +304,38 @@
     .t-allCategoriesSlider
       width: 224px
       height: 300px
+  .t-goodsOrderWrapper .t-aboutGoodsCard .t-aboutGoodsImgContainer
+    width: 100%
+    height: 304px
+    .t-insideImg .t-insideImgHolder img
+      max-height: 304px
+  .t-goodsOrderWrapper .t-aboutGoodsCard .t-aboutGoodsInfoMain .t-aboutGoodsInfoMainBody .t-featuresOfGoodsWrapper
+    display: none
+  .t-aboutGoodsTabs
+    .t-tabsControls
+      display: none!important
+    .t-mobileTabsCtrlHoleder
+      display: flex!important
   footer .t-footerMain
     flex-direction: column
     .mainWidth
       margin-right: 0
+  .t-goodsOrderWrapper .t-aboutGoodsTabs .t-tabsContiner .t-tabsHeader
+    flex-direction: column
+    .t-addReview
+      width: 100%
+      margin-bottom: 24px
+
+@media (max-width: 590px)
+  .t-orderCardFormWrapper .t-orderCardFormFooter .t-cartBtnsMain
+    .t-sendOrder
+      width: 100%
+      margin-bottom: 8px
+      margin-right: 0
+    a.t-secondBtn
+      width: 100%
+      text-align: center
+
 
 @media (max-width: 540px)
   .t-jumboWrapper .t-jumboInner
@@ -158,16 +351,61 @@
       a
         width: 100%
 
+@media (max-width: 480px)
+  .t-orderCardFormTitle.t-midTitleMain,
+  .t-cartGoodsListTitle.t-midTitleMain
+    font-size: 16px
+  .t-cartSection.t-mainContainerSection
+    width: 100%
+    padding: 0 8px
+  .t-standartMainContainer.t-orderCardFormWrapper,
+  .t-standartMainContainer.t-cartGoodsListWrapper
+    padding: 16px
+  .t-dialogCard
+    padding: 24px 16px 16px 16px
+    .t-dialogCardTitle
+      font-size: 16px
+  .t-btn
+    width: 100%
+  .t-starHolder.t-reviewsDialogRating
+    justify-content: center
+    .t-star
+      width: 40px
+      height: 38px
+      svg
+        width: 40px
+        height: 38px
+
 @media (max-width: 440px)
   .t-footerKnowAboutFieldWrap
     button.t-btn
       width: 100%
   button.t-feedBackSend
     width: 100%
-  .t-contactsSection.t-mainContainerSection
-    padding: 0 8px
-  .t-questionsAndAnswers.t-mainContainerSection
+  .t-mainContainerSection
     width: 100%
     padding: 0 8px
+  .t-contactsSection.t-mainContainerSection
+    padding: 0 8px
+  .t-questionsAndAnswers.t-mainContainerSection,
+  .t-goodsOrderWrapper.t-mainContainerSection,
+  .t-guarantee.t-mainContainerSection
+    width: 100%
+    padding: 0 8px
+  .t-goodsOrderWrapper .t-aboutGoodsTabs,
+  .t-feedBack .t-standartMainContainer,
+  .t-questionsAndAnswers .t-standartMainContainer,
+  .t-guarantee .t-standartMainContainer
+    padding: 24px 16px
   .t-contactsContainer .t-contactAddressWrapper .t-contactAddress
     font-size: 2rem
+  .t-goodsOrderWrapper .t-aboutGoodsCard .t-aboutGoodsInfoMain .t-aboutGoodsInfoMainBody .t-addToCartAndSocial
+    flex-direction: column
+    .t-addToCart
+      width: 100%
+      margin-bottom: 24px
+  .t-feedBackFormCardHeader .t-feedbackTitle.t-midTitleMain,
+  .t-accordHolder .t-accordItem .t-openAccordItem .t-accordHeading
+  .t-feedBack.t-mainContainerSection .t-smallUserHelpTitle,
+  .t-feedBackFormCardWrapper .t-feedbackTitle
+    font-size: 16px

@@ -114,6 +114,14 @@ block content
                         a(href="#characteristics") Характеристики
                     li
                         a(href="#reviews") Отзывы
+                div.t-mobileTabsCtrlHoleder
+                    select.t-mobileTabsCtrl
+                        option(value="#description") Описание
+                        option(value="#characteristics") Характеристики
+                        option(value="#reviews") Отзывы
+                    div.t-arrowHolder
+                        img(src="/images/icons/mobArrow.svg")
+
                 div.t-tabsDescription.t-tabsContiner#description
                     - for (var i = 0; i < 8; i++)
                         h2.t-sectionTitle Первоклассные спортивные часы
@@ -175,7 +183,7 @@ block content
         section.t-bottomInfo
 
     div.t-reviewsDialog.t-dialogCard
-        div.t-closeBtn.t-reviewsDialogClose
+        div.t-smallCloseBtn.t-reviewsDialogClose
         div.t-reviewsHeader.t-dialogCardHeader
             h3.t-dialogCardTitle Ваша оценка
             ul.t-starHolder.t-reviewsDialogRating
@@ -212,5 +220,8 @@ block content
                     label(for="rewEmailForm").t-dialogMidTitle Электронная почта
                     input(type="email" id="rewEmailForm").t-dialogInputs
         div.t-reviewsFooter
+            div.t-checkboxHolder.t-checkBoxesCtrl
+                input(type="checkbox" id="agree").t-checkbox.t-hideSomething
+                label(for="agree").t-checkControl Согласен на обработку данных
             button.t-btn
                 span Отправить

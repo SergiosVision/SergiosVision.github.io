@@ -46,6 +46,16 @@ $('.t-checkbox').on('change', function () {
     }
 });
 
+
+// Mobile Select Ctrl
+
+$('.t-mobileTabsCtrl').on('change', function () {
+    var getVal = $(this).val();
+    $('.t-tabsContiner').hide();
+    $(getVal).fadeIn(400);
+
+});
+
 // Rotate Sorting Arrow
 
 $('.t-sortArrowDown').on('click', function (e) {
@@ -63,7 +73,7 @@ $(document).ready(function(){
         });
         $('.swiper-wrapper').addClass('owl-carousel');
     }
-    if(window.innerWidth <= 768){
+    if(window.innerWidth <= 768 && !$('.t-cardsHolder').hasClass('t-sliderCtrl')){
         $('.t-cardsHolder').addClass('owl-carousel');
         $('.t-bottomInfoCardsHolder').addClass('owl-carousel');
     }
@@ -247,27 +257,73 @@ $(window).on('load', function () {
 
 // Call Review Dialog
 
-$('.t-reviewsDialog').dialog({
-    autoOpen: false,
-    width: 640,
-    modal: true,
-    draggable: false,
-    open: function(event, ui) {
-        $('.ui-dialog-titlebar-close', ui.dialog | ui).hide();
-        $('.ui-widget-overlay').addClass('t-dialogOverlay');
-    },
-    create: function (event, ui) {
-        $(event.target).parent().css('position', 'fixed');
-    },
-    show: {
-        effect: "fade",
-        duration: 400
-    },
-    hide: {
-        effect: "fade",
-        duration: 300
-    }
-});
+if (window.innerWidth >= 680) {
+    $('.t-reviewsDialog').dialog({
+        autoOpen: false,
+        width: 640,
+        modal: true,
+        draggable: false,
+        open: function (event, ui) {
+            $('.ui-dialog-titlebar-close', ui.dialog | ui).hide();
+            $('.ui-widget-overlay').addClass('t-dialogOverlay');
+        },
+        create: function (event, ui) {
+            $(event.target).parent().css('position', 'fixed');
+        },
+        show: {
+            effect: "fade",
+            duration: 400
+        },
+        hide: {
+            effect: "fade",
+            duration: 300
+        }
+    });
+} else if (window.innerWidth >= 480) {
+    $('.t-reviewsDialog').dialog({
+        autoOpen: false,
+        width: 440,
+        modal: true,
+        draggable: false,
+        open: function (event, ui) {
+            $('.ui-dialog-titlebar-close', ui.dialog | ui).hide();
+            $('.ui-widget-overlay').addClass('t-dialogOverlay');
+        },
+        create: function (event, ui) {
+            $(event.target).parent().css('position', 'fixed');
+        },
+        show: {
+            effect: "fade",
+            duration: 400
+        },
+        hide: {
+            effect: "fade",
+            duration: 300
+        }
+    });
+} else {
+    $('.t-reviewsDialog').dialog({
+        autoOpen: false,
+        width: 304,
+        modal: true,
+        draggable: false,
+        open: function (event, ui) {
+            $('.ui-dialog-titlebar-close', ui.dialog | ui).hide();
+            $('.ui-widget-overlay').addClass('t-dialogOverlay');
+        },
+        create: function (event, ui) {
+            $(event.target).parent().css('position', 'fixed');
+        },
+        show: {
+            effect: "fade",
+            duration: 400
+        },
+        hide: {
+            effect: "fade",
+            duration: 300
+        }
+    });
+}
 $('body').on('click', '.t-addReview', function (e) {
     e.preventDefault();
     $(".t-reviewsDialog").dialog("open");

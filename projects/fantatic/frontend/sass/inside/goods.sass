@@ -8,7 +8,7 @@
     max-height: 512px
     min-height: 512px
     .t-aboutGoodsImgContainer
-      width: 512px
+      width: 39.51%
       .t-hiddenImages
         visibility: hidden
         opacity: 0
@@ -34,30 +34,19 @@
           a
             outline: none
             display: block
-      &:hover
-        .t-insideImgHolder
-          position: absolute
-          transform: scale(.6)
-          border-radius: 50%
-          overflow: hidden
-          animation: bounce2 .4s cubic-bezier(0.25, 0.23, 0.21, 0.68)
-          img
-            border-radius: 50%
-            transform: scale(1.1)
-            transition: .4s cubic-bezier(0.25, 0.23, 0.21, 0.68)
-        .t-imgOverlay
-          opacity: 1
-          .t-ScaledCard
-            transform: none
     .t-aboutGoodsInfoMain
       padding: 24px 32px
       border-left: 1px solid #E0E0E0
+      width: 60.49%
       .t-titleOfGoods
         color: #1A1A1A
         font-size: 26px
         font-weight: bold
         margin: 0
         margin-bottom: 8px
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
       .t-codeOfGoods
         display: inline-block
         font-size: 14px
@@ -169,6 +158,22 @@
     padding: 32px
     background-color: #FFF
     border-radius: 24px
+    .t-mobileTabsCtrlHoleder
+      display: none
+      padding-bottom: 16px
+      border-bottom: 1px solid #E0E0E0
+      justify-content: space-between
+      .t-mobileTabsCtrl
+        width: 100%
+        font-size: 16px
+        font-weight: bold
+        outline: none
+        border: none
+        background-color: transparent
+        -webkit-appearance: none
+        text-indent: 1px
+        option
+          outline: none
     .t-sectionTitle
       color: #1A1A1A
       text-align: left

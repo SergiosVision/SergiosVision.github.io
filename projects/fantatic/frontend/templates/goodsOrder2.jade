@@ -106,6 +106,14 @@ block content
                         a(href="#characteristics") Характеристики
                     li
                         a(href="#reviews") Отзывы
+                div.t-mobileTabsCtrlHoleder
+                    select.t-mobileTabsCtrl
+                        option(value="#description") Описание
+                        option(value="#characteristics") Характеристики
+                        option(value="#reviews") Отзывы
+                    div.t-arrowHolder
+                        img(src="/images/icons/mobArrow.svg")
+
                 div.t-tabsDescription.t-tabsContiner#description
                     - for (var i = 0; i < 8; i++)
                         h2.t-sectionTitle Первоклассные спортивные часы

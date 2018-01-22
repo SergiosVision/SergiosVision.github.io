@@ -171,16 +171,6 @@ main
     transition: opacity .4s ease
     z-index: 2
     opacity: 0
-  &:hover
-    box-shadow: none
-    &:after
-      opacity: 1
-  &:active
-    box-shadow: none!important
-    &:after
-      opacity: 0
-    &:before
-      opacity: 1
 
 
 .t-showMoreButton
@@ -478,43 +468,6 @@ main
     margin: 0 auto
     transform: translateY(-18px)
     pointer-events: none
-  &:hover
-    .t-imgOverlay
-      opacity: 1
-      animation: bounce .4s linear
-      img
-        transform: translate(-50%, -50%) rotate(0deg)
-    .t-addToCart
-      opacity: 1
-      transform: translateY(-50px)
-      pointer-events: all
-    &:after, &:before
-      opacity: 1
-    .t-goodsCardImg
-      transform: scale(1.1)
-    .t-absImgHolder
-      width: 176px
-      height: 176px
-      left: 50%
-      top: 50%
-      transform: translate(-50%, -50%)
-      border-radius: 50%
-      animation: bounce .4s cubic-bezier(0.25, 0.23, 0.21, 0.68)
-      img
-        border-radius: 50%
-    .t-goodsCardInfo
-      transform: translateY(-34px)
-    .t-cardFigureOne, .t-cardFigureTwo, .t-cardFigureThird
-      opacity: 1
-    .t-cardFigureOne
-      right: -40px
-      top: 24px
-    .t-cardFigureTwo
-      left: -5px
-      top: 24px
-    .t-cardFigureThird
-      bottom: -23px
-      right: 24px
 
 
 .t-catalogHeaderTitle
@@ -655,6 +608,12 @@ main
   border-radius: 24px
   height: 432px
   padding: 32px
+  .t-smallCloseBtn.t-reviewsDialogClose
+    position: absolute
+    right: 10px
+    top: -38px
+    &:after, &:before
+      background-color: #fff
   .t-dialogCardHeader
     margin-bottom: 32px
   .t-dialogCardTitle
@@ -678,6 +637,8 @@ main
     padding-bottom: 8px
     margin-bottom: 16px
     color: #1A1A1A
+    &::-webkit-input-placeholder
+      color: #E0E0E0
 
 
 .t-closeBtn
