@@ -6,8 +6,13 @@
 
 @media (max-width: 1300px)
   .t-catalogWrapper
-    width: 100%
-
+    width: 90%
+    .t-sidesWrappper
+      .t-catalogLeft
+        .t-cardsHolder
+          justify-content: flex-start
+          .t-goodsCard
+            @include bGrid(2, 1.6%)
 
 @media (max-width: 1200px)
   .t-firstLogo
@@ -138,6 +143,47 @@
         margin: 0 auto
   .t-interesting
     width: 100%
+  .t-catalogWrapper
+    width: 100%
+    padding: 0 24px
+    .t-sidesWrappper
+      .t-catalogLeft
+        .t-cardsHolder
+          width: 100%
+          padding: 0
+          justify-content: flex-start
+          .t-goodsCard
+            @include bGrid(2, 1.6%)
+
+@media (max-width: 900px)
+  .t-catalogWrapper
+    width: 100%
+    padding: 0 24px
+    .t-sidesWrappper
+      .t-catalogLeft
+        .t-cardsHolder
+          width: 100%
+          padding: 0
+          justify-content: flex-start
+          .t-goodsCard
+            @include bGrid(2, 1.6%)
+
+@media (max-width: 880px)
+  .t-catalogWrapper
+    width: 100%
+    padding: 0 24px
+    .t-sidesWrappper
+      .t-catalogRight
+        width: 35%
+      .t-catalogLeft
+        width: 60%
+        .t-cardsHolder
+          width: 100%
+          padding: 0
+          justify-content: flex-start
+          .t-goodsCard
+            margin: 0 auto 16px auto!important
+            width: 304px!important
 
 @media (min-width: 769px)
   .t-goodsCard
@@ -326,6 +372,27 @@
       width: 100%
       margin-bottom: 24px
 
+@media (max-width: 680px)
+  .t-catalogMain
+    width: 100%
+    padding: 0 8px
+  .t-catalogWrapper
+    padding: 0!important
+    .t-sidesWrappper
+      .t-catalogRight
+        display: none
+      .t-catalogLeft
+        width: 100%
+        .t-cardsHolder
+          width: 100%
+          padding: 0
+          flex-direction: column
+          align-items: center
+          .t-goodsCard
+            margin: 0 0 16px 0!important
+            width: 100%
+
+
 @media (max-width: 590px)
   .t-orderCardFormWrapper .t-orderCardFormFooter .t-cartBtnsMain
     .t-sendOrder
@@ -409,3 +476,13 @@
   .t-feedBack.t-mainContainerSection .t-smallUserHelpTitle,
   .t-feedBackFormCardWrapper .t-feedbackTitle
     font-size: 16px
+
+@media (max-width: 380px)
+  .t-catalogWrapper
+    .t-sidesWrappper
+      .t-catalogRight
+      .t-catalogLeft
+        .t-cardsHolder
+          .t-goodsCard
+            width: 100%!important
+            padding: 32px 16px 0 16px

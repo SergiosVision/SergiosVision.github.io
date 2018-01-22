@@ -1,7 +1,6 @@
 .t-catalogWrapper
   margin: 40px auto 0 auto
   width: 1272px
-
   .t-sidesWrappper
     display: flex
     justify-content: space-between
@@ -10,6 +9,8 @@
       margin-top: 50px
     .t-catalogLeft
       width: 74.214%
+      .t-cardsHolder .t-goodsCard
+        @include bGrid(3, 1.6%)
     .t-catalogRight
       width: 23.89%
       .t-catalogRightContainer
