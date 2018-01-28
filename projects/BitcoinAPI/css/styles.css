@@ -44,6 +44,32 @@ ul {
     overflow: hidden;
 }
 
+.updateData {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 12px;
+    font-size: 17px;
+    color: #FF9900;
+    background-color: #fff;
+    border: 1px solid #FF9900;
+    border-radius: 7px;
+    transition: .3s ease-in-out;
+    outline: none;
+}
+
+.updateData:disabled, .updateData:hover:disabled {
+    background-color: #e2e2e2;
+    border-color: #fff;
+    color: #fff;
+    cursor: default;
+}
+
+.updateData:hover {
+    color: #ffffff;
+    background-color: #FF9900;
+    border-color: #fff;
+}
+
 .outputData .containerControls li .element-radio span.active {
     color: #ffffff;
     background-color: #FF9900;

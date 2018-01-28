@@ -1,5 +1,18 @@
 window.addEventListener('load', function () {
     getCoin(); // Call XHR Request
+    var getUpdateDataBtn = document.querySelector('.updateData');
+    getUpdateDataBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        getCoin();
+        document.body.classList.add('working');
+        if (document.body.classList.contains('working')) {
+            getUpdateDataBtn.setAttribute('disabled', true);
+        }
+        setTimeout(function () {
+            document.body.classList.remove('working');
+            getUpdateDataBtn.removeAttribute('disabled');
+        },2000);
+    }, false);
 });
 
 // Start XHR Function
