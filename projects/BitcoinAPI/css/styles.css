@@ -1,0 +1,106 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Calibri;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.outputData {
+    max-width: 600px;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.outputData .containerControls {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.outputData .containerControls li .element-radio {
+    cursor: pointer;
+}
+
+.outputData .containerControls li .element-radio span {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 12px;
+    font-size: 17px;
+    color: #FF9900;
+    background-color: #fff;
+    border: 1px solid #FF9900;
+    border-radius: 7px;
+    transition: .3s ease-in-out;
+    overflow: hidden;
+}
+
+.outputData .containerControls li .element-radio span.active {
+    color: #ffffff;
+    background-color: #FF9900;
+    border-color: #fff;
+}
+
+.outputData .containerControls li .element-radio:hover span {
+    color: #ffffff;
+    background-color: #FF9900;
+    border-color: #fff;
+}
+
+.outputData .containerControls li .radioCtrl {
+    position: absolute;
+    transform: translateY(-1000px);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.outputData .boxSwitch {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #FF9900;
+    text-align: center;
+    border-radius: 7px;
+    transition: .4s linear;
+}
+
+.outputData .boxSwitch.anim {
+    animation: boxAnim .4s linear;
+}
+
+.outputData .boxSwitch .usdCurrency {
+    font-size: 21px;
+    color: #FF9900;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.outputData .boxSwitch .currencyDescription,
+.outputData .boxSwitch .currencyRate{
+    font-size: 18px;
+    color: #FF9900;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.outputData .boxSwitch .currencyDescription span,
+.outputData .boxSwitch .currencyRate span{
+    font-weight: bold;
+}
+
+
+@keyframes boxAnim {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
