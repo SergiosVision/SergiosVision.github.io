@@ -1,0 +1,19 @@
+{
+  "name": "svg-example",
+  "version": "1.0.0",
+  "description": "Just Learn Svg",
+  "main": "index.js",
+  "scripts": {
+    "sprite": "spritesh --input icons/menu/SVG-optim --output icons/menu/menu-sprite.svg --prefix icon-",
+    "presprite": "svgo -f icons/menu/SVG-raw -o icons/menu/SVG-optim"
+  },
+  "keywords": [
+    "Learn"
+  ],
+  "author": "SergiosVision",
+  "license": "MIT",
+  "devDependencies": {
+    "spritesh": "^1.2.0",
+    "svgo": "^0.7.2"
+  }
+}
