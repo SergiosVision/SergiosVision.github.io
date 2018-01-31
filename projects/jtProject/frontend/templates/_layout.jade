@@ -1,0 +1,61 @@
+mixin card (changeImage)
+    div.t-newsCardWrapper
+        div.t-newsCatNameAndDateHolder
+            span.t-newsDate 14 января
+            span.t-newsCategory Категория
+        div.t-newsCard
+            div.t-newsCardImg
+                img(src=""+ changeImage +"")
+            div.t-newsCardInfoHolder
+                div.t-newsContent
+                    div.t-newsContentBody
+                        div.t-newsParams
+                            ul
+                                li 475
+                                li 987
+                                li 340K
+                                li 2M
+                        h1.t-newsTitle Заголовок статьи например, не в одну, а в три строки
+                        div.t-newsAuthorHolder
+                            div.t-newsAuthorImg
+                                img(src="http://s3.amazonaws.com/hiphopdx-production/2017/09/Quavo-Trap-Paris-800x600.jpg")
+                            div.t-newsAuthorName
+                                span.t-newsFirstName Quavo
+                                span.t-newsLastName Marshall
+                                span.t-newsProfession Бизнесмен
+                        h2.t-newsCategory Экспертное мнение
+                        ul.t-newsTags
+                            li Дизайн,
+                            li маркетинг,
+                            li бизнес,
+                            li CEO,
+                            li программирование
+                        span.t-newsDate 14 января
+                        div.t-newsContentShare
+                            span Ico
+                            span Ico
+
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0")
+        meta(http-equiv="x-ua-compatible" content="ie=edge")
+        title ЖТ
+        link(rel='stylesheet', href="css/plugins/normalize.css")
+        link(rel='stylesheet', href="css/plugins/jquery.scrollbar.css")
+        link(rel='stylesheet', href="css/plugins/jInvertScroll.css")
+        link(rel='stylesheet', href="css/main.min.css")
+    body
+        div.t-mainWrapper
+            include _header
+            div.t-contentWrapper
+                block content
+
+        script(src="js/vendor.min.js")
+        script(src="js/plugins/jquery.scrollbar.min.js")
+        script(src="js/plugins/jquery.jInvertScroll.min.js")
+        script(src="js/plugins/svg-injector.min.js")
+        script(src="js/plugins/svg4everybody.min.js")
+        script(src="js/main.min.js")

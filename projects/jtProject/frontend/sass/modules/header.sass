@@ -1,0 +1,62 @@
+header
+  display: flex
+  padding: 35px 56px 0 40px
+  margin-bottom: 34px
+  .t-logoWrapper
+    display: inline-block
+    margin-right: 162px
+    .t-logo
+      width: 133px
+      height: 74px
+      background: url("/images/logo/logo.png") no-repeat
+      background-size: contain
+  .t-sortAndCatWrapper
+    display: flex
+    width: 100%
+    align-items: center
+    .t-sortContainer, .t-categoriesContainer, .t-headerButtons
+      display: flex
+      list-style: none
+    .t-sortContainer
+      li:first-child
+        margin-right: 40px
+      li:not(:first-child)
+        margin-right: 8px
+      li
+        a
+          @include links()
+          @include fontsSizes(14, bold, 17)
+          color: $tBlackSec
+    .t-categoriesContainer
+      margin-left: 40px
+      width: calc(100% - 318.56px)
+      li:not(:first-child)
+        margin-left: 24px
+      li:last-child
+        margin-left: 8px
+      li
+        a
+          position: relative
+          @include links()
+          @include fontsSizes(14, bold, 17)
+          color: $dgrey
+          &:before
+            content: ''
+            position: absolute
+            display: inline-block
+            bottom: -5px
+            left: 0
+            width: 50%
+            height: 1px
+            background-color: $dgrey
+            transition: .2s ease-in-out
+          &:hover:before
+            width: 100%
+
+
+        &.active
+          a
+            color: $tBlackSec
+    .t-headerButtons
+      li:not(:last-child)
+        margin-right: 16px

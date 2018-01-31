@@ -1,0 +1,16 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" transform="translate(-1793 -5565)">
+<g id="iconPlus" class="t-icon">
+<g id="Ellipse" class="t-svgEllipse">
+<use xlink:href="#path0_fill" transform="translate(1793 5565)"/>
+</g>
+<g id="Union" class="t-svgFigure">
+<use xlink:href="#path1_fill" transform="translate(1800 5572)"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 24 12C 24 18.6274 18.6274 24 12 24C 5.37258 24 0 18.6274 0 12C 0 5.37258 5.37258 0 12 0C 18.6274 0 24 5.37258 24 12Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 5 0C 4.44922 0 4 0.447754 4 1L 4 4L 1 4C 0.449219 4 0 4.44775 0 5C 0 5.55225 0.449219 6 1 6L 4 6L 4 9C 4 9.55225 4.44922 10 5 10C 5.55078 10 6 9.55225 6 9L 6 6L 9 6C 9.55078 6 10 5.55225 10 5C 10 4.44775 9.55078 4 9 4L 6 4L 6 1C 6 0.447754 5.55078 0 5 0Z"/>
+</defs>
+</svg>

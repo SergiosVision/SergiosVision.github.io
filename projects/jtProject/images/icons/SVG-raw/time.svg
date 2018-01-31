@@ -1,0 +1,14 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" transform="translate(-1761 -5485)">
+<g id="Ellipse" class="t-svgEllipse">
+<use xlink:href="#path0_fill" transform="translate(1761 5485)"/>
+</g>
+<g id="Union" class="t-svgFigure">
+<use xlink:href="#path1_fill" transform="translate(1767 5491)"/>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 24 12C 24 18.6274 18.6274 24 12 24C 5.37258 24 0 18.6274 0 12C 0 5.37258 5.37258 0 12 0C 18.6274 0 24 5.37258 24 12Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 2 6C 2 3.79086 3.78906 2 6 2C 8.21094 2 10 3.79086 10 6C 10 8.20914 8.21094 10 6 10C 3.78906 10 2 8.20914 2 6ZM 6 0C 2.6875 0 0 2.68628 0 6C 0 9.31372 2.6875 12 6 12C 9.3125 12 12 9.31372 12 6C 12 2.68628 9.3125 0 6 0ZM 7 4C 7 3.44772 6.55078 3 6 3C 5.44922 3 5 3.44772 5 4L 5 6C 5 6.26523 5.10547 6.51956 5.29297 6.70709L 6.29297 7.70709C 6.68359 8.09763 7.31641 8.09763 7.70703 7.70709C 8.09766 7.31659 8.09766 6.68341 7.70703 6.29291L 7 5.58578L 7 4Z"/>
+</defs>
+</svg>

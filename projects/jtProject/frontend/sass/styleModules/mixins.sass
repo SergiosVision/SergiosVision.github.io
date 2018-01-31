@@ -1,0 +1,20 @@
+@mixin bGrid($qty, $margin)
+  width: ((100% - (($qty - 1) * $margin))/$qty)
+  &:nth-child(n)
+    margin-right: $margin
+    margin-bottom: $margin
+
+  &:nth-child(#{$qty}n)
+    margin-right: 0
+    margin-bottom: 0
+
+@mixin fontsSizes($size, $weight, $line)
+  font-size: $size + px
+  font-weight: $weight
+  line-height: $line + px
+
+
+@mixin links()
+  display: inline-block
+  text-decoration: none
+  transition: .2s ease-in-out

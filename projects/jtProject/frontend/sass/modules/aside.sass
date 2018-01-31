@@ -1,0 +1,25 @@
+aside
+  padding: 30px 67px 0 64px
+  background-color: $white
+  flex: 0 0 13%
+  //width: 14%!important
+  .t-menuList
+    list-style: none
+    margin: 0
+    padding: 0
+    .t-menuListItem
+      display: block
+      &:not(:last-child)
+        margin-bottom: 16px
+      a
+        @include links()
+        @include fontsSizes(16, bold, 20)
+        color: $tBlackSec
+        &:hover
+          color: $dblue
+  .t-copyWrapper
+    margin-top: 40px
+    span, a
+      @include fontsSizes(14, bold, 17)
+      @include links()
+      color: $dgrey

@@ -1,0 +1,18 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>iconFavorites</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1729 -5525)">
+<g id="iconFavorites" class="t-icon">
+<g id="Ellipse" class="t-svgEllipse">
+<use xlink:href="#path0_fill" transform="translate(1729 5525)"/>
+</g>
+<g id="Rectangle" class="t-svgFigure">
+<use xlink:href="#path1_stroke" transform="translate(1738 5533)"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 24 12C 24 18.6274 18.6274 24 12 24C 5.37258 24 0 18.6274 0 12C 0 5.37258 5.37258 0 12 0C 18.6274 0 24 5.37258 24 12Z"/>
+<path id="path1_stroke" d="M 7 0C 7 -0.552285 6.55228 -1 6 -1C 5.44772 -1 5 -0.552285 5 0L 7 0ZM 6 8L 5.4453 8.83205C 5.75216 9.03662 6.1467 9.05569 6.47186 8.88167C 6.79702 8.70766 7 8.3688 7 8L 6 8ZM 0 8L -1 8C -1 8.3688 -0.797015 8.70766 -0.471858 8.88167C -0.1467 9.05569 0.247844 9.03662 0.5547 8.83205L 0 8ZM 1 0C 1 -0.552285 0.552285 -1 0 -1C -0.552285 -1 -1 -0.552285 -1 0L 1 0ZM 3 6L 3.5547 5.16795C 3.2188 4.94402 2.7812 4.94402 2.4453 5.16795L 3 6ZM 5 0L 5 8L 7 8L 7 0L 5 0ZM 1 8L 1 0L -1 0L -1 8L 1 8ZM 6.5547 7.16795L 3.5547 5.16795L 2.4453 6.83205L 5.4453 8.83205L 6.5547 7.16795ZM 2.4453 5.16795L -0.5547 7.16795L 0.5547 8.83205L 3.5547 6.83205L 2.4453 5.16795Z"/>
+</defs>
+</svg>
