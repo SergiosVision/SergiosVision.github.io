@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SVG in the Wild</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+</head>
+
+<body>
+
+<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+<header id="site-header" class="masthead">
+    <div class="site-branding">
+        <figure class="header-bg">
+            <img class="inject-me" src="icons/misc/header-bg.svg" alt="Vectors and Paths: An SVG Example">
+        </figure>
+    </div><!-- .site-branding -->
+    <nav id="site-navigation" class="main-nav" role="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <!--<img class="menu-icon" src="icons/menu/home.png" alt="Link to home page">-->
+                    <svg class="menu-icon">
+                        <use xlink:href="icons/menu/menu-sprite.svg#icon-home"></use>
+                    </svg>
+                    <div>
+                        Home
+                        <span class="menu-desc">where the heart is</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <!--<img class="menu-icon" src="icons/menu/learn.png" alt="Link to Knowledge">-->
+                    <svg class="menu-icon">
+                        <use xlink:href="icons/menu/menu-sprite.svg#icon-learn"></use>
+                    </svg>
+                    <div>
+                        Knowledge
+                        <span class="menu-desc">is power</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <!--<img class="menu-icon" src="icons/menu/thoughts.png" alt="Link to Thoughts">-->
+                    <svg class="menu-icon">
+                        <use xlink:href="icons/menu/menu-sprite.svg#icon-thoughts"></use>
+                    </svg>
+                    <div>
+                        Thoughts
+                        <span class="menu-desc">absorb us</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <!--<img class="menu-icon" src="icons/menu/discourse.png" alt="Link to Discourse">-->
+                    <svg class="menu-icon">
+                        <use xlink:href="icons/menu/menu-sprite.svg#icon-discourse"></use>
+                    </svg>
+                    <div>
+                        Discourse
+                        <span class="menu-desc">makes shared ideas</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav><!-- #site-navigation -->
+</header><!-- #site-header .masthead -->
+
+<main id="content" class="main-content centered">
+    <svg class="thisO">
+        <use class="iconThis" xlink:href="icons/menu/menu-sprite.svg#icon-iconSearch"></use>
+    </svg>
+    <article class="story">
+        <h2 class="story-title">Where the River Runs</h2>
+        <div class="story-meta">
+            <span class="byline">by <span class="author vcard"><a class="url fn n" href="https://lynda.com/mor10/">Morten Rand-Hendriksen</a></span>, </span>
+            <span class="posted-on">Published <time class="entry-date published" datetime="2016-06-04T16:51:16+00:00">June 4, 2016</time>, </span>
+            <span class="tagged">Tags: <a class="tag" href="#">thoughts</a>, <a class="tag" href="#">rivers</a></span>
+        </div><!-- .story-meta -->
+        <div class="excerpt">
+            <p>From our house in Lillehammer, we could see Mjøsa, the largest lake in Norway. in the summer it would be
+                a calm sheet of blue speckled with the white sails of boats. In the winter, the lake froze, as if
+                someone had covered the water in a blanket. Flying over the ice, we'd see speed skaters and dare devils
+                in their cars. During the Olympic Games, the lake was used as a parking lot, all traces of it lost as
+                warmer weather melted the blanket and revealed, once again, the cool waters of the past, brought by the
+                river from ancient glaciers.</p>
+        </div><!-- .excerpt -->
+    </article><!-- .story -->
+</main><!-- #main .main-content .centered -->
+
+<footer id="colophon" class="footer-area centered">
+    <nav class="social-nav" role="navigation">
+        <ul>
+            <li><a class="icon-linkedin" href="https://linkedin.com"><span
+                    class="screen-reader-text">LinkedIn</span></a></li>
+            <li><a class="icon-twitter" href="https://twitter.com"><span class="screen-reader-text">Twitter</span></a>
+            </li>
+            <li><a class="icon-facebook" href="https://facebook.com"><span
+                    class="screen-reader-text">Facebook</span></a></li>
+            <li><a class="icon-instagram" href="https://instagram.com"><span class="screen-reader-text">Instagram</span></a>
+            </li>
+            <li><a class="icon-youtube" href="https://youtube.com"><span class="screen-reader-text">YouTube</span></a>
+            </li>
+        </ul>
+    </nav><!-- .social-nav -->
+</footer><!-- #colophon .footer-area .centered -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/svg-injector.min.js"></script>
+<script src="js/svg4everybody.min.js"></script>
+<script>
+    var mySVGsToInject = document.querySelectorAll('img.inject-me');
+
+    SVGInjector(mySVGsToInject);
+    svg4everybody();
+</script>
+</body>
+
+</html>

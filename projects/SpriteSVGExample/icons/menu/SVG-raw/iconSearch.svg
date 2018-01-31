@@ -1,0 +1,17 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" transform="translate(-1761 -5565)">
+    <g id="iconSearch">
+        <g id="Ellipse">
+            <use xlink:href="#path0_fill" transform="translate(1761 5565)" fill="#FFFFFF"/>
+        </g>
+        <g id="Union">
+            <use xlink:href="#path1_fill" transform="translate(1768 5571)" fill="#E0E0E0"/>
+        </g>
+    </g>
+</g>
+<defs>
+    <path style="fill: var(--primary-color)" fill="#aaa" id="path0_fill" d="M 24 12C 24 18.6274 18.6274 24 12 24C 5.37258 24 0 18.6274 0 12C 0 5.37258 5.37258 0 12 0C 18.6274 0 24 5.37258 24 12Z"/>
+    <path style="fill: var(--secondary-color)" fill="#a1a1a1" id="path1_fill" fill-rule="evenodd" d="M 9 5C 9 6.65674 7.65625 8 6 8C 4.34375 8 3 6.65674 3 5C 3 3.34326 4.34375 2 6 2C 7.65625 2 9 3.34326 9 5ZM 11 5C 11 7.76123 8.76172 10 6 10C 4.98047 10 4.03125 9.69482 3.24219 9.17139L 1.70703 10.707C 1.31641 11.0977 0.683594 11.0977 0.292969 10.707C -0.0976562 10.3164 -0.0976562 9.68359 0.292969 9.29297L 1.82812 7.75732C 1.30469 6.9668 1 6.01904 1 5C 1 2.23877 3.23828 0 6 0C 8.76172 0 11 2.23877 11 5Z"/>
+</defs>
+</svg>
+
