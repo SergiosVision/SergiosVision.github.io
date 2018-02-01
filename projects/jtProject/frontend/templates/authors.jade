@@ -1,0 +1,12 @@
+extends _layout
+
+block content
+    include aside
+    main.t-mainMain
+        section.t-authorsWrapper
+            div.t-scrollContainer
+                div.t-mainCardsHolder.t-mainPageCardCtrl
+                    - for(var i = 0; i < 15; i++)
+                        + authorCard('images/photos/quavo.jpg', 'Quavious Marshall', 'Рэпер', '200', '999')
+                        + authorCard('images/photos/offset.jpg', 'Kiari Kendrell Cephus', 'Рэпер', '100', '654')
+                        + authorCard('images/photos/takeoff.jpg', 'Takeoff', 'Рэпер', '400', '655')

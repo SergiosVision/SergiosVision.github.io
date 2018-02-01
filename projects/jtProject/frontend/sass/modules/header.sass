@@ -1,62 +1,64 @@
 header
   display: flex
+  align-items: center
   padding: 35px 56px 0 40px
   margin-bottom: 34px
-  .t-logoWrapper
-    display: inline-block
+  .t-logoSection
     margin-right: 162px
-    .t-logo
-      width: 133px
-      height: 74px
-      background: url("/images/logo/logo.png") no-repeat
-      background-size: contain
-  .t-sortAndCatWrapper
+    .t-logoWrapper
+      display: inline-block
+      .t-logo
+        width: 133px
+        height: 74px
+        background: url("/images/logo/logo.png") no-repeat
+        background-size: contain
+  .t-topRightSection
     display: flex
-    width: 100%
-    align-items: center
-    .t-sortContainer, .t-categoriesContainer, .t-headerButtons
+    width: calc(100% - 295px)
+    @include fontsSizes(14, bold, 17)
+    .t-topListCtrl
       display: flex
+      width: auto
       list-style: none
-    .t-sortContainer
-      li:first-child
+      padding: 0
+      margin: 0
+    .t-nameAndSortWrapper
+      display: flex
+      margin-right: 40px
+      .t-namePage
         margin-right: 40px
-      li:not(:first-child)
-        margin-right: 8px
-      li
-        a
-          @include links()
-          @include fontsSizes(14, bold, 17)
-          color: $tBlackSec
-    .t-categoriesContainer
-      margin-left: 40px
-      width: calc(100% - 318.56px)
-      li:not(:first-child)
-        margin-left: 24px
-      li:last-child
+      .t-topSortWrapper
+        .t-topSortName
+          margin-right: 8px
+
+  .t-topMiddleSection
+    width: calc(100% - 297.56px)!important
+    li:not(:first-child)
+      margin-left: 24px
+      &:last-child
         margin-left: 8px
-      li
-        a
-          position: relative
-          @include links()
-          @include fontsSizes(14, bold, 17)
-          color: $dgrey
-          &:before
-            content: ''
-            position: absolute
-            display: inline-block
-            bottom: -5px
-            left: 0
-            width: 50%
-            height: 1px
-            background-color: $dgrey
-            transition: .2s ease-in-out
-          &:hover:before
-            width: 100%
 
+  .t-topRightSection
+    li:not(:last-child)
+      margin-right: 16px
 
-        &.active
-          a
-            color: $tBlackSec
-    .t-headerButtons
-      li:not(:last-child)
-        margin-right: 16px
+.t-topSortLinks
+  position: relative
+  @include links()
+  @include fontsSizes(14, bold, 17)
+  color: $dgrey
+  &:before
+    content: ''
+    position: absolute
+    bottom: -2px
+    left: 0
+    width: 50%
+    height: 1px
+    background-color: $dgrey
+    transition: .3s ease
+  &:hover:before
+    width: 100%
+  &.active
+    color: $tBlack
+    &:before
+      display: none

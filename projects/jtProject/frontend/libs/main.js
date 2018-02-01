@@ -1,12 +1,14 @@
 svg4everybody();
+
+//  Маленький скролл плагин
 $(function ($) {
-    $.fn.horizontScrl = function (select, amount) {
+    $.fn.horizontalScrl = function (select, amount) {
         var cmp = $(this);
         amount = amount || 120;
         cmp.css('overflow', 'auto');
         $(select).bind("DOMMouseScroll mousewheel", function (event) {
             var oEvent = event.originalEvent,
-                direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta,
+                direction = oEvent.detail ? (100 - oEvent.detail * -amount) : oEvent.wheelDelta,
                 position = cmp.scrollLeft();
             position += direction > 0 ? -amount : amount;
             cmp.scrollLeft(position);
@@ -15,31 +17,35 @@ $(function ($) {
     };
 });
 
-$.fn.scrollEnd = function(callback, timeout) {
-    $(this).scroll(function(){
-        var $this = $(this);
-        if ($this.data('scrollTimeout')) {
-            clearTimeout($this.data('scrollTimeout'));
-        }
-        $this.data('scrollTimeout', setTimeout(callback,timeout));
-    });
-};
 
 $(document).ready(function () {
     // jQuery('.t-scrollContainer').scrollbar();
     if(window.matchMedia('(min-width: 768px)').matches) {
-        $('.t-mainCardsHolder').horizontScrl('body', 150); // Вводим скорость горизонтального скролла а также зону действия скролла
-        $('.t-mainCardsHolder').on('scroll', function () {
-            if ($('.t-mainCardsHolder .t-newsCardWrapper').css("marginLeft") >= 35) {
-                return false
-            } else {
-                $('.t-mainCardsHolder .t-newsCardWrapper:not(:last-child)').css('margin-right', '35px');
-            }
-        });
+        // Инициализация маленького скролл плагина
+        // $('.t-mainCardsHolder').horizontalScrl('body', 40); // Вводим скорость горизонтального скролла а также зону действия скролла
 
-        $('.t-mainCardsHolder').scrollEnd(function(){
-            $('.t-newsCardWrapper').attr('style', '');
-        }, 300);
+
+        // $('.t-mainCardsHolder').scrollEnd(function(){
+        //
+        // }, 300);
+    }
+
+    var blocks = document.getElementsByClassName('t-scrollBar');
+    var container = document.getElementsByClassName('t-mainCardsHolder');
+    var hs = new HorizontalScroll.default({
+        blocks : blocks,
+        container: container,
+        // isAnimated: true,
+        springEffect: 0,
+    });
+
+    setTimeout(function () {
+        $('.horizontal-scroll').css('position', 'static');
+    }, 100);
+
+    if(window.location.pathname === '/authors.html') {
+        $('.t-topMiddleSection li').remove();
+        $('.t-namePage').html('Авторы');
     }
 
 });
