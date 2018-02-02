@@ -3,6 +3,8 @@ extends _layout
 block content
     include aside
     main.t-mainMain
+        section.t-mainTopContent
+            + topCard('Всё сразу', 'Все темы', 'Дизайн', 'Маркетинг', 'CEO', 'Разработка', 'Бизнес')
         section.t-articlesWrapper
             div.t-scrollContainer
                 div.t-mainCardsHolder.t-mainPageCardCtrl

@@ -1,24 +1,35 @@
 aside
-  padding: 30px 67px 0 64px
   background-color: $white
   flex: 0 0 335px
-  //width: 14%!important
-  .t-menuList
-    list-style: none
-    margin: 0
-    padding: 0
-    .t-menuListItem
-      display: block
-      &:not(:last-child)
-        margin-bottom: 16px
-      a
-        @include links()
-        @include fontsSizes(16, bold, 20)
-        color: $tBlackSec
-        &:hover
-          color: $dblue
+  .t-logoSection
+    padding: 40px 0 0 40px
+    .t-logoWrapper
+      display: inline-block
+      .t-logo
+        width: 133px
+        height: 74px
+        background: url("/images/logo/logo.png") no-repeat
+        background-size: contain
+  nav
+    margin-top: 95px
+    padding: 0 67px 0 64px
+    .t-menuList
+      list-style: none
+      margin: 0
+      padding: 0
+      .t-menuListItem
+        display: block
+        &:not(:last-child)
+          margin-bottom: 16px
+        a
+          @include links()
+          @include fontsSizes(16, bold, 20)
+          color: $tBlackSec
+          &:hover
+            color: $dblue
   .t-copyWrapper
     margin-top: 40px
+    padding: 0 0 0 64px
     span, a
       @include fontsSizes(14, bold, 17)
       @include links()

@@ -3,6 +3,8 @@ extends _layout
 block content
     include aside
     main.t-mainMain
+        section.t-mainTopContent
+            + topCard('Авторы')
         section.t-authorsWrapper
             div.t-scrollContainer
                 div.t-mainCardsHolder.t-mainPageCardCtrl

@@ -27,27 +27,29 @@
       color: $dgrey
       margin-bottom: 16px
       @include fontsSizes(16, bold, 20)
-    .t-authorArticlesCountWrapper
-      margin-bottom: 8px
-      @include fontsSizes(20, bold, 24)
-      .t-name
-        position: relative
-        padding-right: 32px
-        &:after
-          content: ''
-          display: block
-          position: absolute
-          right: 7px
-          top: 12px
-          width: 20px
-          height: 2px
-          background-color: $tBlackSec
-    .t-authorTags
-      display: flex
-      list-style: none
-      padding: 0
-      margin: 0
-    .t-authorLikesHolder
-      margin-top: 16px
-      .t-authorLikesCount
-        margin-left: 8px
+
+
+.t-authorArticlesCountWrapper, .t-authorModalCountWrapper
+  margin-bottom: 8px
+  @include fontsSizes(20, bold, 24)
+  .t-name
+    position: relative
+    padding-right: 32px
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      right: 7px
+      top: 12px
+      width: 20px
+      height: 2px
+      background-color: $tBlackSec
+.t-authorTags, .t-authorModalTags
+  display: flex
+  list-style: none
+  padding: 0
+  margin: 0
+.t-authorLikesHolder, .t-authorModalLikesHolder
+  margin-top: 16px
+  .t-authorLikesCount
+    margin-left: 8px

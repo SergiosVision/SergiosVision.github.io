@@ -17,6 +17,8 @@ svg4everybody();
 //     };
 // });
 
+
+//  Маленький скролл плагин
 $(function ($) {
     $.fn.horizontalScrl = function (select, inside, amount) {
         function pos() {
@@ -58,10 +60,9 @@ $(function ($) {
                 }
             }
 
-            sp -= deltaY * (amount + sp / position + 50);
+            sp -= deltaY * amount;
 
-            //определаем границы скролла
-            console.log(sp);
+            // console.log(sp);
 
             if (sp < 0) {
                 sp = 0;
@@ -80,11 +81,53 @@ $(function ($) {
     };
 });
 
+// Мини плагин для подмены BackgroundА
+$(function () {
+    $.fn.toBackGround = function () {
+        var cmp = $(this);
+        cmp.each(function () {
+            var getThis = $(this);
+            var imgSrc = getThis.attr('src');
+            if (imgSrc === '' || imgSrc === '#' || imgSrc === ' ') {
+                getThis.parent().css({
+                    "background-color": "#F2F2F2",
+                    "position": "relative"
+                });
+                getThis.parent().html("<div class='t-noImage'><span>АБ</span></div>");
+                $('.t-noImage').css({
+                    "width": "100%",
+                    "height": "100%",
+                    "display": "flex",
+                    "justify-content": "center",
+                    "align-items": "center"
+
+                });
+                $('.t-noImage span').css({
+                    "font-size": "88px",
+                    "color": "#fff",
+                    "padding": "20px 0",
+                    "border-top": "3px solid #fff",
+                    "border-bottom": "3px solid #fff"
+                })
+            } else {
+                getThis.parent().css({
+                    "background-image": "url("+ imgSrc +")",
+                    "background-position": "center",
+                    "background-size": "cover",
+                    "height": "100%"
+                });
+                getThis.remove();
+            }
+        })
+    }
+});
+
 $(document).ready(function () {
-    // jQuery('.t-scrollContainer').scrollbar();
+    $('.t-authorModalPhoto img').toBackGround(); // Инициализация подмены BackgroundА
+
     if(window.matchMedia('(min-width: 768px)').matches) {
         // Инициализация маленького скролл плагина
-        $('.t-mainCardsHolder').horizontalScrl('body', '.t-scrollBar', 100); // Вводим скорость горизонтального скролла а также зону действия скролла
+        $('.t-mainCardsHolder').horizontalScrl('main', '.t-scrollBar', 100); // Вводим скорость горизонтального скролла а также зону действия скролла
     }
 
     // var blocks = document.getElementsByClassName('t-scrollBar');
@@ -96,20 +139,21 @@ $(document).ready(function () {
     //     springEffect: 0,
     // });
 
-    if(window.location.pathname === '/authors.html') {
-        $('.t-topMiddleSection li').remove();
-        $('.t-namePage').html('Авторы');
-    }
+
+    $('.t-authorCardLink').on('click', function (e) {
+        e.preventDefault();
+        $('.t-authorModal').css('display', "flex").addClass('turnAnimation');
+    });
 
 
+    // Движение блока при движении мышки
     var cntHd, sldWd, tb;
     $(function() {
-
         cntHd = $('.t-newsCardInfoHolder').innerHeight();
         tb = $('.t-newsContentBody');
         sldWd = tb.outerHeight();
         $('.t-newsCardInfoHolder').mousemove(function(e) {
-            if ($('.t-newsContentBody').outerHeight() > $(this).innerWidth()) {
+            if (sldWd > $(this).innerHeight()) {
                 tb.css({
                     "overflow": "hidden",
                     "white-space": "nowrap",
@@ -118,8 +162,6 @@ $(document).ready(function () {
             } else {
                 return false;
             }
-            // tb.css({transform: ((cntHd - sldWd)*((e.pageX / cntHd).toFixed(3))).toFixed(1) +"px" });
         });
     });
-
 });

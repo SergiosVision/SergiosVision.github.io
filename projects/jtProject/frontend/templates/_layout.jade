@@ -24,7 +24,7 @@ mixin card (changeImage)
                         h1.t-newsTitle Заголовок статьи например, не в одну, а в три строки
                         div.t-newsAuthorHolder
                             div.t-newsAuthorImg
-                                img(src="http://s3.amazonaws.com/hiphopdx-production/2017/09/Quavo-Trap-Paris-800x600.jpg")
+                                img(src="images/photos/quavo.jpg")
                             div.t-newsAuthorName
                                 span.t-newsFirstName Quavo
                                 span.t-newsLastName Marshall
@@ -44,7 +44,7 @@ mixin card (changeImage)
 
 mixin authorCard(changeImg, name, profession, count, likes)
     div.t-authorCardWrapper.t-scrollBar
-        a(href="#")
+        a(href="#").t-authorCardLink
             div.t-authorImgHolder
                 img(src=""+ changeImg +"")
             div.t-authorInfo
@@ -60,6 +60,75 @@ mixin authorCard(changeImg, name, profession, count, likes)
                     span ico
                     span.t-authorLikesCount= likes
 
+mixin topCard(pageName, listOne, listTwo, listThird, listFour, listFive, listSix)
+    div.t-mainTopContentInside
+        div.t-nameAndSortWrapper
+            span.t-namePage= pageName
+            div.t-topSortWrapper
+                span.t-topSortName По дате
+                span.t-icon Ico
+        ul.t-topListCtrl.t-topMiddleSection
+            li
+                a(href="#").t-topSortLinks.active= listOne
+            li
+                a(href="#").t-topSortLinks= listTwo
+            li
+                a(href="#").t-topSortLinks= listThird
+            li
+                a(href="#").t-topSortLinks= listFour
+            li
+                a(href="#").t-topSortLinks= listFive
+            li
+                a(href="#").t-topSortLinks= listSix
+            li
+                a(href="#").t-topSortLinks ico
+        ul.t-topListCtrl.t-topRightSection
+            li ico
+            li ico
+            li ico
+
+mixin authorsModal()
+    div.t-authorModal
+        div.t-authorModalInfo
+            h1.t-authorModalName.t-titleUltraLarge Джон Тривольта
+            h2.t-authorModalProfession.t-titleLarge Угонщик
+            div.t-authorModalCountWrapper
+                span.t-name Статей
+                span.t-authorArticlesCount 2
+            ul.t-authorModalTags
+                li Дизайн,
+                li бизнес,
+            div.t-authorModalLikesHolder
+                span ico
+                span.t-authorLikesCount 475
+            div.t-authorModalAbout
+                h1.t-authorModalAboutTitle.t-titleBig О себе
+                p.t-authorModalDescription Минкомсвязи отказалось от требования рассчитывать объём хранилищ данных пользователей на основании максимальной ширины канала операторов связи. Это должно снизить затраты операторов, пишет «Коммерсантъ» со ссылкой на копию письма замглавы Минкомсвязи Дмитрия Алхазова в Российский союз промышленников и предпринимателей (РСПП).
+            div.t-authorModalAnotherProfiles
+                ul
+                    li
+                        a(href="#") Facebook
+                    li
+                        a(href="#") Telegram
+            div.t-authorModalArticlesHolderWrapper
+                h1.t-authorModalAboutTitle.t-titleBig Статьи автора
+                div.t-authorArticlesHolder
+                    - for(var i = 0; i < 3; i++)
+                        + authorArticles()
+        div.t-authorModalPhoto
+            img(src="images/photos/John.png")
+
+mixin authorArticles()
+    div.t-authorModalArticleCard
+        a(href="#").t-articleLink
+            div.t-authorArticleCardImg
+                img(src="/images/png/Frame.png")
+            div.t-authorArticleCardInfo
+                h3.t-authorArticleCardTitle Заголовок статьи не слишком вмещающийся во  фреймворке
+                span.t-authorArticleCardCtegory Экспертное мнение
+                span.t-authorArticleCardDate 14 апреля 2218
+
+
 doctype html
 html(lang="ru-RU")
     head
@@ -73,10 +142,8 @@ html(lang="ru-RU")
         link(rel='stylesheet', href="css/main.min.css")
     body
         div.t-mainWrapper
-            header
-                include _header
-            section.t-contentWrapper
-                block content
+            block content
+            + authorsModal()
 
         script(src="js/vendor.min.js")
         script(src="js/plugins/jquery.scrollbar.min.js")

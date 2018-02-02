@@ -1,0 +1,59 @@
+.t-authorModal
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  display: none
+  &.turnAnimation
+    .t-authorModalInfo
+      animation: animationLeft 1s ease-in-out
+    .t-authorModalPhoto
+      animation: animationRight 1s ease-in-out
+  .t-authorModalInfo
+    transition: .4s ease-in-out
+    overflow: auto
+    background-color: $white
+    flex: 1 1 50%
+    padding: 132px 64px 0 64px
+    .t-authorModalName
+      margin-bottom: 8px
+    .t-authorModalProfession, .t-authorModalAbout, .t-authorModalLikesHolder
+      margin-bottom: 40px
+    .t-authorModalAbout
+      .t-authorModalDescription
+        @include  fontsSizes(28, normal, auto)
+    .t-authorModalAnotherProfiles
+      ul
+        list-style: none
+        margin: 0
+        padding: 0
+        display: flex
+        li:not(:last-child)
+          margin-right: 30px
+        li
+          a
+            text-decoration: none
+            color: $tBlackSec
+    .t-authorModalArticlesHolderWrapper
+      margin-top: 48px
+  .t-authorModalPhoto
+    transition: .4s ease-in-out
+    flex: 1 1 50%
+    height: 100%
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+@keyframes animationLeft
+  from
+    transform: translateX(-150%)
+  to
+    transform: none
+
+@keyframes animationRight
+  from
+    transform: translateX(150%)
+  to
+    transform: none

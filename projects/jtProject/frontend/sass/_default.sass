@@ -17,7 +17,6 @@ body
 .t-mainWrapper
   height: 100vh
   display: flex
-  flex-direction: column
 
 .t-contentWrapper
   display: flex
@@ -29,6 +28,22 @@ main
   flex: 1 1 auto
   width: 100vw
   //min-height: calc(100vh - 462px)
+
+
+.t-titleUltraLarge
+  @include fontsSizes(60, bold, 73)
+  color: $tBlackSec
+  margin: 0
+
+.t-titleLarge
+  @include fontsSizes(36, bold, 44)
+  color: $dgrey
+  margin: 0
+
+.t-titleBig
+  @include fontsSizes(26, bold, 32px)
+  color: $tBlackSec
+  margin: 0 0 16px 0
 
 
 .t-mainMain
@@ -44,3 +59,38 @@ main
 
 .t-mainCardsHolder::-webkit-scrollbar
   display: none
+
+.t-authorArticlesHolder
+  display: flex
+  flex-direction: column
+  .t-authorModalArticleCard
+    display: inline-flex
+    &:not(:last-child)
+      margin-bottom: 16px
+    .t-articleLink
+      display: flex
+      text-decoration: none
+      color: $tBlackSec
+    .t-authorArticleCardImg
+      margin-right: 16px
+      width: 46px
+      height: 64px
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    .t-authorArticleCardInfo
+      display: flex
+      flex-direction: column
+      .t-authorArticleCardTitle
+        margin-bottom: 4px
+        @include fontsSizes(16, bold, 20)
+      .t-authorArticleCardCtegory
+        margin-bottom: 2px
+        @include fontsSizes(16, bold, 20)
+        color: $dgrey
+      .t-authorArticleCardDate
+        @include fontsSizes(14, bold, 17)
+        color: $dgrey
+
+
