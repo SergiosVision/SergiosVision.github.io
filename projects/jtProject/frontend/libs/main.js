@@ -20,7 +20,7 @@ svg4everybody();
 
 //  Маленький скролл плагин
 $(function ($) {
-    $.fn.horizontalScrl = function (select, inside, amount) {
+    $.fn.horizontalScrl = function (select, inside, spring, reduce, limit) {
         function pos() {
             var pos = $(inside).last().position().left + $(inside).last().width() - $(window).width();
             return pos;
@@ -28,12 +28,18 @@ $(function ($) {
         var position = pos(),
             sp = 0,
             cmp = $(this),
-            x = 0;
+            x = 0,
+            scrollValue = 0,
+            oldScrollValue = 0,
+            scrollTarget = 0,
+            scrollLeft = 0,
+            scrollRight = 0,
+            spring = spring,
+            direction = 0,
+            speed = 0,
+            speedTarget = 0
+
         cmp.css('transition', 'transform 1.2s cubic-bezier(0.49, 0.8, 0.49, 0.8)');
-        function pos() {
-            var pos = $(inside).last().position().left + $(inside).last().width() - $(window).width();
-            return pos;
-        }
         $(select).bind("DOMMouseScroll mousewheel", function (event) {
             calcualte();
             event.preventDefault();
@@ -43,26 +49,33 @@ $(function ($) {
             event.preventDefault();
         });
         function calcualte() {
-            var deltaY = 0;
+
             if (event.type.toLowerCase() == "mousewheel") {
                 if (event.deltaY > 0) {
-                    deltaY = 1;
+                    direction = 1;
                 } else {
-                    deltaY = -1
+                    direction = -1
                 }
             } else if ((event.type.toLowerCase() == "keydown")&&(event.target.nodeName.toLowerCase() == select)) {
                 if (event.which == 38) {
-                    deltaY = 1;
+                    direction = 1;
                 } else if (event.which == 40) {
-                    deltaY = -1
+                    direction = -1
                 } else {
                     return;
                 }
             }
 
-            sp -= deltaY * amount;
+            scrollTarget += event.deltaY * -1;
+            scrollTarget = Math.round(Math.max(scrollLeft, Math.min(scrollTarget, scrollRight)));
 
-            // console.log(sp);
+            scrollValue += (scrollTarget - scrollValue) * spring;
+
+            var delta = scrollTarget - scrollValue;
+            var thisMargin = delta / reduce;
+            speed = _clamp(-thisMargin, -limit, limit);
+
+            sp += cmp.scrollLeft = event.deltaY;
 
             if (sp < 0) {
                 sp = 0;
@@ -77,9 +90,95 @@ $(function ($) {
             } else if (x > inside.length) {
                 x = inside.length
             }
+
+            function _clamp(num, min, max) {
+                return Math.min(Math.max(num, min), max);
+            }
         }
     };
 });
+
+// $(function ($) {
+//     $.fn.horizontalScrl = function (select, inside, spring, reduce, limit) {
+//         function pos() {
+//             var pos = $(inside).last().position().left + $(inside).last().width() - $(window).width();
+//             return pos;
+//         }
+//         var position = pos(),
+//             sp = 0,
+//             cmp = $(this),
+//             x = 0,
+//             scrollValue = 0,
+//             scrollTarget = 10,
+//             spring = spring,
+//             direction = 0,
+//             speed = 0;
+//
+//         cmp.css('transition', 'transform 1.2s cubic-bezier(0.49, 0.8, 0.49, 0.8)');
+//         $(select).bind("DOMMouseScroll mousewheel", function (event) {
+//             calcualte();
+//             event.preventDefault();
+//         });
+//         $(select).bind("keydown", function (event) {
+//             calcualte();
+//             event.preventDefault();
+//         });
+//         function calcualte() {
+//
+//             if (event.type.toLowerCase() == "mousewheel") {
+//                 if (event.deltaY > 0) {
+//                     direction = 1;
+//                 } else {
+//                     direction = -1
+//                 }
+//             } else if ((event.type.toLowerCase() == "keydown")&&(event.target.nodeName.toLowerCase() == select)) {
+//                 if (event.which == 38) {
+//                     direction = 1;
+//                 } else if (event.which == 40) {
+//                     direction = -1
+//                 } else {
+//                     return;
+//                 }
+//             }
+//
+//             scrollTarget += event.deltaY/120;
+//             scrollTarget = Math.round(scrollTarget);
+//
+//             scrollValue += (scrollTarget - scrollValue) * spring;
+//
+//             var delta = scrollTarget - scrollValue;
+//             var thisMargin = delta / reduce;
+//             speed = _clamp(thisMargin, -limit, limit);
+//
+//             sp += cmp.scrollLeft = event.deltaY/120;
+//             console.log(event.deltaY/120)
+//
+//
+//             if (sp < 0) {
+//                 sp = 0;
+//             } else if (sp > position) {
+//                 sp = position;
+//             }
+//
+//             cmp.css('transform', 'translate3d(' + -sp + 'px, 0 ,0)');
+//             $('.t-scrollBar').each(function () {
+//                 $(this).css('margin-right',  -speed);
+//                 $(this).css('margin-left', -speed);
+//             });
+//
+//
+//             if (x < 0) {
+//                 x = 0;
+//             } else if (x > inside.length) {
+//                 x = inside.length
+//             }
+//
+//             function _clamp(num, min, max) {
+//                 return Math.min(Math.max(num, min), max);
+//             }
+//         }
+//     };
+// });
 
 // Мини плагин для подмены BackgroundА
 $(function () {
@@ -93,7 +192,8 @@ $(function () {
                     "background-color": "#F2F2F2",
                     "position": "relative"
                 });
-                getThis.parent().html("<div class='t-noImage'><span>АБ</span></div>");
+                getThis.parent().append("<div class='t-noImage'><span>АБ</span></div>");
+                getThis.remove();
                 $('.t-noImage').css({
                     "width": "100%",
                     "height": "100%",
@@ -127,7 +227,7 @@ $(document).ready(function () {
 
     if(window.matchMedia('(min-width: 768px)').matches) {
         // Инициализация маленького скролл плагина
-        $('.t-mainCardsHolder').horizontalScrl('main', '.t-scrollBar', 100); // Вводим скорость горизонтального скролла а также зону действия скролла
+        $('.t-mainCardsHolder').horizontalScrl('main', '.t-scrollBar', 0.3, 16, 16); // Вводим скорость горизонтального скролла а также зону действия скролла
     }
 
     // var blocks = document.getElementsByClassName('t-scrollBar');
@@ -139,10 +239,31 @@ $(document).ready(function () {
     //     springEffect: 0,
     // });
 
-
-    $('.t-authorCardLink').on('click', function (e) {
+    $('body').on('click', '.t-modalBack', function (e) {
         e.preventDefault();
+        $('.t-authorModal').addClass('closeAnim');
+        setTimeout(function () {
+            $('.t-authorModal').removeClass('closeAnim').hide();
+        },1000)
+    });
+
+    $('body').on('click', '.t-authorCardLink', function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        var getImgHolderImg = $this.find('img').attr('src');
+        var getName = $this.find(".t-authorName").text();
+        var getProfession = $this.find(".t-authorProfession").text();
+        var getArticlesCount = $this.find(".t-authorArticlesCount").text();
+        var getLikes = $this.find(".t-authorLikesCount").text();
+        $('.t-authorModal .t-authorModalPhoto').css("background-image", "url("+ getImgHolderImg +")");
+        $('.t-authorModal .t-authorModalName').text(getName);
+        $('.t-authorModal .t-authorModalProfession').text(getProfession);
+        $('.t-authorModal .t-authorArticlesCount').text(getArticlesCount);
+        $('.t-authorModal .t-authorLikesCount').text(getLikes);
         $('.t-authorModal').css('display', "flex").addClass('turnAnimation');
+        setTimeout(function () {
+            $('.t-authorModal').removeClass('turnAnimation');
+        },1000)
     });
 
 

@@ -10,12 +10,17 @@
       animation: animationLeft 1s ease-in-out
     .t-authorModalPhoto
       animation: animationRight 1s ease-in-out
+  &.closeAnim
+    .t-authorModalInfo
+      animation: animationLeftHide 1s ease-in-out
+    .t-authorModalPhoto
+      animation: animationRightHide 1s ease-in-out
   .t-authorModalInfo
     transition: .4s ease-in-out
     overflow: auto
     background-color: $white
     flex: 1 1 50%
-    padding: 132px 64px 0 64px
+    padding: 132px 64px
     .t-authorModalName
       margin-bottom: 8px
     .t-authorModalProfession, .t-authorModalAbout, .t-authorModalLikesHolder
@@ -38,6 +43,7 @@
     .t-authorModalArticlesHolderWrapper
       margin-top: 48px
   .t-authorModalPhoto
+    position: relative
     transition: .4s ease-in-out
     flex: 1 1 50%
     height: 100%
@@ -45,6 +51,20 @@
       width: 100%
       height: 100%
       object-fit: cover
+  .t-modalImgOverlay
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,.3)
+    .t-modalButtonsHolder
+      transition: .4s ease-in-out
+      position: absolute
+      top: 67px
+      right: 56px
+      .t-modalBack
+        cursor: pointer
+        span
+          @include fontsSizes(14, bold, 16)
+          color: $white
 
 @keyframes animationLeft
   from
@@ -57,3 +77,32 @@
     transform: translateX(150%)
   to
     transform: none
+
+@keyframes animationLeftHide
+  from
+    transform: none
+  to
+    transform: translateX(-150%)
+
+@keyframes animationRightHide
+  from
+    transform: none
+  to
+    transform: translateX(150%)
+
+
+@keyframes modalButtons
+  from
+    transform: translateX(100px)
+    opacity: 0
+  to
+    transform: none
+    opacity: 1
+
+@keyframes modalButtonsHide
+  from
+    transform: none
+    opacity: 1
+  to
+    transform: translateX(100px)
+    opacity: 0
