@@ -1,12 +1,21 @@
 //  Маленький скролл плагин
 $(function ($) {
     $.fn.horizontalScrl = function (select, inside, hide) {
+        function getTransform(el) {
+            var resultOne = $(el).css('transform').split(',');
+            var resultTwo = resultOne[4];
+            var getValue = parseInt(resultTwo);
+            return getValue;
+        }
         var sp = 0,
             cmp = $(this),
             getLeftVal = parseInt(cmp.css("left")) !== parseInt(5),
             getThisElOffset = cmp.offset().left,
+            getHidenWidth = $(hide).width(),
             x = 0,
-            direction = 0;
+            direction = 0,
+            directionCtrl = false,
+            directionCtrlSec = false;
 
         cmp.css({
             "transition": "transform 1.2s cubic-bezier(0.49, 0.8, 0.49, 0.8)",
@@ -15,15 +24,6 @@ $(function ($) {
         });
 
         $(select).bind("DOMMouseScroll mousewheel", function (event) {
-            $(hide).css({
-                "transform": "translateX(-150%)",
-                "transition": ".8s ease-in-out"
-            });
-            if (getLeftVal) {
-                cmp.animate({
-                    "left": "5px",
-                }, 1000);
-            }
             calculate();
             event.preventDefault();
         });
@@ -33,6 +33,7 @@ $(function ($) {
             event.preventDefault();
         });
         function calculate() {
+            console.log(getTransform(cmp));
             var position = pos();
             function pos() {
                 var pos = $(inside).last().position().left + $(inside).last().width() - $(window).width() + 7;
@@ -41,8 +42,29 @@ $(function ($) {
             if (event.type.toLowerCase() == "mousewheel") {
                 if (event.deltaY > 0) {
                     direction = 1;
+                    if(!directionCtrl) {
+                        $(hide).css({
+                            "transform": "translateX(-150%)",
+                            "transition": ".6s ease-in-out"
+                        });
+                        if (getLeftVal) {
+                            cmp.animate({
+                                "left": "5px",
+                            }, 700);
+                        }
+                        directionCtrl = true;
+                    }
                 } else {
-                    direction = -1
+                    direction = -1;
+                    directionCtrl = false;
+                    if (getTransform(cmp) === parseInt(0) && !directionCtrlSec) {
+                        cmp.animate({"left": getHidenWidth,}, 700);
+                        $(hide).css('transform', 'none');
+                        directionCtrlSec = true;
+                    } else if (getTransform(cmp) === parseInt(0)) {
+                        directionCtrlSec = false;
+                    }
+                    event.stopPropagation();
                 }
             } else if ((event.type.toLowerCase() == "keydown") && (event.target.nodeName.toLowerCase() == select)) {
                 if (event.which == 38) {
@@ -62,6 +84,8 @@ $(function ($) {
             // var delta = scrollTarget - scrollValue;
             // var thisMargin = delta / reduce;
             // speed = _clamp(-thisMargin, -limit, limit);
+
+            console.log("Delta:" + ' ' + event.deltaY);
 
             sp += cmp.scrollLeft = event.deltaY;
 

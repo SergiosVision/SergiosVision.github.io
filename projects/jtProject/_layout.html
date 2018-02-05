@@ -12,7 +12,66 @@
   </head>
   <body>
     <div class="t-mainWrapper">
-      <div class="t-authorModal">
+      <div class="t-absolute t-newsModal">
+        <div class="t-newsModalInfo">
+          <div style="background-color:#57C9FA" class="t-newsColorBlock"></div>
+          <div class="t-newsInsideHolder">
+            <div class="t-modalButtonsHolder">
+              <div class="t-modalShare"></div>
+              <div class="t-modalBack"><span>Назад</span></div>
+            </div>
+            <div class="t-newsModalAuthorHolder">
+              <div class="t-flexHolder">
+                <div class="t-newsModalAuthorImg"><img src="images/photos/takeoff.jpg"/></div>
+                <div class="t-newsModalAuthorInfo">
+                  <h1 class="t-authorName">Takeoff</h1><span class="t-authorProfession">Рэпер</span>
+                </div>
+              </div>
+              <div class="t-newsModalCategory"><span>Экспертное мнение</span></div>
+              <ul class="t-authorTags t-authorTagsModal">
+                <li>Дизайн,</li>
+                <li>маркетинг,</li>
+                <li>бизнес,</li>
+                <li>CEO,</li>
+                <li>Программирование,</li>
+              </ul><span class="t-newsModalDate">14 января</span>
+              <div class="t-newsParams t-newsModalParams">
+                <ul>
+                  <li>475</li>
+                  <li>987</li>
+                  <li>340K</li>
+                  <li>2M</li>
+                </ul>
+              </div>
+            </div>
+            <h1 class="t-newsModalTitle t-titleUltraMegaLarge t-transform">Заголовок статьи, например не в одну, а в три строки</h1>
+            <div class="t-newsModalMainInfo">
+              <h2 class="t-newsModalMainInfoTitle t-titleLarge">Заголовок</h2>
+              <h3 class="t-newsModalMainInfoMidTitle t-titleBig">Подзаголовок</h3>
+              <p class="t-articleText">
+                Минкомсвязи отказалось от требования рассчитывать объём хранилищ данных пользователей на основании максимальной ширины канала операторов связи.
+                Это должно снизить затраты операторов, пишет «Коммерсантъ» со ссылкой на копию письма замглавы Минкомсвязи Дмитрия Алхазова в Российский союз промышленников и предпринимателей (РСПП).
+              </p><br/><a href="#">Ссылка</a><br/><br/><span class="t-signature">Подпись</span><br/><br/>
+              <p>Цитата</p><br/><br/>
+            </div>
+            <div class="t-newsModalImage t-transform"><img src="images/png/img.png"/>
+              <p class="t-signature">Подпись</p>
+            </div>
+            <div class="t-likeBlockWrapper">
+              <h2 class="t-likesTitle t-titleBig">Нравится ?</h2>
+              <div class="t-likesContainer">
+                <button type="button" class="t-iLikeItBtn t-btn">Мне нравится</button>
+                <div class="t-share">Share</div>
+              </div>
+            </div>
+            <div class="t-commentBlock">
+              <h2 class="t-commentsTitle t-titleBig">Обсуждение</h2>
+              <div class="t-commentsFilter"><span class="t-filterName">По популярности</span><span>ico</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="t-fixed t-authorModal">
         <div class="t-authorModalInfo">
           <h1 class="t-authorModalName t-titleUltraLarge">Джон Тривольта</h1>
           <h2 class="t-authorModalProfession t-titleLarge">Угонщик</h2>
@@ -55,7 +114,7 @@
         </div>
         <div class="t-authorModalPhoto"><img src="images/photos/John.png"/>
           <div class="t-modalImgOverlay">
-            <div class="t-modalButtonsHolder">
+            <div class="t-modalButtonsHolder t-hide">
               <div class="t-modalShare"></div>
               <div class="t-modalBack"><span>Назад</span></div>
             </div>
