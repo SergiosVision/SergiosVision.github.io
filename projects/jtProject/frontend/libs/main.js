@@ -23,7 +23,7 @@ $(function ($) {
             "left": getThisElOffset
         });
 
-        $(select).bind("DOMMouseScroll mousewheel", function (event) {
+        $(select).bind("DOMMouseScroll mousewheel wheel", function (event) {
             calculate();
             event.preventDefault();
         });
