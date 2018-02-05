@@ -1,62 +1,50 @@
-svg4everybody();
-
-//  Маленький скролл плагин
-// $(function ($) {
-//     $.fn.horizontalScrl = function (select, amount) {
-//         var cmp = $(this);
-//         amount = amount || 120;
-//         cmp.css('overflow', 'auto');
-//         $(select).bind("DOMMouseScroll mousewheel", function (event) {
-//             var oEvent = event.originalEvent,
-//                 direction = oEvent.detail ? (oEvent.detail * -amount) : oEvent.wheelDelta,
-//                 position = cmp.scrollLeft();
-//             position += direction > 0 ? -amount : amount;
-//             cmp.scrollLeft(position);
-//             event.preventDefault();
-//         })
-//     };
-// });
-
-
 //  Маленький скролл плагин
 $(function ($) {
-    $.fn.horizontalScrl = function (select, inside, spring, reduce, limit) {
-        function pos() {
-            var pos = $(inside).last().position().left + $(inside).last().width() - $(window).width();
-            return pos;
-        }
-        var position = pos(),
-            sp = 0,
+    $.fn.horizontalScrl = function (select, inside, hide) {
+        var sp = 0,
             cmp = $(this),
+            getLeftVal = parseInt(cmp.css("left")) !== parseInt(5),
+            getThisElOffset = cmp.offset().left,
             x = 0,
-            scrollValue = 0,
-            oldScrollValue = 0,
-            scrollTarget = 0,
-            scrollLeft = 0,
-            scrollRight = 0,
-            spring = spring,
-            direction = 0,
-            speed = 0,
-            speedTarget = 0
+            direction = 0;
 
-        cmp.css('transition', 'transform 1.2s cubic-bezier(0.49, 0.8, 0.49, 0.8)');
+        cmp.css({
+            "transition": "transform 1.2s cubic-bezier(0.49, 0.8, 0.49, 0.8)",
+            "position": "absolute",
+            "left": getThisElOffset
+        });
+
         $(select).bind("DOMMouseScroll mousewheel", function (event) {
-            calcualte();
+            $(hide).css({
+                "transform": "translateX(-150%)",
+                "transition": ".8s ease-in-out"
+            });
+            if (getLeftVal) {
+                cmp.animate({
+                    "left": "5px",
+                }, 1000);
+            }
+            calculate();
             event.preventDefault();
         });
-        $(select).bind("keydown", function (event) {
-            calcualte();
-            event.preventDefault();
-        });
-        function calcualte() {
 
+        $(select).bind("keydown", function (event) {
+            calculate();
+            event.preventDefault();
+        });
+        function calculate() {
+            var position = pos();
+            function pos() {
+                var pos = $(inside).last().position().left + $(inside).last().width() - $(window).width() + 7;
+                return pos;
+            }
             if (event.type.toLowerCase() == "mousewheel") {
                 if (event.deltaY > 0) {
                     direction = 1;
                 } else {
                     direction = -1
                 }
-            } else if ((event.type.toLowerCase() == "keydown")&&(event.target.nodeName.toLowerCase() == select)) {
+            } else if ((event.type.toLowerCase() == "keydown") && (event.target.nodeName.toLowerCase() == select)) {
                 if (event.which == 38) {
                     direction = 1;
                 } else if (event.which == 40) {
@@ -66,14 +54,14 @@ $(function ($) {
                 }
             }
 
-            scrollTarget += event.deltaY * -1;
-            scrollTarget = Math.round(Math.max(scrollLeft, Math.min(scrollTarget, scrollRight)));
-
-            scrollValue += (scrollTarget - scrollValue) * spring;
-
-            var delta = scrollTarget - scrollValue;
-            var thisMargin = delta / reduce;
-            speed = _clamp(-thisMargin, -limit, limit);
+            // scrollTarget += event.deltaY * -1;
+            // scrollTarget = Math.round(Math.max(scrollLeft, Math.min(scrollTarget, scrollRight)));
+            //
+            // scrollValue += (scrollTarget - scrollValue) * spring;
+            //
+            // var delta = scrollTarget - scrollValue;
+            // var thisMargin = delta / reduce;
+            // speed = _clamp(-thisMargin, -limit, limit);
 
             sp += cmp.scrollLeft = event.deltaY;
 
@@ -97,88 +85,6 @@ $(function ($) {
         }
     };
 });
-
-// $(function ($) {
-//     $.fn.horizontalScrl = function (select, inside, spring, reduce, limit) {
-//         function pos() {
-//             var pos = $(inside).last().position().left + $(inside).last().width() - $(window).width();
-//             return pos;
-//         }
-//         var position = pos(),
-//             sp = 0,
-//             cmp = $(this),
-//             x = 0,
-//             scrollValue = 0,
-//             scrollTarget = 10,
-//             spring = spring,
-//             direction = 0,
-//             speed = 0;
-//
-//         cmp.css('transition', 'transform 1.2s cubic-bezier(0.49, 0.8, 0.49, 0.8)');
-//         $(select).bind("DOMMouseScroll mousewheel", function (event) {
-//             calcualte();
-//             event.preventDefault();
-//         });
-//         $(select).bind("keydown", function (event) {
-//             calcualte();
-//             event.preventDefault();
-//         });
-//         function calcualte() {
-//
-//             if (event.type.toLowerCase() == "mousewheel") {
-//                 if (event.deltaY > 0) {
-//                     direction = 1;
-//                 } else {
-//                     direction = -1
-//                 }
-//             } else if ((event.type.toLowerCase() == "keydown")&&(event.target.nodeName.toLowerCase() == select)) {
-//                 if (event.which == 38) {
-//                     direction = 1;
-//                 } else if (event.which == 40) {
-//                     direction = -1
-//                 } else {
-//                     return;
-//                 }
-//             }
-//
-//             scrollTarget += event.deltaY/120;
-//             scrollTarget = Math.round(scrollTarget);
-//
-//             scrollValue += (scrollTarget - scrollValue) * spring;
-//
-//             var delta = scrollTarget - scrollValue;
-//             var thisMargin = delta / reduce;
-//             speed = _clamp(thisMargin, -limit, limit);
-//
-//             sp += cmp.scrollLeft = event.deltaY/120;
-//             console.log(event.deltaY/120)
-//
-//
-//             if (sp < 0) {
-//                 sp = 0;
-//             } else if (sp > position) {
-//                 sp = position;
-//             }
-//
-//             cmp.css('transform', 'translate3d(' + -sp + 'px, 0 ,0)');
-//             $('.t-scrollBar').each(function () {
-//                 $(this).css('margin-right',  -speed);
-//                 $(this).css('margin-left', -speed);
-//             });
-//
-//
-//             if (x < 0) {
-//                 x = 0;
-//             } else if (x > inside.length) {
-//                 x = inside.length
-//             }
-//
-//             function _clamp(num, min, max) {
-//                 return Math.min(Math.max(num, min), max);
-//             }
-//         }
-//     };
-// });
 
 // Мини плагин для подмены BackgroundА
 $(function () {
@@ -221,34 +127,60 @@ $(function () {
         })
     }
 });
-
+// Document Ready Section
 $(document).ready(function () {
+    svg4everybody(); // Call SVG4EveryBody
     $('.t-authorModalPhoto img').toBackGround(); // Инициализация подмены BackgroundА
 
     if(window.matchMedia('(min-width: 768px)').matches) {
         // Инициализация маленького скролл плагина
-        $('.t-mainCardsHolder').horizontalScrl('main', '.t-scrollBar', 0.3, 16, 16); // Вводим скорость горизонтального скролла а также зону действия скролла
+        $('.t-mainCardsHolder').horizontalScrl('main', '.t-scrollBar', '.t-menuWrapper'); // Вводим скорость горизонтального скролла а также зону действия скролла
     }
 
-    // var blocks = document.getElementsByClassName('t-scrollBar');
-    // var container = document.getElementsByClassName('t-mainCardsHolder');
-    // var hs = new HorizontalScroll.default({
-    //     blocks : blocks,
-    //     container: container,
-    //     isAnimated: true,
-    //     springEffect: 0,
-    // });
+    //  Call Modals
+    function checkRel() {
+        if (!$('body').hasClass('t-relative')) {
+            $('body').addClass('t-relative');
+        }
+    }
 
     $('body').on('click', '.t-modalBack', function (e) {
         e.preventDefault();
-        $('.t-authorModal').addClass('closeAnim');
+        if ($('body').hasClass('t-relative')) {
+            $('body').removeClass('t-relative');
+        }
+        if($('.t-authorModal')) {
+            $('.t-authorModal').addClass('closeAnim');
+            $('.t-modalButtonsHolder').addClass('t-hide');
+            setTimeout(function () {
+                $('.t-authorModal').removeClass('closeAnim').hide();
+            },1000)
+        }
+        if ($('.t-newsModal')) {
+            $('.t-newsModal').addClass('closeAnim');
+            $('.t-modalButtonsHolder').addClass('t-hide');
+            setTimeout(function () {
+                $('.t-newsModal').removeClass('closeAnim').hide();
+            },1000)
+        }
+    });
+
+    $('body').on('click','.t-newsCard', function (e) {
+        e.preventDefault();
+        checkRel();
+        var $this =  $(this);
+
+        $('.t-newsModal').show().addClass('turnAnimation');
         setTimeout(function () {
-            $('.t-authorModal').removeClass('closeAnim').hide();
-        },1000)
+            $('.t-newsModal').removeClass('turnAnimation');
+            $('.t-modalButtonsHolder').removeClass('t-hide');
+        },1300)
+
     });
 
     $('body').on('click', '.t-authorCardLink', function (e) {
         e.preventDefault();
+        checkRel();
         var $this = $(this);
         var getImgHolderImg = $this.find('img').attr('src');
         var getName = $this.find(".t-authorName").text();
@@ -263,9 +195,10 @@ $(document).ready(function () {
         $('.t-authorModal').css('display', "flex").addClass('turnAnimation');
         setTimeout(function () {
             $('.t-authorModal').removeClass('turnAnimation');
-        },1000)
+            $('.t-modalButtonsHolder').removeClass('t-hide');
+        },1300)
     });
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Движение блока при движении мышки
     var cntHd, sldWd, tb;

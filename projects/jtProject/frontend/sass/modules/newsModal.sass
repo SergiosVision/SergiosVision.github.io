@@ -1,0 +1,146 @@
+.t-newsModal
+  display: none
+  &.turnAnimation
+    .t-newsColorBlock
+      animation: animationLeft 1s ease-in-out
+    .t-newsInsideHolder
+      animation: animationRight 1s ease-in-out
+    .t-modalButtonsHolder
+      animation: modalButtons .4s ease-in-out
+      animation-delay: 1s
+  &.closeAnim
+    .t-newsColorBlock
+      animation: animationLeftHide 1s ease-in-out
+    .t-newsInsideHolder
+      animation: animationRightHide 1s ease-in-out
+  .t-newsColorBlock
+    flex: 1 1 30%
+  .t-newsModalInfo
+    height: 100%
+    display: flex
+    align-items: stretch
+    .t-newsInsideHolder
+      flex: 1 1 70%
+      padding: 57px 112px 132px 57px
+      background-color: $white
+      .t-modalButtonsHolder
+        .t-modalBack
+          span
+            color: $dgrey
+    .t-newsModalAuthorHolder
+      width: 273px
+      display: flex
+      flex-direction: column
+      .t-flexHolder
+        width: 256px
+      .t-newsModalAuthorImg
+        margin-right: 16px
+        width: 56px
+        height: 56px
+        border-radius: 4px
+        img
+          border-radius: 4px
+          display: block
+          width: 100%
+          height: 100%
+          object-fit: cover
+          background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%)
+      .t-newsModalAuthorInfo
+        .t-authorName
+          @include fontsSizes(16, bold, 20)
+          color: $tBlack
+          margin: 0
+        .t-authorProfession
+          @include fontsSizes(14, normal, 17)
+          color: $dgrey
+          display: inline-block
+      .t-newsModalCategory
+        margin-top: 16px
+        span
+          display: inline-block
+          @include fontsSizes(16, bold, 20)
+          color: $tBlack
+      .t-authorTagsModal
+        margin-top: 8px
+        flex-wrap: wrap
+        @include fontsSizes(14, normal, 17)
+        color: $tBlackSec
+      .t-newsModalDate
+        margin-top: 8px
+        @include fontsSizes(14, normal, 17)
+        color: $dgrey
+        display: inline-block
+      .t-newsModalParams
+        margin-top: 19px
+        ul
+          display: flex
+          list-style: none
+          margin: 0
+          padding: 0
+          li:not(:last-child)
+            margin-right: 11px
+
+  .t-newsModalTitle
+    width: 960px
+    height: auto
+    margin-top: 40px
+    margin-bottom: 80px
+    &:after
+      content: ''
+      display: block
+      margin-top: 64px
+      width: 50%
+      height: 8px
+      background-color: $tBlackSec
+  .t-newsModalMainInfo
+    margin-bottom: 80px
+    a
+      @include links()
+      @include fontsSizes(14, normal, 17)
+      color: $tBlack
+      &:after
+        content: ''
+        display: block
+        width: 50%
+        height: 1px
+        background-color:
+        transition: .3s ease
+        background-color: rgba(51, 51, 51, .30)
+        margin-top: 4px
+      &:hover
+        &:after
+          width: 100%
+
+  .t-newsModalMainInfoTitle
+    color: $tBlackSec
+    margin-bottom: 32px
+  .t-newsModalMainInfoMidTitle
+    margin-bottom: 16px
+  .t-articleText
+    width: 792px
+  .t-signature
+    @include fontsSizes(20, normal, 24)
+    color: $lgreySec
+  .t-newsModalImage
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 960px
+    height: auto
+    img
+      width: 100%
+      height: 640px
+      object-fit: cover
+    .t-signature
+      color: $lgreySec
+      margin-top: 40px
+  .t-likeBlockWrapper
+    margin: 120px 0 80px 0
+    .t-likesTitle
+      margin-bottom: 16px
+    .t-likesContainer
+      display: flex
+      align-items: center
+      .t-iLikeItBtn
+        margin-right: 16px
+

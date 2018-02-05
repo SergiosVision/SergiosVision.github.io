@@ -11,7 +11,7 @@ html, body
 body
   margin: 0
   padding: 0
-  position: relative
+  position: fixed
 
 
 .t-mainWrapper
@@ -27,8 +27,50 @@ header
 main
   flex: 1 1 auto
   width: 100vw
-  //min-height: calc(100vh - 462px)
 
+.t-btn
+  text-decoration: none
+  outline: none
+  border: 1px solid $lgrey
+  color: $tBlackSec
+  @include fontsSizes(14, bold, 17)
+  padding: 8px 20px
+  cursor: pointer
+  border-radius: 16px
+  transition: .3s ease-in-out
+
+// Media Hovers
+
+@media (min-width: 769px)
+  .t-btn:hover
+    background-color: $dblue
+    border-color: transparent
+    color: $white
+
+
+.t-relative
+  position: relative
+
+.t-fixed
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+.t-absolute
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+
+.t-transform
+  transform: translateX(-30%)
+
+.t-titleUltraMegaLarge
+  @include fontsSizes(80, bold, 98)
+  color: $tBlackSec
+  margin: 0
 
 .t-titleUltraLarge
   @include fontsSizes(60, bold, 73)
@@ -41,11 +83,14 @@ main
   margin: 0
 
 .t-titleBig
-  @include fontsSizes(26, bold, 32px)
+  @include fontsSizes(26, bold, 32)
   color: $tBlackSec
   margin: 0 0 16px 0
 
 
+.t-flexHolder
+  display: flex
+  
 .t-mainMain
   width: 100vw
   overflow: hidden
@@ -94,3 +139,59 @@ main
         color: $dgrey
 
 
+.t-commentBlock
+  .t-commentsTitle
+    margin-bottom: 11px
+  .t-commentsFilter
+    .t-filterName
+      @include fontsSizes(14, bold, 17)
+      color: $tBlackSec
+      margin-right: 8px
+
+.t-modalButtonsHolder
+  transition: .4s ease-in-out
+  position: absolute
+  top: 67px
+  right: 56px
+  .t-modalBack
+    cursor: pointer
+    span
+      @include fontsSizes(14, bold, 16)
+      color: $white
+  &.t-hide
+    opacity: 0
+    pointer-events: none
+
+
+@keyframes animationLeft
+  from
+    transform: translateX(-150%)
+  to
+    transform: none
+
+@keyframes animationRight
+  from
+    transform: translateX(150%)
+  to
+    transform: none
+
+@keyframes animationLeftHide
+  from
+    transform: none
+  to
+    transform: translateX(-150%)
+
+@keyframes animationRightHide
+  from
+    transform: none
+  to
+    transform: translateX(150%)
+
+
+@keyframes modalButtons
+  from
+    transform: translateX(50px)
+    opacity: 0
+  to
+    transform: none
+    opacity: 1

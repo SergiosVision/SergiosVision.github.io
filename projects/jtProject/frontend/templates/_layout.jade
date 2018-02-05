@@ -88,7 +88,7 @@ mixin topCard(pageName, listOne, listTwo, listThird, listFour, listFive, listSix
             li ico
 
 mixin authorsModal()
-    div.t-authorModal
+    div.t-fixed.t-authorModal
         div.t-authorModalInfo
             h1.t-authorModalName.t-titleUltraLarge Джон Тривольта
             h2.t-authorModalProfession.t-titleLarge Угонщик
@@ -118,7 +118,7 @@ mixin authorsModal()
         div.t-authorModalPhoto
             img(src="images/photos/John.png")
             div.t-modalImgOverlay
-                div.t-modalButtonsHolder
+                div.t-modalButtonsHolder.t-hide
                     div.t-modalShare
                     div.t-modalBack
                         span Назад
@@ -134,6 +134,67 @@ mixin authorArticles()
                 span.t-authorArticleCardDate 14 апреля 2218
 
 
+mixin newsModal()
+    div.t-absolute.t-newsModal
+        div.t-newsModalInfo
+            div.t-newsColorBlock(style="background-color:#57C9FA")
+            div.t-newsInsideHolder
+                div.t-modalButtonsHolder
+                    div.t-modalShare
+                    div.t-modalBack
+                        span Назад
+                div.t-newsModalAuthorHolder
+                    div.t-flexHolder
+                        div.t-newsModalAuthorImg
+                            img(src="images/photos/takeoff.jpg")
+                        div.t-newsModalAuthorInfo
+                            h1.t-authorName Takeoff
+                            span.t-authorProfession Рэпер
+                    div.t-newsModalCategory
+                        span Экспертное мнение
+                    ul.t-authorTags.t-authorTagsModal
+                        li Дизайн,
+                        li маркетинг,
+                        li бизнес,
+                        li CEO,
+                        li Программирование,
+                    span.t-newsModalDate 14 января
+                    div.t-newsParams.t-newsModalParams
+                        ul
+                            li 475
+                            li 987
+                            li 340K
+                            li 2M
+                h1.t-newsModalTitle.t-titleUltraMegaLarge.t-transform Заголовок статьи, например не в одну, а в три строки
+                div.t-newsModalMainInfo
+                    h2.t-newsModalMainInfoTitle.t-titleLarge Заголовок
+                    h3.t-newsModalMainInfoMidTitle.t-titleBig Подзаголовок
+                    p.t-articleText Минкомсвязи отказалось от требования рассчитывать объём хранилищ данных пользователей на основании максимальной ширины канала операторов связи.
+                        | Это должно снизить затраты операторов, пишет «Коммерсантъ» со ссылкой на копию письма замглавы Минкомсвязи Дмитрия Алхазова в Российский союз промышленников и предпринимателей (РСПП).
+                    br
+                    a(href="#") Ссылка
+                    br
+                    br
+                    span.t-signature Подпись
+                    br
+                    br
+                    p Цитата
+                    br
+                    br
+                div.t-newsModalImage.t-transform
+                    img(src="images/png/img.png")
+                    p.t-signature Подпись
+                div.t-likeBlockWrapper
+                    h2.t-likesTitle.t-titleBig Нравится ?
+                    div.t-likesContainer
+                        button(type="button").t-iLikeItBtn.t-btn Мне нравится
+                        div.t-share Share
+                div.t-commentBlock
+                    h2.t-commentsTitle.t-titleBig Обсуждение
+                    div.t-commentsFilter
+                        span.t-filterName По популярности
+                        span ico
+
 doctype html
 html(lang="ru-RU")
     head
@@ -148,6 +209,7 @@ html(lang="ru-RU")
     body
         div.t-mainWrapper
             block content
+            + newsModal()
             + authorsModal()
 
         script(src="js/vendor.min.js")
