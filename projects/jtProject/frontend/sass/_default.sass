@@ -12,6 +12,23 @@ body
   margin: 0
   padding: 0
   position: fixed
+  &.modalActivate
+    transition: all .3s ease-in-out
+    .t-logoSection
+      position: absolute
+      z-index: 1000
+      animation: animationLogoAndAuthor .5s ease-in-out
+    .t-namePage
+      position: absolute
+      z-index: 1000
+      transform: translateX(-120px)
+      animation: animationName .5s ease-in-out
+    .t-newsModal
+      .t-newsModalAuthorHolder
+        @include forEaseAnim(1, none, 'all')
+      .t-newsModalTitle
+        @include forEaseAnim(1, 'translateX(-30%)', 'all')
+
 
 
 .t-mainWrapper
@@ -28,6 +45,13 @@ main
   flex: 1 1 auto
   width: 100vw
 
+.t-scrollBar
+  padding: 0 8px
+  &:first-child
+    padding-left: 0
+  &:last-child
+    padding-right: 0
+
 .t-btn
   text-decoration: none
   outline: none
@@ -38,6 +62,8 @@ main
   cursor: pointer
   border-radius: 16px
   transition: .3s ease-in-out
+
+
 
 // Media Hovers
 
@@ -195,3 +221,20 @@ main
   to
     transform: none
     opacity: 1
+
+@keyframes animationLogoAndAuthor
+  from
+    opacity: 0
+    transform: translateY(-55px)
+  top
+    opacity: 1
+    transform: none
+
+@keyframes animationName
+  from
+    opacity: 0
+    transform: translateY(-55px)
+    transform: translateX(-120px)
+  top
+    opacity: 1
+    transform: none

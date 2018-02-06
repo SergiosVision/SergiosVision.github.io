@@ -31,6 +31,9 @@
       width: 273px
       display: flex
       flex-direction: column
+      transform: translateY(-55px)
+      @include forEaseAnim(0, 'translateY(-55px)', 'none')
+      transition: .5s ease-in-out
       .t-flexHolder
         width: 256px
       .t-newsModalAuthorImg
@@ -85,6 +88,8 @@
     height: auto
     margin-top: 40px
     margin-bottom: 80px
+    transition: .5s ease-in-out
+    @include forEaseAnim(0, 'translateX(-700px)', 'none')
     &:after
       content: ''
       display: block

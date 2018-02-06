@@ -2,12 +2,9 @@ main
   flex: 1 1 auto
   .t-newsCardWrapper
     position: relative
-    margin-right: 16px
     height: 560px
     flex: 0 0 400px
     transition: .4s
-    &:last-child
-      margin: 0
     .t-newsCatNameAndDateHolder
       width: 100%
       display: flex
@@ -42,7 +39,7 @@ main
         transition: .3s ease
         object-fit: cover
     .t-newsCardInfoHolder
-      padding: 40px
+
       position: absolute
       top: 0
       left: 0
@@ -114,6 +111,8 @@ main
         position: absolute
         left: 40px
         top: 40px
+    .t-newsContentBody
+      padding: 40px
     &:hover
       .t-newsCardImg
         img

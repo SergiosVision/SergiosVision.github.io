@@ -1,112 +1,119 @@
 //  Маленький скролл плагин
 $(function ($) {
-    $.fn.horizontalScrl = function (select, inside, hide) {
-        function getTransform(el) {
-            var resultOne = $(el).css('transform').split(',');
-            var resultTwo = resultOne[4];
-            var getValue = parseInt(resultTwo);
-            return getValue;
-        }
+    $.fn.horizontalScroll = function (options) {
+
+        // Params
+        var options = jQuery.extend({
+            scrollField: '',
+            thisChild: '',
+            hideElement: ''
+        }, options);
+
+        // Variables
         var sp = 0,
             cmp = $(this),
             getLeftVal = parseInt(cmp.css("left")) !== parseInt(5),
             getThisElOffset = cmp.offset().left,
-            getHidenWidth = $(hide).width(),
+            getHidenWidth = $(options.hideElement).width(),
             x = 0,
             direction = 0,
-            directionCtrl = false,
-            directionCtrlSec = false;
+            scrollTarget = 0,
+            scrollValue = 0,
+            speed = 0;
 
-        cmp.css({
-            "transition": "transform 1.2s cubic-bezier(0.49, 0.8, 0.49, 0.8)",
-            "position": "absolute",
-            "left": getThisElOffset
-        });
-
-        $(select).bind("DOMMouseScroll mousewheel wheel", function (event) {
-            calculate();
-            event.preventDefault();
-        });
-
-        $(select).bind("keydown", function (event) {
-            calculate();
-            event.preventDefault();
-        });
-        function calculate() {
-            console.log(getTransform(cmp));
-            var position = pos();
-            function pos() {
-                var pos = $(inside).last().position().left + $(inside).last().width() - $(window).width() + 7;
-                return pos;
+        // Get Value from the Transform Translate
+        return this.each(function () {
+            function getTransform(el) {
+                var resultOne = $(el).css('transform').split(',');
+                var resultTwo = resultOne[4];
+                var getValue = parseInt(resultTwo);
+                return getValue;
             }
-            if (event.type.toLowerCase() == "mousewheel") {
+
+            // Set stock UI
+            cmp.css({
+                "position": "absolute",
+                "left": getThisElOffset
+            });
+
+
+            // Call MouseWheel Event
+            $(options.scrollField).bind("DOMMouseScroll mousewheel wheel", function (event) {
+                calculate();
+                event.preventDefault();
+            });
+
+            // Calculate Position in Container
+            function calculate() {
+                var position = pos();
+                function pos() {
+                    var pos = $(options.thisChild).last().position().left + $(options.thisChild).last().width() - $(window).width() + 7;
+                    return pos;
+                }
+
+
+                // Set Scroll Event
+                sp += cmp.scrollLeft = event.deltaY;
+
+                if (sp < 0) {
+                    sp = 0;
+                } else if (sp > position) {
+                    sp = position;
+                }
+
                 if (event.deltaY > 0) {
                     direction = 1;
-                    if(!directionCtrl) {
-                        $(hide).css({
+                    if(sp > 0) {
+                        $(options.hideElement).css({
                             "transform": "translateX(-150%)",
                             "transition": ".6s ease-in-out"
                         });
                         if (getLeftVal) {
-                            cmp.animate({
-                                "left": "5px",
-                            }, 700);
+                            getLeftVal = false;
+                            cmp.animate({"left": "5px"}, 700);
                         }
-                        directionCtrl = true;
                     }
                 } else {
                     direction = -1;
-                    directionCtrl = false;
-                    if (getTransform(cmp) === parseInt(0) && !directionCtrlSec) {
-                        cmp.animate({"left": getHidenWidth,}, 700);
-                        $(hide).css('transform', 'none');
-                        directionCtrlSec = true;
-                    } else if (getTransform(cmp) === parseInt(0)) {
-                        directionCtrlSec = false;
+                    if ((sp === 0 || sp <= -320) && (getTransform(cmp) === parseInt(0) && getLeftVal === false)) {
+                        cmp.animate({"left": getHidenWidth}, 700);
+                        $(options.hideElement).css('transform', 'none');
+                        getLeftVal = true;
                     }
-                    event.stopPropagation();
                 }
-            } else if ((event.type.toLowerCase() == "keydown") && (event.target.nodeName.toLowerCase() == select)) {
-                if (event.which == 38) {
-                    direction = 1;
-                } else if (event.which == 40) {
-                    direction = -1
-                } else {
-                    return;
+
+                // Couple Calculates Speed And More
+                scrollTarget += event.deltaY;
+                scrollTarget = Math.round(Math.max(-sp, Math.min(scrollTarget, sp)));
+
+                scrollValue += (scrollTarget - scrollValue) * 0.1;
+
+                var delta = scrollTarget - scrollValue;
+                var thisMargin = Math.abs(delta / 10);
+                speed = Math.abs(Math.round(_clamp(thisMargin, -16, 24)));
+
+
+                // cmp.css('transform', 'translate3d(' + -sp + 'px, 0 ,0)');
+                cmp.css({"transform": "translate3d(" + -scrollValue + "px, 0 ,0)"});
+                $(options.thisChild).css({
+                    // "margin": "0 "+ speed / 2 + "px",
+                    // "transform": "skew("+ speed / 2 +"deg)"
+                });
+
+                if (x < 0) {
+                    x = 0;
+                } else if (x > options.thisChild.length) {
+                    x = options.thisChild.length
+                }
+
+                // Max, Min values Function
+
+                function _clamp(num, min, max) {
+                    return Math.min(Math.max(num, min), max);
                 }
             }
+        });
 
-            // scrollTarget += event.deltaY * -1;
-            // scrollTarget = Math.round(Math.max(scrollLeft, Math.min(scrollTarget, scrollRight)));
-            //
-            // scrollValue += (scrollTarget - scrollValue) * spring;
-            //
-            // var delta = scrollTarget - scrollValue;
-            // var thisMargin = delta / reduce;
-            // speed = _clamp(-thisMargin, -limit, limit);
-
-            console.log("Delta:" + ' ' + event.deltaY);
-
-            sp += cmp.scrollLeft = event.deltaY;
-
-            if (sp < 0) {
-                sp = 0;
-            } else if (sp > position) {
-                sp = position;
-            }
-
-            cmp.css('transform', 'translate3d(' + -sp + 'px, 0 ,0)');
-
-            if (x < 0) {
-                x = 0;
-            } else if (x > inside.length) {
-                x = inside.length
-            }
-
-            function _clamp(num, min, max) {
-                return Math.min(Math.max(num, min), max);
-            }
-        }
     };
 });
 
@@ -157,8 +164,12 @@ $(document).ready(function () {
     $('.t-authorModalPhoto img').toBackGround(); // Инициализация подмены BackgroundА
 
     if(window.matchMedia('(min-width: 768px)').matches) {
-        // Инициализация маленького скролл плагина
-        $('.t-mainCardsHolder').horizontalScrl('main', '.t-scrollBar', '.t-menuWrapper'); // Вводим скорость горизонтального скролла а также зону действия скролла
+        // Инициализация Скролл плагина By SergiosVision
+        $('.t-mainCardsHolder').horizontalScroll({
+            scrollField: 'main', // Определяет зону действия скролла
+            thisChild: '.t-scrollBar', // Селектор ребёнка родительского блока
+            hideElement: '.t-menuWrapper' // Элемент который нужно задвинуть :)
+        });
     }
 
     //  Call Modals
@@ -170,6 +181,7 @@ $(document).ready(function () {
 
     $('body').on('click', '.t-modalBack', function (e) {
         e.preventDefault();
+        $('body').removeClass('modalActivate');
         if ($('body').hasClass('t-relative')) {
             $('body').removeClass('t-relative');
         }
@@ -198,6 +210,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.t-newsModal').removeClass('turnAnimation');
             $('.t-modalButtonsHolder').removeClass('t-hide');
+            $('body').addClass('modalActivate');
         },1300)
 
     });
@@ -220,22 +233,29 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.t-authorModal').removeClass('turnAnimation');
             $('.t-modalButtonsHolder').removeClass('t-hide');
+            $('body').addClass('modalActivate');
         },1300)
     });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Движение блока при движении мышки
-    var cntHd, sldWd, tb;
+    var cntHd, sldHd, tb;
     $(function() {
-        cntHd = $('.t-newsCardInfoHolder').innerHeight();
-        tb = $('.t-newsContentBody');
-        sldWd = tb.outerHeight();
         $('.t-newsCardInfoHolder').mousemove(function(e) {
-            if (sldWd > $(this).innerHeight()) {
+            var $this = $(this);
+            cntHd = $this.outerHeight();
+            tb = $this.find('.t-newsContentBody');
+            sldHd = tb.outerHeight();
+            if (sldHd > $this.height()) {
+                var percent = e.pageY - $this.offset().top;
+                percent = 100 / cntHd * percent;
+
+                var translate = ((sldHd - cntHd) / 100) * percent;
+
                 tb.css({
                     "overflow": "hidden",
                     "white-space": "nowrap",
-                    "transform": "translateY("+ ((cntHd - sldWd)*((e.pageY / cntHd).toFixed(3))).toFixed(1) +"px)"
+                    "transform": "translateY(-"+ translate +"px)"
                 });
             } else {
                 return false;
