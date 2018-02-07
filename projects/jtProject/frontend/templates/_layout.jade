@@ -31,11 +31,12 @@ mixin card (changeImage)
                                 span.t-newsProfession Бизнесмен
                         h2.t-newsCategory Экспертное мнение
                         ul.t-newsTags
-                            li Дизайн,
-                            li маркетинг,
-                            li бизнес,
-                            li CEO,
-                            li программирование
+                            - for(var k = 0; k < 50; k++)
+                                li Дизайн,
+                                li маркетинг,
+                                li бизнес,
+                                li CEO,
+                                li программирование
                         span.t-newsDate 14 января
                         div.t-newsContentShare
                             span Ico
@@ -195,6 +196,18 @@ mixin newsModal()
                         span.t-filterName По популярности
                         span ico
 
+
+mixin hiddenLogo()
+    div.t-hiddenLogoWrapper
+        div.t-burger
+            span.line
+            span.line
+            span.line
+        a(href="/").t-logoWrapper
+            div.t-logo
+        div.t-pageNameHolder
+            span.t-pageHiddenName
+
 doctype html
 html(lang="ru-RU")
     head
@@ -208,6 +221,7 @@ html(lang="ru-RU")
         link(rel='stylesheet', href="css/main.min.css")
     body
         div.t-mainWrapper
+            + hiddenLogo()
             block content
             + newsModal()
             + authorsModal()

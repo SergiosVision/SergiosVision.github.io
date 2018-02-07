@@ -6,7 +6,8 @@ $(function ($) {
         var options = jQuery.extend({
             scrollField: '',
             thisChild: '',
-            hideElement: ''
+            hideElement: '',
+            bars: ''
         }, options);
 
         // Variables
@@ -19,7 +20,8 @@ $(function ($) {
             direction = 0,
             scrollTarget = 0,
             scrollValue = 0,
-            speed = 0;
+            speed = 0,
+            lastSecond = [];
 
         // Get Value from the Transform Translate
         return this.each(function () {
@@ -51,8 +53,8 @@ $(function ($) {
                     return pos;
                 }
 
-
                 // Set Scroll Event
+
                 sp += cmp.scrollLeft = event.deltaY;
 
                 if (sp < 0) {
@@ -64,10 +66,9 @@ $(function ($) {
                 if (event.deltaY > 0) {
                     direction = 1;
                     if(sp > 0) {
-                        $(options.hideElement).css({
-                            "transform": "translateX(-150%)",
-                            "transition": ".6s ease-in-out"
-                        });
+                        $(options.hideElement).css({"transform": "translateX(-150%)", "transition": ".6s ease-in-out", "opacity":'0'});
+                        $(options.bars).css({"left": "22px"});
+                        $(options.hideElement).parent().parent().addClass('minAside');
                         if (getLeftVal) {
                             getLeftVal = false;
                             cmp.animate({"left": "5px"}, 700);
@@ -76,25 +77,16 @@ $(function ($) {
                 } else {
                     direction = -1;
                     if ((sp === 0 || sp <= -320) && (getTransform(cmp) === parseInt(0) && getLeftVal === false)) {
+                        $(options.hideElement).parent().parent().removeClass('minAside');
                         cmp.animate({"left": getHidenWidth}, 700);
-                        $(options.hideElement).css('transform', 'none');
+                        $(options.bars).css({"left": "-150%"});
+                        $(options.hideElement).css({"transform": "none", "opacity": '1'});
                         getLeftVal = true;
                     }
                 }
 
-                // Couple Calculates Speed And More
-                scrollTarget += event.deltaY;
-                scrollTarget = Math.round(Math.max(-sp, Math.min(scrollTarget, sp)));
-
-                scrollValue += (scrollTarget - scrollValue) * 0.1;
-
-                var delta = scrollTarget - scrollValue;
-                var thisMargin = Math.abs(delta / 10);
-                speed = Math.abs(Math.round(_clamp(thisMargin, -16, 24)));
-
-
-                // cmp.css('transform', 'translate3d(' + -sp + 'px, 0 ,0)');
-                cmp.css({"transform": "translate3d(" + -scrollValue + "px, 0 ,0)"});
+                cmp.css('transform', 'translate3d(' + -sp + 'px, 0 ,0)');
+                // cmp.css({"transform": "translate3d(" + -scrollValue + "px, 0 ,0)"});
                 $(options.thisChild).css({
                     // "margin": "0 "+ speed / 2 + "px",
                     // "transform": "skew("+ speed / 2 +"deg)"
@@ -161,6 +153,8 @@ $(function () {
 // Document Ready Section
 $(document).ready(function () {
     svg4everybody(); // Call SVG4EveryBody
+    var getMainPageName = $('.t-namePage').text();
+    $('.t-pageHiddenName').text(getMainPageName);
     $('.t-authorModalPhoto img').toBackGround(); // Инициализация подмены BackgroundА
 
     if(window.matchMedia('(min-width: 768px)').matches) {
@@ -168,7 +162,8 @@ $(document).ready(function () {
         $('.t-mainCardsHolder').horizontalScroll({
             scrollField: 'main', // Определяет зону действия скролла
             thisChild: '.t-scrollBar', // Селектор ребёнка родительского блока
-            hideElement: '.t-menuWrapper' // Элемент который нужно задвинуть :)
+            hideElement: '.t-menuWrapper', // Элемент который нужно задвинуть :)
+            bars: ".t-mainBurger" // Бургер меню
         });
     }
 
@@ -179,9 +174,26 @@ $(document).ready(function () {
         }
     }
 
+    $('body').on('click', '.t-burger', function (e) {
+        e.preventDefault();
+        $('body').addClass('nowOpened');
+        $('.t-mainWrapper').append('<div class="t-overlay"></div>');
+        $('aside').addClass('t-hiddenMenu');
+        if ($('body').hasClass('nowOpened')) {
+            return false;
+        }
+    });
+
+    $('body').on('click', '.t-overlay', function () {
+        $('aside').removeClass('t-hiddenMenu');
+        $('body').removeClass('nowOpened');
+        $(this).remove()
+    });
+
     $('body').on('click', '.t-modalBack', function (e) {
         e.preventDefault();
-        $('body').removeClass('modalActivate');
+        $('body').removeClass('modalActivate').removeClass('nowOpened');
+        $('.t-hiddenLogoWrapper').removeClass('activateBg');
         if ($('body').hasClass('t-relative')) {
             $('body').removeClass('t-relative');
         }
@@ -233,14 +245,15 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.t-authorModal').removeClass('turnAnimation');
             $('.t-modalButtonsHolder').removeClass('t-hide');
+            $('.t-hiddenLogoWrapper').addClass('activateBg');
             $('body').addClass('modalActivate');
         },1300)
     });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Движение блока при движении мышки
-    var cntHd, sldHd, tb;
     $(function() {
+        var cntHd, sldHd, tb;
         $('.t-newsCardInfoHolder').mousemove(function(e) {
             var $this = $(this);
             cntHd = $this.outerHeight();
@@ -262,4 +275,7 @@ $(document).ready(function () {
             }
         });
     });
+
+    $()
+
 });

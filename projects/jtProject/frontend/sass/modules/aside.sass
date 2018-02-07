@@ -1,17 +1,21 @@
 aside
   background-color: $white
   flex: 0 0 335px
+  transition: .7s ease-in-out
+  height: 100%
   .t-logoSection
+    position: relative
     padding: 40px 0 0 40px
-    .t-logoWrapper
-      display: inline-block
-      .t-logo
-        width: 133px
-        height: 74px
-        background: url("/images/logo/logo.png") no-repeat
-        background-size: contain
+    .t-burger
+      transition: .7s ease-in-out
+      position: absolute
+      left: -150%
+      top: 68px
+  &.minAside
+    flex: 0 0 226.36px
+  .t-menuWrapper
+    margin-top: 97px
   nav
-    margin-top: 95px
     padding: 0 67px 0 64px
     .t-menuList
       list-style: none
@@ -34,3 +38,28 @@ aside
       @include fontsSizes(14, bold, 17)
       @include links()
       color: $dgrey
+  .t-asideInsideHolder
+    transition: .7s ease-in-out
+  &.t-hiddenMenu
+    .t-asideInsideHolder
+      position: fixed
+      flex: 0 0 335px
+      width: 335px
+      height: 100%
+      background-color: $white
+      animation: hiddenMenuAnimation .4s ease-in-out
+      z-index: 1004
+      .t-menuWrapper
+        transform: none!important
+        opacity: 1!important
+      .t-mainBurger
+        left: -150%!important
+
+.t-logoWrapper
+  display: inline-block
+  cursor: pointer
+  .t-logo
+    width: 133px
+    height: 74px
+    background: url("/images/logo/logo.png") no-repeat
+    background-size: contain
