@@ -32,7 +32,7 @@
       display: flex
       flex-direction: column
       transform: translateY(-55px)
-      @include forEaseAnim(0, translateY(-55px), 'none')
+      @include forEaseAnim(0, translateY(-55px), none)
       transition: .5s ease-in-out
       .t-flexHolder
         width: 256px
@@ -89,7 +89,7 @@
     margin-top: 40px
     margin-bottom: 80px
     transition: .3s ease-in-out
-    @include forEaseAnim(0, translateX(-100%), 'none')
+    @include forEaseAnim(0, translateX(-100%), none)
     &:after
       content: ''
       display: block
@@ -123,6 +123,8 @@
     margin-bottom: 16px
   .t-articleText
     width: 792px
+    @include fontsSizes(20, normal, 24)
+    color: $tBlackSec
   .t-signature
     @include fontsSizes(20, normal, 24)
     color: $lgreySec
@@ -148,4 +150,35 @@
       align-items: center
       .t-iLikeItBtn
         margin-right: 16px
+  .t-commentBlock
+    .t-commentsFilter
+      display: flex
+      align-items: center
+    .t-commentsContent
+      margin-top: 33px
 
+.t-commentsItem
+  .t-commentsAuthor
+    display: flex
+    .t-commentsAuthorImg
+      width: 40px
+      height: 40px
+      border-radius: 4px
+      margin-right: 16px
+      img
+        border-radius: 4px
+        width: 100%
+        height: 100%
+        object-fit: cover
+    .t-commentsAuthorInfo
+      .t-commentsAuthorName
+        color: $tBlack
+        @include fontsSizes(16, bold, 20)
+    .t-commentsAuthorDateAnditemHolder
+      display: flex
+      align-items: center
+      span
+        @include fontsSizes(14, normal, 17)
+        color: $dgrey
+      .t-commentsAuthorAnswerTo
+        margin-left: 16px

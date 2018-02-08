@@ -6,6 +6,7 @@
   .t-mainTopContentInside
     display: flex
     align-items: center
+    justify-content: space-between
     height: 80px
     padding: 31px 0
     .t-topListCtrl
@@ -13,7 +14,7 @@
       width: auto
       list-style: none
       padding: 0
-      margin: 0
+      margin: 0 8px 0 0
     .t-nameAndSortWrapper
       display: flex
       margin-right: 40px
@@ -22,15 +23,19 @@
       .t-topSortWrapper
         .t-topSortName
           margin-right: 8px
+  .t-topListCtrlWrapper
+    position: relative
+    display: flex
+    align-items: center
 
-
+.t-leftAndMidContentContainer
+  display: flex
+  align-items: center
 
 .t-topMiddleSection
-  width: calc(100% - 297.56px)!important
+  //width: calc(100% - 297.56px)!important
   li:not(:first-child)
     margin-left: 24px
-    &:last-child
-      margin-left: 8px
 
 .t-topRightSection
   li:not(:last-child)

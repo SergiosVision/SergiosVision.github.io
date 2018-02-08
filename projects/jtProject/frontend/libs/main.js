@@ -155,6 +155,22 @@ $(document).ready(function () {
     svg4everybody(); // Call SVG4EveryBody
     var getMainPageName = $('.t-namePage').text();
     $('.t-pageHiddenName').text(getMainPageName);
+
+    var getModalContainer = $('.t-sortModalContainer');
+    function appendListElements() {
+        var getListLength = $('.t-topListSorting li');
+        var arrTo = Object.keys(getListLength).map(function (t) { return getListLength[t] });
+        var newArr = arrTo.slice(6);
+        var getBNewArr = newArr.slice(0, -2);
+        getModalContainer.append(getBNewArr);
+        $('.t-smallModalMenu li').each(function () {
+            var text = $(this).text();
+            $(this).html(text).removeClass('t-hiddenLink');
+        });
+    }
+    appendListElements();
+
+
     $('.t-authorModalPhoto img').toBackGround(); // Инициализация подмены BackgroundА
 
     if(window.matchMedia('(min-width: 768px)').matches) {

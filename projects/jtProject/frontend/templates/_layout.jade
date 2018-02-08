@@ -31,12 +31,11 @@ mixin card (changeImage)
                                 span.t-newsProfession Бизнесмен
                         h2.t-newsCategory Экспертное мнение
                         ul.t-newsTags
-                            - for(var k = 0; k < 50; k++)
-                                li Дизайн,
-                                li маркетинг,
-                                li бизнес,
-                                li CEO,
-                                li программирование
+                            li Дизайн,
+                            li маркетинг,
+                            li бизнес,
+                            li CEO,
+                            li программирование
                         span.t-newsDate 14 января
                         div.t-newsContentShare
                             span Ico
@@ -63,26 +62,41 @@ mixin authorCard(changeImg, name, profession, count, likes)
 
 mixin topCard(pageName, listOne, listTwo, listThird, listFour, listFive, listSix)
     div.t-mainTopContentInside
-        div.t-nameAndSortWrapper
-            span.t-namePage= pageName
-            div.t-topSortWrapper
-                span.t-topSortName По дате
-                span.t-icon Ico
-        ul.t-topListCtrl.t-topMiddleSection
-            li
-                a(href="#").t-topSortLinks.active= listOne
-            li
-                a(href="#").t-topSortLinks= listTwo
-            li
-                a(href="#").t-topSortLinks= listThird
-            li
-                a(href="#").t-topSortLinks= listFour
-            li
-                a(href="#").t-topSortLinks= listFive
-            li
-                a(href="#").t-topSortLinks= listSix
-            li
-                a(href="#").t-topSortLinks ico
+        div.t-leftAndMidContentContainer
+            div.t-nameAndSortWrapper
+                span.t-namePage= pageName
+                div.t-topSortWrapper
+                    span.t-topSortName По дате
+                    span.t-icon Ico
+            div.t-topListCtrlWrapper.t-topMiddleSection
+                ul.t-topListCtrl.t-topListSorting
+                    li
+                        a(href="#").t-topSortLinks.active= listOne
+                    li
+                        a(href="#").t-topSortLinks= listTwo
+                    li
+                        a(href="#").t-topSortLinks= listThird
+                    li
+                        a(href="#").t-topSortLinks= listFour
+                    li
+                        a(href="#").t-topSortLinks= listFive
+                    li
+                        a(href="#").t-topSortLinks= listSix
+                    li.t-hiddenLink
+                        a(href="#").t-topSortLinks Бизнес
+                    li.t-hiddenLink
+                        a(href="#").t-topSortLinks Дизайн
+                    li.t-hiddenLink
+                        a(href="#").t-topSortLinks Шняга
+                    li.t-hiddenLink
+                        a(href="#").t-topSortLinks Еще
+                    li.t-hiddenLink
+                        a(href="#").t-topSortLinks Дичь
+                    li.t-hiddenLink
+                        a(href="#").t-topSortLinks Дичь2
+                div.t-dotsHolder.t-callHiddenSortingMenu
+                    span
+                    ul.t-smallModalMenu.t-sortModalContainer
         ul.t-topListCtrl.t-topRightSection
             li ico
             li ico
@@ -194,7 +208,28 @@ mixin newsModal()
                     h2.t-commentsTitle.t-titleBig Обсуждение
                     div.t-commentsFilter
                         span.t-filterName По популярности
-                        span ico
+                        div.t-dotsHolder
+                            span
+                    div.t-commentsContent
+                        div.t-commentsItem
+                            div.t-commentsiItemMain
+                                div.t-commentsAuthorHolder
+                                    div.t-commentsAuthor
+                                        div.t-commentsAuthorImg
+                                            img(src='/images/photos/quavo.jpg')
+                                        div.t-commentsAuthorInfo
+                                            h3.t-commentsAuthorName Quavious Marshall
+                                            div.t-commentsAuthorDateAnditemHolder
+                                                span.t-commentsAuthorDate 24.04.17,
+                                                span.t-commentsAuthorTime 15:30
+                                                div.t-commentsAuthorAnswerTo
+                                                    span.t-commentsAuthorAnswerToName Константин
+                                    div.t-commentsRating
+                                div.t-commentsCommentHolder
+                                    p.t-commentOutput Очень люблю материалы этого чувака. Потом мы узнаем, что ему руку ампутировали из-за гангрены, когда он решит сделать себе руки-базуки.
+                                div.t-commentAnswer
+                                    a(href='#').t-commentsAnswerBtn Ответить
+                            div.t-commentsiItemChildren
 
 
 mixin hiddenLogo()
