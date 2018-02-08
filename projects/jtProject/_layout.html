@@ -12,6 +12,11 @@
   </head>
   <body>
     <div class="t-mainWrapper">
+      <div class="t-hiddenLogoWrapper">
+        <div class="t-burger"><span class="line"></span><span class="line"></span><span class="line"></span></div><a href="/" class="t-logoWrapper">
+          <div class="t-logo"></div></a>
+        <div class="t-pageNameHolder"><span class="t-pageHiddenName"></span></div>
+      </div>
       <div class="t-absolute t-newsModal">
         <div class="t-newsModalInfo">
           <div style="background-color:#57C9FA" class="t-newsColorBlock"></div>
@@ -66,57 +71,85 @@
             </div>
             <div class="t-commentBlock">
               <h2 class="t-commentsTitle t-titleBig">Обсуждение</h2>
-              <div class="t-commentsFilter"><span class="t-filterName">По популярности</span><span>ico</span></div>
+              <div class="t-commentsFilter"><span class="t-filterName">По популярности</span>
+                <div class="t-dotsHolder"><span></span></div>
+              </div>
+              <div class="t-commentsContent">
+                <div class="t-commentsItem">
+                  <div class="t-commentsiItemMain">
+                    <div class="t-commentsAuthorHolder">
+                      <div class="t-commentsAuthor">
+                        <div class="t-commentsAuthorImg"><img src="/images/photos/quavo.jpg"/></div>
+                        <div class="t-commentsAuthorInfo">
+                          <h3 class="t-commentsAuthorName">Quavious Marshall</h3>
+                          <div class="t-commentsAuthorDateAnditemHolder"><span class="t-commentsAuthorDate">24.04.17,</span><span class="t-commentsAuthorTime">15:30</span>
+                            <div class="t-commentsAuthorAnswerTo"><span class="t-commentsAuthorAnswerToName">Константин</span></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="t-commentsRating"></div>
+                    </div>
+                    <div class="t-commentsCommentHolder">
+                      <p class="t-commentOutput">Очень люблю материалы этого чувака. Потом мы узнаем, что ему руку ампутировали из-за гангрены, когда он решит сделать себе руки-базуки.</p>
+                    </div>
+                    <div class="t-commentAnswer"><a href="#" class="t-commentsAnswerBtn">Ответить</a></div>
+                  </div>
+                  <div class="t-commentsiItemChildren"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="t-fixed t-authorModal">
-        <div class="t-authorModalInfo">
-          <h1 class="t-authorModalName t-titleUltraLarge">Джон Тривольта</h1>
-          <h2 class="t-authorModalProfession t-titleLarge">Угонщик</h2>
-          <div class="t-authorModalCountWrapper"><span class="t-name">Статей</span><span class="t-authorArticlesCount">2</span></div>
-          <ul class="t-authorModalTags">
-            <li>Дизайн,</li>
-            <li>бизнес,</li>
-          </ul>
-          <div class="t-authorModalLikesHolder"><span>ico</span><span class="t-authorLikesCount">475</span></div>
-          <div class="t-authorModalAbout">
-            <h1 class="t-authorModalAboutTitle t-titleBig">О себе</h1>
-            <p class="t-authorModalDescription">Минкомсвязи отказалось от требования рассчитывать объём хранилищ данных пользователей на основании максимальной ширины канала операторов связи. Это должно снизить затраты операторов, пишет «Коммерсантъ» со ссылкой на копию письма замглавы Минкомсвязи Дмитрия Алхазова в Российский союз промышленников и предпринимателей (РСПП).</p>
-          </div>
-          <div class="t-authorModalAnotherProfiles">
-            <ul>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Telegram</a></li>
+        <div class="t-authorModalInfoHolder">
+          <div class="t-authorModalInfo">
+            <h1 class="t-authorModalName t-titleUltraLarge">Джон Тривольта</h1>
+            <h2 class="t-authorModalProfession t-titleLarge">Угонщик</h2>
+            <div class="t-authorModalCountWrapper"><span class="t-name">Статей</span><span class="t-authorArticlesCount">2</span></div>
+            <ul class="t-authorModalTags">
+              <li>Дизайн,</li>
+              <li>бизнес,</li>
             </ul>
-          </div>
-          <div class="t-authorModalArticlesHolderWrapper">
-            <h1 class="t-authorModalAboutTitle t-titleBig">Статьи автора</h1>
-            <div class="t-authorArticlesHolder">
-              <div class="t-authorModalArticleCard"><a href="#" class="t-articleLink">
-                  <div class="t-authorArticleCardImg"><img src="/images/png/Frame.png"/></div>
-                  <div class="t-authorArticleCardInfo">
-                    <h3 class="t-authorArticleCardTitle">Заголовок статьи не слишком вмещающийся во  фреймворке</h3><span class="t-authorArticleCardCtegory">Экспертное мнение</span><span class="t-authorArticleCardDate">14 апреля 2218</span>
-                  </div></a></div>
-              <div class="t-authorModalArticleCard"><a href="#" class="t-articleLink">
-                  <div class="t-authorArticleCardImg"><img src="/images/png/Frame.png"/></div>
-                  <div class="t-authorArticleCardInfo">
-                    <h3 class="t-authorArticleCardTitle">Заголовок статьи не слишком вмещающийся во  фреймворке</h3><span class="t-authorArticleCardCtegory">Экспертное мнение</span><span class="t-authorArticleCardDate">14 апреля 2218</span>
-                  </div></a></div>
-              <div class="t-authorModalArticleCard"><a href="#" class="t-articleLink">
-                  <div class="t-authorArticleCardImg"><img src="/images/png/Frame.png"/></div>
-                  <div class="t-authorArticleCardInfo">
-                    <h3 class="t-authorArticleCardTitle">Заголовок статьи не слишком вмещающийся во  фреймворке</h3><span class="t-authorArticleCardCtegory">Экспертное мнение</span><span class="t-authorArticleCardDate">14 апреля 2218</span>
-                  </div></a></div>
+            <div class="t-authorModalLikesHolder"><span>ico</span><span class="t-authorLikesCount">475</span></div>
+            <div class="t-authorModalAbout">
+              <h1 class="t-authorModalAboutTitle t-titleBig">О себе</h1>
+              <p class="t-authorModalDescription">Минкомсвязи отказалось от требования рассчитывать объём хранилищ данных пользователей на основании максимальной ширины канала операторов связи. Это должно снизить затраты операторов, пишет «Коммерсантъ» со ссылкой на копию письма замглавы Минкомсвязи Дмитрия Алхазова в Российский союз промышленников и предпринимателей (РСПП).</p>
+            </div>
+            <div class="t-authorModalAnotherProfiles">
+              <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Telegram</a></li>
+              </ul>
+            </div>
+            <div class="t-authorModalArticlesHolderWrapper">
+              <h1 class="t-authorModalAboutTitle t-titleBig">Статьи автора</h1>
+              <div class="t-authorArticlesHolder">
+                <div class="t-authorModalArticleCard"><a href="#" class="t-articleLink">
+                    <div class="t-authorArticleCardImg"><img src="/images/png/Frame.png"/></div>
+                    <div class="t-authorArticleCardInfo">
+                      <h3 class="t-authorArticleCardTitle">Заголовок статьи не слишком вмещающийся во  фреймворке</h3><span class="t-authorArticleCardCtegory">Экспертное мнение</span><span class="t-authorArticleCardDate">14 апреля 2218</span>
+                    </div></a></div>
+                <div class="t-authorModalArticleCard"><a href="#" class="t-articleLink">
+                    <div class="t-authorArticleCardImg"><img src="/images/png/Frame.png"/></div>
+                    <div class="t-authorArticleCardInfo">
+                      <h3 class="t-authorArticleCardTitle">Заголовок статьи не слишком вмещающийся во  фреймворке</h3><span class="t-authorArticleCardCtegory">Экспертное мнение</span><span class="t-authorArticleCardDate">14 апреля 2218</span>
+                    </div></a></div>
+                <div class="t-authorModalArticleCard"><a href="#" class="t-articleLink">
+                    <div class="t-authorArticleCardImg"><img src="/images/png/Frame.png"/></div>
+                    <div class="t-authorArticleCardInfo">
+                      <h3 class="t-authorArticleCardTitle">Заголовок статьи не слишком вмещающийся во  фреймворке</h3><span class="t-authorArticleCardCtegory">Экспертное мнение</span><span class="t-authorArticleCardDate">14 апреля 2218</span>
+                    </div></a></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="t-authorModalPhoto"><img src="images/photos/John.png"/>
-          <div class="t-modalImgOverlay">
-            <div class="t-modalButtonsHolder t-hide">
-              <div class="t-modalShare"></div>
-              <div class="t-modalBack"><span>Назад</span></div>
+          <div class="t-authorModalPhoto"><img src="images/photos/John.png"/>
+            <div class="t-simpleBlock"></div>
+            <div class="t-modalImgOverlay">
+              <div class="t-modalButtonsHolder t-hide">
+                <div class="t-modalShare"></div>
+                <div class="t-modalBack"><span>Назад</span></div>
+              </div>
             </div>
           </div>
         </div>

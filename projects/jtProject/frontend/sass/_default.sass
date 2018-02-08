@@ -12,6 +12,10 @@ body
   margin: 0
   padding: 0
   position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
   &.modalActivate
     transition: all .3s ease-in-out
     .t-hiddenLogoWrapper
@@ -22,8 +26,19 @@ body
       .t-newsModalTitle
         @include forEaseAnim(1, translateX(-30%), all)
         transition: .5s ease-in-out
+  &.t-overflow
+    overflow: hidden
+  &.t-overflowCtrl
+    .t-authorModal
+      overflow-y: scroll
 
-
+.t-simpleBlock
+  display: none
+  background-color: #fff
+  height: 88px
+  flex: 0 0 88px
+  padding: 17px 0 23px 30px
+  width: 100%
 
 .t-mainWrapper
   height: 100vh
@@ -73,7 +88,7 @@ main
     @include fontsSizes(14, bold, 17)
     color: $tBlackSec
   &.activateBg
-    width: 50%
+    width: 49%
     background-color: $white
     &:after
       content: ''

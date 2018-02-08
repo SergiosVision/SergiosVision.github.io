@@ -13,9 +13,12 @@
       animation: animationLeftHide 1s ease-in-out
     .t-authorModalPhoto
       animation: animationRightHide 1s ease-in-out
+  .t-authorModalInfoHolder
+    display: flex
   .t-authorModalInfo
     transition: .4s ease-in-out
     overflow: auto
+    height: 100vh
     background-color: $white
     flex: 1 1 50%
     padding: 132px 64px
@@ -25,7 +28,7 @@
       margin-bottom: 40px
     .t-authorModalAbout
       .t-authorModalDescription
-        @include  fontsSizes(28, normal, auto)
+        @include fontsSizes(20, normal, 23)
     .t-authorModalAnotherProfiles
       ul
         list-style: none

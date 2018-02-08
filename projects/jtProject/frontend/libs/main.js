@@ -125,7 +125,7 @@ $(function () {
                 getThis.remove();
                 $('.t-noImage').css({
                     "width": "100%",
-                    "height": "100%",
+                    "height": "100vh",
                     "display": "flex",
                     "justify-content": "center",
                     "align-items": "center"
@@ -143,7 +143,7 @@ $(function () {
                     "background-image": "url("+ imgSrc +")",
                     "background-position": "center",
                     "background-size": "cover",
-                    "height": "100%"
+                    "height": "100vh"
                 });
                 getThis.remove();
             }
@@ -208,7 +208,7 @@ $(document).ready(function () {
 
     $('body').on('click', '.t-modalBack', function (e) {
         e.preventDefault();
-        $('body').removeClass('modalActivate').removeClass('nowOpened');
+        $('body').removeClass('modalActivate').removeClass('nowOpened').removeClass('t-overflow').removeClass('t-overflowCtrl');
         $('.t-hiddenLogoWrapper').removeClass('activateBg');
         if ($('body').hasClass('t-relative')) {
             $('body').removeClass('t-relative');
@@ -246,6 +246,11 @@ $(document).ready(function () {
     $('body').on('click', '.t-authorCardLink', function (e) {
         e.preventDefault();
         checkRel();
+        $('body').addClass('t-overflow');
+        if(window.matchMedia('(max-width: 768px)').matches) {
+            var simpleBlock = $('.t-simpleBlock');
+            simpleBlock.append($('.t-hiddenLogoWrapper').css('position', 'relative'));
+        }
         var $this = $(this);
         var getImgHolderImg = $this.find('img').attr('src');
         var getName = $this.find(".t-authorName").text();
@@ -257,12 +262,15 @@ $(document).ready(function () {
         $('.t-authorModal .t-authorModalProfession').text(getProfession);
         $('.t-authorModal .t-authorArticlesCount').text(getArticlesCount);
         $('.t-authorModal .t-authorLikesCount').text(getLikes);
-        $('.t-authorModal').css('display', "flex").addClass('turnAnimation');
+        $('.t-authorModal').show().addClass('turnAnimation');
         setTimeout(function () {
             $('.t-authorModal').removeClass('turnAnimation');
             $('.t-modalButtonsHolder').removeClass('t-hide');
             $('.t-hiddenLogoWrapper').addClass('activateBg');
             $('body').addClass('modalActivate');
+            if(window.matchMedia('(max-width: 768px)').matches) {
+                $('body').addClass('t-overflowCtrl');
+            }
         },1300)
     });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

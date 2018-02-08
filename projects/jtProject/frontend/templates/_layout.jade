@@ -67,7 +67,8 @@ mixin topCard(pageName, listOne, listTwo, listThird, listFour, listFive, listSix
                 span.t-namePage= pageName
                 div.t-topSortWrapper
                     span.t-topSortName По дате
-                    span.t-icon Ico
+                    div.t-dotsHolder
+                        span
             div.t-topListCtrlWrapper.t-topMiddleSection
                 ul.t-topListCtrl.t-topListSorting
                     li
@@ -104,39 +105,41 @@ mixin topCard(pageName, listOne, listTwo, listThird, listFour, listFive, listSix
 
 mixin authorsModal()
     div.t-fixed.t-authorModal
-        div.t-authorModalInfo
-            h1.t-authorModalName.t-titleUltraLarge Джон Тривольта
-            h2.t-authorModalProfession.t-titleLarge Угонщик
-            div.t-authorModalCountWrapper
-                span.t-name Статей
-                span.t-authorArticlesCount 2
-            ul.t-authorModalTags
-                li Дизайн,
-                li бизнес,
-            div.t-authorModalLikesHolder
-                span ico
-                span.t-authorLikesCount 475
-            div.t-authorModalAbout
-                h1.t-authorModalAboutTitle.t-titleBig О себе
-                p.t-authorModalDescription Минкомсвязи отказалось от требования рассчитывать объём хранилищ данных пользователей на основании максимальной ширины канала операторов связи. Это должно снизить затраты операторов, пишет «Коммерсантъ» со ссылкой на копию письма замглавы Минкомсвязи Дмитрия Алхазова в Российский союз промышленников и предпринимателей (РСПП).
-            div.t-authorModalAnotherProfiles
-                ul
-                    li
-                        a(href="#") Facebook
-                    li
-                        a(href="#") Telegram
-            div.t-authorModalArticlesHolderWrapper
-                h1.t-authorModalAboutTitle.t-titleBig Статьи автора
-                div.t-authorArticlesHolder
-                    - for(var i = 0; i < 3; i++)
-                        + authorArticles()
-        div.t-authorModalPhoto
-            img(src="images/photos/John.png")
-            div.t-modalImgOverlay
-                div.t-modalButtonsHolder.t-hide
-                    div.t-modalShare
-                    div.t-modalBack
-                        span Назад
+        div.t-authorModalInfoHolder
+            div.t-authorModalInfo
+                h1.t-authorModalName.t-titleUltraLarge Джон Тривольта
+                h2.t-authorModalProfession.t-titleLarge Угонщик
+                div.t-authorModalCountWrapper
+                    span.t-name Статей
+                    span.t-authorArticlesCount 2
+                ul.t-authorModalTags
+                    li Дизайн,
+                    li бизнес,
+                div.t-authorModalLikesHolder
+                    span ico
+                    span.t-authorLikesCount 475
+                div.t-authorModalAbout
+                    h1.t-authorModalAboutTitle.t-titleBig О себе
+                    p.t-authorModalDescription Минкомсвязи отказалось от требования рассчитывать объём хранилищ данных пользователей на основании максимальной ширины канала операторов связи. Это должно снизить затраты операторов, пишет «Коммерсантъ» со ссылкой на копию письма замглавы Минкомсвязи Дмитрия Алхазова в Российский союз промышленников и предпринимателей (РСПП).
+                div.t-authorModalAnotherProfiles
+                    ul
+                        li
+                            a(href="#") Facebook
+                        li
+                            a(href="#") Telegram
+                div.t-authorModalArticlesHolderWrapper
+                    h1.t-authorModalAboutTitle.t-titleBig Статьи автора
+                    div.t-authorArticlesHolder
+                        - for(var i = 0; i < 3; i++)
+                            + authorArticles()
+            div.t-authorModalPhoto
+                img(src="images/photos/John.png")
+                div.t-simpleBlock
+                div.t-modalImgOverlay
+                    div.t-modalButtonsHolder.t-hide
+                        div.t-modalShare
+                        div.t-modalBack
+                            span Назад
 
 mixin authorArticles()
     div.t-authorModalArticleCard
