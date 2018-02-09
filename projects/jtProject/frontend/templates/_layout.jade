@@ -70,34 +70,38 @@ mixin topCard(pageName, listOne, listTwo, listThird, listFour, listFive, listSix
                     div.t-dotsHolder
                         span
             div.t-topListCtrlWrapper.t-topMiddleSection
-                ul.t-topListCtrl.t-topListSorting
-                    li
-                        a(href="#").t-topSortLinks.active= listOne
-                    li
-                        a(href="#").t-topSortLinks= listTwo
-                    li
-                        a(href="#").t-topSortLinks= listThird
-                    li
-                        a(href="#").t-topSortLinks= listFour
-                    li
-                        a(href="#").t-topSortLinks= listFive
-                    li
-                        a(href="#").t-topSortLinks= listSix
-                    li.t-hiddenLink
-                        a(href="#").t-topSortLinks Бизнес
-                    li.t-hiddenLink
-                        a(href="#").t-topSortLinks Дизайн
-                    li.t-hiddenLink
-                        a(href="#").t-topSortLinks Шняга
-                    li.t-hiddenLink
-                        a(href="#").t-topSortLinks Еще
-                    li.t-hiddenLink
-                        a(href="#").t-topSortLinks Дичь
-                    li.t-hiddenLink
-                        a(href="#").t-topSortLinks Дичь2
+                div.t-sortMenuHolder
+                    ul.t-topListCtrl.t-topListSorting
+                        li
+                            a(href="#").t-topSortLinks.active= listOne
+                        li
+                            a(href="#").t-topSortLinks= listTwo
+                        li
+                            a(href="#").t-topSortLinks= listThird
+                        li
+                            a(href="#").t-topSortLinks= listFour
+                        li
+                            a(href="#").t-topSortLinks= listFive
+                        li
+                            a(href="#").t-topSortLinks= listSix
                 div.t-dotsHolder.t-callHiddenSortingMenu
                     span
                     ul.t-smallModalMenu.t-sortModalContainer
+                        li
+                            ul.js-menu-more
+                                li
+
+                                li= listTwo
+                                li= listThird
+                                li= listFour
+                                li= listFive
+                                li= listSix
+                        li Бизнес
+                        li Дизайн
+                        li Шняга
+                        li Еще
+                        li Дичь
+                        li Дичь2
         ul.t-topListCtrl.t-topRightSection
             li ico
             li ico
@@ -130,13 +134,13 @@ mixin authorsModal()
                 div.t-authorModalArticlesHolderWrapper
                     h1.t-authorModalAboutTitle.t-titleBig Статьи автора
                     div.t-authorArticlesHolder
-                        - for(var i = 0; i < 3; i++)
+                        - for(var i = 0; i < 10; i++)
                             + authorArticles()
             div.t-authorModalPhoto
                 img(src="images/photos/John.png")
                 div.t-simpleBlock
                 div.t-modalImgOverlay
-                    div.t-modalButtonsHolder.t-hide
+                    div.t-modalButtonsHolder.t-hide.t-profileModalButtonsHolder
                         div.t-modalShare
                         div.t-modalBack
                             span Назад

@@ -157,23 +157,47 @@ $(document).ready(function () {
     $('.t-pageHiddenName').text(getMainPageName);
 
     var getModalContainer = $('.t-sortModalContainer');
-    function appendListElements() {
-        var getListLength = $('.t-topListSorting li');
-        var arrTo = Object.keys(getListLength).map(function (t) { return getListLength[t] });
-        var newArr = arrTo.slice(6);
-        var getBNewArr = newArr.slice(0, -2);
-        getModalContainer.append(getBNewArr);
-        $('.t-smallModalMenu li').each(function () {
-            var text = $(this).text();
-            $(this).html(text).removeClass('t-hiddenLink');
+    // function appendListElements() {
+    //     var getListLength = $('.t-topListSorting li');
+    //     var arrTo = Object.keys(getListLength).map(function (t) { return getListLength[t] });
+    //     var newArr = arrTo.slice(6);
+    //     var getBNewArr = newArr.slice(0, -2);
+    //     getModalContainer.append(getBNewArr);
+    //     $('.t-smallModalMenu li').each(function () {
+    //         var text = $(this).text();
+    //         $(this).html(text).removeClass('t-hiddenLink');
+    //     });
+    // }
+    // appendListElements();
+
+    function menuMobileCtrl() {
+        var getMenuContainerWidth = $('.t-sortMenuHolder').width();
+        var getMenuListInsideWidth = 0;
+        $('.t-topListSorting li').each(function () {
+            getMenuListInsideWidth += ($(this).width() + parseInt($(this).css('margin-left')));
+            var index = $(this).index() + 1;
+            if(index !== 1){
+                if(getMenuListInsideWidth > getMenuContainerWidth) {
+                    $(this).addClass('invisible');
+                    $('.js-menu-more li:nth-child('+index+')').show();
+                } else {
+                    $(this).removeClass('invisible');
+                    $('.js-menu-more li:nth-child('+index+')').hide();
+                }
+                if(window.matchMedia('(max-width: 768px)').matches) {
+                    $(this).addClass('invisible');
+                }
+            }
         });
     }
-    appendListElements();
-
+    menuMobileCtrl();
+    $(window).on('resize', function () {
+        menuMobileCtrl();
+    });
 
     $('.t-authorModalPhoto img').toBackGround(); // Инициализация подмены BackgroundА
 
-    if(window.matchMedia('(min-width: 768px)').matches) {
+    if(window.matchMedia('(min-width: 801px)').matches) {
         // Инициализация Скролл плагина By SergiosVision
         $('.t-mainCardsHolder').horizontalScroll({
             scrollField: 'main', // Определяет зону действия скролла
@@ -250,6 +274,7 @@ $(document).ready(function () {
         if(window.matchMedia('(max-width: 768px)').matches) {
             var simpleBlock = $('.t-simpleBlock');
             simpleBlock.append($('.t-hiddenLogoWrapper').css('position', 'relative'));
+            simpleBlock.append($('.t-profileModalButtonsHolder').css({"position": "static", "left": "auto", "top": "auto"}));
         }
         var $this = $(this);
         var getImgHolderImg = $this.find('img').attr('src');

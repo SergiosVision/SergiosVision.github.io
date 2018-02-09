@@ -56,7 +56,13 @@
 @media (max-width: 980px)
   .t-hiddenLogoWrapper .t-pageNameHolder
     display: none
-
+  .t-mainTopContent
+    padding-right: 15px
+  aside
+  .t-articlesWrapper
+    padding-left: 24px
+  .t-mainCardsHolder.t-mainPageCardCtrl
+    overflow-x: scroll
 
 @media (max-width: 768px)
   .t-logoWrapper .t-logo
@@ -100,13 +106,16 @@
     .t-authorModalInfoHolder
       flex-direction: column
     .t-simpleBlock
-      display: block
+      display: flex
       order: 1
       position: absolute
       left: 0
       right: 0
       top: -88px
-      padding: 17px 0 23px 30px
+      padding: 17px 23px 23px 30px
+      .t-profileModalButtonsHolder
+        span
+          color: #000
     .t-authorModalInfo
       overflow: visible
       order: 3
@@ -116,6 +125,7 @@
       margin-top: 88px
       order: 2
       flex: 0 0 100%
+      height: 40vh!important
     .t-hiddenLogoWrapper.activateBg
       background-color: transparent
       width: auto
@@ -139,3 +149,21 @@
     button
       width: 100%
       margin: 0 0 24px 0
+  .t-authorModal
+    .t-authorModalPhoto
+      height: 20vh!important
+    .t-authorModalInfo
+      padding-top: 24px
+      padding-bottom: 40px
+      .t-authorModalName
+        font-size: 30px
+        line-height: 37px
+      .t-authorModalProfession
+        font-size: 16px
+        line-height: 17px
+      .t-authorModalAboutTitle
+        @include fontsSizes(20, bold, 24)
+      .t-authorModalDescription
+        @include fontsSizes(16, normal, 20)
+    .t-authorArticlesHolder .t-authorModalArticleCard .t-authorArticleCardImg
+      display: none
