@@ -1,4 +1,4 @@
-aside
+aside, .t-mobileMenu
   background-color: $white
   flex: 0 0 335px
   transition: .7s ease-in-out
@@ -13,7 +13,7 @@ aside
       top: 68px
   &.minAside
     flex: 0 0 226.36px
-  .t-menuWrapper
+  .t-menuWrapper, .t-mobileMenuWrapper
     margin-top: 97px
   nav
     padding: 0 67px 0 64px
@@ -38,22 +38,7 @@ aside
       @include fontsSizes(14, bold, 17)
       @include links()
       color: $dgrey
-  .t-asideInsideHolder
-    transition: .7s ease-in-out
-  &.t-hiddenMenu
-    .t-asideInsideHolder
-      position: fixed
-      flex: 0 0 335px
-      width: 335px
-      height: 100%
-      background-color: $white
-      animation: hiddenMenuAnimation .4s ease-in-out
-      z-index: 1004
-      .t-menuWrapper
-        transform: none!important
-        opacity: 1!important
-      .t-mainBurger
-        left: -150%!important
+
 
 .t-logoWrapper
   display: inline-block

@@ -241,7 +241,7 @@ mixin newsModal()
 
 mixin hiddenLogo()
     div.t-hiddenLogoWrapper
-        div.t-burger
+        div.t-burger.t-burgerMob
             span.line
             span.line
             span.line
@@ -249,6 +249,47 @@ mixin hiddenLogo()
             div.t-logo
         div.t-pageNameHolder
             span.t-pageHiddenName
+
+mixin mobileMneu()
+    div.t-mobileMenu
+        div.t-mobileInsideHolder
+            section.t-logoSection
+                a(href="/").t-logoWrapper
+                    div.t-logo
+            div.t-mobileMenuWrapper
+                nav
+                    ul.t-menuList
+                        li.t-menuListItem
+                            a(href="/") Всё сразу
+                        li.t-menuListItem
+                            a(href="#") Статьи
+                        li.t-menuListItem
+                            a(href="#") Подборки
+                        li.t-menuListItem
+                            a(href="#") Кейс недели
+                        li.t-menuListItem
+                            a(href="#") Переводы
+                        li.t-menuListItem
+                            a(href="#") Блоги компаний
+                        li.t-menuListItem
+                            a(href="#") Экспертное мнение
+                        li.t-menuListItem
+                            a(href="#") Туториалы
+                        li.t-menuListItem
+                            a(href="#") Бэкстейдж
+                        li.t-menuListItem
+                            a(href="#") Библиотека
+                        li.t-menuListItem
+                            a(href="#") События
+                        li.t-menuListItem
+                            a(href="/authors.html") Авторы
+                        li.t-menuListItem
+                            a(href="#") Информация
+                div.t-copyWrapper
+                    span &copy; ЖТ 2018
+                    br
+                    a(href="http://tdsgn.ru/") Создано в Студии Т
+
 
 doctype html
 html(lang="ru-RU")
@@ -267,6 +308,7 @@ html(lang="ru-RU")
             block content
             + newsModal()
             + authorsModal()
+            + mobileMneu()
 
         script(src="js/vendor.min.js")
         script(src="js/plugins/jquery.scrollbar.min.js")

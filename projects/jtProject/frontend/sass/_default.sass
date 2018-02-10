@@ -32,7 +32,7 @@ body
     .t-authorModal
       overflow-y: scroll
 
-.t-simpleBlock
+.t-simpleBlock, .t-mobHeader
   display: none
   background-color: #fff
   height: 88px
@@ -41,6 +41,26 @@ body
   width: 100%
   align-items: center
   justify-content: space-between
+
+.t-mobileMenu
+  z-index: 1004
+  position: fixed
+  left: 0
+  top: 0
+  width: 335px
+  flex: none!important
+  height: 100vh!important
+  overflow: auto
+  @include forEaseAnim(1, translateX(-150%), none)
+  .t-mobileMenuWrapper
+    transition: .7s ease-in-out
+    transition-delay: .2s
+    @include forEaseAnim(1, translateX(-150%), none)
+  &.t-activeMobileMenu
+    @include forEaseAnim(1, none, all)
+    .t-mobileMenuWrapper
+      transition-delay: 0s
+      @include forEaseAnim(1, none, all)
 
 .t-mainWrapper
   height: 100vh
@@ -101,6 +121,7 @@ main
       left: 0
       right: 0
       bottom: -34px
+
 
 .t-burger
   display: inline-block
@@ -198,8 +219,16 @@ main
   background-color: rgba(0, 0, 0, 0.3)
   z-index: 1003
 
+.t-overflowH
+  overflow: hidden
+
 .t-relative
   position: relative
+
+.t-removePos
+  position: static!important
+  left: auto!important
+  top: auto!important
 
 .t-fixed
   position: fixed
@@ -280,10 +309,6 @@ main
       .t-authorArticleCardTitle
         margin-bottom: 4px
         @include fontsSizes(16, bold, 20)
-        max-width: 95%
-        text-overflow: ellipsis
-        overflow: hidden
-        white-space: nowrap
       .t-authorArticleCardCtegory
         margin-bottom: 2px
         @include fontsSizes(16, bold, 20)

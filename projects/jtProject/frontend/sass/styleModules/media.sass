@@ -6,11 +6,11 @@
     border-color: transparent
     color: $white
   .t-smallModalMenu
-    li:hover
+    li:hover:not(:first-child)
       color: $dblue
 
 @media (max-width: 1440px)
-  aside .t-menuWrapper
+  aside .t-menuWrapper, .t-mobileMenu .t-mobileMenuWrapper
     margin-top: 47px
   .t-mainTopContent
     margin-bottom: 15px
@@ -58,22 +58,70 @@
     display: none
   .t-mainTopContent
     padding-right: 15px
-  aside
-  .t-articlesWrapper
-    padding-left: 24px
-  .t-mainCardsHolder.t-mainPageCardCtrl
-    overflow-x: scroll
 
-@media (max-width: 768px)
+
+@media (max-width: 800px)
+  .t-authorModal
+    .t-hiddenLogoWrapper.activateBg
+      background-color: transparent
+      width: auto
+      padding: 0
+      &:after
+        display: none
+  .t-sortMenuHolder
+    max-width: 65px
   .t-logoWrapper .t-logo
     width: 87px
     height: 48px
     background-position: center
     background-size: contain
+  .t-mainMain
+    padding: 0
+  .t-articlesWrapper, .t-authorsWrapper
+    padding-left: 24px
+  aside
+    display: none
+  .t-mainCardsHolder.t-mainPageCardCtrl
+    overflow-x: scroll
+  .t-leftAndMidContentContainer
+    width: auto
+    display: flex
+  .t-mainTopContent
+    margin-top: 21px
+    margin-bottom: 24px
+    padding: 0 24px
+    .t-mainTopContentInside
+      padding: 0
+      height: auto
+      .t-nameAndSortWrapper
+        width: auto
+        position: relative
+        .t-namePage
+          position: absolute
+          top: -21px
+  .t-topMiddleSection
+    width: auto!important
+  .t-mobHeader
+    padding: 17px 24px 23px 24px
+    display: flex
+    .t-logoSectionMain
+      display: flex
+      align-items: center
+    .t-topRightSection
+      display: flex
+      width: auto
+      list-style: none
+      padding: 0
+      margin: 0
+      li:not(:last-child)
+        margin-right: 16px
+
+@media (max-width: 768px)
   .t-newsModal .t-newsColorBlock
     flex: 1 1 1%
     width: 1%
   .t-newsModal .t-newsModalInfo .t-newsInsideHolder
+    overflow: hidden
     flex: 1 1 99%
     width: 99%
     padding: 88px 24px 24px 24px
@@ -105,6 +153,8 @@
   .t-authorModal
     .t-authorModalInfoHolder
       flex-direction: column
+    .t-authorModalInfo
+      padding-top: 24px
     .t-simpleBlock
       display: flex
       order: 1
@@ -126,12 +176,6 @@
       order: 2
       flex: 0 0 100%
       height: 40vh!important
-    .t-hiddenLogoWrapper.activateBg
-      background-color: transparent
-      width: auto
-      padding: 0
-      &:after
-        display: none
 
 
 @media (max-width: 700px)
@@ -151,7 +195,7 @@
       margin: 0 0 24px 0
   .t-authorModal
     .t-authorModalPhoto
-      height: 20vh!important
+      height: 40vh!important
     .t-authorModalInfo
       padding-top: 24px
       padding-bottom: 40px
