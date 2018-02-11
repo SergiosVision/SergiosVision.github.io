@@ -1,12 +1,16 @@
-<svg width="10" height="12" viewBox="0 0 10 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>Rectangle (Stroke)</title>
-<desc>Created using Figma</desc>
-<g id="Canvas" transform="translate(-3246 -8870)">
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" transform="translate(-1697 -5565)">
+<g id="iconAdd">
+<g id="Ellipse">
+<use xlink:href="#path0_fill" transform="translate(1697 5565)" fill="#FFFFFF"/>
+</g>
 <g id="Rectangle (Stroke)">
-<use xlink:href="#path0_fill" transform="translate(3246 8870)" fill="#E0E0E0"/>
+<use xlink:href="#path1_fill" transform="translate(1705 5571)" fill="#E0E0E0"/>
+</g>
 </g>
 </g>
 <defs>
-<path id="path0_fill" fill-rule="evenodd" d="M 0 1C 0 0.447715 0.447715 0 1 0L 7 0C 7.55228 0 8 0.447715 8 1L 8 3C 8 3.55228 7.55228 4 7 4C 6.44772 4 6 3.55228 6 3L 6 2L 2 2L 2 9C 2 9.55229 1.55228 10 1 10C 0.447715 10 0 9.55229 0 9L 0 1ZM 7 6C 7.55228 6 8 6.44772 8 7L 8 8L 9 8C 9.55229 8 10 8.44772 10 9C 10 9.55229 9.55229 10 9 10L 8 10L 8 11C 8 11.5523 7.55228 12 7 12C 6.44772 12 6 11.5523 6 11L 6 10L 5 10C 4.44772 10 4 9.55229 4 9C 4 8.44772 4.44772 8 5 8L 6 8L 6 7C 6 6.44772 6.44772 6 7 6Z"/>
+<path id="path0_fill" d="M 24 12C 24 18.6274 18.6274 24 12 24C 5.37258 24 0 18.6274 0 12C 0 5.37258 5.37258 0 12 0C 18.6274 0 24 5.37258 24 12Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 0 1C 0 0.447715 0.447715 0 1 0L 7 0C 7.55228 0 8 0.447715 8 1L 8 3C 8 3.55228 7.55228 4 7 4C 6.44772 4 6 3.55228 6 3L 6 2L 2 2L 2 9C 2 9.55229 1.55228 10 1 10C 0.447715 10 0 9.55229 0 9L 0 1ZM 7 6C 7.55228 6 8 6.44772 8 7L 8 8L 9 8C 9.55229 8 10 8.44772 10 9C 10 9.55229 9.55229 10 9 10L 8 10L 8 11C 8 11.5523 7.55228 12 7 12C 6.44772 12 6 11.5523 6 11L 6 10L 5 10C 4.44772 10 4 9.55229 4 9C 4 8.44772 4.44772 8 5 8L 6 8L 6 7C 6 6.44772 6.44772 6 7 6Z"/>
 </defs>
 </svg>

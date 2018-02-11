@@ -1,10 +1,12 @@
 <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="Canvas" transform="translate(-1761 -5485)">
-<g id="Ellipse" class="t-svgEllipse">
-<use xlink:href="#path0_fill" transform="translate(1761 5485)"/>
+<g id="IconTime">
+<g id="Ellipse">
+<use xlink:href="#path0_fill" transform="translate(1761 5485)" fill="#FFFFFF"/>
 </g>
-<g id="Union" class="t-svgFigure">
-<use xlink:href="#path1_fill" transform="translate(1767 5491)"/>
+<g id="Union">
+<use xlink:href="#path1_fill" transform="translate(1767 5491)" fill="#E0E0E0"/>
+</g>
 </g>
 </g>
 <defs>

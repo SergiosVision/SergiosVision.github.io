@@ -1,11 +1,11 @@
 <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="Canvas" transform="translate(-1729 -5605)">
-<g id="iconCloser" class="t-icon">
-<g id="Ellipse" class="t-svgEllipse">
-<use xlink:href="#path0_fill" transform="translate(1729 5605)"/>
+<g id="iconCloser">
+<g id="Ellipse">
+<use xlink:href="#path0_fill" transform="translate(1729 5605)" fill="#FFFFFF"/>
 </g>
-<g id="Vector" class="t-svgFigure">
-<use xlink:href="#path1_stroke" transform="translate(1738 5614)"/>
+<g id="Vector">
+<use xlink:href="#path1_stroke" transform="translate(1738 5614)" fill="#E0E0E0"/>
 </g>
 </g>
 </g>

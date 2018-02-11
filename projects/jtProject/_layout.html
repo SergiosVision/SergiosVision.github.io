@@ -6,11 +6,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>ЖТ</title>
     <link rel="stylesheet" href="css/plugins/normalize.css">
-    <link rel="stylesheet" href="css/plugins/jquery.scrollbar.css">
-    <link rel="stylesheet" href="css/plugins/jInvertScroll.css">
     <link rel="stylesheet" href="css/main.min.css">
   </head>
   <body>
+    <div class="cursor"></div>
     <div class="t-mainWrapper">
       <div class="t-hiddenLogoWrapper">
         <div class="t-burger t-burgerMob"><span class="line"></span><span class="line"></span><span class="line"></span></div><a href="/" class="t-logoWrapper">
@@ -21,9 +20,39 @@
         <div class="t-newsModalInfo">
           <div style="background-color:#57C9FA" class="t-newsColorBlock"></div>
           <div class="t-newsInsideHolder">
-            <div class="t-modalButtonsHolder">
-              <div class="t-modalShare"></div>
-              <div class="t-modalBack"><span>Назад</span></div>
+            <div class="t-modalButtonsHolder t-modalNewsBtnsHolder">
+              <div class="t-modalBtnsCtrl">
+                <div class="t-modalShare">
+                  <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="t-hoverable">
+                    <use xlink:href="#path0_fill5" fill="#FFF" class="t-svgBg"></use>
+                    <use xlink:href="#path1_stroke5" transform="translate(8 8)" fill="#E0E0E0" class="t-svgFigure"></use>
+                    <defs>
+                      <path id="path0_fill5" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"></path>
+                      <path id="path1_stroke5" d="M4 0l.707-.707a1 1 0 0 0-1.414 0L4 0zM3 5a1 1 0 0 0 2 0H3zM1 5a1 1 0 0 0-2 0h2zM0 8h-1a1 1 0 0 0 1 1V8zm8 0v1a1 1 0 0 0 1-1H8zm1-3a1 1 0 1 0-2 0h2zM1.293 1.293a1 1 0 0 0 1.414 1.414L1.293 1.293zm4 1.414a1 1 0 0 0 1.414-1.414L5.293 2.707zM3 0v5h2V0H3zm-4 5v3h2V5h-2zm1 4h8V7H0v2zm9-1V5H7v3h2zM2.707 2.707l2-2L3.293-.707l-2 2 1.414 1.414zm4-1.414l-2-2L3.293.707l2 2 1.414-1.414z"></path>
+                    </defs>
+                  </svg>
+                </div>
+                <div class="t-modalFavorites">
+                  <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="t-hoverable">
+                    <use xlink:href="#path0_fillFav" fill="#FFF" class="t-svgBg"></use>
+                    <use xlink:href="#path1_strokeFav" transform="translate(9 8)" fill="#E0E0E0" class="t-svgFigure"></use>
+                    <defs>
+                      <path id="path0_fillFav" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"></path>
+                      <path id="path1_strokeFav" d="M7 0a1 1 0 0 0-2 0h2zM6 8l-.555.832A1 1 0 0 0 7 8H6zM0 8h-1a1 1 0 0 0 1.555.832L0 8zm1-8a1 1 0 1 0-2 0h2zm2 6l.555-.832a1 1 0 0 0-1.11 0L3 6zm2-6v8h2V0H5zM1 8V0h-2v8h2zm5.555-.832l-3-2-1.11 1.664 3 2 1.11-1.664zm-4.11-2l-3 2 1.11 1.664 3-2-1.11-1.664z"></path>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+              <div class="t-modalBack">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#path0_fill6" fill="#FFF" class="t-svgBg"></use>
+                  <use xlink:href="#path1_stroke6" transform="translate(7 8)" fill="#E0E0E0" class="t-svgFigure"></use>
+                  <defs>
+                    <path id="path0_fill6" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"></path>
+                    <path id="path1_stroke6" d="M0 3l-.707-.707a1 1 0 0 0 0 1.414L0 3zM3.707.707A1 1 0 0 0 2.293-.707L3.707.707zm-1.414 6a1 1 0 0 0 1.414-1.414L2.293 6.707zM8 8a1 1 0 1 0 2 0H8zM0 4h6V2H0v2zm6-1v1h-.002-.001-.003-.002H6l.058.003c.068.005.138.012.246.03.242.04.474.092.749.236C7.513 4.5 8 4.931 8 6h2c0-1.931-1.014-3-2.053-3.52a5.194 5.194 0 0 0-1.314-.42A5.192 5.192 0 0 0 6.025 2H6.004h-.002-.001L6 3zm-5.293.707l3-3L2.293-.707l-3 3L.707 3.707zm-1.414 0l3 3 1.414-1.414-3-3-1.414 1.414zM8 6v2h2V6H8z"></path>
+                  </defs>
+                </svg><span>Назад</span>
+              </div>
             </div>
             <div class="t-newsModalAuthorHolder">
               <div class="t-flexHolder">
@@ -111,7 +140,15 @@
               <li>Дизайн,</li>
               <li>бизнес,</li>
             </ul>
-            <div class="t-authorModalLikesHolder"><span>ico</span><span class="t-authorLikesCount">475</span></div>
+            <div class="t-authorModalLikesHolder"><span>
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#path0_fill4" fill="#FFF" class="t-svgBg"></use>
+                  <use xlink:href="#path1_stroke4" transform="translate(6.85 7.93)" fill="#E0E0E0" class="t-svgFigure"></use>
+                  <defs>
+                    <path id="path0_fill4" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"></path>
+                    <path id="path1_stroke4" d="M10.147 4.066l.97.243-.97-.243zm-5 5l-.391.92a1 1 0 0 0 .783 0l-.392-.92zm-5-5l-.97.243.97-.243zm5-2l-.928.371a1 1 0 0 0 1.857 0l-.929-.37zm-3-2l-.242-.97.242.97zm6 0l.243-.97-.243.97zm1.03 3.757c-.317 1.269-1.34 2.343-2.425 3.144A11.781 11.781 0 0 1 4.9 8.079a6.101 6.101 0 0 1-.142.065l-.004.002.392.92.393.92.002-.001.004-.002.014-.006a5.036 5.036 0 0 0 .197-.09 13.78 13.78 0 0 0 2.182-1.31c1.214-.896 2.691-2.322 3.178-4.268l-1.94-.486zm-4.03 5.243l.393-.92-.004-.002a3.079 3.079 0 0 1-.142-.065 11.785 11.785 0 0 1-1.85-1.113c-1.085-.8-2.108-1.874-2.427-3.143l-1.94.486c.489 1.946 1.966 3.371 3.179 4.267a13.784 13.784 0 0 0 2.181 1.31 8.056 8.056 0 0 0 .211.097l.005.002h.002l.392-.919zm-4.03-5.243c-.206-.822-.12-1.461.1-1.898.212-.421.59-.743 1.173-.889l-.485-1.94C.794-.626-.079.052-.569 1.026c-.482.956-.55 2.106-.254 3.283l1.94-.486zM2.39 1.036c.485-.12.88.08 1.26.507a3.495 3.495 0 0 1 .567.89l.003.008V2.44a.115.115 0 0 1-.001-.002l.928-.372c.929-.37.929-.371.929-.372l-.001-.002-.002-.004a1.532 1.532 0 0 0-.018-.044 5.473 5.473 0 0 0-.219-.443 5.49 5.49 0 0 0-.69-.987C4.525-.483 3.42-1.283 1.904-.904l.485 1.94zm2.757 1.03c.929.372.929.372.928.373a.06.06 0 0 1 0 .001v.002h-.001a.705.705 0 0 1 .027-.061 3.502 3.502 0 0 1 .544-.838c.38-.428.776-.628 1.26-.507l.485-1.94C6.875-1.283 5.77-.483 5.15.214a5.498 5.498 0 0 0-.928 1.473l-.002.004v.002c0 .001-.001.001.927.373zm2.758-1.03c.583.146.96.468 1.172.889.22.437.306 1.076.1 1.898l1.94.486c.295-1.178.228-2.327-.253-3.284C10.374.052 9.5-.626 8.39-.904l-.485 1.94z"></path>
+                  </defs>
+                </svg></span><span class="t-authorLikesCount">475</span></div>
             <div class="t-authorModalAbout">
               <h1 class="t-authorModalAboutTitle t-titleBig">О себе</h1>
               <p class="t-authorModalDescription">Минкомсвязи отказалось от требования рассчитывать объём хранилищ данных пользователей на основании максимальной ширины канала операторов связи. Это должно снизить затраты операторов, пишет «Коммерсантъ» со ссылкой на копию письма замглавы Минкомсвязи Дмитрия Алхазова в Российский союз промышленников и предпринимателей (РСПП).</p>
@@ -182,8 +219,26 @@
             <div class="t-simpleBlock"></div>
             <div class="t-modalImgOverlay">
               <div class="t-modalButtonsHolder t-hide t-profileModalButtonsHolder">
-                <div class="t-modalShare"></div>
-                <div class="t-modalBack"><span>Назад</span></div>
+                <div class="t-modalShare">
+                  <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="t-whiteSvg">
+                    <use xlink:href="#path0_fill5" fill="#FFF" class="t-svgBg"></use>
+                    <use xlink:href="#path1_stroke5" transform="translate(8 8)" fill="#E0E0E0" class="t-svgFigure"></use>
+                    <defs>
+                      <path id="path0_fill5" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"></path>
+                      <path id="path1_stroke5" d="M4 0l.707-.707a1 1 0 0 0-1.414 0L4 0zM3 5a1 1 0 0 0 2 0H3zM1 5a1 1 0 0 0-2 0h2zM0 8h-1a1 1 0 0 0 1 1V8zm8 0v1a1 1 0 0 0 1-1H8zm1-3a1 1 0 1 0-2 0h2zM1.293 1.293a1 1 0 0 0 1.414 1.414L1.293 1.293zm4 1.414a1 1 0 0 0 1.414-1.414L5.293 2.707zM3 0v5h2V0H3zm-4 5v3h2V5h-2zm1 4h8V7H0v2zm9-1V5H7v3h2zM2.707 2.707l2-2L3.293-.707l-2 2 1.414 1.414zm4-1.414l-2-2L3.293.707l2 2 1.414-1.414z"></path>
+                    </defs>
+                  </svg>
+                </div>
+                <div class="t-modalBack">
+                  <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="t-whiteSvg">
+                    <use xlink:href="#path0_fill6" fill="#FFF" class="t-svgBg"></use>
+                    <use xlink:href="#path1_stroke6" transform="translate(7 8)" fill="#E0E0E0" class="t-svgFigure"></use>
+                    <defs>
+                      <path id="path0_fill6" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"></path>
+                      <path id="path1_stroke6" d="M0 3l-.707-.707a1 1 0 0 0 0 1.414L0 3zM3.707.707A1 1 0 0 0 2.293-.707L3.707.707zm-1.414 6a1 1 0 0 0 1.414-1.414L2.293 6.707zM8 8a1 1 0 1 0 2 0H8zM0 4h6V2H0v2zm6-1v1h-.002-.001-.003-.002H6l.058.003c.068.005.138.012.246.03.242.04.474.092.749.236C7.513 4.5 8 4.931 8 6h2c0-1.931-1.014-3-2.053-3.52a5.194 5.194 0 0 0-1.314-.42A5.192 5.192 0 0 0 6.025 2H6.004h-.002-.001L6 3zm-5.293.707l3-3L2.293-.707l-3 3L.707 3.707zm-1.414 0l3 3 1.414-1.414-3-3-1.414 1.414zM8 6v2h2V6H8z"></path>
+                    </defs>
+                  </svg><span>Назад</span>
+                </div>
               </div>
             </div>
           </div>
@@ -215,9 +270,16 @@
           </div>
         </div>
       </div>
+      <section class="t-searchSection t-absolute">
+        <div class="t-searchField">
+          <input type="text" placeholder="Ищите статьи"/>
+        </div>
+        <ul class="t-searchSorting"></ul>
+        <div class="t-searchOutput"></div>
+      </section>
     </div>
     <script src="js/vendor.min.js"></script>
-    <script src="js/plugins/jquery.scrollbar.min.js"></script>
+    <script src="js/plugins/TweenLite.min.js"></script>
     <script src="js/plugins/svg4everybody.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>

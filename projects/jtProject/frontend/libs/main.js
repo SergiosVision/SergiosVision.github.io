@@ -1,3 +1,21 @@
+// Cursor Follower
+// if(window.matchMedia('(min-width: 801px)').matches) {
+//     var getCursor = $('.cursor');
+//
+//     function cursorMove(e) {
+//         TweenLite.to(getCursor, .10, {
+//             left: e.pageX,
+//             top: e.pageY,
+//             ease: Power4.easOut
+//         });
+//         // clearTimeout(timer);
+//         //
+//         // var timer = setTimeout(function() {
+//         //     $cursor.removeClass('is-moving');
+//         // }, 300);
+//     }
+//     $(window).on('mousemove', cursorMove);
+// }
 //  Маленький скролл плагин
 $(function ($) {
     $.fn.horizontalScroll = function (options) {
@@ -17,11 +35,7 @@ $(function ($) {
             getThisElOffset = cmp.offset().left,
             getHidenWidth = $(options.hideElement).width(),
             x = 0,
-            direction = 0,
-            scrollTarget = 0,
-            scrollValue = 0,
-            speed = 0,
-            lastSecond = [];
+            direction = 0;
 
         // Get Value from the Transform Translate
         return this.each(function () {
@@ -172,6 +186,13 @@ $(document).ready(function () {
     // }
     // appendListElements();
 
+    function setHeiHeight(element) {
+        $(element).css({
+            height: $('main').height() + 'vmax'
+        });
+    }
+    setHeiHeight('.t-authorCardWrapper'); // устанавливаем высоту окна при первой загрузке страницы
+
     function menuMobileCtrl() {
         var getMenuContainerWidth = $('.t-sortMenuHolder').width();
         var getMenuListInsideWidth = 0;
@@ -203,6 +224,7 @@ $(document).ready(function () {
     }
     logoCtrl();
     $(window).on('resize', function () {
+        setHeiHeight('.t-authorCardWrapper');
         menuMobileCtrl();
         logoCtrl();
     });
@@ -226,6 +248,12 @@ $(document).ready(function () {
         }
     }
 
+    $('body').on('click', '.t-searchBtn', function (e) {
+        e.preventDefault();
+        $('.t-overlay').fadeIn(400);
+        $('.t-searchSection').fadeIn(500);
+    });
+
     $('body').on('click', '.t-burger', function (e) {
         e.preventDefault();
         $('body').addClass('t-overflowH');
@@ -238,6 +266,7 @@ $(document).ready(function () {
         $('.t-mobileMenu').removeClass('t-activeMobileMenu');
         $('.t-overlay').fadeOut(400);
         $('body').removeClass('t-overflowH');
+        $('.t-searchSection').fadeOut(400);
     });
 
     $('body').on('click', '.t-modalBack', function (e) {
@@ -266,6 +295,7 @@ $(document).ready(function () {
     $('body').on('click','.t-newsCard', function (e) {
         e.preventDefault();
         checkRel();
+        $('body').addClass('t-overflowX');
         var $this =  $(this);
 
         $('.t-newsModal').show().addClass('turnAnimation');

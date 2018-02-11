@@ -2,8 +2,10 @@
   margin: 0
   padding: 0
   box-sizing: border-box
+  cursor: url('/images/icons/Cursor.svg'), pointer!important
 
 html, body
+  font-size: 16px
   width: 100%
   min-width: 320px
   min-height: 100vh
@@ -82,6 +84,29 @@ main
     padding-left: 0
   &:last-child
     padding-right: 0
+
+
+svg.t-whiteSvg
+  .t-svgBg
+    fill: transparent
+    transition: .4s ease
+  .t-svgFigure
+    fill: $white
+    transition: .4s ease
+
+svg.t-hoverable
+  .t-svgBg
+    fill: $white
+    transition: .4s ease
+  .t-svgFigure
+    fill: $lgrey
+    transition: .4s ease
+  &:hover
+    .t-svgBg
+      fill: $dblue
+    .t-svgFigure
+      fill: $white
+
 
 .t-btn
   text-decoration: none
@@ -205,6 +230,14 @@ main
       opacity: 1!important
       pointer-events: all!important
 
+.cursor
+  position: absolute
+  width: 8px
+  height: 8px
+  background-color: $dblue
+  border-radius: 50%
+  z-index: 10000
+
 
 .t-hiddenLink
   display: none!important
@@ -221,6 +254,8 @@ main
 
 .t-overflowH
   overflow: hidden
+.t-overflowX
+  overflow-x: hidden
 
 .t-relative
   position: relative
@@ -332,9 +367,22 @@ main
   position: absolute
   top: 67px
   right: 56px
+  display: flex
+  align-items: center
+  .t-modalBtnsCtrl
+    margin-right: 40px
+    display: flex
+    align-items: center
+    .t-modalShare
+      margin-right: 16px
+  .t-modalShare
+    margin-right: 40px
   .t-modalBack
     cursor: pointer
+    display: flex
+    align-items: center
     span
+      margin-left: 8px
       @include fontsSizes(14, bold, 16)
       color: $white
   &.t-hide
