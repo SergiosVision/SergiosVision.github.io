@@ -186,14 +186,14 @@ $(document).ready(function () {
     // }
     // appendListElements();
 
-    function setHeiHeight(element) {
-        var getMain = $('main').height();
-        $(element).css({
-            "height": + getMain +"px",
-            "margin-bottom": "20px"
-        });
-    }
-    setHeiHeight('.t-authorCardWrapper'); // устанавливаем высоту окна при первой загрузке страницы
+    // function setHeiHeight(element) {
+    //     var getMain = $('main').height();
+    //     $(element).css({
+    //         "height": + getMain +"px",
+    //         "margin-bottom": "20px"
+    //     });
+    // }
+    // setHeiHeight('.t-authorCardWrapper'); // устанавливаем высоту окна при первой загрузке страницы
 
     // function menuMobileCtrl() {
     //     var getMenuContainerWidth = $('.t-sortMenuHolder').width();
@@ -236,7 +236,7 @@ $(document).ready(function () {
     }
     checkFilterWidthState();
     $(window).on('resize', function () {
-        setHeiHeight('.t-authorCardWrapper');
+        // setHeiHeight('.t-authorCardWrapper');
         // menuMobileCtrl();
         logoCtrl();
         checkFilterWidthState();
