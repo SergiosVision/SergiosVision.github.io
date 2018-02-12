@@ -84,6 +84,25 @@
 @media (max-width: 800px)
   *
     cursor: default!important
+  .t-profileModalButtonsHolder
+    .t-modalBack
+      svg
+        .t-svgFigure
+          fill: $lgrey!important
+  .t-authorCardWrapper
+    height: auto
+    flex: auto
+    max-width: 320px
+    width: 100%
+    .t-authorCardLink
+    .t-authorInfo
+      .t-authorTags, .t-authorLikesHolder, .t-authorArticlesCountWrapper
+        display: none
+      .t-authorProfession
+        margin: 0
+      .t-authorName
+        @include fontsSizes(26, bold, 32)
+
   main .t-newsCardWrapper
     height: auto
     flex: auto
@@ -184,6 +203,7 @@
   .t-mainCardsHolder
     &.t-mainPageCardCtrl
       overflow-x: scroll
+      overflow-y: auto
     left: 0!important
     position: static!important
     transform: none!important
@@ -308,6 +328,23 @@
 @media (max-width: 700px)
   .t-newsModal .t-newsModalTitle
     width: 100%
+  .t-searchSection
+    height: 100%
+    .t-searchField
+      width: 100%
+      padding: 0 24px
+
+@media (max-width: 600px)
+  .t-authorCardWrapper
+    width: 272px
+    .t-authorCardLink
+      width: 103%
+    .t-authorImgHolder
+      width: 272px
+      height: 272px
+    .t-authorInfo
+      .t-authorName
+        @include fontsSizes(20, bold, 24)
 
 @media (max-width: 500px)
   main .t-newsCardWrapper .t-newsCardInfoHolder .t-newsContentBody .t-newsTitle
