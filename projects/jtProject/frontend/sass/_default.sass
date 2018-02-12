@@ -54,6 +54,13 @@ body
   height: 100vh!important
   overflow: auto
   @include forEaseAnim(1, translateX(-150%), none)
+  .t-logoSection
+    padding-right: 24px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .t-backSmallMenuBtn
+      display: none
   .t-mobileMenuWrapper
     transition: .7s ease-in-out
     transition-delay: .2s
@@ -85,27 +92,32 @@ main
   &:last-child
     padding-right: 0
 
+svg
+  .t-svgBg
+    fill: transparent
+  .t-svgFigure
+    fill: $dgrey
 
 svg.t-whiteSvg
   .t-svgBg
-    fill: transparent
+    fill: transparent!important
     transition: .4s ease
   .t-svgFigure
-    fill: $white
+    fill: $white!important
     transition: .4s ease
 
 svg.t-hoverable
   .t-svgBg
-    fill: $white
+    fill: transparent
     transition: .4s ease
   .t-svgFigure
     fill: $lgrey
     transition: .4s ease
   &:hover
     .t-svgBg
-      fill: $dblue
+      fill: $dblue!important
     .t-svgFigure
-      fill: $white
+      fill: $white!important
 
 
 .t-btn
@@ -212,23 +224,36 @@ svg.t-hoverable
   box-shadow: 0 4px 48px rgba(33, 81, 231, 0.14)
   right: -130px
   top: -20px
-  z-index: 1000
+  z-index: 1004
   opacity: 0
   pointer-events: none
   transition: .4s ease
-  li
-    cursor: pointer
-    margin: 0!important
-    @include fontsSizes(14, normal, 17)
-    transition: .3s ease
+  color: $tBlack
+  @include fontsSizes(14, bold, 17)
+  .t-smallModalTitle
+    margin-bottom: 8px
+  .t-smallModalList
+    list-style: none
+    padding: 0
+    display: block
     &:not(:last-child)
-      margin-bottom: 8px!important
+      margin-bottom: 24px
+    li
+      @include fontsSizes(14, normal, 17)
+      &:not(:last-child)
+        margin-bottom: 8px
+      a
+        @include links()
+        color: $tBlack
+        &:hover
+          color: $dblue
+  &.t-activeSmallModalMenu
+    @include forEaseAnim(1, none, all)
 
-.t-callHiddenSortingMenu
-  &:hover
-    .t-sortModalContainer
-      opacity: 1!important
-      pointer-events: all!important
+.t-openSmallModalMenu
+  position: relative
+  .t-smallModalMenuMobileTitleWrapper
+    display: none
 
 .cursor
   position: absolute

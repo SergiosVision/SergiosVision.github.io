@@ -187,33 +187,35 @@ $(document).ready(function () {
     // appendListElements();
 
     function setHeiHeight(element) {
+        var getMain = $('main').height();
         $(element).css({
-            height: $('main').height() + 'vmax'
+            "height": + getMain +"px",
+            "margin-bottom": "20px"
         });
     }
     setHeiHeight('.t-authorCardWrapper'); // устанавливаем высоту окна при первой загрузке страницы
 
-    function menuMobileCtrl() {
-        var getMenuContainerWidth = $('.t-sortMenuHolder').width();
-        var getMenuListInsideWidth = 0;
-        $('.t-topListSorting li').each(function () {
-            getMenuListInsideWidth += ($(this).width() + parseInt($(this).css('margin-left')));
-            var index = $(this).index() + 1;
-            if(index !== 1){
-                if(getMenuListInsideWidth > getMenuContainerWidth) {
-                    $(this).addClass('invisible');
-                    $('.js-menu-more li:nth-child('+index+')').show();
-                } else {
-                    $(this).removeClass('invisible');
-                    $('.js-menu-more li:nth-child('+index+')').hide();
-                }
-                if(window.matchMedia('(max-width: 800px)').matches) {
-                    $(this).addClass('invisible');
-                }
-            }
-        });
-    }
-    menuMobileCtrl();
+    // function menuMobileCtrl() {
+    //     var getMenuContainerWidth = $('.t-sortMenuHolder').width();
+    //     var getMenuListInsideWidth = 0;
+    //     $('.t-topListSorting li').each(function () {
+    //         getMenuListInsideWidth += ($(this).width() + parseInt($(this).css('margin-left')));
+    //         var index = $(this).index() + 1;
+    //         if(index !== 1){
+    //             if(getMenuListInsideWidth > getMenuContainerWidth) {
+    //                 $(this).addClass('invisible');
+    //                 $('.js-menu-more li:nth-child('+index+')').show();
+    //             } else {
+    //                 $(this).removeClass('invisible');
+    //                 $('.js-menu-more li:nth-child('+index+')').hide();
+    //             }
+    //             if(window.matchMedia('(max-width: 800px)').matches) {
+    //                 $(this).addClass('invisible');
+    //             }
+    //         }
+    //     });
+    // }
+    // menuMobileCtrl();
     function logoCtrl() {
         if(window.matchMedia('(max-width: 800px)').matches) {
             $('.t-mobHeader').append($('.t-logoSectionMain')).append($('.t-topRightSection'));
@@ -223,10 +225,21 @@ $(document).ready(function () {
         }
     }
     logoCtrl();
+    function checkFilterWidthState() {
+        if(window.matchMedia('(max-width: 800px)').matches) {
+            $('body').on('click', '.t-openSmallModalMenu', function (e) {
+                e.preventDefault();
+                $('.t-overlay').fadeIn(400);
+                $('.t-smallModalMenu').addClass('t-activeSmallModalMenu');
+            });
+        }
+    }
+    checkFilterWidthState();
     $(window).on('resize', function () {
         setHeiHeight('.t-authorCardWrapper');
-        menuMobileCtrl();
+        // menuMobileCtrl();
         logoCtrl();
+        checkFilterWidthState();
     });
 
     $('.t-authorModalPhoto img').toBackGround(); // Инициализация подмены BackgroundА
@@ -239,7 +252,35 @@ $(document).ready(function () {
             hideElement: '.t-menuWrapper', // Элемент который нужно задвинуть :)
             bars: ".t-mainBurger" // Бургер меню
         });
+        // Движение блока при движении мышки
+        $(function() {
+            var cntHd, sldHd, tb;
+            $('.t-newsCardInfoHolder').mousemove(function(e) {
+                var $this = $(this);
+                cntHd = $this.outerHeight();
+                tb = $this.find('.t-newsContentBody');
+                sldHd = tb.outerHeight();
+                if (sldHd > $this.height()) {
+                    var percent = e.pageY - $this.offset().top;
+                    percent = 100 / cntHd * percent;
+
+                    var translate = ((sldHd - cntHd) / 100) * percent;
+
+                    tb.css({
+                        "overflow": "hidden",
+                        "white-space": "nowrap",
+                        "transform": "translateY(-"+ translate +"px)"
+                    });
+                } else {
+                    return false;
+                }
+            });
+        });
+
+    } else {
+
     }
+
 
     //  Call Modals
     function checkRel() {
@@ -247,6 +288,16 @@ $(document).ready(function () {
             $('body').addClass('t-relative');
         }
     }
+
+    // Click Events
+
+    $('body').on('click', '.t-backSmallMenuBtn', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+            $('.t-smallModalMenu').removeClass('t-activeSmallModalMenu');
+            $('.t-mobileMenu').removeClass('t-activeMobileMenu');
+            $('.t-overlay').fadeOut(400);
+    });
 
     $('body').on('click', '.t-searchBtn', function (e) {
         e.preventDefault();
@@ -264,9 +315,10 @@ $(document).ready(function () {
     $('body').on('click', '.t-overlay', function (e) {
         e.preventDefault();
         $('.t-mobileMenu').removeClass('t-activeMobileMenu');
-        $('.t-overlay').fadeOut(400);
+        $('.t-smallModalMenu').removeClass('t-activeSmallModalMenu');
         $('body').removeClass('t-overflowH');
         $('.t-searchSection').fadeOut(400);
+        $('.t-overlay').fadeOut(400);
     });
 
     $('body').on('click', '.t-modalBack', function (e) {
@@ -341,29 +393,4 @@ $(document).ready(function () {
         },1300)
     });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    // Движение блока при движении мышки
-    $(function() {
-        var cntHd, sldHd, tb;
-        $('.t-newsCardInfoHolder').mousemove(function(e) {
-            var $this = $(this);
-            cntHd = $this.outerHeight();
-            tb = $this.find('.t-newsContentBody');
-            sldHd = tb.outerHeight();
-            if (sldHd > $this.height()) {
-                var percent = e.pageY - $this.offset().top;
-                percent = 100 / cntHd * percent;
-
-                var translate = ((sldHd - cntHd) / 100) * percent;
-
-                tb.css({
-                    "overflow": "hidden",
-                    "white-space": "nowrap",
-                    "transform": "translateY(-"+ translate +"px)"
-                });
-            } else {
-                return false;
-            }
-        });
-    });
 });
