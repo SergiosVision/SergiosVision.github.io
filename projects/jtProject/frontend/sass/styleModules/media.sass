@@ -97,9 +97,9 @@
     .t-authorCardLink
     .t-authorInfo
       .t-authorTags, .t-authorLikesHolder, .t-authorArticlesCountWrapper
-        display: none
+        //display: none
       .t-authorProfession
-        margin: 0
+        margin: 0 0 16px 0
       .t-authorName
         @include fontsSizes(26, bold, 32)
 
@@ -192,7 +192,8 @@
       background-position: center
       background-size: contain
   .t-mainMain
-    padding: 0
+    padding: 0 0 40px 0
+    overflow-y: auto
   .t-articlesWrapper, .t-authorsWrapper
     padding-left: 24px
   .t-authorsWrapper
@@ -203,7 +204,6 @@
   .t-mainCardsHolder
     &.t-mainPageCardCtrl
       overflow-x: scroll
-      overflow-y: auto
     left: 0!important
     position: static!important
     transform: none!important

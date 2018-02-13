@@ -1,3 +1,5 @@
+import smooth from 'scroll'
+
 // Cursor Follower
 // if(window.matchMedia('(min-width: 801px)').matches) {
 //     var getCursor = $('.cursor');
