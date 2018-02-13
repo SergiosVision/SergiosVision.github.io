@@ -2575,17 +2575,22 @@
             <div class="t-newsModalImage t-transform"><img src="images/png/img.png"/>
               <p class="t-signature">Подпись</p>
             </div>
+            <div class="t-line"></div>
             <div class="t-likeBlockWrapper">
-              <h2 class="t-likesTitle t-titleBig">Нравится ?</h2>
-              <div class="t-likesContainer">
-                <button type="button" class="t-iLikeItBtn t-btn">Мне нравится</button>
-                <div class="t-share">Share</div>
-              </div>
+
             </div>
             <div class="t-commentBlock">
               <h2 class="t-commentsTitle t-titleBig">Обсуждение</h2>
               <div class="t-commentsFilter"><span class="t-filterName">По популярности</span>
-                <div class="t-dotsHolder"><span></span></div>
+                <div class="t-dotsHolder t-commentsSortBtn"><span></span>
+                  <div class="t-smallModalMenuStandart">
+                    <h4 class="t-smallModalTitle">Сортировка</h4>
+                    <ul class="t-smallSortMenu t-smallModalList">
+                      <li><a href="#">По дате</a></li>
+                      <li><a href="#">По популярности</a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
               <div class="t-commentsContent">
                 <div class="t-commentsItem">
@@ -2600,14 +2605,25 @@
                           </div>
                         </div>
                       </div>
-                      <div class="t-commentsRating"></div>
+                      <div class="t-commentsRating">
+                        <span class="t-ratingUp"></span>
+                        <span class="t-outputRating">234</span>
+                        <span class="t-ratingDown"></span>
+                      </div>
                     </div>
                     <div class="t-commentsCommentHolder">
                       <p class="t-commentOutput">Очень люблю материалы этого чувака. Потом мы узнаем, что ему руку ампутировали из-за гангрены, когда он решит сделать себе руки-базуки.</p>
                     </div>
-                    <div class="t-commentAnswer"><a href="#" class="t-commentsAnswerBtn">Ответить</a></div>
+                    <div class="t-commentAnswer"><a href="#" class="t-customLink t-commentsAnswerBtn">Ответить</a></div>
                   </div>
                   <div class="t-commentsiItemChildren"></div>
+                </div>
+              </div>
+              <div class="t-commentsAnswerField">
+                <input type="text" placeholder="Ваш комментарий" class="t-mainInput">
+                <div class="t-sendCommentBtnHolder">
+                  <button class="t-btn" type="button">Отправить</button>
+                  <span class="t-commentHelp">или Ctrl + Enter</span>
                 </div>
               </div>
             </div>

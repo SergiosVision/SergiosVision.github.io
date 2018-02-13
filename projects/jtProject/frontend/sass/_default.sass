@@ -130,6 +130,7 @@ svg.t-hoverable
 
 .t-btn
   text-decoration: none
+  background-color: transparent
   outline: none
   border: 1px solid $lgrey
   color: $tBlackSec
@@ -167,6 +168,10 @@ svg.t-hoverable
       right: 0
       bottom: -34px
 
+.t-line
+  background-color: $lgrey
+  height: 1.5px
+  width: 100%
 
 .t-burger
   display: inline-block
@@ -218,8 +223,49 @@ svg.t-hoverable
     &:after
       left: 4px
 
+.t-ratingUp, .t-ratingDown
+  position: relative
+  display: block
+  width: 24px
+  height: 24px
+  background-color: transparent
+  border-radius: 50%
+  transition: .4s ease
+  &:before, &:after
+    transition: .4s ease
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    margin: auto
+    border-radius: 2px
+    background-color: $dgrey
+  &:hover
+    background-color: $dblue
+    &:before, &:after
+      background-color: $white
 
-.t-smallModalMenu
+
+
+.t-ratingUp
+  &:before
+    width: 2px
+    height: 10px
+  &:after
+    width: 10px
+    height: 2px
+
+.t-ratingDown
+  &:before
+    display: none
+  &:after
+    width: 10px
+    height: 2px
+
+.t-smallModalMenu, .t-smallModalMenuStandart
   position: absolute
   display: flex
   flex-direction: column
@@ -303,7 +349,40 @@ svg.t-hoverable
       &:after
         width: 100%
 
+.t-mainInput
+  width: 100%
+  border: none
+  outline: none
+  @include fontsSizes(16, normal, 19)
+  padding-bottom: 16px
+  border-bottom: 1px solid $lgrey
+  color: #1a1a1a
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder,
+  &:-moz-placeholder
+    color: $lgreySec
 
+.t-customLink
+  display: inline-block
+  @include fontsSizes(14, bold, 17)
+  color: $dgrey
+  @include links()
+  &:after
+    content: ''
+    display: block
+    background-color: $dgrey
+    height: 1px
+    width: 50%
+    margin-top: 2px
+    transition: .3s ease
+  &.active
+    color: $tBlack
+    &:after
+      display: none
+  &:hover
+    &:after
+      width: 100%
 
 .t-hiddenLink
   display: none!important
