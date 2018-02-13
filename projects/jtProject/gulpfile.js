@@ -72,9 +72,9 @@ gulp.task('clear', function () {
     return cache.clearAll();
 });
 
-gulp.task('watch', ['browser-sync', 'clear', 'sass', 'scripts', 'templates'], function() {
+gulp.task('watch', ['browser-sync', 'clear', 'sass', 'scripts'/*, 'templates'*/], function() {
     gulp.watch('frontend/sass/**/*.sass', ['sass']); // Наблюдение за sass файлами в папке sass
-    gulp.watch('frontend/templates/**/*.jade', ['templates']); // Наблюдение за sass файлами в папке sass
+    //gulp.watch('frontend/templates/**/*.jade', ['templates']); // Наблюдение за sass файлами в папке sass
     gulp.watch('frontend/libs/*.js', ['scripts']);   // Наблюдение за JS файлами в папке js
 });
 

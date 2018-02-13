@@ -1,5 +1,3 @@
-import smooth from 'scroll'
-
 // Cursor Follower
 // if(window.matchMedia('(min-width: 801px)').matches) {
 //     var getCursor = $('.cursor');
@@ -246,10 +244,10 @@ $(document).ready(function () {
 
     $('.t-authorModalPhoto img').toBackGround(); // Инициализация подмены BackgroundА
 
-    if(window.matchMedia('(min-width: 801px)').matches) {
+    if(window.matchMedia('(min-width: 801px)').matches && !$('body').hasClass('t-scriptCtrl')) {
         // Инициализация Скролл плагина By SergiosVision
         $('.t-mainCardsHolder').horizontalScroll({
-            scrollField: 'main', // Определяет зону действия скролла
+            scrollField: '.t-mainMain', // Определяет зону действия скролла
             thisChild: '.t-scrollBar', // Селектор ребёнка родительского блока
             hideElement: '.t-menuWrapper', // Элемент который нужно задвинуть :)
             bars: ".t-mainBurger" // Бургер меню
@@ -293,12 +291,26 @@ $(document).ready(function () {
 
     // Click Events
 
+    $('body').on('click', '.t-editBtn',  function (e) {
+        e.preventDefault();
+        $(this).fadeOut(300);
+        $(this).closest('.t-profileSettingsItem').find('.t-saveBtnsHolder').show(300).css('display', 'flex');
+        $(this).closest('.t-profileSettingsItem').find('input').prop('disabled', false);
+    });
+
+    $('body').on('click', '.t-closeEdit',  function (e) {
+        e.preventDefault();
+        $(this).closest('.t-profileSettingsItem').find('.t-saveBtnsHolder').slideUp(300);
+        $(this).closest('.t-profileSettingsItem').find('input').prop('disabled', true);
+        $('.t-editBtn').fadeIn(300);
+    });
+
     $('body').on('click', '.t-backSmallMenuBtn', function (e) {
         e.preventDefault();
         e.stopPropagation();
-            $('.t-smallModalMenu').removeClass('t-activeSmallModalMenu');
-            $('.t-mobileMenu').removeClass('t-activeMobileMenu');
-            $('.t-overlay').fadeOut(400);
+        $('.t-smallModalMenu').removeClass('t-activeSmallModalMenu');
+        $('.t-mobileMenu').removeClass('t-activeMobileMenu');
+        $('.t-overlay').fadeOut(400);
     });
 
     $('body').on('click', '.t-searchBtn', function (e) {

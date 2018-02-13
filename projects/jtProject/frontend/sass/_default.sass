@@ -5,6 +5,7 @@
   cursor: url('/images/icons/Cursor.svg'), pointer!important
 
 html, body
+  font-family: Charter
   font-size: 16px
   width: 100%
   min-width: 320px
@@ -33,6 +34,12 @@ body
   &.t-overflowCtrl
     .t-authorModal
       overflow-y: scroll
+  &.t-resetBody
+    position: relative
+    left: auto
+    top: auto
+    right: auto
+    bottom: auto
 
 .t-simpleBlock, .t-mobHeader
   display: none
@@ -265,6 +272,39 @@ svg.t-hoverable
   z-index: 10000
 
 
+.t-sortingLinks
+  display: flex
+  flex-wrap: wrap
+  list-style: none
+  padding: 0
+  margin: 0
+  li:not(:last-child)
+    margin-right: 24px
+  li
+    margin-bottom: 8px
+  a
+    display: inline-block
+    @include fontsSizes(14, bold, 17)
+    color: $dgrey
+    @include links()
+    &:after
+      content: ''
+      display: block
+      background-color: $dgrey
+      height: 1px
+      width: 50%
+      margin-top: 2px
+      transition: .3s ease
+    &.active
+      color: $tBlack
+      &:after
+        display: none
+    &:hover
+      &:after
+        width: 100%
+
+
+
 .t-hiddenLink
   display: none!important
   margin: 0!important
@@ -285,6 +325,10 @@ svg.t-hoverable
 
 .t-relative
   position: relative
+
+.t-errorHolder
+  @include fontsSizes(16, normal, 20)
+  color: #EB5757
 
 .t-removePos
   position: static!important
@@ -326,6 +370,11 @@ svg.t-hoverable
   @include fontsSizes(26, bold, 32)
   color: $tBlackSec
   margin: 0 0 16px 0
+
+.t-titleStock
+  @include fontsSizes(16, bold, 20)
+  color: $tBlackSec
+  margin: 0
 
 
 .t-flexHolder
@@ -377,6 +426,27 @@ svg.t-hoverable
       .t-authorArticleCardDate
         @include fontsSizes(14, bold, 17)
         color: $dgrey
+
+
+.t-articlesCount
+  margin-bottom: 8px
+  @include fontsSizes(20, bold, 24)
+  .t-name
+    position: relative
+    padding-right: 32px
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      right: 7px
+      top: 12px
+      width: 20px
+      height: 2px
+      background-color: $tBlackSec
+  &.t-bigCount
+    .t-name
+      &:after
+        top: 17px
 
 
 .t-commentBlock

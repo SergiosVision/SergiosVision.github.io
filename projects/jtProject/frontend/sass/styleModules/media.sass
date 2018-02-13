@@ -73,6 +73,12 @@
       font-size: 45px
     .t-authorModalProfession
       font-size: 30px
+  .t-profileWrapperContainer
+    .t-profileImgContainer
+      padding: 0 25px
+    .t-profileSettingsAndInfo
+      padding: 0 20px
+
 
 @media (max-width: 980px)
   .t-hiddenLogoWrapper .t-pageNameHolder
@@ -84,6 +90,12 @@
 @media (max-width: 800px)
   *
     cursor: default!important
+
+  .t-profileWrapperContainer
+    .t-profileImgContainer
+      padding: 0 20px
+    .t-profileSettingsAndInfo
+      padding: 0 15px
   .t-profileModalButtonsHolder
     .t-modalBack
       svg
@@ -230,6 +242,18 @@
         margin-right: 16px
 
 @media (max-width: 768px)
+  header.t-header
+    .t-pageNameHolder
+      display: none
+  .t-profileWrapperContainer
+    flex-direction: column
+    .t-profileImgContainer
+      margin-bottom: 40px
+      padding: 0 24px
+      .t-profileImgHolder
+        margin: 0 auto
+    .t-profileSettingsAndInfo
+      padding: 0 24px
   .t-mobileMenu
     padding: 32px 24px
     width: 288px
@@ -376,6 +400,9 @@
       .t-authorModalDescription
         @include fontsSizes(16, normal, 20)
     .t-authorArticlesHolder .t-authorModalArticleCard .t-authorArticleCardImg
+      display: none
+  .t-authorModalArticleCard
+    .t-authorArticleCardImg
       display: none
 
 
