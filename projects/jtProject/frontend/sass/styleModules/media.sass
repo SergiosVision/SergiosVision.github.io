@@ -90,7 +90,17 @@
 @media (max-width: 800px)
   *
     cursor: default!important
-
+  .t-newsModal
+    .t-likeBlockWrapper
+      margin-top: 26px
+      margin-bottom: 44px
+      flex-direction: column
+      .t-likeBlockItem
+        &:not(:last-child)
+          margin: 0 0 30px 0
+    .t-line
+      order: 5
+      margin-top: 40px
   .t-profileWrapperContainer
     .t-profileImgContainer
       padding: 0 20px

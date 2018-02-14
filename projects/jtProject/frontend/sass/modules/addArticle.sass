@@ -1,0 +1,40 @@
+.t-addArticleModalWrapper
+  display: none
+  height: 100%
+  background-color: $white
+  z-index: 1004
+  .t-addArticleContainer
+    display: flex
+    flex-direction: column
+    width: 792px
+    margin: 62px auto 0 auto
+    .t-addArticleRemindMessage
+      @include fontsSizes(14, normal, 17)
+      color: $dgrey
+      margin-bottom: 35px
+    .t-addArticleName, .t-textArea
+      border: none
+      outline: none
+      @include fontsSizes(36, bold, 44)
+      color: #4F4F4F
+      &::-webkit-input-placeholder
+        color: $dgrey
+    .t-addArticleName
+      margin-bottom: 16px
+    .t-textArea
+      @include fontsSizes(20, normal, 24)
+      height: auto
+      resize: none
+      margin-top: 40px
+    .t-addArticleBtnsHolder
+      margin-top: 80px
+    .t-btnModeration
+      margin-right: 16px
+  .t-addArticleClose
+    position: absolute
+    top: 67px
+    right: 56px
+    display: flex!important
+    align-items: center!important
+    span
+      color: $dgrey!important

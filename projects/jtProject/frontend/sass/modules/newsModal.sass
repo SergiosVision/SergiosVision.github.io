@@ -144,29 +144,23 @@
       color: $lgreySec
       margin-top: 40px
   .t-likeBlockWrapper
-    margin: 26px 0 80px 0
-    display: flex
-    flex-wrap: wrap
-    .t-likeBlockItem
       display: flex
-      align-items: center
-      &:not(:last-child)
-        margin-right: 16px
-      svg
-        margin-right: 8px
-      &:hover
-       svg
-         .t-svgBg
-           fill: $dblue
-         .t-svgFigure
-           fill: $white
-    .t-likesTitle
-      margin-bottom: 16px
-    .t-likesContainer
-      display: flex
-      align-items: center
-      .t-iLikeItBtn
-        margin-right: 16px
+      margin: 26px 0 80px 0
+      .t-likeBlockItem
+        display: flex
+        align-items: center
+        &:not(:last-child)
+          margin-right: 16px
+        svg
+          margin-right: 8px
+          .t-svgBg, .t-svgFigure
+            transition: .3s ease
+        &:hover
+         svg
+           .t-svgBg
+             fill: $dblue
+           .t-svgFigure
+             fill: $white
   .t-commentBlock
     .t-commentsFilter
       position: relative
@@ -233,4 +227,10 @@
     .t-commentOutput
       color: $tBlack
       @include fontsSizes(16, normal, 19)
-
+  .t-commentAnswer
+    display: flex
+    flex-direction: column
+    .t-commentAnswerAndRating
+      display: flex
+      align-items: center
+      justify-content: space-between

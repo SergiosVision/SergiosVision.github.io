@@ -17,6 +17,12 @@
 //     $(window).on('mousemove', cursorMove);
 // }
 //  Маленький скролл плагин
+
+// Editor
+var editor = new MediumEditor('.editable'),
+    cssLink = document.getElementsByClassName('getStyles');
+
+
 $(function ($) {
     $.fn.horizontalScroll = function (options) {
 
@@ -216,6 +222,15 @@ $(document).ready(function () {
     //     });
     // }
     // menuMobileCtrl();
+    function replaceThis(first, second, what) {
+        if(window.matchMedia('(max-width: 500px)').matches) { // Можно переписать медиа запрос для этой функции. Сделать настраиваемым.
+            $(first).append($(what));
+        } else {
+            $(second).append($(what));
+        }
+    }
+    replaceThis('.t-commentAnswerAndRating', '.t-commentsAuthorHolder', '.t-commentsRating');
+
     function logoCtrl() {
         if(window.matchMedia('(max-width: 800px)').matches) {
             $('.t-mobHeader').append($('.t-logoSectionMain')).append($('.t-topRightSection'));
@@ -238,6 +253,7 @@ $(document).ready(function () {
     $(window).on('resize', function () {
         // setHeiHeight('.t-authorCardWrapper');
         // menuMobileCtrl();
+        replaceThis('.t-commentAnswerAndRating', '.t-commentsAuthorHolder', '.t-commentsRating');
         logoCtrl();
         checkFilterWidthState();
     });
@@ -290,6 +306,17 @@ $(document).ready(function () {
     }
 
     // Click Events
+
+    $('body').on('click', '.t-addArticleBtn', function (e) {
+        e.preventDefault();
+        $('.t-addArticleModalWrapper').fadeIn(300);
+    });
+
+    $('body').on('click', '.t-addArticleClose', function (e) {
+        e.preventDefault();
+        $('.t-addArticleModalWrapper').fadeOut(300);
+    });
+
 
     $('body').on('click', '.t-editBtn',  function (e) {
         e.preventDefault();
