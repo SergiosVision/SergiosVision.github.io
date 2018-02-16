@@ -7,6 +7,8 @@
     <title>ЖТ</title>
     <link rel="stylesheet" href="css/plugins/normalize.css">
     <link rel="stylesheet" href="css/plugins/medium-editor.css">
+    <link rel="stylesheet" href="css/plugins/jquery.formstyler.theme.css">
+    <link rel="stylesheet" href="css/plugins/jquery.formstyler.css">
     <link rel="stylesheet" href="css/plugins/default.css" class="getStyles">
     <link rel="stylesheet" href="css/main.min.css">
   </head>
@@ -2683,7 +2685,16 @@
         </div>
       </div>
       <section class="t-searchSection t-absolute">
-        <div class="t-sloseBtn"></div>
+        <div class="t-searchClose">
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <use xlink:href="#path0_fill6" fill="#FFF" class="t-svgBg"></use>
+            <use xlink:href="#path1_stroke6" transform="translate(7 8)" fill="#E0E0E0" class="t-svgFigure"></use>
+            <defs>
+              <path id="path0_fill6" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"></path>
+              <path id="path1_stroke6" d="M0 3l-.707-.707a1 1 0 0 0 0 1.414L0 3zM3.707.707A1 1 0 0 0 2.293-.707L3.707.707zm-1.414 6a1 1 0 0 0 1.414-1.414L2.293 6.707zM8 8a1 1 0 1 0 2 0H8zM0 4h6V2H0v2zm6-1v1h-.002-.001-.003-.002H6l.058.003c.068.005.138.012.246.03.242.04.474.092.749.236C7.513 4.5 8 4.931 8 6h2c0-1.931-1.014-3-2.053-3.52a5.194 5.194 0 0 0-1.314-.42A5.192 5.192 0 0 0 6.025 2H6.004h-.002-.001L6 3zm-5.293.707l3-3L2.293-.707l-3 3L.707 3.707zm-1.414 0l3 3 1.414-1.414-3-3-1.414 1.414zM8 6v2h2V6H8z"></path>
+            </defs>
+          </svg><span>Назад</span>
+        </div>
         <div class="t-searchField">
           <input type="text" placeholder="Ищите статьи"/>
         </div>
@@ -2704,7 +2715,13 @@
             <div class="t-addArticleContainer">
               <h1 class="t-addArticleRemindMessage">Статья автоматически сохранена в ваших черновиках</h1>
               <input type="text" placeholder="Название статьи" class="t-addArticleName">
-              <span class="t-addArticleCategpry">Выберите рубрику</span>
+              <select name="" class="t-selectArticleCategory">
+                <option class="t-noneItem" value="1">Выберите рубрику</option>
+                <option value="2">Категория 1</option>
+                <option value="3">Категория 2</option>
+                <option value="4">Категория 3</option>
+                <option value="5">Категория 4</option>
+              </select>
               <p class="t-textArea editable" data-placeholder="Ваш текст"></p>
               <div class="t-addArticleBtnsHolder">
                 <button class="t-btn t-btnModeration">Отправить на модерацию</button>
@@ -2714,6 +2731,7 @@
       </section>
     </div>
     <script src="js/vendor.min.js"></script>
+    <script src="js/plugins/jquery.formstyler.min.js"></script>
     <script src="js/plugins/TweenLite.min.js"></script>
     <script src="js/plugins/editor.js"></script>
     <script src="js/plugins/svg4everybody.min.js"></script>

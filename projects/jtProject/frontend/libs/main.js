@@ -23,15 +23,132 @@ var editor = new MediumEditor('.editable'),
     cssLink = document.getElementsByClassName('getStyles');
 
 
+// $(function ($) {
+//     $.fn.horizontalScroll = function (options) {
+//
+//         // Params
+//         var options = jQuery.extend({
+//             scrollField: '',
+//             thisChild: '',
+//             hideElement: '',
+//             bars: ''
+//         }, options);
+//
+//         // Variables
+//         var sp = 0,
+//             cmp = $(this),
+//             getLeftVal = parseInt(cmp.css("left")) !== parseInt(5),
+//             getThisElOffset = cmp.offset().left,
+//             getHidenWidth = $(options.hideElement).width(),
+//             x = 0,
+//             direction = 0,
+//             scrollTarget = 0,
+//             scrollValue = 0,
+//             scrollLeft = 0;
+//
+//         // Get Value from the Transform Translate
+//         return this.each(function () {
+//             function getTransform(el) {
+//                 var resultOne = $(el).css('transform').split(',');
+//                 var resultTwo = resultOne[4];
+//                 var getValue = parseInt(resultTwo);
+//                 return getValue;
+//             }
+//
+//             // Set stock UI
+//             cmp.css({
+//                 "position": "absolute",
+//                 "left": getThisElOffset
+//             });
+//
+//
+//             // Call MouseWheel Event
+//             $(options.scrollField).bind("DOMMouseScroll mousewheel wheel", function (event) {
+//                 calculate();
+//                 event.preventDefault();
+//             });
+//
+//             // Calculate Position in Container
+//             function calculate() {
+//                 var position = pos();
+//                 function pos() {
+//                     var pos = $(options.thisChild).last().position().left + $(options.thisChild).last().width() - $(window).width() + 7;
+//                     return pos;
+//                 }
+//
+//                 // Set Scroll Event
+//
+//
+//                 scrollTarget += event.deltaY * 1;
+//                 scrollTarget = Math.round(Math.max(scrollLeft, Math.min(scrollTarget, position)));
+//                 console.log(scrollTarget)
+//
+//                 sp += scrollTarget;
+//
+//                 if (sp < 0) {
+//                     sp = 0;
+//                 } else if (sp > position) {
+//                     sp = position;
+//                 }
+//
+//                 if (event.deltaY > 0) {
+//                     direction = 1;
+//                     if(sp > 0) {
+//                         $(options.hideElement).css({"transform": "translateX(-150%)", "transition": ".6s ease-in-out", "opacity":'0'});
+//                         $(options.bars).css({"left": "22px"});
+//                         $(options.hideElement).parent().parent().addClass('minAside');
+//                         if (getLeftVal) {
+//                             getLeftVal = false;
+//                             cmp.animate({"left": "5px"}, 700);
+//                         }
+//                     }
+//                 } else {
+//                     direction = -1;
+//                     if ((sp === 0 || sp <= -320) && (getTransform(cmp) === parseInt(0) && getLeftVal === false)) {
+//                         $(options.hideElement).parent().parent().removeClass('minAside');
+//                         cmp.animate({"left": getHidenWidth}, 700);
+//                         $(options.bars).css({"left": "-150%"});
+//                         $(options.hideElement).css({"transform": "none", "opacity": '1'});
+//                         getLeftVal = true;
+//                     }
+//                 }
+//
+//                 cmp.css('transform', 'translate3d(' + -sp + 'px, 0 ,0)');
+//
+//
+//                 if (x < 0) {
+//                     x = 0;
+//                 } else if (x > options.thisChild.length) {
+//                     x = options.thisChild.length
+//                 }
+//
+//                 // Max, Min values Function
+//
+//                 function _clamp(num, min, max) {
+//                     return Math.min(Math.max(num, min), max);
+//                 }
+//             }
+//         });
+//
+//     };
+// });
+
+
+
 $(function ($) {
     $.fn.horizontalScroll = function (options) {
-
         // Params
         var options = jQuery.extend({
-            scrollField: '',
-            thisChild: '',
-            hideElement: '',
-            bars: ''
+            scrollField: options.scrollField,
+            thisChild: options.thisChild,
+            hideElement: options.hideElement,
+            bars: options.bars,
+            spring: options.spring || 0.1,
+            marginReducer: options.marginReducer || 10,
+            marginLimit: options.marginLimit || 10,
+            animation: options.animation || false,
+            getOdd: options.getOdd,
+            getEvent: options.getEvent
         }, options);
 
         // Variables
@@ -40,8 +157,14 @@ $(function ($) {
             getLeftVal = parseInt(cmp.css("left")) !== parseInt(5),
             getThisElOffset = cmp.offset().left,
             getHidenWidth = $(options.hideElement).width(),
-            x = 0,
-            direction = 0;
+            interval,
+            direction = 0,
+            scrollTarget = 0,
+            scrollValue = 0,
+            oldScrollValue = 0,
+            scrollLeft = 0,
+            speed = 0,
+            value = 0;
 
         // Get Value from the Transform Translate
         return this.each(function () {
@@ -52,40 +175,39 @@ $(function ($) {
                 return getValue;
             }
 
+
             // Set stock UI
             cmp.css({
                 "position": "absolute",
-                "left": getThisElOffset
+                "left": getThisElOffset,
+                "justify-content": 'space-between'
             });
 
+            addEvents();
 
             // Call MouseWheel Event
-            $(options.scrollField).bind("DOMMouseScroll mousewheel wheel", function (event) {
-                calculate();
-                event.preventDefault();
-            });
+            
+            function addEvents() {
+                $(options.scrollField).bind("DOMMouseScroll mousewheel wheel", function (event) {
+                    scrollThis();
+                    event.preventDefault();
+                });
+            }
 
-            // Calculate Position in Container
-            function calculate() {
-                var position = pos();
-                function pos() {
-                    var pos = $(options.thisChild).last().position().left + $(options.thisChild).last().width() - $(window).width() + 7;
-                    return pos;
-                }
+            function pos() {
+                var pos = $(options.thisChild).last().position().left + $(options.thisChild).last().width() - $(window).width() + 7;
+                return pos;
+            }
 
-                // Set Scroll Event
+            function scrollThis() {
 
-                sp += cmp.scrollLeft = event.deltaY;
-
-                if (sp < 0) {
-                    sp = 0;
-                } else if (sp > position) {
-                    sp = position;
-                }
+                value += event.deltaY * -1;
+                scrollTarget += event.deltaY * 1;
+                scrollTarget = Math.round(Math.max(scrollLeft, Math.min(scrollTarget, pos())));
 
                 if (event.deltaY > 0) {
                     direction = 1;
-                    if(sp > 0) {
+                    if(scrollTarget > 0) {
                         $(options.hideElement).css({"transform": "translateX(-150%)", "transition": ".6s ease-in-out", "opacity":'0'});
                         $(options.bars).css({"left": "22px"});
                         $(options.hideElement).parent().parent().addClass('minAside');
@@ -96,7 +218,7 @@ $(function ($) {
                     }
                 } else {
                     direction = -1;
-                    if ((sp === 0 || sp <= -320) && (getTransform(cmp) === parseInt(0) && getLeftVal === false)) {
+                   if ((scrollTarget === 0 || scrollTarget <= -320) && (getTransform(cmp) === parseInt(0) && getLeftVal === false)) {
                         $(options.hideElement).parent().parent().removeClass('minAside');
                         cmp.animate({"left": getHidenWidth}, 700);
                         $(options.bars).css({"left": "-150%"});
@@ -105,29 +227,79 @@ $(function ($) {
                     }
                 }
 
-                cmp.css('transform', 'translate3d(' + -sp + 'px, 0 ,0)');
-                // cmp.css({"transform": "translate3d(" + -scrollValue + "px, 0 ,0)"});
-                $(options.thisChild).css({
-                    // "margin": "0 "+ speed / 2 + "px",
-                    // "transform": "skew("+ speed / 2 +"deg)"
-                });
-
-                if (x < 0) {
-                    x = 0;
-                } else if (x > options.thisChild.length) {
-                    x = options.thisChild.length
-                }
-
-                // Max, Min values Function
-
-                function _clamp(num, min, max) {
-                    return Math.min(Math.max(num, min), max);
-                }
             }
+            
+            function getUpdate() {
+             interval = setInterval(function () {
+                    console.log(value)
+                    if (value === 0) {
+                        var setBack = debounce(function(){
+                            cmp.css('width', ''+ getStartWidth +'px');
+                            console.log('width setted')
+                        }, 100);
+
+                        setBack();
+                    }
+
+                    // Get Scroll Value
+                    scrollValue += (scrollTarget - scrollValue) * options.spring;
+
+                    // Get Delta
+
+                    var delta = scrollTarget - scrollValue;
+                    var getMargin = delta >= 0 ? delta / options.marginReducer : (delta * -1) / options.marginReducer;
+                    speed += _clamp(getMargin, 0, options.marginLimit);
+                    var getStartWidth = cmp.width();
+                    var getDifference =  cmp.width() + getMargin;
+
+                    if(options.animation) {
+                        cmp.css({
+                            'transform': 'translate3d(' + -scrollValue + 'px, 0 ,0)',
+                            "width": ''+ getDifference +'px'
+                        });
+
+                        // $(options.getOdd).css({
+                        //     'transform': 'translate3d(' + getMargin + 'px, 0 ,0)',
+                        // });
+                        // $(options.getEvent).css({
+                        //     'transform': 'translate3d(' + -getMargin + 'px, 0 ,0)',
+                        // });
+                    } else {
+                        cmp.css('transform', 'translate3d(' + -scrollValue + 'px, 0 ,0)');
+                    }
+
+                    oldScrollValue = scrollValue;
+
+                },5);
+            }
+            requestAnimationFrame(getUpdate);
+
+            function debounce(func, wait, immediate) {
+                var timeout;
+                return function() {
+                    var context = this, args = arguments;
+                    var later = function() {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    var callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            }
+
+            // Max, Min values Function
+
+            function _clamp(num, min, max) {
+                return Math.min(Math.max(num, min), max);
+            }
+
         });
 
     };
 });
+
 
 // Мини плагин для подмены BackgroundА
 $(function () {
@@ -173,6 +345,9 @@ $(function () {
 // Document Ready Section
 $(document).ready(function () {
     svg4everybody(); // Call SVG4EveryBody
+    $('.t-selectArticleCategory').styler();
+    var getThisSvg = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillArr" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_strokeArr" class="t-svgFigure" transform="translate(8 8)" fill="#E0E0E0"/><defs><path id="path0_fillArr" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_strokeArr" d="M5 0a1 1 0 0 0-2 0h2zM4 8l-.707.707a1 1 0 0 0 1.414 0L4 8zM.707 3.293A1 1 0 0 0-.707 4.707L.707 3.293zm8 1.414a1 1 0 0 0-1.414-1.414l1.414 1.414zM3 0v8h2V0H3zM-.707 4.707l4 4 1.414-1.414-4-4-1.414 1.414zm8-1.414l-4 4 1.414 1.414 4-4-1.414-1.414z"/></defs></svg>';
+    $('.jq-selectbox__trigger-arrow').append(getThisSvg);
     $('.t-mainWrapper').append('<div class="t-overlay"></div>');
     $('.t-overlay').hide();
     var getMainPageName = $('.t-namePage').text();
@@ -266,7 +441,11 @@ $(document).ready(function () {
             scrollField: '.t-mainMain', // Определяет зону действия скролла
             thisChild: '.t-scrollBar', // Селектор ребёнка родительского блока
             hideElement: '.t-menuWrapper', // Элемент который нужно задвинуть :)
-            bars: ".t-mainBurger" // Бургер меню
+            bars: ".t-mainBurger", // Бургер меню,
+            spring: 0.08,
+            animation: true,
+            getOdd: '.t-scrollBar:nth-child(odd)',
+            getEvent: '.t-scrollBar:nth-child(even)'
         });
         // Движение блока при движении мышки
         $(function() {
@@ -306,6 +485,28 @@ $(document).ready(function () {
     }
 
     // Click Events
+
+    $('body').on('click', '.t-selectArticleCategory', function (e) {
+        $('.jq-selectbox li').each(function () {
+            if($(this).hasClass('selected')) {
+                $(this).hide()
+            } else {
+                $(this).show();
+            }
+        });
+        if($('.jq-selectbox').hasClass('opened')) {
+            $('.jq-selectbox__trigger-arrow').css('transform', 'rotate(180deg)');
+        } else {
+            $('.jq-selectbox__trigger-arrow').css('transform', 'none');
+        }
+    });
+
+
+    $('body').on('click', '.t-searchClose', function (e) {
+        e.preventDefault();
+        $('.t-searchSection').fadeOut(300);
+        $('.t-overlay').fadeOut(300);
+    });
 
     $('body').on('click', '.t-addArticleBtn', function (e) {
         e.preventDefault();

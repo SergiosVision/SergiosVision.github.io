@@ -85,6 +85,11 @@
     display: none
   .t-mainTopContent
     padding-right: 15px
+  .t-addArticleModalWrapper
+    overflow: auto
+    .t-addArticleContainer
+      width: 100%
+      padding: 0 30px 30px 30px
 
 
 @media (max-width: 800px)
@@ -256,6 +261,14 @@
     padding: 32px 24px 0 24px
     .t-pageNameHolder
       display: none
+  .t-addArticleModalWrapper
+    .t-addArticleContainer
+      width: 100%
+      padding: 0 24px 30px 24px
+    .t-addArticleClose
+      top: 24px
+      right: 24px
+
   .t-profileWrapperContainer
     flex-direction: column
     .t-profileImgContainer
@@ -422,3 +435,9 @@
     width: 272px
     .t-newsCardImg
       width: 272px
+  .t-addArticleModalWrapper
+    .t-addArticleContainer
+      width: 100%
+      padding: 0 20px 30px 20px
+  .t-btnModeration
+    margin-bottom: 10px!important
