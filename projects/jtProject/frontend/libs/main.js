@@ -22,7 +22,6 @@
 var editor = new MediumEditor('.editable'),
     cssLink = document.getElementsByClassName('getStyles');
 
-
 // $(function ($) {
 //     $.fn.horizontalScroll = function (options) {
 //
@@ -179,8 +178,7 @@ $(function ($) {
             // Set stock UI
             cmp.css({
                 "position": "absolute",
-                "left": getThisElOffset,
-                "justify-content": 'space-between'
+                "left": getThisElOffset
             });
 
             addEvents();
@@ -231,39 +229,33 @@ $(function ($) {
             
             function getUpdate() {
              interval = setInterval(function () {
-                    console.log(value)
-                    if (value === 0) {
-                        var setBack = debounce(function(){
-                            cmp.css('width', ''+ getStartWidth +'px');
-                            console.log('width setted')
-                        }, 100);
-
-                        setBack();
-                    }
-
+                 // var setBack = debounce(function(){
+                 //     cmp.css('width', ''+ getStartWidth +'px');
+                 //     console.log('width setted')
+                 // }, 100);
+                 //
+                 // setBack();
                     // Get Scroll Value
                     scrollValue += (scrollTarget - scrollValue) * options.spring;
 
                     // Get Delta
 
                     var delta = scrollTarget - scrollValue;
+                    console.log(delta)
                     var getMargin = delta >= 0 ? delta / options.marginReducer : (delta * -1) / options.marginReducer;
                     speed += _clamp(getMargin, 0, options.marginLimit);
-                    var getStartWidth = cmp.width();
-                    var getDifference =  cmp.width() + getMargin;
 
                     if(options.animation) {
                         cmp.css({
-                            'transform': 'translate3d(' + -scrollValue + 'px, 0 ,0)',
-                            "width": ''+ getDifference +'px'
+                            'transform': 'translate3d(' + -scrollValue + 'px, 0 ,0)'
                         });
 
-                        // $(options.getOdd).css({
-                        //     'transform': 'translate3d(' + getMargin + 'px, 0 ,0)',
-                        // });
-                        // $(options.getEvent).css({
-                        //     'transform': 'translate3d(' + -getMargin + 'px, 0 ,0)',
-                        // });
+                        $(options.getOdd).css({
+                            'transform': 'translate3d(' + getMargin + 'px, 0 ,0)',
+                        });
+                        $(options.getEvent).css({
+                            'transform': 'translate3d(' + -getMargin + 'px, 0 ,0)',
+                        });
                     } else {
                         cmp.css('transform', 'translate3d(' + -scrollValue + 'px, 0 ,0)');
                     }
@@ -342,9 +334,40 @@ $(function () {
         })
     }
 });
+
+
+// Заменяем стандартные числа вроде 1000 на 1K
+
+function transfromNumbers(number) {
+    if (number >= 1000000000) {
+        return (number / 1000000000).toFixed(1).replace(/\.0$/, ' ') + 'G';
+    }
+
+    if (number >= 1000000) {
+        return (number / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    }
+
+    if (number >= 1000) {
+        return (number / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    }
+
+    if(number < 1000) {
+        return (number).toFixed(1).replace(/\.0$/, '') + '';
+    }
+}
+var getTransformNumbers = $('.t-transformValue');
+getTransformNumbers.each(function () {
+    var getValues = $(this).text();
+    getValues = parseInt(getValues);
+    transfromNumbers(getValues);
+    $(this).text(transfromNumbers(getValues));
+});
+
+
 // Document Ready Section
 $(document).ready(function () {
     svg4everybody(); // Call SVG4EveryBody
+
     $('.t-selectArticleCategory').styler();
     var getThisSvg = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillArr" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_strokeArr" class="t-svgFigure" transform="translate(8 8)" fill="#E0E0E0"/><defs><path id="path0_fillArr" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_strokeArr" d="M5 0a1 1 0 0 0-2 0h2zM4 8l-.707.707a1 1 0 0 0 1.414 0L4 8zM.707 3.293A1 1 0 0 0-.707 4.707L.707 3.293zm8 1.414a1 1 0 0 0-1.414-1.414l1.414 1.414zM3 0v8h2V0H3zM-.707 4.707l4 4 1.414-1.414-4-4-1.414 1.414zm8-1.414l-4 4 1.414 1.414 4-4-1.414-1.414z"/></defs></svg>';
     $('.jq-selectbox__trigger-arrow').append(getThisSvg);
@@ -397,6 +420,7 @@ $(document).ready(function () {
     //     });
     // }
     // menuMobileCtrl();
+
     function replaceThis(first, second, what) {
         if(window.matchMedia('(max-width: 500px)').matches) { // Можно переписать медиа запрос для этой функции. Сделать настраиваемым.
             $(first).append($(what));
