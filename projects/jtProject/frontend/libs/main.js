@@ -457,7 +457,7 @@ $(document).ready(function () {
         checkFilterWidthState();
     });
 
-    $('.t-authorModalPhoto img').toBackGround(); // Инициализация подмены BackgroundА
+    $('.t-authorModalPhoto img, .t-profileImgHolder img').toBackGround(); // Инициализация подмены BackgroundА
 
     if(window.matchMedia('(min-width: 801px)').matches && !$('body').hasClass('t-scriptCtrl')) {
         // Инициализация Скролл плагина By SergiosVision
