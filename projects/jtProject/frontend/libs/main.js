@@ -1,23 +1,3 @@
-// Cursor Follower
-// if(window.matchMedia('(min-width: 801px)').matches) {
-//     var getCursor = $('.cursor');
-//
-//     function cursorMove(e) {
-//         TweenLite.to(getCursor, .10, {
-//             left: e.pageX,
-//             top: e.pageY,
-//             ease: Power4.easOut
-//         });
-//         // clearTimeout(timer);
-//         //
-//         // var timer = setTimeout(function() {
-//         //     $cursor.removeClass('is-moving');
-//         // }, 300);
-//     }
-//     $(window).on('mousemove', cursorMove);
-// }
-//  Маленький скролл плагин
-
 // Editor
 var editor = new MediumEditor('.editable'),
     cssLink = document.getElementsByClassName('getStyles');
@@ -186,7 +166,11 @@ $(function ($) {
             // Call MouseWheel Event
             
             function addEvents() {
-                $(options.scrollField).bind("DOMMouseScroll mousewheel wheel", function (event) {
+                // $(options.scrollField).bind("DOMMouseScroll mousewheel wheel", function (event) {
+                //     scrollThis();
+                //     event.preventDefault();
+                // });
+                $(options.scrollField).on('mousewheel', function(event) {
                     scrollThis();
                     event.preventDefault();
                 });
@@ -207,7 +191,7 @@ $(function ($) {
                     direction = 1;
                     if(scrollTarget > 0) {
                         $(options.hideElement).css({"transform": "translateX(-150%)", "transition": ".6s ease-in-out", "opacity":'0'});
-                        $(options.bars).css({"left": "22px"});
+                        $(options.bars).css({"left": "6px"});
                         $(options.hideElement).parent().parent().addClass('minAside');
                         if (getLeftVal) {
                             getLeftVal = false;
@@ -366,7 +350,192 @@ getTransformNumbers.each(function () {
 
 // Document Ready Section
 $(document).ready(function () {
+    $('.t-topListCtrl li, .t-btn, .t-modalShare, .t-modalFavorites, .t-burger, .t-closeEdit, .t-editBtn, .t-likeBlockItem').each(function () {
+        $(this).addClass('pointer').addClass('cursorWatcher');
+        $(this).attr('data-range', '1');
+    });
+    $('.t-menuListItem a, .t-smallModalMenu a, .t-smallModalMenuStandart a').each(function () {
+        $(this).addClass('cursorWatcher');
+        $(this).attr('data-range', '0.5')
+    });
     svg4everybody(); // Call SVG4EveryBody
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    var $dot = $('.dot'),
+        $loader = $('.cursor .loading'),
+        inter = 30,
+        speed = 0;
+
+    $dot.css('opacity', '1');
+
+    function moveBox(e) {
+        var timesel = 0.3;
+        // if ($drag.hasClass('grab')) {
+        //     timesel = 0.05
+        // }
+        $dot.each(function(index, val) {
+            if (!$(this).hasClass('fixit')) {
+                if (index == 1) {
+                    TweenLite.to($(this), timesel, {
+                        css: {
+                            left: e.pageX,
+                            top: e.pageY
+                        },
+                        delay: 0 + (index / 750)
+                    })
+                } else {
+                    TweenLite.to($(this), 0.05, {
+                        css: {
+                            left: e.pageX,
+                            top: e.pageY
+                        },
+                        delay: 0 + (index / 750)
+                    })
+                }
+            } else {
+                TweenLite.to($(this), timesel, {
+                    css: {
+                        opacity: 1,
+                        scale: 1
+                    },
+                    delay: 0 + (index / 750)
+                })
+            }
+        })
+    }
+
+    $(document).on('mousemove', moveBox);
+
+
+
+    var showPointBase = [30, 30];
+
+    function showPoint(e) {
+        busy = !0;
+        if ($(e.target).hasClass('fixpoint')) {
+            $dot.eq(1).addClass('fixit');
+            var fixtarget = $(e.target).find('.fixtarget')
+        } else if ($(e.target).closest('.fixpoint').length) {
+            $dot.eq(1).addClass('fixit');
+            var fixtarget = $(e.target)
+        }
+        if ($(e.target).hasClass('fixpoint') || $(e.target).closest('.fixpoint').length) {
+            var subadd = 10;
+            twidth = $(fixtarget).width() + subadd, theight = $(fixtarget).height() + subadd, pos = $(fixtarget).offset(), posTop = pos.top + subadd, posLeft = pos.left + subadd;
+            TweenLite.to($dot.eq(1), 0.5, {
+                scale: 1,
+                width: twidth,
+                height: theight,
+                left: posLeft,
+                top: posTop,
+                opacity: 1,
+                overwrite: "all",
+                ease: Circ.easeOut
+            })
+        }
+    }
+
+    function hidePoint(e) {
+        $dot.eq(1).removeClass('fixit');
+        busy = !1;
+        TweenLite.to($dot.eq(1), 0.3, {
+            scale: 1,
+            width: showPointBase[0],
+            height: showPointBase[1],
+            marginTop: -showPointBase[1] / 2,
+            marginLeft: -showPointBase[0] / 2,
+            opacity: 1,
+            overwrite: "all",
+            ease: Circ.easeOut
+        })
+    }
+
+
+
+    $('.pointer').hover(function() {
+        TweenLite.to($dot.eq(0), 0.1, {
+            opacity: 0,
+            repeat: 0,
+            delay: 0,
+            overwrite: "all",
+            ease: Circ.easeInOut
+        });
+        TweenLite.to($dot.eq(1), 0.3, {
+            scale: 0,
+            opacity: 0,
+            repeat: 0,
+            delay: 0,
+            overwrite: "all",
+            ease: Circ.easeInOut
+        })
+    }, function() {
+        TweenLite.to($dot.eq(0), 0.1, {
+            opacity: 1,
+            repeat: 0,
+            delay: 0,
+            overwrite: "all",
+            ease: Circ.easeInOut
+        });
+        TweenLite.to($dot.eq(1), 0.3, {
+            scale: 1,
+            opacity: 1,
+            repeat: 0,
+            delay: 0,
+            overwrite: "all",
+            ease: Circ.easeInOut
+        })
+    });
+
+    $(document).mouseleave(function() {
+        $dot.each(function(index, val) {
+            TweenMax.set($(this), {
+                scale: 0,
+                delay: 0
+            })
+        })
+    });
+    $(document).mouseenter(function() {
+        $dot.each(function(index, val) {
+            TweenMax.set($(this), {
+                scale: 1,
+                delay: 0
+            })
+        })
+    });
+
+
+    // if (window.matchMedia('(max-width: 768px)').matches) {
+        $(".cursorWatcher").each(function(index) {
+            $(this).hover(function() {
+                $(this).addClass('hovered')
+            }, function() {
+                $(this).removeClass('hovered');
+                $(this).css({
+                    transform: 'translate3d(0px, 0px, 0px)'
+                })
+            });
+            $(this).mousemove(function(e) {
+                var power = $(this).data('range');
+                const bounds = this.getBoundingClientRect();
+                const centerX = bounds.left + (bounds.width / 2);
+                const centerY = bounds.top + (bounds.height / 2);
+                const deltaX = Math.floor((centerX - e.clientX)) * power * -1;
+                const deltaY = Math.floor((centerY - e.clientY)) * power * -1;
+                TweenLite.to($(this), 0, {
+                    x: deltaX,
+                    y: deltaY,
+                })
+            })
+        });
+    // }
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
     $('.t-selectArticleCategory').styler();
     var getThisSvg = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillArr" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_strokeArr" class="t-svgFigure" transform="translate(8 8)" fill="#E0E0E0"/><defs><path id="path0_fillArr" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_strokeArr" d="M5 0a1 1 0 0 0-2 0h2zM4 8l-.707.707a1 1 0 0 0 1.414 0L4 8zM.707 3.293A1 1 0 0 0-.707 4.707L.707 3.293zm8 1.414a1 1 0 0 0-1.414-1.414l1.414 1.414zM3 0v8h2V0H3zM-.707 4.707l4 4 1.414-1.414-4-4-1.414 1.414zm8-1.414l-4 4 1.414 1.414 4-4-1.414-1.414z"/></defs></svg>';

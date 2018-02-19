@@ -2,7 +2,7 @@
   margin: 0
   padding: 0
   box-sizing: border-box
-  cursor: url('/images/icons/Cursor.svg'), pointer!important
+  cursor: none!important
 
 html, body
   font-family: Charter
@@ -128,6 +128,9 @@ svg.t-hoverable
       fill: $white!important
 
 
+.cursorWatcher
+  transition: all 260ms ease-out !important
+
 .t-btn
   text-decoration: none
   background-color: transparent
@@ -177,7 +180,10 @@ svg.t-hoverable
   display: inline-block
   width: 14px
   height: 14px
+  padding: 10px
+  box-sizing: content-box
   cursor: pointer
+  border-radius: 50%
   .line
     display: block
     width: 100%
@@ -188,6 +194,10 @@ svg.t-hoverable
     &:last-child
       width: 10px
       margin-bottom: 0
+  &.hovered
+    background-color: $dblue
+    .line
+      background-color: $white
 
 
 .t-dotsHolder
@@ -311,12 +321,43 @@ svg.t-hoverable
     display: none
 
 .cursor
-  position: absolute
-  width: 8px
-  height: 8px
-  background-color: $dblue
-  border-radius: 50%
-  z-index: 10000
+  .dot
+    position: absolute
+    width: 10px
+    height: 10px
+    top: 50%
+    left: 50%
+    background: $dblue
+    border-radius: 50%
+    -webkit-backface-visibility: hidden
+    opacity: 0
+    cursor: none
+    z-index: 10000
+    pointer-events: none
+    transform-style: preserve-3d
+    -webkit-transform-style: preserve-3d
+    will-change: transform
+  .loader
+    position: absolute
+    width: 50px
+    height: 50px
+    top: 50%
+    left: 50%
+    margin: -25px 0 0 -25px
+    background: transparent
+    -moz-border-radius: 50%
+    -webkit-border-radius: 50%
+    border-radius: 50%
+    -webkit-backface-visibility: hidden
+    cursor: none
+    z-index: 1000
+    pointer-events: none
+    will-change: transform
+    overflow: hidden
+    -moz-transform: scale(0,0)
+    -ms-transform: scale(0,0)
+    -webkit-transform: scale(0,0)
+    transform: scale(0,0)
 
 
 .t-sortingLinks
