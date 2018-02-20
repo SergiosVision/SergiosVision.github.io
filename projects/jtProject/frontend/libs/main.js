@@ -2,6 +2,14 @@
 var editor = new MediumEditor('.editable'),
     cssLink = document.getElementsByClassName('getStyles');
 
+$(function () {
+    $('.editable').mediumInsert({
+        editor: editor
+    });
+});
+
+
+
 // $(function ($) {
 //     $.fn.horizontalScroll = function (options) {
 //
@@ -319,6 +327,18 @@ $(function () {
     }
 });
 
+function sliceText(element, minValue, maxValue) {
+    $(element).each(function () {
+        var getTextValue = $(this).text();
+        if(getTextValue.length >= maxValue) {
+            getTextValue = getTextValue.slice(minValue, maxValue) + '...';
+            $(this).text(getTextValue);
+        }
+    })
+}
+
+sliceText('.t-authorModalArticleCard .t-authorArticleCardTitle', 0, 49); // Селектор, минимальное число и максимальное.
+sliceText('.t-authorCardWrapper .t-authorName', 0, 19); // Селектор, минимальное число и максимальное.
 
 // Заменяем стандартные числа вроде 1000 на 1K
 
@@ -350,185 +370,192 @@ getTransformNumbers.each(function () {
 
 // Document Ready Section
 $(document).ready(function () {
-    $('.t-topListCtrl li, .t-btn, .t-modalShare, .t-modalFavorites, .t-burger, .t-closeEdit, .t-editBtn, .t-likeBlockItem').each(function () {
-        $(this).addClass('pointer').addClass('cursorWatcher');
-        $(this).attr('data-range', '1');
-    });
-    $('.t-menuListItem a, .t-smallModalMenu a, .t-smallModalMenuStandart a').each(function () {
-        $(this).addClass('cursorWatcher');
-        $(this).attr('data-range', '0.5')
-    });
     svg4everybody(); // Call SVG4EveryBody
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    var $dot = $('.dot'),
-        $loader = $('.cursor .loading'),
-        inter = 30,
-        speed = 0;
+    function callMoveAnimations() {
 
-    $dot.css('opacity', '1');
+        if (window.matchMedia('(min-width: 801px)').matches) {
 
-    function moveBox(e) {
-        var timesel = 0.3;
-        // if ($drag.hasClass('grab')) {
-        //     timesel = 0.05
-        // }
-        $dot.each(function(index, val) {
-            if (!$(this).hasClass('fixit')) {
-                if (index == 1) {
-                    TweenLite.to($(this), timesel, {
-                        css: {
-                            left: e.pageX,
-                            top: e.pageY
-                        },
-                        delay: 0 + (index / 750)
-                    })
-                } else {
-                    TweenLite.to($(this), 0.05, {
-                        css: {
-                            left: e.pageX,
-                            top: e.pageY
-                        },
-                        delay: 0 + (index / 750)
-                    })
-                }
-            } else {
-                TweenLite.to($(this), timesel, {
-                    css: {
-                        opacity: 1,
-                        scale: 1
-                    },
-                    delay: 0 + (index / 750)
+            $('.t-topListCtrl li, .t-btn, .t-modalShare, .t-modalFavorites, .t-burger, .t-closeEdit, .t-editBtn, .t-likeBlockItem').each(function () {
+                $(this).addClass('pointer').addClass('cursorWatcher');
+                $(this).attr('data-range', '1.2');
+            });
+            $('.t-menuListItem a, .t-smallModalMenu a, .t-smallModalMenuStandart a').each(function () {
+                $(this).addClass('cursorWatcher');
+                $(this).attr('data-range', '0.5')
+            });
+            
+
+            var $dot = $('.dot'),
+                $loader = $('.cursor .loading'),
+                inter = 30,
+                speed = 0;
+
+            $dot.css('opacity', '1');
+
+            function moveBox(e) {
+                var timesel = 0.3;
+                // if ($drag.hasClass('grab')) {
+                //     timesel = 0.05
+                // }
+                $dot.each(function(index, val) {
+                    if (!$(this).hasClass('fixit')) {
+                        if (index == 1) {
+                            TweenLite.to($(this), timesel, {
+                                css: {
+                                    left: e.pageX,
+                                    top: e.pageY
+                                },
+                                delay: 0 + (index / 750)
+                            })
+                        } else {
+                            TweenLite.to($(this), 0.05, {
+                                css: {
+                                    left: e.pageX,
+                                    top: e.pageY
+                                },
+                                delay: 0 + (index / 750)
+                            })
+                        }
+                    } else {
+                        TweenLite.to($(this), timesel, {
+                            css: {
+                                opacity: 1,
+                                scale: 1
+                            },
+                            delay: 0 + (index / 750)
+                        })
+                    }
                 })
             }
-        })
-    }
 
-    $(document).on('mousemove', moveBox);
+            $(document).on('mousemove', moveBox);
 
 
 
-    var showPointBase = [30, 30];
+            var showPointBase = [30, 30];
 
-    function showPoint(e) {
-        busy = !0;
-        if ($(e.target).hasClass('fixpoint')) {
-            $dot.eq(1).addClass('fixit');
-            var fixtarget = $(e.target).find('.fixtarget')
-        } else if ($(e.target).closest('.fixpoint').length) {
-            $dot.eq(1).addClass('fixit');
-            var fixtarget = $(e.target)
-        }
-        if ($(e.target).hasClass('fixpoint') || $(e.target).closest('.fixpoint').length) {
-            var subadd = 10;
-            twidth = $(fixtarget).width() + subadd, theight = $(fixtarget).height() + subadd, pos = $(fixtarget).offset(), posTop = pos.top + subadd, posLeft = pos.left + subadd;
-            TweenLite.to($dot.eq(1), 0.5, {
-                scale: 1,
-                width: twidth,
-                height: theight,
-                left: posLeft,
-                top: posTop,
-                opacity: 1,
-                overwrite: "all",
-                ease: Circ.easeOut
-            })
-        }
-    }
+            function showPoint(e) {
+                busy = !0;
+                if ($(e.target).hasClass('fixpoint')) {
+                    $dot.eq(1).addClass('fixit');
+                    var fixtarget = $(e.target).find('.fixtarget')
+                } else if ($(e.target).closest('.fixpoint').length) {
+                    $dot.eq(1).addClass('fixit');
+                    var fixtarget = $(e.target)
+                }
+                if ($(e.target).hasClass('fixpoint') || $(e.target).closest('.fixpoint').length) {
+                    var subadd = 10;
+                    twidth = $(fixtarget).width() + subadd, theight = $(fixtarget).height() + subadd, pos = $(fixtarget).offset(), posTop = pos.top + subadd, posLeft = pos.left + subadd;
+                    TweenLite.to($dot.eq(1), 0.5, {
+                        scale: 1,
+                        width: twidth,
+                        height: theight,
+                        left: posLeft,
+                        top: posTop,
+                        opacity: 1,
+                        overwrite: "all",
+                        ease: Circ.easeOut
+                    })
+                }
+            }
 
-    function hidePoint(e) {
-        $dot.eq(1).removeClass('fixit');
-        busy = !1;
-        TweenLite.to($dot.eq(1), 0.3, {
-            scale: 1,
-            width: showPointBase[0],
-            height: showPointBase[1],
-            marginTop: -showPointBase[1] / 2,
-            marginLeft: -showPointBase[0] / 2,
-            opacity: 1,
-            overwrite: "all",
-            ease: Circ.easeOut
-        })
-    }
-
-
-
-    $('.pointer').hover(function() {
-        TweenLite.to($dot.eq(0), 0.1, {
-            opacity: 0,
-            repeat: 0,
-            delay: 0,
-            overwrite: "all",
-            ease: Circ.easeInOut
-        });
-        TweenLite.to($dot.eq(1), 0.3, {
-            scale: 0,
-            opacity: 0,
-            repeat: 0,
-            delay: 0,
-            overwrite: "all",
-            ease: Circ.easeInOut
-        })
-    }, function() {
-        TweenLite.to($dot.eq(0), 0.1, {
-            opacity: 1,
-            repeat: 0,
-            delay: 0,
-            overwrite: "all",
-            ease: Circ.easeInOut
-        });
-        TweenLite.to($dot.eq(1), 0.3, {
-            scale: 1,
-            opacity: 1,
-            repeat: 0,
-            delay: 0,
-            overwrite: "all",
-            ease: Circ.easeInOut
-        })
-    });
-
-    $(document).mouseleave(function() {
-        $dot.each(function(index, val) {
-            TweenMax.set($(this), {
-                scale: 0,
-                delay: 0
-            })
-        })
-    });
-    $(document).mouseenter(function() {
-        $dot.each(function(index, val) {
-            TweenMax.set($(this), {
-                scale: 1,
-                delay: 0
-            })
-        })
-    });
+            function hidePoint(e) {
+                $dot.eq(1).removeClass('fixit');
+                busy = !1;
+                TweenLite.to($dot.eq(1), 0.3, {
+                    scale: 1,
+                    width: showPointBase[0],
+                    height: showPointBase[1],
+                    marginTop: -showPointBase[1] / 2,
+                    marginLeft: -showPointBase[0] / 2,
+                    opacity: 1,
+                    overwrite: "all",
+                    ease: Circ.easeOut
+                })
+            }
 
 
-    // if (window.matchMedia('(max-width: 768px)').matches) {
-        $(".cursorWatcher").each(function(index) {
-            $(this).hover(function() {
-                $(this).addClass('hovered')
+
+            $('.pointer, .t-scrollBar').hover(function() {
+                TweenLite.to($dot.eq(0), 0.1, {
+                    opacity: 0,
+                    repeat: 0,
+                    delay: 0,
+                    overwrite: "all",
+                    ease: Circ.easeInOut
+                });
+                TweenLite.to($dot.eq(1), 0.3, {
+                    scale: 0,
+                    opacity: 0,
+                    repeat: 0,
+                    delay: 0,
+                    overwrite: "all",
+                    ease: Circ.easeInOut
+                })
             }, function() {
-                $(this).removeClass('hovered');
-                $(this).css({
-                    transform: 'translate3d(0px, 0px, 0px)'
+                TweenLite.to($dot.eq(0), 0.1, {
+                    opacity: 1,
+                    repeat: 0,
+                    delay: 0,
+                    overwrite: "all",
+                    ease: Circ.easeInOut
+                });
+                TweenLite.to($dot.eq(1), 0.3, {
+                    scale: 1,
+                    opacity: 1,
+                    repeat: 0,
+                    delay: 0,
+                    overwrite: "all",
+                    ease: Circ.easeInOut
                 })
             });
-            $(this).mousemove(function(e) {
-                var power = $(this).data('range');
-                const bounds = this.getBoundingClientRect();
-                const centerX = bounds.left + (bounds.width / 2);
-                const centerY = bounds.top + (bounds.height / 2);
-                const deltaX = Math.floor((centerX - e.clientX)) * power * -1;
-                const deltaY = Math.floor((centerY - e.clientY)) * power * -1;
-                TweenLite.to($(this), 0, {
-                    x: deltaX,
-                    y: deltaY,
+
+            $(document).mouseleave(function() {
+                $dot.each(function(index, val) {
+                    TweenMax.set($(this), {
+                        scale: 0,
+                        delay: 0
+                    })
                 })
-            })
-        });
-    // }
+            });
+            $(document).mouseenter(function() {
+                $dot.each(function(index, val) {
+                    TweenMax.set($(this), {
+                        scale: 1,
+                        delay: 0
+                    })
+                })
+            });
+
+
+            $(".cursorWatcher").each(function(index) {
+                $(this).hover(function() {
+                    $(this).addClass('hovered')
+                }, function() {
+                    $(this).removeClass('hovered');
+                    $(this).css({
+                        transform: 'translate3d(0px, 0px, 0px)'
+                    })
+                });
+                $(this).mousemove(function(e) {
+                    var power = $(this).data('range');
+                    const bounds = this.getBoundingClientRect();
+                    const centerX = bounds.left + (bounds.width / 2);
+                    const centerY = bounds.top + (bounds.height / 2);
+                    const deltaX = Math.floor((centerX - e.clientX)) * power * -1;
+                    const deltaY = Math.floor((centerY - e.clientY)) * power * -1;
+                    TweenLite.to($(this), 0, {
+                        x: deltaX,
+                        y: deltaY,
+                    })
+                })
+            });
+        }
+    }
+    callMoveAnimations();
 
 
 
@@ -624,6 +651,7 @@ $(document).ready(function () {
         replaceThis('.t-commentAnswerAndRating', '.t-commentsAuthorHolder', '.t-commentsRating');
         logoCtrl();
         checkFilterWidthState();
+        callMoveAnimations();
     });
 
     $('.t-authorModalPhoto img, .t-profileImgHolder img').toBackGround(); // Инициализация подмены BackgroundА

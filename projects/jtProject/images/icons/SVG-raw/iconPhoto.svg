@@ -1,0 +1,18 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>iconPhoto</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1705 -6079)">
+<g id="iconPhoto">
+<g id="Ellipse">
+<use xlink:href="#path0_fill" transform="translate(1705 6079)" fill="#FFFFFF"/>
+</g>
+<g id="Union">
+<use xlink:href="#path1_fill" transform="translate(1709 6084)" fill="#E0E0E0"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 24 12C 24 18.6274 18.6274 24 12 24C 5.37258 24 0 18.6274 0 12C 0 5.37258 5.37258 0 12 0C 18.6274 0 24 5.37258 24 12Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 5 0C 4.62122 0 4.27502 0.213867 4.10559 0.552734L 3.38196 2L 1 2C 0.447754 2 0 2.44775 0 3L 0 12C 0 12.5522 0.447754 13 1 13L 15 13C 15.5522 13 16 12.5522 16 12L 16 3C 16 2.44775 15.5522 2 15 2L 12.618 2L 11.8944 0.552734C 11.725 0.213867 11.3788 0 11 0L 5 0ZM 4.89441 3.44727L 5.61804 2L 10.382 2L 11.1056 3.44727C 11.275 3.78613 11.6212 4 12 4L 14 4L 14 11L 2 11L 2 4L 4 4C 4.37878 4 4.72498 3.78613 4.89441 3.44727ZM 7 7C 7 6.44775 7.44775 6 8 6C 8.55225 6 9 6.44775 9 7C 9 7.55225 8.55225 8 8 8C 7.44775 8 7 7.55225 7 7ZM 8 4C 6.34314 4 5 5.34326 5 7C 5 8.65674 6.34314 10 8 10C 9.65686 10 11 8.65674 11 7C 11 5.34326 9.65686 4 8 4Z"/>
+</defs>
+</svg>

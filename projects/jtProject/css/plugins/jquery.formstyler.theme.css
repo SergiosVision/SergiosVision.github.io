@@ -250,7 +250,7 @@
 	top: auto!important;
 	background-color: #fff;
 	box-shadow: 0 4px 48px rgba(33,81,231,.14);
-	padding: 24px 24px 24px 0;
+	padding: 24px 24px 24px 24px;
 }
 .jq-selectbox__search {
 	margin: 5px;

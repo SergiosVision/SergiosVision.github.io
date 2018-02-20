@@ -95,6 +95,9 @@
 @media (max-width: 800px)
   *
     cursor: default!important
+  .cursor
+    .dot
+      display: none
   .t-newsModal
     .t-likeBlockWrapper
       margin-top: 26px
@@ -257,6 +260,8 @@
         margin-right: 16px
 
 @media (max-width: 768px)
+  .t-authSection .t-authContainer .t-authBottomInfo
+    padding: 0 24px
   header.t-header
     padding: 32px 24px 0 24px
     .t-pageNameHolder
@@ -265,10 +270,8 @@
     .t-addArticleContainer
       width: 100%
       padding: 0 24px 30px 24px
-    .t-addArticleClose
-      top: 24px
-      right: 24px
-  .t-searchClose
+
+  .t-closePos
     top: 24px
     right: 24px
 
