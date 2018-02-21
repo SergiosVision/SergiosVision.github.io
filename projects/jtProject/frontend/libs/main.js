@@ -1,5 +1,39 @@
 // Editor
-var editor = new MediumEditor('.editable'),
+var editor = new MediumEditor('.editable', {
+        toolbar: {
+            // buttons: ['bold','italic','anchor','quote','h2','h3'],
+            buttons: [{
+                name: 'bold',
+                contentDefault: '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillBold" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_fillBold" class="t-svgFigure" transform="translate(8 6)" fill="#E0E0E0"/><defs><path id="path0_fillBold" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fillBold" fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h2.046C6.168 0 7.62 2.144 6.83 4.114l-.368.921A3 3 0 0 1 9 8v1a3 3 0 0 1-3 3H2a2 2 0 0 1-2-2V2zm4.323 3l.651-1.629A1 1 0 0 0 4.046 2H2v2a1 1 0 0 0 1 1h1.323zM3 7a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H3z"/></defs></svg>'
+            }, {
+                name: 'italic',
+                contentDefault: '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillItalic" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_fillItalic" class="t-svgFigure" transform="translate(11 6)" fill="#E0E0E0"/><defs><path id="path0_fillItalic" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fillItalic" fill-rule="evenodd" d="M1 2a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm1 3a1 1 0 0 0-2 0v6a1 1 0 0 0 2 0V5z"/></defs></svg>'
+            }, {
+                name: 'anchor',
+                contentDefault: '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillLink" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_fillLink" class="t-svgFigure" transform="translate(7 6)" fill="#E0E0E0"/><defs><path id="path0_fillLink" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fillLink" fill-rule="evenodd" d="M8 3.5a1.5 1.5 0 1 0-3 0v.837c.725.344 1.313.93 1.66 1.655A1.5 1.5 0 0 0 8 4.5v-1zM7 7.964A3.5 3.5 0 0 0 10 4.5v-1a3.5 3.5 0 1 0-7 0v.536A3.5 3.5 0 0 0 0 7.5v1a3.5 3.5 0 1 0 7 0v-.536zM3.34 6.008c.347.724.935 1.31 1.66 1.655V8.5a1.5 1.5 0 1 1-3 0v-1a1.5 1.5 0 0 1 1.34-1.492z"/></defs></svg>'
+            }, {
+                name: 'quote',
+                contentDefault: '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillQuote" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_fillQuote" class="t-svgFigure" transform="translate(9 6)" fill="#E0E0E0"/><defs><path id="path0_fillQuote" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fillQuote" fill-rule="evenodd" d="M2 1a1 1 0 0 0-2 0v5a1 1 0 0 0 2 0V1zm4 0a1 1 0 0 0-2 0v5a1 1 0 0 0 2 0V1z"/></defs></svg>',
+            }, {
+                name: 'h2',
+                contentDefault: '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillH1" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_fillH1" class="t-svgFigure" transform="translate(7 6)" fill="#E0E0E0"/><defs><path id="path0_fillH1" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fillH1" fill-rule="evenodd" d="M1 0a1 1 0 0 1 1 1v4h6V1a1 1 0 0 1 2 0v10a1 1 0 1 1-2 0V7H2v4a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1z"/></defs></svg>'
+            }, {
+                name: 'h3',
+                contentDefault: '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillH2" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_fillH2" class="t-svgFigure" transform="translate(8 7)" fill="#E0E0E0"/><defs><path id="path0_fillH2" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fillH2" fill-rule="evenodd" d="M1 0a1 1 0 0 1 1 1v3h4V1a1 1 0 0 1 2 0v8a1 1 0 1 1-2 0V6H2v3a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1z"/></defs></svg>'
+            }
+            ]
+        },
+        anchor: {
+            placeholderText: 'Введите ссылку',
+        },
+        paste: {
+            cleanPastedHTML: true,
+            cleanAttrs: ['style', 'dir'],
+            cleanTags: ['label', 'meta'],
+            unwrapTags: ['sub', 'sup']
+        },
+        autoLink: true
+    }),
     cssLink = document.getElementsByClassName('getStyles');
 
 $(function () {
@@ -121,7 +155,6 @@ $(function () {
 // });
 
 
-
 $(function ($) {
     $.fn.horizontalScroll = function (options) {
         // Params
@@ -233,7 +266,7 @@ $(function ($) {
                     // Get Delta
 
                     var delta = scrollTarget - scrollValue;
-                    console.log(delta)
+
                     var getMargin = delta >= 0 ? delta / options.marginReducer : (delta * -1) / options.marginReducer;
                     speed += _clamp(getMargin, 0, options.marginLimit);
 
@@ -371,6 +404,8 @@ getTransformNumbers.each(function () {
 // Document Ready Section
 $(document).ready(function () {
     svg4everybody(); // Call SVG4EveryBody
+    var getCloseSvg = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillCloser" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_strokeCloser" transform="translate(9 9)" class="t-svgFigure" fill="#E0E0E0"/><defs><path id="path0_fillCloser" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_strokeCloser" d="M.707-.707A1 1 0 0 0-.707.707L.707-.707zm4.586 7.414a1 1 0 0 0 1.414-1.414L5.293 6.707zm-6-1.414A1 1 0 0 0 .707 6.707L-.707 5.293zM6.707.707A1 1 0 0 0 5.293-.707L6.707.707zm-7.414 0l6 6 1.414-1.414-6-6L-.707.707zm1.414 6l6-6L5.293-.707l-6 6L.707 6.707z"/></defs></svg>';
+    $('.medium-editor-toolbar-close').html(getCloseSvg);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -378,14 +413,20 @@ $(document).ready(function () {
 
         if (window.matchMedia('(min-width: 801px)').matches) {
 
-            $('.t-topListCtrl li, .t-btn, .t-modalShare, .t-modalFavorites, .t-burger, .t-closeEdit, .t-editBtn, .t-likeBlockItem').each(function () {
-                $(this).addClass('pointer').addClass('cursorWatcher');
-                $(this).attr('data-range', '1.2');
+            $('.t-topListCtrl li, .t-btn, .t-modalShare, .t-modalFavorites, .t-burger, .t-closeEdit, .t-editBtn, .t-likeBlockItem, .t-closePos, .t-modalBack, .medium-editor-toolbar-close svg').each(function () {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('pointer').addClass('cursorWatcher');
+                    $(this).attr('data-range', '1.2');
+                } else {
+                    $(this).addClass('pointer');
+                }
             });
             $('.t-menuListItem a, .t-smallModalMenu a, .t-smallModalMenuStandart a').each(function () {
                 $(this).addClass('cursorWatcher');
                 $(this).attr('data-range', '0.5')
             });
+
+            $('.t-btnModeration').attr('data-range', '0.5');
             
 
             var $dot = $('.dot'),
@@ -479,7 +520,7 @@ $(document).ready(function () {
 
 
 
-            $('.pointer, .t-scrollBar').hover(function() {
+            $('.pointer, .t-newsCardWrapper, .medium-editor-toolbar, .medium-editor-toolbar-form').hover(function() {
                 TweenLite.to($dot.eq(0), 0.1, {
                     opacity: 0,
                     repeat: 0,
@@ -560,7 +601,6 @@ $(document).ready(function () {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 
@@ -645,6 +685,13 @@ $(document).ready(function () {
         }
     }
     checkFilterWidthState();
+    
+    function calcActive() {
+        var getListOffset = $('.t-menuList').offset().left;
+        $('.t-menuListItem.active:before').css('left', '-'+ getListOffset +'px');
+    }
+    calcActive();
+    
     $(window).on('resize', function () {
         // setHeiHeight('.t-authorCardWrapper');
         // menuMobileCtrl();
@@ -652,6 +699,7 @@ $(document).ready(function () {
         logoCtrl();
         checkFilterWidthState();
         callMoveAnimations();
+        calcActive();
     });
 
     $('.t-authorModalPhoto img, .t-profileImgHolder img').toBackGround(); // Инициализация подмены BackgroundА

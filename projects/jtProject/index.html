@@ -29,7 +29,7 @@
           <div class="t-menuWrapper">
             <nav>
               <ul class="t-menuList">
-                <li class="t-menuListItem"><a href="/">Всё сразу</a></li>
+                <li class="t-menuListItem active"><a href="/">Всё сразу</a></li>
                 <li class="t-menuListItem"><a href="#">Статьи</a></li>
                 <li class="t-menuListItem"><a href="#">Подборки</a></li>
                 <li class="t-menuListItem"><a href="#">Кейс недели</a></li>
@@ -2191,14 +2191,14 @@
                 </div>
               </div>
               <div class="t-modalBack">
-                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg class="t-hoverable" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <use xlink:href="#path0_fill6" fill="#FFF" class="t-svgBg"></use>
                   <use xlink:href="#path1_stroke6" transform="translate(7 8)" fill="#E0E0E0" class="t-svgFigure"></use>
                   <defs>
                     <path id="path0_fill6" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"></path>
                     <path id="path1_stroke6" d="M0 3l-.707-.707a1 1 0 0 0 0 1.414L0 3zM3.707.707A1 1 0 0 0 2.293-.707L3.707.707zm-1.414 6a1 1 0 0 0 1.414-1.414L2.293 6.707zM8 8a1 1 0 1 0 2 0H8zM0 4h6V2H0v2zm6-1v1h-.002-.001-.003-.002H6l.058.003c.068.005.138.012.246.03.242.04.474.092.749.236C7.513 4.5 8 4.931 8 6h2c0-1.931-1.014-3-2.053-3.52a5.194 5.194 0 0 0-1.314-.42A5.192 5.192 0 0 0 6.025 2H6.004h-.002-.001L6 3zm-5.293.707l3-3L2.293-.707l-3 3L.707 3.707zm-1.414 0l3 3 1.414-1.414-3-3-1.414 1.414zM8 6v2h2V6H8z"></path>
                   </defs>
-                </svg><span>Назад</span>
+                </svg>
               </div>
             </div>
             <div class="t-newsModalAuthorHolder">
@@ -2316,9 +2316,9 @@
                         </div>
                       </div>
                       <div class="t-commentsRating">
-                        <span class="t-ratingUp"></span>
+                        <span class="t-ratingUp pointer cursorWatcher" data-range="1"></span>
                         <span class="t-outputRating">234</span>
-                        <span class="t-ratingDown"></span>
+                        <span class="t-ratingDown pointer cursorWatcher" data-range="1"></span>
                       </div>
                     </div>
                     <div class="t-commentsCommentHolder">
@@ -2360,7 +2360,7 @@
           <div class="t-mobileMenuWrapper">
             <nav>
               <ul class="t-menuList">
-                <li class="t-menuListItem"><a href="/">Всё сразу</a></li>
+                <li class="t-menuListItem active"><a href="/">Всё сразу</a></li>
                 <li class="t-menuListItem"><a href="#">Статьи</a></li>
                 <li class="t-menuListItem"><a href="#">Подборки</a></li>
                 <li class="t-menuListItem"><a href="#">Кейс недели</a></li>
@@ -2381,14 +2381,14 @@
       </div>
       <section class="t-searchSection t-absolute">
         <div class="t-searchClose t-closePos">
-          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <svg class="t-hoverable" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <use xlink:href="#path0_fill6" fill="#FFF" class="t-svgBg"></use>
             <use xlink:href="#path1_stroke6" transform="translate(7 8)" fill="#E0E0E0" class="t-svgFigure"></use>
             <defs>
               <path id="path0_fill6" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"></path>
               <path id="path1_stroke6" d="M0 3l-.707-.707a1 1 0 0 0 0 1.414L0 3zM3.707.707A1 1 0 0 0 2.293-.707L3.707.707zm-1.414 6a1 1 0 0 0 1.414-1.414L2.293 6.707zM8 8a1 1 0 1 0 2 0H8zM0 4h6V2H0v2zm6-1v1h-.002-.001-.003-.002H6l.058.003c.068.005.138.012.246.03.242.04.474.092.749.236C7.513 4.5 8 4.931 8 6h2c0-1.931-1.014-3-2.053-3.52a5.194 5.194 0 0 0-1.314-.42A5.192 5.192 0 0 0 6.025 2H6.004h-.002-.001L6 3zm-5.293.707l3-3L2.293-.707l-3 3L.707 3.707zm-1.414 0l3 3 1.414-1.414-3-3-1.414 1.414zM8 6v2h2V6H8z"></path>
             </defs>
-          </svg><span>Назад</span>
+          </svg>
         </div>
         <div class="t-searchField">
           <input type="text" placeholder="Ищите статьи"/>
@@ -2397,50 +2397,49 @@
         <div class="t-searchOutput"></div>
       </section>
       <section class="t-fixed t-addArticleModalWrapper">
-            <div class="t-addArticleClose t-closePos">
-              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <use xlink:href="#path0_fill6" fill="#FFF" class="t-svgBg"></use>
-                <use xlink:href="#path1_stroke6" transform="translate(7 8)" fill="#E0E0E0" class="t-svgFigure"></use>
-                <defs>
-                  <path id="path0_fill6" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"></path>
-                  <path id="path1_stroke6" d="M0 3l-.707-.707a1 1 0 0 0 0 1.414L0 3zM3.707.707A1 1 0 0 0 2.293-.707L3.707.707zm-1.414 6a1 1 0 0 0 1.414-1.414L2.293 6.707zM8 8a1 1 0 1 0 2 0H8zM0 4h6V2H0v2zm6-1v1h-.002-.001-.003-.002H6l.058.003c.068.005.138.012.246.03.242.04.474.092.749.236C7.513 4.5 8 4.931 8 6h2c0-1.931-1.014-3-2.053-3.52a5.194 5.194 0 0 0-1.314-.42A5.192 5.192 0 0 0 6.025 2H6.004h-.002-.001L6 3zm-5.293.707l3-3L2.293-.707l-3 3L.707 3.707zm-1.414 0l3 3 1.414-1.414-3-3-1.414 1.414zM8 6v2h2V6H8z"></path>
-                </defs>
-              </svg><span>Назад</span>
-            </div>
-            <div class="t-addArticleContainer">
-              <h1 class="t-addArticleRemindMessage">Статья автоматически сохранена в ваших черновиках</h1>
-              <input type="text" placeholder="Название статьи" class="t-addArticleName">
-              <select name="" class="t-selectArticleCategory">
-                <option class="t-noneItem" value="1">Выберите рубрику</option>
-                <option value="2">Категория 1</option>
-                <option value="3">Категория 2</option>
-                <option value="4">Категория 3</option>
-                <option value="5">Категория 4</option>
-              </select>
-              <div class="t-textArea editable" data-placeholder="Ваш текст"></div>
-              <div class="t-addArticleBtnsHolder">
-                <button class="t-btn t-btnModeration">Отправить на модерацию</button>
-                <button class="t-btn t-btnSaveArticle">Сохранить</button>
-              </div>
-            </div>
+        <div class="t-addArticleClose t-closePos">
+          <svg class="t-hoverable" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <use xlink:href="#path0_fill6" fill="#FFF" class="t-svgBg"></use>
+            <use xlink:href="#path1_stroke6" transform="translate(7 8)" fill="#E0E0E0" class="t-svgFigure"></use>
+            <defs>
+              <path id="path0_fill6" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"></path>
+              <path id="path1_stroke6" d="M0 3l-.707-.707a1 1 0 0 0 0 1.414L0 3zM3.707.707A1 1 0 0 0 2.293-.707L3.707.707zm-1.414 6a1 1 0 0 0 1.414-1.414L2.293 6.707zM8 8a1 1 0 1 0 2 0H8zM0 4h6V2H0v2zm6-1v1h-.002-.001-.003-.002H6l.058.003c.068.005.138.012.246.03.242.04.474.092.749.236C7.513 4.5 8 4.931 8 6h2c0-1.931-1.014-3-2.053-3.52a5.194 5.194 0 0 0-1.314-.42A5.192 5.192 0 0 0 6.025 2H6.004h-.002-.001L6 3zm-5.293.707l3-3L2.293-.707l-3 3L.707 3.707zm-1.414 0l3 3 1.414-1.414-3-3-1.414 1.414zM8 6v2h2V6H8z"></path>
+            </defs>
+          </svg>
+        </div>
+        <div class="t-addArticleContainer">
+          <div class="t-addArticleBtnsHolder">
+            <button class="t-btn t-btnModeration">Отправить на модерацию</button>
+            <button class="t-btn t-btnDeleteArticle">Удалить</button>
+          </div>
+          <input type="text" placeholder="Название статьи" class="t-addArticleName">
+          <select name="" class="t-selectArticleCategory">
+            <option class="t-noneItem" value="1">Выберите рубрику</option>
+            <option value="2">Категория 1</option>
+            <option value="3">Категория 2</option>
+            <option value="4">Категория 3</option>
+            <option value="5">Категория 4</option>
+          </select>
+          <div class="t-textArea editable" data-placeholder="Ваш текст"></div>
+        </div>
       </section>
       <section class="t-authSection t-absolute">
             <div class="t-closeAuth t-closePos">
-              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <svg class="t-hoverable" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <use xlink:href="#path0_fill6" fill="#FFF" class="t-svgBg"></use>
                 <use xlink:href="#path1_stroke6" transform="translate(7 8)" fill="#E0E0E0" class="t-svgFigure"></use>
                 <defs>
                   <path id="path0_fill6" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"></path>
                   <path id="path1_stroke6" d="M0 3l-.707-.707a1 1 0 0 0 0 1.414L0 3zM3.707.707A1 1 0 0 0 2.293-.707L3.707.707zm-1.414 6a1 1 0 0 0 1.414-1.414L2.293 6.707zM8 8a1 1 0 1 0 2 0H8zM0 4h6V2H0v2zm6-1v1h-.002-.001-.003-.002H6l.058.003c.068.005.138.012.246.03.242.04.474.092.749.236C7.513 4.5 8 4.931 8 6h2c0-1.931-1.014-3-2.053-3.52a5.194 5.194 0 0 0-1.314-.42A5.192 5.192 0 0 0 6.025 2H6.004h-.002-.001L6 3zm-5.293.707l3-3L2.293-.707l-3 3L.707 3.707zm-1.414 0l3 3 1.414-1.414-3-3-1.414 1.414zM8 6v2h2V6H8z"></path>
                 </defs>
-              </svg><span>Назад</span>
+              </svg>
             </div>
         <div class="t-authContainer">
             <h1 class="t-authTitle t-titleLarge">Авторизация</h1>
           <ul class="t-authSocialBtnsHolder">
-            <li class="facebook"><svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fill" fill="#3B5998"/><defs><path id="path0_fill" fill-rule="evenodd" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20zm1.305-20.017h2.373l.314-3.166h-2.687V14.95c0-.699.446-.863.763-.863H24v-3.076L21.337 11c-2.956 0-3.627 2.296-3.627 3.763v2.05H16v3.17h1.71V29h3.595v-9.017z"/></defs></svg></li>
-            <li class="vk"><svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fill" fill="#4C75A3"/><defs><path id="path0_fill" fill-rule="evenodd" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20zm1.019-13.607h-1.244a7.161 7.161 0 0 1-5.161-2.396C11.977 21.223 9.65 15.68 9.65 15.68a.658.658 0 0 1 .012-.534c.175-.135.39-.208.61-.208h2.973c.172.03.335.098.48.196.113.095.201.215.258.35.321.81.695 1.598 1.12 2.357 1.242 2.168 1.82 2.642 2.242 2.41.615-.337.43-3.064.43-3.064a3.076 3.076 0 0 0-.31-1.43 1.397 1.397 0 0 0-.925-.468c-.168-.022.107-.415.463-.59.84-.26 1.721-.35 2.595-.268.491-.02.983.03 1.46.146.79.194.765.81.712 2.14-.016.398-.035.86-.035 1.392 0 .122-.003.25-.007.382-.018.68-.04 1.46.404 1.75.228.148.785.022 2.178-2.368.448-.799.834-1.632 1.156-2.49a.885.885 0 0 1 .278-.365.744.744 0 0 1 .404-.082h3.134a1.245 1.245 0 0 1 1.085.354c.16.451-.351 1.502-1.629 3.223-1.215 1.636-1.805 2.236-1.749 2.768.041.387.425.739 1.159 1.427a9.349 9.349 0 0 1 2.066 2.415c.689 1.155-.765 1.267-.765 1.267h-2.775a1.87 1.87 0 0 1-1.383-.405c-.41-.285-.81-.749-1.19-1.192-.584-.68-1.124-1.309-1.593-1.158-.774.248-.75 1.952-.75 1.952a.93.93 0 0 1-.172.553c-.16.14-.358.228-.568.254z"/></defs></svg></li>
-            <li class="googlePlus"><svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fill" fill="#DD4B39"/><defs><path id="path0_fill" fill-rule="evenodd" d="M40 20c0 11.046-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0s20 8.954 20 20zm-8.274-3.467v2.29h2.273v2.29h-2.273v2.29h-2.274v-2.29h-2.275v-2.29h2.275v-2.29h2.274zm-20.341-2.29c-3.158 3.054-3.158 8.397-.126 11.45 3.032 3.054 8.338 3.054 11.37.128 1.138-1.145 1.769-2.799 1.895-4.453v-1.78l-.126-.637h-7.201v2.544h4.548v.255c-.126.763-.632 1.527-1.137 2.036-1.769 2.035-5.18 2.035-7.075 0-2.022-2.036-1.895-5.471 0-7.38 1.642-1.654 4.17-1.908 5.938-.763l.758.509 2.021-2.036-1.263-.89-1.137-.637c-2.906-1.145-6.19-.636-8.465 1.654z"/></defs></svg></li>
+            <li class="vk pointer cursorWatcher" data-range="2"><svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillVk" fill="#4C75A3"/><use xlink:href="#path1_fillVk" transform="translate(9.07 12.9)" fill="#FFF"/><defs><path id="path0_fillVk" d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0z"/><path id="path1_fillVk" d="M18.633 14.1h2.4c.7 0 1-.4.8-1.3-.2-.7-1-1.8-2-3-.3-.4-.7-.8-1-1.1-.3-.3-.6-.6-.7-.8-.4-.4-.3-.7 0-1.1 0 0 2.9-4.4 3.2-5.9.2-.5 0-.9-.7-.9h-2.4c-.6 0-.8.3-1 .7 0 0-1.3 3.2-3 5.3-.5.6-.8.8-1.1.8-.2 0-.4-.2-.4-.7V1c0-.6-.2-.9-.7-.9h-3.8c-.4 0-.6.3-.6.6 0 .2.1.4.3.6.3.4.6.8.7 1.9V7c0 .8-.1 1-.4 1-.8 0-2.8-3.2-4-6.9-.3-.7-.5-1-1.1-1h-2.4c-.7 0-.8.3-.7.7 0 .7.8 4.1 3.8 8.6 1.9 3 4.8 4.7 7.3 4.7 1.5 0 1.7-.4 1.7-1v-2.3c0-.8.1-.9.6-.9.4 0 1 .2 2.4 1.7.4.5.8.9 1.1 1.3.7.8 1.1 1.2 1.7 1.2z"/></defs></svg></li>
+            <li class="GP pointer cursorWatcher" data-range="2"><svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillGp" fill="#DD4B39"/><g transform="translate(8.96 12.04)" fill="#FFF"><use xlink:href="#path1_fillGp"/><use xlink:href="#path2_fillGp"/></g><defs><path id="path0_fillGp" d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0z"/><path id="path1_fillGp" d="M13.638 13.86c1.1-1.2 1.8-2.8 1.9-4.5v-1.8l-.1-.6h-7.2v2.5h4.5v.3c-.1.7-.6 1.5-1.1 2-1.8 2-5.2 2-7.1 0-2-2.1-1.9-5.5 0-7.4 1.6-1.7 4.1-1.9 5.9-.8l.8.5 2-2-1.3-.9-1.1-.6c-2.9-1.1-6.2-.6-8.5 1.7-3.1 3.1-3.1 8.4-.1 11.5 3.1 3 8.4 3 11.4.1z"/><path id="path2_fillGp" d="M22.738 9.06h2.3v-2.3h-2.3v-2.3h-2.3v2.3h-2.3v2.3h2.3v2.3h2.3v-2.3z"/></defs></svg></li>
+            <li class="fb pointer cursorWatcher" data-range="2"><svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillFB" fill="#3B5998"/><use xlink:href="#path1_fillFB" transform="translate(16 10.9)" fill="#FFF"/><defs><path id="path0_fillFB" d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0z"/><path id="path1_fillFB" d="M6.1 3.2H8V0H5.3C2.4 0 1.7 2.3 1.7 3.8v2.1H0v3.2h1.7v9h3.6v-9h2.4L8 6H5.3V4.1c0-.7.5-.9.8-.9z"/></defs></svg></li>
           </ul>
           <div class="t-authBottomInfo">
               <h2 class="t-authBottomInfoTitle t-titleStock">Для чего нужен аккаунт?</h2>

@@ -1,16 +1,1 @@
-<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="Canvas" transform="translate(-1729 -5525)">
-<g id="iconFavorites">
-<g id="Ellipse">
-<use xlink:href="#path0_fill" transform="translate(1729 5525)" fill="#FFFFFF"/>
-</g>
-<g id="Rectangle">
-<use xlink:href="#path1_stroke" transform="translate(1738 5533)" fill="#E0E0E0"/>
-</g>
-</g>
-</g>
-<defs>
-<path id="path0_fill" d="M 24 12C 24 18.6274 18.6274 24 12 24C 5.37258 24 0 18.6274 0 12C 0 5.37258 5.37258 0 12 0C 18.6274 0 24 5.37258 24 12Z"/>
-<path id="path1_stroke" d="M 7 0C 7 -0.552285 6.55228 -1 6 -1C 5.44772 -1 5 -0.552285 5 0L 7 0ZM 6 8L 5.4453 8.83205C 5.75216 9.03662 6.1467 9.05569 6.47186 8.88167C 6.79702 8.70766 7 8.3688 7 8L 6 8ZM 0 8L -1 8C -1 8.3688 -0.797015 8.70766 -0.471858 8.88167C -0.1467 9.05569 0.247844 9.03662 0.5547 8.83205L 0 8ZM 1 0C 1 -0.552285 0.552285 -1 0 -1C -0.552285 -1 -1 -0.552285 -1 0L 1 0ZM 3 6L 3.5547 5.16795C 3.2188 4.94402 2.7812 4.94402 2.4453 5.16795L 3 6ZM 5 0L 5 8L 7 8L 7 0L 5 0ZM 1 8L 1 0L -1 0L -1 8L 1 8ZM 6.5547 7.16795L 3.5547 5.16795L 2.4453 6.83205L 5.4453 8.83205L 6.5547 7.16795ZM 2.4453 5.16795L -0.5547 7.16795L 0.5547 8.83205L 3.5547 6.83205L 2.4453 5.16795Z"/>
-</defs>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fill" fill="#FFF"/><use xlink:href="#path1_stroke" transform="translate(9 8)" fill="#E0E0E0"/><defs><path id="path0_fill" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_stroke" d="M7 0a1 1 0 0 0-2 0h2zM6 8l-.555.832A1 1 0 0 0 7 8H6zM0 8h-1a1 1 0 0 0 1.555.832L0 8zm1-8a1 1 0 1 0-2 0h2zm2 6l.555-.832a1 1 0 0 0-1.11 0L3 6zm2-6v8h2V0H5zM1 8V0h-2v8h2zm5.555-.832l-3-2-1.11 1.664 3 2 1.11-1.664zm-4.11-2l-3 2 1.11 1.664 3-2-1.11-1.664z"/></defs></svg>

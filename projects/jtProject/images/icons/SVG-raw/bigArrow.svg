@@ -1,16 +1,1 @@
-<svg width="52" height="24" viewBox="0 0 52 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="Canvas" transform="translate(-1825 -5605)">
-<g id="iconArrow" class="t-icon">
-<g id="Ellipse" class="t-svgEllipse">
-<use xlink:href="#path0_fill" transform="translate(1825 5605)"/>
-</g>
-<g id="Vector" class="t-svgFigure">
-<use xlink:href="#path1_stroke" transform="matrix(6.12323e-17 -1 1 6.12323e-17 1833 5621)"/>
-</g>
-</g>
-</g>
-<defs>
-<path id="path0_fill" d="M 0 12C 0 5.37258 5.37258 0 12 0L 40 0C 46.6274 0 52 5.37258 52 12C 52 18.6274 46.6274 24 40 24L 12 24C 5.37258 24 0 18.6274 0 12Z"/>
-<path id="path1_stroke" d="M 5 0C 5 -0.552285 4.55228 -1 4 -1C 3.44772 -1 3 -0.552285 3 0L 5 0ZM 4 36L 3.29289 36.7071C 3.68342 37.0976 4.31658 37.0976 4.70711 36.7071L 4 36ZM 0.707107 31.2929C 0.316583 30.9024 -0.316583 30.9024 -0.707107 31.2929C -1.09763 31.6834 -1.09763 32.3166 -0.707107 32.7071L 0.707107 31.2929ZM 8.70711 32.7071C 9.09763 32.3166 9.09763 31.6834 8.70711 31.2929C 8.31658 30.9024 7.68342 30.9024 7.29289 31.2929L 8.70711 32.7071ZM 3 0L 3 36L 5 36L 5 0L 3 0ZM -0.707107 32.7071L 3.29289 36.7071L 4.70711 35.2929L 0.707107 31.2929L -0.707107 32.7071ZM 7.29289 31.2929L 3.29289 35.2929L 4.70711 36.7071L 8.70711 32.7071L 7.29289 31.2929Z"/>
-</defs>
-</svg>
+<svg width="52" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g class="t-icon"><use xlink:href="#path0_fill"/><use xlink:href="#path1_stroke" transform="rotate(-90 12 4)"/></g><defs><path id="path0_fill" d="M0 12C0 5.373 5.373 0 12 0h28c6.627 0 12 5.373 12 12s-5.373 12-12 12H12C5.373 24 0 18.627 0 12z"/><path id="path1_stroke" d="M5 0a1 1 0 0 0-2 0h2zM4 36l-.707.707a1 1 0 0 0 1.414 0L4 36zM.707 31.293a1 1 0 0 0-1.414 1.414l1.414-1.414zm8 1.414a1 1 0 1 0-1.414-1.414l1.414 1.414zM3 0v36h2V0H3zM-.707 32.707l4 4 1.414-1.414-4-4-1.414 1.414zm8-1.414l-4 4 1.414 1.414 4-4-1.414-1.414z"/></defs></svg>

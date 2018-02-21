@@ -1,14 +1,1 @@
-<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="Canvas" transform="translate(-1729 -5485)">
-<g id="Ellipse" class="t-svgEllipse">
-<use xlink:href="#path0_fill" transform="translate(1729 5485)"/>
-</g>
-<g id="Rectangle (Stroke)" class="t-svgFigure">
-<use xlink:href="#path1_fill" transform="translate(1735 5492)"/>
-</g>
-</g>
-<defs>
-<path id="path0_fill" d="M 24 12C 24 18.6274 18.6274 24 12 24C 5.37258 24 0 18.6274 0 12C 0 5.37258 5.37258 0 12 0C 18.6274 0 24 5.37258 24 12Z"/>
-<path id="path1_fill" fill-rule="evenodd" d="M 0 1C 0 0.447715 0.447715 0 1 0L 11 0C 11.5523 0 12 0.447715 12 1L 12 8C 12 8.55228 11.5523 9 11 9L 8.41421 9L 6.70711 10.7071C 6.31658 11.0976 5.68342 11.0976 5.29289 10.7071L 3.58579 9L 1 9C 0.447715 9 0 8.55228 0 8L 0 1ZM 2 2L 2 7L 4 7C 4.26522 7 4.51957 7.10536 4.70711 7.29289L 6 8.58579L 7.29289 7.29289C 7.48043 7.10536 7.73478 7 8 7L 10 7L 10 2L 2 2Z"/>
-</defs>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fill"/><use xlink:href="#path1_fill" transform="translate(6 7)"/><defs><path id="path0_fill" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fill" fill-rule="evenodd" d="M0 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H8.414l-1.707 1.707a1 1 0 0 1-1.414 0L3.586 9H1a1 1 0 0 1-1-1V1zm2 1v5h2a1 1 0 0 1 .707.293L6 8.586l1.293-1.293A1 1 0 0 1 8 7h2V2H2z"/></defs></svg>

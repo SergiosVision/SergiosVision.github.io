@@ -1,16 +1,1 @@
-<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="Canvas" transform="translate(-1793 -5565)">
-<g id="iconPlus">
-<g id="Ellipse">
-<use xlink:href="#path0_fill" transform="translate(1793 5565)" fill="#FFFFFF"/>
-</g>
-<g id="Union">
-<use xlink:href="#path1_fill" transform="translate(1800 5572)" fill="#E0E0E0"/>
-</g>
-</g>
-</g>
-<defs>
-<path id="path0_fill" d="M 24 12C 24 18.6274 18.6274 24 12 24C 5.37258 24 0 18.6274 0 12C 0 5.37258 5.37258 0 12 0C 18.6274 0 24 5.37258 24 12Z"/>
-<path id="path1_fill" fill-rule="evenodd" d="M 5 0C 4.44922 0 4 0.447754 4 1L 4 4L 1 4C 0.449219 4 0 4.44775 0 5C 0 5.55225 0.449219 6 1 6L 4 6L 4 9C 4 9.55225 4.44922 10 5 10C 5.55078 10 6 9.55225 6 9L 6 6L 9 6C 9.55078 6 10 5.55225 10 5C 10 4.44775 9.55078 4 9 4L 6 4L 6 1C 6 0.447754 5.55078 0 5 0Z"/>
-</defs>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fill" fill="#FFF"/><use xlink:href="#path1_fill" transform="translate(7 7)" fill="#E0E0E0"/><defs><path id="path0_fill" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fill" fill-rule="evenodd" d="M5 0c-.55 0-1 .448-1 1v3H1a1.001 1.001 0 0 0 0 2h3v3a1.001 1.001 0 0 0 2 0V6h3a1.001 1.001 0 0 0 0-2H6V1c0-.552-.45-1-1-1z"/></defs></svg>

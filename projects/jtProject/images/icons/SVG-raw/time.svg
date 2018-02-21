@@ -1,16 +1,1 @@
-<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="Canvas" transform="translate(-1761 -5485)">
-<g id="IconTime">
-<g id="Ellipse">
-<use xlink:href="#path0_fill" transform="translate(1761 5485)" fill="#FFFFFF"/>
-</g>
-<g id="Union">
-<use xlink:href="#path1_fill" transform="translate(1767 5491)" fill="#E0E0E0"/>
-</g>
-</g>
-</g>
-<defs>
-<path id="path0_fill" d="M 24 12C 24 18.6274 18.6274 24 12 24C 5.37258 24 0 18.6274 0 12C 0 5.37258 5.37258 0 12 0C 18.6274 0 24 5.37258 24 12Z"/>
-<path id="path1_fill" fill-rule="evenodd" d="M 2 6C 2 3.79086 3.78906 2 6 2C 8.21094 2 10 3.79086 10 6C 10 8.20914 8.21094 10 6 10C 3.78906 10 2 8.20914 2 6ZM 6 0C 2.6875 0 0 2.68628 0 6C 0 9.31372 2.6875 12 6 12C 9.3125 12 12 9.31372 12 6C 12 2.68628 9.3125 0 6 0ZM 7 4C 7 3.44772 6.55078 3 6 3C 5.44922 3 5 3.44772 5 4L 5 6C 5 6.26523 5.10547 6.51956 5.29297 6.70709L 6.29297 7.70709C 6.68359 8.09763 7.31641 8.09763 7.70703 7.70709C 8.09766 7.31659 8.09766 6.68341 7.70703 6.29291L 7 5.58578L 7 4Z"/>
-</defs>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fill" fill="#FFF"/><use xlink:href="#path1_fill" transform="translate(6 6)" fill="#E0E0E0"/><defs><path id="path0_fill" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fill" fill-rule="evenodd" d="M2 6c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4zm4-6a6 6 0 1 0 .002 12.002A6 6 0 0 0 6 0zm1 4a1.001 1.001 0 0 0-2 0v2a1 1 0 0 0 .293.707l1 1a1 1 0 1 0 1.414-1.414L7 5.586V4z"/></defs></svg>

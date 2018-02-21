@@ -1,18 +1,1 @@
-<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>iconVideo</title>
-<desc>Created using Figma</desc>
-<g id="Canvas" transform="translate(-1737 -6079)">
-<g id="iconVideo">
-<g id="Ellipse">
-<use xlink:href="#path0_fill" transform="translate(1737 6079)" fill="#FFFFFF"/>
-</g>
-<g id="Union">
-<use xlink:href="#path1_fill" transform="translate(1741 6085)" fill="#E0E0E0"/>
-</g>
-</g>
-</g>
-<defs>
-<path id="path0_fill" d="M 24 12C 24 18.6274 18.6274 24 12 24C 5.37258 24 0 18.6274 0 12C 0 5.37258 5.37258 0 12 0C 18.6274 0 24 5.37258 24 12Z"/>
-<path id="path1_fill" fill-rule="evenodd" d="M 5.78085 1.62462C 6.12582 1.19346 6.05588 0.56407 5.62473 0.219343C 5.19345 -0.125872 4.56406 -0.0560473 4.21909 0.375593L 0.219086 5.37559C -0.0730286 5.74083 -0.0730286 6.25938 0.219086 6.62462L 4.21909 11.6246C 4.56406 12.0563 5.19345 12.1261 5.62473 11.7809C 6.05588 11.4361 6.12582 10.8067 5.78085 10.3756L 2.28061 6.0001L 5.78085 1.62462ZM 10.2191 1.62462C 9.87411 1.19346 9.94406 0.56407 10.3752 0.219343C 10.8065 -0.125872 11.4359 -0.0560473 11.7809 0.375593L 15.7809 5.37559C 16.073 5.74083 16.073 6.25938 15.7809 6.62462L 11.7809 11.6246C 11.4359 12.0563 10.8065 12.1261 10.3752 11.7809C 9.94406 11.4361 9.87411 10.8067 10.2191 10.3756L 13.7193 6.0001L 10.2191 1.62462Z"/>
-</defs>
-</svg>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillVideoLink" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_fillVideoLink" class="t-svgFigure" transform="translate(4 6)" fill="#E0E0E0"/><defs><path id="path0_fillVideoLink" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fillVideoLink" fill-rule="evenodd" d="M5.78 1.625A1 1 0 1 0 4.22.375l-4 5a1 1 0 0 0 0 1.25l4 5a1 1 0 1 0 1.56-1.25L2.28 6l3.5-4.375zm4.44 0a1 1 0 1 1 1.56-1.25l4 5a1 1 0 0 1 0 1.25l-4 5a1 1 0 1 1-1.56-1.25L13.72 6l-3.5-4.375z"/></defs></svg>
