@@ -1,0 +1,293 @@
+@import "../../css/fonts.css"
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html, body
+  width: 100%
+  min-width: 320px
+  min-height: 100vh
+
+body
+  margin: 0px
+  padding: 0px
+  position: relative
+  font-size: 16px
+  font-family: Museo
+  background-color: $white
+  //height: 100vmax
+  min-height: 100vh
+  position: relative
+  @include fluidFontSize(10px, 16px, 769px, 1920px, 80px)
+
+main
+  min-height: calc(100vh - 244px)
+
+footer
+  background-color: $footer
+  padding: 32px
+
+
+.t-insideMain
+  height: 100%
+
+a
+  text-decoration: none
+
+// Default Props
+
+.t-btn
+  display: inline-block
+  padding: 17px 32px
+  outline: none
+  font-size: 10px
+  color: $black
+  border: 1px solid $dblue
+  text-decoration: none
+  cursor: pointer
+  background-color: transparent
+  &.t-btnWhite
+    border-color: $white
+    color: $white
+  &.disabled,&:disabled
+    color: $grey
+    border: 1px dashed $grey
+    cursor: default
+  &.t-btnUpperCase
+    text-transform: uppercase
+
+.t-documentItem
+  display: inline-block
+  cursor: pointer
+  .t-documentIcon
+    display: inline-block
+  .t-documentInfoHolder
+    display: inline-block
+    margin-left: 24px
+    .t-documentTitleWrapper
+      .t-documentTitle
+        line-height: 30px
+        margin-bottom: 4px
+.documentsList
+  .t-documentItem
+    &:not(:last-child)
+      margin-bottom: 32px
+
+.t-accordItem
+  padding: 40px 0
+  border-bottom: 1px solid rgba(0,0,0,.15)
+  &:last-child
+    border: none
+  .t-openAccordItem
+    transition-property: border-bottom
+    transition-delay: .43s
+    cursor: pointer
+    .t-accordItemArrow
+      svg
+        transition: .4s
+    &.is-active
+      border: none
+      transition-property: border-bottom
+      transition-delay: .43s
+      .t-accordItemArrow
+        svg
+          transform: rotate(180deg)
+  .t-vacancyName
+    line-height: 30px
+    margin-bottom: 4px
+    transition: .4s
+  .t-payValue
+    line-height: 19px
+    transition: .4s
+  .t-accordItemContent
+    display: none
+    padding-top: 24px
+    p
+      font-size: 16px
+      font-weight: 300
+      line-height: 19px
+      color: $secondBlack
+    h4
+      font-size: 16px
+      font-weight: 500
+      line-height: 19px
+      color: $secondBlack
+  &:hover
+    .t-payValue, .t-vacancyName
+      color: $dblue
+    .t-accordItemArrow
+
+
+.t-right
+  float: right
+
+.t-mainList
+  margin: 0
+  padding: 0
+  list-style: none
+
+.t-bigTitle
+ @include textParams(80, 900, $white)
+
+.t-bigLight
+  @include textParams(50, 100, $black)
+
+.t-middleTitle
+  @include textParams(40, 900, $black)
+
+.t-middleText
+  @include textParams(26, 500, $black)
+
+.t-standardTitle
+  @include textParams(16, 500, $white)
+  &.t-standardTitleMidLight
+    font-weight: 300
+
+.t-standardTitleLight
+  @include textParams(16, 100, $black)
+
+
+.t-smallTitleLight
+  @include textParams(14, 100, $white)
+
+.t-block
+  display: block
+
+.t-flex
+  display: flex
+  &.t-flexAlign
+    align-items: center
+  &.t-flexColumn
+    flex-direction: column
+  &.t-flexCenter
+    justify-content: center
+  &.t-flexSB
+    justify-content: space-between
+  &.t-flexSelfEnd
+    align-self: flex-end
+  &.t-flexWrap
+    flex-wrap: wrap
+
+
+.t-logoColorful
+  .t-svgSymbolLogoTop
+    fill: $lBlue
+  .t-svgSymbolLogoMid
+    fill: $green
+  .t-svgSymbolLogoBottom
+    fill: $dblue
+  .t-svgLogoWorld, .t-svgLogoText
+    fill: $dblue
+
+.t-top48
+  margin-top: 48px
+
+
+
+
+.t-blackLinks
+  a
+    color: $secondBlack!important
+
+.t-blackColor
+  color: $secondBlack
+
+.t-blackPrimaryColor
+  color: $black
+
+.t-linkItem
+  text-decoration: none
+  display: inline-block
+  color: $black
+  padding-bottom: 1px
+  border-bottom: 1px solid $grey
+  &.t-linkItemTitle
+    font-weight: 900
+  &.t-white
+    color: $white
+
+.t-white
+  color: $white
+.t-grey
+  color: $grey
+
+.t-bars
+  width: 40px
+  height: 26px
+  .t-line
+    display: block
+    width: 100%
+    height: 2px
+    background-color: $dblue
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
+.t-mainContentWrapper
+  width: 1000px
+  margin: 0 auto
+
+.t-mainContentContainer
+  padding: 0 116px
+
+.t-mainContentSmallContainer
+  p
+    @include textParams(16, 300, $black)
+    line-height: 19px
+
+.t-simpleRightSideMenu
+  li
+    &:not(:last-child)
+      margin-bottom: 8px
+    &.active
+      a
+        color: $dblue
+    a
+      text-decoration: none
+      color: $grey
+      font-size: 12px
+      font-weight: 500
+      transition: .3s ease
+      &:hover
+        color: $dblue
+
+
+.t-rightAside
+  margin-left: 88px
+  margin-top: 96px
+
+
+.t-eventCardWrapper
+  display: block
+  text-decoration: none
+  &:not(:last-child)
+    margin-bottom: 24px
+
+.t-eventCard
+  .t-eventCardImg
+    width: 160px
+    height: 90px
+    margin-right: 16px
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      border-radius: 4px
+  .t-eventCardInfo
+    .t-eventCardInfoDateHolder
+      margin-bottom: 4px
+
+.t-defaultP
+  margin: 0 auto 298px auto
+  padding-top: 158px
+
+.t-grid
+  display: flex
+  flex-wrap: wrap
+  .t-gridItem
+    text-align: center
+    @include bGrid(2, 10%)
+
+// Default Props End

@@ -1,0 +1,25 @@
+.t-waterContent
+  position: relative
+  .t-frame
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/images/backgrounds/water.png") no-repeat
+    background-position: center center
+    clip-path: polygon(0% 0%, 75% 0%, 100% 51%, 75% 100%, 0% 100%)
+    -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 51%, 75% 100%, 0% 100%)
+    z-index: -1
+    &:after
+      display: none
+      border: none
+      left: 100%
+      top: 0
+      bottom: 0
+  .t-vehiclesHolderAndInfo
+    .t-contentInfo
+      top: 255px
+      left: 600px
+      bottom: auto
+    .t-tanker
+      img
+        width: 917px
+      .t-contentInfoWithTitle
+        align-self: flex-end
+        margin-top: -75px

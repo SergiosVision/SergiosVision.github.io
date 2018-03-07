@@ -1,0 +1,49 @@
+.t-contentContainer
+  width: 100%
+  min-height: 100vh
+  position: relative
+  .t-containerInside
+    margin: 0 auto
+    max-width: 1112px
+    z-index: 1
+    padding-top: 168px
+    .t-tabsSwitch
+      margin-top: 24px
+      li
+        &:not(:last-child)
+          margin-right: 24px
+        cursor: pointer
+        &.active
+          span
+            color: $green
+        span
+          color: $grey
+          transition: .3s ease
+        &:hover
+          span
+            color: $green
+    .t-vehiclesHolderAndInfo
+      position: relative
+      margin-top: 24px
+      .t-contentInfo
+        border-left: 2px solid $green
+        color: $secondBlack
+        font-size: 16px
+        font-weight: 300
+        width: 480px
+        padding-left: 14px
+        position: absolute
+        bottom: 0
+        right: -225px
+      .t-contentInfoWithTitle
+        border-left: 2px solid $dblue
+        width: 571px
+        padding-left: 14px
+        .t-contentInfoTitle
+          margin-bottom: 16px
+        .t-contentInfoPar
+          color: $secondBlack
+          font-size: 16px
+          font-weight: 300
+
+

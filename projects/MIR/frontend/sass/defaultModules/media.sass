@@ -1,0 +1,36 @@
+@media (min-width: 769px)
+  .t-btn
+    transition: .2s ease-in-out
+    &.t-btnWhite
+      &:hover
+        background-color: $white
+        color: $black
+    &:hover
+      color: $white
+      background-color: $dblue
+      &.disabled,&:disabled
+        color: $grey
+        background-color: $white
+        border: 1px dashed $grey
+        cursor: default
+    &:active
+      color: $white
+      background-color: $dblue
+      transform: scale(.85)
+      &.disabled,&:disabled
+        transform: none
+
+  .t-linkItem
+    transition: .2s ease-in-out
+    &:hover
+      border-bottom-color: transparent
+
+
+@media (max-width: 1200px)
+  .t-typeSection
+    .t-jumbotron
+      .t-jumbotronContainer
+        width: 100%!important
+        justify-content: center
+        .t-jumbotronContainerRight
+          display: none

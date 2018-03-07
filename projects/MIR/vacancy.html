@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>MIR</title>
+    <link rel="stylesheet" href="/css/main.min.css">
+</head>
+<body>
+<div class="t-wrapper" id="app">
+    <header class="t-flex t-flexSB t-flexAlign">
+        <div class="t-headerLogoWrapper t-logoColorful">
+            <a href="/" class="t-headerLogoLink">
+                <div class="t-headerLogoSymbol">
+                    <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillSymbol" class="t-svgSymbolLogoTop" fill="#FFF"/><use xlink:href="#path1_fillSymbol" class="t-svgSymbolLogoMid" transform="translate(.1 22.91)" fill="#FFF"/><use xlink:href="#path2_fillSymbol" class="t-svgSymbolLogoBottom" transform="translate(4.69 43.286)" fill="#FFF"/><defs><path id="path0_fillSymbol" fill-rule="evenodd" d="M52.868 20.731c1.058-.307 1.676-1.416 1.296-2.451a27.799 27.799 0 0 0-7.127-10.744c-1.287-1.202-3.15-.02-2.836 1.712l1.493 8.207c.158.865.878 1.491 1.692 1.82a5.549 5.549 0 0 1 1.705 1.084c.663.617 1.57 1.012 2.44.76l1.337-.388zm-45.94-7.965c-.89-.707-2.196-.536-2.796.43A27.63 27.63 0 0 0 .314 23.46c-.23 1.454 1.252 2.486 2.604 1.906l6.044-2.592c.877-.376 1.34-1.32 1.319-2.275a8.84 8.84 0 0 1 .373-2.753c.276-.915.079-1.952-.67-2.547l-3.056-2.432zM26.98 2.399c.583-1.084-.203-2.387-1.43-2.296A27.9 27.9 0 0 0 9.115 7.247c-.865.786-.766 2.145.147 2.874l2.94 2.35c.74.592 1.786.56 2.614.096a8.948 8.948 0 0 1 5.464-1.074c.954.117 1.947-.26 2.402-1.107l4.297-7.988zm12.596 1.086a1.92 1.92 0 0 0-1.156-1.448A27.89 27.89 0 0 0 33.485.553c-.828-.167-1.653.252-2.053.996L25.74 12.138c-.447.831-.231 1.848.366 2.579a8.839 8.839 0 0 1 1.76 3.576c.216.929.9 1.728 1.842 1.874l9.454 1.47c.724.113 1.42-.27 1.893-.829.107-.127.22-.249.338-.365.6-.593 1.014-1.405.863-2.235L39.575 3.484z"/><path id="path1_fillSymbol" fill-rule="evenodd" d="M53.185.62c1.14-.332 2.321.397 2.436 1.578l.032.353c.5 5.767-.826 11.529-3.77 16.486-.53.89-1.678 1.151-2.58.642l-.593-.334c-.732-.413-1.08-1.254-1.231-2.08a4.046 4.046 0 0 0-1.39-2.38.48.48 0 0 1-.18-.41l.453-6.157c.064-.872.708-1.57 1.477-1.984a5.54 5.54 0 0 0 2.728-3.475c.229-.88.784-1.706 1.657-1.96l.961-.28zM3.532 16.7a1.92 1.92 0 0 1-1.538-1.153A27.714 27.714 0 0 1 .17 8.923C.047 8.065.54 7.247 1.337 6.906l8.93-3.83c.871-.374 1.87-.064 2.546.602a8.922 8.922 0 0 0 4.492 2.396c.943.193 1.766.868 1.927 1.817l.912 5.348c.156.916-.362 1.794-1.11 2.345a6.7 6.7 0 0 0-1.48 1.5c-.527.736-1.366 1.259-2.264 1.142L3.532 16.701zm39.326-8.762c.062-.844-.439-1.61-1.103-2.135a5.54 5.54 0 0 1-1.603-2.043c-.358-.783-.996-1.465-1.847-1.597L29.059.722c-.938-.146-1.83.402-2.318 1.215A8.896 8.896 0 0 1 23.86 4.88c-.796.503-1.32 1.395-1.162 2.322l.968 5.683c.148.865.854 1.504 1.678 1.805a6.716 6.716 0 0 1 3.165 2.412c.523.736 1.358 1.26 2.254 1.148l7.28-.905c.849-.105 1.496-.77 1.95-1.496a4.074 4.074 0 0 1 1.128-1.185c.7-.487 1.327-1.166 1.39-2.016l.347-4.71z"/><path id="path2_fillSymbol" fill-rule="evenodd" d="M16.369 9.053c-.08 1.253-1.285 2.127-2.47 1.708A28.014 28.014 0 0 1 2.754 3.464C1.578 2.205 2.684.352 4.39.576l5.915.776c.887.116 1.56.822 1.886 1.655a6.672 6.672 0 0 0 2.857 3.338c.803.47 1.41 1.29 1.351 2.217l-.031.491zm26.265-7.692c1.015.57 1.26 1.927.439 2.752a28.013 28.013 0 0 1-10.023 6.458 28.112 28.112 0 0 1-12.225 1.682c-1.036-.088-1.773-1.013-1.704-2.051l.09-1.366c.064-.951.806-1.696 1.694-2.045a6.712 6.712 0 0 0 2.246-1.456 6.677 6.677 0 0 0 1.537-2.32c.33-.836 1.01-1.543 1.902-1.654L35.025.315c.445-.056.879.13 1.22.42a4.093 4.093 0 0 0 4.179.659c.714-.29 1.538-.41 2.21-.033z"/></defs></svg>
+                </div>
+                <div class="t-headerLogoText">
+                    <span><svg width="76" height="22" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillWord" class="t-svgLogoWorld" transform="translate(.56 .226)" fill="#FFF"/><defs><path id="path0_fillWord" fill-rule="evenodd" d="M54.412 21.037h6.703v-3.12h5.359a8.971 8.971 0 0 0 6.34-2.623 8.952 8.952 0 0 0 0-12.667 8.971 8.971 0 0 0-6.34-2.623H54.412v21.033zM6.722 0H0v21.037h6.703V9.463l5.991 5.997 4.758-4.73-.026-.026 1.245-1.24v11.573h6.703V.004h-6.7l-5.98 5.962L9.288 9.37l2.65-4.159L6.721 0zm37.652 0l-8.951 8.919V.004H28.72v21.033h6.703V18.39L46.989 6.843 44.34 10.98v10.057h6.703V.004L44.374 0zm16.74 11.222V6.685h5.36a2.274 2.274 0 0 1 2.098 1.4 2.267 2.267 0 0 1-2.098 3.136h-5.36z"/></defs></svg></span>
+                    <span><svg width="71" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillText" class="t-svgLogoText" transform="translate(.58 .499)" fill="#FFF"/><defs><path id="path0_fillText" fill-rule="evenodd" d="M0 5.1a.905.905 0 0 0 .507-.223c.167-.19.28-.42.326-.669.096-.43.139-.871.128-1.312V1.323h3.221v4.79H3.01v-3.78h-.931v.582c0 1.15-.172 1.98-.515 2.492a1.752 1.752 0 0 1-1.555.756L0 5.1zm5.764-1.414a2.342 2.342 0 0 1 .716-1.743 2.651 2.651 0 0 1 3.588 0 2.346 2.346 0 0 1 .715 1.743 2.505 2.505 0 0 1-2.51 2.507 2.51 2.51 0 0 1-2.509-2.507zm1.215 0c-.01.378.125.745.379 1.025a1.23 1.23 0 0 0 1.84 0c.253-.28.389-.647.378-1.025a1.36 1.36 0 0 0-.379-.979 1.264 1.264 0 0 0-1.84 0 1.36 1.36 0 0 0-.378.98zm5.386 2.428v-4.79h2.937v1.005H13.54v3.78l-1.174.005zm4.345 0v-4.79h1.177v2.238l-.053.816a6.96 6.96 0 0 1 .405-.816l1.329-2.239h1.188v4.79h-1.173v-2.23l.053-.817a6.96 6.96 0 0 1-.405.817l-1.336 2.23H16.71zm5.644-2.405a2.383 2.383 0 0 1 .707-1.762 2.453 2.453 0 0 1 1.81-.703c.334 0 .665.057.98.17.31.105.593.276.829.503l-.545.885a2.06 2.06 0 0 0-.568-.352 1.629 1.629 0 0 0-.636-.136 1.262 1.262 0 0 0-1.014.4 1.44 1.44 0 0 0-.345.969c-.008.368.117.728.352 1.013a1.218 1.218 0 0 0 1.003.43 1.777 1.777 0 0 0 1.276-.589l.605.858a2.582 2.582 0 0 1-1.934.806 2.387 2.387 0 0 1-2.356-1.512 2.381 2.381 0 0 1-.16-.976l-.004-.004zm6.922 2.405V2.333h-1.46v-1.01h4.083V2.33h-1.434v3.78l-1.189.005zm4.061 0v-4.79h1.174v2.238l-.053.816c.115-.28.25-.553.4-.816l1.33-2.239h1.188v4.79h-1.173v-2.23l.052-.817c-.116.28-.25.553-.4.817l-1.337 2.23h-1.18zm7.154-1.694a1.489 1.489 0 0 1-1.136-.378 1.53 1.53 0 0 1-.378-1.104V1.323h1.2v1.324c0 .472.212.71.636.71a1.61 1.61 0 0 0 .843-.223v-1.81h1.204v4.79h-1.203V4.163a2.99 2.99 0 0 1-1.181.253l.015.004zm4.227 1.694v-4.79h3.006v1.005h-1.832v.873h1.46v1.006h-1.46v.907h1.926v1.006l-3.1-.007zm4.368-2.405a2.377 2.377 0 0 1 .708-1.762 2.453 2.453 0 0 1 1.81-.703c.333 0 .665.057.98.17.306.107.585.28.817.507l-.545.884a2.083 2.083 0 0 0-.568-.351 1.629 1.629 0 0 0-.636-.136 1.258 1.258 0 0 0-1.014.4c-.23.27-.353.614-.344.968a1.55 1.55 0 0 0 .352 1.014 1.223 1.223 0 0 0 1.003.43 1.777 1.777 0 0 0 1.275-.59l.606.859a2.58 2.58 0 0 1-1.934.805 2.386 2.386 0 0 1-2.517-2.487l.007-.008zm5.886 2.405v-4.79h1.173v1.848h.484l.992-1.849h1.26l-1.294 2.291 1.366 2.484H57.64l-1.014-1.94h-.485v1.944l-1.17.012zm5.367 0v-4.79H61.5v2.238l-.053.816c.116-.28.25-.553.4-.816l1.33-2.239h1.188v4.79h-1.173v-2.23l.053-.817c-.116.281-.25.554-.402.817l-1.336 2.23h-1.17zm7.975-5.006a1.477 1.477 0 0 1-.905-.276.884.884 0 0 1-.379-.756V0h.86v.08a.354.354 0 0 0 .124.294.47.47 0 0 0 .58 0 .352.352 0 0 0 .128-.295V0h.852v.076a.879.879 0 0 1-.379.756c-.261.189-.578.286-.9.276h.019zM66.22 6.114v-4.79h1.174v2.238l-.053.816c.116-.28.25-.553.4-.816l1.33-2.239h1.188v4.79h-1.173v-2.23l.053-.817c-.116.28-.25.554-.402.817l-1.336 2.23h-1.18zM.363 14.155v-4.79h1.174v3.781h1.661v-3.78h1.177v3.78h.59v1.936H3.97v-.938l-3.607.011zm6.158 0v-4.79h3.006v1.006H7.695v.87h1.46v1.005h-1.46v.904h1.953v1.005H6.52zm4.705 0v-4.79h1.173v1.917h1.79V9.365h1.174v4.794H14.19v-1.89h-1.745v1.89l-1.219-.004zm6.98 0v-3.78h-1.458V9.369h4.088v1.006h-1.457v3.78h-1.174zm4.057 0v-4.79h1.994a1.48 1.48 0 0 1 1.136.461c.294.324.448.75.431 1.188.017.439-.138.867-.431 1.194a1.471 1.471 0 0 1-1.136.465h-.817v1.482h-1.177zm1.173-2.487h.594a.568.568 0 0 0 .454-.182.703.703 0 0 0 .16-.476.68.68 0 0 0-.156-.469.548.548 0 0 0-.435-.174h-.598l-.019 1.3z"/></defs></svg></span>
+                </div>
+            </a>
+        </div>
+        <nav class="t-headerNavigation">
+            <ul class="t-mainList t-flex t-headerNavigationList t-blackLinks">
+                <li><a href="#" class="t-linkItem t-white">+7 900 900-90-90</a></li>
+                <li><a href="#" class="t-linkItem t-white">inbox@mir.ru</a></li>
+                <li><a href="/aboutCompany.html" class="t-linkItem t-white">О компании</a></li>
+                <li><a href="/clients.html" class="t-linkItem t-white">Клиентам</a></li>
+                <li><a href="/services.html" class="t-linkItem t-white">Услуги</a></li>
+                <li><a href="/contacts.html" class="t-linkItem t-white">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="t-wrapper t-mainContentWrapper t-vacancy t-flex">
+        <main class="t-insideMain">
+            <div class="t-vacancyWrapperSection">
+                <h1 class="t-middleTitle">Вакансии</h1>
+                <div class="t-vacancyHolder">
+                    <div class="t-vacancyTopInfo">
+                        <span class="t-block t-standardTitle">Для анкет и вопросов соискателей</span>
+                        <span class="t-block t-middleText">hr@cargomir.com</span>
+                    </div>
+                    <div class="t-documentItem">
+                        <div class="t-documentIcon">
+                            <svg width="45" height="56" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillDocument" fill="#2071C7"/><defs><path id="path0_fillDocument" fill-rule="evenodd" d="M0 54.88C0 55.498.503 56 1.125 56h42.75c.622 0 1.125-.502 1.125-1.12V1.12C45 .501 44.497 0 43.875 0H1.125C.503 0 0 .501 0 1.12v53.76zm2.25-1.12V2.24h40.5v51.52H2.25zm7.875-26.88c0-.618.503-1.12 1.125-1.12h22.5c.622 0 1.125.502 1.125 1.12 0 .619-.503 1.12-1.125 1.12h-22.5a1.122 1.122 0 0 1-1.125-1.12zM22.5 25.76a1.13 1.13 0 0 1-.879-.42l-4.5-5.6a1.117 1.117 0 0 1 .176-1.574 1.13 1.13 0 0 1 1.582.174l2.496 3.107V11.2c0-.618.503-1.12 1.125-1.12s1.125.502 1.125 1.12v10.247l2.496-3.107a1.13 1.13 0 0 1 1.582-.174c.485.386.564 1.09.176 1.574l-4.5 5.6a1.13 1.13 0 0 1-.879.42zM10.125 35.84c0-.619.503-1.12 1.125-1.12h22.5c.622 0 1.125.502 1.125 1.12 0 .618-.503 1.12-1.125 1.12h-22.5a1.122 1.122 0 0 1-1.125-1.12zm1.125 7.84c-.622 0-1.125.502-1.125 1.12 0 .619.503 1.12 1.125 1.12h13.5c.622 0 1.125-.502 1.125-1.12 0-.618-.503-1.12-1.125-1.12h-13.5z"/></defs></svg>
+                        </div>
+                        <div class="t-documentInfoHolder">
+                            <div class="t-documentTitleWrapper">
+                                <h2 class="t-middleText t-documentTitle">Анкета для соискателя</h2>
+                            </div>
+                            <div class="t-documentFormatAndSize t-standardTitle t-standardTitleMidLight t-blackColor">
+                                <span class="t-documentFormat">PDF</span>, <span class="t-documentSize">2 MB</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-accordItemsHolder">
+                        <div class="t-accordItem">
+                            <div class="t-openAccordItem t-flex t-flexSB">
+                                <div>
+                                    <h1 class="t-middleText t-vacancyName">Менеджер-стажёр</h1>
+                                    <span class="t-payValue t-blackPrimaryColor t-standardTitle">от 20 000 Р</span>
+                                </div>
+                                <div class="t-accordItemArrow">
+                                    <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(-9512 -8911)"><mask id="a"><use xlink:href="#path0_fillArrowOneEl" fill="#fff" transform="translate(9512 8911)"/></mask><g mask="url(#a)"><use xlink:href="#path1_stroke_2xArrowSecEl" transform="translate(9512 8911)" fill="#F2F2F2"/></g></g><use xlink:href="#path2_strokeArrowThirdEl" transform="translate(16 19)" fill="#CCC"/><defs><path id="path0_fillArrowOneEl" d="M40 20c0 11.046-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0s20 8.954 20 20z"/><path id="path1_stroke_2xArrowSecEl" d="M38 20c0 9.941-8.059 18-18 18v4c12.15 0 22-9.85 22-22h-4zM20 38c-9.941 0-18-8.059-18-18h-4c0 12.15 9.85 22 22 22v-4zM2 20c0-9.941 8.059-18 18-18v-4C7.85-2-2 7.85-2 20h4zM20 2c9.941 0 18 8.059 18 18h4C42 7.85 32.15-2 20-2v4z"/><path id="path2_strokeArrowThirdEl" d="M4 4l-.707.707a1 1 0 0 0 1.414 0L4 4zM.707-.707A1 1 0 0 0-.707.707L.707-.707zm8 1.414A1 1 0 0 0 7.293-.707L8.707.707zm-4 2.586l-4-4L-.707.707l4 4 1.414-1.414zm0 1.414l4-4L7.293-.707l-4 4 1.414 1.414z"/></defs></svg>
+                                </div>
+                            </div>
+                            <div class="t-accordItemContent">
+                                <h4>Описание</h4>
+                                <br>
+                                <p>Опыт работы в грузоперевозках
+                                    Знание устройство грузового автомобиля
+                                    Готовность к обучению
+                                    Коммуникабельность
+                                    Знание основ законодательства, регламентирующих транспортно-экспедиторскую деятельность
+                                    Опыт в преподавании
+                                </p>
+                                <br><br>
+                                <h4>Условия</h4>
+                                <br>
+                                <p>Официальное трудоустройство в соответствии с ТК
+                                    Полный Соц. пакет
+                                    Организованный трансфер до работы и дома
+                                    График работы 5/2 с 7:45 до 16:45.
+                                </p>
+                                <br><br>
+                                <h4>Обязанности</h4>
+                                <br>
+                                <p>Разрабатывать обучающие программы для улучшения теоретических и практических знаний водителей-экспедиторов
+                                    Проводить теоретическое обучение по индивидуальным программам обучения
+                                    Проводить практическое выездное обучение с водителями-экспедиторами по программе безопасное и экономичное вождение
+                                    Планировать график обучения водителей-экспедиторов с учетом их разъездной работы
+                                    Проводить собеседования, теоретическое и практическое тестирование кандидатов на должность водителей-экспедиторов</p>
+                            </div>
+                        </div>
+                        <div class="t-accordItem">
+                            <div class="t-openAccordItem t-flex t-flexSB">
+                                <div>
+                                    <h1 class="t-middleText t-vacancyName">Водитель категории E</h1>
+                                    <span class="t-payValue t-blackPrimaryColor t-standardTitle">от 50 000 Р</span>
+                                </div>
+                                <div class="t-accordItemArrow">
+                                    <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(-9512 -8911)"><mask id="a"><use xlink:href="#path0_fillArrowOneEl" fill="#fff" transform="translate(9512 8911)"/></mask><g mask="url(#a)"><use xlink:href="#path1_stroke_2xArrowSecEl" transform="translate(9512 8911)" fill="#F2F2F2"/></g></g><use xlink:href="#path2_strokeArrowThirdEl" transform="translate(16 19)" fill="#CCC"/><defs><path id="path0_fillArrowOneEl" d="M40 20c0 11.046-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0s20 8.954 20 20z"/><path id="path1_stroke_2xArrowSecEl" d="M38 20c0 9.941-8.059 18-18 18v4c12.15 0 22-9.85 22-22h-4zM20 38c-9.941 0-18-8.059-18-18h-4c0 12.15 9.85 22 22 22v-4zM2 20c0-9.941 8.059-18 18-18v-4C7.85-2-2 7.85-2 20h4zM20 2c9.941 0 18 8.059 18 18h4C42 7.85 32.15-2 20-2v4z"/><path id="path2_strokeArrowThirdEl" d="M4 4l-.707.707a1 1 0 0 0 1.414 0L4 4zM.707-.707A1 1 0 0 0-.707.707L.707-.707zm8 1.414A1 1 0 0 0 7.293-.707L8.707.707zm-4 2.586l-4-4L-.707.707l4 4 1.414-1.414zm0 1.414l4-4L7.293-.707l-4 4 1.414 1.414z"/></defs></svg>
+                                </div>
+                            </div>
+                            <div class="t-accordItemContent">
+                                <h4>Описание</h4>
+                                <br>
+                                <p>Опыт работы в грузоперевозках
+                                    Знание устройство грузового автомобиля
+                                    Готовность к обучению
+                                    Коммуникабельность
+                                    Знание основ законодательства, регламентирующих транспортно-экспедиторскую деятельность
+                                    Опыт в преподавании
+                                </p>
+                                <br><br>
+                                <h4>Условия</h4>
+                                <br>
+                                <p>Официальное трудоустройство в соответствии с ТК
+                                    Полный Соц. пакет
+                                    Организованный трансфер до работы и дома
+                                    График работы 5/2 с 7:45 до 16:45.
+                                </p>
+                                <br><br>
+                                <h4>Обязанности</h4>
+                                <br>
+                                <p>Разрабатывать обучающие программы для улучшения теоретических и практических знаний водителей-экспедиторов
+                                    Проводить теоретическое обучение по индивидуальным программам обучения
+                                    Проводить практическое выездное обучение с водителями-экспедиторами по программе безопасное и экономичное вождение
+                                    Планировать график обучения водителей-экспедиторов с учетом их разъездной работы
+                                    Проводить собеседования, теоретическое и практическое тестирование кандидатов на должность водителей-экспедиторов</p>
+                            </div>
+                        </div>
+                        <div class="t-accordItem">
+                            <div class="t-openAccordItem t-flex t-flexSB">
+                                <div>
+                                    <h1 class="t-middleText t-vacancyName">Менеджер</h1>
+                                    <span class="t-payValue t-blackPrimaryColor t-standardTitle">от 30 000 Р</span>
+                                </div>
+                                <div class="t-accordItemArrow">
+                                    <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(-9512 -8911)"><mask id="a"><use xlink:href="#path0_fillArrowOneEl" class="accordArrowOne" fill="#fff" transform="translate(9512 8911)"/></mask><g mask="url(#a)"><use xlink:href="#path1_stroke_2xArrowSecEl" class="accordArrowTwo" transform="translate(9512 8911)" fill="#F2F2F2"/></g></g><use xlink:href="#path2_strokeArrowThirdEl" class="accordArrowThree" transform="translate(16 19)" fill="#CCC"/><defs><path id="path0_fillArrowOneEl" d="M40 20c0 11.046-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0s20 8.954 20 20z"/><path id="path1_stroke_2xArrowSecEl" d="M38 20c0 9.941-8.059 18-18 18v4c12.15 0 22-9.85 22-22h-4zM20 38c-9.941 0-18-8.059-18-18h-4c0 12.15 9.85 22 22 22v-4zM2 20c0-9.941 8.059-18 18-18v-4C7.85-2-2 7.85-2 20h4zM20 2c9.941 0 18 8.059 18 18h4C42 7.85 32.15-2 20-2v4z"/><path id="path2_strokeArrowThirdEl" d="M4 4l-.707.707a1 1 0 0 0 1.414 0L4 4zM.707-.707A1 1 0 0 0-.707.707L.707-.707zm8 1.414A1 1 0 0 0 7.293-.707L8.707.707zm-4 2.586l-4-4L-.707.707l4 4 1.414-1.414zm0 1.414l4-4L7.293-.707l-4 4 1.414 1.414z"/></defs></svg>                                </div>
+                            </div>
+                            <div class="t-accordItemContent">
+                                <h4>Описание</h4>
+                                <br>
+                                <p>Опыт работы в грузоперевозках
+                                    Знание устройство грузового автомобиля
+                                    Готовность к обучению
+                                    Коммуникабельность
+                                    Знание основ законодательства, регламентирующих транспортно-экспедиторскую деятельность
+                                    Опыт в преподавании
+                                </p>
+                                <br><br>
+                                <h4>Условия</h4>
+                                <br>
+                                <p>Официальное трудоустройство в соответствии с ТК
+                                    Полный Соц. пакет
+                                    Организованный трансфер до работы и дома
+                                    График работы 5/2 с 7:45 до 16:45.
+                                </p>
+                                <br><br>
+                                <h4>Обязанности</h4>
+                                <br>
+                                <p>Разрабатывать обучающие программы для улучшения теоретических и практических знаний водителей-экспедиторов
+                                    Проводить теоретическое обучение по индивидуальным программам обучения
+                                    Проводить практическое выездное обучение с водителями-экспедиторами по программе безопасное и экономичное вождение
+                                    Планировать график обучения водителей-экспедиторов с учетом их разъездной работы
+                                    Проводить собеседования, теоретическое и практическое тестирование кандидатов на должность водителей-экспедиторов</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <aside class="t-rightAside">
+            <ul class="t-simpleRightSideMenu t-mainList t-flex t-flexColumn t-right">
+                <li><a href="/aboutCompany.html">Информация</a></li>
+                <li><a href="/employees.html">Сотрудники</a></li>
+                <li class="active"><a href="/vacancy.html">Вакансии</a></li>
+            </ul>
+        </aside>
+    </div>
+    <footer>
+        <div class="t-footerTop t-flex t-white">
+            <div class="t-footerTopItem">
+                <h3 class="t-footerTopItemTitle t-white">О компании</h3>
+                <ul class="t-mainList">
+                    <li><a href="#">Информация</a></li>
+                    <li><a href="#">Сотрудники</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                </ul>
+            </div>
+            <div class="t-footerTopItem ">
+                <h3 class="t-footerTopItemTitle t-white">Клиентам</h3>
+                <ul class="t-mainList">
+                    <li><a href="#">События</a></li>
+                    <li><a href="#">Документы</a></li>
+                </ul>
+            </div>
+            <div class="t-footerTopItem">
+                <h3 class="t-footerTopItemTitle t-white">Услуги</h3>
+                <ul class="t-mainList">
+                    <li><a href="#">Перечень</a></li>
+                </ul>
+            </div>
+            <div class="t-footerTopItem">
+                <h3 class="t-footerTopItemTitle t-white">Контакты</h3>
+                <ul class="t-mainList">
+                    <li><a href="#">Оформить заявку</a></li>
+                    <li><a href="#">Написать менеджеру</a></li>
+                </ul>
+            </div>
+            <div class="t-footerTopItem">
+                <h3 class="t-footerTopItemTitle t-white">О сайте</h3>
+                <ul class="t-mainList">
+                    <li><a href="#">Правила обработки персональных данных</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+            <div class="t-footerTopItem">
+                <h3 class="t-standardTitle t-footerTopItemNumber">+7 900 900-90-90</h3>
+                <h4 class="t-standardTitle t-footerTopItemEmail">inbox@mir.ru</h4>
+                <ul class="t-mainList t-flex t-socialFooter">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="t-footerBottom t-grey">
+            <div class="t-copy">
+                <span>&copy; Мир 2018</span>
+                <a href="http://tdsgn.ru" target="_blank" class="t-grey t-studioLink">Создано в Студии <span>Т</span></a>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="/js/plugins/vue.js"></script>
+<script src="/js/vendor.min.js"></script>
+<script src="/js/main.min.js"></script>
+</body>
+</html>

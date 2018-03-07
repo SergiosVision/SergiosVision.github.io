@@ -1,0 +1,58 @@
+.t-aboutJumbotron
+  width: 100%
+  height: 600px
+  background: url("/images/backgrounds/ground.png") no-repeat
+  background-position: center center
+  .t-aboutCompanyLogoHolder
+    padding: 200px 0 80px 0
+    display: flex
+    justify-content: center
+  .t-aboutBlockTitle
+    margin: 0 auto
+    width: 1000px
+    padding: 80px 116px 27px 116px
+    background-color: $white
+    margin-top: 1px
+    .t-middleTitle
+      line-height: 38px
+.t-mainContentWrapper
+  .t-continueTop
+    padding: 0 116px 0 116px
+    font-size: 16px
+    font-weight: 500
+    line-height: 19px
+
+  .t-mainContentContainer
+    .t-aboutGeography, .t-aboutUsInValues, .t-aboutAdvantages, .t-aboutCompanyPartners
+      margin-top: 120px
+    .t-aboutGeography
+      .t-middleTitle
+        margin-bottom: 24px
+    .t-aboutUsInValues, .t-aboutAdvantages, .t-aboutCompanyPartners
+      .t-t
+        margin-bottom: 80px
+    .t-aboutUsInValues
+      .t-gridItem
+        @include bGrid(2, 10%)
+        .t-gridItemValue
+          margin-top: 40px
+          color: $green
+        .t-gridItemText
+          margin-top: 16px
+          color: $secondBlack
+    .t-aboutAdvantages
+      .t-gridItem
+        @include bGrid(2, 9.5%)
+        .t-gridItemTitle
+          margin-top: 40px
+          color: $lBlue
+        .t-gridItemText
+          margin-top: 16px
+          color: $secondBlack
+
+
+
+
+
+
+

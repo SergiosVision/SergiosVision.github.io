@@ -1,0 +1,27 @@
+.t-groundContent
+  position: relative
+  .t-frame
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("/images/backgrounds/ground.png") no-repeat
+    background-position: center center
+    clip-path: polygon(0% 0%, 75% 0%, 100% 51%, 75% 100%, 0% 100%)
+    -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 51%, 75% 100%, 0% 100%)
+    z-index: -1
+    &:after
+      display: none
+      border: none
+      left: 100%
+      top: 0
+      bottom: 0
+  .t-trailerTwo, .t-trailerThree, .t-train
+    display: none
+  .t-vehiclesHolderAndInfo
+    .t-trailer
+      position: absolute
+      top: 42px
+      left: 310px
+    .t-train
+      position: relative
+      .t-contentInfo
+        top: 255px
+        left: 600px
+        bottom: auto

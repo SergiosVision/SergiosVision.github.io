@@ -1,0 +1,40 @@
+.t-clients
+  margin-bottom: 0
+
+.t-eventsCardHolder, .t-eventCardHolder
+  margin-top: 48px
+
+.t-eventCardHolder, .t-eventCardImgOnce
+  img
+    width: 480px
+    height: 270px
+    object-fit: cover
+    border-radius: 4px
+
+.t-eventCardHolder
+  .t-eventCardImgOnce
+    margin-bottom: 24px
+  .t-eventCardTitleOnceWrapper
+    margin-bottom: 16px
+    .t-eventCardTitleOnce
+      line-height: 30px
+  .t-eventCardInfoTextOnceWrapper
+    margin-bottom: 16px
+  .t-sourceWrapper
+    margin-bottom: 16px
+    .t-eventCardInfoTextOnce
+      line-height: 19px
+  .t-listOfNewsWrapper
+    .t-listOfNewsCtrl
+      .t-listNewsArrows
+        .t-listNewsArrowLeft
+          margin-right: 14px
+        .t-newsArrow
+          width: 25px
+          height: 8px
+          cursor: pointer
+      .t-listNewsTextWrapper
+        margin-left: 24px
+        .t-listNewsText
+          @include textParams(12, 500, $grey)
+          line-height: 14px
