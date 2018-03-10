@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>MIR</title>
     <link rel="stylesheet" href="/css/main.min.css">
+    <link rel="stylesheet" href="/css/plugins/jquery.fullpage.min.css">
   </head>
   <body>
     <div class="t-wrapper" id="app">
@@ -39,8 +40,8 @@
                               leave-class="slide-out"
                               enter-active-class="slide-in-active"
                               leave-active-class="slide-out-active">
-                <section class="t-typeSection t-typeSectionGround" v-if="1 == active" :key="1">
-                    <div class="t-jumbotron t-jumbotronGround">
+                <section class="t-typeSection t-typeSectionGround fullPage" v-if="1 == active" :key="1">
+                    <div class="t-jumbotron t-jumbotronGround section">
                         <div class="t-frame t-frameGround"></div>
                         <div class="t-jumbotronContainer t-flex t-flexSB">
                             <div class="t-jumbotronContainerLeft">
@@ -78,7 +79,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="t-contentContainer t-groundContent">
+                    <div class="t-contentContainer t-groundContent section">
                         <div class="t-frame"></div>
                         <div class="t-containerInside t-containerInsideGround">
                             <h2 class="t-containerInsideTitle t-middleTitle">Наземные способы доставки</h2>
@@ -251,6 +252,7 @@
     </div>
     <script src="/js/plugins/vue.js"></script>
     <script src="/js/vendor.min.js"></script>
+    <script src="/js/plugins/jquery.fullpage.min.js"></script>
     <script src="/js/main.min.js"></script>
   </body>
 </html>

@@ -21,25 +21,39 @@ var vm = new Vue({
 });
 
 
-var getAccordBtn = $('.t-openAccordItem');
-var getAccordContent = $('.t-accordItemContent');
+$(document).ready(function () {
 
-$('body').on('click', '.t-openAccordItem', function () {
-    if($('body').hasClass('animate')){
-        return false;
-    }
-    $('body').addClass('animate');
-    if ($(this).hasClass('is-active')){
-        $(this).next(getAccordContent).slideUp(400);
-        $(this).removeClass('is-active');
-    } else {
-        $(getAccordBtn).not(this).next(getAccordContent).slideUp(400);
-        $(getAccordBtn).not(this).removeClass('is-active');
+    $('.fullPage').fullpage();
+    $('.fp-tableCell').removeClass();
 
-        $(this).next(getAccordContent).slideDown(400);
-        $(this).addClass('is-active');
-    }
-    setTimeout(function () {
-        $('body').removeClass('animate');
-    }, 400);
+    // Accordeon
+
+    var getAccordBtn = $('.t-openAccordItem');
+    var getAccordContent = $('.t-accordItemContent');
+
+    $('body').on('click', '.t-openAccordItem', function () {
+        if($('body').hasClass('animate')){
+            return false;
+        }
+        $('body').addClass('animate');
+        if ($(this).hasClass('is-active')){
+            $(this).next(getAccordContent).slideUp(400);
+            $(this).removeClass('is-active');
+        } else {
+            $(getAccordBtn).not(this).next(getAccordContent).slideUp(400);
+            $(getAccordBtn).not(this).removeClass('is-active');
+
+            $(this).next(getAccordContent).slideDown(400);
+            $(this).addClass('is-active');
+        }
+        setTimeout(function () {
+            $('body').removeClass('animate');
+        }, 400);
+    });
+
+
+
+    // Simple Validation
+
+
 });

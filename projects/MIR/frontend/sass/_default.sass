@@ -120,6 +120,11 @@ a
     .t-accordItemArrow
 
 
+.t-insideJumbotron
+  width: 100%
+  height: 600px
+
+
 .t-right
   float: right
 
@@ -136,6 +141,8 @@ a
 
 .t-middleTitle
   @include textParams(40, 900, $black)
+  &.t-middleTitleMidLight
+    font-weight: 500
 
 .t-middleText
   @include textParams(26, 500, $black)
@@ -184,7 +191,15 @@ a
 .t-top48
   margin-top: 48px
 
-
+.t-iconGreen
+  svg
+    fill: $green
+.t-iconDblue
+  svg
+    fill: $dblue
+.t-iocnLblue
+  svg
+    fill: $lBlue
 
 
 .t-blackLinks
@@ -289,5 +304,34 @@ a
   .t-gridItem
     text-align: center
     @include bGrid(2, 10%)
+
+
+.t-input
+  display: block
+  background-color: transparent
+  outline: none
+  border: none
+  border-bottom: 1px solid rgba(0,0,0,.2)
+  @include textParams(16, 100, $black)
+  line-height: 19px
+  padding-bottom: 8px
+  width: 272px
+
+
+.t-pageNotFound
+  height: 100vh
+  display: flex
+  align-items: center
+  width: 768px
+  margin: 0 auto
+  .t-pageNotFoundInfoHolder
+    margin-top: -300px
+    .t-O_o
+      margin-bottom: 24px
+    .t-pageNotFoundText
+      margin-bottom: 8px
+    .t-pageHasBeenDeleted
+      margin-bottom: 16px
+
 
 // Default Props End
