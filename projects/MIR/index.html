@@ -6,7 +6,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>MIR</title>
     <link rel="stylesheet" href="/css/main.min.css">
-    <link rel="stylesheet" href="/css/plugins/jquery.fullpage.min.css">
   </head>
   <body>
     <div class="t-wrapper" id="app">
@@ -23,9 +22,10 @@
                 </a>
             </div>
             <nav class="t-headerNavigation">
-                <ul class="t-mainList t-flex t-headerNavigationList">
-                    <li><a href="#" class="t-linkItem t-white">+7 900 900-90-90</a></li>
-                    <li><a href="#" class="t-linkItem t-white">inbox@mir.ru</a></li>
+                <ul class="t-mainList t-flex t-flexAlign t-headerNavigationList">
+                    <li class="t-leaveRequest t-none"><button class="t-btn t-makeOrderBtn">Оформить заявку</button></li>
+                    <li class="t-navigationNumber"><a href="#" class="t-linkItem t-white">+7 900 900-90-90</a></li>
+                    <li class="t-navigationEmail"><a href="mailto:inbox@mir.ru" class="t-linkItem t-white">inbox@mir.ru</a></li>
                     <li><a href="/aboutCompany.html" class="t-linkItem t-white">О компании</a></li>
                     <li><a href="/clients.html" class="t-linkItem t-white">Клиентам</a></li>
                     <li><a href="/services.html" class="t-linkItem t-white">Услуги</a></li>
@@ -33,126 +33,83 @@
                 </ul>
             </nav>
         </header>
-        <main data-count="3" id="slideCtrl">
-            <transition-group name="slide"
-                              mode="in-out"
-                              enter-class="slide-in"
-                              leave-class="slide-out"
-                              enter-active-class="slide-in-active"
-                              leave-active-class="slide-out-active">
-                <section class="t-typeSection t-typeSectionGround fullPage" v-if="1 == active" :key="1">
-                    <div class="t-jumbotron t-jumbotronGround section">
-                        <div class="t-frame t-frameGround"></div>
-                        <div class="t-jumbotronContainer t-flex t-flexSB">
-                            <div class="t-jumbotronContainerLeft">
-                                <div class="t-jumbotronContainerInfo">
-                                    <h1 class="t-bigTitle t-jumbotronContainerInfoTitle">Грузоперевозки по всему миру</h1>
-                                    <h1 class="t-bigLight t-jumbotronContainerInfoSubTitle">по земле, воде и воздуху</h1>
-                                </div>
-                                <div class="t-jumbotronContainerBtHolder">
-                                    <a href="#" class="t-btn t-btnWhite t-btnUpperCase">Оформить заявку</a>
-                                    <a href="#" class="t-btn t-btnWhite t-btnUpperCase">Написать менеджеру</a>
-                                </div>
+        <main>
+            <section class="t-typeSection active">
+                <div class="t-jumbotron section" data-bg="ground">
+                    <div class="t-frame t-frameGround"></div>
+                    <div class="t-jumbotronContainer t-flex t-flexSB">
+                        <div class="t-jumbotronContainerLeft">
+                            <div class="t-jumbotronContainerInfo">
+                                <h1 class="t-bigTitle t-jumbotronContainerInfoTitle">Грузоперевозки по всему миру</h1>
+                                <h1 class="t-bigLight t-jumbotronContainerInfoSubTitle">по земле, воде и воздуху</h1>
                             </div>
-                            <div class="t-jumbotronContainerRight">
-                                <div class="t-jumbotronContainerEvents">
-                                    <a href="#" class="t-linkItem t-white t-jumbotronNewEvents">Новые события</a>
-                                    <div class="t-jumbotronEventsCard">
-                                        <a href="#">
-                                            <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
-                                            <span class="t-smallTitleLight">23 марта 2018</span>
-                                        </a>
-                                    </div>
-                                    <div class="t-jumbotronEventsCard">
-                                        <a href="#">
-                                            <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
-                                            <span class="t-smallTitleLight">23 марта 2018</span>
-                                        </a>
-                                    </div>
-                                    <div class="t-jumbotronEventsCard">
-                                        <a href="#">
-                                            <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
-                                            <span class="t-smallTitleLight">23 марта 2018</span>
-                                        </a>
-                                    </div>
+                            <div class="t-jumbotronContainerBtHolder">
+                                <a href="#" class="t-btn t-btnWhite t-btnUpperCase t-makeOrderBtn">Оформить заявку</a>
+                                <a href="#" class="t-btn t-btnWhite t-btnUpperCase t-writeToManagerBtn">Написать менеджеру</a>
+                            </div>
+                        </div>
+                        <div class="t-jumbotronContainerRight">
+                            <div class="t-jumbotronContainerEvents">
+                                <a href="#" class="t-linkItem t-white t-jumbotronNewEvents">Новые события</a>
+                                <div class="t-jumbotronEventsCard">
+                                    <a href="#">
+                                        <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
+                                        <span class="t-smallTitleLight">23 марта 2018</span>
+                                    </a>
+                                </div>
+                                <div class="t-jumbotronEventsCard">
+                                    <a href="#">
+                                        <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
+                                        <span class="t-smallTitleLight">23 марта 2018</span>
+                                    </a>
+                                </div>
+                                <div class="t-jumbotronEventsCard">
+                                    <a href="#">
+                                        <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
+                                        <span class="t-smallTitleLight">23 марта 2018</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="t-contentWrapperMain t-none">
                     <div class="t-contentContainer t-groundContent section">
                         <div class="t-frame"></div>
                         <div class="t-containerInside t-containerInsideGround">
                             <h2 class="t-containerInsideTitle t-middleTitle">Наземные способы доставки</h2>
                             <ul class="t-mainList t-flex t-tabsSwitch">
-                                <li class="t-middleText active"><span>Тентованные</span></li>
-                                <li class="t-middleText"><span>Изотермические</span></li>
-                                <li class="t-middleText"><span>Рефрижераторные</span></li>
-                                <li class="t-middleText"><span>ЖД</span></li>
+                                <li class="t-middleText active" data-tab="one"><span>Тентованные</span></li>
+                                <li class="t-middleText" data-tab="two"><span>Изотермические</span></li>
+                                <li class="t-middleText" data-tab="three"><span>Рефрижераторные</span></li>
+                                <li class="t-middleText" data-tab="four"><span>ЖД</span></li>
                             </ul>
                             <div class="t-vehiclesHolderAndInfo">
-                                <div class="t-truck">
-                                    <img src="images/contentConatiner/ground/scania.png" alt="Truck">
+                                <div class="t-truckAndTrainHolder">
+                                    <div class="t-truck">
+                                        <img src="images/contentConatiner/ground/scania.png" alt="Truck">
+                                    </div>
+                                    <div class="t-train t-tab" id="four">
+                                        <img src="images/contentConatiner/ground/train.png" alt="Train">
+                                        <p class="t-contentInfo">Используются для перевозки грузов без строгого температурного режима, так как изотермический прицеп поддерживает исходную температуру в течение долгого времени.</p>
+                                    </div>
                                 </div>
-                                <div class="t-train">
-                                    <img src="images/contentConatiner/ground/train.png" alt="Train">
-                                    <p class="t-contentInfo">Используются для перевозки грузов без строгого температурного режима, так как изотермический прицеп поддерживает исходную температуру в течение долгого времени.</p>
-                                </div>
-                                <div class="t-trailerOne t-trailer">
+                                <div class="t-trailerOne t-tab t-trailer" id="one">
                                     <img src="images/contentConatiner/ground/trailers/trailerOne.png" alt="Trailer One">
                                     <p class="t-contentInfo">Универсальный вариант грузовых перевозок. Подходит для перевозок различных грузов: от бытовой химии и мебели до строительных материалов и специального оборудования.</p>
                                 </div>
-                                <div class="t-trailerTwo t-trailer">
+                                <div class="t-trailerTwo t-tab t-trailer" id="two">
                                     <img src="images/contentConatiner/ground/trailers/trailerTwo.png" alt="Trailer Two">
                                     <p class="t-contentInfo">Используются для перевозки грузов без строгого температурного режима, так как изотермический прицеп поддерживает исходную температуру в течение долгого времени.</p>
                                 </div>
-                                <div class="t-trailerThree t-trailer">
+                                <div class="t-trailerThree t-tab t-trailer" id="three">
                                     <img src="images/contentConatiner/ground/trailers/trailerThree.png" alt="Trailer Three">
                                     <p class="t-contentInfo">В отличие от изотермических — рефрижераторные контейнеры обеспечивают грузу строгое соблюдение температурного режима, который может меняться до –20°С вне зависимости от погодных условий. Установлена защита от аварийного изменения температуры.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-                <section class="t-typeSection t-typeSectionWater" v-if="2 == active" :key="2">
-                    <div class="t-jumbotron t-jumbotronWater">
-                        <div class="t-frame t-frameGround"></div>
-                        <div class="t-jumbotronContainer t-flex t-flexSB">
-                            <div class="t-jumbotronContainerLeft">
-                                <div class="t-jumbotronContainerInfo">
-                                    <h1 class="t-bigTitle t-jumbotronContainerInfoTitle">Грузоперевозки по всему миру</h1>
-                                    <h1 class="t-bigLight t-jumbotronContainerInfoSubTitle">по земле, воде и воздуху</h1>
-                                </div>
-                                <div class="t-jumbotronContainerBtHolder">
-                                    <a href="#" class="t-btn t-btnWhite t-btnUpperCase">Оформить заявку</a>
-                                    <a href="#" class="t-btn t-btnWhite t-btnUpperCase">Написать менеджеру</a>
-                                </div>
-                            </div>
-                            <div class="t-jumbotronContainerRight">
-                                <div class="t-jumbotronContainerEvents">
-                                    <a href="#" class="t-linkItem t-white t-jumbotronNewEvents">Новые события</a>
-                                    <div class="t-jumbotronEventsCard">
-                                        <a href="#">
-                                            <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
-                                            <span class="t-smallTitleLight">23 марта 2018</span>
-                                        </a>
-                                    </div>
-                                    <div class="t-jumbotronEventsCard">
-                                        <a href="#">
-                                            <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
-                                            <span class="t-smallTitleLight">23 марта 2018</span>
-                                        </a>
-                                    </div>
-                                    <div class="t-jumbotronEventsCard">
-                                        <a href="#">
-                                            <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
-                                            <span class="t-smallTitleLight">23 марта 2018</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="t-contentContainer t-waterContent">
+                    <div class="t-contentContainer t-waterContent t-none section">
                         <div class="t-frame"></div>
                         <div class="t-containerInside t-containerInsideWater">
                             <h2 class="t-containerInsideTitle t-middleTitle">Морской способ доставки</h2>
@@ -167,47 +124,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
-                <section class="t-typeSection t-typeSectionAir" v-if="3 == active" :key="3">
-                    <div class="t-jumbotron t-jumbotronAir">
-                        <div class="t-frame t-frameGround"></div>
-                        <div class="t-jumbotronContainer t-flex t-flexSB">
-                            <div class="t-jumbotronContainerLeft">
-                                <div class="t-jumbotronContainerInfo">
-                                    <h1 class="t-bigTitle t-jumbotronContainerInfoTitle">Грузоперевозки по всему миру</h1>
-                                    <h1 class="t-bigLight t-jumbotronContainerInfoSubTitle">по земле, воде и воздуху</h1>
-                                </div>
-                                <div class="t-jumbotronContainerBtHolder">
-                                    <a href="#" class="t-btn t-btnWhite t-btnUpperCase">Оформить заявку</a>
-                                    <a href="#" class="t-btn t-btnWhite t-btnUpperCase">Написать менеджеру</a>
-                                </div>
-                            </div>
-                            <div class="t-jumbotronContainerRight">
-                                <div class="t-jumbotronContainerEvents">
-                                    <a href="#" class="t-linkItem t-white t-jumbotronNewEvents">Новые события</a>
-                                    <div class="t-jumbotronEventsCard">
-                                        <a href="#">
-                                            <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
-                                            <span class="t-smallTitleLight">23 марта 2018</span>
-                                        </a>
-                                    </div>
-                                    <div class="t-jumbotronEventsCard">
-                                        <a href="#">
-                                            <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
-                                            <span class="t-smallTitleLight">23 марта 2018</span>
-                                        </a>
-                                    </div>
-                                    <div class="t-jumbotronEventsCard">
-                                        <a href="#">
-                                            <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
-                                            <span class="t-smallTitleLight">23 марта 2018</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="t-contentContainer t-airContent">
+                    <div class="t-contentContainer t-airContent t-none section">
                         <div class="t-frame"></div>
                         <div class="t-containerInside t-containerInsideAir">
                             <h2 class="t-containerInsideTitle t-middleTitle">Воздушный способ доставки</h2>
@@ -223,36 +140,134 @@
                             </div>
                         </div>
                     </div>
-                </section>
-            </transition-group>
+                </div>
+            </section>
             <section class="t-controlSection">
                 <div class="t-controlHandler t-flex t-flexColumn">
                     <div class="t-controlItemsHolder t-flex t-flexAlign">
-                        <div class="t-palne t-controlItem">
+                        <div class="t-plane t-controlItem t-clone" data-tab="air" data-index="1">
                             <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillPlane" transform="translate(2 8)"/><defs><path id="path0_fillPlane" fill-rule="evenodd" d="M1 0a1 1 0 0 0-.864 1.504l6.74 11.553-.786 1.73a1 1 0 0 0 .648 1.378l12.024 3.264L12.4 24.2A1 1 0 0 0 13 26h8a1 1 0 0 0 .447-.105L33.237 20h13.992c3.617 0 7.192-.785 10.476-2.301l.44-.203c1.265-.584 1.423-2.319.285-3.122a29.361 29.361 0 0 0-5.904-3.225.999.999 0 0 0-.323-.128A29.358 29.358 0 0 0 41.5 9H20.603a8 8 0 0 1-4.93-1.7L6.616.212A1 1 0 0 0 6 0H1zm48.42 12.172A27.357 27.357 0 0 0 41.5 11H20.602a10 10 0 0 1-6.163-2.125L5.655 2H2.741l6.123 10.496a1 1 0 0 1 .046.918l-.513 1.129 12.865 3.492A1 1 0 0 1 21.6 19.8L16 24h4.764l11.789-5.895 6-3a1 1 0 0 1 .894 1.79L37.237 18h9.992a23 23 0 0 0 9.638-2.117l.139-.064a27.368 27.368 0 0 0-4.981-2.713l-3.578 1.789a1 1 0 0 1-.894-1.79l1.867-.933z"/></defs></svg>
                         </div>
-                        <div class="t-truck t-controlItem active">
+                        <div class="t-truck t-controlItem t-clone" data-tab="ground" data-index="2">
                             <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillTruck" transform="translate(2 10)"/><defs><path id="path0_fillTruck" fill-rule="evenodd" d="M43.196.02A1 1 0 0 0 42 1v14h-1V3a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v19a1 1 0 0 0 1 1h2.764a2.997 2.997 0 0 0 4.736-.341 2.997 2.997 0 0 0 4.736.341H32.5c.082 0 .162-.01.239-.029.55.63 1.359 1.029 2.261 1.029.889 0 1.687-.386 2.236-1h12.528c.55.614 1.347 1 2.236 1 .889 0 1.687-.386 2.236-1H58a1 1 0 0 0 1-1V6.46a4 4 0 0 0-3.215-3.923L43.196.02zM49 21a3 3 0 0 1 6 0h2v-7.105l-8.11-.901a1 1 0 1 1 .22-1.988l7.89.877V6.459a2 2 0 0 0-1.608-1.96L44 2.218V16a1 1 0 0 1-1 1H2v4h1a3 3 0 0 1 3-3h5a3 3 0 0 1 3 3h18a3 3 0 0 1 6 0h11zM39 4v11H2V4h37zM10 21a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-4-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm28 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm18-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></defs></svg>
                         </div>
-                        <div class="t-tanker t-controlItem">
+                        <div class="t-tanker t-controlItem t-clone" data-tab="water" data-index="3">
+                            <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillTanker" transform="translate(2 8)"/><defs><path id="path0_fillTanker" fill-rule="evenodd" d="M3.212.385A1 1 0 0 1 4 0h16a1 1 0 0 1 .99.854L22.936 14H25V9a1 1 0 0 1 1-1h15a1 1 0 0 1 1 1v4.658c.334-.13.655-.297.957-.498l3.432-2.288a6 6 0 0 1 2.785-.983l9.736-.885a1 1 0 0 1 .948 1.51l-7.253 12.088A7 7 0 0 1 46.603 26H8.073a5 5 0 0 1-4.831-3.712L.034 10.258A1 1 0 0 1 1 9h4.22l.615-2.464-1.282-.641a1 1 0 0 1-.523-.653l-1-4a1 1 0 0 1 .182-.857zM41.476 15.88a7.003 7.003 0 0 0 2.59-1.056l3.432-2.288a4 4 0 0 1 1.857-.655l7.774-.707-6.239 10.399A5 5 0 0 1 46.603 24H8.073a3 3 0 0 1-2.899-2.227L3.958 17.21l8.846 1.77a1 1 0 1 0 .392-1.962l-9.813-1.962L2.302 11h9.164c1.403 0 2.763.492 3.84 1.39l1.829 1.524A9 9 0 0 0 22.896 16H41a.995.995 0 0 0 .476-.12zM40 14v-4H27v4h13zM19.137 2l.296 2H14a1 1 0 0 0 0 2h5.73l1.14 7.7a6.996 6.996 0 0 1-2.455-1.323l-1.828-1.523A8 8 0 0 0 11.466 9H7.28l.69-2.758a1 1 0 0 0-.524-1.137L5.86 4.311 5.28 2h13.856z"/></defs></svg>
+                        </div>
+                        <div class="t-plane t-controlItem" data-tab="air" data-index="1">
+                            <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillPlane" transform="translate(2 8)"/><defs><path id="path0_fillPlane" fill-rule="evenodd" d="M1 0a1 1 0 0 0-.864 1.504l6.74 11.553-.786 1.73a1 1 0 0 0 .648 1.378l12.024 3.264L12.4 24.2A1 1 0 0 0 13 26h8a1 1 0 0 0 .447-.105L33.237 20h13.992c3.617 0 7.192-.785 10.476-2.301l.44-.203c1.265-.584 1.423-2.319.285-3.122a29.361 29.361 0 0 0-5.904-3.225.999.999 0 0 0-.323-.128A29.358 29.358 0 0 0 41.5 9H20.603a8 8 0 0 1-4.93-1.7L6.616.212A1 1 0 0 0 6 0H1zm48.42 12.172A27.357 27.357 0 0 0 41.5 11H20.602a10 10 0 0 1-6.163-2.125L5.655 2H2.741l6.123 10.496a1 1 0 0 1 .046.918l-.513 1.129 12.865 3.492A1 1 0 0 1 21.6 19.8L16 24h4.764l11.789-5.895 6-3a1 1 0 0 1 .894 1.79L37.237 18h9.992a23 23 0 0 0 9.638-2.117l.139-.064a27.368 27.368 0 0 0-4.981-2.713l-3.578 1.789a1 1 0 0 1-.894-1.79l1.867-.933z"/></defs></svg>
+                        </div>
+                        <div class="t-truck t-controlItem active" data-tab="ground" data-index="2">
+                            <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillTruck" transform="translate(2 10)"/><defs><path id="path0_fillTruck" fill-rule="evenodd" d="M43.196.02A1 1 0 0 0 42 1v14h-1V3a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v19a1 1 0 0 0 1 1h2.764a2.997 2.997 0 0 0 4.736-.341 2.997 2.997 0 0 0 4.736.341H32.5c.082 0 .162-.01.239-.029.55.63 1.359 1.029 2.261 1.029.889 0 1.687-.386 2.236-1h12.528c.55.614 1.347 1 2.236 1 .889 0 1.687-.386 2.236-1H58a1 1 0 0 0 1-1V6.46a4 4 0 0 0-3.215-3.923L43.196.02zM49 21a3 3 0 0 1 6 0h2v-7.105l-8.11-.901a1 1 0 1 1 .22-1.988l7.89.877V6.459a2 2 0 0 0-1.608-1.96L44 2.218V16a1 1 0 0 1-1 1H2v4h1a3 3 0 0 1 3-3h5a3 3 0 0 1 3 3h18a3 3 0 0 1 6 0h11zM39 4v11H2V4h37zM10 21a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-4-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm28 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm18-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></defs></svg>
+                        </div>
+                        <div class="t-tanker t-controlItem" data-tab="water" data-index="3">
+                            <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillTanker" transform="translate(2 8)"/><defs><path id="path0_fillTanker" fill-rule="evenodd" d="M3.212.385A1 1 0 0 1 4 0h16a1 1 0 0 1 .99.854L22.936 14H25V9a1 1 0 0 1 1-1h15a1 1 0 0 1 1 1v4.658c.334-.13.655-.297.957-.498l3.432-2.288a6 6 0 0 1 2.785-.983l9.736-.885a1 1 0 0 1 .948 1.51l-7.253 12.088A7 7 0 0 1 46.603 26H8.073a5 5 0 0 1-4.831-3.712L.034 10.258A1 1 0 0 1 1 9h4.22l.615-2.464-1.282-.641a1 1 0 0 1-.523-.653l-1-4a1 1 0 0 1 .182-.857zM41.476 15.88a7.003 7.003 0 0 0 2.59-1.056l3.432-2.288a4 4 0 0 1 1.857-.655l7.774-.707-6.239 10.399A5 5 0 0 1 46.603 24H8.073a3 3 0 0 1-2.899-2.227L3.958 17.21l8.846 1.77a1 1 0 1 0 .392-1.962l-9.813-1.962L2.302 11h9.164c1.403 0 2.763.492 3.84 1.39l1.829 1.524A9 9 0 0 0 22.896 16H41a.995.995 0 0 0 .476-.12zM40 14v-4H27v4h13zM19.137 2l.296 2H14a1 1 0 0 0 0 2h5.73l1.14 7.7a6.996 6.996 0 0 1-2.455-1.323l-1.828-1.523A8 8 0 0 0 11.466 9H7.28l.69-2.758a1 1 0 0 0-.524-1.137L5.86 4.311 5.28 2h13.856z"/></defs></svg>
+                        </div>
+                        <div class="t-plane t-controlItem t-clone" data-tab="air" data-index="1">
+                            <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillPlane" transform="translate(2 8)"/><defs><path id="path0_fillPlane" fill-rule="evenodd" d="M1 0a1 1 0 0 0-.864 1.504l6.74 11.553-.786 1.73a1 1 0 0 0 .648 1.378l12.024 3.264L12.4 24.2A1 1 0 0 0 13 26h8a1 1 0 0 0 .447-.105L33.237 20h13.992c3.617 0 7.192-.785 10.476-2.301l.44-.203c1.265-.584 1.423-2.319.285-3.122a29.361 29.361 0 0 0-5.904-3.225.999.999 0 0 0-.323-.128A29.358 29.358 0 0 0 41.5 9H20.603a8 8 0 0 1-4.93-1.7L6.616.212A1 1 0 0 0 6 0H1zm48.42 12.172A27.357 27.357 0 0 0 41.5 11H20.602a10 10 0 0 1-6.163-2.125L5.655 2H2.741l6.123 10.496a1 1 0 0 1 .046.918l-.513 1.129 12.865 3.492A1 1 0 0 1 21.6 19.8L16 24h4.764l11.789-5.895 6-3a1 1 0 0 1 .894 1.79L37.237 18h9.992a23 23 0 0 0 9.638-2.117l.139-.064a27.368 27.368 0 0 0-4.981-2.713l-3.578 1.789a1 1 0 0 1-.894-1.79l1.867-.933z"/></defs></svg>
+                        </div>
+                        <div class="t-truck t-controlItem t-clone" data-tab="ground" data-index="2">
+                            <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillTruck" transform="translate(2 10)"/><defs><path id="path0_fillTruck" fill-rule="evenodd" d="M43.196.02A1 1 0 0 0 42 1v14h-1V3a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v19a1 1 0 0 0 1 1h2.764a2.997 2.997 0 0 0 4.736-.341 2.997 2.997 0 0 0 4.736.341H32.5c.082 0 .162-.01.239-.029.55.63 1.359 1.029 2.261 1.029.889 0 1.687-.386 2.236-1h12.528c.55.614 1.347 1 2.236 1 .889 0 1.687-.386 2.236-1H58a1 1 0 0 0 1-1V6.46a4 4 0 0 0-3.215-3.923L43.196.02zM49 21a3 3 0 0 1 6 0h2v-7.105l-8.11-.901a1 1 0 1 1 .22-1.988l7.89.877V6.459a2 2 0 0 0-1.608-1.96L44 2.218V16a1 1 0 0 1-1 1H2v4h1a3 3 0 0 1 3-3h5a3 3 0 0 1 3 3h18a3 3 0 0 1 6 0h11zM39 4v11H2V4h37zM10 21a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-4-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm28 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm18-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></defs></svg>
+                        </div>
+                        <div class="t-tanker t-controlItem t-clone" data-tab="water" data-index="3">
                             <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillTanker" transform="translate(2 8)"/><defs><path id="path0_fillTanker" fill-rule="evenodd" d="M3.212.385A1 1 0 0 1 4 0h16a1 1 0 0 1 .99.854L22.936 14H25V9a1 1 0 0 1 1-1h15a1 1 0 0 1 1 1v4.658c.334-.13.655-.297.957-.498l3.432-2.288a6 6 0 0 1 2.785-.983l9.736-.885a1 1 0 0 1 .948 1.51l-7.253 12.088A7 7 0 0 1 46.603 26H8.073a5 5 0 0 1-4.831-3.712L.034 10.258A1 1 0 0 1 1 9h4.22l.615-2.464-1.282-.641a1 1 0 0 1-.523-.653l-1-4a1 1 0 0 1 .182-.857zM41.476 15.88a7.003 7.003 0 0 0 2.59-1.056l3.432-2.288a4 4 0 0 1 1.857-.655l7.774-.707-6.239 10.399A5 5 0 0 1 46.603 24H8.073a3 3 0 0 1-2.899-2.227L3.958 17.21l8.846 1.77a1 1 0 1 0 .392-1.962l-9.813-1.962L2.302 11h9.164c1.403 0 2.763.492 3.84 1.39l1.829 1.524A9 9 0 0 0 22.896 16H41a.995.995 0 0 0 .476-.12zM40 14v-4H27v4h13zM19.137 2l.296 2H14a1 1 0 0 0 0 2h5.73l1.14 7.7a6.996 6.996 0 0 1-2.455-1.323l-1.828-1.523A8 8 0 0 0 11.466 9H7.28l.69-2.758a1 1 0 0 0-.524-1.137L5.86 4.311 5.28 2h13.856z"/></defs></svg>
                         </div>
                     </div>
-                    <div class="t-bottomArc">
-                        <svg width="162" height="18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_strokeArc" transform="translate(1 1)" fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(160 0 -.00004 1600 0 -792)"><stop offset="0" stop-color="#FFF" stop-opacity="0"/><stop offset=".508" stop-color="#FFF"/><stop offset="1" stop-color="#FFF" stop-opacity="0"/></linearGradient><path id="path0_strokeArc" d="M.386 16.92C24.917 6.66 51.803 1 79.997 1v-2C51.533-1 24.385 4.715-.386 15.075l.772 1.845zM79.997 1c28.197 0 55.084 5.662 79.617 15.923l.772-1.846C135.613 4.717 108.464-1 79.997-1v2z"/></defs></svg>
-                    </div>
+                    <div class="t-bottomArc"></div>
                     <div class="t-bottomArrow">
-                        <svg width="11" height="6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillArrowDown" fill="#FFF"/><defs><path id="path0_fillArrowDown" fill-rule="evenodd" d="M.253.336A1 1 0 0 1 1.664.253L5.5 3.663 9.336.252a1 1 0 1 1 1.328 1.494l-4.5 4a1 1 0 0 1-1.328 0l-4.5-4A1 1 0 0 1 .253.336z"/></defs></svg>
+                        <svg class="t-bottomArr" width="11" height="6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillArrowDown" fill="#FFF"/><defs><path id="path0_fillArrowDown" fill-rule="evenodd" d="M.253.336A1 1 0 0 1 1.664.253L5.5 3.663 9.336.252a1 1 0 1 1 1.328 1.494l-4.5 4a1 1 0 0 1-1.328 0l-4.5-4A1 1 0 0 1 .253.336z"/></defs></svg>
                     </div>
                 </div>
-                <span class="t-white t-standardTitle" @click="move(-1)">Назад</span>
-                <span class="t-white t-standardTitle" @click="move(1)">Вперед</span>
             </section>
         </main>
+        <div class="t-feedBackDialog t-dialog t-none">
+            <div class="t-dialogTitleWrapper">
+                <h2 class="t-dialogTitle t-middleText">Обратная связь</h2>
+            </div>
+            <form class="t-feedBackForm">
+                <div class="t-formName t-formItem">
+                    <label for="nameFeedBack" class="t-standardTitle t-blackPrimaryColor">Ваше имя</label>
+                    <input type="text" id="nameFeedBack" class="t-input">
+                </div>
+                <div class="t-formEmailOrPhone t-formItem">
+                    <label for="emailOrPhoneFeedBack" class="t-standardTitle t-blackPrimaryColor">Телефон или электронная почта</label>
+                    <input type="text" id="emailOrPhoneFeedBack" class="t-input">
+                </div>
+                <div class="t-formEmailOrPhone t-formItem">
+                    <label for="commentOrQuestionFeedBack" class="t-standardTitle t-blackPrimaryColor">Комментарий или вопрос</label>
+                    <input type="text" id="commentOrQuestionFeedBack" class="t-input">
+                </div>
+                <button class="t-btn t-sendContactsBtn" disabled>Отправить</button>
+                <div class="t-sendingWarning">
+                    <p class="t-smallTitleLight t-blackPrimaryColor">Нажимая кнопку «Отправить» вы соглашаетесь с условиями обработки персональных данных</p>
+                </div>
+            </form>
+        </div>
+        <div class="t-makeOrderDialog t-dialog t-none">
+            <div class="t-dialogTitleWrapper">
+                <h2 class="t-dialogTitle t-middleText">Заявка</h2>
+            </div>
+            <form class="t-makeOrderForm">
+                <div class="t-formName t-formItem">
+                    <label for="service" class="t-standardTitle t-blackPrimaryColor">Услуга</label>
+                    <select id="service">
+                        <option value="default" selected disabled>Выберите</option>
+                        <option value="one">Услуга 1</option>
+                        <option value="two">Услуга 2</option>
+                        <option value="theree">Услуга 3</option>
+                    </select>
+                </div>
+                <div class="t-formEmailOrPhone t-formItem">
+                    <label for="sendingPlace" class="t-standardTitle t-blackPrimaryColor">Место отправки</label>
+                    <input type="text" id="sendingPlace" class="t-input">
+                </div>
+                <div class="t-formEmailOrPhone t-formItem">
+                    <label for="destination" class="t-standardTitle t-blackPrimaryColor">Пункт назначения</label>
+                    <input type="text" id="destination" class="t-input">
+                </div>
+                <div class="t-formEmailOrPhone t-formItem">
+                    <label for="dateOfLoading" class="t-standardTitle t-blackPrimaryColor">Дата погрузки</label>
+                    <input type="text" id="dateOfLoading" class="t-input">
+                </div>
+                <div class="t-smallInputs t-flex t-flexSB">
+                    <div class="t-formEmailOrPhone t-formItem">
+                        <label for="weight" class="t-standardTitle t-blackPrimaryColor">Вес</label>
+                        <input type="text" id="weight" class="t-input">
+                    </div>
+                    <div class="t-formEmailOrPhone t-formItem">
+                        <label for="scope" class="t-standardTitle t-blackPrimaryColor">Объём</label>
+                        <input type="text" id="scope" class="t-input">
+                    </div>
+                </div>
+                <div class="t-formEmailOrPhone t-formItem">
+                    <label for="nameOfCompany" class="t-standardTitle t-blackPrimaryColor">Название компании</label>
+                    <input type="text" id="nameOfCompany" class="t-input">
+                </div>
+                <div class="t-formEmailOrPhone t-formItem">
+                    <label for="contactPerson" class="t-standardTitle t-blackPrimaryColor">Контактное лицо</label>
+                    <input type="text" id="contactPerson" class="t-input">
+                </div>
+                <div class="t-formEmailOrPhone t-formItem">
+                    <label for="orderPhone" class="t-standardTitle t-blackPrimaryColor">Телефон</label>
+                    <input type="text" id="orderPhone" class="t-input">
+                </div>
+                <div class="t-formEmailOrPhone t-formItem">
+                    <label for="orderEmail" class="t-standardTitle t-blackPrimaryColor">Электронная почта</label>
+                    <input type="text" id="orderEmail" class="t-input">
+                </div>
+                <div class="t-formEmailOrPhone t-formItem">
+                    <label for="orderComment" class="t-standardTitle t-blackPrimaryColor">Комментарий к заявке</label>
+                    <input type="text" id="orderComment" class="t-input">
+                </div>
+                <button class="t-btn t-sendContactsBtn" disabled>Отправить</button>
+                <div class="t-sendingWarning">
+                    <p class="t-smallTitleLight t-blackPrimaryColor">Нажимая кнопку «Отправить» вы соглашаетесь с условиями обработки персональных данных</p>
+                </div>
+            </form>
+        </div>
     </div>
     <script src="/js/plugins/vue.js"></script>
     <script src="/js/vendor.min.js"></script>
-    <script src="/js/plugins/jquery.fullpage.min.js"></script>
     <script src="/js/main.min.js"></script>
   </body>
 </html>

@@ -38,6 +38,9 @@ a
 
 // Default Props
 
+.t-wrapper
+  position: relative
+
 .t-btn
   display: inline-block
   padding: 17px 32px
@@ -117,7 +120,8 @@ a
   &:hover
     .t-payValue, .t-vacancyName
       color: $dblue
-    .t-accordItemArrow
+    .t-accordItem
+      .t-accordItemArrow
 
 
 .t-insideJumbotron
@@ -161,6 +165,9 @@ a
 
 .t-block
   display: block
+
+.t-none
+  display: none!important
 
 .t-flex
   display: flex
@@ -316,6 +323,9 @@ a
   line-height: 19px
   padding-bottom: 8px
   width: 272px
+  transition: .3s ease
+  &:active, &:focus
+    border-bottom-color: $dblue
 
 
 .t-pageNotFound
@@ -333,5 +343,53 @@ a
     .t-pageHasBeenDeleted
       margin-bottom: 16px
 
+.t-smallInputs
+  .t-formItem
+    width: 45%
+    .t-input
+      width: 100%
+
+.t-formItem
+  &:not(:last-child)
+    margin-bottom: 24px
+  label
+    display: block
+    margin-bottom: 16px
+
+.t-sendingWarning
+  margin-top: 16px
+  width: 272px
+
+.t-dialog
+  display: block
+  width: 320px
+  padding: 24px
+  background-color: $white
+  position: fixed
+  left: 0
+  top: 50%
+  right: 0
+  margin: auto
+  transform: translateY(-50%)
+  z-index: 100
+  .t-dialogTitleWrapper
+    margin-bottom: 24px
+
+.t-overlay
+  position: fixed
+  left: 0
+  right: 0
+  bottom: 0
+  top: 0
+  background-color: rgba(0,0,0,0.8)
+  z-index: 99
+  margin: 20px
+  .t-closeDialog
+    width: 24px
+    height: 24px
+    position: absolute
+    right: 40px
+    top: 40px
+    cursor: pointer
 
 // Default Props End

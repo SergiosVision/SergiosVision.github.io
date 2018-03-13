@@ -14,17 +14,30 @@ main
           position: relative
           svg
             fill: $white
-          &.active
-            margin: 0 34.91px
+          margin: 0 16px
           &:not(.active)
-            top: 16.4px
             opacity: .3
-            &:first-child
-              transform: rotate(-15deg)
-            &:last-child
-              transform: rotate(15deg)
       .t-bottomArc
+        width: 100%
+        background-color: $grey
+        height: 2px
         margin-top: 8px
+      &.active
+        .t-controlItemsHolder
+          .t-controlItem
+            &.active
+              svg
+                fill: $green
+            &:not(.active)
+              svg
+                fill: rgba(0,0,0,.3)
+        .t-bottomArc
+          .t-arc
+            stroke: rgba(0,0,0,.3)
+        .t-bottomArrow
+          .t-bottomArr
+            stroke: rgba(0,0,0,.3)
+
 
 .t-frame
   mix-blend-mode: overlay

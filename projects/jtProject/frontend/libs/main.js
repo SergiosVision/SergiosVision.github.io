@@ -184,7 +184,8 @@ $(function ($) {
             oldScrollValue = 0,
             scrollLeft = 0,
             speed = 0,
-            value = 0;
+            value = 0,
+            eventThis;
 
         // Get Value from the Transform Translate
         return this.each(function () {
@@ -212,7 +213,7 @@ $(function ($) {
                 //     event.preventDefault();
                 // });
                 $(options.scrollField).on('mousewheel', function(event) {
-                    scrollThis();
+                    scrollThis(event);
                     event.preventDefault();
                 });
             }
@@ -222,7 +223,7 @@ $(function ($) {
                 return pos;
             }
 
-            function scrollThis() {
+            function scrollThis(event) {
 
                 value += event.deltaY * -1;
                 scrollTarget += event.deltaY * 1;
@@ -252,7 +253,8 @@ $(function ($) {
 
             }
             
-            function getUpdate() {
+            function getUpdate(event) {
+
              interval = setInterval(function () {
                  // var setBack = debounce(function(){
                  //     cmp.css('width', ''+ getStartWidth +'px');
@@ -262,6 +264,11 @@ $(function ($) {
                  // setBack();
                     // Get Scroll Value
                     scrollValue += (scrollTarget - scrollValue) * options.spring;
+
+
+                    var newValue = (event.deltaY - scrollTarget) / scrollValue;
+                    var newValSec = (newValue * 5) / 2;
+                    console.log(newValSec)
 
                     // Get Delta
 
@@ -288,23 +295,24 @@ $(function ($) {
                     oldScrollValue = scrollValue;
 
                 },5);
+
             }
             requestAnimationFrame(getUpdate);
 
-            function debounce(func, wait, immediate) {
-                var timeout;
-                return function() {
-                    var context = this, args = arguments;
-                    var later = function() {
-                        timeout = null;
-                        if (!immediate) func.apply(context, args);
-                    };
-                    var callNow = immediate && !timeout;
-                    clearTimeout(timeout);
-                    timeout = setTimeout(later, wait);
-                    if (callNow) func.apply(context, args);
-                };
-            }
+            // function debounce(func, wait, immediate) {
+            //     var timeout;
+            //     return function() {
+            //         var context = this, args = arguments;
+            //         var later = function() {
+            //             timeout = null;
+            //             if (!immediate) func.apply(context, args);
+            //         };
+            //         var callNow = immediate && !timeout;
+            //         clearTimeout(timeout);
+            //         timeout = setTimeout(later, wait);
+            //         if (callNow) func.apply(context, args);
+            //     };
+            // }
 
             // Max, Min values Function
 
@@ -316,7 +324,6 @@ $(function ($) {
 
     };
 });
-
 
 // Мини плагин для подмены BackgroundА
 $(function () {
@@ -413,17 +420,13 @@ $(document).ready(function () {
 
         if (window.matchMedia('(min-width: 801px)').matches) {
 
-            $('.t-topListCtrl li, .t-btn, .t-modalShare, .t-modalFavorites, .t-burger, .t-closeEdit, .t-editBtn, .t-likeBlockItem, .t-closePos, .t-modalBack, .medium-editor-toolbar-close svg').each(function () {
+            $('.t-topListCtrl li, .t-btn, .t-modalShare, .t-modalFavorites, .t-burger, .t-closeEdit, .t-editBtn, .t-closePos, .t-modalBack, .medium-editor-toolbar-close svg').each(function () {
                 if (!$(this).hasClass('active')) {
                     $(this).addClass('pointer').addClass('cursorWatcher');
                     $(this).attr('data-range', '1.2');
                 } else {
                     $(this).addClass('pointer');
                 }
-            });
-            $('.t-menuListItem a, .t-smallModalMenu a, .t-smallModalMenuStandart a').each(function () {
-                $(this).addClass('cursorWatcher');
-                $(this).attr('data-range', '0.5')
             });
 
             $('.t-btnModeration').attr('data-range', '0.5');
@@ -434,45 +437,45 @@ $(document).ready(function () {
                 inter = 30,
                 speed = 0;
 
-            $dot.css('opacity', '1');
-
-            function moveBox(e) {
-                var timesel = 0.3;
-                // if ($drag.hasClass('grab')) {
-                //     timesel = 0.05
-                // }
-                $dot.each(function(index, val) {
-                    if (!$(this).hasClass('fixit')) {
-                        if (index == 1) {
-                            TweenLite.to($(this), timesel, {
-                                css: {
-                                    left: e.pageX,
-                                    top: e.pageY
-                                },
-                                delay: 0 + (index / 750)
-                            })
-                        } else {
-                            TweenLite.to($(this), 0.05, {
-                                css: {
-                                    left: e.pageX,
-                                    top: e.pageY
-                                },
-                                delay: 0 + (index / 750)
-                            })
-                        }
-                    } else {
-                        TweenLite.to($(this), timesel, {
-                            css: {
-                                opacity: 1,
-                                scale: 1
-                            },
-                            delay: 0 + (index / 750)
-                        })
-                    }
-                })
-            }
-
-            $(document).on('mousemove', moveBox);
+            // $dot.css('opacity', '1');
+            //
+            // function moveBox(e) {
+            //     var timesel = 0.3;
+            //     // if ($drag.hasClass('grab')) {
+            //     //     timesel = 0.05
+            //     // }
+            //     $dot.each(function(index, val) {
+            //         if (!$(this).hasClass('fixit')) {
+            //             if (index == 1) {
+            //                 TweenLite.to($(this), timesel, {
+            //                     css: {
+            //                         left: e.pageX,
+            //                         top: e.pageY
+            //                     },
+            //                     delay: 0 + (index / 750)
+            //                 })
+            //             } else {
+            //                 TweenLite.to($(this), 0.05, {
+            //                     css: {
+            //                         left: e.pageX,
+            //                         top: e.pageY
+            //                     },
+            //                     delay: 0 + (index / 750)
+            //                 })
+            //             }
+            //         } else {
+            //             TweenLite.to($(this), timesel, {
+            //                 css: {
+            //                     opacity: 1,
+            //                     scale: 1
+            //                 },
+            //                 delay: 0 + (index / 750)
+            //             })
+            //         }
+            //     })
+            // }
+            //
+            // $(document).on('mousemove', moveBox);
 
 
 
@@ -574,9 +577,11 @@ $(document).ready(function () {
 
             $(".cursorWatcher").each(function(index) {
                 $(this).hover(function() {
-                    $(this).addClass('hovered')
+                    $(this).addClass('hovered');
+                    $('html, body, .t-profile a').css('cursor', 'none');
                 }, function() {
                     $(this).removeClass('hovered');
+                    $('html, body, .t-profile a').removeAttr('style');
                     $(this).css({
                         transform: 'translate3d(0px, 0px, 0px)'
                     })
@@ -712,7 +717,7 @@ $(document).ready(function () {
             hideElement: '.t-menuWrapper', // Элемент который нужно задвинуть :)
             bars: ".t-mainBurger", // Бургер меню,
             spring: 0.08,
-            animation: true,
+            animation: false,
             getOdd: '.t-scrollBar:nth-child(odd)',
             getEvent: '.t-scrollBar:nth-child(even)'
         });
@@ -755,13 +760,25 @@ $(document).ready(function () {
 
     // Click Events
 
+    function checkColor() {
+        if ($('.jq-selectbox__select-text').text() === 'Выберите рубрику') {
+            $('.jq-selectbox__select-text').css('color', '#ccc')
+        } else {
+            $('.jq-selectbox__select-text').removeAttr('style')
+        }
+    }
+    checkColor();
+
     $('body').on('click', '.t-selectArticleCategory', function (e) {
         $('.jq-selectbox li').each(function () {
             if($(this).hasClass('selected')) {
                 $(this).hide()
+            } else if ($(this).hasClass('dontUse')) {
+                $(this).hide();
             } else {
                 $(this).show();
             }
+            checkColor();
         });
         if($('.jq-selectbox').hasClass('opened')) {
             $('.jq-selectbox__trigger-arrow').css('transform', 'rotate(180deg)');
@@ -773,18 +790,18 @@ $(document).ready(function () {
 
     $('body').on('click', '.t-searchClose', function (e) {
         e.preventDefault();
-        $('.t-searchSection').fadeOut(300);
+        $('.t-searchSection').fadeOut(300).removeClass('mainModalCrtl');
         $('.t-overlay').fadeOut(300);
     });
 
     $('body').on('click', '.t-addArticleBtn', function (e) {
         e.preventDefault();
-        $('.t-addArticleModalWrapper').fadeIn(300);
+        $('.t-addArticleModalWrapper').fadeIn(300).addClass('mainModalCrtl');
     });
 
     $('body').on('click', '.t-addArticleClose', function (e) {
         e.preventDefault();
-        $('.t-addArticleModalWrapper').fadeOut(300);
+        $('.t-addArticleModalWrapper').fadeOut(300).removeClass('mainModalCrtl');
     });
 
 
@@ -799,6 +816,7 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).closest('.t-profileSettingsItem').find('.t-saveBtnsHolder').slideUp(300);
         $(this).closest('.t-profileSettingsItem').find('input').prop('disabled', true);
+        $(this).closest('.t-profileSettingsItem').find('.t-editForm').trigger('reset');
         $('.t-editBtn').fadeIn(300);
     });
 
@@ -813,27 +831,27 @@ $(document).ready(function () {
     $('body').on('click', '.t-searchBtn', function (e) {
         e.preventDefault();
         $('.t-overlay').fadeIn(400);
-        $('.t-searchSection').fadeIn(500);
+        $('.t-searchSection').fadeIn(500).addClass('mainModalCrtl');
     });
 
     $('body').on('click', '.t-burger', function (e) {
         e.preventDefault();
         $('body').addClass('t-overflowH');
         $('.t-overlay').fadeIn(400);
-        $('.t-mobileMenu').addClass('t-activeMobileMenu');
+        $('.t-mobileMenu').addClass('t-activeMobileMenu').addClass('mainModalCrtl');
 
     });
     $('body').on('click', '.t-overlay', function (e) {
         e.preventDefault();
-        $('.t-mobileMenu').removeClass('t-activeMobileMenu');
+        $('.t-mobileMenu').removeClass('t-activeMobileMenu').removeClass('mainModalCrtl');
         $('.t-smallModalMenu').removeClass('t-activeSmallModalMenu');
         $('body').removeClass('t-overflowH');
-        $('.t-searchSection').fadeOut(400);
+        $('.t-searchSection').fadeOut(400).removeClass('mainModalCrtl');
         $('.t-overlay').fadeOut(400);
     });
 
-    $('body').on('click', '.t-modalBack', function (e) {
-        e.preventDefault();
+    
+    function closeMainModals() {
         $('body').removeClass('modalActivate').removeClass('nowOpened').removeClass('t-overflow').removeClass('t-overflowCtrl');
         $('.t-hiddenLogoWrapper').removeClass('activateBg');
         if ($('body').hasClass('t-relative')) {
@@ -849,9 +867,36 @@ $(document).ready(function () {
         if ($('.t-newsModal')) {
             $('.t-newsModal').addClass('closeAnim');
             $('.t-modalButtonsHolder').addClass('t-hide');
+            $('.t-newsHiddenHeader').removeClass('activeThis');
             setTimeout(function () {
                 $('.t-newsModal').removeClass('closeAnim').hide();
             },1000)
+        }
+    }
+
+    $('body').on('click', '.t-modalBack', function (e) {
+        e.preventDefault();
+        closeMainModals();
+    });
+
+    $(document).on('keydown', function (e) {
+        if(e.keyCode == 27) {
+            e.preventDefault();
+            $('body').removeClass('t-overflowX').removeClass('t-overflowH');
+            if ($('.t-mobileMenu').hasClass('mainModalCrtl')) {
+                $('.t-mobileMenu').removeClass('t-activeMobileMenu').removeClass('mainModalCrtl');
+                $('.t-overlay').fadeOut(400);
+            } else if ($('body').hasClass('modalActivate') && !$('.t-mobileMenu').hasClass('mainModalCrtl')) {
+                closeMainModals();
+                $('.t-newsHiddenHeader').removeClass('activeThis');
+            }
+            if($('.t-addArticleModalWrapper').hasClass('mainModalCrtl')) {
+                $('.t-addArticleModalWrapper').fadeOut(300).removeClass('mainModalCrtl');
+            }
+            if($('.t-searchSection').hasClass('mainModalCrtl')) {
+                $('.t-searchSection').fadeOut(400).removeClass('mainModalCrtl');
+                $('.t-overlay').fadeOut(400);
+            }
         }
     });
 
@@ -904,4 +949,46 @@ $(document).ready(function () {
         },1300)
     });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Menu cursor watcher
+
+$(function () {
+    var element, topPos,
+        navigation = $('.t-menuWrapper .t-menuList, .t-mobileMenuWrapper .t-menuList');
+
+    navigation.append('<li class="lineMenu"></li>');
+    var getThisLine = $('.lineMenu');
+
+
+    getThisLine
+        .css('top', $('.t-menuListItem.active').position().top + 9)
+        .data('origTop', getThisLine.position().top);
+
+
+    $('.t-menuListItem').hover(function () {
+        element = $(this);
+        topPos = element.position().top;
+
+        getThisLine.css('top', topPos + 9)
+
+    }, function () {
+        getThisLine.css('top', getThisLine.data('origTop'));
+    });
+
+})
+
+
+$(window).on('scroll', function () {
+    var $this = $(this);
+    if($('body').hasClass('modalActivate')) {
+        if ($this.scrollTop() >= 400) {
+            $('.t-newsHiddenHeader').addClass('activeThis');
+        } else {
+            $('.t-newsHiddenHeader').removeClass('activeThis');
+        }
+    }
+});
+
+
 });

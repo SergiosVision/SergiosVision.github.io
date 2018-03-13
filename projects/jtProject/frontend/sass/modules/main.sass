@@ -2,8 +2,9 @@ main
   flex: 1 1 auto
   .t-newsCardWrapper
     position: relative
-    height: 560px
-    flex: 0 0 400px
+    height: 30vmax
+    //flex: 0 0 400px
+    width: 18.625vmax
     .t-newsCatNameAndDateHolder
       width: 96%
       display: flex
@@ -29,8 +30,8 @@ main
       margin: 0
       padding: 0
     .t-newsCardImg
-      width: 400px
-      height: 560px
+      height: 30vmax
+      width: 18.625vmax
       img
         display: block
         width: 100%
@@ -55,7 +56,10 @@ main
           white-space: normal
           position: relative
           margin: 0 0 48px 0
-          @include fontsSizes(26, bold, 32)
+          //@include fontsSizes(26, bold, 32)
+          font-weight: bold
+          line-height: 32px
+          @include fluidFontSize(16px, 26px, 769px, 1920px, 26px)
           &:before
             content: ''
             display: inline-block

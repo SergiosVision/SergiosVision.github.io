@@ -75,6 +75,7 @@
 	user-select: none;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	color: #4F4F4F;
 }
 .jq-selectbox__dropdown {
 	position: absolute;

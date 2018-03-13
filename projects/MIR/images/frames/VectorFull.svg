@@ -1,0 +1,10 @@
+<svg width="120" height="900" viewBox="0 0 120 900" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" transform="translate(-1828 2936)">
+<g id="VectorFull">
+<use xlink:href="#path0_fill" transform="matrix(-1 0 0 1 1948 -2936)" fill="#FFFFFF"/>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 450L 120 900L 0 900L 0 450L 0 0L 120 0L 0 450Z"/>
+</defs>
+</svg>

@@ -1,7 +1,7 @@
 aside, .t-mobileMenu
   background-color: $white
   flex: 0 0 335px
-  transition: .7s ease-in-out
+  transition: .5s ease-in-out
   height: 100%
   .t-logoSection
     position: relative
@@ -18,6 +18,7 @@ aside, .t-mobileMenu
   nav
     padding: 0 67px 0 64px
     .t-menuList
+      position: relative
       list-style: none
       margin: 0
       padding: 0
@@ -25,7 +26,9 @@ aside, .t-mobileMenu
         position: relative
         display: block
         &:not(:last-child)
-          margin-bottom: 16px
+          padding-bottom: 16px
+        &:nth-last-child(2)
+          padding: 0
         a
           @include links()
           @include fontsSizes(16, bold, 20)
@@ -33,17 +36,17 @@ aside, .t-mobileMenu
           &:hover
             color: $dblue
         &.active
-          &:before
-           content: ''
-           display: block
-           position: absolute
-           left: -63px
-           top: 0
-           bottom: 0
-           margin: auto
-           width: 14px
-           height: 2px
-           background-color: #000
+          //&:before
+          // content: ''
+          // display: block
+          // position: absolute
+          // left: -63px
+          // top: 0
+          // bottom: 0
+          // margin: auto
+          // width: 14px
+          // height: 2px
+          // background-color: #000
   .t-copyWrapper
     margin-top: 40px
     padding: 0 0 0 64px
@@ -52,6 +55,15 @@ aside, .t-mobileMenu
       @include links()
       color: $dgrey
 
+.lineMenu
+  display: block
+  position: absolute
+  left: -63px
+  top: 9px
+  width: 14px
+  height: 2px
+  background-color: #000
+  transition: .2s ease
 
 .t-logoWrapper
   display: inline-block

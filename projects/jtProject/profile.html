@@ -85,7 +85,7 @@
           </div>
           <input type="text" placeholder="Название статьи" class="t-addArticleName">
           <select name="" class="t-selectArticleCategory">
-            <option class="t-noneItem" value="1">Выберите рубрику</option>
+            <option class="t-noneItem dontUse" disabled="disabled" selected value="1">Выберите рубрику</option>
             <option value="2">Категория 1</option>
             <option value="3">Категория 2</option>
             <option value="4">Категория 3</option>
@@ -158,7 +158,9 @@
                   <label class="t-infoTitle" for="name">Ваше имя</label>
                   <svg class="t-editBtn t-hoverable" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fill" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_fill" class="t-svgFigure" transform="translate(8 8)" fill="#E0E0E0"/><defs><path id="path0_fill" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fill" fill-rule="evenodd" d="M7.87.507a1 1 0 0 1-.163 1.2l-6 6A1 1 0 1 1 .293 6.293L3.74 2.846l-.497.124a1 1 0 1 1-.486-1.94l4-1A1 1 0 0 1 7.87.507z"/></defs></svg>
                 </div>
-                <input class="t-infoHolder" disabled id="name" type="text" value="Takeoff Юрьевич">
+                <form class="t-editForm">
+                  <input class="t-infoHolder" disabled id="name" type="text" value="Takeoff Юрьевич">
+                </form>
                 <div class="t-saveBtnsHolder">
                   <button type="button" class="t-btn t-btnSave">Сохранить</button>
                   <span class="t-errorHolder"></span>
@@ -170,7 +172,9 @@
                   <label class="t-infoTitle" for="mail">Почта</label>
                   <svg class="t-editBtn t-hoverable" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fill" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_fill" class="t-svgFigure" transform="translate(8 8)" fill="#E0E0E0"/><defs><path id="path0_fill" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fill" fill-rule="evenodd" d="M7.87.507a1 1 0 0 1-.163 1.2l-6 6A1 1 0 1 1 .293 6.293L3.74 2.846l-.497.124a1 1 0 1 1-.486-1.94l4-1A1 1 0 0 1 7.87.507z"/></defs></svg>
                 </div>
-                <input class="t-infoHolder" disabled id="mail" type="email" value="takeoff@mail.ru">
+                <form class="t-editForm">
+                  <input class="t-infoHolder" disabled id="mail" type="email" value="takeoff@mail.ru">
+                </form>
                 <div class="t-saveBtnsHolder">
                   <button type="button" class="t-btn t-btnSave">Сохранить</button>
                   <span class="t-errorHolder"></span>
@@ -182,7 +186,9 @@
                   <label class="t-infoTitle" for="siteAddress">Адрес на сайте</label>
                   <svg class="t-editBtn t-hoverable" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fill" class="t-svgBg" fill="#FFF"/><use xlink:href="#path1_fill" class="t-svgFigure" transform="translate(8 8)" fill="#E0E0E0"/><defs><path id="path0_fill" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12z"/><path id="path1_fill" fill-rule="evenodd" d="M7.87.507a1 1 0 0 1-.163 1.2l-6 6A1 1 0 1 1 .293 6.293L3.74 2.846l-.497.124a1 1 0 1 1-.486-1.94l4-1A1 1 0 0 1 7.87.507z"/></defs></svg>
                 </div>
-                <input class="t-infoHolder" disabled id="siteAddress" value="55535353" type="text">
+                <form class="t-editForm">
+                  <input class="t-infoHolder" disabled id="siteAddress" value="55535353" type="text">
+                </form>
                 <div class="t-saveBtnsHolder">
                   <button type="button" class="t-btn t-btnSave">Сохранить</button>
                   <span class="t-errorHolder">Error</span>
@@ -268,7 +274,6 @@
         </div>
       </main>
       <div class="cursor">
-        <div class="dot"></div>
         <div class="loader"></div>
       </div>
     </div>

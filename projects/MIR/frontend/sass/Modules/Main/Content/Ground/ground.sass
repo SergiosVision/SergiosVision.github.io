@@ -3,15 +3,17 @@
   .t-frame
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("/images/backgrounds/ground.png") no-repeat
     background-position: center center
-    clip-path: polygon(0% 0%, 75% 0%, 100% 51%, 75% 100%, 0% 100%)
-    -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 51%, 75% 100%, 0% 100%)
+    //clip-path: polygon(0% 0%, 75% 0%, 100% 51%, 75% 100%, 0% 100%)
+    //-webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 51%, 75% 100%, 0% 100%)
     z-index: -1
     &:after
-      display: none
-      border: none
-      left: 100%
-      top: 0
-      bottom: 0
+      //content: ''
+      //position: absolute
+      //left: 100%
+      //top: 0%
+      //border-left: 60px solid $white
+      //border-bottom: 50vh solid transparent
+      //border-top: 50vh solid transparent
   .t-trailerTwo, .t-trailerThree, .t-train
     display: none
   .t-vehiclesHolderAndInfo
@@ -25,3 +27,9 @@
         top: 255px
         left: 600px
         bottom: auto
+  .t-truckAndTrainHolder
+    position: relative
+    .t-train
+      top: 0
+      left: 0
+      position: absolute
