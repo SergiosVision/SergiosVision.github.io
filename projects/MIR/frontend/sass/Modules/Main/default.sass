@@ -6,21 +6,78 @@ main
     bottom: 16px
     left: 50%
     transform: translate(-50%)
+    width: 280px
+    overflow: hidden
+    height: auto
     .t-controlHandler
       text-align: center
       .t-controlItemsHolder
         display: flex
+        transform: translateX(-450px)
+        transition: transform 1s
+        &.t-airActive
+          transform: rotate(15deg) translateX(-350px) translateY(-20px)
+          .t-defaultState
+            &:nth-child(3)
+              transform: rotate(-44deg) translateY(91px) translateX(0px)
+            &:nth-child(4)
+              transform: rotate(-15deg) translateY(26.4px) translateX(20.4px)
+        &.t-waterActive
+          transform: rotate(-15deg) translateX(-550px) translateY(-20px)
+          .t-defaultState
+            &:nth-child(5)
+              transform: rotate(-7deg) translateY(0) translateX(-10.6px)
+            &:nth-child(6)
+              transform: rotate(15deg) translateY(25.4px) translateX(-27.6px)
+            &:nth-child(7)
+              transform: rotate(35deg) translateY(90.4px) translateX(-28.6px)
+        &.t-planeCloneActive
+          transform: rotate(-34deg) translateX(-634px) translateY(-57px)
+          .t-defaultState
+            &:nth-child(6)
+              transform: rotate(4deg) translateY(16.4px) translateX(-49.6px)
+            &:nth-child(7)
+              transform: rotate(34deg) translateY(93.4px) translateX(-40.6px)
+            &:nth-child(8)
+              transform: rotate(49deg) translateY(181.4px) translateX(4.4px)
+        &.t-waterCloneActive
+          transform: rotate(44deg) translateX(-254px) translateY(-66px)
+          .t-defaultState
+            &:nth-child(2)
+              transform: rotate(-71deg) translateY(180.4px) translateX(-97.6px)
+            &:nth-child(3)
+              transform: rotate(-44deg) translateY(93px) translateX(0)
+            &:nth-child(4)
+              transform: rotate(-20deg) translateY(20.4px) translateX(6.4px)
         .t-controlItem
           position: relative
+          transition: 1s
           svg
             fill: $white
-          margin: 0 16px
+          padding: 0 34px
           &:not(.active)
             opacity: .3
+        .t-defaultState
+          &:nth-child(1)
+            transform: rotate(-85deg) translateY(302.4px) translateX(-237.6px)
+          &:nth-child(2)
+            transform: rotate(-70deg) translateY(213.4px) translateX(-92.6px)
+          &:nth-child(3)
+            transform: rotate(-55deg) translateY(110px) translateX(-3px)
+          &:nth-child(4)
+            transform: rotate(-15deg) translateY(22.4px) translateX(21.4px)
+          &:nth-child(6)
+            transform: rotate(15deg) translateY(22.4px) translateX(-21.6px)
+          &:nth-child(7)
+            transform: rotate(55deg) translateY(110.4px) translateX(3.4px)
+          &:nth-child(8)
+            transform: rotate(70deg) translateY(213.4px) translateX(91.4px)
+          &:nth-child(9)
+            transform: rotate(85deg) translateY(302.4px) translateX(238.4px)
+
+
+
       .t-bottomArc
-        width: 100%
-        background-color: $grey
-        height: 2px
         margin-top: 8px
       &.active
         .t-controlItemsHolder
