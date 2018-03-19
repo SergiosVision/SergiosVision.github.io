@@ -20,7 +20,7 @@ body
   //height: 100vmax
   min-height: 100vh
   position: relative
-  @include fluidFontSize(10px, 16px, 769px, 1920px, 80px)
+  //@include fluidFontSize(10px, 16px, 769px, 1920px, 80px)
 
 main
   min-height: calc(100vh - 244px)
@@ -137,6 +137,8 @@ a
   padding: 0
   list-style: none
 
+// Text Sizes Controls
+
 .t-bigTitle
  @include textParams(80, 900, $white)
 
@@ -151,10 +153,15 @@ a
 .t-middleText
   @include textParams(26, 500, $black)
 
+.t-fontTwenty
+  @include textParams(20, 300, $secondBlack)
+
 .t-standardTitle
   @include textParams(16, 500, $white)
   &.t-standardTitleMidLight
     font-weight: 300
+  &.t-standardTitleBold
+    font-weight: 900
 
 .t-standardTitleLight
   @include textParams(16, 100, $black)
@@ -162,6 +169,8 @@ a
 
 .t-smallTitleLight
   @include textParams(14, 100, $white)
+
+// // Text Sizes Controls End
 
 .t-block
   display: block
@@ -249,7 +258,7 @@ a
 
 .t-mainContentWrapper
   width: 1000px
-  margin: 0 auto
+  margin: 0 auto 200px auto!important
 
 .t-mainContentContainer
   padding: 0 116px
@@ -311,7 +320,12 @@ a
   .t-gridItem
     text-align: center
     @include bGrid(2, 10%)
-
+    .t-gridItemImg
+      width: 100%
+      height: auto
+      img
+        max-width: 100%
+        height: auto
 
 .t-input
   display: block
@@ -342,6 +356,24 @@ a
       margin-bottom: 8px
     .t-pageHasBeenDeleted
       margin-bottom: 16px
+
+
+.t-superSmallDropMenu
+  padding: 24px
+  background-color: $white
+  &.t-defaultStylesSuperSmallDropMenu
+    ul
+      li
+        color: $secondBlack
+        line-height: 19px
+        cursor: pointer
+        transition: .3s ease
+        &:not(:last-child)
+          margin-bottom: 16px
+        &:hover, &.active
+          color: $dblue
+
+
 
 .t-smallInputs
   .t-formItem
@@ -395,5 +427,36 @@ a
 
 .t-removeTransition
   transition: none!important
+
+
+.t-frameSecond
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("/images/backgrounds/ground.png") no-repeat
+  background-position: center center
+  z-index: -1
+  width: 280px
+  height: 100vh
+  background: $white
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  &:after
+    content: ""
+    position: absolute
+    left: 65%
+    top: 0
+    border-right: 100px solid #fff
+    border-left: 0 solid transparent
+    border-top: 50vh solid transparent
+    transform: rotateX(180deg)
+  &:before
+    content: ""
+    position: absolute
+    left: 65%
+    bottom: 0
+    border-right: 100px solid #fff
+    border-left: 0 solid transparent
+    border-top: 50vh solid transparent
+    transform: none
 
 // Default Props End
