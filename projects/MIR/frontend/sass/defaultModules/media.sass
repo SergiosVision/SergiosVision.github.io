@@ -26,6 +26,12 @@
       border-bottom-color: transparent
 
 
+@media (min-width: 1600px)
+  .t-vehiclesHolderAndInfo
+    margin-top: 50%!important
+    transform: translateY(-95%)
+
+
 @media (max-width: 1200px)
   .t-typeSection
     .t-jumbotron
@@ -76,7 +82,27 @@
       display: none
 
 
-@media (max-width: 1065px)
+@media (max-width: 1080px)
+  .t-rightAside
+    margin-left: 0!important
+  .t-aboutJumbotron
+    .t-aboutBlockTitle
+      display: none
+  .t-mainContentWrapper
+    .t-mobileThisTitle
+      display: block!important
+      width: 816px
+      padding: 0
+      margin: 24px auto 24px auto
+    .t-continueTop
+      width: 816px
+      padding: 0!important
+      margin: 0 auto
+
+  .t-employeesContainer, .t-vacancy, .t-clients
+    width: 100%
+    padding: 158px 24px 0 24px
+
   .t-contentContainer .t-containerInside
     &.t-containerInsideWater, &.t-containerInsideAir
       padding: 168px 24px 0
@@ -85,14 +111,55 @@
     width: 100%!important
   .t-aboutJumbotron .t-aboutBlockTitle
     padding: 80px 50px 27px!important
-  .t-mainContentWrapper .t-continueTop
-    padding: 0 50px!important
   .t-simpleRightSideMenu
     margin-right: 24px
 
+  .t-simpleRightSideMenu
+    display: flex
+    position: absolute
+    right: 0
+    top: auto
+    margin: 0
+    max-height: 36px
+    overflow: hidden
+    padding: 8px 16px
+    box-sizing: border-box
+    transition: .3s ease
+    box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.06)
+    z-index: 1000
+    flex-direction: column
+    background-color: $white
+    &:hover
+      height: auto
+      overflow: auto
+      max-height: 100%
+    li.active
+      order: 1
+      margin-bottom: 8px
+    li:not(.active)
+      order: 2
 
 
 @media (max-width: 980px)
+
+  .t-mainContentContainerServices
+    padding: 83px 24px 200px 24px
+  .t-mainContentWrapper
+    .t-mobileThisTitle
+      display: block!important
+      width: 100%
+      padding: 0 24px
+      margin: 24px auto 24px auto
+    .t-continueTop
+      width: 100%
+      padding: 0 24px!important
+  footer
+    .t-footerTopLeft
+      .t-footerTopItemCtrl
+        display: none
+      .t-footerTopItemList
+        display: block
+
   header
     .t-leaveRequest
       display: none
@@ -140,23 +207,129 @@
     padding: 0 24px!important
 
 @media (max-width: 800px)
+  .t-typeSection .t-jumbotron .t-jumbotronContainer,
+  .t-contentContainer .t-containerInside
+    padding-top: 115px
+
+  .t-employeesContainer, .t-vacancy, .t-clients
+    width: 100%
+    padding: 104px 24px 0 24px
+
+  header
+    top: 30px
+    padding: 0 24px
+    .t-headerLogoWrapper .t-headerLogoLink .t-headerLogoText
+      span
+        &:nth-child(1)
+          margin-bottom: 0
+        &:nth-child(2)
+          display: none
+
+  .t-headerNavigation
+    position: absolute
+    background-color: #fff
+    top: -30px
+    right: 0
+    padding: 35px 24px
+    max-width: 320px
+    width: 320px
+    animation: menu .3s ease-in-out forwards
+    display: none
+    opacity: 0
+    transform: scale(.95)
+    box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.06)
+    .t-mobileMenuHeader, .t-headerNavigationButtons, .t-headerNavigationList
+      display: none
+    &.t-anim
+      animation: out-menu .3s ease-in-out
+    &.t-activeMobileMenu
+      display: block!important
+      z-index: 100000
+      .t-mobileMenuHeader
+        margin-bottom: 40px
+      .t-mobileMenuHeader
+        display: flex
+      .t-headerNavigationList
+        display: flex
+      .t-headerNavigationButtons
+        display: flex!important
+        margin-bottom: 32px
+      .t-headerNavigationList
+        flex-direction: column
+        align-items: flex-start
+        li
+          margin-right: 0!important
+          margin-bottom: 24px
+          &:last-child
+            margin-bottom: 0
+          .t-linkItem
+            color: $secondBlack
+            border-bottom: none
+
+  .t-barsWrapper
+    display: block
+
+  .t-eventsCardHolder
+    .t-eventCard
+      flex-direction: column
+      .t-eventCardImg
+        margin-right: 0
+        margin-bottom: 16px
+
   .t-frame
     display: none
   header
     .t-headerNavigation
       display: none
   .t-contentContainer .t-containerInside .t-tabsSwitch
-    li:not(:first-child)
-      display: none
+    display: none
+  .t-contentContainer .t-containerInside .t-tabsSwitchMobileHolder
+    margin-top: 8px
+    display: block!important
+    font-size: 20px
+    font-weight: 300
+    line-height: 19px
+    color: $green
   .t-mainContentWrapper .t-mainContentContainer
-    .t-aboutAdvantages .t-gridItem
-      @include bGrid(2, 5%)
+    .t-aboutAdvantages
+      .t-gridItem
+        @include bGrid(2, 5%)
+      .t-gridItemTitle
+        font-size: 30px
     .t-aboutCompanyPartners
       .t-gridItem
         @include bGrid(2, 5%)
     .t-aboutUsInValues
       .t-gridItem
         @include bGrid(2, 5%)
+  .t-employeesWrapperSection
+    .t-grid
+      .t-gridItem
+        @include bGrid(2, 5%)
+
+
+@media (max-width: 768px)
+  .t-simpleRightSideMenu
+    display: none
+
+  .t-makeOrderDialog
+    max-width: 320px
+    width: 100%
+    .t-grid
+      .t-gridItem
+        width: 100%
+        margin: 0!important
+        input
+          width: 100%
+        &:not(:last-child)
+          margin-bottom: 24px!important
+    .t-orderDialogDown
+      flex-direction: column
+      align-items: flex-start
+      margin-top: 32px
+      .t-sendingWarning
+        margin-top: 16px
+        margin-left: 0
 
 @media (max-width: 710px)
   .t-groundContent .t-truckAndTrainHolder .t-truck
@@ -197,6 +370,91 @@
   .t-groundContent .t-truckAndTrainHolder .t-truck
     margin-left: 30px
 
+@media (max-width: 590px)
+  .t-insideJumbotron
+    .t-mobileSubMenuHolder
+      padding: 0 24px
+      .t-mobileSubMenu
+        width: 100%
+
+  .t-mainContentContainerServices .t-servicesCard .t-servicesCardInfo .t-servicesCardTitleWrapper
+    .t-middleTitle
+      font-size: 32px
+
+
+  .t-clientWrapperSection
+    .t-eventCardHolder
+      .t-eventCardImgOnce
+        width: 100%
+        img
+          width: 100%
+      .t-eventCardTitleOnceWrapper
+        .t-eventCardTitleOnce
+          font-size: 20px
+    .t-documentItem
+      display: flex
+      flex-direction: column
+      .t-documentInfoHolder
+        margin-left: 0
+        margin-top: 16px
+
+  .t-eventsCardHolder
+    .t-eventCard
+      .t-eventCardInfoTitle
+        font-size: 20px
+
+
+  .t-containersTitleControl
+    font-size: 32px
+
+  .t-employeesWrapperSection
+    .t-grid
+      .t-gridItem
+        @include bGrid(1, 0%)
+        &:not(:last-child)
+          margin-bottom: 24px
+
+  .t-mainContentWrapper
+    .t-mobileThisTitle
+      font-size: 32px
+
+  .t-mainContentWrapper .t-mainContentContainer
+    .t-mainContentSmallContainer
+      .t-middleTitle
+        font-size: 32px
+    .t-aboutAdvantages
+      .t-gridItem
+        @include bGrid(1, 0%)
+        &:not(:last-child)
+          margin-bottom: 24px
+      .t-gridItemTitle
+        font-size: 30px
+      .t-gridItemText
+        width: 320px
+        margin: 16px auto 0 auto
+      .t-t
+        font-size: 32px
+    .t-aboutCompanyPartners
+      .t-gridItem
+        @include bGrid(1, 0%)
+        &:not(:last-child)
+          margin-bottom: 24px
+        .t-gridItemText
+          width: 320px
+          margin: 16px auto 0 auto
+      .t-t
+        font-size: 32px
+    .t-aboutUsInValues
+      .t-gridItem
+        @include bGrid(1, 0%)
+        &:not(:last-child)
+          margin-bottom: 24px
+        .t-gridItemText
+          width: 320px
+          margin: 16px auto 0 auto
+      .t-t
+        font-size: 32px
+
 @media (max-width: 510px)
   .t-groundContent .t-truckAndTrainHolder .t-truck
     width: 163px!important
@@ -216,6 +474,38 @@
       font-weight: 300
 
 @media (max-width: 480px)
+
+  .t-headerNavigation
+    max-width: 100%
+    width: 100%
+    bottom: 0
+    left: 0
+    right: 0
+    top: 0
+    position: fixed
+    .t-headerNavigationButtons
+      .t-btn
+        width: 216px
+
+  .t-mainContentContainerServices
+    margin-top: 0!important
+
+  .t-documentTitleWrapper
+    .t-documentTitle
+      font-size: 20px
+  .t-documentItem
+    .t-documentIcon
+      svg
+        width: 35px!important
+        height: 46px!important
+    .t-documentInfoHolder
+      margin-left: 16px
+
+  .t-insideJumbotron
+    height: 323px
+    .t-aboutCompanyLogoHolder
+      padding: 160px 0 80px
+
   .t-typeSection .t-jumbotron .t-jumbotronContainer
     .t-jumbotronContainerInfo
       .t-jumbotronContainerInfoTitle
@@ -234,3 +524,86 @@
       text-align: center
       &:not(:last-child)
         margin-bottom: 24px
+
+@media (max-width: 420px)
+
+  .t-mainContentContainerServices .t-servicesCard .t-servicesCardInfo .t-servicesCardTitleWrapper
+    .t-middleTitle
+      font-size: 20px
+
+
+  .t-eventsCardHolder
+    .t-eventCard
+      .t-eventCardInfoTitle
+        font-size: 16px
+      .t-eventCardInfoDate
+        font-size: 16px
+
+  .t-insideJumbotron
+    .t-aboutCompanyLogoHolder
+      padding: 171px 0 80px
+
+  .t-mainContentWrapper
+    .t-mobileThisTitle
+      font-size: 20px
+
+  .t-aboutJumbotron
+    .t-aboutCompanyLogoHolder
+      svg
+        width: 272px
+        height: 108px
+
+  .t-mainContentWrapper .t-mainContentContainer
+    .t-mainContentSmallContainer
+      .t-middleTitle
+        font-size: 20px
+    .t-aboutAdvantages
+      .t-gridItem
+        @include bGrid(1, 0%)
+        &:not(:last-child)
+          margin-bottom: 24px
+      .t-gridItemTitle
+        font-size: 20px
+      .t-gridItemText
+        width: 100%
+        margin: 16px auto 0 auto
+      .t-t
+        font-size: 20px
+    .t-aboutCompanyPartners
+      .t-gridItem
+        @include bGrid(1, 0%)
+        &:not(:last-child)
+          margin-bottom: 24px
+        .t-gridItemText
+          width: 100%
+          margin: 16px auto 0 auto
+      .t-t
+        font-size: 20px
+    .t-aboutUsInValues
+      .t-gridItem
+        @include bGrid(1, 0%)
+        &:not(:last-child)
+          margin-bottom: 24px
+        .t-gridItemText
+          width: 100%
+          margin: 16px auto 0 auto
+      .t-t
+        font-size: 20px
+
+@media (max-width: 400px)
+  footer
+    .t-footerTop
+      .t-footerTopRight
+        display: none
+    .t-footerBottom
+      .t-copy
+        display: flex
+        flex-direction: column
+        span
+          margin: 0 0 8px 0
+
+
+@media (max-width: 380px)
+  .t-openAccordItem .t-vacancyName
+    font-size: 20px
+

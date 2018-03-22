@@ -19,7 +19,7 @@ header
         span
           display: block
           &:first-child
-            margin-bottom: .453em
+            margin-bottom: 2px
     .t-languageWrapper
       margin-top: -10px
       margin-left: 24px
@@ -45,6 +45,16 @@ header
         opacity: 0
         pointer-events: none
   .t-headerNavigation
+    .t-mobileMenuHeader
+      display: none
+
+    .t-headerNavigationButtons
+      display: none
+      .t-btn:first-child
+        margin-bottom: 16px
+      .t-btn
+        //width: 30%
+        text-align: center
     .t-headerNavigationList
       li:not(:last-child)
         margin-right: 3.500em

@@ -96,20 +96,34 @@ main
             stroke: rgba(0,0,0,.3)
 
 
+//.t-frame
+//  mix-blend-mode: overlay
+//  width: 200px
+//  height: 100vh
+//  background: $white
+//  position: absolute
+//  left: 0
+//  top: 0
+//  bottom: 0
+//  &:after
+//    content: ''
+//    position: absolute
+//    left: 100%
+//    top: 0%
+//    border-left: 60px solid $white
+//    border-bottom: 50vh solid transparent
+//    border-top: 50vh solid transparent
+
 .t-frame
+  -webkit-clip-path: polygon(0 0, 50% 0, 100% 50%, 50% 100%, 0% 100%)
+  clip-path: polygon(0 0, 50% 0, 100% 50%, 50% 100%, 0% 100%)
+  width: 280px
+  min-height: 100vh
   mix-blend-mode: overlay
-  width: 200px
-  height: 100vh
-  background: $white
   position: absolute
   left: 0
   top: 0
   bottom: 0
-  &:after
-    content: ''
-    position: absolute
-    left: 100%
-    top: 0%
-    border-left: 60px solid $white
-    border-bottom: 50vh solid transparent
-    border-top: 50vh solid transparent
+  &.t-groundFrame
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("/images/backgrounds/ground.png") no-repeat
+    background-position: center center

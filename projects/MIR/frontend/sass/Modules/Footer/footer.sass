@@ -1,10 +1,17 @@
 footer
   .t-footerTop
+    .t-footerTopItemList
+      display: none
+      li
+        &:not(:last-child)
+          margin-bottom: 8px
+        a
+          font-size: 16px
+          font-weight: 500
+          color: $white
     .t-footerTopItem
       &:not(:last-child)
         margin-right: 40px
-      &:last-child
-        margin-left: 40px
       .t-footerTopItemTitle
         @include textParams(16, 500, $white)
         margin-bottom: 16px

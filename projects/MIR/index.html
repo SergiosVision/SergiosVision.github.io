@@ -35,6 +35,16 @@
                 </div>
             </div>
             <nav class="t-headerNavigation">
+                <div class="t-mobileMenuHeader t-flex t-flexSB t-flexAlign">
+                    <span class="t-mobileMenuTitle t-middleText">Меню</span>
+                    <div class="t-closeWrapper">
+                        <div class="t-close"></div>
+                    </div>
+                </div>
+                <div class="t-headerNavigationButtons t-flex t-flexColumn">
+                    <a href="#" class="t-btn t-btnUpperCase t-makeOrderBtn">Оформить заявку</a>
+                    <a href="#" class="t-btn t-btnUpperCase t-writeToManagerBtn">Написать менеджеру</a>
+                </div>
                 <ul class="t-mainList t-flex t-flexAlign t-headerNavigationList">
                     <li class="t-leaveRequest t-none"><button class="t-btn t-makeOrderBtn">Оформить заявку</button></li>
                     <li class="t-navigationNumber"><a href="#" class="t-linkItem t-white">+7 900 900-90-90</a></li>
@@ -45,6 +55,9 @@
                     <li><a href="/contacts.html" class="t-linkItem t-white">Контакты</a></li>
                 </ul>
             </nav>
+            <div class="t-barsWrapper">
+                <div class="t-bars"></div>
+            </div>
         </header>
         <main>
             <section class="t-typeSection active">
@@ -91,6 +104,9 @@
                         <div class="t-frame"></div>
                         <div class="t-containerInside t-containerInsideGround">
                             <h2 class="t-containerInsideTitle t-middleTitle">Наземные способы доставки</h2>
+                            <div class="t-tabsSwitchMobileHolder t-none">
+                                <span class="t-tabsSwitchMobile"></span>
+                            </div>
                             <ul class="t-mainList t-flex t-tabsSwitch">
                                 <li class="t-middleText active" data-tab="0"><span>Тентованные</span></li>
                                 <li class="t-middleText" data-tab="1"><span>Изотермические</span></li>
@@ -221,66 +237,53 @@
         </div>
         <div class="t-makeOrderDialog t-dialog t-none">
             <div class="t-dialogTitleWrapper">
-                <h2 class="t-dialogTitle t-middleText">Заявка</h2>
+                <h2 class="t-dialogTitle t-middleText">Заявка на грузоперевозку</h2>
             </div>
             <form class="t-makeOrderForm">
-                <div class="t-formName t-formItem">
-                    <label for="services" class="t-standardTitle t-blackPrimaryColor">Услуга</label>
-                    <select id="services" class="t-selectService">
-                        <option value="default" selected disabled>Выберите</option>
-                        <option value="one">Тентованные</option>
-                        <option value="two">Изотермические</option>
-                        <option value="theree">Рефрижераторные</option>
-                        <option value="four">ЖД</option>
-                        <option value="five">Морские перевозки</option>
-                        <option value="six">Воздушные перевозки</option>
-                    </select>
-                </div>
-                <div class="t-formSendingPlace t-formItem">
-                    <label for="sendingPlace" class="t-standardTitle t-blackPrimaryColor">Место отправки</label>
-                    <input type="text" id="sendingPlace" class="t-input">
-                </div>
-                <div class="t-formDestination t-formItem">
-                    <label for="destination" class="t-standardTitle t-blackPrimaryColor">Пункт назначения</label>
-                    <input type="text" id="destination" class="t-input">
-                </div>
-                <div class="t-formDateOfLoading t-formItem">
-                    <label for="dateOfLoading" class="t-standardTitle t-blackPrimaryColor">Дата погрузки</label>
-                    <input type="text" id="dateOfLoading" class="t-input">
-                </div>
-                <div class="t-smallInputs t-flex t-flexSB">
-                    <div class="t-formWeight  t-formItem">
-                        <label for="weight" class="t-standardTitle t-blackPrimaryColor">Вес</label>
-                        <input type="text" id="weight" class="t-input">
+                <div class="t-grid">
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderSendPlace" class="t-standardTitle t-blackPrimaryColor">Место отправки</label>
+                        <input type="text" id="orderSendPlace" class="t-input">
                     </div>
-                    <div class="t-formScope t-formItem">
-                        <label for="scope" class="t-standardTitle t-blackPrimaryColor">Объём</label>
-                        <input type="text" id="scope" class="t-input">
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderDestinationPlace" class="t-standardTitle t-blackPrimaryColor">Пункт назначения</label>
+                        <input type="text" id="orderDestinationPlace" class="t-input">
                     </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderWeight" class="t-standardTitle t-blackPrimaryColor">Вес</label>
+                        <input type="text" id="orderWeight" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderScope" class="t-standardTitle t-blackPrimaryColor">Объём</label>
+                        <input type="text" placeholder="Необязательно" id="orderScope" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderCompanyName" class="t-standardTitle t-blackPrimaryColor">Название компании</label>
+                        <input type="text" placeholder="Необязательно" id="orderCompanyName" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="ordercontactPerson" class="t-standardTitle t-blackPrimaryColor">Контактное лицо</label>
+                        <input type="text" id="ordercontactPerson" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderPhoneNumber" class="t-standardTitle t-blackPrimaryColor">Телефон</label>
+                        <input type="text" id="orderPhoneNumber" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderEmail" class="t-standardTitle t-blackPrimaryColor">Электронная почта</label>
+                        <input type="text" id="orderEmail" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderRequestComment" class="t-standardTitle t-blackPrimaryColor">Комментарий к заявке</label>
+                        <input type="text" id="orderRequestComment" class="t-input">
+                    </div>
+
                 </div>
-                <div class="t-formNameOfCompany t-formItem">
-                    <label for="nameOfCompany" class="t-standardTitle t-blackPrimaryColor">Название компании</label>
-                    <input type="text" id="nameOfCompany" class="t-input">
-                </div>
-                <div class="t-formContactPerson t-formItem">
-                    <label for="contactPerson" class="t-standardTitle t-blackPrimaryColor">Контактное лицо</label>
-                    <input type="text" id="contactPerson" class="t-input">
-                </div>
-                <div class="t-formOrderPhone t-formItem">
-                    <label for="orderPhone" class="t-standardTitle t-blackPrimaryColor">Телефон</label>
-                    <input type="text" id="orderPhone" class="t-input">
-                </div>
-                <div class="t-formOrderEmail t-formItem">
-                    <label for="orderEmail" class="t-standardTitle t-blackPrimaryColor">Электронная почта</label>
-                    <input type="text" id="orderEmail" class="t-input">
-                </div>
-                <div class="t-formOrderComment t-formItem">
-                    <label for="orderComment" class="t-standardTitle t-blackPrimaryColor">Комментарий к заявке</label>
-                    <input type="text" id="orderComment" class="t-input">
-                </div>
-                <button class="t-btn t-sendOrderBtn" disabled>Отправить</button>
-                <div class="t-sendingWarning">
-                    <p class="t-smallTitleLight t-blackPrimaryColor">Нажимая кнопку «Отправить» вы соглашаетесь с условиями обработки персональных данных</p>
+                <div class="t-flex t-flexAlign t-orderDialogDown">
+                    <button class="t-btn t-sendOrderBtn" disabled>Отправить</button>
+                    <div class="t-sendingWarning">
+                        <p class="t-smallTitleLight t-blackPrimaryColor">Нажимая кнопку «Отправить» вы соглашаетесь с условиями обработки персональных данных</p>
+                    </div>
                 </div>
             </form>
         </div>

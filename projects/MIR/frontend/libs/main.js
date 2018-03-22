@@ -3,8 +3,17 @@ $(document).ready(function () {
     // FormStyler init
 
     if ($('select').hasClass('t-selectService')) {
-        $('.t-selectService, select').styler();
+        $('.t-selectService').styler();
     }
+    
+
+    if(window.location.pathname !== '/' && window.location.pathname !== '/aboutCompany.html' && window.location.pathname !== '/services.html') {
+        $('.t-headerLogoWrapper').addClass('t-logoColorful');
+        $('.t-languageWrapper').addClass('t-languageWrapperBlack');
+        $('.t-headerNavigationList').addClass('t-blackLinks');
+        $('.t-barsWrapper').addClass('t-barsBlue');
+    }
+
 
     // Main Slider
 
@@ -119,6 +128,11 @@ $(document).ready(function () {
         var getInArr = [];
         var output = '';
         if (window.matchMedia('(max-width: '+ size +'px)').matches) {
+
+            if ($('.t-mobileContentInfo').hasClass('active')) {
+                return false
+            }
+
             $(firstSelector).addClass('t-none');
             $(secondSelector).removeClass('t-none').addClass('active');
             $(firstSelector).each(function (i, data) {
@@ -149,10 +163,6 @@ $(document).ready(function () {
     }
     checkResize(890, '.t-tab .t-contentInfo', '.t-mobileContentInfoWrapper');
 
-    $(window).on('resize', function () {
-        checkResize(890, '.t-tab .t-contentInfo', '.t-mobileContentInfoWrapper')
-    });
-
     $('.t-tabsSwitch li').click(function(e){
         e.preventDefault();
         if ($('body').hasClass('working')) {
@@ -171,6 +181,7 @@ $(document).ready(function () {
         if ($('.t-mobileContentInfoWrapper').hasClass('active')) {
             $('.t-tab[data-tabId='+ getTabs +'], ' +
                 '.t-mobileContentInfo[data-tabId='+ getTabs +']').fadeIn(400).addClass('active');
+
         } else {
             $('.t-tab[data-tabId='+ getTabs +']').fadeIn(400).addClass('active');
         }
@@ -192,9 +203,14 @@ $(document).ready(function () {
 
     // Main Slider Control
 
+    var getMidText = $('.t-tabsSwitch .t-middleText.active').text();
+    if($('.t-tabsSwitch .t-middleText').hasClass('active')) {
+        $('.t-tabsSwitchMobileHolder .t-tabsSwitchMobile').text(getMidText);
+    }
+
     if(window.location.pathname === '/') {
         $(window).bind("DOMMouseScroll mousewheel wheel", function (event) {
-            if($('.t-wrapper').hasClass('t-dialogActive')) {
+            if($('.t-wrapper').hasClass('t-dialogActive') || $('.t-headerNavigation').hasClass('t-activeMobileMenu')) {
                 return false;
             } else {
                 if($('body').hasClass('animate'))
@@ -205,6 +221,13 @@ $(document).ready(function () {
                     if ($('.t-contentWrapperMain').hasClass('active')) {
                         if (!$('.t-groundContent').hasClass('t-none')) {
                             $('.t-tabsSwitch .t-middleText.active').next().click();
+
+                            $('.t-tabsSwitch .t-middleText').each(function (i, data) {
+                                if($(this).hasClass('active')) {
+                                    $('.t-tabsSwitchMobileHolder .t-tabsSwitchMobile').text($(this).text());
+                                }
+                            });
+
                         }
                     } else{
                         $('.t-jumbotron').addClass('t-none');
@@ -212,6 +235,7 @@ $(document).ready(function () {
                         $('.t-headerLogoWrapper').addClass('t-logoColorful');
                         $('.t-languageWrapper').addClass('t-languageWrapperBlack');
                         $('.t-headerNavigationList').addClass('t-blackLinks');
+                        $('.t-barsWrapper').addClass('t-barsBlue');
                         $('.t-headerNavigationList .t-navigationNumber, .t-headerNavigationList .t-navigationEmail').addClass('t-none');
                         $('.t-headerNavigationList .t-leaveRequest').removeClass('t-none');
                         $('.t-controlHandler').addClass('active');
@@ -223,12 +247,19 @@ $(document).ready(function () {
                         $('.t-headerLogoWrapper').removeClass('t-logoColorful');
                         $('.t-languageWrapper').removeClass('t-languageWrapperBlack');
                         $('.t-headerNavigationList').removeClass('t-blackLinks');
+                        $('.t-barsWrapper').removeClass('t-barsBlue');
                         $('.t-headerNavigationList .t-leaveRequest').addClass('t-none');
                         $('.t-headerNavigationList .t-navigationNumber, .t-headerNavigationList .t-navigationEmail').removeClass('t-none');
                         $('.t-controlHandler').removeClass('active');
                     } else{
                         if (!$('.t-groundContent').hasClass('t-none')) {
                             $('.t-middleText.active').prev().click();
+
+                            $('.t-tabsSwitch .t-middleText').each(function (i, data) {
+                                if($(this).hasClass('active')) {
+                                    $('.t-tabsSwitchMobileHolder .t-tabsSwitchMobile').text($(this).text());
+                                }
+                            });
                         }
                     }
                 }
@@ -316,7 +347,6 @@ $(document).ready(function () {
 
 
     // Simple Validation
-
     
     function simpleUnlock(formSelector, button, checkClass ) {
         var emptyFields = false;
@@ -362,6 +392,104 @@ $(document).ready(function () {
     $('.t-makeOrderDialog .t-makeOrderForm > .t-formItem > input').on('keyup', function (e) {
         // 1) Указываем основной селектор к инпуту, 2) Указываем разблокируемую кнопку.
         simpleUnlock('.t-makeOrderDialog .t-makeOrderForm > .t-formItem', '.t-sendOrderBtn');
+    });
+    
+
+
+    //  Mobile Menu Ctrl
+
+    $('header .t-barsWrapper').on('click', function (e) {
+        e.preventDefault();
+
+        if(!$('.t-headerNavigation').hasClass('t-activeMobileMenu')) {
+            $('.t-headerNavigation').addClass('t-activeMobileMenu');
+        }
+
+    });
+
+    $('.t-mobileMenuHeader .t-closeWrapper').on('click', function (e) {
+        e.preventDefault();
+
+        if($('.t-headerNavigation').hasClass('t-activeMobileMenu')) {
+            $('.t-headerNavigation').addClass('t-anim');
+            setTimeout(function () {
+                $('.t-headerNavigation').removeClass('t-activeMobileMenu');
+                $('.t-headerNavigation').removeClass('t-anim');
+            }, 300)
+        }
+
+    });
+
+    // Sub Mobile Menu Function
+    
+    function subMobileMenu(size, selector, outputSelector) {
+
+        if(window.matchMedia('(max-width: '+ size +'px)').matches) {
+
+            $('select' + outputSelector).parent().removeClass('t-none');
+
+            if ($('select' + outputSelector).parent().hasClass('t-subMenuReady')) {
+
+                return false;
+            }
+
+            var arr = [];
+            var obj = {};
+            var output = '';
+
+            $(selector).each(function (i, data) {
+                obj = {
+                    getClassName: $(this).attr('class'),
+                    getThisText: $(this).text(),
+                    getThisLink: $(this).find('a').attr('href')
+                };
+                arr.push(obj);
+            });
+
+            $.each(arr, function (key, value) {
+                var getClass = value.getClassName;
+                var getText = value.getThisText;
+                var getLink = value.getThisLink;
+                output += '<option value="'+ getLink +'" class="'+ getClass +' t-optionMenuItem">'+ getText +'</option>';
+            });
+
+            $(outputSelector).append(output).parent().addClass('t-subMenuReady');
+
+            $('.t-optionMenuItem').each(function (i, data) {
+                if($(data).hasClass('undefined')) {
+                    $(this).attr('class', 't-optionMenuItem');
+                }
+                if($(data).hasClass('active')) {
+                    $(this).attr('selected', 'selected');
+                }
+            })
+
+        } else {
+
+            $('select' + outputSelector).parent().addClass('t-none');
+
+            $(outputSelector).html('');
+
+            $('select' + outputSelector).parent().removeClass('t-subMenuReady');
+
+        }
+    }
+    // Call SubMobile Menu
+
+    subMobileMenu(768, '.t-simpleRightSideMenu li', '.t-mobileSubMenu');
+
+    // Make SubMenu Working
+
+    $('.t-mobileSubMenu').on('change', function () {
+        var getValueFromThis = $(this).val();
+        window.location.pathname = getValueFromThis;
+    });
+
+    // Resize Event
+
+    $(window).on('resize', function () {
+        checkResize(890, '.t-tab .t-contentInfo', '.t-mobileContentInfoWrapper'); //Tabs Resize
+        subMobileMenu(768, '.t-simpleRightSideMenu li', '.t-mobileSubMenu'); // Call SubMobile Menu
     });
 
 });

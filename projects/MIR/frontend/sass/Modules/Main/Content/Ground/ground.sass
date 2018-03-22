@@ -3,9 +3,11 @@
   .t-frame
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("/images/backgrounds/ground.png") no-repeat
     background-position: center center
-    clip-path: polygon(0% 0%, 75% 0%, 100% 51%, 75% 100%, 0% 100%)
-    -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 51%, 75% 100%, 0% 100%)
+    -webkit-clip-path: polygon(0 0, 50% 0, 100% 50%, 50% 100%, 0% 100%)
+    clip-path: polygon(0 0, 50% 0, 100% 50%, 50% 100%, 0% 100%)
     z-index: -1
+    width: 280px
+    mix-blend-mode: unset
   .t-trailerTwo, .t-trailerThree, .t-train
     display: none
   .t-vehiclesHolderAndInfo
