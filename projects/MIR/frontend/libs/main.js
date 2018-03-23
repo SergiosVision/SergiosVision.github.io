@@ -330,7 +330,7 @@ $(document).ready(function () {
 
     // Call Dialogs
 
-    $('.t-writeToManagerBtn').on('click', function (e) {
+    $('.t-writeToManagerBtn, .t-contactsWriteUs').on('click', function (e) {
         e.preventDefault();
         callDialog('.t-feedBackDialog', 't-none', '.t-wrapper', 250);
     });
@@ -367,6 +367,10 @@ $(document).ready(function () {
                 if ($(this).val() === '') {
                     emptyFields = true;
                 }
+                if ($('.'+ checkClass + '> input').val() === '') {
+                    emptyFields = false;
+                    console.log(formSelector)
+                }
             });
 
             if (emptyFields) {
@@ -389,9 +393,9 @@ $(document).ready(function () {
         simpleUnlock('.t-feedBackDialog .t-feedBackForm > .t-formItem', '.t-feedBackDialog .t-sendContactsBtn', 't-formEmailOrPhone');
     });
 
-    $('.t-makeOrderDialog .t-makeOrderForm > .t-formItem > input').on('keyup', function (e) {
+    $('.t-makeOrderDialog .t-makeOrderForm .t-formItem > input').on('keyup', function (e) {
         // 1) Указываем основной селектор к инпуту, 2) Указываем разблокируемую кнопку.
-        simpleUnlock('.t-makeOrderDialog .t-makeOrderForm > .t-formItem', '.t-sendOrderBtn');
+        simpleUnlock('.t-makeOrderDialog .t-makeOrderForm .t-formItem', '.t-sendOrderBtn', 't-notNecessary');
     });
     
 
@@ -490,6 +494,88 @@ $(document).ready(function () {
     $(window).on('resize', function () {
         checkResize(890, '.t-tab .t-contentInfo', '.t-mobileContentInfoWrapper'); //Tabs Resize
         subMobileMenu(768, '.t-simpleRightSideMenu li', '.t-mobileSubMenu'); // Call SubMobile Menu
+
     });
+
+
+    if(device.mobile()) {
+
+        var initialPoint;
+        var finalPoint;
+
+        window.addEventListener('touchstart', function (event) {
+            initialPoint = event.changedTouches[0];
+        }, false);
+
+        window.addEventListener('touchmove', function (event) {
+
+            finalPoint = event.changedTouches[0];
+            var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+            var yAbs = initialPoint.pageY - finalPoint.pageY;
+
+            if ($('.t-wrapper').hasClass('t-dialogActive') || $('.t-headerNavigation').hasClass('t-activeMobileMenu')) {
+                return false;
+            } else {
+                if ($('body').hasClass('animate'))
+                    return false;
+
+                $('body').addClass('animate');
+                if (yAbs < 0) {
+                    if ($('.t-contentWrapperMain').hasClass('active')) {
+                        if (!$('.t-groundContent').hasClass('t-none')) {
+                            $('.t-tabsSwitch .t-middleText.active').next().click();
+
+                            $('.t-tabsSwitch .t-middleText').each(function (i, data) {
+                                if ($(this).hasClass('active')) {
+                                    $('.t-tabsSwitchMobileHolder .t-tabsSwitchMobile').text($(this).text());
+                                }
+                            });
+
+                        }
+                    } else {
+                        $('.t-jumbotron').addClass('t-none');
+                        $('.t-contentWrapperMain').removeClass('t-none').addClass('active');
+                        $('.t-headerLogoWrapper').addClass('t-logoColorful');
+                        $('.t-languageWrapper').addClass('t-languageWrapperBlack');
+                        $('.t-headerNavigationList').addClass('t-blackLinks');
+                        $('.t-barsWrapper').addClass('t-barsBlue');
+                        $('.t-headerNavigationList .t-navigationNumber, .t-headerNavigationList .t-navigationEmail').addClass('t-none');
+                        $('.t-headerNavigationList .t-leaveRequest').removeClass('t-none');
+                        $('.t-controlHandler').addClass('active');
+                    }
+                } else {
+                    if ($('.t-tabsSwitch li:first-child').hasClass('active')) {
+                        $('.t-jumbotron').removeClass('t-none');
+                        $('.t-contentWrapperMain').addClass('t-none').removeClass('active');
+                        $('.t-headerLogoWrapper').removeClass('t-logoColorful');
+                        $('.t-languageWrapper').removeClass('t-languageWrapperBlack');
+                        $('.t-headerNavigationList').removeClass('t-blackLinks');
+                        $('.t-barsWrapper').removeClass('t-barsBlue');
+                        $('.t-headerNavigationList .t-leaveRequest').addClass('t-none');
+                        $('.t-headerNavigationList .t-navigationNumber, .t-headerNavigationList .t-navigationEmail').removeClass('t-none');
+                        $('.t-controlHandler').removeClass('active');
+                    } else {
+                        if (!$('.t-groundContent').hasClass('t-none')) {
+                            $('.t-middleText.active').prev().click();
+
+                            $('.t-tabsSwitch .t-middleText').each(function (i, data) {
+                                if ($(this).hasClass('active')) {
+                                    $('.t-tabsSwitchMobileHolder .t-tabsSwitchMobile').text($(this).text());
+                                }
+                            });
+                        }
+                    }
+                }
+                setTimeout(function () {
+                    $('body').removeClass('animate')
+                }, 1000);
+            }
+
+        });
+
+    }
+
+
+
 
 });

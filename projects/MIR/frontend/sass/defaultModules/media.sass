@@ -49,12 +49,12 @@
     padding: 168px 104px 0 104px
   .t-groundContent
     .t-truckAndTrainHolder
-      .t-truck
-        width: 385px
-        height: 295px
-        img
-          max-width: 100%
-          height: auto
+      //.t-truck
+      //  width: 385px
+      //  height: 295px
+      //  img
+      //    max-width: 100%
+      //    height: auto
       .t-train
         width: 100%
         height: auto
@@ -66,13 +66,8 @@
           left: 535px!important
     .t-vehiclesHolderAndInfo
       .t-trailer
-        top: 33px!important
-        left: 225px!important
-        width: 417px
-        height: 194px
-        img
-          max-width: 100%
-          height: auto
+        top: 15%
+        left: 29%
       .t-contentInfo
         width: 372px!important
 
@@ -99,7 +94,7 @@
       padding: 0!important
       margin: 0 auto
 
-  .t-employeesContainer, .t-vacancy, .t-clients
+  .t-employeesContainer, .t-vacancy, .t-clients, .t-contacts
     width: 100%
     padding: 158px 24px 0 24px
 
@@ -141,6 +136,9 @@
 
 
 @media (max-width: 980px)
+
+  body
+    font-size: 16px
 
   .t-mainContentContainerServices
     padding: 83px 24px 200px 24px
@@ -184,10 +182,10 @@
         left: auto!important
     .t-vehiclesHolderAndInfo
       .t-trailer
-        top: 33px!important
-        left: 225px!important
-        width: 417px
-        height: 194px
+        //top: 33px!important
+        //left: 225px!important
+        //width: 417px
+        //height: 194px
         img
           max-width: 100%
           height: auto
@@ -206,10 +204,19 @@
   .t-mainContentWrapper .t-continueTop
     padding: 0 24px!important
 
+
+@media (max-width: 890px)
+  .t-groundContent
+    .t-vehiclesHolderAndInfo
+      .t-trailer
+        top: 11%
+        left: 29%
+
+
 @media (max-width: 800px)
   .t-typeSection .t-jumbotron .t-jumbotronContainer,
   .t-contentContainer .t-containerInside
-    padding-top: 115px
+    padding-top: 115px!important
 
   .t-employeesContainer, .t-vacancy, .t-clients
     width: 100%
@@ -332,15 +339,15 @@
         margin-left: 0
 
 @media (max-width: 710px)
-  .t-groundContent .t-truckAndTrainHolder .t-truck
-    width: 250px
-    height: auto
-    margin-left: 65px
-  .t-groundContent .t-vehiclesHolderAndInfo .t-trailer
-    left: 210px!important
-    width: 285px
-    height: auto
-    top: 19px!important
+  //.t-groundContent .t-truckAndTrainHolder .t-truck
+  //  width: 250px
+  //  height: auto
+  //  margin-left: 65px
+  //.t-groundContent .t-vehiclesHolderAndInfo .t-trailer
+  //  left: 210px!important
+  //  width: 285px
+  //  height: auto
+  //  top: 19px!important
   .t-typeSection .t-jumbotron .t-jumbotronContainer
     .t-jumbotronContainerInfo
       width: 100%!important
@@ -365,10 +372,11 @@
 @media (max-width: 600px)
   .t-groundContent .t-vehiclesHolderAndInfo .t-mobileContentInfoWrapper
     width: 87%
-  .t-groundContent .t-vehiclesHolderAndInfo .t-trailer
-    left: 175px!important
-  .t-groundContent .t-truckAndTrainHolder .t-truck
-    margin-left: 30px
+  .t-contactsInfoWrapper
+    flex-direction: column
+    .t-contactsWrapper
+      margin-right: 0
+      margin-bottom: 40px
 
 @media (max-width: 590px)
   .t-insideJumbotron
@@ -455,16 +463,26 @@
       .t-t
         font-size: 32px
 
+
+@media (max-width: 540px) and (min-width: 508px)
+  .t-groundContent
+    .t-vehiclesHolderAndInfo
+      .t-trailer
+        top: 10%
+        left: 29%
+        &:nth-child(3)
+          top: 8%
+
 @media (max-width: 510px)
-  .t-groundContent .t-truckAndTrainHolder .t-truck
-    width: 163px!important
-    height: 125px!important
-    margin-left: 0!important
-  .t-groundContent .t-vehiclesHolderAndInfo .t-trailer
-    width: 157px!important
-    height: 65px!important
-    left: 98px!important
-    top: 22px!important
+  //.t-groundContent .t-truckAndTrainHolder .t-truck
+  //  width: 163px!important
+  //  height: 125px!important
+  //  margin-left: 0!important
+  //.t-groundContent .t-vehiclesHolderAndInfo .t-trailer
+  //  width: 157px!important
+  //  height: 65px!important
+  //  left: 98px!important
+  //  top: 22px!important
   .t-contentContainer .t-containerInside .t-vehiclesHolderAndInfo .t-contentInfoWithTitle
     width: 100%!important
   .t-groundContent .t-vehiclesHolderAndInfo .t-mobileContentInfoWrapper
@@ -472,6 +490,13 @@
     .t-mobileContentInfo
       font-size: 16px
       font-weight: 300
+
+@media (max-width: 500px)
+  .t-groundContent
+    .t-vehiclesHolderAndInfo
+      .t-trailer
+        top: 11%
+        left: 29%
 
 @media (max-width: 480px)
 
@@ -603,7 +628,51 @@
           margin: 0 0 8px 0
 
 
+@media (max-width: 391px)
+  .t-groundContent
+    .t-vehiclesHolderAndInfo
+      .t-trailer
+        top: 8%
+        left: 29%
+        &:last-child
+          top: 6%
+
 @media (max-width: 380px)
   .t-openAccordItem .t-vacancyName
     font-size: 20px
 
+
+
+//@media (max-height: 860px)
+//  .t-groundContent
+//    .t-truckAndTrainHolder
+//      .t-truck
+//        width: 385px
+//        height: 295px
+//        margin-left: 40%
+//        transform: translateX(-70%)
+//        img
+//          max-width: 100%
+//          height: auto
+//      .t-train
+//        width: 100%
+//        height: auto
+//        img
+//          max-width: 100%
+//          height: auto
+//        .t-contentInfo
+//          top: 230px!important
+//          left: 535px!important
+//    .t-vehiclesHolderAndInfo
+//      .t-trailer
+//        top: 33px!important
+//        left: 225px!important
+//        width: 417px
+//        height: 194px
+//        margin-left: 50%
+//        transform: translateX(-91%)
+//        img
+//          max-width: 100%
+//          height: auto
+//      .t-contentInfo
+//        width: 372px!important
