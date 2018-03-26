@@ -15,6 +15,11 @@ $(document).ready(function () {
     }
 
 
+    console.log($(window).width() / 2);
+    $('.t-controlItemsHolder').css({
+        'left': $(window).width() / 2
+    });
+
     // Main Slider
 
     // Ground Slide Activate
@@ -296,35 +301,39 @@ $(document).ready(function () {
     });
 
 
+
     // Dialog Controls
 
     // Open Dialog Function
-    function callDialog(selector, thisClass, whereAdd, time) {
+    function callDialog(selector, thisClass, whereAdd, time, overlay) {
         if ($(whereAdd).hasClass('t-dialogActive')) {
             return false;
         }
 
-        $(whereAdd).append('<div class="t-overlay" style="display: none;"><div class="t-closeDialog"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillCloser" fill="#FFF"/><defs><path id="path0_fillCloser" fill-rule="evenodd" d="M.27.27a.923.923 0 0 1 1.306 0L12 10.695 22.424.27a.923.923 0 1 1 1.306 1.306L13.305 12 23.73 22.424a.923.923 0 1 1-1.306 1.306L12 13.305 1.576 23.73A.923.923 0 1 1 .27 22.424L10.695 12 .27 1.576A.923.923 0 0 1 .27.27z"/></defs></svg></div></div></div>').addClass('t-dialogActive');
-        $('.t-overlay').fadeIn(300);
+        $(whereAdd).addClass('t-dialogActive');
+
+        $(overlay).fadeIn(300);
+
         setTimeout(function () {
             $(selector).removeClass(thisClass);
         }, time)
     }
     // Close Dialog Function
-    function closeDialog(selector, thisClass, whereAdd) {
+    function closeDialog(selector, thisClass, whereAdd, overlay) {
         $(selector).addClass(thisClass);
         $(selector).find('form').each(function (i, data) {
             data.reset();
             $(data).find('button').prop('disabled', true);
         });
 
-        $('.t-overlay').fadeOut(300);
+        $(overlay).fadeOut(300);
 
         setTimeout(function () {
-            $('.t-overlay').remove();
             $(whereAdd).removeClass('t-dialogActive');
         }, 300)
     }
+
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -332,17 +341,17 @@ $(document).ready(function () {
 
     $('.t-writeToManagerBtn, .t-contactsWriteUs').on('click', function (e) {
         e.preventDefault();
-        callDialog('.t-feedBackDialog', 't-none', '.t-wrapper', 250);
+        callDialog('.t-feedBackDialog', 't-none', '.t-wrapper', 250, '.t-overlay');
     });
 
     $('.t-makeOrderBtn').on('click', function (e) {
         e.preventDefault();
-        callDialog('.t-makeOrderDialog', 't-none', '.t-wrapper', 250);
+        callDialog('.t-makeOrderDialog', 't-none', '.t-wrapper', 250, '.t-overlay');
     });
 
     $('body').on('click', '.t-closeDialog', function (e) {
         e.preventDefault();
-        closeDialog('.t-feedBackDialog, .t-makeOrderDialog', 't-none', '.t-wrapper');
+        closeDialog('.t-feedBackDialog, .t-makeOrderDialog', 't-none', '.t-wrapper', '.t-overlay');
     });
 
 
@@ -424,7 +433,7 @@ $(document).ready(function () {
 
     });
 
-    // Sub Mobile Menu Function
+    // Sub Mobile Menu CTRL
     
     function subMobileMenu(size, selector, outputSelector) {
 
@@ -566,16 +575,40 @@ $(document).ready(function () {
                         }
                     }
                 }
-                setTimeout(function () {
-                    $('body').removeClass('animate')
-                }, 1000);
-            }
+    setTimeout(function () {
+        $('body').removeClass('animate')
+    }, 1000);
+}
 
+});
+
+}
+
+(function (outputKey, selector) {
+    var truck = '<div class="t-truck t-controlItem t-defaultState" data-tab="ground" data-index="2">\n' +
+        '             <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillTruck" transform="translate(2 10)"/><defs><path id="path0_fillTruck" fill-rule="evenodd" d="M43.196.02A1 1 0 0 0 42 1v14h-1V3a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v19a1 1 0 0 0 1 1h2.764a2.997 2.997 0 0 0 4.736-.341 2.997 2.997 0 0 0 4.736.341H32.5c.082 0 .162-.01.239-.029.55.63 1.359 1.029 2.261 1.029.889 0 1.687-.386 2.236-1h12.528c.55.614 1.347 1 2.236 1 .889 0 1.687-.386 2.236-1H58a1 1 0 0 0 1-1V6.46a4 4 0 0 0-3.215-3.923L43.196.02zM49 21a3 3 0 0 1 6 0h2v-7.105l-8.11-.901a1 1 0 1 1 .22-1.988l7.89.877V6.459a2 2 0 0 0-1.608-1.96L44 2.218V16a1 1 0 0 1-1 1H2v4h1a3 3 0 0 1 3-3h5a3 3 0 0 1 3 3h18a3 3 0 0 1 6 0h11zM39 4v11H2V4h37zM10 21a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-4-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm28 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm18-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></defs></svg>\n' +
+        '        </div>';
+    var tanker = '<div class="t-tanker t-controlItem t-defaultState" data-tab="water" data-index="3">\n' +
+        '             <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillTanker" transform="translate(2 8)"/><defs><path id="path0_fillTanker" fill-rule="evenodd" d="M3.212.385A1 1 0 0 1 4 0h16a1 1 0 0 1 .99.854L22.936 14H25V9a1 1 0 0 1 1-1h15a1 1 0 0 1 1 1v4.658c.334-.13.655-.297.957-.498l3.432-2.288a6 6 0 0 1 2.785-.983l9.736-.885a1 1 0 0 1 .948 1.51l-7.253 12.088A7 7 0 0 1 46.603 26H8.073a5 5 0 0 1-4.831-3.712L.034 10.258A1 1 0 0 1 1 9h4.22l.615-2.464-1.282-.641a1 1 0 0 1-.523-.653l-1-4a1 1 0 0 1 .182-.857zM41.476 15.88a7.003 7.003 0 0 0 2.59-1.056l3.432-2.288a4 4 0 0 1 1.857-.655l7.774-.707-6.239 10.399A5 5 0 0 1 46.603 24H8.073a3 3 0 0 1-2.899-2.227L3.958 17.21l8.846 1.77a1 1 0 1 0 .392-1.962l-9.813-1.962L2.302 11h9.164c1.403 0 2.763.492 3.84 1.39l1.829 1.524A9 9 0 0 0 22.896 16H41a.995.995 0 0 0 .476-.12zM40 14v-4H27v4h13zM19.137 2l.296 2H14a1 1 0 0 0 0 2h5.73l1.14 7.7a6.996 6.996 0 0 1-2.455-1.323l-1.828-1.523A8 8 0 0 0 11.466 9H7.28l.69-2.758a1 1 0 0 0-.524-1.137L5.86 4.311 5.28 2h13.856z"/></defs></svg>\n' +
+        '        </div>';
+    var plane = '<div class="t-plane t-controlItem t-defaultState" data-tab="air" data-index="1">\n' +
+        '             <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillPlane" transform="translate(2 8)"/><defs><path id="path0_fillPlane" fill-rule="evenodd" d="M1 0a1 1 0 0 0-.864 1.504l6.74 11.553-.786 1.73a1 1 0 0 0 .648 1.378l12.024 3.264L12.4 24.2A1 1 0 0 0 13 26h8a1 1 0 0 0 .447-.105L33.237 20h13.992c3.617 0 7.192-.785 10.476-2.301l.44-.203c1.265-.584 1.423-2.319.285-3.122a29.361 29.361 0 0 0-5.904-3.225.999.999 0 0 0-.323-.128A29.358 29.358 0 0 0 41.5 9H20.603a8 8 0 0 1-4.93-1.7L6.616.212A1 1 0 0 0 6 0H1zm48.42 12.172A27.357 27.357 0 0 0 41.5 11H20.602a10 10 0 0 1-6.163-2.125L5.655 2H2.741l6.123 10.496a1 1 0 0 1 .046.918l-.513 1.129 12.865 3.492A1 1 0 0 1 21.6 19.8L16 24h4.764l11.789-5.895 6-3a1 1 0 0 1 .894 1.79L37.237 18h9.992a23 23 0 0 0 9.638-2.117l.139-.064a27.368 27.368 0 0 0-4.981-2.713l-3.578 1.789a1 1 0 0 1-.894-1.79l1.867-.933z"/></defs></svg>\n' +
+        '        </div>';
+    var arr = [plane, truck, tanker];
+    var empty = '';
+
+    for(var i = 0; i < 4; i++) {
+        $.each(arr, function (key, value) {
+            empty += ''+ value +'';
         });
-
     }
+    $(outputKey).html(empty);
+    $('.t-controlItem:nth-child(5)').addClass('active');
+    $('.t-controlItem:not(:nth-child(4), :nth-child(5), :nth-child(6))').each(function (i, data) {
+        $(this).addClass('t-clone')
+    });
 
-
+    })('.t-controlItemsHolder');
 
 
 });

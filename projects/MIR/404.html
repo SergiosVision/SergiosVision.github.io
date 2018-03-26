@@ -69,93 +69,83 @@
             </div>
         </div>
     </main>
-    <div class="t-feedBackDialog t-dialog t-none">
-        <div class="t-dialogTitleWrapper">
-            <h2 class="t-dialogTitle t-middleText">Обратная связь</h2>
-        </div>
-        <form class="t-feedBackForm">
-            <div class="t-formName t-formItem">
-                <label for="nameFeedBack" class="t-standardTitle t-blackPrimaryColor">Ваше имя</label>
-                <input type="text" id="nameFeedBack" class="t-input">
+    <div class="t-overlay" style="display: none">
+        <div class="t-closeDialog"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillCloser" fill="#FFF"/><defs><path id="path0_fillCloser" fill-rule="evenodd" d="M.27.27a.923.923 0 0 1 1.306 0L12 10.695 22.424.27a.923.923 0 1 1 1.306 1.306L13.305 12 23.73 22.424a.923.923 0 1 1-1.306 1.306L12 13.305 1.576 23.73A.923.923 0 1 1 .27 22.424L10.695 12 .27 1.576A.923.923 0 0 1 .27.27z"/></defs></svg></div>
+        <div class="t-feedBackDialog t-dialog t-none">
+            <div class="t-dialogTitleWrapper">
+                <h2 class="t-dialogTitle t-middleText">Обратная связь</h2>
             </div>
-            <div class="t-formEmailOrPhone t-formItem">
-                <label for="emailOrPhoneFeedBack" class="t-standardTitle t-blackPrimaryColor">Телефон или электронная почта</label>
-                <input type="text" id="emailOrPhoneFeedBack" class="t-input" required>
-            </div>
-            <div class="t-formEmailOrPhone t-formItem">
-                <label for="commentOrQuestionFeedBack" class="t-standardTitle t-blackPrimaryColor">Комментарий или вопрос</label>
-                <input type="text" id="commentOrQuestionFeedBack" class="t-input">
-            </div>
-            <button class="t-btn t-sendContactsBtn" disabled>Отправить</button>
-            <div class="t-sendingWarning">
-                <p class="t-smallTitleLight t-blackPrimaryColor">Нажимая кнопку «Отправить» вы соглашаетесь с условиями обработки персональных данных</p>
-            </div>
-        </form>
-    </div>
-    <div class="t-makeOrderDialog t-dialog t-none">
-        <div class="t-dialogTitleWrapper">
-            <h2 class="t-dialogTitle t-middleText">Заявка</h2>
-        </div>
-        <form class="t-makeOrderForm">
-            <div class="t-formName t-formItem">
-                <label for="services" class="t-standardTitle t-blackPrimaryColor">Услуга</label>
-                <select id="services" class="t-selectService">
-                    <option value="default" selected disabled>Выберите</option>
-                    <option value="one">Тентованные</option>
-                    <option value="two">Изотермические</option>
-                    <option value="theree">Рефрижераторные</option>
-                    <option value="four">ЖД</option>
-                    <option value="five">Морские перевозки</option>
-                    <option value="six">Воздушные перевозки</option>
-                </select>
-            </div>
-            <div class="t-formSendingPlace t-formItem">
-                <label for="sendingPlace" class="t-standardTitle t-blackPrimaryColor">Место отправки</label>
-                <input type="text" id="sendingPlace" class="t-input">
-            </div>
-            <div class="t-formDestination t-formItem">
-                <label for="destination" class="t-standardTitle t-blackPrimaryColor">Пункт назначения</label>
-                <input type="text" id="destination" class="t-input">
-            </div>
-            <div class="t-formDateOfLoading t-formItem">
-                <label for="dateOfLoading" class="t-standardTitle t-blackPrimaryColor">Дата погрузки</label>
-                <input type="text" id="dateOfLoading" class="t-input">
-            </div>
-            <div class="t-smallInputs t-flex t-flexSB">
-                <div class="t-formWeight  t-formItem">
-                    <label for="weight" class="t-standardTitle t-blackPrimaryColor">Вес</label>
-                    <input type="text" id="weight" class="t-input">
+            <form class="t-feedBackForm">
+                <div class="t-formName t-formItem">
+                    <label for="nameFeedBack" class="t-standardTitle t-blackPrimaryColor">Ваше имя</label>
+                    <input type="text" id="nameFeedBack" class="t-input">
                 </div>
-                <div class="t-formScope t-formItem">
-                    <label for="scope" class="t-standardTitle t-blackPrimaryColor">Объём</label>
-                    <input type="text" id="scope" class="t-input">
+                <div class="t-formEmailOrPhone t-formItem">
+                    <label for="emailOrPhoneFeedBack" class="t-standardTitle t-blackPrimaryColor">Телефон или электронная почта</label>
+                    <input type="text" id="emailOrPhoneFeedBack" class="t-input" required>
                 </div>
+                <div class="t-formEmailOrPhone t-formItem">
+                    <label for="commentOrQuestionFeedBack" class="t-standardTitle t-blackPrimaryColor">Комментарий или вопрос</label>
+                    <input type="text" id="commentOrQuestionFeedBack" class="t-input">
+                </div>
+                <button class="t-btn t-sendContactsBtn" disabled>Отправить</button>
+                <div class="t-sendingWarning">
+                    <p class="t-smallTitleLight t-blackPrimaryColor">Нажимая кнопку «Отправить» вы соглашаетесь с условиями обработки персональных данных</p>
+                </div>
+            </form>
+        </div>
+        <div class="t-makeOrderDialog t-dialog t-none">
+            <div class="t-dialogTitleWrapper">
+                <h2 class="t-dialogTitle t-middleText">Заявка на грузоперевозку</h2>
             </div>
-            <div class="t-formNameOfCompany t-formItem">
-                <label for="nameOfCompany" class="t-standardTitle t-blackPrimaryColor">Название компании</label>
-                <input type="text" id="nameOfCompany" class="t-input">
-            </div>
-            <div class="t-formContactPerson t-formItem">
-                <label for="contactPerson" class="t-standardTitle t-blackPrimaryColor">Контактное лицо</label>
-                <input type="text" id="contactPerson" class="t-input">
-            </div>
-            <div class="t-formOrderPhone t-formItem">
-                <label for="orderPhone" class="t-standardTitle t-blackPrimaryColor">Телефон</label>
-                <input type="text" id="orderPhone" class="t-input">
-            </div>
-            <div class="t-formOrderEmail t-formItem">
-                <label for="orderEmail" class="t-standardTitle t-blackPrimaryColor">Электронная почта</label>
-                <input type="text" id="orderEmail" class="t-input">
-            </div>
-            <div class="t-formOrderComment t-formItem">
-                <label for="orderComment" class="t-standardTitle t-blackPrimaryColor">Комментарий к заявке</label>
-                <input type="text" id="orderComment" class="t-input">
-            </div>
-            <button class="t-btn t-sendOrderBtn" disabled>Отправить</button>
-            <div class="t-sendingWarning">
-                <p class="t-smallTitleLight t-blackPrimaryColor">Нажимая кнопку «Отправить» вы соглашаетесь с условиями обработки персональных данных</p>
-            </div>
-        </form>
+            <form class="t-makeOrderForm">
+                <div class="t-grid">
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderSendPlace" class="t-standardTitle t-blackPrimaryColor">Место отправки</label>
+                        <input type="text" id="orderSendPlace" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderDestinationPlace" class="t-standardTitle t-blackPrimaryColor">Пункт назначения</label>
+                        <input type="text" id="orderDestinationPlace" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderWeight" class="t-standardTitle t-blackPrimaryColor">Вес</label>
+                        <input type="text" id="orderWeight" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderScope" class="t-standardTitle t-blackPrimaryColor t-notNecessary">Объём</label>
+                        <input type="text" placeholder="Необязательно" id="orderScope" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderCompanyName" class="t-standardTitle t-blackPrimaryColor t-notNecessary">Название компании</label>
+                        <input type="text" placeholder="Необязательно" id="orderCompanyName" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="ordercontactPerson" class="t-standardTitle t-blackPrimaryColor">Контактное лицо</label>
+                        <input type="text" id="ordercontactPerson" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderPhoneNumber" class="t-standardTitle t-blackPrimaryColor">Телефон</label>
+                        <input type="text" id="orderPhoneNumber" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderEmail" class="t-standardTitle t-blackPrimaryColor">Электронная почта</label>
+                        <input type="text" id="orderEmail" class="t-input">
+                    </div>
+                    <div class="t-gridItem t-formItem">
+                        <label for="orderRequestComment" class="t-standardTitle t-blackPrimaryColor t-notNecessary">Комментарий к заявке</label>
+                        <input type="text" placeholder="Необязательно" id="orderRequestComment" class="t-input">
+                    </div>
+
+                </div>
+                <div class="t-flex t-flexAlign t-orderDialogDown">
+                    <button class="t-btn t-sendOrderBtn" disabled>Отправить</button>
+                    <div class="t-sendingWarning">
+                        <p class="t-smallTitleLight t-blackPrimaryColor">Нажимая кнопку «Отправить» вы соглашаетесь с условиями обработки персональных данных</p>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
     <footer>
         <div class="t-footerTop t-flex t-flexSB t-white">

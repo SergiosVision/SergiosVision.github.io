@@ -435,14 +435,13 @@ a
   width: 320px
   padding: 24px
   background-color: $white
-  position: fixed
-  left: 0
-  top: 50%
-  right: 0
-  margin: auto
-  transform: translateY(-50%)
   z-index: 100
   animation: dialog .2s linear
+  position: relative
+  height: auto
+  margin: auto
+  margin-top: 151px
+  margin-bottom: 151px
   .t-dialogTitleWrapper
     margin-bottom: 24px
   .t-grid
@@ -463,6 +462,7 @@ a
     margin-bottom: 40px
   .t-grid
     .t-gridItem
+      align-items: flex-start!important
       &:not(:last-child)
         margin-bottom: 40px
       &:last-child
@@ -483,12 +483,13 @@ a
   background-color: rgba(0,0,0,0.8)
   z-index: 99
   margin: 20px
+  overflow-y: auto
   .t-closeDialog
     width: 24px
     height: 24px
-    position: absolute
-    right: 40px
-    top: 40px
+    position: fixed
+    right: 60px
+    top: 60px
     cursor: pointer
 
 .t-removeTransition

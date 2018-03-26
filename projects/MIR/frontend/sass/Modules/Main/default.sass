@@ -4,76 +4,76 @@ main
   .t-controlSection
     position: absolute
     bottom: 16px
-    left: 50%
-    transform: translate(-50%)
-    width: 280px
-    overflow: hidden
+    //left: 50%
+    //transform: translate(-50%)
+    //width: 280px
+    width: 100%
+    //overflow: hidden
     height: auto
     .t-controlHandler
       text-align: center
       .t-controlItemsHolder
+        margin: 0 auto
+        border: 1px solid $white
+        @include on-circle(12, 25em, 2.5em)
         display: flex
-        transform: translateX(-450px)
+        transform: rotate(-30deg) scale(-1)
         transition: transform 1s
+        position: absolute
         &.t-airActive
-          transform: rotate(15deg) translateX(-350px) translateY(-20px)
-          .t-defaultState
-            &:nth-child(3)
-              transform: rotate(-44deg) translateY(91px) translateX(0px)
-            &:nth-child(4)
-              transform: rotate(-15deg) translateY(26.4px) translateX(20.4px)
+          transform: rotate(0deg) scale(-1)
         &.t-waterActive
-          transform: rotate(-15deg) translateX(-550px) translateY(-20px)
-          .t-defaultState
-            &:nth-child(5)
-              transform: rotate(-7deg) translateY(0) translateX(-10.6px)
-            &:nth-child(6)
-              transform: rotate(15deg) translateY(25.4px) translateX(-27.6px)
-            &:nth-child(7)
-              transform: rotate(35deg) translateY(90.4px) translateX(-28.6px)
+          transform: rotate(-60deg) scale(-1)
+          //.t-defaultState
+          //  &:nth-child(5)
+          //    transform: rotate(-7deg) translateY(0) translateX(-10.6px)
+          //  &:nth-child(6)
+          //    transform: rotate(15deg) translateY(25.4px) translateX(-27.6px)
+          //  &:nth-child(7)
+          //    transform: rotate(35deg) translateY(90.4px) translateX(-28.6px)
         &.t-planeCloneActive
-          transform: rotate(-34deg) translateX(-634px) translateY(-57px)
-          .t-defaultState
-            &:nth-child(6)
-              transform: rotate(4deg) translateY(16.4px) translateX(-49.6px)
-            &:nth-child(7)
-              transform: rotate(34deg) translateY(93.4px) translateX(-40.6px)
-            &:nth-child(8)
-              transform: rotate(49deg) translateY(181.4px) translateX(4.4px)
+          transform: rotate(-90deg) scale(-1)
+          //.t-defaultState
+          //  &:nth-child(6)
+          //    transform: rotate(4deg) translateY(16.4px) translateX(-49.6px)
+          //  &:nth-child(7)
+          //    transform: rotate(34deg) translateY(93.4px) translateX(-40.6px)
+          //  &:nth-child(8)
+          //    transform: rotate(49deg) translateY(181.4px) translateX(4.4px)
         &.t-waterCloneActive
-          transform: rotate(44deg) translateX(-254px) translateY(-66px)
-          .t-defaultState
-            &:nth-child(2)
-              transform: rotate(-67deg) translateY(173.4px) translateX(-87.6px)
-            &:nth-child(3)
-              transform: rotate(-45deg) translateY(88px) translateX(0)
-            &:nth-child(4)
-              transform: rotate(-25deg) translateY(10.4px) translateX(9.4px)
+          transform: rotate(30deg) scale(-1)
+          //.t-defaultState
+          //  &:nth-child(2)
+          //    transform: rotate(-67deg) translateY(173.4px) translateX(-87.6px)
+          //  &:nth-child(3)
+          //    transform: rotate(-45deg) translateY(88px) translateX(0)
+          //  &:nth-child(4)
+          //    transform: rotate(-25deg) translateY(10.4px) translateX(9.4px)
         .t-controlItem
-          position: relative
+          //position: relative
           transition: 1s
           svg
             fill: $white
-          padding: 0 34px
+          //padding: 0 34px
           &:not(.active)
             opacity: .3
-        .t-defaultState
-          &:nth-child(1)
-            transform: rotate(-85deg) translateY(302.4px) translateX(-237.6px)
-          &:nth-child(2)
-            transform: rotate(-70deg) translateY(213.4px) translateX(-92.6px)
-          &:nth-child(3)
-            transform: rotate(-55deg) translateY(110px) translateX(-3px)
-          &:nth-child(4)
-            transform: rotate(-15deg) translateY(22.4px) translateX(21.4px)
-          &:nth-child(6)
-            transform: rotate(15deg) translateY(22.4px) translateX(-21.6px)
-          &:nth-child(7)
-            transform: rotate(55deg) translateY(110.4px) translateX(3.4px)
-          &:nth-child(8)
-            transform: rotate(70deg) translateY(213.4px) translateX(91.4px)
-          &:nth-child(9)
-            transform: rotate(85deg) translateY(302.4px) translateX(238.4px)
+        //.t-defaultState
+        //  &:nth-child(1)
+        //    transform: rotate(-85deg) translateY(302.4px) translateX(-237.6px)
+        //  &:nth-child(2)
+        //    transform: rotate(-70deg) translateY(213.4px) translateX(-92.6px)
+        //  &:nth-child(3)
+        //    transform: rotate(-55deg) translateY(110px) translateX(-3px)
+        //  &:nth-child(4)
+        //    transform: rotate(-15deg) translateY(22.4px) translateX(21.4px)
+        //  &:nth-child(6)
+        //    transform: rotate(15deg) translateY(22.4px) translateX(-21.6px)
+        //  &:nth-child(7)
+        //    transform: rotate(55deg) translateY(110.4px) translateX(3.4px)
+        //  &:nth-child(8)
+        //    transform: rotate(70deg) translateY(213.4px) translateX(91.4px)
+        //  &:nth-child(9)
+        //    transform: rotate(85deg) translateY(302.4px) translateX(238.4px)
 
 
 
@@ -129,3 +129,5 @@ main
     background-position: center center
     background-size: cover
     z-index: -1
+
+
