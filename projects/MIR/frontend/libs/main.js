@@ -15,10 +15,10 @@ $(document).ready(function () {
     }
 
 
-    console.log($(window).width() / 2);
-    $('.t-controlItemsHolder').css({
-        'left': $(window).width() / 2
-    });
+    // console.log($(window).width() / 2);
+    // $('.t-controlItemsHolder').css({
+    //     'left': $(window).width() / 2
+    // });
 
     // Main Slider
 
@@ -214,6 +214,7 @@ $(document).ready(function () {
     }
 
     if(window.location.pathname === '/') {
+        $('.t-wrapper').addClass('mainPageActive');
         $(window).bind("DOMMouseScroll mousewheel wheel", function (event) {
             if($('.t-wrapper').hasClass('t-dialogActive') || $('.t-headerNavigation').hasClass('t-activeMobileMenu')) {
                 return false;
@@ -584,7 +585,9 @@ $(document).ready(function () {
 
 }
 
-(function (outputKey, selector) {
+// Add Items In Bottom Control Section
+
+(function (outputKey) {
     var truck = '<div class="t-truck t-controlItem t-defaultState" data-tab="ground" data-index="2">\n' +
         '             <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillTruck" transform="translate(2 10)"/><defs><path id="path0_fillTruck" fill-rule="evenodd" d="M43.196.02A1 1 0 0 0 42 1v14h-1V3a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v19a1 1 0 0 0 1 1h2.764a2.997 2.997 0 0 0 4.736-.341 2.997 2.997 0 0 0 4.736.341H32.5c.082 0 .162-.01.239-.029.55.63 1.359 1.029 2.261 1.029.889 0 1.687-.386 2.236-1h12.528c.55.614 1.347 1 2.236 1 .889 0 1.687-.386 2.236-1H58a1 1 0 0 0 1-1V6.46a4 4 0 0 0-3.215-3.923L43.196.02zM49 21a3 3 0 0 1 6 0h2v-7.105l-8.11-.901a1 1 0 1 1 .22-1.988l7.89.877V6.459a2 2 0 0 0-1.608-1.96L44 2.218V16a1 1 0 0 1-1 1H2v4h1a3 3 0 0 1 3-3h5a3 3 0 0 1 3 3h18a3 3 0 0 1 6 0h11zM39 4v11H2V4h37zM10 21a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-4-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm28 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm18-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></defs></svg>\n' +
         '        </div>';
@@ -594,7 +597,8 @@ $(document).ready(function () {
     var plane = '<div class="t-plane t-controlItem t-defaultState" data-tab="air" data-index="1">\n' +
         '             <svg width="64" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fillPlane" transform="translate(2 8)"/><defs><path id="path0_fillPlane" fill-rule="evenodd" d="M1 0a1 1 0 0 0-.864 1.504l6.74 11.553-.786 1.73a1 1 0 0 0 .648 1.378l12.024 3.264L12.4 24.2A1 1 0 0 0 13 26h8a1 1 0 0 0 .447-.105L33.237 20h13.992c3.617 0 7.192-.785 10.476-2.301l.44-.203c1.265-.584 1.423-2.319.285-3.122a29.361 29.361 0 0 0-5.904-3.225.999.999 0 0 0-.323-.128A29.358 29.358 0 0 0 41.5 9H20.603a8 8 0 0 1-4.93-1.7L6.616.212A1 1 0 0 0 6 0H1zm48.42 12.172A27.357 27.357 0 0 0 41.5 11H20.602a10 10 0 0 1-6.163-2.125L5.655 2H2.741l6.123 10.496a1 1 0 0 1 .046.918l-.513 1.129 12.865 3.492A1 1 0 0 1 21.6 19.8L16 24h4.764l11.789-5.895 6-3a1 1 0 0 1 .894 1.79L37.237 18h9.992a23 23 0 0 0 9.638-2.117l.139-.064a27.368 27.368 0 0 0-4.981-2.713l-3.578 1.789a1 1 0 0 1-.894-1.79l1.867-.933z"/></defs></svg>\n' +
         '        </div>';
-    var arr = [plane, truck, tanker];
+
+    var arr = [truck, plane, tanker];
     var empty = '';
 
     for(var i = 0; i < 4; i++) {
@@ -603,12 +607,10 @@ $(document).ready(function () {
         });
     }
     $(outputKey).html(empty);
-    $('.t-controlItem:nth-child(5)').addClass('active');
-    $('.t-controlItem:not(:nth-child(4), :nth-child(5), :nth-child(6))').each(function (i, data) {
+    $('.t-controlItem:nth-child(10)').addClass('active');
+    $('.t-controlItem:not(:nth-child(9), :nth-child(10), :nth-child(11))').each(function (i, data) {
         $(this).addClass('t-clone')
     });
-
     })('.t-controlItemsHolder');
-
 
 });
