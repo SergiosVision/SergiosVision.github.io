@@ -3470,7 +3470,7 @@ var OneBook3D = {
 		].join('');
 
 		this.$gSaveMenu = $(menuHtml);
-		$('body').append(this.$gSaveMenu);
+		$(target).append(this.$gSaveMenu);
 
 	},
 
