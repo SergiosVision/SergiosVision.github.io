@@ -10,6 +10,22 @@
     <link rel="stylesheet" href="/css/plugins/jquery.formstyler.theme.css">
   </head>
   <body>
+    <div class="t-loader">
+        <div class="t-loaderSuperWrapper">
+            <div class="t-loaderVisualSuperWrapper">
+                <div class="t-loaderVisualWrapper">
+                    <div class="t-visualLoaderHolder"></div>
+                </div>
+            </div>
+            <div class="t-loaderTextHolder">
+                <h2 class="t-middleText t-middleTextBold t-loaderTextTitle">Грузоперевозки по всему миру</h2>
+                <span class="t-loaderTextTitleSecond t-fontTwenty">по земле, воде и воздуху</span>
+            </div>
+            <div class="t-loaderPercentageWrapper">
+                <span class="t-loaderPercentageText t-standardTitle">Загрузка сайта — <span class="t-loaderPercentageOutput t-standardTitle">0</span> %</span>
+            </div>
+        </div>
+    </div>
     <div class="t-wrapper" id="app">
         <header class="t-flex t-flexSB t-flexAlign">
             <div class="t-headerLogoWrapper t-flex t-flexAlign">
@@ -191,7 +207,7 @@
                     <h2 class="t-dialogTitle t-middleText">Обратная связь</h2>
                 </div>
                 <form class="t-feedBackForm">
-                    <div class="t-formName t-formItem">
+                    <div class="t-formName t-formItem t-notNecessary">
                         <label for="nameFeedBack" class="t-standardTitle t-blackPrimaryColor">Ваше имя</label>
                         <input type="text" id="nameFeedBack" class="t-input">
                     </div>
@@ -199,7 +215,7 @@
                         <label for="emailOrPhoneFeedBack" class="t-standardTitle t-blackPrimaryColor">Телефон или электронная почта</label>
                         <input type="text" id="emailOrPhoneFeedBack" class="t-input" required>
                     </div>
-                    <div class="t-formEmailOrPhone t-formItem">
+                    <div class="t-formEmailOrPhone t-formItem t-notNecessary">
                         <label for="commentOrQuestionFeedBack" class="t-standardTitle t-blackPrimaryColor">Комментарий или вопрос</label>
                         <input type="text" id="commentOrQuestionFeedBack" class="t-input">
                     </div>
@@ -227,12 +243,12 @@
                             <label for="orderWeight" class="t-standardTitle t-blackPrimaryColor">Вес</label>
                             <input type="text" id="orderWeight" class="t-input">
                         </div>
-                        <div class="t-gridItem t-formItem">
-                            <label for="orderScope" class="t-standardTitle t-blackPrimaryColor t-notNecessary">Объём</label>
+                        <div class="t-gridItem t-formItem t-notNecessary">
+                            <label for="orderScope" class="t-standardTitle t-blackPrimaryColor">Объём</label>
                             <input type="text" placeholder="Необязательно" id="orderScope" class="t-input">
                         </div>
-                        <div class="t-gridItem t-formItem">
-                            <label for="orderCompanyName" class="t-standardTitle t-blackPrimaryColor t-notNecessary">Название компании</label>
+                        <div class="t-gridItem t-formItem t-notNecessary">
+                            <label for="orderCompanyName" class="t-standardTitle t-blackPrimaryColor">Название компании</label>
                             <input type="text" placeholder="Необязательно" id="orderCompanyName" class="t-input">
                         </div>
                         <div class="t-gridItem t-formItem">
@@ -247,8 +263,8 @@
                             <label for="orderEmail" class="t-standardTitle t-blackPrimaryColor">Электронная почта</label>
                             <input type="text" id="orderEmail" class="t-input">
                         </div>
-                        <div class="t-gridItem t-formItem">
-                            <label for="orderRequestComment" class="t-standardTitle t-blackPrimaryColor t-notNecessary">Комментарий к заявке</label>
+                        <div class="t-gridItem t-formItem t-notNecessary">
+                            <label for="orderRequestComment" class="t-standardTitle t-blackPrimaryColor">Комментарий к заявке</label>
                             <input type="text" placeholder="Необязательно" id="orderRequestComment" class="t-input">
                         </div>
 

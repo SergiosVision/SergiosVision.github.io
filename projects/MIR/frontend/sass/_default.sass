@@ -157,7 +157,59 @@ a
     width: 100%
     background: url("/images/icons/SVG-optim/dropBlueArrow.svg") no-repeat 96% center
 
-
+.t-loader
+  display: block
+  position: fixed
+  left: 0
+  bottom: 0
+  right: 0
+  top: 0
+  width: 100%
+  min-height: 100vh
+  background-color: $white
+  z-index: 999999
+  display: flex
+  justify-content: center
+  align-items: center
+  .t-loaderVisualSuperWrapper
+    display: flex
+    justify-content: center
+    .t-loaderVisualWrapper
+      width: 250px
+      height: 79px
+      overflow: hidden
+      .t-visualLoaderHolder
+        border-radius: 50%
+        border: 1px solid $secondBlack
+        @include on-circle(12, 20em, 2.5em)
+        top: 50px
+        left: -40px
+        transform: rotate(-1deg)
+        animation: loader 4s ease infinite
+        transition: .3s ease
+        fill: rgba(0, 0, 0, .1)
+  .t-loaderTextHolder
+    margin-top: 40px
+    &>*
+      color: #272727
+      text-align: center
+      display: block
+    .t-loaderTextTitle
+      margin-bottom: 8px
+      line-height: 24px
+    .t-loaderTextTitleSecond
+      line-height: 23px
+      font-weight: 100
+  .t-loaderPercentageWrapper
+    margin-top: 16px
+    text-align: center
+    display: block
+    & > span
+      color: $grey
+      font-weight: 100
+      span
+        color: $grey
+        font-weight: 100
 
 .t-coloredSubMenu
   .t-mobileSubMenuHolder
@@ -189,6 +241,8 @@ a
 
 .t-middleText
   @include textParams(26, 500, $black)
+  &.t-middleTextBold
+    font-weight: 900
 
 .t-fontTwenty
   @include textParams(20, 300, $secondBlack)
