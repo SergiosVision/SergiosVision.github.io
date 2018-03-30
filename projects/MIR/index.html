@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="/css/plugins/jquery.formstyler.css">
     <link rel="stylesheet" href="/css/plugins/jquery.formstyler.theme.css">
   </head>
-  <body>
+  <body class="t-loading">
     <div class="t-loader">
         <div class="t-loaderSuperWrapper">
-            <div class="t-loaderVisualSuperWrapper">
+            <div class="t-loaderVisualSuperWrapper t-flex t-flexColumn t-flexAlign">
                 <div class="t-loaderVisualWrapper">
                     <div class="t-visualLoaderHolder"></div>
+                </div>
+                <div class="t-loaderBarWrapper">
+                    <svg class="t-greenProgressBar" width="162" height="18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_strokeProgressBar" transform="translate(1 1)" fill="#00D15E"/><defs><path id="path0_strokeProgressBar" d="M.386 16.92C24.917 6.66 51.803 1 79.997 1v-2C51.533-1 24.385 4.715-.386 15.075l.772 1.845zM79.997 1c28.197 0 55.084 5.662 79.617 15.923l.772-1.846C135.613 4.717 108.464-1 79.997-1v2z"/></defs></svg>
                 </div>
             </div>
             <div class="t-loaderTextHolder">
@@ -27,7 +30,7 @@
         </div>
     </div>
     <div class="t-wrapper" id="app">
-        <header class="t-flex t-flexSB t-flexAlign">
+        <header class="t-flex t-flexSB t-flexAlign t-none">
             <div class="t-headerLogoWrapper t-flex t-flexAlign">
                 <a href="/" class="t-headerLogoLink">
                     <div class="t-headerLogoSymbol">
@@ -78,9 +81,9 @@
         <main>
             <section class="t-typeSection active">
                 <div class="t-jumbotron section" data-bg="ground">
-                    <div class="t-frame t-frameGround"></div>
+                    <div class="t-frame t-frameGround t-frameHidden"></div>
                     <div class="t-jumbotronContainer t-flex t-flexSB">
-                        <div class="t-jumbotronContainerLeft">
+                        <div class="t-jumbotronContainerLeft t-none t-animation">
                             <div class="t-jumbotronContainerInfo">
                                 <h1 class="t-bigTitle t-jumbotronContainerInfoTitle">Грузоперевозки по всему миру</h1>
                                 <h1 class="t-bigLight t-jumbotronContainerInfoSubTitle">по земле, воде и воздуху</h1>
@@ -93,19 +96,19 @@
                         <div class="t-jumbotronContainerRight">
                             <div class="t-jumbotronContainerEvents">
                                 <a href="#" class="t-linkItem t-white t-jumbotronNewEvents">Новые события</a>
-                                <div class="t-jumbotronEventsCard">
+                                <div class="t-jumbotronEventsCard t-none t-animation">
                                     <a href="#">
                                         <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
                                         <span class="t-smallTitleLight">23 марта 2018</span>
                                     </a>
                                 </div>
-                                <div class="t-jumbotronEventsCard">
+                                <div class="t-jumbotronEventsCard t-none t-animation">
                                     <a href="#">
                                         <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
                                         <span class="t-smallTitleLight">23 марта 2018</span>
                                     </a>
                                 </div>
-                                <div class="t-jumbotronEventsCard">
+                                <div class="t-jumbotronEventsCard t-none t-animation">
                                     <a href="#">
                                         <p class="t-standardTitle t-jumbotronEventsCardText">Изменился юридический адрес Деловых Линий. Новый юридический адрес ООО «Дел ...</p>
                                         <span class="t-smallTitleLight">23 марта 2018</span>
@@ -188,7 +191,7 @@
                     </div>
                 </div>
             </section>
-            <section class="t-controlSection">
+            <section class="t-controlSection t-none">
                 <div class="t-controlHandler t-flex t-flexColumn">
                     <div class="t-controlItemsHolder t-flex t-flexAlign"></div>
                     <div class="t-bottomArc">

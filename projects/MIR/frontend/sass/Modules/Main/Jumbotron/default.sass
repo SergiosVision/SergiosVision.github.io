@@ -15,6 +15,10 @@
       margin: 0 auto
       padding-top: 232px
       max-width: 1112px
+      .t-jumbotronContainerLeft
+        &.t-animation
+          transition: .6s ease-in-out
+          animation: jumbotronRight .6s ease-in-out
       .t-jumbotronContainerInfo
         width: 640px
         .t-jumbotronContainerInfoTitle
@@ -32,6 +36,9 @@
           width: 272px
           &:not(:last-child)
             margin-bottom: 1em
+          &.t-animation
+            transition: .6s ease-in-out
+            animation: jumbotronRight .6s ease-in-out
           .t-jumbotronEventsCardText
             font-weight: 300
             margin-bottom: 4px

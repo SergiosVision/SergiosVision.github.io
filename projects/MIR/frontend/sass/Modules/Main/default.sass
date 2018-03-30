@@ -6,6 +6,8 @@ main
     bottom: 16px
     width: 100%
     height: auto
+    transition: 1s ease-in-out
+    animation: conrolSection 1s ease-in-out
     .t-controlHandler
       position: relative
       width: 300px
@@ -70,14 +72,17 @@ main
   width: 280px
   min-height: 100vh
   mix-blend-mode: overlay
-  position: absolute
+  position: fixed
   left: 0
   top: 0
   bottom: 0
+  transition: 1s ease-in-out
   &.t-groundFrame
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("/images/backgrounds/ground.png") no-repeat
     background-position: center center
     background-size: cover
     z-index: -1
+  &.t-frameHidden
+    left: -100%
 
 

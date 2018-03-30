@@ -174,13 +174,26 @@ a
   .t-loaderVisualSuperWrapper
     display: flex
     justify-content: center
+    .t-loaderBarWrapper
+      position: relative
+      background-image: url('/images/icons/SVG-optim/arc.svg')
+      width: 160px
+      height: 20px
+      top: -20px
+      left: -3px
+      .t-greenProgressBar
+        position: absolute
+        left: 0
+        top: 1px
+        right: 0
+        bottom: 0
+        width: 0
     .t-loaderVisualWrapper
       width: 250px
       height: 79px
       overflow: hidden
       .t-visualLoaderHolder
         border-radius: 50%
-        border: 1px solid $secondBlack
         @include on-circle(12, 20em, 2.5em)
         top: 50px
         left: -40px
@@ -189,7 +202,7 @@ a
         transition: .3s ease
         fill: rgba(0, 0, 0, .1)
   .t-loaderTextHolder
-    margin-top: 40px
+    margin-top: 30px
     &>*
       color: #272727
       text-align: center
@@ -559,7 +572,7 @@ a
   width: 280px
   height: 100vh
   background: $white
-  position: absolute
+  position: fixed
   left: 0
   top: 0
   bottom: 0

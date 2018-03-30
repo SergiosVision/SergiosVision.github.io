@@ -1,7 +1,11 @@
-// Fake Loader
+// Variables For Fake Loader
 
 var getLoader = document.querySelector('.t-loader'),
-    getOutputSection = document.querySelector('.t-loaderPercentageOutput');
+    getOutputSection = document.querySelector('.t-loaderPercentageOutput'),
+    progressBar = document.querySelector('.t-greenProgressBar'),
+    getLoaderElWrapper = document.querySelector('.t-loaderSuperWrapper');
+
+// FadeOut Function
 
 function fadeOutVj(el, time) {
     el.style.opacity = 1;
@@ -17,28 +21,79 @@ function fadeOutVj(el, time) {
     })();
 }
 
-function fakeLoading(loader, output) {
-    var startPoint = 0, time;
+
+// Variables for animations
+
+var getHeader = document.querySelector('header'),
+    getJumbotron = document.querySelector('.t-jumbotronContainer'),
+    getControlSection = document.querySelector('.t-controlSection'),
+    getAllEvCards = getJumbotron.querySelectorAll('.t-jumbotronContainerRight .t-jumbotronEventsCard'),
+    frame = document.querySelector('.t-frame'),
+    hold = 300;
+
+
+// Hold Animation Function
+
+function holdFunc(selector, removingClass) {
+    selector.forEach(function (data, i) {
+        setTimeout(function () {
+            data.classList.remove(removingClass);
+        },i*hold);
+    })
+}
+
+// Main Animation Function
+
+function animateFunction(timeFirst, secondTime, removingClass, secondRemovingClass) {
+    setTimeout(function () {
+        getHeader.classList.remove(removingClass);
+        getControlSection.classList.remove(removingClass);
+    },timeFirst);
+    getJumbotron.querySelector('.t-jumbotronContainerLeft').classList.remove(removingClass);
+    holdFunc(getAllEvCards, 't-none'); // Call Hold Function
+    setTimeout(function () {
+        frame.classList.remove(secondRemovingClass);
+    }, secondTime);
+    setTimeout(function () {
+        getAllEvCards.forEach(function (data, i) {
+            data.classList.remove('t-animation');
+        });
+        getJumbotron.querySelector('.t-jumbotronContainerLeft').classList.remove('t-animation');
+    },1200)
+}
+
+// Fake Loader Start
+
+function fakeLoading(loader, output, bar) {
+    var startPoint = 0, time,
+        getBody = document.querySelector('body');
     time = setInterval(function () {
         startPoint = startPoint + 1;
         output.innerHTML = startPoint;
+        bar.style.width = startPoint + '%';
         if (startPoint === 100) {
             clearInterval(time);
             startPoint = 0;
+            fadeOutVj(getLoaderElWrapper, 30);
             setTimeout(function () {
-                fadeOutVj(getLoader, 30);
-            },200)
+                fadeOutVj(getLoader, 30); // Call FadeOut Function
+                animateFunction(600, 630, 't-none', 't-frameHidden'); // Call Animation Function
+            },350);
+            setTimeout(function () {
+                getBody.classList.remove('t-loading');
+                loader.parentNode.removeChild(loader);
+            },1200)
         }
-    },20);
+    },15);
 }
 
 if(window.location.pathname === '/') {
     window.onload = function () {
-        fakeLoading(getLoader, getOutputSection)
+        fakeLoading(getLoader, getOutputSection, progressBar)
     };
 }
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 (function (outputKey) {
     var truck = '<div class="t-truck t-loaderItem" data-tab="ground" data-index="2">\n' +
@@ -329,7 +384,7 @@ $(document).ready(function () {
     if(window.location.pathname === '/') {
         $('.t-wrapper').addClass('mainPageActive');
         $(window).bind("DOMMouseScroll mousewheel wheel", function (event) {
-            if($('.t-wrapper').hasClass('t-dialogActive') || $('.t-headerNavigation').hasClass('t-activeMobileMenu')) {
+            if($('.t-wrapper').hasClass('t-dialogActive') || $('.t-headerNavigation').hasClass('t-activeMobileMenu') || $('body').hasClass('t-loading')) {
                 return false;
             } else {
                 if($('body').hasClass('animate'))
@@ -359,7 +414,7 @@ $(document).ready(function () {
                 var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
                 var yAbs = initialPoint.pageY - finalPoint.pageY;
 
-                if ($('.t-wrapper').hasClass('t-dialogActive') || $('.t-headerNavigation').hasClass('t-activeMobileMenu')) {
+                if ($('.t-wrapper').hasClass('t-dialogActive') || $('.t-headerNavigation').hasClass('t-activeMobileMenu') || $('body').hasClass('t-loading')) {
                     return false;
                 } else {
                     if ($('body').hasClass('animate'))
