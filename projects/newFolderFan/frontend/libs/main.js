@@ -228,13 +228,6 @@ $(document).ready(function(){
         $('.t-astronaut').css('top',-(scrolled*0.3)+'px');
     }
 
-    // function wrapFunc(query, tag, addClass) {
-    //     var wrapper = document.createElement(tag);
-    //     wrapper.classList.add(addClass);
-    //     query.parentNode.insertBefore(wrapper,query);
-    //     wrapper.appendChild(query);
-    // };
-    //
     // function insertAfter(elem, refElem) {
     //     var parent = refElem.parentNode;
     //     var next = refElem.nextSibling;
@@ -246,44 +239,55 @@ $(document).ready(function(){
     // }
     //
     //
+    function wrpF(query, tag) {
+        callHook(query, function (i) {
+            var crt = document.createElement(tag);
+            var getClass = query[i].getAttribute('class');
+            crt.classList.add(getClass+'Wrapper');
+            query[i].parentNode.insertBefore(crt, query[i]);
+            crt.appendChild(query[i]);
+        })
+    }
+    wrpF(getAll('.t-customOptions'), 'div');
 
-    // (function (select, setClass) {
-    //     var getSelect = getAll(select);
-    //     callHook(getSelect, function (i) {
-    //         var getHookOut = getSelect[i];
-    //         var optionsCount = getHookOut.querySelectorAll('option');
-    //         var wrapperD = document.createElement('div');
-    //         wrapperD.classList.add('t-styleSelect');
-    //         var ul = document.createElement('ul');
-    //         ul.classList.add('t-selectOptions');
-    //         var hideParent = 'display: none; visibility: hidden; padding-right: 10px;';
-    //         var out;
-    //         getHookOut.style.cssText = hideParent;
-    //         wrapFunc(getHookOut, 'div', setClass);
-    //         insertAfter(wrapperD, getHookOut);
-    //         callHook(optionsCount, function (i) {
-    //             out = '<li rel="'+ optionsCount[i].innerText +'">'+ optionsCount[i].innerText +'</li>';
-    //             ul.insertAdjacentHTML('beforeend', out);
-    //         });
-    //         getHookOut.parentNode.appendChild(ul);
-    //
-    //     })
-    // })('.t-customOptions', 't-smallWrapperContainer');
-    // getSelector('.t-styleSelect').addEventListener('click', function (e) {
-    //     e.stopPropagation();
-    //     console.log(this);
-    // })
+    function createElem(tag, addCl) {
+        var createElem = document.createElement(tag);
+        createElem.classList.add(addCl);
+        return createElem;
+    }
+
+    (function (select, getOptions) {
+        var hideParent = 'display: none; visibility: hidden; padding-right: 10px;';
+        var createUl = '<ul class="t-selectList">';
+        callHook(select, function (i) {
+            var crtEl = createElem('div', 't-styledSelectorBox');
+            var lsitHolder = createElem('div', 't-selectListHoler');
+            var getHook = select[i];
+            getHook.style.cssText = hideParent;
+            getHook.parentNode.appendChild(crtEl);
+            getHook.parentNode.appendChild(lsitHolder);
+
+        });
+    })(getAll('.t-customOptions'), getAll('.t-customOptions option'));
 
     var SelectList = {
         func: {
             prepare: function () {
-                var select = getSelector('.t-customOptions');
-                var html = '<div id="trigger"></div>';
-                html += '<ul id="choices">';
+
 
             }
+        },
+
+        init: function() {
+            for(var method in this.func) {
+                this.func[method]();
+            }
+
         }
     };
+    (function () {
+        SelectList.init();
+    })();
 
 
 // Constructor Start
