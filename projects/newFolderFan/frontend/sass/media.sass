@@ -1,0 +1,45 @@
+@media (min-width: 769px)
+  .t-goodCard
+    &:hover:not(.t-makeStickerCard)
+      .t-cardTitleHolder, .t-cardPriceHolder
+        opacity: 0
+        visibility: hidden
+      .t-cardButtonHolder
+        .t-btn
+          opacity: 1
+          pointer-events: all
+          transform: translateY(17px)
+      .t-cardTop
+        .t-cardImgHolder
+          .t-cardOverlay
+            transform: none
+            opacity: 1
+            .t-plusCardSvg
+              transform: none
+      &:before, &:after
+        opacity: 1
+    &.t-makeStickerCard
+      &:hover
+        .t-cardImgHolder
+          background: linear-gradient(206.44deg, #59DED6 0%, #26BFD1 83.46%)
+
+  .t-btn
+    &:hover
+      box-shadow: none
+      &:after
+        opacity: 1
+    &:active
+      box-shadow: none!important
+      &:after
+        opacity: 0
+      &:before
+        opacity: 1
+  .t-jumbotronWrapperSection
+    .t-jumbotronTopContentSection
+      .t-jumbotronTopFilterWrapper
+        .t-jumbotronTopFilter
+            li a
+              &:hover
+                background-color: #fff
+                color: #26BFD1
+

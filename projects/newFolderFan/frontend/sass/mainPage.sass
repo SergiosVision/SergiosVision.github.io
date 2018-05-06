@@ -1,0 +1,94 @@
+.t-jumbotronWrapperSection
+  margin-top: 24px
+  .t-jumbotronTopContentSection
+    .t-jumbotronTopLogoWrapper
+      margin-bottom: 32px
+      text-align: center
+      a
+        display: inline-block
+    .t-jumbotronTopTextWrapper
+      text-align: center
+      margin-bottom: 42px
+    .t-jumbotronTopFilterWrapper
+      margin-bottom: 40px
+      .t-jumbotronTopFilter
+        display: flex
+        justify-content: center
+        li
+          &:not(:last-child)
+            margin-right: 8px
+          a
+            text-decoration: none
+            padding: 10px 22px
+            background-color: rgba(0,0,0,.5)
+            color: #ffff
+            border-radius: 20px
+            transition: .3s cubic-bezier(0.25, 0.23, 0.21, 0.68)
+          &.active
+            a
+              background-color: #fff
+              color: #26BFD1
+
+.t-jumbotronBottomCardsWrapper
+  overflow-x: scroll
+  .t-jumbotronBottomCardsWrapperSectionOne
+    display: flex
+  .t-jumbotronBottomCardsWrapperSectionTwo
+    display: flex
+    margin-top: 16px
+
+.t-benefits
+  .t-benefitsInsideWrapper
+    display: flex
+    .t-benefitsCard
+      @include bGrid(3, 7.5%)
+      .t-benefitsCardBottom
+        text-align: center
+        .t-benefitsCardTitleHolder
+          margin-bottom: 8px
+      .t-benefitsCardTop
+        .t-benefitsCardImgHolder
+          text-align: center
+        margin-bottom: 8px
+
+
+.t-contactsAndFeedBack
+  .t-leftSideContactsAndRightSideContactsControl
+    @include bGrid(2, 8.439%)
+  .t-contactsAndFeedBackInsideWrapper
+    .t-leftSideContacts
+      .t-leftSideContactsContentDefault
+        a
+          display: inline-block
+          text-decoration: none
+        span.t-defaultColorType
+          display: block
+          margin-top: 8px
+        &:not(:last-child)
+          margin-bottom: 24px
+      .t-leftSideContactsContentOffice
+        a
+          border-bottom: 1px dashed rgba(255,255,255,.4)
+      .t-leftSideContactsContentSocial
+        ul
+          li
+            width: 30px
+            height: 30px
+            &:not(:last-child)
+              margin-right: 8px
+          a
+            display: block
+            width: 30px
+            height: 30px
+
+    .t-rightSideContacts
+      .t-rightSideContactsContentWrapper
+        .t-feedBackFormMain
+          padding: 32px
+          border-radius: 24px
+          background-color: rgba(0, 0, 0, 0.3)
+          .t-feedBackFormTitle
+            margin-bottom: 32px
+          .t-formAgree
+            margin-bottom: 24px
+

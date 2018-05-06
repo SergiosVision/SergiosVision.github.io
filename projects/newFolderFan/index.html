@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title>Fantatic</title>
+    <link rel="stylesheet" href="/css/main.min.css">
+  </head>
+  <body class="t-windowLoading fixed t-animeOne">
+    <div class="wrapper">
+      <div class="t-astronaut t-blockHidden"></div>
+      <div style="display: none;" class="t-frame"></div>
+      <div class="background topBackground animation"></div>
+      <header class="t-blockHidden">
+        <div class="t-headerNavigationWrapper"><a href="/" class="t-mainLogoLink">
+            <div class="t-mainLogo"><img src="/images/LogotypeMini.png"></div></a>
+          <div class="t-headerNavigationWrapperInside t-flex t-flexAlign">
+            <nav class="t-headerNavigation">
+              <ul class="t-mainList t-links t-whiteLinks t-flex">
+                <li class="t-navItem t-headerCreateSticker"><a href="#" class="t-btn"><span>Создать стикер</span></a></li>
+                <li class="t-navItem t-navItemTrue"><a href="#catalog" class="active">Каталог</a></li>
+                <li class="t-navItem t-navItemTrue"><a href="#benefits">Наши преимущества</a></li>
+                <li class="t-navItem t-navItemTrue"><a href="#questionsAndAnswers">Вопросы и ответы</a></li>
+                <li class="t-navItem t-navItemTrue"><a href="#contacts">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="t-headerCart"><span class="t-headerCardIconWrapper">
+                <svg width="16" height="14" xmlns="http://www.w3.org/2000/svg" class="t-svgCartIcon">
+                  <g fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 1.655C1 1.293 1.313 1 1.7 1h2.1c.286 0 .544.163.65.412L4.914 2.5c.33-.084.781-.19 1.283-.286 1.066-.204 2.48-.389 3.657-.222.945.14 1.947-.011 2.792-.206a11.973 11.973 0 0 0 1.367-.4l.016-.006.003-.001a.74.74 0 0 1 .68.076.64.64 0 0 1 .286.584l-.35 3.932a.646.646 0 0 1-.278.47l-.42-.524c.42.524.42.525.418.526l-.002.001-.007.005-.018.012a5.198 5.198 0 0 1-.282.171c-.177.1-.46.243-.796.38-.65.258-1.661.537-2.813.544-.997-.002-2.066.153-2.925.315-.272.05-.515.1-.723.146l.112.315c.122.343-.076.714-.443.829-.366.114-.763-.072-.885-.415l-.35-.983a.619.619 0 0 1-.018-.06C4.93 6.534 4.395 5.049 4.023 4.02l-.002-.004-.033-.092-.146-.404-.516-1.21H1.7c-.387 0-.7-.293-.7-.655zm4.397 2.08c.307.85.713 1.988 1.01 3.022.236-.053.524-.113.843-.173.89-.166 2.097-.338 3.2-.34a5.784 5.784 0 0 0 2.262-.439c.242-.097.425-.187.57-.266l.232-2.615c-.165.045-.345.09-.535.135-.905.207-2.178.383-3.333.228-.922-.13-2.134.013-3.168.21-.417.08-.784.164-1.08.238zM8 12.017c0 .543-.47.983-1.05.983-.58 0-1.05-.44-1.05-.983 0-.543.47-.983 1.05-.983.58 0 1.05.44 1.05.983zm4.2 0c0 .543.47.983 1.05.983.58 0 1.05-.44 1.05-.983 0-.543-.47-.983-1.05-.983-.58 0-1.05.44-1.05.983z" fill="#fff"></path>
+                    <path d="M1.7 1c-.387 0-.7.293-.7.655 0 .362.313.656.7.656h1.626l.516 1.209.146.404.033.092.002.004c.372 1.03.908 2.514 1.195 3.682.005.02.01.04.018.06l.35.983c.122.343.519.53.885.415.367-.115.565-.486.443-.83l-.112-.314c.208-.045.45-.096.723-.146.86-.162 1.928-.317 2.925-.315a7.928 7.928 0 0 0 2.813-.545c.336-.136.62-.28.796-.378a5.198 5.198 0 0 0 .282-.172l.018-.012.007-.005.002-.001c.002-.001.002-.002-.418-.526l.42.524a.646.646 0 0 0 .278-.47l.35-3.932a.64.64 0 0 0-.285-.584.74.74 0 0 0-.681-.076h-.003l-.017.007a9.294 9.294 0 0 1-.356.122c-.253.082-.595.183-1.01.278-.845.195-1.847.346-2.792.206-1.178-.167-2.59.018-3.657.222-.502.096-.953.202-1.283.286L4.45 1.412A.701.701 0 0 0 3.8 1H1.7zm4.707 5.757c-.297-1.034-.703-2.173-1.01-3.022.297-.074.664-.158 1.08-.237 1.035-.198 2.247-.341 3.169-.211 1.155.155 2.428-.021 3.333-.228.19-.044.37-.09.535-.135L13.28 5.54c-.144.079-.327.17-.57.266a5.784 5.784 0 0 1-2.261.439c-1.103.002-2.31.174-3.2.34-.319.06-.607.12-.843.173zM6.95 13c.58 0 1.05-.44 1.05-.983 0-.543-.47-.983-1.05-.983-.58 0-1.05.44-1.05.983 0 .543.47.983 1.05.983zm6.3 0c-.58 0-1.05-.44-1.05-.983 0-.543.47-.983 1.05-.983.58 0 1.05.44 1.05.983 0 .543-.47.983-1.05.983z" stroke="#fff"></path>
+                  </g>
+                </svg></span></div>
+          </div>
+        </div>
+      </header>
+      <main class="t-mainPage">
+        <div class="t-loadingLogo t-blockHidden"></div>
+        <div class="t-figureContainer t-blockHidden">
+          <div class="t-vectorLeft t-figuresControls"></div>
+          <div class="t-vectorSliderBottom t-figuresControls"></div>
+          <div class="t-vectorSliderTop t-figuresControls"></div>
+          <div class="t-vectorRight t-figuresControls"></div>
+          <div class="t-smallFigure t-figuresControls"></div>
+        </div>
+        <section id="catalog" class="t-jumbotronWrapperSection t-mainSectionCtrl">
+          <div class="t-jumbotronTopContentSection">
+            <div class="t-jumbotronTopLogoWrapper"><a href="/"><img src="/images/bigLogotype.png"></a></div>
+            <div class="t-jumbotronTopTextWrapper"><span class="t-defaultColorType t-midText">Выбирайте готовые дизайны или собирайте свои собственные</span></div>
+            <div class="t-jumbotronTopFilterWrapper">
+              <ul class="t-jumbotronTopFilter t-mainList">
+                <li class="active"><a href="#">Хайповые</a></li>
+                <li><a href="#">Новые</a></li>
+                <li><a href="#">Детские</a></li>
+                <li><a href="#">Забавные</a></li>
+                <li><a href="#">Страшные</a></li>
+                <li><a href="#">Ещё</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="t-jumbotronBottomContentSection">
+            <div class="t-jumbotronBottomCardsWrapper">
+              <div class="t-jumbotronBottomCardsWrapperSectionOne"><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/bg.jpg">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/bg.jpg">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/bg.jpg">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard t-makeStickerCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"></div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-makerStickerCardTitle">
+                      <h3>Создать свой дизайн стикеров</h3>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/bg.jpg">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/bg.jpg">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/bg.jpg">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/bg.jpg">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard t-makeStickerCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"></div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-makerStickerCardTitle">
+                      <h3>Создать свой дизайн стикеров</h3>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/imgDefault.png">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a>
+              </div>
+              <div class="t-jumbotronBottomCardsWrapperSectionTwo"><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/imgDefault.png">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/imgDefault.png">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/imgDefault.png">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/imgDefault.png">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/imgDefault.png">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/imgDefault.png">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/imgDefault.png">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/imgDefault.png">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/imgDefault.png">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a><a href="#" class="t-goodCard">
+                  <div class="t-cardTop">
+                    <div class="t-cardImgHolder"><img src="images/imgDefault.png">
+                      <div class="t-cardOverlay">
+                        <svg width="32" height="34" class="t-plusCardSvg">
+                          <path d="M.673 12.912c.238-.89.238-.89 1.128-.651l11.153 1.08.43-12.282s.239-.89 1.128-.65l5.577.54.651 1.128-1.32 12.044 11.392.191.651 1.128-1.43 5.339c.89.238 0 0-.239.89L18.88 19.698 17.321 32.63s-.238.89-1.128.652l-4.687-.302c-.89-.239-.651-1.129-.651-1.129l1.32-12.043-11.153-1.082.238-.89-.587-4.925z" fill="#fff" class="t-plusCard"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="t-cardBottom">
+                    <div class="t-cardTitleHolder">
+                      <h3>Набор школьника VIP Luxury Gold</h3>
+                    </div>
+                    <div class="t-cardPriceHolder"><span class="t-cardPrice">500 ₽</span></div>
+                    <div class="t-cardButtonHolder">
+                      <button class="t-btn"><span>Выбрать</span></button>
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="benefits" class="t-benefits t-defaultContainer t-mainSectionCtrl">
+          <div class="t-mainTitleBlock">
+            <h1>Преимущества</h1>
+          </div>
+          <div class="t-benefitsInsideWrapper">
+            <div class="t-benefitsCard">
+              <div class="t-benefitsCardTop">
+                <div class="t-benefitsCardImgHolder"><img src="/images/bottominfo/wallet.png"></div>
+              </div>
+              <div class="t-benefitsCardBottom">
+                <div class="t-benefitsCardTitleHolder">
+                  <h3 class="t-defaultColorType t-bigText">Оплата</h3>
+                </div>
+                <div class="div t-benefitsCardTextHolder"><span class="t-defaultColorType t-normalText">Оплатить можно наложенным платежом или выставить расчетный счет</span></div>
+              </div>
+            </div>
+            <div class="t-benefitsCard">
+              <div class="t-benefitsCardTop">
+                <div class="t-benefitsCardImgHolder"><img src="/images/bottominfo/rocket.png"></div>
+              </div>
+              <div class="t-benefitsCardBottom">
+                <div class="t-benefitsCardTitleHolder">
+                  <h3 class="t-defaultColorType t-bigText">Доставка</h3>
+                </div>
+                <div class="div t-benefitsCardTextHolder"><span class="t-defaultColorType t-normalText">Доставка осуществляется по всему миру</span></div>
+              </div>
+            </div>
+            <div class="t-benefitsCard">
+              <div class="t-benefitsCardTop">
+                <div class="t-benefitsCardImgHolder"><img src="/images/bottominfo/guarantee.png"></div>
+              </div>
+              <div class="t-benefitsCardBottom">
+                <div class="t-benefitsCardTitleHolder">
+                  <h3 class="t-defaultColorType t-bigText">Гарантия</h3>
+                </div>
+                <div class="div t-benefitsCardTextHolder"><span class="t-defaultColorType t-normalText">Вы не оплачиваете покупку, пока не убедитесь в ее работоспособности</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="questionsAndAnswers" class="t-answerAndQuestion t-defaultContainer t-mainSectionCtrl">
+          <div class="t-mainTitleBlock">
+            <h1>Вопросы и ответы</h1>
+          </div>
+          <div class="t-answerAndQuestionInsideWrapper">
+            <div class="t-accordItem">
+              <div class="t-openAccordItem"><span class="t-defaultColorType t-bigText">Доставка</span>
+                <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="t-smallPlusIcon">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8 2a2 2 0 1 0-4 0v2H2a2 2 0 1 0 0 4h2v2a2 2 0 1 0 4 0V8h2a2 2 0 1 0 0-4H8V2z" fill="#fff"></path>
+                </svg>
+              </div>
+              <div class="t-accordItemContent">Apple Watch Series 2 со встроенным GPS‑модулем позволяют оставить iPhone дома, если вы собрались бегать или ездить на велосипеде. При этом точность измерения вашей тренировки останется прежней. С ними вы можете плавать в бассейне или в море. И продолжать следить за своими показателями. Информация будет четко видна даже под прямыми солнечными лучами. Ведь теперь у вас на руке самый яркий из всех дисплеев Apple.</div>
+            </div>
+            <div class="t-accordItem">
+              <div class="t-openAccordItem"><span class="t-defaultColorType t-bigText">Оплата</span>
+                <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="t-smallPlusIcon">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8 2a2 2 0 1 0-4 0v2H2a2 2 0 1 0 0 4h2v2a2 2 0 1 0 4 0V8h2a2 2 0 1 0 0-4H8V2z" fill="#fff"></path>
+                </svg>
+              </div>
+              <div class="t-accordItemContent">Apple Watch Series 2 со встроенным GPS‑модулем позволяют оставить iPhone дома, если вы собрались бегать или ездить на велосипеде. При этом точность измерения вашей тренировки останется прежней. С ними вы можете плавать в бассейне или в море. И продолжать следить за своими показателями. Информация будет четко видна даже под прямыми солнечными лучами. Ведь теперь у вас на руке самый яркий из всех дисплеев Apple.</div>
+            </div>
+            <div class="t-accordItem">
+              <div class="t-openAccordItem"><span class="t-defaultColorType t-bigText">Гарантия</span>
+                <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="t-smallPlusIcon">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8 2a2 2 0 1 0-4 0v2H2a2 2 0 1 0 0 4h2v2a2 2 0 1 0 4 0V8h2a2 2 0 1 0 0-4H8V2z" fill="#fff"></path>
+                </svg>
+              </div>
+              <div class="t-accordItemContent">Apple Watch Series 2 со встроенным GPS‑модулем позволяют оставить iPhone дома, если вы собрались бегать или ездить на велосипеде. При этом точность измерения вашей тренировки останется прежней. С ними вы можете плавать в бассейне или в море. И продолжать следить за своими показателями. Информация будет четко видна даже под прямыми солнечными лучами. Ведь теперь у вас на руке самый яркий из всех дисплеев Apple.</div>
+            </div>
+            <div class="t-accordItem">
+              <div class="t-openAccordItem"><span class="t-defaultColorType t-bigText">Возврат</span>
+                <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="t-smallPlusIcon">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8 2a2 2 0 1 0-4 0v2H2a2 2 0 1 0 0 4h2v2a2 2 0 1 0 4 0V8h2a2 2 0 1 0 0-4H8V2z" fill="#fff"></path>
+                </svg>
+              </div>
+              <div class="t-accordItemContent">Если вы собрались бегать или ездить на велосипеде. При этом точность измерения вашей тренировки останется прежней. С ними вы можете плавать в бассейне или в море. И продолжать следить за своими показателями. Информация будет четко видна даже под прямыми солнечными лучами. Ведь теперь у вас на руке самый яркий из всех дисплеев Apple.</div>
+            </div>
+            <div class="t-accordItem">
+              <div class="t-openAccordItem"><span class="t-defaultColorType t-bigText">Условия</span>
+                <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="t-smallPlusIcon">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8 2a2 2 0 1 0-4 0v2H2a2 2 0 1 0 0 4h2v2a2 2 0 1 0 4 0V8h2a2 2 0 1 0 0-4H8V2z" fill="#fff"></path>
+                </svg>
+              </div>
+              <div class="t-accordItemContent">Apple Watch Series 2 со встроенным GPS‑модулем позволяют оставить iPhone дома, если вы собрались бегать или ездить на велосипеде.</div>
+            </div>
+          </div>
+        </section>
+        <section id="contacts" class="t-contactsAndFeedBack t-defaultContainer t-mainSectionCtrl">
+          <div class="t-mainTitleBlock">
+            <h1>Контакты и обратная связь</h1>
+          </div>
+          <div class="t-contactsAndFeedBackInsideWrapper t-flex">
+            <div class="t-leftSideContacts t-leftSideContactsAndRightSideContactsControl">
+              <div class="t-leftSideContactsContentWrapper">
+                <div class="t-leftSideContactsContentTitle t-leftSideContactsContentDefault">
+                  <h3 class="t-defaultColorType t-bigText">Контакты</h3>
+                </div>
+                <div class="t-leftSideContactsContentMail t-leftSideContactsContentDefault"><a href="mailto:mail@fantatic.ru" class="t-defaultColorType t-veryBigText">mail@fantatic.ru</a><span class="t-defaultColorType t-normalText">Корпоративная почта</span></div>
+                <div class="t-leftSideContactsContentOffice t-leftSideContactsContentDefault"><a href="#" class="t-defaultColorType t-veryBigText">Улица Ленина, 100, офис 1</a><span class="t-defaultColorType t-normalText">Головной офис в Москве</span></div>
+                <div class="t-leftSideContactsContentSocial t-leftSideContactsContentDefault">
+                  <ul class="t-mainList t-flex">
+                    <li><a href="http://facebook.com" target="_blank">
+                        <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="t-facebookIcon">
+                          <g clip-path="url(#clip0)" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.915 7.57H21V3h-3.626v.016c-4.392.154-5.294 2.632-5.373 5.234h-.008v2.28H9v4.475h2.993V27h4.51V15.005h3.693l.71-4.475h-4.403V9.152a1.476 1.476 0 0 1 .841-1.445c.18-.084.374-.13.571-.138z" fill="#fff"></path>
+                          </g>
+                          <defs>
+                            <clippath id="clip0">
+                              <path fill="#fff" d="M0 0h30v30H0z"></path>
+                            </clippath>
+                          </defs>
+                        </svg></a></li>
+                    <li><a href="http://vk.com" target="_blank">
+                        <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="t-vkIcon">
+                          <g clip-path="url(#clip0)" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.72 22.99h1.553c.264-.03.511-.142.711-.318a1.16 1.16 0 0 0 .214-.69s-.03-2.13.938-2.44c.968-.311 2.18 2.036 3.48 2.938a2.335 2.335 0 0 0 1.728.505h3.469s1.817-.139.955-1.583a11.675 11.675 0 0 0-2.582-3.018c-2.178-2.042-1.886-1.712.738-5.245 1.597-2.15 2.236-3.465 2.036-4.027a1.556 1.556 0 0 0-1.356-.444h-3.918a.939.939 0 0 0-.505.102 1.112 1.112 0 0 0-.347.457 22.494 22.494 0 0 1-1.445 3.112c-1.742 2.987-2.438 3.145-2.722 2.96-.663-.433-.496-1.737-.496-2.664 0-2.895.434-4.102-.847-4.415a6.599 6.599 0 0 0-1.825-.184 8.36 8.36 0 0 0-3.244.336c-.445.22-.789.71-.578.738.445.039.858.248 1.156.584.27.555.404 1.169.387 1.788 0 0 .232 3.409-.537 3.83-.528.29-1.25-.302-2.803-3.013a24.59 24.59 0 0 1-1.4-2.945 1.167 1.167 0 0 0-.322-.439 1.6 1.6 0 0 0-.6-.245H2.842a1.264 1.264 0 0 0-.764.26.825.825 0 0 0-.015.668s2.91 6.93 6.204 10.398a9.014 9.014 0 0 0 2.922 2.166c1.109.515 2.31.797 3.53.828z" fill="#fff"></path>
+                          </g>
+                          <defs>
+                            <clippath id="clip0">
+                              <path fill="#fff" d="M0 0h30v30H0z"></path>
+                            </clippath>
+                          </defs>
+                        </svg></a></li>
+                    <li><a href="http://instagram.com" target="_blank">
+                        <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="t-instagramIcon">
+                          <g clip-path="url(#clip0)" fill="none">
+                            <path d="M15.001 4c-2.987 0-3.362.013-4.536.066-1.17.054-1.97.24-2.67.512a5.386 5.386 0 0 0-1.948 1.268 5.4 5.4 0 0 0-1.27 1.948c-.272.7-.458 1.5-.51 2.67C4.013 11.637 4 12.013 4 15c0 2.987.013 3.361.066 4.534.054 1.172.24 1.97.512 2.67a5.39 5.39 0 0 0 1.268 1.949 5.387 5.387 0 0 0 1.948 1.27c.7.272 1.5.457 2.67.51 1.174.054 1.548.067 4.536.067 2.987 0 3.361-.013 4.534-.066 1.172-.054 1.972-.24 2.672-.511a5.382 5.382 0 0 0 1.947-1.27 5.4 5.4 0 0 0 1.27-1.948c.27-.7.456-1.5.51-2.67C25.987 18.36 26 17.987 26 15s-.014-3.362-.066-4.536c-.055-1.17-.241-1.97-.511-2.67a5.399 5.399 0 0 0-1.27-1.948 5.377 5.377 0 0 0-1.948-1.268c-.701-.273-1.501-.458-2.672-.512C18.36 4.013 17.986 4 14.998 4H15zm-.987 1.982h.987c2.937 0 3.285.01 4.445.064 1.072.049 1.655.228 2.042.378.514.2.88.438 1.264.823.385.385.624.752.824 1.265.15.387.33.97.378 2.042.053 1.16.065 1.508.065 4.444 0 2.935-.012 3.283-.065 4.443-.049 1.073-.228 1.655-.378 2.042-.2.513-.439.879-.824 1.264a3.4 3.4 0 0 1-1.264.822c-.387.152-.97.33-2.042.38-1.16.052-1.508.063-4.445.063-2.937 0-3.285-.011-4.445-.064-1.072-.05-1.655-.228-2.043-.379-.513-.2-.88-.438-1.265-.823a3.41 3.41 0 0 1-.823-1.264c-.15-.387-.33-.97-.379-2.042-.052-1.16-.063-1.508-.063-4.445 0-2.938.01-3.284.063-4.444.05-1.072.229-1.654.38-2.042.199-.513.437-.88.822-1.265a3.414 3.414 0 0 1 1.265-.823c.388-.152.97-.33 2.043-.38 1.015-.045 1.408-.06 3.458-.061v.002zm6.859 1.827a1.32 1.32 0 1 0 0 2.64 1.32 1.32 0 0 0 0-2.64zM15 9.35a5.65 5.65 0 1 0 0 11.298 5.65 5.65 0 0 0 0-11.298zm0 1.982a3.667 3.667 0 1 1 0 7.334 3.667 3.667 0 0 1 0-7.334z" fill="#fff"></path>
+                          </g>
+                          <defs>
+                            <clippath id="clip0">
+                              <path fill="#fff" d="M0 0h30v30H0z"></path>
+                            </clippath>
+                          </defs>
+                        </svg></a></li>
+                    <li><a href="http://twitter.com" target="_blank">
+                        <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="t-twitterIcon">
+                          <g clip-path="url(#clip0)" fill="none">
+                            <path d="M26 8.013a8.622 8.622 0 0 1-2.475.675 4.306 4.306 0 0 0 1.895-2.374 8.645 8.645 0 0 1-2.736 1.04A4.312 4.312 0 0 0 19.538 6c-2.378 0-4.308 1.922-4.308 4.292 0 .336.038.663.112.978a12.246 12.246 0 0 1-8.88-4.485 4.287 4.287 0 0 0 1.333 5.73 4.29 4.29 0 0 1-1.952-.537v.054A4.298 4.298 0 0 0 9.3 16.24a4.308 4.308 0 0 1-1.945.074 4.311 4.311 0 0 0 4.025 2.98 8.666 8.666 0 0 1-5.352 1.838c-.347 0-.69-.02-1.027-.06A12.22 12.22 0 0 0 11.604 23c7.924 0 12.258-6.54 12.258-12.211 0-.186-.004-.372-.012-.555A8.718 8.718 0 0 0 26 8.013z" fill="#fff"></path>
+                          </g>
+                          <defs>
+                            <clippath id="clip0">
+                              <path fill="#fff" d="M0 0h30v30H0z"></path>
+                            </clippath>
+                          </defs>
+                        </svg></a></li>
+                    <li><a href="http://youtube.com" target="_blank">
+                        <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="t-youTubeIcon">
+                          <g clip-path="url(#clip0)" fill="none">
+                            <path d="M14.993 6s-7.501 0-9.384.495C4.6 6.78 3.77 7.62 3.489 8.655 3 10.562 3 14.509 3 14.509s0 3.96.49 5.836a3.073 3.073 0 0 0 2.119 2.146c1.897.51 9.384.51 9.384.51s7.515 0 9.398-.495a3.001 3.001 0 0 0 2.105-2.146C27 18.47 27 14.523 27 14.523s.015-3.962-.504-5.867a2.981 2.981 0 0 0-2.105-2.13C22.508 6 14.993 6 14.993 6zm-2.387 4.862l6.24 3.646-6.24 3.63v-7.277z" fill="#fff"></path>
+                          </g>
+                          <defs>
+                            <clippath id="clip0">
+                              <path fill="#fff" d="M0 0h30v30H0z"></path>
+                            </clippath>
+                          </defs>
+                        </svg></a></li>
+                  </ul><span class="t-defaultColorType t-normalText">Группы в социальных сетях</span>
+                </div>
+              </div>
+            </div>
+            <div class="t-rightSideContacts t-leftSideContactsAndRightSideContactsControl">
+              <div class="t-rightSideContactsContentWrapper">
+                <form class="t-feedBackFormMain">
+                  <div class="t-feedBackFormTitle"><span class="t-defaultColorType t-bigText">Ваше сообщение</span></div>
+                  <div class="t-formItem">
+                    <label for="messageText" class="t-defaultColorType t-fontBold">Текст сообщения</label>
+                    <input type="text" id="messageText">
+                  </div>
+                  <div class="t-formItem">
+                    <label for="nameText" class="t-defaultColorType t-fontBold">Имя</label>
+                    <input type="text" id="nameText">
+                  </div>
+                  <div class="t-formItem">
+                    <label for="mailText" class="t-defaultColorType t-fontBold">Электронная почта</label>
+                    <input type="text" id="mailText">
+                  </div>
+                  <div class="t-formAgree t-checkBoxesCtrl">
+                    <input type="checkbox" id="formAgree" class="t-checkbox t-hideSomething">
+                    <label for="formAgree" class="t-checkControl">Согласен на обработку персональных данных</label>
+                  </div>
+                  <div class="t-sendFeedbackForm">
+                    <button type="button" class="t-btn"><span>Отправить</span></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="t-flex t-flexSB t-flexAlign">
+        <section class="t-footerCopySection"><span class="t-defaultColorType t-soSmallText">&copy; Fantatic 2018</span></section>
+        <section class="t-footerSocialSection">
+          <ul class="t-mainList t-flex">
+            <li><a href="http://facebook.com" target="_blank">
+                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="t-facebookIcon">
+                  <g clip-path="url(#clip0)" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.915 7.57H21V3h-3.626v.016c-4.392.154-5.294 2.632-5.373 5.234h-.008v2.28H9v4.475h2.993V27h4.51V15.005h3.693l.71-4.475h-4.403V9.152a1.476 1.476 0 0 1 .841-1.445c.18-.084.374-.13.571-.138z" fill="#fff"></path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0">
+                      <path fill="#fff" d="M0 0h30v30H0z"></path>
+                    </clippath>
+                  </defs>
+                </svg></a></li>
+            <li><a href="http://vk.com" target="_blank">
+                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="t-vkIcon">
+                  <g clip-path="url(#clip0)" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.72 22.99h1.553c.264-.03.511-.142.711-.318a1.16 1.16 0 0 0 .214-.69s-.03-2.13.938-2.44c.968-.311 2.18 2.036 3.48 2.938a2.335 2.335 0 0 0 1.728.505h3.469s1.817-.139.955-1.583a11.675 11.675 0 0 0-2.582-3.018c-2.178-2.042-1.886-1.712.738-5.245 1.597-2.15 2.236-3.465 2.036-4.027a1.556 1.556 0 0 0-1.356-.444h-3.918a.939.939 0 0 0-.505.102 1.112 1.112 0 0 0-.347.457 22.494 22.494 0 0 1-1.445 3.112c-1.742 2.987-2.438 3.145-2.722 2.96-.663-.433-.496-1.737-.496-2.664 0-2.895.434-4.102-.847-4.415a6.599 6.599 0 0 0-1.825-.184 8.36 8.36 0 0 0-3.244.336c-.445.22-.789.71-.578.738.445.039.858.248 1.156.584.27.555.404 1.169.387 1.788 0 0 .232 3.409-.537 3.83-.528.29-1.25-.302-2.803-3.013a24.59 24.59 0 0 1-1.4-2.945 1.167 1.167 0 0 0-.322-.439 1.6 1.6 0 0 0-.6-.245H2.842a1.264 1.264 0 0 0-.764.26.825.825 0 0 0-.015.668s2.91 6.93 6.204 10.398a9.014 9.014 0 0 0 2.922 2.166c1.109.515 2.31.797 3.53.828z" fill="#fff"></path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0">
+                      <path fill="#fff" d="M0 0h30v30H0z"></path>
+                    </clippath>
+                  </defs>
+                </svg></a></li>
+            <li><a href="http://instagram.com" target="_blank">
+                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="t-instagramIcon">
+                  <g clip-path="url(#clip0)" fill="none">
+                    <path d="M15.001 4c-2.987 0-3.362.013-4.536.066-1.17.054-1.97.24-2.67.512a5.386 5.386 0 0 0-1.948 1.268 5.4 5.4 0 0 0-1.27 1.948c-.272.7-.458 1.5-.51 2.67C4.013 11.637 4 12.013 4 15c0 2.987.013 3.361.066 4.534.054 1.172.24 1.97.512 2.67a5.39 5.39 0 0 0 1.268 1.949 5.387 5.387 0 0 0 1.948 1.27c.7.272 1.5.457 2.67.51 1.174.054 1.548.067 4.536.067 2.987 0 3.361-.013 4.534-.066 1.172-.054 1.972-.24 2.672-.511a5.382 5.382 0 0 0 1.947-1.27 5.4 5.4 0 0 0 1.27-1.948c.27-.7.456-1.5.51-2.67C25.987 18.36 26 17.987 26 15s-.014-3.362-.066-4.536c-.055-1.17-.241-1.97-.511-2.67a5.399 5.399 0 0 0-1.27-1.948 5.377 5.377 0 0 0-1.948-1.268c-.701-.273-1.501-.458-2.672-.512C18.36 4.013 17.986 4 14.998 4H15zm-.987 1.982h.987c2.937 0 3.285.01 4.445.064 1.072.049 1.655.228 2.042.378.514.2.88.438 1.264.823.385.385.624.752.824 1.265.15.387.33.97.378 2.042.053 1.16.065 1.508.065 4.444 0 2.935-.012 3.283-.065 4.443-.049 1.073-.228 1.655-.378 2.042-.2.513-.439.879-.824 1.264a3.4 3.4 0 0 1-1.264.822c-.387.152-.97.33-2.042.38-1.16.052-1.508.063-4.445.063-2.937 0-3.285-.011-4.445-.064-1.072-.05-1.655-.228-2.043-.379-.513-.2-.88-.438-1.265-.823a3.41 3.41 0 0 1-.823-1.264c-.15-.387-.33-.97-.379-2.042-.052-1.16-.063-1.508-.063-4.445 0-2.938.01-3.284.063-4.444.05-1.072.229-1.654.38-2.042.199-.513.437-.88.822-1.265a3.414 3.414 0 0 1 1.265-.823c.388-.152.97-.33 2.043-.38 1.015-.045 1.408-.06 3.458-.061v.002zm6.859 1.827a1.32 1.32 0 1 0 0 2.64 1.32 1.32 0 0 0 0-2.64zM15 9.35a5.65 5.65 0 1 0 0 11.298 5.65 5.65 0 0 0 0-11.298zm0 1.982a3.667 3.667 0 1 1 0 7.334 3.667 3.667 0 0 1 0-7.334z" fill="#fff"></path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0">
+                      <path fill="#fff" d="M0 0h30v30H0z"></path>
+                    </clippath>
+                  </defs>
+                </svg></a></li>
+            <li><a href="http://twitter.com" target="_blank">
+                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="t-twitterIcon">
+                  <g clip-path="url(#clip0)" fill="none">
+                    <path d="M26 8.013a8.622 8.622 0 0 1-2.475.675 4.306 4.306 0 0 0 1.895-2.374 8.645 8.645 0 0 1-2.736 1.04A4.312 4.312 0 0 0 19.538 6c-2.378 0-4.308 1.922-4.308 4.292 0 .336.038.663.112.978a12.246 12.246 0 0 1-8.88-4.485 4.287 4.287 0 0 0 1.333 5.73 4.29 4.29 0 0 1-1.952-.537v.054A4.298 4.298 0 0 0 9.3 16.24a4.308 4.308 0 0 1-1.945.074 4.311 4.311 0 0 0 4.025 2.98 8.666 8.666 0 0 1-5.352 1.838c-.347 0-.69-.02-1.027-.06A12.22 12.22 0 0 0 11.604 23c7.924 0 12.258-6.54 12.258-12.211 0-.186-.004-.372-.012-.555A8.718 8.718 0 0 0 26 8.013z" fill="#fff"></path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0">
+                      <path fill="#fff" d="M0 0h30v30H0z"></path>
+                    </clippath>
+                  </defs>
+                </svg></a></li>
+            <li><a href="http://youtube.com" target="_blank">
+                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" class="t-youTubeIcon">
+                  <g clip-path="url(#clip0)" fill="none">
+                    <path d="M14.993 6s-7.501 0-9.384.495C4.6 6.78 3.77 7.62 3.489 8.655 3 10.562 3 14.509 3 14.509s0 3.96.49 5.836a3.073 3.073 0 0 0 2.119 2.146c1.897.51 9.384.51 9.384.51s7.515 0 9.398-.495a3.001 3.001 0 0 0 2.105-2.146C27 18.47 27 14.523 27 14.523s.015-3.962-.504-5.867a2.981 2.981 0 0 0-2.105-2.13C22.508 6 14.993 6 14.993 6zm-2.387 4.862l6.24 3.646-6.24 3.63v-7.277z" fill="#fff"></path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0">
+                      <path fill="#fff" d="M0 0h30v30H0z"></path>
+                    </clippath>
+                  </defs>
+                </svg></a></li>
+          </ul>
+        </section>
+        <section class="t-footerWhereCreatedSection"><a href="http://tdsgn.ru" target="_blank" class="t-defaultColorType t-soSmallText">
+            <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="t-logoIcon">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M.586.586C0 1.172 0 2.114 0 4v8c0 1.886 0 2.828.586 3.414C1.172 16 2.114 16 4 16h8c1.886 0 2.829 0 3.414-.586C16 14.828 16 13.886 16 12V4c0-1.886 0-2.828-.586-3.414C14.83 0 13.886 0 12 0H4C2.114 0 1.172 0 .586.586zM9.089 5.05h1.656v1.812H9.09v2.968c.019.792.035 1.5.9 1.5h.852l.048 1.811s-.61.302-1.5.302c-2.206 0-3-.775-3-3.02v-3.56h-1.5V5.05h1.5V2.667h2.7V5.05z" fill="#fff"></path>
+            </svg></a></section>
+      </footer>
+      <div class="t-moonGradient"></div>
+      <div class="t-moon"><img src="/images/moon.png"></div>
+      <div class="t-overlay"></div>
+      <div class="t-constructorSuperMainWrapper">
+        <div class="t-constructorMainWrappper">
+          <div class="t-constructorMainPriceWrapper">
+            <h3 class="t-constructorMainQuantityAndPrice"><span class="t-constructorMainQuantity">16</span>стикеров на сумму<span class="t-constructorMainPrice">3 500 ₽</span></h3>
+          </div>
+          <div class="t-constructorMainStickersPreviewWrapper">
+            <h3 class="t-constructorMainStickersPreviewTitle">Форма и количество</h3>
+            <div class="t-constructorMainStickersPreview t-flex t-flexSB">
+              <div class="t-constructorStickerCardHolder t-constructorStickerCardHolderOne">
+                <div data-check="true" class="t-constructorStickerCardHTop">
+                  <div class="t-topQuantity">1</div>
+                  <div class="t-constructorStickerCard">
+                    <div class="t-constructorStickerTextOne">
+                      <div></div>
+                    </div>
+                    <div class="t-constructorStickerImg">
+                      <div style="background-image: url('/images/icons/SVG-optim/defaultSticker.svg')"></div>
+                    </div>
+                    <div class="t-constructorStickerTextTwo">
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="t-constructorStickerCardHBottom">
+                  <div class="t-constructorStickerCardSize"><span>3 СМ</span></div>
+                  <div class="t-constructorStickerCardQuantityWr t-flex t-flexAlign">
+                    <input value="1" class="t-constructorStickerCardQuantityVal">
+                    <div class="t-constructorStickerCardQuantityBtns t-flex t-flexAlign">
+                      <button type="button" class="t-constructorStickerCardQuantityBtn t-minus"></button>
+                      <button type="button" class="t-constructorStickerCardQuantityBtn t-plus"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="t-constructorStickerCardHolder t-constructorStickerCardHolderTwo">
+                <div data-check="true" class="t-constructorStickerCardHTop">
+                  <div class="t-topQuantity">1</div>
+                  <div class="t-constructorStickerCard t-flex t-flexAlign">
+                    <div class="t-constructorStickerImg">
+                      <div style="background-image: url('/images/icons/SVG-optim/defaultSticker.svg')"></div>
+                    </div>
+                    <div class="t-constructorStickerTextHolder t-flex t-flexColumn">
+                      <div class="t-constructorStickerTextOne"><span></span></div>
+                      <div class="t-constructorStickerTextTwo"><span></span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="t-constructorStickerCardHBottom">
+                  <div class="t-constructorStickerCardSize"><span>5 x 1,5 СМ</span></div>
+                  <div class="t-constructorStickerCardQuantityWr t-flex t-flexAlign">
+                    <input value="1" class="t-constructorStickerCardQuantityVal">
+                    <div class="t-constructorStickerCardQuantityBtns t-flex t-flexAlign">
+                      <button type="button" class="t-constructorStickerCardQuantityBtn t-minus"></button>
+                      <button type="button" class="t-constructorStickerCardQuantityBtn t-plus"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="t-constructorStickerCardHolder t-constructorStickerCardHolderThird">
+                <div data-check="true" class="t-constructorStickerCardHTop">
+                  <div class="t-topQuantity">1</div>
+                  <div class="t-constructorStickerCard t-flex t-flexAlign">
+                    <div class="t-constructorStickerImg">
+                      <div style="background-image: url('/images/icons/SVG-optim/defaultSticker.svg')"></div>
+                    </div>
+                    <div class="t-constructorStickerTextHolder t-flex t-flexColumn">
+                      <div class="t-constructorStickerTextOne"><span></span></div>
+                      <div class="t-constructorStickerTextTwo"><span></span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="t-constructorStickerCardHBottom">
+                  <div class="t-constructorStickerCardSize"><span>4,5 x 1,5 СМ</span></div>
+                  <div class="t-constructorStickerCardQuantityWr t-flex t-flexAlign">
+                    <input value="1" class="t-constructorStickerCardQuantityVal">
+                    <div class="t-constructorStickerCardQuantityBtns t-flex t-flexAlign">
+                      <button type="button" class="t-constructorStickerCardQuantityBtn t-minus"></button>
+                      <button type="button" class="t-constructorStickerCardQuantityBtn t-plus"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="t-constructorStickerCardHolder t-constructorStickerCardHolderFour">
+                <div data-check="true" class="t-constructorStickerCardHTop">
+                  <div class="t-topQuantity">1</div>
+                  <div class="t-constructorStickerCard">
+                    <div class="t-constructorStickerImg">
+                      <div style="background-image: url('/images/icons/SVG-optim/defaultSticker.svg')"></div>
+                    </div>
+                    <div class="t-constructorStickerTextOne"><span></span></div>
+                    <div class="t-constructorStickerTextTwo"><span></span></div>
+                  </div>
+                </div>
+                <div class="t-constructorStickerCardHBottom">
+                  <div class="t-constructorStickerCardSize"><span>3,5 x 2,5 СМ</span></div>
+                  <div class="t-constructorStickerCardQuantityWr t-flex t-flexAlign">
+                    <input value="1" class="t-constructorStickerCardQuantityVal">
+                    <div class="t-constructorStickerCardQuantityBtns t-flex t-flexAlign">
+                      <button type="button" class="t-constructorStickerCardQuantityBtn t-minus"></button>
+                      <button type="button" class="t-constructorStickerCardQuantityBtn t-plus"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="t-constructorStickerCardHolder t-constructorStickerCardHolderFive">
+                <div data-check="true" class="t-constructorStickerCardHTop">
+                  <div class="t-topQuantity">1</div>
+                  <div class="t-constructorStickerCard t-flex t-flexAlign">
+                    <div class="t-constructorStickerImg">
+                      <div style="background-image: url('/images/icons/SVG-optim/defaultSticker.svg')"></div>
+                    </div>
+                    <div class="t-constructorStickerTextHolder t-flex t-flexColumn">
+                      <div class="t-constructorStickerTextOne"><span></span></div>
+                      <div class="t-constructorStickerTextTwo"><span></span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="t-constructorStickerCardHBottom">
+                  <div class="t-constructorStickerCardSize"><span>5 x 2,5 СМ</span></div>
+                  <div class="t-constructorStickerCardQuantityWr t-flex t-flexAlign">
+                    <input value="1" class="t-constructorStickerCardQuantityVal">
+                    <div class="t-constructorStickerCardQuantityBtns t-flex t-flexAlign">
+                      <button type="button" class="t-constructorStickerCardQuantityBtn t-minus"></button>
+                      <button type="button" class="t-constructorStickerCardQuantityBtn t-plus"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="t-constructorMainStickersSettingsWrapper">
+            <div class="t-constructorMainColorAndStickersPicker">
+              <div class="t-constructorMainColorPickerWrapper">
+                <h3 class="t-constructorColorPickerTitle t-titleConstructorDefault">Цвет подложки</h3>
+                <div class="t-constructorMainColorPicker">
+                  <ul class="t-constructorDefaultPicker t-mainList">
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#FF4B46" style="background-color:#FF4B46;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#B66CFF" style="background-color:#B66CFF;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFE711" style="background-color:#FFE711;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                    <li data-color="#FFFFFF" style="background-color:#FFFFFF;"></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="t-constructorMainImgPickerWrapper">
+                <h3 class="t-constructorImgPickerTitle t-titleConstructorDefault">Изображение</h3>
+                <div class="t-constructorImgPickerCategory">
+                  <select class="t-customOptions">
+                    <option value="niggas">Негры</option>
+                    <option value="moreNiggas">Еще негры</option>
+                    <option value="pokemons">Покемоны</option>
+                    <option value="ditch">Дичь</option>
+                  </select>
+                </div>
+                <div class="t-constructorMainImgPicker">
+                  <ul class="t-constructorDefaultPicker t-mainList">
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/spider.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/spider.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/happy.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/happy.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/jigglypuff.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/jigglypuff.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                    <li data-img="/images/icons/SVG-optim/monster.svg">
+                      <div style="background-image: url('/images/icons/SVG-optim/monster.svg')"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="t-constructorMainTextEditorWrapper">
+              <div class="t-constructorMainTextEditor">
+                <div class="t-constructorMainTextEditCardsHolder">
+                  <form>
+                    <div class="t-constructorMainTextEditCard">
+                      <div class="t-inputItem t-constructorFirstTextField">
+                        <label class="t-titleConstructorDefault">Первая строка</label>
+                        <input placeholder="Максимум 20 символов">
+                      </div>
+                      <div class="t-inputItem t-constructorSecondTextField">
+                        <label class="t-titleConstructorDefault">Вторая строка</label>
+                        <input placeholder="Максимум 20 символов">
+                      </div>
+                      <div class="t-inputItem"><span class="t-titleConstructorDefault">Шрифт</span>
+                        <select class="t-customOptions">
+                          <option value="niggas">Негры</option>
+                          <option value="moreNiggas">Еще негры</option>
+                          <option value="pokemons">Покемоны</option>
+                          <option value="ditch">Дичь</option>
+                        </select>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="t-constructorMainTextCheck t-checkBoxesCtrl">
+                  <input id="textCheck" type="checkbox" class="t-checkbox t-hideSomething">
+                  <label for="textCheck" class="t-checkControl">Я проверил текст — ошибок и опечаток нет</label>
+                </div>
+                <div class="t-constructorMainFinalCountWrapper">
+                  <div class="t-constructorMainPriceWrapper">
+                    <h3 class="t-constructorMainQuantityAndPrice"><span class="t-constructorMainQuantity">16</span>стикеров на сумму<span class="t-constructorMainPrice">3 500 ₽</span></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="t-constructorMainStickersButtonsWrapper">
+            <button class="t-constructorNextButton t-btn"><span>Следующий шаг</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/vendor.min.js"></script>
+    <script src="/js/main.min.js"></script>
+  </body>
+</html>

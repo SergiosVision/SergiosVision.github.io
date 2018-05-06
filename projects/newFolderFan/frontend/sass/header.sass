@@ -1,0 +1,54 @@
+header
+  z-index: 1000
+  position: absolute
+  width: 100%
+  height: 48px
+  top: 32px
+  padding: 0 24px
+  color: #fff
+  display: flex
+  justify-content: space-between
+  transition: .4s cubic-bezier(.35,0,.33,1)
+  animation: showHeader 2s cubic-bezier(.35,0,.33,1)
+  .t-headerNavigationWrapper
+    width: 100%
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    .t-mainLogoLink
+      display: none
+    .t-headerNavigation
+      .t-headerCreateSticker
+        display: none
+      ul
+        align-items: center
+      .t-navItem
+        a
+          &.active
+            color: #26BFD1
+        &:not(:last-child)
+          margin-right: 24px
+      margin-right: 40px
+  .t-headerCart
+    cursor: pointer
+    .t-headerCardIconWrapper
+      display: block
+      width: 14px
+      height: 12px
+  &.t-stickyHeader
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    height: 64px
+    padding: 12px 24px
+    background-color: rgba(0, 0, 0, 0.9)
+    .t-headerNavigationWrapper
+      justify-content: space-between
+      .t-mainLogoLink
+        display: block
+      .t-headerNavigation
+      .t-headerCreateSticker
+        display: block
+
+

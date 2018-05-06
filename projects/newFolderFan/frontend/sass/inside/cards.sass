@@ -1,0 +1,126 @@
+.t-goodCard
+  background-color: #fff
+  border-radius: 24px
+  padding: 40px 40px 25px 40px
+  min-width: 267px
+  max-width: 267px
+  width: 100%
+  display: block
+  text-decoration: none
+  position: relative
+  &:not(:last-child)
+    margin-right: 16px
+  &.t-makeStickerCard
+    padding-bottom: 40px
+    background-color: rgba(0, 0, 0, 0.5)
+    .t-cardTop
+      .t-cardImgHolder
+        position: relative
+        background: linear-gradient(224.84deg, #FF4F54 0%, #E5191F 100%)
+        &:before, &:after
+          position: absolute
+          content: ''
+          background-color: #fff
+          border-radius: 2px
+          width: 2px
+          height: 104px
+          left: 0
+          top: 0
+          bottom: 0
+          right: 0
+          margin: auto
+        &:after
+          transform: rotate(90deg)
+    .t-cardBottom
+      .t-makerStickerCardTitle
+        text-align: center
+        margin-top: 24px
+        color: #fff
+        & > *
+          font-size: 20px
+          line-height: 23px
+          font-weight: bold
+  &:before, &:after
+    content: ''
+    width: 100%
+    height: 100%
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    z-index: -1
+    border-radius: 24px
+    opacity: 0
+    transition: .3s cubic-bezier(0.25, 0.23, 0.21, 0.68)
+  &:before
+    transform: translate(-2px,2px)
+    background-color: #ED3237
+  &:after
+    transform: translate(2px,-2px)
+    background-color: #26BFD1
+  .t-cardTop
+    .t-cardImgHolder
+      width: 100%
+      height: 177px
+      overflow: hidden
+      border-radius: 50%
+      position: relative
+      img
+        width: 100%
+        height: 100%
+      .t-cardOverlay
+        border-radius: 50%
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background-color: rgba(38, 191, 209, 0.5)
+        opacity: 0
+        transform: scale(.4)
+        transition: .3s cubic-bezier(0.25, 0.23, 0.21, 0.68)
+        transition-delay: .2s
+        .t-plusCardSvg
+          position: absolute
+          left: 0
+          right: 0
+          top: 0
+          bottom: 0
+          margin: auto
+          transform: rotate(-40deg)
+          transition: .3s cubic-bezier(0.25, 0.23, 0.21, 0.68)
+          transition-delay: .3s
+    margin-bottom: 16px
+  .t-cardBottom
+    position: relative
+    .t-cardTitleHolder
+      transition: .3s cubic-bezier(0.25, 0.23, 0.21, 0.68)
+      text-align: center
+      & > *
+        font-size: 16px
+        line-height: 19px
+        color: #4f4f4f
+        font-style: normal
+        margin-bottom: 8px
+    .t-cardPriceHolder
+      transition: .3s cubic-bezier(0.25, 0.23, 0.21, 0.68)
+      text-align: center
+      & > *
+        font-weight: bold
+        font-size: 20px
+        line-height: 23px
+        color: #4f4f4f
+    .t-cardButtonHolder
+      position: absolute
+      bottom: 0
+      top: 0
+      right: 0
+      left: 0
+      margin: auto
+      text-align: center
+      .t-btn
+        transition: .3s cubic-bezier(0.25, 0.23, 0.21, 0.68)
+        opacity: 0
+        pointer-events: none
+        transform: translateY(32px)
