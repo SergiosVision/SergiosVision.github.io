@@ -228,17 +228,17 @@ $(document).ready(function(){
         $('.t-astronaut').css('top',-(scrolled*0.3)+'px');
     }
 
-    // function insertAfter(elem, refElem) {
-    //     var parent = refElem.parentNode;
-    //     var next = refElem.nextSibling;
-    //     if(next) {
-    //         return parent.insertBefore(elem, next);
-    //     } else {
-    //         return parent.appendChild(elem);
-    //     }
-    // }
-    //
-    //
+    function insertAfter(elem, refElem) {
+        var parent = refElem.parentNode;
+        var next = refElem.nextSibling;
+        if(next) {
+            return parent.insertBefore(elem, next);
+        } else {
+            return parent.appendChild(elem);
+        }
+    }
+
+
     function wrpF(query, tag) {
         callHook(query, function (i) {
             var crt = document.createElement(tag);
@@ -256,38 +256,65 @@ $(document).ready(function(){
         return createElem;
     }
 
-    (function (select, getOptions) {
+    function childrenAll(elements) {
+        elements.reduce(function(result, element) {
+            return result.concat([].slice.call(element.children));
+        },[]);
+    }
+
+    // Create Styled Select option
+
+    (function (select) {
         var hideParent = 'display: none; visibility: hidden; padding-right: 10px;';
-        var createUl = '<ul class="t-selectList">';
         callHook(select, function (i) {
             var crtEl = createElem('div', 't-styledSelectorBox');
-            var lsitHolder = createElem('div', 't-selectListHoler');
             var getHook = select[i];
+            var caOpt = getHook.children;
             getHook.style.cssText = hideParent;
             getHook.parentNode.appendChild(crtEl);
-            getHook.parentNode.appendChild(lsitHolder);
+            var getBox = getHook.nextSibling;
+            getBox.innerText = getHook.children[0].innerText;
+            var $list = createElem('ul', 't-listOptions');
+            insertAfter($list,getBox);
+            callHook(caOpt, function (i) {
+                var crtLi = createElem('li', 't-options');
+                crtLi.innerText = getHook.children[i].innerText;
+                crtLi.setAttribute('data-value', getHook.children[i].value);
+                $list.appendChild(crtLi);
+            });
+            var getChList = $list.children;
+            getBox.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (this.classList.contains('active')) {
+                    this.classList.remove('active');
+                    this.nextSibling.style.display = 'none';
+                } else {
+                    this.classList.add('active');
+                    this.nextSibling.style.display = 'block';
+                }
+            }, false);
+            callHook(getChList, function (i) {
+                getChList[i].addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    if (getBox.classList.contains('active')) {
+                        getBox.classList.remove('active');
+                        getBox.nextSibling.style.display = 'none';
+                    }
+                    getBox.previousSibling.value = this.dataset.value;
+                    getBox.innerText = this.innerText;
+                },false);
+            });
+            window.addEventListener('click', function (e) {
+                if(getBox.classList.contains('active')) {
+                    getBox.classList.remove('active');
+                    getBox.nextSibling.style.display = 'none';
+                }
+            })
 
         });
-    })(getAll('.t-customOptions'), getAll('.t-customOptions option'));
+    })(getAll('.t-customOptions'));
 
-    var SelectList = {
-        func: {
-            prepare: function () {
-
-
-            }
-        },
-
-        init: function() {
-            for(var method in this.func) {
-                this.func[method]();
-            }
-
-        }
-    };
-    (function () {
-        SelectList.init();
-    })();
+    // Create Styled Select option End
 
 
 // Constructor Start
@@ -346,21 +373,17 @@ $(document).ready(function(){
 
     // Quantity Control Function
 
-    function quantityControl(t, checkClass, findClass, findQClass) {
+    function quantityControl(t, checkClass, findClass) {
         var b = t;
         var getInput = b.parentNode.parentNode.querySelector('input');
-        var getQ = b.parentNode.parentNode.parentNode.parentNode.querySelector(findQClass);
         if (b.classList.contains(checkClass)) {
             var getPlusNewVal = parseInt(getInput.value) + 1;
-            var getPlusNewValQ = parseInt(getQ.innerText) + 1;
         } else {
             if (getInput.value > 0) {
                 var getPlusNewVal = parseInt(getInput.value) - 1;
-                var getPlusNewValQ = parseInt(getQ.innerText) - 1;
-            } else {getPlusNewVal = 0; getPlusNewValQ = 0;}
+            } else {getPlusNewVal = 0;}
         }
         getInput.value = getPlusNewVal;
-        getQ.innerText = getPlusNewValQ;
         checkNull(b, getInput, findClass);
     }
     // Add Checking Data Attr
@@ -469,7 +492,7 @@ $(document).ready(function(){
     callHook(getButtons, function (i) {
         getButtons[i].addEventListener('click', function (e) {
             var check = 't-plus'?'t-plus':'t-minus';
-            quantityControl(this, check, '.t-constructorStickerCard', '.t-topQuantity', '.t-constructorStickerCardHTop'); // Quantity Control Function Call
+            quantityControl(this, check, '.t-constructorStickerCard'); // Quantity Control Function Call
             addDataCheck(this, '.t-constructorStickerCardHTop', 'qty');
         }, false);
     });
@@ -488,7 +511,6 @@ $(document).ready(function(){
     var getQWrapper = getAll('.t-constructorStickerCardQuantityWr input');
     callHook(getQWrapper, function (i) {
         getQWrapper[i].addEventListener('keyup', function () {
-            setNullTopCard(this, '.t-topQuantity');
             addDataCheck(this, '.t-constructorStickerCardHTop');
         });
     });
@@ -503,7 +525,6 @@ $(document).ready(function(){
     }, false);
     callHook(getQWrapper, function (i) {
         getQWrapper[i].addEventListener('focusout', function () {
-            setNullTopCard(this, '.t-topQuantity');
             checkNullNewFocus(this, '.t-constructorStickerCard');
             addDataCheck(this, '.t-constructorStickerCardHTop');
         });
