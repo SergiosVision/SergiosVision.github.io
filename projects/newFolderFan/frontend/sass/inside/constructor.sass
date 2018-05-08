@@ -26,6 +26,35 @@
     .t-constructorMainStickersPreview
       .t-constructorStickerCardHolder
         width: 200px
+        &[data-font='ubuntu']
+          .t-constructorStickerCard
+            .t-constructorStickerTextOne, .t-constructorStickerTextTwo
+              span
+                font-size: 22px!important
+                line-height: 26px!important
+                font-family: 'Ubuntu'!important
+        &[data-font='pangolin']
+          .t-constructorStickerCard
+            .t-constructorStickerTextOne, .t-constructorStickerTextTwo
+              span
+                font-size: 22px!important
+                line-height: 26px!important
+                font-family: 'Pangolin'!important
+        &[data-font='georgia']
+          .t-constructorStickerCard
+            .t-constructorStickerTextOne, .t-constructorStickerTextTwo
+              span
+                font-size: 22px!important
+                line-height: 26px!important
+                font-family: Georgia!important
+        &[data-font='openSans']
+          .t-constructorStickerCard
+            .t-constructorStickerTextOne, .t-constructorStickerTextTwo
+              span
+                font-size: 22px!important
+                line-height: 26px!important
+                font-family: 'Open Sans'!important
+
         .t-constructorStickerCardHTop
           position: relative
           .t-topQuantity
@@ -41,6 +70,16 @@
             top: -8px
         .t-constructorStickerCard
           transition: .3s ease-in-out
+          .t-constructorStickerTextOne, .t-constructorStickerTextTwo
+            span
+              letter-spacing: 0
+              font-size: 22px
+              font-family: 'Roboto'
+              font-weight: normal
+              line-height: 26px
+              text-transform: uppercase
+            .t-spanTag
+              overflow: hidden
           .t-constructorStickerImg
             div
               width: 100%
@@ -67,10 +106,9 @@
               width: 320px
               height: 27px
               span
-                letter-spacing: 0
-                font: 17px 'Roboto'
-                font-size: 17px
-                line-height: 19px
+                letter-spacing: 0!important
+                font-size: 17px!important
+                line-height: 20px!important
               div
                 width: 100%
                 height: 27px
@@ -106,17 +144,11 @@
             background-color: #26BFD1
             transform: scale(.32)
             .t-constructorStickerTextHolder
-              width: 102.4px
             .t-constructorStickerTextOne, .t-constructorStickerTextTwo
               display: flex
               align-items: center
-              justify-content: center
               width: 320px
               height: 27px
-              span
-                letter-spacing: 0
-                font: 17px 'Roboto'
-                line-height: 19px
             .t-constructorStickerTextOne
               margin-bottom: 8px
             .t-constructorStickerImg
@@ -138,17 +170,11 @@
             background-color: #26BFD1
             transform: scale(.32)
             .t-constructorStickerTextHolder
-              width: 102.4px
             .t-constructorStickerTextOne, .t-constructorStickerTextTwo
               display: flex
               align-items: center
-              justify-content: center
               width: 320px
               height: 27px
-              span
-                letter-spacing: 0
-                font: 17px 'Roboto'
-                line-height: 19px
             .t-constructorStickerTextOne
               margin-bottom: 8px
             .t-constructorStickerImg
@@ -178,10 +204,6 @@
               justify-content: center
               width: 320px
               height: 27px
-              span
-                letter-spacing: 0
-                font: 17px 'Roboto'
-                line-height: 19px
             .t-constructorStickerTextOne
               margin-bottom: 8px
             .t-constructorStickerImg
@@ -208,13 +230,8 @@
             .t-constructorStickerTextOne, .t-constructorStickerTextTwo
               display: flex
               align-items: center
-              justify-content: center
               width: 100%
               height: 27px
-              span
-                letter-spacing: 0
-                font: 17px 'Roboto'
-                line-height: 19px
             .t-constructorStickerTextOne
               margin-bottom: 12px
             .t-constructorStickerImg
