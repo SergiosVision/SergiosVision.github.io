@@ -278,9 +278,19 @@ $(document).ready(function(){
 
     function createElem(tag, addCl) {
         var createElem = document.createElement(tag);
-        createElem.classList.add(addCl);
-        return createElem;
+        if (addCl === undefined) {
+            return createElem;
+        } else {
+            createElem.classList.addMany(addCl);
+            return createElem;
+        }
     }
+    DOMTokenList.prototype.addMany = function(classes) {
+        var array = classes.split(' ');
+        for (var i = 0, length = array.length; i < length; i++) {
+            this.add(array[i]);
+        }
+    };
 
     function childrenAll(elements) {
         elements.reduce(function(result, element) {
@@ -531,23 +541,50 @@ $(document).ready(function(){
     }
     
     
-    function switchContainers (t, refContainer) {
+    function switchContainers (t, refContainer, direction) {
         var b = t;
         var getElements = refContainer.children[0];
-        function checkEls(element, getClass) {
+        var createBtn = createElem('button', 't-addCartBtn t-btn');
+        createBtn.setAttribute('disabled', 'true');
+        createBtn.appendChild(createElem('span'));
+        createBtn.querySelector('span').innerText = 'Добавить в корзину';
+        function workRemove(elem, cl) {
+            elem.classList.remove(cl);
+            elem.style.display='none';
+            console.log(elem);
+        }
+        function workAdd(elem, cl) {
+            elem.classList.add(cl);
+            elem.style.display='block';
+        }
+        function goForward(element, getClass) {
             if(!element.classList.contains(getClass)) {
-                element.nextElementSibling.classList.remove(getClass);
-                element.nextElementSibling.style.display='none';
-                element.classList.add(getClass);
-                element.style.display='block';
+                workRemove(element.nextElementSibling, getClass);
+                workAdd(element, getClass);
+                b.previousElementSibling.style.display='block';
             } else {
-                element.classList.remove(getClass);
-                element.style.display='none';
-                element.nextElementSibling.classList.add(getClass);
-                element.nextElementSibling.style.display='block';
+                workRemove(element, getClass);
+                workAdd(element.nextElementSibling, getClass);
+                b.style.display='none';
+                insertAfter(createBtn,b);
             }
         }
-        checkEls(getElements, 'active');
+        function goBack(element, getClass) {
+            if(element.classList.contains(getClass)) {
+                workRemove(element, getClass);
+                b.style.display='none';
+            } else {
+                workRemove(element.nextElementSibling, getClass);
+                b.nextElementSibling.nextElementSibling.parentNode.removeChild(b.nextElementSibling.nextElementSibling);
+                workAdd(element, getClass);
+                b.nextElementSibling.style.display='block';
+            }
+        }
+        if(direction === 'forward') {
+            goForward(getElements, 'active');
+        } else {
+            goBack(getElements, 'active');
+        }
     }
 
     // All Constructor Events
@@ -566,6 +603,9 @@ $(document).ready(function(){
 
 
     getNextButton.addEventListener('click', function () {
+        switchContainers(this, getSettingsWrapper, 'forward');
+    }, false);
+    getPrevButton.addEventListener('click', function () {
         switchContainers(this, getSettingsWrapper);
     }, false);
 
