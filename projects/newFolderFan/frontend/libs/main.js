@@ -105,7 +105,6 @@ function fadeInV(el, display){
     })();
 }
 
-
 function fadeOutV(el){
     el.style.opacity = 1;
 
@@ -122,6 +121,7 @@ function fadeOutV(el){
 function getSelector(selector) {return document.querySelector(selector);}
 function getAll(selectors) {return document.querySelectorAll(selectors);}
 function callHook(s, call){for(var i=0;i<s.length;i++) {call(i)}}
+function isM(ref, tag) {return ref.matches(tag);}
 
 
 $(document).ready(function(){
@@ -148,7 +148,6 @@ $(document).ready(function(){
             }
 
     }
-
     // When some block visible
     function controlVisible(container) {
         var elementPosition = {
@@ -358,7 +357,6 @@ $(document).ready(function(){
             return parent;
         });
     }
-
     // Create Container And append spans in this container.
     function appendText(elem) {
         var container = document.createElement('div');
@@ -402,6 +400,12 @@ $(document).ready(function(){
 
     // Quantity Control Function
 
+    function closestV (elements, find) {
+        elements.map(function (element) {
+            return element.closest(find);
+        })
+    }
+
     function quantityControl(t, checkClass, findClass) {
         var b = t;
         var getInput = b.parentNode.parentNode.querySelector('input');
@@ -419,7 +423,7 @@ $(document).ready(function(){
     function addDataCheck(t, checkClass, ch) {
         var b = t;
         var getInput = ch ==='qty'?b.parentNode.parentNode.querySelector('input'):b;
-        var getQ = ch ==='qty'?b.parentNode.parentNode.parentNode.parentNode.querySelector(checkClass): b.parentNode.parentNode.parentNode.querySelector(checkClass);
+        var getQ = ch ==='qty'?b.parentNode.parentNode.parentNode.parentNode.querySelector(checkClass):b.parentNode.parentNode.parentNode.querySelector(checkClass);
         if (parseInt(getInput.value) === 0 || getInput.value === '') {
             getQ.setAttribute('data-check', 'false');
         } else {
@@ -461,7 +465,6 @@ $(document).ready(function(){
             if (b.value === '') {getQ.innerText = '0';} else {getQ.innerText = b.value;}
         } else {getQ.innerText = '0';}
     }
-    
     function pickColorAndImgs(t, elem, ev, getAllClicks) {
         var b = t;
         var getDataVal = ev === 'color'?b.dataset.color:b.dataset.img;
@@ -506,9 +509,7 @@ $(document).ready(function(){
                     }
                 } else {getAllOut[i].innerText = b.value;}
             })
-        } else {
-            b.value = b.value.substr(0, 20);
-        }
+        } else {b.value = b.value.substr(0, 20);}
     }
     function clearFS(t, clearSection) {
         var b = t;
@@ -523,46 +524,82 @@ $(document).ready(function(){
         })
     }
 
+    function checkForNullNew(cards) {
+        callHook(cards, function (i) {
+            console.log(cards[i].matches('input'))
+        });
+    }
+    
+    
+    function switchContainers (t, refContainer) {
+        var b = t;
+        var getElements = refContainer.children[0];
+        function checkEls(element, getClass) {
+            if(!element.classList.contains(getClass)) {
+                element.nextElementSibling.classList.remove(getClass);
+                element.nextElementSibling.style.display='none';
+                element.classList.add(getClass);
+                element.style.display='block';
+            } else {
+                element.classList.remove(getClass);
+                element.style.display='none';
+                element.nextElementSibling.classList.add(getClass);
+                element.nextElementSibling.style.display='block';
+            }
+        }
+        checkEls(getElements, 'active');
+    }
 
     // All Constructor Events
+    //Variables
+    var getListOptions = getAll('.t-inputItem .t-listOptions li');
+    var getButtons = getAll('.t-constructorStickerCardQuantityBtn');
+    var getColorPick = getAll('.t-constructorMainColorPicker li');
+    var getImgPick = getAll('.t-constructorMainImgPicker li');
+    var getQWrapper = getAll('.t-constructorStickerCardQuantityWr input');
+    var getFirstField = getSelector('.t-constructorFirstTextField input');
+    var getSecondField = getSelector('.t-constructorSecondTextField input');
+    var getQCont = getAll('.t-constructorStickerCardQuantityWr');
+    var getNextButton = getSelector('.t-constructorNextButton');
+    var getPrevButton = getSelector('.t-constructorPrevButton');
+    var getSettingsWrapper = getSelector('.t-constructorMainStickersSettingsWrapper');
 
-    var getListOptions = getAll('.t-listOptions li');
+
+    getNextButton.addEventListener('click', function () {
+        switchContainers(this, getSettingsWrapper);
+    }, false);
+
     callHook(getListOptions, function (i) {
         getListOptions[i].addEventListener('click', function (e) {
             catchFont(this, '.t-constructorStickerCardHolder', 't-');
         }, false);
     });
-    var getButtons = getAll('.t-constructorStickerCardQuantityBtn');
     callHook(getButtons, function (i) {
         getButtons[i].addEventListener('click', function (e) {
             var check = 't-plus'?'t-plus':'t-minus';
             quantityControl(this, check, '.t-constructorStickerCard'); // Quantity Control Function Call
             addDataCheck(this, '.t-constructorStickerCardHTop', 'qty');
+            // checkForNullNew(getQCont);
         }, false);
     });
-    var getColorPick = getAll('.t-constructorMainColorPicker li');
     callHook(getColorPick, function (i) {
         getColorPick[i].addEventListener('click', function () {
             pickColorAndImgs(this, '.t-constructorStickerCard', 'color', getColorPick);
         },false)
     });
-    var getImgPick = getAll('.t-constructorMainImgPicker li');
     callHook(getImgPick, function (i) {
         getImgPick[i].addEventListener('click', function () {
             pickColorAndImgs(this, '.t-constructorStickerCard .t-constructorStickerImg div', '' , getImgPick);
         },false)
     });
-    var getQWrapper = getAll('.t-constructorStickerCardQuantityWr input');
     callHook(getQWrapper, function (i) {
         getQWrapper[i].addEventListener('keyup', function () {
             addDataCheck(this, '.t-constructorStickerCardHTop');
         });
     });
-    var getFirstField = getSelector('.t-constructorFirstTextField input');
     getFirstField.addEventListener('keyup', function () {
         catchText(this, '.t-constructorStickerTextOne span, .t-constructorStickerTextOne div', '.t-constructorStickerTextOne div', 'top')
     }, false);
-    var getSecondField = getSelector('.t-constructorSecondTextField input');
     getSecondField.addEventListener('keyup', function () {
         clearFS(this, '.t-constructorStickerTextTwo span, .t-constructorStickerTextTwo div');
         catchText(this, '.t-constructorStickerTextTwo span, .t-constructorStickerTextTwo div', '.t-constructorStickerTextTwo div');
@@ -571,6 +608,7 @@ $(document).ready(function(){
         getQWrapper[i].addEventListener('focusout', function () {
             checkNullNewFocus(this, '.t-constructorStickerCard');
             addDataCheck(this, '.t-constructorStickerCardHTop');
+            // checkForNullNew(getQCont);
         });
     });
     // All Constructor Events End
