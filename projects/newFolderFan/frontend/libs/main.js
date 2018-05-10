@@ -254,6 +254,7 @@ $(document).ready(function(){
         $('.t-astronaut').css('top',-(scrolled*0.3)+'px');
     }
 
+    // Insert After Function
     function insertAfter(elem, refElem) {
         var parent = refElem.parentNode;
         var next = refElem.nextSibling;
@@ -264,7 +265,7 @@ $(document).ready(function(){
         }
     }
 
-
+    // Wrap Element Function
     function wrpF(query, tag) {
         callHook(query, function (i) {
             var crt = document.createElement(tag);
@@ -274,8 +275,9 @@ $(document).ready(function(){
             crt.appendChild(query[i]);
         })
     }
-    wrpF(getAll('.t-customOptions'), 'div');
+    wrpF(getAll('.t-customOptions'), 'div'); // Call Wrap Element Function
 
+    // Create Element Function
     function createElem(tag, addCl) {
         var createElem = document.createElement(tag);
         if (addCl === undefined) {
@@ -285,18 +287,25 @@ $(document).ready(function(){
             return createElem;
         }
     }
+    // Add Many Classes function
     DOMTokenList.prototype.addMany = function(classes) {
         var array = classes.split(' ');
         for (var i = 0, length = array.length; i < length; i++) {
             this.add(array[i]);
         }
     };
-
-    function childrenAll(elements) {
-        elements.reduce(function(result, element) {
-            return result.concat([].slice.call(element.children));
-        },[]);
+    // Check input fields on null
+    function checkInputsNull(elemArr, count, all, a, b) {
+        callHook(elemArr, function (i) {
+            if(+elemArr[i].value === 0){count++;}
+        });
+        if (all === 'all') {
+            count === elemArr.length?a():b();
+        } else {
+            count === elemArr.length - 1?a():b();
+        }
     }
+
 
     // Create Styled Select option
 
@@ -416,9 +425,21 @@ $(document).ready(function(){
         })
     }
 
-    function quantityControl(t, checkClass, findClass) {
+    function quantityControl(t, checkClass, findClass, wrpCard) {
         var b = t;
         var getInput = b.parentNode.parentNode.querySelector('input');
+        var getAllInputs = wrpCard.getElementsByTagName('input');
+        var zero_count = 0;
+        // checkInputsNull(getAllInputs, zero_count, '', function () {
+        //     callHook(getAllInputs, function (i) {
+        //         if(getAllInputs[i].value === '') {
+        //             getAllInputs[i].value = 1;
+        //         }
+        //     });
+        //     return false;
+        // }, function () {
+        //
+        // });
         if (b.classList.contains(checkClass)) {
             var getPlusNewVal = parseInt(getInput.value) + 1;
         } else {
@@ -449,22 +470,35 @@ $(document).ready(function(){
             getMainParent.style.opacity = '1';
         }
     }
+
     // Focus Function
-    function checkNullNewFocus(t, findClass) {
+    function checkNullNewFocus(t, findClass, wrpCard) {
         var b = t;
         var getC = b.parentNode.parentNode.parentNode.querySelector(findClass);
         var numberPattern = new RegExp('^\\d*\\.?\\d+$');
-        if(b.value.match(numberPattern)) {
-            if (b.value === '' || parseInt(b.value) === parseInt(0)) {
-                getC.style.opacity = '.5';
-                b.value = 0;
+        var getAllInputs = wrpCard.getElementsByTagName('input');
+        var zero_count = 0;
+        checkInputsNull(getAllInputs, zero_count, 'all', function () {
+            callHook(getAllInputs, function (i) {
+                console.log(getAllInputs[i].value)
+                if(getAllInputs[i].value === ''||0) {
+                    getAllInputs[i].value = 1;
+                }
+            });
+            return false;
+        }, function () {
+            if(b.value.match(numberPattern)) {
+                if (b.value === '' || parseInt(b.value) === parseInt(0)) {
+                    getC.style.opacity = '.5';
+                    b.value = 0;
+                } else {
+                    getC.style.opacity = '1';
+                }
             } else {
                 getC.style.opacity = '1';
+                b.value = 1;
             }
-        } else {
-            getC.style.opacity = '.5';
-            b.value = 0;
-        }
+        });
     }
     // Value in top of card KeyUp
     function setNullTopCard(t, findQClass) {
@@ -534,13 +568,6 @@ $(document).ready(function(){
         })
     }
 
-    function checkForNullNew(cards) {
-        callHook(cards, function (i) {
-            console.log(cards[i].matches('input'))
-        });
-    }
-    
-    
     function switchContainers (t, refContainer, direction) {
         var b = t;
         var getElements = refContainer.children[0];
@@ -551,7 +578,6 @@ $(document).ready(function(){
         function workRemove(elem, cl) {
             elem.classList.remove(cl);
             elem.style.display='none';
-            console.log(elem);
         }
         function workAdd(elem, cl) {
             elem.classList.add(cl);
@@ -600,6 +626,7 @@ $(document).ready(function(){
     var getNextButton = getSelector('.t-constructorNextButton');
     var getPrevButton = getSelector('.t-constructorPrevButton');
     var getSettingsWrapper = getSelector('.t-constructorMainStickersSettingsWrapper');
+    var getCardContainer = document.getElementById('t-constructorMainStickersPreview');
 
 
     getNextButton.addEventListener('click', function () {
@@ -617,9 +644,8 @@ $(document).ready(function(){
     callHook(getButtons, function (i) {
         getButtons[i].addEventListener('click', function (e) {
             var check = 't-plus'?'t-plus':'t-minus';
-            quantityControl(this, check, '.t-constructorStickerCard'); // Quantity Control Function Call
+            quantityControl(this, check, '.t-constructorStickerCard', getCardContainer); // Quantity Control Function Call
             addDataCheck(this, '.t-constructorStickerCardHTop', 'qty');
-            // checkForNullNew(getQCont);
         }, false);
     });
     callHook(getColorPick, function (i) {
@@ -646,9 +672,8 @@ $(document).ready(function(){
     }, false);
     callHook(getQWrapper, function (i) {
         getQWrapper[i].addEventListener('focusout', function () {
-            checkNullNewFocus(this, '.t-constructorStickerCard');
+            checkNullNewFocus(this, '.t-constructorStickerCard', getCardContainer);
             addDataCheck(this, '.t-constructorStickerCardHTop');
-            // checkForNullNew(getQCont);
         });
     });
     // All Constructor Events End
