@@ -125,6 +125,7 @@ function isM(ref, tag) {return ref.matches(tag);}
 
 
 $(document).ready(function(){
+
     // Init simple Parallax
 
     function showDownEl(selector, secondSelector, thirdEl, startPoint, opacityCall) {
@@ -308,7 +309,6 @@ $(document).ready(function(){
 
 
     // Create Styled Select option
-
     (function (select) {
         var hideParent = 'display: none; visibility: hidden; padding-right: 10px;';
         callHook(select, function (i) {
@@ -360,7 +360,6 @@ $(document).ready(function(){
 
         });
     })(getAll('.t-customOptions'));
-
     // Create Styled Select option End
 
 
@@ -417,38 +416,34 @@ $(document).ready(function(){
     // arcText(getSelector('.t-constructorStickerTextOne div'), 127, 1); // Call Arc Text Function Top Direction
     // arcText(getSelector('.t-constructorStickerTextTwo div'), 127, -1); // Call Arc Text Function Bottom Direction
 
-    // Quantity Control Function
-
-    function closestV (elements, find) {
-        elements.map(function (element) {
-            return element.closest(find);
-        })
-    }
-
-    function quantityControl(t, checkClass, findClass, wrpCard) {
+    // Main Check Zero Function Check click on buttons
+    function mainCheckZeroFunction (t, checkClass, wrpCard) {
         var b = t;
         var getInput = b.parentNode.parentNode.querySelector('input');
         var getAllInputs = wrpCard.getElementsByTagName('input');
+        var getQ = b.parentNode.parentNode.parentNode.parentNode.querySelector('div');
         var zero_count = 0;
-        // checkInputsNull(getAllInputs, zero_count, '', function () {
-        //     callHook(getAllInputs, function (i) {
-        //         if(getAllInputs[i].value === '') {
-        //             getAllInputs[i].value = 1;
-        //         }
-        //     });
-        //     return false;
-        // }, function () {
-        //
-        // });
-        if (b.classList.contains(checkClass)) {
-            var getPlusNewVal = parseInt(getInput.value) + 1;
+        if(b.classList.contains(checkClass)) {
+            getInput.value = parseInt(getInput.value) + 1;
         } else {
-            if (getInput.value > 0) {
-                var getPlusNewVal = parseInt(getInput.value) - 1;
-            } else {getPlusNewVal = 0;}
+            if(getInput.value > 0) {
+                getInput.value = parseInt(getInput.value) - 1;
+                checkInputsNull(getAllInputs, zero_count, 'all', function () {
+                    callHook(getAllInputs, function (i) {
+                        if(+getAllInputs[i].value === 0) {
+                            getInput.value = 1;
+                        }
+                    });
+                },function () {});
+            }
         }
-        getInput.value = getPlusNewVal;
-        checkNull(b, getInput, findClass);
+        if (+getInput.value === 0) {
+            getQ.setAttribute('data-check', 'false');
+            getQ.querySelector('div').style.opacity = '0.5';
+        } else {
+            getQ.setAttribute('data-check', 'true');
+            getQ.querySelector('div').style.opacity = '1';
+        }
     }
     // Add Checking Data Attr
     function addDataCheck(t, checkClass, ch) {
@@ -461,54 +456,35 @@ $(document).ready(function(){
             getQ.setAttribute('data-check', 'true');
         }
     }
-    // Check null function
-    function checkNull(getThis, getInput, findClass) {
-        var getMainParent = getThis.parentNode.parentNode.parentNode.parentNode.querySelector(findClass);
-        if (parseFloat(getInput.value) === parseFloat(0)) {
-            getMainParent.style.opacity = '0.5';
-        } else {
-            getMainParent.style.opacity = '1';
-        }
-    }
-
     // Focus Function
-    function checkNullNewFocus(t, findClass, wrpCard) {
+    function checkNullNewFocus(t,findClass,wrpCard) {
         var b = t;
-        var getC = b.parentNode.parentNode.parentNode.querySelector(findClass);
         var numberPattern = new RegExp('^\\d*\\.?\\d+$');
         var getAllInputs = wrpCard.getElementsByTagName('input');
         var zero_count = 0;
         checkInputsNull(getAllInputs, zero_count, 'all', function () {
             callHook(getAllInputs, function (i) {
-                console.log(getAllInputs[i].value)
-                if(getAllInputs[i].value === ''||0) {
-                    getAllInputs[i].value = 1;
-                }
+                if(+getAllInputs[i].value === 0) {b.value = 1;}
             });
             return false;
         }, function () {
             if(b.value.match(numberPattern)) {
                 if (b.value === '' || parseInt(b.value) === parseInt(0)) {
-                    getC.style.opacity = '.5';
+                    b.parentNode.parentNode.parentNode.querySelector(findClass).style.opacity = '.5';
                     b.value = 0;
+                    b.parentNode.parentNode.parentNode.querySelector('div').setAttribute('data-check', 'false');
                 } else {
-                    getC.style.opacity = '1';
+                    b.parentNode.parentNode.parentNode.querySelector(findClass).style.opacity = '1';
+                    b.parentNode.parentNode.parentNode.querySelector('div').setAttribute('data-check', 'true');
                 }
             } else {
-                getC.style.opacity = '1';
+                b.parentNode.parentNode.parentNode.querySelector(findClass).style.opacity = '1';
                 b.value = 1;
+                b.parentNode.parentNode.parentNode.querySelector('div').setAttribute('data-check', 'true');
             }
         });
     }
-    // Value in top of card KeyUp
-    function setNullTopCard(t, findQClass) {
-        var b = t;
-        var numberPattern = new RegExp('^\\d*\\.?\\d+$');
-        var getQ = b.parentNode.parentNode.parentNode.querySelector(findQClass);
-        if(b.value.match(numberPattern)) {
-            if (b.value === '') {getQ.innerText = '0';} else {getQ.innerText = b.value;}
-        } else {getQ.innerText = '0';}
-    }
+    // Pick Color And Image Function
     function pickColorAndImgs(t, elem, ev, getAllClicks) {
         var b = t;
         var getDataVal = ev === 'color'?b.dataset.color:b.dataset.img;
@@ -529,6 +505,7 @@ $(document).ready(function(){
             }
         })
     }
+    // Catch Text Function
     function catchText(t, output, c, check) {
         var b = t;
         var getAllOut = getAll(output);
@@ -555,11 +532,13 @@ $(document).ready(function(){
             })
         } else {b.value = b.value.substr(0, 20);}
     }
+    // Clear All Stickers Function
     function clearFS(t, clearSection) {
         var b = t;
         var getLength = b.value.length;
         if (getLength <= 0) {clearSection.innerText = '';}
     }
+    // Catch Font Function
     function catchFont(t, containers) {
         var b = t;
         var getAllContainers = getAll(containers);
@@ -567,7 +546,7 @@ $(document).ready(function(){
             getAllContainers[i].setAttribute('data-font', b.dataset.value)
         })
     }
-
+    // Constructor Steps Switcher
     function switchContainers (t, refContainer, direction) {
         var b = t;
         var getElements = refContainer.children[0];
@@ -612,9 +591,9 @@ $(document).ready(function(){
             goBack(getElements, 'active');
         }
     }
+    // Constructor Steps Switcher End
 
-    // All Constructor Events
-    //Variables
+    // Constructor Variables
     var getListOptions = getAll('.t-inputItem .t-listOptions li');
     var getButtons = getAll('.t-constructorStickerCardQuantityBtn');
     var getColorPick = getAll('.t-constructorMainColorPicker li');
@@ -622,13 +601,12 @@ $(document).ready(function(){
     var getQWrapper = getAll('.t-constructorStickerCardQuantityWr input');
     var getFirstField = getSelector('.t-constructorFirstTextField input');
     var getSecondField = getSelector('.t-constructorSecondTextField input');
-    var getQCont = getAll('.t-constructorStickerCardQuantityWr');
     var getNextButton = getSelector('.t-constructorNextButton');
     var getPrevButton = getSelector('.t-constructorPrevButton');
     var getSettingsWrapper = getSelector('.t-constructorMainStickersSettingsWrapper');
     var getCardContainer = document.getElementById('t-constructorMainStickersPreview');
 
-
+    // All Constructor Events
     getNextButton.addEventListener('click', function () {
         switchContainers(this, getSettingsWrapper, 'forward');
     }, false);
@@ -644,8 +622,7 @@ $(document).ready(function(){
     callHook(getButtons, function (i) {
         getButtons[i].addEventListener('click', function (e) {
             var check = 't-plus'?'t-plus':'t-minus';
-            quantityControl(this, check, '.t-constructorStickerCard', getCardContainer); // Quantity Control Function Call
-            addDataCheck(this, '.t-constructorStickerCardHTop', 'qty');
+            mainCheckZeroFunction(this, check, getCardContainer);
         }, false);
     });
     callHook(getColorPick, function (i) {
@@ -660,7 +637,7 @@ $(document).ready(function(){
     });
     callHook(getQWrapper, function (i) {
         getQWrapper[i].addEventListener('keyup', function () {
-            addDataCheck(this, '.t-constructorStickerCardHTop');
+
         });
     });
     getFirstField.addEventListener('keyup', function () {
@@ -673,10 +650,30 @@ $(document).ready(function(){
     callHook(getQWrapper, function (i) {
         getQWrapper[i].addEventListener('focusout', function () {
             checkNullNewFocus(this, '.t-constructorStickerCard', getCardContainer);
-            addDataCheck(this, '.t-constructorStickerCardHTop');
+            addDataCheck(this, '.t-constructorStickerCardHTop', 'qty');
         });
     });
     // All Constructor Events End
+
+
+    getPrevButton.addEventListener('click', function () {
+        // html2canvas(getSelector('#t-constructorMainStickersPreview')).then(function (canvas) {
+        //     document.body.appendChild(canvas);
+        // });
+        var node = document.getElementById('t-constructorMainStickersPreview');
+
+        domtoimage.toPng(node)
+            .then(function (dataUrl) {
+                var img = new Image();
+                img.src = dataUrl;
+                document.body.appendChild(img);
+            })
+            .catch(function (error) {
+                console.error('oops, something went wrong!', error);
+            });
+    }, false);
+
+
 });
 
 // Constructor End
