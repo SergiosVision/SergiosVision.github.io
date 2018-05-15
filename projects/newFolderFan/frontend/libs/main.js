@@ -496,7 +496,7 @@ $(document).ready(function(){
         callHook(getAllEls, function (i) {
             if (ev === 'color') {
                 classCtrl(getAllClicks, 'active', b);
-                if (getAllEls[i].style.backgroundColor !== getDataVal) {getAllEls[i].style.backgroundColor = getDataVal;}
+                if (getAllEls[i].style.backgroundColor !== getDataVal) {getAllEls[i].setAttribute('fill', getDataVal);}
             } else {
                 classCtrl(getAllClicks, 'active', b);
                 if(getAllEls[i].style.backgroundImage !== getDataVal) {
@@ -512,23 +512,27 @@ $(document).ready(function(){
         function checkFields(f, a, b) {f.value.length>0?a():b();}
         if (b.value.length <= 20) {
             callHook(getAllOut, function (i) {
+                console.log(getAllOut[i]);
+                // getAllOut[i].innerHTML = b.value;
                 if (i === 0) {
                     if (check === 'top') {
                         checkFields(b, function () {
-                            getSelector(c).innerText = b.value;
-                            arcText(getSelector(c), 127, 1); // Call Arc Text Function Top Direction
+                            getSelector(c).innerHTML = b.value;
+                            // arcText(getSelector(c), 127, 1); // Call Arc Text Function Top Direction
                         }, function () {
                             clearFS(b, getAllOut[i]);
                         });
                     } else {
                         checkFields(b, function () {
-                            getSelector(c).innerText = b.value;
-                            arcText(getSelector(c), 127, -1); // Call Arc Text Function Bottom Direction
+                            getSelector(c).innerHTML = b.value;
+                            // arcText(getSelector(c), 127, -1); // Call Arc Text Function Bottom Direction
                         }, function () {
                             clearFS(b, getAllOut[i]);
                         });
                     }
-                } else {getAllOut[i].innerText = b.value;}
+                } else {
+                    getAllOut[i].innerHTML = b.value;
+                }
             })
         } else {b.value = b.value.substr(0, 20);}
     }
@@ -536,7 +540,7 @@ $(document).ready(function(){
     function clearFS(t, clearSection) {
         var b = t;
         var getLength = b.value.length;
-        if (getLength <= 0) {clearSection.innerText = '';}
+        if (getLength <= 0) {clearSection.innerHTML = '';}
     }
     // Catch Font Function
     function catchFont(t, containers) {
@@ -627,7 +631,7 @@ $(document).ready(function(){
     });
     callHook(getColorPick, function (i) {
         getColorPick[i].addEventListener('click', function () {
-            pickColorAndImgs(this, '.t-constructorStickerCard', 'color', getColorPick);
+            pickColorAndImgs(this, '.t-constructorStickerCard .t-padColor', 'color', getColorPick);
         },false)
     });
     callHook(getImgPick, function (i) {
@@ -641,11 +645,12 @@ $(document).ready(function(){
         });
     });
     getFirstField.addEventListener('keyup', function () {
-        catchText(this, '.t-constructorStickerTextOne span, .t-constructorStickerTextOne div', '.t-constructorStickerTextOne div', 'top')
+        clearFS(this, '.svgSticker .textSvgOne, .svgStickerOne .textSvgOne');
+        catchText(this, '.svgSticker .textSvgOne', '.svgStickerOne .textSvgOne', 'top')
     }, false);
     getSecondField.addEventListener('keyup', function () {
-        clearFS(this, '.t-constructorStickerTextTwo span, .t-constructorStickerTextTwo div');
-        catchText(this, '.t-constructorStickerTextTwo span, .t-constructorStickerTextTwo div', '.t-constructorStickerTextTwo div');
+        clearFS(this, '.svgSticker .textSvgTwo, .svgStickerOne .textSvgTwo');
+        catchText(this, '.svgSticker .textSvgTwo', '.svgStickerOne .textSvgTwo');
     }, false);
     callHook(getQWrapper, function (i) {
         getQWrapper[i].addEventListener('focusout', function () {
@@ -656,21 +661,20 @@ $(document).ready(function(){
     // All Constructor Events End
 
 
-    getPrevButton.addEventListener('click', function () {
-        // html2canvas(getSelector('#t-constructorMainStickersPreview')).then(function (canvas) {
-        //     document.body.appendChild(canvas);
-        // });
-        var node = document.getElementById('t-constructorMainStickersPreview');
+    var getCartIcon = getAll('.svgSticker');
+    function test(element) {
+        function utoa(str) {
+            return window.btoa(unescape(encodeURIComponent(str)));
+        }
+        var s = new XMLSerializer().serializeToString(element);
+        var encodedData = utoa(s);
+        console.log('data:image/svg+xml;base64,' + encodedData);
+    }
 
-        domtoimage.toPng(node)
-            .then(function (dataUrl) {
-                var img = new Image();
-                img.src = dataUrl;
-                document.body.appendChild(img);
-            })
-            .catch(function (error) {
-                console.error('oops, something went wrong!', error);
-            });
+    getPrevButton.addEventListener('click', function (e) {
+        callHook(getCartIcon, function (i) {
+           test(getCartIcon[i]);
+        });
     }, false);
 
 
