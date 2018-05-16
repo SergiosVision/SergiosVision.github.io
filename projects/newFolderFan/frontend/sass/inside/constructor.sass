@@ -28,32 +28,20 @@
         width: 200px
         &[data-font='ubuntu']
           .t-constructorStickerCard
-            .t-constructorStickerTextOne, .t-constructorStickerTextTwo
-              span
-                font-size: 22px!important
-                line-height: 26px!important
-                font-family: 'Ubuntu'!important
+            svg text, svg tspan
+              font-family: 'Ubuntu'!important
         &[data-font='pangolin']
           .t-constructorStickerCard
-            .t-constructorStickerTextOne, .t-constructorStickerTextTwo
-              span
-                font-size: 22px!important
-                line-height: 26px!important
-                font-family: 'Pangolin'!important
+            svg text, svg tspan
+              font-family: 'Pangolin'!important
         &[data-font='georgia']
           .t-constructorStickerCard
-            .t-constructorStickerTextOne, .t-constructorStickerTextTwo
-              span
-                font-size: 22px!important
-                line-height: 26px!important
-                font-family: Georgia!important
+            svg text, svg tspan
+              font-family: Georgia!important
         &[data-font='openSans']
           .t-constructorStickerCard
-            .t-constructorStickerTextOne, .t-constructorStickerTextTwo
-              span
-                font-size: 22px!important
-                line-height: 26px!important
-                font-family: 'Open Sans'!important
+            svg text, svg tspan
+              font-family: 'Open Sans'!important
 
         .t-constructorStickerCardHTop
           position: relative
@@ -71,6 +59,7 @@
         .t-constructorStickerCard
           transition: .3s ease-in-out
           svg
+            pointer-events: none
             pointer-events: none
           .t-constructorStickerTextOne, .t-constructorStickerTextTwo
             span
