@@ -159,7 +159,7 @@ $(document).ready(function(){
         // var valueZone = (getScrollTop + getWinHeight) - getElNewPos;
         // var getAllNewZz = 100 / getZone * valueZone;
             if(getElNewPos <= (getScrollTop + getWinHeight)) {
-                secondEl.style.bottom = (startPoint + (getScrollTop + getWinHeight - getElNewPos)/.9) + 'px';
+                // secondEl.style.bottom = (startPoint + (getScrollTop + getWinHeight - getElNewPos)/.9) + 'px';
                 thirdEl.style.opacity = '1';
             } else {
                 thirdEl.style.opacity = '0';
@@ -349,12 +349,10 @@ $(document).ready(function(){
                 e.stopPropagation();
                 if (this.classList.contains('active')) {
                     this.classList.remove('active');
-                    // this.nextSibling.style.display = 'none';
                     fadeOutV(this.nextSibling);
                 } else {
                     this.classList.add('active');
                     fadeInV(this.nextSibling);
-                    // this.nextSibling.style.display = 'block';
                 }
             }, false);
             callHook(getChList, function (i) {
@@ -378,6 +376,43 @@ $(document).ready(function(){
         });
     })(getAll('.t-customOptions'));
     // Create Styled Select option End
+
+
+    function getPosition(element) {
+        var position = {
+            top: element.offsetTop,
+            left: element.offsetLeft
+        };
+        return position;
+    }
+
+    (function (t, findEl) {
+        var scrollLeft = 0, scrollTarget = 0, scrollValue = 0;
+        var b = getSelector(t);
+        var grabCards = b.querySelectorAll(findEl);
+        var getLastEl = grabCards[grabCards.length - 1];
+        var getLeftPos = getPosition(getLastEl).left;
+        var widthLastEl = getLastEl.getBoundingClientRect().width;
+        var limitPosition = getLeftPos + widthLastEl - window.innerWidth;
+        function scrollThis(event) {
+            scrollTarget += event.deltaY * 1;
+            scrollTarget = Math.round(Math.max(scrollLeft, Math.min(scrollTarget, limitPosition)));
+            scrollValue += (scrollTarget - scrollValue) * .3;
+            b.children[0].style.transform = 'translate3d(' + -scrollValue + 'px, 0 ,0)';
+        }
+        b.addEventListener('mouseover', function (ev) {
+            document.body.style.overflow = 'hidden';
+        }, false);
+
+        b.addEventListener('mouseout', function (ev) {
+            document.body.style.overflow = 'auto';
+        }, false);
+        
+        b.addEventListener('mousewheel', function (event) {
+            scrollThis(event);
+        }, false);
+    })('.t-jumbotronBottomContentSection', '.t-goodCard');
+
 
 
 // Constructor Start
@@ -637,6 +672,58 @@ $(document).ready(function(){
         }
     }
 
+
+    function destroyConstructor() {
+        var defaultColor = '#73D9E5';
+        var defaultIcon = '';
+        var stickerCard = getAll('.t-constructorStickerCard');
+        var getQuantity = getAll('.t-constructorStickerCardQuantityWr input');
+        var stickerText = getAll('.t-constructorStickerCard svg .textSvgTwo, .t-constructorStickerCard svg .textSvgOne');
+        var setDataCheck = getAll('.t-constructorStickerCardHTop');
+        var getIconHolder = getAll('.t-constructorStickerCard .t-groupIconHolder');
+        var getTextInputs = getAll('.t-constructorMainTextEditCard input');
+        var getListOptions = getAll('.t-constructorMainWrappper .t-listOptions');
+        var getPad = getAll('.t-padColor');
+        var getAllLiTagsInConstructor = getAll('.t-constructorDefaultPicker li');
+        var fontData = getAll('.t-constructorStickerCardHolder');
+        var getAllSelectLists = getAll('.t-constructorMainWrappper .t-customOptionsWrapper');
+        var getSettingsContainer = getSelector('.t-constructorMainStickersSettingsWrapper').children;
+        var buttonsHolder = getSelector('.t-constructorMainStickersButtonsWrapper').children;
+        callHook(getQuantity, function (i) {getQuantity[i].value = '1';});
+        callHook(stickerText, function (i) {stickerText[i].innerHTML = '';});
+        callHook(setDataCheck, function (i) {setDataCheck[i].setAttribute('data-check', 'true')});
+        callHook(stickerCard, function (i) {stickerCard[i].style.opacity = '1';});
+        callHook(getIconHolder, function (i) {getIconHolder[i].innerHTML = ''});
+        callHook(getTextInputs, function (i) {getTextInputs[i].value = ''});
+        callHook(getListOptions, function (i) {getListOptions[i].style.display = 'none'});
+        callHook(getPad, function (i) {getPad[i].setAttribute('fill', defaultColor)});
+        callHook(fontData, function (i) {fontData[i].removeAttribute('data-font')});
+        callHook(getAllLiTagsInConstructor, function (i) {
+            getAllLiTagsInConstructor[i].classList.remove('active');
+            getAllLiTagsInConstructor[i].style.display='flex';
+        });
+        callHook(getAllSelectLists, function (i) {
+            var getFirstOptions = getAllSelectLists[i].querySelector('.t-options');
+            var findStyledSelectBox = getAllSelectLists[i].querySelector('.t-styledSelectorBox');
+            var findOriginalSelect = getAllSelectLists[i].querySelector('select');
+            findOriginalSelect.value = getFirstOptions.dataset.value;
+            findStyledSelectBox.innerText = getFirstOptions.innerText;
+        });
+        callHook(getSettingsContainer, function (i) {
+            if(getSettingsContainer[i].classList.contains('active')) {
+                getSettingsContainer[i].classList.remove('active');
+                getSettingsContainer[i].style.display='none';
+            }
+        });
+        callHook(buttonsHolder, function (i) {
+            if (buttonsHolder[i].matches('.t-addCartBtn')){getSelector('.t-addCartBtn').parentNode.removeChild(getSelector('.t-addCartBtn'));}
+            getSelector('.t-constructorNextButton').style.display='block';
+            getSelector('.t-constructorPrevButton').style.display='none';
+        });
+        getSelector('.t-constructorSuperMainWrapper').style.display='none';
+        getSelector('.t-overlay').style.display='none';
+    }
+
     // Constructor Variables
     var getListOptions = getAll('.t-inputItem .t-listOptions li');
     var getButtons = getAll('.t-constructorStickerCardQuantityBtn');
@@ -650,6 +737,7 @@ $(document).ready(function(){
     var getSettingsWrapper = getSelector('.t-constructorMainStickersSettingsWrapper');
     var getCardContainer = document.getElementById('t-constructorMainStickersPreview');
     var getConstructorImages = getAll('.t-constructorImgPickerCategory .t-customOptionsWrapper .t-options');
+    var getCloseBtn = getSelector('.t-closeConstructor');
 
     // All Constructor Events
     getNextButton.addEventListener('click', function () {
@@ -704,14 +792,22 @@ $(document).ready(function(){
             switchCategory(this, '.t-constructorMainImgPicker li');
         }, false);
     });
+    getCloseBtn.addEventListener('click', function () {
+        destroyConstructor();
+    }, false);
+
+    getSelector('.t-makeStickerCard').addEventListener('click', function (e) {
+        e.preventDefault();
+        getSelector('.t-overlay').style.display='block';
+        getSelector('.t-constructorSuperMainWrapper').style.display='block';
+    }, false);
+
     // All Constructor Events End
 
 
     var getCartIcon = getAll('.svgSticker');
     function test(element) {
-        function utoa(str) {
-            return window.btoa(unescape(encodeURIComponent(str)));
-        }
+        function utoa(str) {return window.btoa(unescape(encodeURIComponent(str)));}
         var s = new XMLSerializer().serializeToString(element);
         var encodedData = utoa(s);
         console.log('data:image/svg+xml;base64,' + encodedData);
