@@ -259,6 +259,13 @@ main
     transition: 2s cubic-bezier(.35,0,.33,1)
 
 .t-figureContainer
+  position: absolute
+  left: 0
+  top: 0
+  right: 0
+  height: 65vh
+  pointer-events: none
+  z-index: -1
   &.t-blockHidden
     .t-vectorLeft,
     .t-vectorSliderBottom, .t-vectorSliderBottom,
@@ -1046,3 +1053,7 @@ main
       &:not(:last-child)
         margin-bottom: 8px
 
+.t-showElement
+  opacity: 1!important
+  pointer-events: all!important
+  animation: showElems 1.3s cubic-bezier(.35,0,.33,1)

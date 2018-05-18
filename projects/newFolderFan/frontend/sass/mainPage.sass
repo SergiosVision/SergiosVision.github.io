@@ -1,5 +1,8 @@
 .t-jumbotronWrapperSection
+  opacity: 0
+  pointer-events: none
   margin-top: 24px
+  z-index: 10
   .t-jumbotronTopContentSection
     .t-jumbotronTopLogoWrapper
       margin-bottom: 32px
@@ -29,7 +32,11 @@
               background-color: #fff
               color: #26BFD1
 
+.t-jumbotronBottomContentSection
+  position: relative
+  height: 627px
 .t-jumbotronBottomCardsWrapper
+  position: absolute
   //overflow-x: scroll
   .t-jumbotronBottomCardsWrapperSectionOne
     display: flex
@@ -38,6 +45,8 @@
     margin-top: 16px
 
 .t-benefits
+  opacity: 0
+  pointer-events: none
   .t-benefitsInsideWrapper
     display: flex
     .t-benefitsCard
@@ -52,7 +61,13 @@
         margin-bottom: 8px
 
 
+.t-answerAndQuestion
+  opacity: 0
+  pointer-events: none
+
 .t-contactsAndFeedBack
+  opacity: 0
+  pointer-events: none
   .t-leftSideContactsAndRightSideContactsControl
     @include bGrid(2, 8.439%)
   .t-contactsAndFeedBackInsideWrapper
