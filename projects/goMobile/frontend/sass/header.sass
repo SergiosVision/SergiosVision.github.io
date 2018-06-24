@@ -1,0 +1,39 @@
+header
+  display: flex
+  justify-content: space-between
+  padding: 56px 65px
+  //position: fixed
+  //top: 0
+  //right: 0
+  //left: 0
+  a
+    text-decoration: none
+  .t-headerLeft
+    display: flex
+    align-items: center
+    a
+      display: block
+    .t-languageSwitcherWrapper
+      cursor: pointer
+      margin-left: 40px
+      width: 48px
+      height: 48px
+      border-radius: 50%
+      border: 1px dashed rgba(0, 0, 0, 0.2)
+      display: flex
+      justify-content: center
+      align-items: center
+  .t-headerRight
+    nav
+      ul
+        list-style: none
+        margin: 0
+        padding: 0
+        display: flex
+        li
+          &:not(:last-child)
+            margin-right: 50px
+          a
+            color: #B2B2B2
+            font-size: 24px
+            line-height: 33px
