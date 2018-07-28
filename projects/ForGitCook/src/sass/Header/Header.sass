@@ -1,0 +1,171 @@
+header
+  height: 198px
+  width: 100%
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(33, 33, 33, 0.70)), url('/images/static/headerBg.jpg') no-repeat
+  background-position: center
+  transition: .4s ease
+  max-width: 1440px
+  margin: auto
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  z-index: 99
+  &.sv-yellow
+    height: 64px
+    background: #fd9727
+    .sv-headerBottom
+      display: none
+    &.sv-headerMainPage
+      position: fixed
+      .sv-filterWrapper
+        bottom: -45px
+        .sv-filterButton
+          transform: scale(.6)
+  &.sv-yellowFilterHide
+    .sv-headerTop
+      .sv-headerSearchBar
+        display: none!important
+    .sv-filterWrapper
+      opacity: 0
+      transform: scale(.7)
+      pointer-events: none
+  .sv-headerMainContainer
+    max-width: 1044px
+    margin: auto
+    height: 100%
+    padding: 0 24px
+    position: relative
+    .sv-headerTop
+      height: 64px
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 34px
+      .sv-headerLogo
+        cursor: pointer
+        & > *
+          color: #fff
+          font-family: 'Rubik', sans-serif
+          font-size: 28px
+          font-weight: 500
+      .sv-headerSearchBar
+        display: flex
+    .sv-headerBottom
+      .sv-headerBottomTitle
+        font-size: 45px
+        font-weight: 300
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.5)
+
+      //box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.34)
+
+  .sv-filterWrapper
+    position: absolute
+    right: 24px
+    bottom: -36px
+    transition: opacity .3s ease, transform .3s ease
+    .sv-filterButton
+      width: 72px
+      height: 72px
+      display: flex
+      justify-content: center
+      align-items: center
+      outline: none
+      border: none
+      background-color: #fd9727
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2)
+      border-radius: 50%
+      cursor: pointer
+      svg
+        pointer-events: none
+    .sv-filterDialog
+      position: absolute
+      z-index: 100
+      top: 87px
+      right: 0
+      width: 490px
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2)
+      background-color: #fff
+      & > *
+        box-sizing: border-box
+      .sv-filterCtrls
+        min-height: 62px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 10px 16px 8px 16px
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.13), 0 1px 2px 0 rgba(0, 0, 0, 0.2)
+        .sv-closeFilter
+          cursor: pointer
+          display: none
+        .sv-filterClear
+          span
+            display: inline-block
+            cursor: pointer
+            font-size: 16px
+            font-weight: normal
+            font-style: normal
+            font-stretch: normal
+            line-height: normal
+            letter-spacing: 0
+            color: #fd9727
+        .sv-filterFilter
+          button
+            outline: none
+            color: #fff
+            background-color: #1eaaf1
+            border: none
+            font-size: 16px
+            font-weight: normal
+            font-style: normal
+            font-stretch: normal
+            line-height: normal
+            letter-spacing: 0
+            text-align: center
+            padding: 12px 20px
+            border-radius: 4px
+            cursor: pointer
+
+      .sv-filterBody
+        padding: 16px 16px 35px 16px
+        .sv-filterRangeHolder
+          .default
+            &:not(:last-child)
+              margin-bottom: 24px
+            & > *
+              font-size: 16px
+              font-weight: normal
+              font-style: normal
+              font-stretch: normal
+              line-height: normal
+              letter-spacing: 0
+              color: #000000
+        .sv-filterAccordion
+          cursor: pointer
+          margin-bottom: 16px
+          .sv-filterAccordionBody
+            transition: .3s ease-out
+            overflow: hidden
+            max-height: 999px
+        .sv-filterRangeHolder
+          .default
+            .sv-caloriesTitle
+              margin-bottom: 8px
+              margin-top: 12px
+              & > *
+                font-size: 16px
+                font-weight: normal
+                font-style: normal
+                font-stretch: normal
+                line-height: normal
+                letter-spacing: 0
+                color: #808080
+            .rangeHolderEl
+              height: 35px
+            .sv-cookingTitle
+              margin-bottom: 8px
+
+
+
+
+
